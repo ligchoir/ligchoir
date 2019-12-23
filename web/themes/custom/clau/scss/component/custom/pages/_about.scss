@@ -1,0 +1,27 @@
+@media screen and ( max-width: #{$screen-sm-min} ) {
+
+}
+
+@media screen and (min-width: #{$screen-sm-min + 1} ) {
+
+}
+
+
+@media screen and (min-width: #{$screen-sm-max}) {
+
+}
+
+
+@media screen and (max-width: #{$screen-sm-max}) {
+}
+
+
+
+@media screen and (min-width: 1216px) {
+}
+
+
+
+@media screen and (max-width: #{$screen-sm-max}) {
+
+}
