@@ -2,10 +2,10 @@
 @import "component/custom/common/colours";
 
 // Default variables.
-@import "component/custom/common/default-variables";
+@import "component/base/default/default-variables";
 
 // Bootstrap Framework.
 @import '../bootstrap/assets/stylesheets/bootstrap';
 
 // Base-theme overrides.
-@import 'component/parent/overrides';
+@import 'component/base/overrides/overrides';

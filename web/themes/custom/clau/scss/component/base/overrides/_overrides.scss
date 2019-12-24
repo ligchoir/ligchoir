@@ -1,27 +1,29 @@
 // @todo these should be their own CSS files and only included when
 // specific Drupal libraries are used.
 
-@import "component/parent/overrides/alert";
-@import "component/parent/overrides/ajax";
+@import "component/base/overrides/alert";
+@import "component/base/overrides/ajax";
 
-@import "component/parent/overrides/field";
-@import "component/parent/overrides/file";
-@import "component/parent/overrides/filter";
-@import "component/parent/overrides/font";
-@import "component/parent/overrides/form";
-@import "component/parent/overrides/icon";
-@import "component/parent/overrides/menus";
-@import "component/parent/overrides/navbar";
-@import "component/parent/overrides/node";
-@import "component/parent/overrides/panel";
-@import "component/parent/overrides/progress-bar";
-@import "component/homepage/sections/section-layers";
+@import "component/base/overrides/field";
+@import "component/base/overrides/file";
+@import "component/base/overrides/filter";
 
-@import "component/parent/overrides/table-drag";
-@import "component/parent/overrides/tabs";
-@import "component/parent/overrides/toolbar";
+@import "component/custom/common/font";
 
-@import "component/parent/overrides/text";
+@import "component/base/overrides/form";
+@import "component/base/overrides/icon";
+@import "component/base/overrides/menus";
+@import "component/base/overrides/navbar";
+@import "component/base/overrides/node";
+@import "component/base/overrides/panel";
+@import "component/base/overrides/progress-bar";
+@import "component/custom/homepage/sections/_section-layers";
+
+@import "component/base/overrides/table-drag";
+@import "component/base/overrides/tabs";
+@import "component/base/overrides/toolbar";
+
+@import "component/base/overrides/text";
 
 
 @import "component/custom/common/_header";
