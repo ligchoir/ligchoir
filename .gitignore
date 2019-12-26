@@ -2,7 +2,7 @@
 
 # in the case of /sync, we don't want to version control any files in it as sync is used for local exchange between host and guest VM (NFS sharing)
 # however, we do want to keep the sync folder itself, so we ignore everything inside sync, except for README.txt to ensure that git retains its parent folder - sync
-sync
+/sync
 !share/
 share/*
 !share/purpose.txt
