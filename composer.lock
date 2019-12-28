@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c749c770ee9f3933f53dd2ed1b4aefb5",
+    "content-hash": "17c34164d420d069672bfdc2dadee066",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -646,6 +646,130 @@
                 "php"
             ],
             "time": "2019-06-08T11:03:04+00:00"
+        },
+        {
+            "name": "drupal/bootstrap",
+            "version": "3.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/bootstrap.git",
+                "reference": "8.x-3.21"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.21.zip",
+                "reference": "8.x-3.21",
+                "shasum": "e431093eb4f64712b02e691660a85cfa4fb49c88"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.21",
+                    "datestamp": "1574417581",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Carver (markcarver)",
+                    "homepage": "https://www.drupal.org/u/markcarver",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "John McCormick (neardark)",
+                    "homepage": "https://www.drupal.org/u/neardark",
+                    "role": "Co-maintainer"
+                },
+                {
+                    "name": "Fabiano Sant'Ana (wundo)",
+                    "homepage": "https://www.drupal.org/u/wundo",
+                    "role": "Co-maintainer"
+                }
+            ],
+            "description": "Built to use Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "https://www.drupal.org/project/bootstrap",
+            "support": {
+                "source": "http://cgit.drupalcode.org/bootstrap",
+                "docs": "https://drupal-bootstrap.org",
+                "issues": "https://www.drupal.org/project/issues/bootstrap",
+                "irc": "irc://irc.freenode.org/drupal-bootstrap"
+            }
+        },
+        {
+            "name": "drupal/content_sync",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/content_sync.git",
+                "reference": "8.x-2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_sync-8.x-2.1.zip",
+                "reference": "8.x-2.1",
+                "shasum": "6eab25cdeed48efdd608db40191243f0bd61db47"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.1",
+                    "datestamp": "1551619984",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Blanca.Esqueda",
+                    "homepage": "https://www.drupal.org/user/3082389"
+                },
+                {
+                    "name": "andrew.trebble",
+                    "homepage": "https://www.drupal.org/user/3159065"
+                },
+                {
+                    "name": "chris.smith",
+                    "homepage": "https://www.drupal.org/user/1812018"
+                },
+                {
+                    "name": "dabito",
+                    "homepage": "https://www.drupal.org/user/2400660"
+                },
+                {
+                    "name": "david4lim",
+                    "homepage": "https://www.drupal.org/user/934262"
+                }
+            ],
+            "description": "Allows to import/export content using YAML files",
+            "homepage": "https://www.drupal.org/project/content_sync",
+            "support": {
+                "source": "https://git.drupalcode.org/project/content_sync"
+            }
         },
         {
             "name": "drupal/core",

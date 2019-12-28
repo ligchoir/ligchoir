@@ -16,6 +16,8 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "drupal/bootstrap": "^3.21",
+        "drupal/content_sync": "^2.1",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/mailsystem": "^4.2",
