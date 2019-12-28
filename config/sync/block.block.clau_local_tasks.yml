@@ -1,0 +1,22 @@
+uuid: f0fee9b2-25cc-4875-b3fa-1862b4d3fa9a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - clau
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: clau_local_tasks
+theme: clau
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

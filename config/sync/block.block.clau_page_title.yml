@@ -1,0 +1,20 @@
+uuid: 1c092bf2-169c-414e-b04c-60e70f9f0d6e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - clau
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: clau_page_title
+theme: clau
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }
