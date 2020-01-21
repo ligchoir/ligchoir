@@ -20,7 +20,9 @@
         "drupal/content_sync": "^2.1",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
+        "drupal/crop": "^1.5",
         "drupal/fontyourface": "^3.2",
+        "drupal/image_widget_crop": "^2.2",
         "drupal/mailsystem": "^4.2",
         "drupal/smtp": "^1.0@beta"
     },
