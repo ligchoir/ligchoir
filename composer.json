@@ -16,14 +16,17 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "drupal/bg_img_field": "^1.4",
         "drupal/bootstrap": "^3.21",
         "drupal/content_sync": "^2.1",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/crop": "^1.5",
+        "drupal/ds": "^3.5",
         "drupal/fontyourface": "^3.2",
         "drupal/image_widget_crop": "^2.2",
         "drupal/mailsystem": "^4.2",
+        "drupal/paragraphs": "^1.10",
         "drupal/smtp": "^1.0@beta"
     },
     "require-dev": {

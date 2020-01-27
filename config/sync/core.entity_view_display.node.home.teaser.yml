@@ -1,0 +1,24 @@
+uuid: a45ab568-50db-4f40-90ea-ca24246c0b4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.home.field_background
+    - field.field.node.home.field_slice
+    - node.type.home
+  module:
+    - user
+id: node.home.teaser
+targetEntityType: node
+bundle: home
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_background: true
+  field_slice: true

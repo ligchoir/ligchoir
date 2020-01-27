@@ -16,3 +16,11 @@
 @media screen and (min-width: #{$screen-sm-max + 1}) {
 
 }
+
+.navbar {
+  border: 0;  
+}
+
+.navbar-default {
+    background-color:transparent;
+}
