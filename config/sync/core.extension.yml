@@ -46,7 +46,9 @@ module:
   user: 0
   views_ui: 0
   ds: 1
+  fontyourface: 1
   menu_link_content: 1
+  local_fonts: 10
   views: 10
   paragraphs: 11
   standard: 1000
