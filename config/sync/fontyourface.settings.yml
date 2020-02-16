@@ -1,4 +1,7 @@
-enabled_fonts: {  }
+enabled_fonts:
+  - 'local_fonts://vegur_bold'
+  - 'local_fonts://vegur_light'
+  - 'local_fonts://vegur_regular'
 load_all_enabled_fonts: 1
 _core:
   default_config_hash: r8uAx4mTBwCkgDFbdKCmhjgbb91BQ4HbWSYRKrlowMY
