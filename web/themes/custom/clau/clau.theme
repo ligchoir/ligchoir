@@ -20,7 +20,7 @@ function clau_theme_suggestions_paragraph_alter(array &$suggestions, array $vari
     //kint( $suggestions );
 }*/
 
-
+/*
 # https://drupal.stackexchange.com/a/282548/1082
 # theme_name.theme file
 function clau_preprocess_block(&$variables) {
@@ -34,3 +34,4 @@ function clau_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'page-node-' . $node->id();
   }
 }
+*/

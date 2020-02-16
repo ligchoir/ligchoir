@@ -1,0 +1,26 @@
+
+
+#clau-page-container-id {
+    padding-top: 10.0em; 
+
+}
+
+.page-node-type-home {
+
+}
+
+@media screen and (min-width: #{$screen-sm-min}) {
+
+}
+
+@media screen and (max-width: #{$screen-sm-max}) {
+
+
+
+
+}
+
+ul.menu--main a {
+    @include vegur-font('bold');
+    font-size: 0.7em;
+}
