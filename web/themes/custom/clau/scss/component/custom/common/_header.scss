@@ -17,10 +17,22 @@
 
 }
 
-.navbar {
-  border: 0;  
+#block-ligcinitials span {
+  @include vegur-font('bold');
+  color: white;
+  font-size: 10em;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 0.8em;
 }
 
-.navbar-default {
-    background-color:transparent;
+#block-ligcfullname {
+  @include vegur-font('bold');
+  color: white;
+  font-size: 1.4em;
+  padding-left: 0.2em;
 }
+
+// https://stackoverflow.com/questions/6285885/css-font-top-margin
+// https://stackoverflow.com/questions/16488373/embedded-padding-margin-in-fonts

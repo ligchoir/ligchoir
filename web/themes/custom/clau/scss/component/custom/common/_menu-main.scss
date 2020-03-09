@@ -20,7 +20,21 @@
 
 }
 
+.navbar {
+    border: 0;
+    padding-left: 0;
+  }
+  
+  .navbar-default {
+      background-color:transparent;
+  }
+
+
+
 ul.menu--main a {
     @include vegur-font('bold');
+    color: white;
     font-size: 0.7em;
+    padding-left: 0;
 }
+

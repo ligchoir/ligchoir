@@ -1,0 +1,25 @@
+uuid: 4e0f8c25-1a87-4198-8aea-c202a71df187
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2af2a381-5aee-4dd0-8b89-8c722baef830'
+  module:
+    - block_content
+  theme:
+    - clau
+id: ligcinitials
+theme: clau
+region: header
+weight: -3
+provider: null
+plugin: 'block_content:2af2a381-5aee-4dd0-8b89-8c722baef830'
+settings:
+  id: 'block_content:2af2a381-5aee-4dd0-8b89-8c722baef830'
+  label: 'LIGC initials'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

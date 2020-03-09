@@ -1,0 +1,25 @@
+uuid: d8ddd91a-f0ef-4bba-99b3-f024bf1c8cde
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:149568b4-3e23-4adf-8777-5ec93f988b6e'
+  module:
+    - block_content
+  theme:
+    - clau
+id: ligcfullname
+theme: clau
+region: header
+weight: -2
+provider: null
+plugin: 'block_content:149568b4-3e23-4adf-8777-5ec93f988b6e'
+settings:
+  id: 'block_content:149568b4-3e23-4adf-8777-5ec93f988b6e'
+  label: 'LIGC full name'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
