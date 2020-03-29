@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
     - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
     - layout_builder
-    - text
     - user
 third_party_settings:
   layout_builder:
@@ -21,13 +19,6 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   links:
     weight: 101
     region: content

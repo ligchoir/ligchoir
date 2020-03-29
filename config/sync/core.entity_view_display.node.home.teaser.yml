@@ -4,8 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.home.field_background
-    - field.field.node.home.field_slice
     - node.type.home
   module:
     - user
@@ -19,6 +17,4 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden:
-  field_background: true
-  field_slice: true
+hidden: {  }

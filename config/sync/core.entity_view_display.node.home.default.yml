@@ -3,14 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.home.field_background
-    - field.field.node.home.field_slice
     - node.type.home
-    - responsive_image.styles.background_image_responsive_style
   module:
-    - bg_img_field
     - ds
-    - entity_reference_revisions
     - user
 third_party_settings:
   ds:
@@ -29,24 +24,6 @@ id: node.home.default
 targetEntityType: node
 bundle: home
 mode: default
-content:
-  field_background:
-    weight: 1
-    label: hidden
-    settings:
-      responsive_image_style: background_image_responsive_style
-      image_link: ''
-    third_party_settings: {  }
-    type: bg_img_field_formatter
-    region: content
-  field_slice:
-    type: entity_reference_revisions_entity_view
-    weight: 0
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
+content: {  }
 hidden:
   links: true
