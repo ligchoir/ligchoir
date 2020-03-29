@@ -1,0 +1,104 @@
+defaults:
+  blur:
+    type: 2
+    radius: 50
+    speed: 1
+  dark: false
+  full_viewport: false
+  preload:
+    background_color: '#ffffff'
+  text:
+    format: full_html
+    value: ''
+entities:
+  node:
+    article:
+      enable: true
+      embed: false
+      require: false
+      group: ''
+    page:
+      enable: true
+      embed: false
+      require: false
+      group: ''
+    home:
+      enable: true
+      embed: false
+      group: ''
+      require: false
+    landing_page:
+      enable: true
+      embed: false
+      group: ''
+      require: false
+  user:
+    user:
+      enable: true
+      embed: false
+      require: false
+      group: ''
+  view:
+    view:
+      enable: true
+      embed: false
+      require: false
+      group: ''
+  comment:
+    comment:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+  taxonomy_term:
+    font_classification:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+    font_designer:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+    font_foundry:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+    font_tags:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+    languages_supported:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+    tags:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+  font:
+    font:
+      enable: false
+      embed: false
+      group: ''
+      require: false
+css:
+  base_class: background-image
+  retina_rules:
+    - 'only screen and (-webkit-min-device-pixel-ratio:2)'
+    - 'only screen and (min--moz-device-pixel-ratio:2)'
+    - 'only screen and (-o-min-device-pixel-ratio:2/1)'
+    - 'only screen and (min-device-pixel-ratio:2)'
+    - 'only screen and (min-resolution: 192dpi)'
+    - 'only screen and (min-resolution: 2dppx)'
+image_style:
+  preload: background_image_preload
+  fallback: background_image_lg
+  responsive: background_image
+_core:
+  default_config_hash: o0H_H_IKvNSYaq2WpMD0oy9dmF6nEpGAUCTt5T6FSjo

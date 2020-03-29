@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.home.layout_builder__layout
     - node.type.home
   module:
     - ds
@@ -16,14 +17,12 @@ third_party_settings:
       entity_classes: all_classes
       settings:
         label: ''
-    regions:
-      content:
-        - field_slice
-        - field_background
+    regions: {  }
 id: node.home.default
 targetEntityType: node
 bundle: home
 mode: default
 content: {  }
 hidden:
+  layout_builder__layout: true
   links: true
