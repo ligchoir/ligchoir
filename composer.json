@@ -16,7 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.2",
-        "drupal/background_image": "^1.4",
+        "drupal/background_image": "^2.0",
         "drupal/bg_img_field": "^1.4",
         "drupal/bootstrap": "^3.21",
         "drupal/content_sync": "^2.1",
@@ -75,6 +75,9 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
         }
     }
 }

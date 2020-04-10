@@ -53,13 +53,6 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
-{# Background Image #}
-{% block background_image %}
-  {% if page.background_image %}
-    {{ page.background_image }}
-  {% endif %}
-{% endblock %}
-
 {# Navbar #}
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
@@ -99,6 +92,16 @@
     </header>
   {% endblock %}
 {% endif %}
+
+
+
+{# Background Image #}
+{% block background_image %}
+  {% if page.background_image %}
+    <h1>about!</h1>
+    {{ page.background_image }}
+  {% endif %}
+{% endblock %}
 
 {# Main #}
 {% block main %}
