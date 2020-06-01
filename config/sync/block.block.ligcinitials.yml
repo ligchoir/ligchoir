@@ -1,9 +1,9 @@
-uuid: 4e0f8c25-1a87-4198-8aea-c202a71df187
+uuid: ce379e4a-2fc0-4db2-8d84-e91b20f2a667
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:2af2a381-5aee-4dd0-8b89-8c722baef830'
+    - 'block_content:ligc_initials:3ff5bfc2-f5b1-4078-9d36-59e6d2cdfbd5'
   module:
     - block_content
   theme:
@@ -11,12 +11,12 @@ dependencies:
 id: ligcinitials
 theme: clau
 region: header
-weight: -3
+weight: 0
 provider: null
-plugin: 'block_content:2af2a381-5aee-4dd0-8b89-8c722baef830'
+plugin: 'block_content:3ff5bfc2-f5b1-4078-9d36-59e6d2cdfbd5'
 settings:
-  id: 'block_content:2af2a381-5aee-4dd0-8b89-8c722baef830'
-  label: 'LIGC initials'
+  id: 'block_content:3ff5bfc2-f5b1-4078-9d36-59e6d2cdfbd5'
+  label: 'LIGC Initials'
   provider: block_content
   label_display: '0'
   status: true

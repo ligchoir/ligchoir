@@ -1,0 +1,21 @@
+uuid: e7c6f143-7568-4cc6-9921-e824217109a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ligc_initials
+    - field.storage.block_content.field_heading
+id: block_content.ligc_initials.field_heading
+field_name: field_heading
+entity_type: block_content
+bundle: ligc_initials
+label: heading
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: LIGC
+default_value_callback: ''
+settings: {  }
+field_type: string

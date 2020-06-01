@@ -1,9 +1,9 @@
-uuid: d8ddd91a-f0ef-4bba-99b3-f024bf1c8cde
+uuid: 4bc12f09-6444-4b6b-b517-c83e6b5a47f5
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:149568b4-3e23-4adf-8777-5ec93f988b6e'
+    - 'block_content:ligc_full_name:c6326ef0-06ec-4b16-87fa-f178e4d16721'
   module:
     - block_content
   theme:
@@ -11,12 +11,12 @@ dependencies:
 id: ligcfullname
 theme: clau
 region: header
-weight: -2
+weight: 0
 provider: null
-plugin: 'block_content:149568b4-3e23-4adf-8777-5ec93f988b6e'
+plugin: 'block_content:c6326ef0-06ec-4b16-87fa-f178e4d16721'
 settings:
-  id: 'block_content:149568b4-3e23-4adf-8777-5ec93f988b6e'
-  label: 'LIGC full name'
+  id: 'block_content:c6326ef0-06ec-4b16-87fa-f178e4d16721'
+  label: 'LIGC Full Name'
   provider: block_content
   label_display: '0'
   status: true

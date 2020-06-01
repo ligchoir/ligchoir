@@ -1,0 +1,21 @@
+uuid: c9567428-6f2c-458b-8451-70ed4fc74a3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ligc_initials
+    - field.field.block_content.ligc_initials.field_heading
+id: block_content.ligc_initials.default
+targetEntityType: block_content
+bundle: ligc_initials
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

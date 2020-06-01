@@ -1,0 +1,21 @@
+uuid: 91fd7ff5-0d43-46da-947b-1bdc6cd9ff63
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ligc_full_name
+    - field.storage.block_content.field_heading
+id: block_content.ligc_full_name.field_heading
+field_name: field_heading
+entity_type: block_content
+bundle: ligc_full_name
+label: heading
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 'London International Gospel Choir'
+default_value_callback: ''
+settings: {  }
+field_type: string
