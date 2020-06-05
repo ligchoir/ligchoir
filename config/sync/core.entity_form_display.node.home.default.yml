@@ -3,9 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.home.layout_builder__layout
+    - field.field.node.home.field_background_image
+    - image.style.thumbnail
     - node.type.home
   module:
+    - bg_img_field
     - path
 id: node.home.default
 targetEntityType: node
@@ -18,6 +20,20 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_background_image:
+    weight: 121
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+      css_settings:
+        css_selector: ''
+        css_repeat: inherit
+        css_background_size: inherit
+        css_background_position: inherit
+      hide_css_settings: false
+    third_party_settings: {  }
+    type: bg_img_field_widget
+    region: content
   path:
     type: path
     weight: 30
@@ -63,5 +79,4 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden:
-  layout_builder__layout: true
+hidden: {  }

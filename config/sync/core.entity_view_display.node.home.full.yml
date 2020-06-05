@@ -4,20 +4,31 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.home.layout_builder__layout
+    - field.field.node.home.field_background_image
     - node.type.home
+    - responsive_image.styles.background_image_responsive_style
   module:
+    - bg_img_field
     - layout_builder
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: true
-    enabled: true
+    allow_custom: false
+    enabled: false
 id: node.home.full
 targetEntityType: node
 bundle: home
 mode: full
-content: {  }
+content:
+  field_background_image:
+    type: bg_img_field_formatter
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      responsive_image_style: background_image_responsive_style
+      image_link: ''
+    third_party_settings: {  }
 hidden:
   layout_builder__layout: true
   links: true

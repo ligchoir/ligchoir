@@ -11,7 +11,7 @@ dependencies:
 id: ligcinitials
 theme: clau
 region: header
-weight: 0
+weight: -2
 provider: null
 plugin: 'block_content:3ff5bfc2-f5b1-4078-9d36-59e6d2cdfbd5'
 settings:

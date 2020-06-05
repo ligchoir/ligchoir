@@ -11,7 +11,7 @@ dependencies:
 id: ligcfullname
 theme: clau
 region: header
-weight: 0
+weight: -1
 provider: null
 plugin: 'block_content:c6326ef0-06ec-4b16-87fa-f178e4d16721'
 settings:
