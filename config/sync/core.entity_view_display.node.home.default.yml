@@ -29,7 +29,7 @@ mode: default
 content:
   field_background_image:
     weight: 0
-    label: inline
+    label: hidden
     settings:
       responsive_image_style: background_image_responsive_style
       image_link: ''
