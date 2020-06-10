@@ -8,7 +8,47 @@ dependencies:
     - responsive_image.styles.background_image_responsive_style
   module:
     - bg_img_field
+    - layout_builder
+    - layout_discovery
     - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          ea815860-773c-4857-bd21-03213ad4e278:
+            uuid: ea815860-773c-4857-bd21-03213ad4e278
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:landing_page:links'
+            additional: {  }
+            weight: 0
+          cbd5f5f9-464b-47a0-8bbe-ccac7ae356b7:
+            uuid: cbd5f5f9-464b-47a0-8bbe-ccac7ae356b7
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:landing_page:field_background_image'
+              formatter:
+                label: above
+                settings:
+                  responsive_image_style: background_image_responsive_style
+                  image_link: ''
+                third_party_settings: {  }
+                type: bg_img_field_formatter
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page

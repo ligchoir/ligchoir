@@ -10,11 +10,36 @@ dependencies:
   module:
     - bg_img_field
     - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
     allow_custom: false
-    enabled: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          2bd6ba29-fc74-49f6-b1c2-4d7c3210f254:
+            uuid: 2bd6ba29-fc74-49f6-b1c2-4d7c3210f254
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:home:field_background_image'
+              formatter:
+                type: bg_img_field_formatter
+                label: inline
+                settings:
+                  responsive_image_style: background_image_responsive_style
+                  image_link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
 id: node.home.full
 targetEntityType: node
 bundle: home
