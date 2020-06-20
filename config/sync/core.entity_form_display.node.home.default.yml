@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.home.field_background_image
+    - field.field.node.home.field_paragraph_reference
+    - field.field.node.home.layout_builder__layout
     - image.style.thumbnail
     - node.type.home
   module:
     - bg_img_field
+    - paragraphs
     - path
 id: node.home.default
 targetEntityType: node
@@ -33,6 +36,18 @@ content:
       hide_css_settings: false
     third_party_settings: {  }
     type: bg_img_field_widget
+    region: content
+  field_paragraph_reference:
+    type: entity_reference_paragraphs
+    weight: 122
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
     region: content
   path:
     type: path
@@ -79,4 +94,5 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  layout_builder__layout: true
