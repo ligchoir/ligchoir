@@ -1,8 +1,11 @@
-.paragraph--type--call-to-action div {
-    
+
+span.ligc-cta a
+{
+    text-decoration: none;
+    color: white;
 }
 
 
-.paragraph--type--call-to-action a {
-    text-decoration: none;
+span.ligc-cta {
+    background-color: red;
 }
