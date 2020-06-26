@@ -19,65 +19,57 @@ targetEntityType: paragraph
 bundle: colors_modifier
 mode: default
 content:
-  field_mod_background_color:
-    weight: 1
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_mod_h_background_color:
-    weight: 4
-    label: inline
+    weight: 2
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_mod_h_link_color:
-    weight: 6
-    label: inline
+    weight: 4
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_mod_h_text_color:
-    weight: 5
-    label: inline
+    weight: 3
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_mod_link_color:
-    weight: 3
-    label: inline
+    weight: 1
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_mod_media_query:
-    weight: 8
-    label: inline
+    weight: 6
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
   field_mod_text_color:
-    weight: 2
-    label: inline
+    weight: 0
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_mod_transition_duration:
-    weight: 7
-    label: inline
+    weight: 5
+    label: hidden
     settings:
       thousand_separator: ''
       decimal_separator: .
@@ -88,4 +80,5 @@ content:
     region: content
 hidden:
   created: true
+  field_mod_background_color: true
   uid: true
