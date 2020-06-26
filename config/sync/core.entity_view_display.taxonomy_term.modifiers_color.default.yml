@@ -1,0 +1,32 @@
+uuid: 6db8d0a5-a7a1-40aa-8ecd-ae441eac9046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.modifiers_color.field_mod_color
+    - taxonomy.vocabulary.modifiers_color
+  module:
+    - color_field
+    - text
+id: taxonomy_term.modifiers_color.default
+targetEntityType: taxonomy_term
+bundle: modifiers_color
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_mod_color:
+    type: color_field_formatter_text
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      format: hex
+      opacity: '1'
+    third_party_settings: {  }
+hidden: {  }
