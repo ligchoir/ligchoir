@@ -54,13 +54,17 @@
 %}
 {% if label_hidden %}
   {% if multiple %}
+    <h1>multiple</h1>
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
+      <h1>test: {{ items }} </h1>
         <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
+  <h1>not multiple</h1>
   {% for item in items %}
+      <h2>span - really?</h2>
       <span{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</span>
     {% endfor %}
   {% endif %}
