@@ -3,13 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.home.field_background_image
+    - field.field.node.home.field_look
+    - field.field.node.home.field_modifiers
     - field.field.node.home.field_paragraph_reference
     - field.field.node.home.layout_builder__layout
     - node.type.home
-    - responsive_image.styles.background_image_responsive_style
   module:
-    - bg_img_field
     - ds
     - entity_reference_revisions
     - user
@@ -31,14 +30,22 @@ targetEntityType: node
 bundle: home
 mode: default
 content:
-  field_background_image:
-    weight: 0
-    label: hidden
+  field_look:
+    weight: 3
+    label: above
     settings:
-      responsive_image_style: background_image_responsive_style
-      image_link: ''
+      link: true
     third_party_settings: {  }
-    type: bg_img_field_formatter
+    type: entity_reference_label
+    region: content
+  field_modifiers:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
     region: content
   field_paragraph_reference:
     type: entity_reference_revisions_entity_view

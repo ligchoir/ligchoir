@@ -4,7 +4,8 @@ status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.home.field_background_image
+    - field.field.node.home.field_look
+    - field.field.node.home.field_modifiers
     - field.field.node.home.field_paragraph_reference
     - field.field.node.home.layout_builder__layout
     - node.type.home
@@ -21,6 +22,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_background_image: true
+  field_look: true
+  field_modifiers: true
   field_paragraph_reference: true
   layout_builder__layout: true

@@ -26,7 +26,7 @@ content:
       target: '0'
     third_party_settings:
       field_formatter_class:
-        class: ligc-cta
+        class: ''
     type: link
     region: content
   field_modifiers:

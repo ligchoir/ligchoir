@@ -5,8 +5,10 @@ dependencies:
   config:
     - field.field.look.look.field_look_path
     - field.field.look.look.field_look_theme
+    - field.field.look.look.field_modifiers
   module:
     - look
+    - paragraphs
 _core:
   default_config_hash: 0j0yPOxqJAFZ1qK7Uq_hFHS5WafJ-8OUAPJaMkdQOq8
 id: look.look.default
@@ -30,6 +32,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_modifiers:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
     weight: -10

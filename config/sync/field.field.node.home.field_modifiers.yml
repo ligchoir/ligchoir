@@ -1,0 +1,44 @@
+uuid: 7cb8936e-33fe-493c-84be-b35134d4cca4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_modifiers
+    - node.type.home
+    - paragraphs.paragraphs_type.image_bg_modifier
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: node.home.field_modifiers
+field_name: field_modifiers
+entity_type: node
+bundle: home
+label: modifiers
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image_bg_modifier: image_bg_modifier
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 5
+        enabled: false
+      colors_modifier:
+        weight: 6
+        enabled: false
+      custom_colors_modifier:
+        weight: 7
+        enabled: false
+      image_bg_modifier:
+        enabled: true
+        weight: 8
+field_type: entity_reference_revisions

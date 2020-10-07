@@ -40,6 +40,7 @@ module:
   media_library: 0
   menu_ui: 0
   modifiers: 0
+  modifiers_bg_image: 0
   modifiers_colors: 0
   modifiers_custom_colors: 0
   node: 0
