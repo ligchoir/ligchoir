@@ -43,6 +43,7 @@ module:
   modifiers_bg_image: 0
   modifiers_colors: 0
   modifiers_custom_colors: 0
+  modifiers_image_fx: 0
   node: 0
   options: 0
   page_cache: 0

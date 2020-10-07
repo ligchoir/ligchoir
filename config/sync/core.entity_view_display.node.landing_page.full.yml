@@ -4,12 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.full
-    - field.field.node.landing_page.field_background_image
+    - field.field.node.landing_page.field_look
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
-    - responsive_image.styles.background_image_responsive_style
   module:
-    - bg_img_field
     - layout_builder
     - layout_discovery
     - user
@@ -22,39 +20,14 @@ third_party_settings:
         layout_id: layout_onecol
         layout_settings:
           label: ''
-        components:
-          3ec80b0c-a996-4d5b-b897-9589a95b3260:
-            uuid: 3ec80b0c-a996-4d5b-b897-9589a95b3260
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:landing_page:field_background_image'
-              formatter:
-                type: bg_img_field_formatter
-                label: hidden
-                settings:
-                  responsive_image_style: background_image_responsive_style
-                  image_link: ''
-                third_party_settings: {  }
-            additional: {  }
-            weight: 0
+        components: {  }
         third_party_settings: {  }
 id: node.landing_page.full
 targetEntityType: node
 bundle: landing_page
 mode: full
-content:
-  field_background_image:
-    type: bg_img_field_formatter
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      responsive_image_style: background_image_responsive_style
-      image_link: ''
-    third_party_settings: {  }
+content: {  }
 hidden:
+  field_look: true
   layout_builder__layout: true
   links: true

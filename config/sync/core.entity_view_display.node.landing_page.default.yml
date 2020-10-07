@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_background_image
+    - field.field.node.landing_page.field_look
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
-    - responsive_image.styles.background_image_responsive_style
   module:
-    - bg_img_field
     - layout_builder
     - layout_discovery
     - user
@@ -32,37 +30,35 @@ third_party_settings:
               id: 'extra_field_block:node:landing_page:links'
             additional: {  }
             weight: 0
-          cbd5f5f9-464b-47a0-8bbe-ccac7ae356b7:
-            uuid: cbd5f5f9-464b-47a0-8bbe-ccac7ae356b7
+          551f8fbe-867f-455d-9b85-75889702d986:
+            uuid: 551f8fbe-867f-455d-9b85-75889702d986
             region: content
             configuration:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: 'field_block:node:landing_page:field_background_image'
+              id: 'field_block:node:landing_page:field_look'
               formatter:
                 label: above
                 settings:
-                  responsive_image_style: background_image_responsive_style
-                  image_link: ''
+                  link: true
                 third_party_settings: {  }
-                type: bg_img_field_formatter
+                type: entity_reference_label
             additional: {  }
-            weight: 1
+            weight: 2
         third_party_settings: {  }
 id: node.landing_page.default
 targetEntityType: node
 bundle: landing_page
 mode: default
 content:
-  field_background_image:
-    weight: 101
+  field_look:
+    weight: 102
     label: above
     settings:
-      responsive_image_style: background_image_responsive_style
-      image_link: ''
+      link: true
     third_party_settings: {  }
-    type: bg_img_field_formatter
+    type: entity_reference_label
     region: content
   links:
     weight: 100

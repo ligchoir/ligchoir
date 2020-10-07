@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.landing_page.field_background_image
+    - field.field.node.landing_page.field_look
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
@@ -20,5 +20,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
-  field_background_image: true
+  field_look: true
   layout_builder__layout: true

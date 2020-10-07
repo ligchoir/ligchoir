@@ -3,12 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.landing_page.field_background_image
+    - field.field.node.landing_page.field_look
     - field.field.node.landing_page.layout_builder__layout
-    - image.style.thumbnail
     - node.type.landing_page
   module:
-    - bg_img_field
     - path
 id: node.landing_page.default
 targetEntityType: node
@@ -21,19 +19,15 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_background_image:
-    weight: 121
+  field_look:
+    weight: 122
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
-      css_settings:
-        css_selector: ''
-        css_repeat: inherit
-        css_background_size: inherit
-        css_background_position: inherit
-      hide_css_settings: false
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: bg_img_field_widget
+    type: entity_reference_autocomplete
     region: content
   path:
     type: path

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.look.field_modifiers
     - paragraphs.paragraphs_type.image_bg_modifier
+    - paragraphs.paragraphs_type.image_fx_modifier
   module:
     - entity_reference_revisions
     - look
@@ -28,6 +29,7 @@ settings:
     negate: 0
     target_bundles:
       image_bg_modifier: image_bg_modifier
+      image_fx_modifier: image_fx_modifier
     target_bundles_drag_drop:
       call_to_action:
         weight: 5
@@ -41,4 +43,7 @@ settings:
       image_bg_modifier:
         enabled: true
         weight: 8
+      image_fx_modifier:
+        enabled: true
+        weight: 10
 field_type: entity_reference_revisions
