@@ -6,6 +6,10 @@ span.ligc-cta a
 }
 
 
-span.ligc-cta {
-  //  background-color: red;
+.ligc-cta {
+  border-radius: 0.5em;
+  border: 0.2em solid;
+  padding: 0.8em;
+  color: white;
+  display: inline-block;
 }

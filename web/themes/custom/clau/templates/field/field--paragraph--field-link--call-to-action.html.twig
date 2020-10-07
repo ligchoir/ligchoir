@@ -54,7 +54,6 @@
 %}
 {% if label_hidden %}
   {% if multiple %}
-    <h1>multiple</h1>
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
       <h1>test: {{ items }} </h1>
@@ -62,9 +61,9 @@
       {% endfor %}
     </div>
   {% else %}
-  <h1>not multiple</h1>
+  {# will get here - not multiple - CTAs don't have multiple fields #}
   {% for item in items %}
-      <h2>span - really?</h2>
+      {# this span is in use #}
       <span{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</span>
     {% endfor %}
   {% endif %}
