@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:ligc_full_name:c6326ef0-06ec-4b16-87fa-f178e4d16721'
   module:
     - block_content
+    - ctools
   theme:
     - clau
 id: ligcfullname
@@ -22,4 +23,11 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      home: home
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
