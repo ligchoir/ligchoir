@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mod_image_darken
+    - paragraphs.paragraphs_type.image_bg_modifier
+id: paragraph.image_bg_modifier.field_mod_image_darken
+field_name: field_mod_image_darken
+entity_type: paragraph
+bundle: image_bg_modifier
+label: 'Darken Background Image'
+description: 'Darken the background image to improve contrast with text on top of it. Technique https://stackoverflow.com/questions/31632419/how-to-darken-a-css-background-image/31632494'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
