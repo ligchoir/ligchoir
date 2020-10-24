@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.image_bg_modifier.field_mod_image
     - field.field.paragraph.image_bg_modifier.field_mod_image_position
     - field.field.paragraph.image_bg_modifier.field_mod_image_style
+    - field.field.paragraph.image_bg_modifier.field_mod_image_darken
     - field.field.paragraph.image_bg_modifier.field_mod_media_query
     - image.style.thumbnail
     - paragraphs.paragraphs_type.image_bg_modifier
@@ -14,8 +15,6 @@ dependencies:
     - color_field
     - media
     - options
-_core:
-  default_config_hash: KQffkHJp_jg0r2vi8Xbm5-GduBkr-zI6UybrGxOGKsw
 id: paragraph.image_bg_modifier.default
 targetEntityType: paragraph
 bundle: image_bg_modifier
@@ -38,6 +37,14 @@ content:
       image_style: thumbnail
       image_link: ''
     third_party_settings: {  }
+    region: content
+  field_mod_image_darken:
+    weight: 2
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_mod_image_position:
     weight: 3

@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_mod_media_query
     - paragraphs.paragraphs_type.image_bg_modifier
-_core:
-  default_config_hash: Sv9b9j57t_clcM2vBphePofyPVPt7bWUefAXxehsU6Y
 id: paragraph.image_bg_modifier.field_mod_media_query
 field_name: field_mod_media_query
 entity_type: paragraph

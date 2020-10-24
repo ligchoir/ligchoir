@@ -7,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.image_bg_modifier
   module:
     - color_field
-_core:
-  default_config_hash: QMBlaqkx1kOjcArdFDxCkR5pSFoSm9uB4Di3Y6jOGsE
 id: paragraph.image_bg_modifier.field_mod_bgi_color_val
 field_name: field_mod_bgi_color_val
 entity_type: paragraph

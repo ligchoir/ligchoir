@@ -2,8 +2,6 @@ uuid: a954ee91-7725-470c-9815-bdf11421fd73
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: maiqyyayVOqGOB_Np2y_CJepEhRQZAaudaf0BwlztQ8
 id: image_bg_modifier
 label: 'Image Background Modifier'
 icon_uuid: null

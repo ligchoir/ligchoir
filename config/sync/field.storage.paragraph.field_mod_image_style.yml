@@ -5,8 +5,6 @@ dependencies:
   module:
     - options
     - paragraphs
-_core:
-  default_config_hash: C0W2sByX5z6VxGQw-x4qdUGmDT8f1WWu5xGlOnyyZ9k
 id: paragraph.field_mod_image_style
 field_name: field_mod_image_style
 entity_type: paragraph
@@ -31,7 +29,7 @@ settings:
   allowed_values_function: ''
 module: options
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
