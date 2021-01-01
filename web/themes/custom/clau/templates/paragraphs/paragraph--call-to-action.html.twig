@@ -47,11 +47,11 @@
   ]
 %}
 {% block paragraph %}
-
-
-  <span{{ attributes.addClass(classes).addClass('ligc-cta') }}>
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </span>
+  <div class="ligc-cta-outer">
+    <span{{ attributes.addClass(classes).addClass('ligc-cta') }}>
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    </span>
+  </div>
 {% endblock paragraph %}
