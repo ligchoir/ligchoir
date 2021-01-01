@@ -14,7 +14,11 @@ var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css'); // replaces var cssmin = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-var runSequence = require('run-sequence');
+//var runSequence = require('run-sequence');
+
+// after upgrading to gulp 4
+const runSequence = require('gulp4-run-sequence');
+runSequence.options.errorOnInvalidArgumentType = true;
 
 // paths
 //var imgSrc = './images/src/*';
@@ -24,7 +28,7 @@ var runSequence = require('run-sequence');
 var sassSrc = './scss/**/*.scss';
 var sassDest = './css';
 
-gulp.task('sass', function () {
+gulp.task('sass', gulp.series(function(done) {
 gulp.src(sassSrc)
   .pipe(sourcemaps.init())
   .pipe(sass({
@@ -33,13 +37,15 @@ gulp.src(sassSrc)
   .pipe(autoprefixer('last 2 version'))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(sassDest));
-});
+done();
+}));
 
-gulp.task('cssmin', function() {
+gulp.task('cssmin', gulp.series(function(done) {
   return gulp.src('./css/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(sassDest));
-});
+done();
+}));
 
 /*
 // add image minify task
@@ -62,20 +68,22 @@ gulp.task('svgmin', function() {
 */
 
 // Run tasks without watching.
-gulp.task('build', function(callback) {
+gulp.task('build', function(done) {
   //runSequence('sass', 'imagemin', 'svgmin', 'cssmin', callback);
-  runSequence('sass', 'cssmin', callback);
+  gulp.series('sass', 'cssmin');
+  done();
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-  gulp.watch(sassSrc, ['sass']);
-  gulp.watch('./css/styles.css', ['cssmin']);
+  gulp.watch(sassSrc, gulp.series('sass'));
+  gulp.watch('./css/styles.css', gulp.series('cssmin'));
   //gulp.watch(imgSrc, ['imagemin']);
   //gulp.watch(svgSrc, ['svgmin']);
 });
 
-gulp.task('default', function(callback) {
+gulp.task('default', function(done) {
   // runSequence('sass', 'imagemin', 'svgmin', 'cssmin', 'watch', callback);
-  runSequence('sass', 'cssmin', 'watch', callback);
+  gulp.series('sass', 'cssmin', 'watch');
+  done();
 });

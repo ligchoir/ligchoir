@@ -12,7 +12,9 @@ vendor
 web/core/
 web/modules/contrib/
 web/themes/contrib/
-web/themes/*/*/node_modules*
+
+# lets retain node_modules due to variability of dev env meaning unpredictable breaking of gulp
+#web/themes/*/*/node_modules*
 web/profiles/contrib/
 
 
