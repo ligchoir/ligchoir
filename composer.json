@@ -108,7 +108,7 @@
         "enable-patching": true,
         "patches": {
             "drupal/modifiers_pack": {
-                "Multiple css background attributes": "https://www.drupal.org/files/issues/2020-10-20/modifiers_pack_enable_multi_bg_css_darken_field_3175641-6.patch"
+                "Multiple css background attributes": "modules/patches/modifiers_pack_enable_multi_bg_css_darken_field_3175641-6.patch.txt"
             }
         }
     }
