@@ -2,24 +2,24 @@
 
 # in the case of /sync, we don't want to version control any files in it as sync is used for local exchange between host and guest VM (NFS sharing)
 # however, we do want to keep the sync folder itself, so we ignore everything inside sync, except for README.txt to ensure that git retains its parent folder - sync
-/sync
+# /sync
 !share/
 share/*
 !share/purpose.txt
 
-/drush/contrib/
-/vendor/
-/web/core/
-/web/modules/contrib/
-/web/themes/contrib/
-/web/themes/*/*/node_modules*
-/web/profiles/contrib/
+drush/contrib/
+vendor
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+web/themes/*/*/node_modules*
+web/profiles/contrib/
 
 
 
 # Ignore sensitive information
-/web/sites/*/settings.php
-/web/sites/*/settings.local.php
+
+web/sites/*/settings.local.php
 
 # Ignore Drupal's file directory
 /web/sites/*/files/
@@ -87,6 +87,9 @@ out/
 **/nbdist/
 **/nbactions.xml
 **/nb-configuration.xml
+# may want to ignore css but scss setup with gulp has seemed to be a disproportionate challenge to setup so having the css in the event of issue could be handy
+# web/themes/custom/themeion/css
+# web/themes/custom/themeion/node_modules
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 **/com_crashlytics_export_strings.xml
