@@ -1,0 +1,109 @@
+user@laptop ligc-develop % ddev start
+Internet connection not detected, see https://ddev.readthedocs.io/en/stable/users/faq/ for info.
+Starting ligc-develop...
+Building db
+Building web
+Recreating ddev-ligc-develop-db ... 
+Recreating ddev-ligc-develop-db ... error
+
+ERROR: for ddev-ligc-develop-db  Cannot start service db: driver failed programming external connectivity on endpoint ddev-ligc-develop-db (7176bf5308c737afe6c1b2b2622c9fb384888e82055d29cf026f033c8181ede2): Bind for 127.0.0.1:55000 failed: port is already allocated
+
+ERROR: for db  Cannot start service db: driver failed programming external connectivity on endpoint ddev-ligc-develop-db (7176bf5308c737afe6c1b2b2622c9fb384888e82055d29cf026f033c8181ede2): Bind for 127.0.0.1:55000 failed: port is already allocated
+Encountered errors while bringing up the project.
+Failed to start ligc-develop: Failed to run docker-compose [-f /Users/user/Work/ligchoir/dev/sites/ligc-develop/.ddev/.ddev-docker-compose-full.yaml up --build -d], err='exit status 1', stdout='Step 1/6 : ARG BASE_IMAGE
+Step 2/6 : FROM $BASE_IMAGE
+ ---> 18907ee75ab2
+Step 3/6 : ARG username
+ ---> Using cache
+ ---> 378749180be9
+Step 4/6 : ARG uid
+ ---> Using cache
+ ---> 91b7193c5fca
+Step 5/6 : ARG gid
+ ---> Using cache
+ ---> 2674b5c38682
+Step 6/6 : RUN (groupadd --gid $gid "$username" || groupadd "$username" || true) && (useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' --uid $uid "$username" || useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' "$username")
+ ---> Using cache
+ ---> 5ba45404551b
+
+Successfully built 5ba45404551b
+Successfully tagged drud/ddev-dbserver-mariadb-10.2:v1.15.1-ligc-develop-built
+Step 1/6 : ARG BASE_IMAGE
+Step 2/6 : FROM $BASE_IMAGE
+ ---> e65bac01b703
+Step 3/6 : ARG username
+ ---> Using cache
+ ---> c12ebeb7c3ae
+Step 4/6 : ARG uid
+ ---> Using cache
+ ---> 17433afea950
+Step 5/6 : ARG gid
+ ---> Using cache
+ ---> 295f75c2c532
+Step 6/6 : RUN (groupadd --gid $gid "$username" || groupadd "$username" || true) && (useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' --uid $uid "$username" || useradd  -l -m -s "/bin/bash" --gid "$username" --comment '' "$username")
+ ---> Using cache
+ ---> 75f73bc4ab7c
+
+Successfully built 75f73bc4ab7c
+Successfully tagged drud/ddev-webserver:v1.15.3-ligc-develop-built
+', stderr='Building db
+Building web
+Recreating ddev-ligc-develop-db ... 
+Recreating ddev-ligc-develop-db ... error
+
+ERROR: for ddev-ligc-develop-db  Cannot start service db: driver failed programming external connectivity on endpoint ddev-ligc-develop-db (7176bf5308c737afe6c1b2b2622c9fb384888e82055d29cf026f033c8181ede2): Bind for 127.0.0.1:55000 failed: port is already allocated
+
+ERROR: for db  Cannot start service db: driver failed programming external connectivity on endpoint ddev-ligc-develop-db (7176bf5308c737afe6c1b2b2622c9fb384888e82055d29cf026f033c8181ede2): Bind for 127.0.0.1:55000 failed: port is already allocated
+Encountered errors while bringing up the project.'
+user@laptop ligc-develop % ls
+LICENSE			composer.lock		docs			phpunit.xml.dist	vendor
+README.md		config			drush			scripts			web
+composer.json		content			load.environment.php	test
+user@laptop ligc-develop % pwd
+/Users/user/Work/ligchoir/dev/sites/ligc-develop
+user@laptop ligc-develop % ddev poweroff
+Internet connection not detected, see https://ddev.readthedocs.io/en/stable/users/faq/ for info.
+Removing container: ddev-ligc-develop-db
+Removing container: ddev-ligc-develop-web
+Removing container: ddev-ligc-develop-dba
+Removing container: c711e20186d9_ddev-ligc-develop-db
+Project ligc-develop has been stopped.
+Stopping ddev-other-develop-web ... done
+Stopping ddev-other-develop-dba ... done
+Stopping ddev-other-develop-db  ... done
+
+Stopping ddev-router ... done
+Removing ddev-router ... done
+Network ddev_default is external, skipping
+Removing container: ddev-other-develop-web
+Removing container: ddev-other-develop-dba
+Removing container: ddev-other-develop-db
+Network ddev_default is external, skipping
+Network ddev_default is external, skipping
+Project other-develop has been stopped.
+Stopping ddev-ssh-agent ... done
+Removing ddev-ssh-agent ... done
+Network ddev_default is external, skipping
+The ddev-ssh-agent container has been removed. When you start it again you will have to use 'ddev auth ssh' to provide key authentication again.
+user@laptop ligc-develop % ddev start
+Internet connection not detected, see https://ddev.readthedocs.io/en/stable/users/faq/ for info.
+Starting ligc-develop...
+Building ddev-ssh-agent
+Creating ddev-ssh-agent ... done
+
+ssh-agent container is running: If you want to add authentication to the ssh-agent container, run 'ddev auth ssh' to enable your keys.
+Pushed mkcert rootca certs to ddev-global-cache
+Building db
+Building web
+Creating ddev-ligc-develop-db ... done
+Creating ddev-ligc-develop-web ... done
+Creating ddev-ligc-develop-dba ... done
+
+Creating ddev-router ... done
+
+Ensuring write permissions for ligc-develop
+Ensuring write permissions for ligc-develop
+Existing settings.php file includes settings.ddev.php
+Successfully started ligc-develop
+Project can be reached at https://ligc-develop.ddev.site https://127.0.0.1:55005
+user@laptop ligc-develop % 
