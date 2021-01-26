@@ -89,7 +89,7 @@ index 6477616..eb613b9 100644
 +          = "background: linear-gradient( rgba(0, 0, 0, ". $config['image_darken']. "),". 
 +            "rgba(0, 0, 0, ". $config['image_darken']. ") ),". 
 +            "url('" . $config['image'] . "');";
-+            $css[$media][$selector][] .= " height: 100%";
++            $css[$media][$selector][] .= " height: 100vh";
 +      }
  
 -          case 'stretch':
