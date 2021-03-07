@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.landing_page.field_look
+    - field.field.node.landing_page.field_paragraph_reference
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
+    - paragraphs
     - path
 id: node.landing_page.default
 targetEntityType: node
@@ -28,6 +30,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_paragraph_reference:
+    weight: 123
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
     region: content
   path:
     type: path

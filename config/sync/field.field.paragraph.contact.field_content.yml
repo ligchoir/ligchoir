@@ -1,0 +1,48 @@
+uuid: aef3d493-e393-4767-ad22-f90a460f0719
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content
+    - paragraphs.paragraphs_type.contact
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: paragraph.contact.field_content
+field_name: field_content
+entity_type: paragraph
+bundle: contact
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      call_to_action:
+        weight: 8
+        enabled: false
+      colors_modifier:
+        weight: 9
+        enabled: false
+      contact:
+        weight: 7
+        enabled: false
+      custom_colors_modifier:
+        weight: 10
+        enabled: false
+      image_bg_modifier:
+        weight: 11
+        enabled: false
+      image_fx_modifier:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

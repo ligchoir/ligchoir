@@ -1,0 +1,19 @@
+uuid: 5870e543-63a1-4583-8cf5-ecc0cb056fee
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_guidance
+field_name: field_guidance
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

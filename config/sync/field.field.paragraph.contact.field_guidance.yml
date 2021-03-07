@@ -1,0 +1,21 @@
+uuid: 030c04f7-6a4c-4d03-bdf6-b7d942ebc5e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_guidance
+    - paragraphs.paragraphs_type.contact
+  module:
+    - text
+id: paragraph.contact.field_guidance
+field_name: field_guidance
+entity_type: paragraph
+bundle: contact
+label: Guidance
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,52 @@
+uuid: e5cc531f-f9aa-4777-95ab-610810b1c06d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact.field_content
+    - field.field.paragraph.contact.field_form
+    - field.field.paragraph.contact.field_form_title
+    - field.field.paragraph.contact.field_guidance
+    - paragraphs.paragraphs_type.contact
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.contact.default
+targetEntityType: paragraph
+bundle: contact
+mode: default
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_form:
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_form_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_guidance:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

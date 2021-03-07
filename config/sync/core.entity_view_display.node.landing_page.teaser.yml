@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.field_look
+    - field.field.node.landing_page.field_paragraph_reference
     - field.field.node.landing_page.layout_builder__layout
     - node.type.landing_page
   module:
@@ -21,4 +22,5 @@ content:
     region: content
 hidden:
   field_look: true
+  field_paragraph_reference: true
   layout_builder__layout: true

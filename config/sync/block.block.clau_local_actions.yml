@@ -9,7 +9,7 @@ _core:
 id: clau_local_actions
 theme: clau
 region: content
-weight: -20
+weight: -2
 provider: null
 plugin: local_actions_block
 settings:
