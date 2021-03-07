@@ -35,11 +35,12 @@
         "drupal/mailsystem": "^4.2",
         "drupal/modifiers": "^1.4",
         "drupal/modifiers_pack": "^1.4",
-        "drupal/paragraph_blocks": "^2.1@beta",
+        "drupal/paragraph_blocks": "^3.0",
         "drupal/paragraphs": "^1.10",
         "drupal/smtp": "^1.0@beta",
         "drupal/structure_sync": "^1.16",
         "drupal/token": "^1.6",
+        "drupal/webform": "^6.0",
         "drush/drush": "^10.2"
     },
     "conflict": {

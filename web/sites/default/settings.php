@@ -812,10 +812,10 @@ if (file_exists($app_root . '/' . $site_path . '/settings.ddev.php') && getenv('
 // $settings['config_sync_directory'] are supported
 // so it should work on any Drupal 8 or 9 version.
 if (defined('CONFIG_SYNC_DIRECTORY') && empty($config_directories[CONFIG_SYNC_DIRECTORY])) {
-  $config_directories[CONFIG_SYNC_DIRECTORY] = 'config/sync';
+  $config_directories[CONFIG_SYNC_DIRECTORY] = '/config/sync';
 }
 elseif (empty($settings['config_sync_directory'])) {
-  $settings['config_sync_directory'] = 'config/sync'; 
+  $settings['config_sync_directory'] = '/config/sync'; 
 }
 else {
   $settings['config_sync_directory'] = 'config/sync'; 
