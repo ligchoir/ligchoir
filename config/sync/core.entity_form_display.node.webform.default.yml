@@ -4,6 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.webform.body
+    - field.field.node.webform.field_contact_email
+    - field.field.node.webform.field_contact_message
+    - field.field.node.webform.field_contact_name
     - field.field.node.webform.webform
     - node.type.webform
   module:
@@ -31,6 +34,30 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+    region: content
+  field_contact_email:
+    weight: 122
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_contact_message:
+    weight: 123
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_contact_name:
+    weight: 121
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   path:
     type: path
