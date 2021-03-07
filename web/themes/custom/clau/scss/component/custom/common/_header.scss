@@ -1,3 +1,6 @@
+$mobile:                      "screen and (max-width: #{$screen-xs-max})";
+$larger-than-mobile:          "screen and (max-width: #{$mobile + 1})";
+
 @media screen and (max-width: #{$screen-sm-min}) {
 
 }
@@ -46,7 +49,7 @@
   font-size: 6.0em;
   position: absolute;
   top: -1.1em;
-  left: -0.9em;
+
   //padding-left: 0.15em;
   //padding-top: 0;
   //padding-bottom: 0;
@@ -59,8 +62,26 @@
   font-size: 0.8em;
   position: absolute;
   top: -2.4em;
-  left: -6.4em;
+
   //padding-left: 1.5em;
+}
+
+@media #{$mobile} {
+  .region-navigation #block-ligcinitials-2 {
+    left: 0em;
+  }
+  .region-navigation #block-ligcfullname-2 {
+    left: 0em;
+  }
+}
+
+@media #{$larger-than-mobile} {
+  .region-navigation #block-ligcinitials-2 {
+    left: -0.9em;
+  }
+  .region-navigation #block-ligcfullname-2 {
+    left: -6.4em;
+  }
 }
 
 // https://stackoverflow.com/questions/6285885/css-font-top-margin

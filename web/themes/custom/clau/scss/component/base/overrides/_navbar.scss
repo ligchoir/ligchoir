@@ -67,3 +67,13 @@ body {
   }
 }
 
+@media #{$mobile} {
+  .navbar-nav {
+    margin: 7.5px 0px;
+  }
+
+  .container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+    margin-right: -15px;
+    margin-left: 0px; 
+  }
+}
