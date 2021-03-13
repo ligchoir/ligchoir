@@ -1,0 +1,10 @@
+uuid: 7a7de832-71ee-485f-a6d2-42be353b1b03
+langcode: en
+status: true
+dependencies: {  }
+id: social_and_contact_links
+label: 'Social and Contact Links'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

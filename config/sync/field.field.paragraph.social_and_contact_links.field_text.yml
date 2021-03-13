@@ -1,0 +1,21 @@
+uuid: ccb42dee-6087-4b4b-ace2-49f999bd5eb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.social_and_contact_links
+  module:
+    - text
+id: paragraph.social_and_contact_links.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: social_and_contact_links
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

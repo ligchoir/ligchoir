@@ -1,0 +1,48 @@
+uuid: 5d62b3b0-b821-4c13-9af3-8117fb9d3cff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quote.field_colour_background
+    - field.field.paragraph.quote.field_colour_text
+    - field.field.paragraph.quote.field_quote
+    - field.field.paragraph.quote.field_quote_source
+    - paragraphs.paragraphs_type.quote
+  module:
+    - text
+id: paragraph.quote.default
+targetEntityType: paragraph
+bundle: quote
+mode: default
+content:
+  field_colour_background:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_colour_text:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_quote:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_quote_source:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

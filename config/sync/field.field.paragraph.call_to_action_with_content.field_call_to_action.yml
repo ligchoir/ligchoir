@@ -1,0 +1,62 @@
+uuid: c412b981-b6e4-47be-8c87-9722d5067085
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_call_to_action
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.call_to_action_with_content
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: paragraph.call_to_action_with_content.field_call_to_action
+field_name: field_call_to_action
+entity_type: paragraph
+bundle: call_to_action_with_content
+label: 'Call to Action'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      call_to_action: call_to_action
+    target_bundles_drag_drop:
+      about_intro:
+        weight: 12
+        enabled: false
+      call_to_action:
+        enabled: true
+        weight: 13
+      call_to_action_with_content:
+        weight: 11
+        enabled: false
+      colors_modifier:
+        weight: 14
+        enabled: false
+      contact:
+        weight: 15
+        enabled: false
+      custom_colors_modifier:
+        weight: 16
+        enabled: false
+      image:
+        weight: 17
+        enabled: false
+      image_bg_modifier:
+        weight: 18
+        enabled: false
+      image_fx_modifier:
+        weight: 19
+        enabled: false
+      quote:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions
