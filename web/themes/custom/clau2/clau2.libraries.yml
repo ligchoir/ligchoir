@@ -1,0 +1,13 @@
+design:
+  version: VERSION
+  css:
+    base:
+      css/common/style.css: {}
+      css/common/normalize.css: {}
+  js:
+    js/theme.js: {}
+video-responsive:
+  version: VERSION
+  css:
+    base:
+      css/video-responsive/video-responsive.css: {}
