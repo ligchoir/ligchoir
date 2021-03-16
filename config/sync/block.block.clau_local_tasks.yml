@@ -1,13 +1,15 @@
-uuid: a5ff5bd0-3085-4ff2-9fd0-d92703ba77be
+uuid: 11e0552d-2d63-4f14-91da-c97fea11d674
 langcode: en
 status: true
 dependencies:
   theme:
     - clau
-id: tabs
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: clau_local_tasks
 theme: clau
 region: content
-weight: -4
+weight: -40
 provider: null
 plugin: local_tasks_block
 settings:

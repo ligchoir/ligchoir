@@ -1,4 +1,4 @@
-uuid: c620807c-d2be-4dbf-84da-0b478bcb6d8f
+uuid: b5e45283-7b93-4c04-a2c0-18f6d835c9db
 langcode: en
 status: true
 dependencies:
@@ -8,10 +8,12 @@ dependencies:
     - system
   theme:
     - clau
-id: mainnavigation
+_core:
+  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
+id: clau_main_menu
 theme: clau
-region: navigation_collapsible
-weight: 0
+region: navigation
+weight: -2
 provider: null
 plugin: 'system_menu_block:main'
 settings:
@@ -20,6 +22,6 @@ settings:
   provider: system
   label_display: '0'
   level: 1
-  depth: 0
+  depth: 1
   expand_all_items: false
 visibility: {  }

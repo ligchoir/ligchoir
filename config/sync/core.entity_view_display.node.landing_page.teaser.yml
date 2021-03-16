@@ -4,9 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.landing_page.field_content
     - field.field.node.landing_page.field_look
-    - field.field.node.landing_page.field_paragraph_reference
-    - field.field.node.landing_page.layout_builder__layout
+    - field.field.node.landing_page.field_main_call_to_action_area
     - node.type.landing_page
   module:
     - user
@@ -21,6 +21,6 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_content: true
   field_look: true
-  field_paragraph_reference: true
-  layout_builder__layout: true
+  field_main_call_to_action_area: true

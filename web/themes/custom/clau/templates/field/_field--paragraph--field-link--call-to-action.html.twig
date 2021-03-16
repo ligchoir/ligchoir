@@ -52,15 +52,19 @@
     label_display == 'visually_hidden' ? 'sr-only',
   ]
 %}
+<h1>field--paragraph--field-link--call-to-action.html.twig</h1>
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
+      <h1>test: {{ items }} </h1>
         <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
       {% endfor %}
     </div>
   {% else %}
+  {# will get here - not multiple - CTAs don't have multiple fields #}
   {% for item in items %}
+      {# this span is in use #}
       <span{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</span>
     {% endfor %}
   {% endif %}

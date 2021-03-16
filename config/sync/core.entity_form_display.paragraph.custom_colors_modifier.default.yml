@@ -23,38 +23,14 @@ mode: default
 content:
   admin_title:
     type: string_textfield
-    weight: -10
+    weight: 0
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_mod_background_color_val:
-    weight: 6
-    settings:
-      placeholder_color: ''
-      placeholder_opacity: ''
-    third_party_settings: {  }
-    type: color_field_widget_default
-    region: content
-  field_mod_h_background_color_val:
-    weight: 10
-    settings:
-      placeholder_color: ''
-      placeholder_opacity: ''
-    third_party_settings: {  }
-    type: color_field_widget_default
-    region: content
-  field_mod_h_link_color_val:
-    weight: 12
-    settings:
-      placeholder_color: ''
-      placeholder_opacity: ''
-    third_party_settings: {  }
-    type: color_field_widget_default
-    region: content
-  field_mod_h_text_color_val:
-    weight: 11
+    weight: 1
     settings:
       placeholder_color: ''
       placeholder_opacity: ''
@@ -62,37 +38,27 @@ content:
     type: color_field_widget_default
     region: content
   field_mod_link_color_val:
-    weight: 8
+    weight: 3
     settings:
       placeholder_color: ''
       placeholder_opacity: ''
     third_party_settings: {  }
     type: color_field_widget_default
-    region: content
-  field_mod_media_query:
-    weight: 14
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   field_mod_text_color_val:
-    weight: 7
+    weight: 2
     settings:
       placeholder_color: ''
       placeholder_opacity: ''
     third_party_settings: {  }
     type: color_field_widget_default
-    region: content
-  field_mod_transition_duration:
-    weight: 13
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-    type: number
     region: content
 hidden:
   created: true
+  field_mod_h_background_color_val: true
+  field_mod_h_link_color_val: true
+  field_mod_h_text_color_val: true
+  field_mod_media_query: true
+  field_mod_transition_duration: true
   status: true
   uid: true

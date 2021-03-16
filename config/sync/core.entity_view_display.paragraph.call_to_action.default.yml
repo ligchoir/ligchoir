@@ -32,7 +32,7 @@ content:
   field_modifiers:
     type: entity_reference_revisions_entity_view
     weight: 1
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''

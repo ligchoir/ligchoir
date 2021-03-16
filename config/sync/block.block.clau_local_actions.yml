@@ -1,4 +1,4 @@
-uuid: 99f2bed9-245f-45da-af9a-7fba85845665
+uuid: 143f9d9d-24c5-4845-af72-7371b659826c
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ _core:
 id: clau_local_actions
 theme: clau
 region: content
-weight: -2
+weight: -20
 provider: null
 plugin: local_actions_block
 settings:

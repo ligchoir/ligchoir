@@ -1,0 +1,33 @@
+uuid: 9ff02a3e-a1e8-4f45-abf8-3a45a125634d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ligc_full_name:c6326ef0-06ec-4b16-87fa-f178e4d16721'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - stark
+id: stark_ligcfullname_2
+theme: stark
+region: sidebar_first
+weight: -3
+provider: null
+plugin: 'block_content:c6326ef0-06ec-4b16-87fa-f178e4d16721'
+settings:
+  id: 'block_content:c6326ef0-06ec-4b16-87fa-f178e4d16721'
+  label: 'LIGC Full Name'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

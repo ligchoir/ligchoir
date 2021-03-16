@@ -3,10 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.home.field_content
     - field.field.node.home.field_look
+    - field.field.node.home.field_main_call_to_action_area
     - field.field.node.home.field_modifiers
-    - field.field.node.home.field_paragraph_reference
-    - field.field.node.home.layout_builder__layout
     - node.type.home
   module:
     - paragraphs
@@ -22,6 +22,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_content:
+    type: entity_reference_paragraphs
+    weight: 125
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
   field_look:
     weight: 124
     settings:
@@ -32,9 +44,8 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
-  field_modifiers:
-    type: entity_reference_paragraphs
-    weight: 123
+  field_main_call_to_action_area:
+    weight: 126
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -43,10 +54,11 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_paragraph_reference:
     type: entity_reference_paragraphs
-    weight: 122
+    region: content
+  field_modifiers:
+    type: entity_reference_paragraphs
+    weight: 123
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -101,5 +113,4 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden:
-  layout_builder__layout: true
+hidden: {  }

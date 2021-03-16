@@ -1,4 +1,4 @@
-uuid: 765e3d41-ccf7-4d77-8294-7850e91d9c42
+uuid: ee00008b-04e5-4ccc-bb89-03139fe2f71c
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
-id: node.field_paragraph_reference
-field_name: field_paragraph_reference
+id: node.field_content
+field_name: field_content
 entity_type: node
 type: entity_reference_revisions
 settings:

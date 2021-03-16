@@ -1,0 +1,77 @@
+uuid: adad6b06-0d25-4904-87b1-e56c212ca407
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.home
+    - paragraphs.paragraphs_type.about_intro
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.call_to_action_with_content
+    - paragraphs.paragraphs_type.contact
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.social_and_contact_links
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: node.home.field_content
+field_name: field_content
+entity_type: node
+bundle: home
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      about_intro: about_intro
+      call_to_action: call_to_action
+      call_to_action_with_content: call_to_action_with_content
+      contact: contact
+      image: image
+      quote: quote
+      social_and_contact_links: social_and_contact_links
+    target_bundles_drag_drop:
+      about_intro:
+        enabled: true
+        weight: 12
+      call_to_action:
+        enabled: true
+        weight: 13
+      call_to_action_with_content:
+        enabled: true
+        weight: 14
+      colors_modifier:
+        weight: 15
+        enabled: false
+      contact:
+        enabled: true
+        weight: 16
+      custom_colors_modifier:
+        weight: 17
+        enabled: false
+      image:
+        enabled: true
+        weight: 18
+      image_bg_modifier:
+        weight: 19
+        enabled: false
+      image_fx_modifier:
+        weight: 20
+        enabled: false
+      quote:
+        enabled: true
+        weight: 21
+      social_and_contact_links:
+        enabled: true
+        weight: 22
+field_type: entity_reference_revisions

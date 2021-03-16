@@ -1,4 +1,4 @@
-uuid: 23796e78-3eca-4552-b42f-ea58f258a91c
+uuid: bd12cc60-6622-49c0-9ae6-11203a4c771e
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ _core:
 id: clau_help
 theme: clau
 region: content
-weight: -3
+weight: -30
 provider: null
 plugin: help_block
 settings:
