@@ -24,8 +24,8 @@ third_party_settings:
         label: ''
     regions:
       content:
-        - field_content
         - field_main_call_to_action_area
+        - field_content
 id: node.home.default
 targetEntityType: node
 bundle: home
@@ -33,7 +33,7 @@ mode: default
 content:
   field_content:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       view_mode: default
@@ -45,7 +45,7 @@ content:
         ds_limit: ''
     region: content
   field_main_call_to_action_area:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       view_mode: default

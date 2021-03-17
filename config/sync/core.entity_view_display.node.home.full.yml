@@ -24,7 +24,7 @@ mode: full
 content:
   field_content:
     type: entity_reference_revisions_entity_view
-    weight: 0
+    weight: 1
     region: content
     label: hidden
     settings:
@@ -33,7 +33,7 @@ content:
     third_party_settings: {  }
   field_main_call_to_action_area:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 0
     region: content
     label: hidden
     settings:
