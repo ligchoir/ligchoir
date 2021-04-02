@@ -1,0 +1,83 @@
+
+
+.region-header #block-ligcinitials {
+  font-family: 'Vegur';
+  font-style: normal;
+  font-weight: 700;
+  
+  color: white;
+  font-size: 15em;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 0.8em;
+}
+
+.region-header #block-ligcfullname {
+  font-family: 'Vegur';
+  font-style: normal;
+  font-weight: 700;
+
+  color: white;
+  font-size: 2.0em;
+  padding-left: 0.4em;
+}
+
+
+.region-navigation #block-ligcinitials-2 {
+  font-family: 'Vegur';
+  font-style: normal;
+  font-weight: 700;
+
+  color: white;
+  font-size: 6.0em;
+  position: absolute;
+  top: -1.1em;
+
+
+  line-height: 0.8em;
+}
+
+.region-navigation #block-ligcfullname-2 {
+  color: white;
+  font-size: 0.8em;
+  position: absolute;
+  top: -2.4em;
+
+
+}
+
+
+@media screen and (max-width: 991) {
+  .region-navigation #block-ligcinitials-2 {
+    left: 0.5em;
+  }
+  .region-navigation #block-ligcfullname-2 {  
+
+    left: 4.1em;
+  }
+}
+
+@media screen and (min-width: 769) {
+  .region-navigation #block-ligcinitials-2 {
+    left: 0em;
+  }
+  .region-navigation #block-ligcfullname-2 {  
+
+    left: 0em;
+  }
+}
+
+/*
+@media screen and (min-width: 1200) { {
+  .region-navigation #block-ligcinitials-2 {
+    left: -0.9em;
+  }
+  .region-navigation #block-ligcfullname-2 {
+    left: -6.4em;
+  }
+}
+*/
+
+
+

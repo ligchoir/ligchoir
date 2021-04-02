@@ -2,8 +2,11 @@ design:
   version: VERSION
   css:
     base:
-      css/common/style.css: {}
       css/common/normalize.css: {}
+      css/styles/_cta.css: {}
+      css/styles/_header.css: {}
+      css/styles/_menu-main.css: {}
+      css/common/style.css: {}
   js:
     js/theme.js: {}
 video-responsive:

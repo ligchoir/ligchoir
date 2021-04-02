@@ -12,6 +12,4 @@ libraries:
 regions:
   primary_menu: 'Primary menu'
   content: Content
-  content_left: 'Content left'
-  content_right: 'Content right'  
   footer: 'Footer'

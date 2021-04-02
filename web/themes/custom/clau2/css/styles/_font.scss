@@ -1,0 +1,28 @@
+
+  //  @include font-vegur('Vegur-Bold');
+  //  @include font-vegur('Vegur-Light');
+  //  @include font-vegur('Vegur-Regular');
+
+// Vegur-Bold vegur_bold
+
+// Vegur-Light vegur_light
+
+// Vegur-Regular vegur_regular
+
+@mixin vegur-font($weight) {
+    font-family: 'Vegur';
+    font-style: normal;
+
+    // stand first
+    @if $weight == "regular" {
+      font-weight: 400;
+    }
+
+    @if $weight == "light" {
+      font-weight: 100;
+    }
+
+    @if $weight == "bold" {
+      font-weight: 700;
+    }
+}
