@@ -1,15 +1,16 @@
 name: Clau2
 type: theme
-description: 'Self-contained theme'
+description: Self-contained theme
 base theme: stark
 core: 8.x
 core_version_requirement: ^8 || ^9
-version: '8.x-1.0'
+version: 8.x-1.0
 libraries:
   - clau2/design
 
 
 regions:
-  primary_menu: 'Primary menu'
+  header: Header
+  primary_menu: Primary Menu
   content: Content
   footer: 'Footer'

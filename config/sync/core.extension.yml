@@ -82,6 +82,7 @@ theme:
   bootstrap: 0
   stark: 0
   clau: 0
+  clau2: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

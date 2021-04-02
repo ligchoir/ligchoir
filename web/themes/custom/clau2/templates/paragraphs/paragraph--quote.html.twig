@@ -49,7 +49,12 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
+    <div>
+      {{ content.field_quote }}
+    </div>
+    <div>
+      {{ content.field_quote_source }}
+    </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}
