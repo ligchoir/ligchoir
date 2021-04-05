@@ -1,75 +1,73 @@
-
-
-#clau-page-container-id {
-    padding-top: 10.0em; 
-
+#block-clau2-main-menu {
+  padding-top: 5.0em;
+  font-size: 24px;
+  width: 100%;
+}
+  
+#block-clau2-main-menu li {
+  margin-right: 5px;
+  display: inline;
 }
 
-.page-node-type-home {
-
+#block-clau2-main-menu li a {
+  font-size: 24px;
+  color: rgb(224, 224, 224);
+  text-decoration: none;
+}
+  
+#block-clau2-main-menu li a.is-active {
+  font-size: 24px;
+  color: white;
+  background-color:transparent;
 }
 
-
-
-.menu--main {
-   padding-top: 5.0em;
-
-    font-size: 24px;
-    width: 100%;
-  }
-  
-  ul.menu.menu--main.nav.navbar-nav li a {
-    font-size: 24px;
-    color: rgb(224, 224, 224);
-  }
-  
-  ul.menu.menu--main.nav.navbar-nav li a.is-active {
-    font-size: 24px;
-    color: white;
-    background-color:transparent;
-  }
-  
+  /*
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   
     font-size: 24px;
 
   }
+  */
   
 
 
-
+/*
 .navbar {
     border: 0;
     padding-left: 0;
   }
+  */
   
+  /*
   .navbar-default {
       background-color:transparent;
   }
+  */
 
-ul.menu--main a:hover {
-    color: white;
+#block-clau2-main-menu ul a:hover {
+  color: white;
 }
 
-ul.menu--main a {
-
-    font-family: 'Vegur';
-    font-style: normal;
-    font-weight: 700;
-    
-    font-size: 0.7em;
-    padding-left: 0;
+#block-clau2-main-menu ul a {
+  font-family: 'Vegur';
+  font-style: normal;
+  font-weight: 700;
+  padding-left: 0;
 }
 
+/*
+#block-clau2-main-menu li a.is-active {
+   content: "" 
+  position: absolute;
+  width: 72px;
+  height: 1px;
 
+  bottom: 0px;
+  border-bottom: 4px solid rgb(255, 0, 0);
+}
+*/
 
-ul.menu--main a.is-active:before {
-content: "";
-position: absolute;
-width: 72px;
-height: 1px;
-
-bottom: 0px;
-border-bottom: 4px solid rgb(255, 0, 0);
-
+#block-clau2-main-menu li a.is-active {
+  border-bottom: 4px solid rgb(255, 0, 0);
+  padding-bottom: 10px;
 }

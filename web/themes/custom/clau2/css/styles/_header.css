@@ -1,6 +1,6 @@
 
 
-.region-header #block-ligcinitials {
+#block-clau2-ligcinitials {
   font-family: 'Vegur';
   font-style: normal;
   font-weight: 700;
@@ -13,7 +13,7 @@
   line-height: 0.8em;
 }
 
-.region-header #block-ligcfullname {
+#block-clau2-ligcfullname {
   font-family: 'Vegur';
   font-style: normal;
   font-weight: 700;
@@ -24,7 +24,7 @@
 }
 
 
-.region-navigation #block-ligcinitials-2 {
+#block-clau2-ligcinitials-2 {
   font-family: 'Vegur';
   font-style: normal;
   font-weight: 700;
@@ -38,7 +38,7 @@
   line-height: 0.8em;
 }
 
-.region-navigation #block-ligcfullname-2 {
+#block-clau2-ligcfullname-2{
   color: white;
   font-size: 0.8em;
   position: absolute;
@@ -49,20 +49,20 @@
 
 
 @media screen and (max-width: 991) {
-  .region-navigation #block-ligcinitials-2 {
+  #block-clau2-ligcinitials-2 {
     left: 0.5em;
   }
-  .region-navigation #block-ligcfullname-2 {  
+  #block-clau2-ligcfullname-2 {  
 
     left: 4.1em;
   }
 }
 
 @media screen and (min-width: 769) {
-  .region-navigation #block-ligcinitials-2 {
+  #block-clau2-ligcinitials-2 {
     left: 0em;
   }
-  .region-navigation #block-ligcfullname-2 {  
+  #block-clau2-ligcfullname-2 {  
 
     left: 0em;
   }
