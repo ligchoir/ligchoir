@@ -1,7 +1,7 @@
 name: Clau2
 type: theme
 description: Self-contained theme
-base theme: stark
+base theme: classy
 core: 8.x
 core_version_requirement: ^8 || ^9
 version: 8.x-1.0
@@ -9,8 +9,14 @@ libraries:
   - clau2/design
 
 
+# ordering of regions are defined in:
+# /Users/user/Work/ligchoir/dev/sites/ligc-develop/web/core/lib/Drupal/Core/Extension/ThemeExtensionList.php
+# so we need to redefine the order for it to more easily correspond to the ordering on the screem
+
+
 regions:
   header: Header
   primary_menu: Primary Menu
   content: Content
   footer: 'Footer'
+
