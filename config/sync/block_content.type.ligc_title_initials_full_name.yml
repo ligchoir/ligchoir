@@ -1,0 +1,8 @@
+uuid: 6c98fc40-0888-4b53-a339-08b3ec7c196c
+langcode: en
+status: true
+dependencies: {  }
+id: ligc_title_initials_full_name
+label: 'LIGC title - initials and full name'
+revision: 0
+description: ''

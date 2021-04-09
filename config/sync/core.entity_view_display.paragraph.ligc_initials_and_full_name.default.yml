@@ -1,0 +1,46 @@
+uuid: 8ea43e58-e84f-4d23-b178-595ef00cc36a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ligc_initials_and_full_name.field_full_name
+    - field.field.paragraph.ligc_initials_and_full_name.field_initials
+    - field.field.paragraph.ligc_initials_and_full_name.field_title_size
+    - paragraphs.paragraphs_type.ligc_initials_and_full_name
+  module:
+    - entity_class_formatter
+    - field_formatter_class
+id: paragraph.ligc_initials_and_full_name.default
+targetEntityType: paragraph
+bundle: ligc_initials_and_full_name
+mode: default
+content:
+  field_full_name:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_initials:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title_size:
+    weight: 2
+    label: hidden
+    settings:
+      prefix: ligc-title-
+      suffix: ''
+      attr: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    type: entity_class_formatter
+    region: content
+hidden: {  }

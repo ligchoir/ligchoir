@@ -1,14 +1,18 @@
 uuid: 846af1cd-4799-48f1-befa-c217efef62a4
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:ligc_full_name:c6326ef0-06ec-4b16-87fa-f178e4d16721'
   module:
+    - block_classes
     - block_content
     - ctools
   theme:
     - clau2
+third_party_settings:
+  block_classes:
+    block_class: ligc-title-small
 id: clau2_ligcfullname_2
 theme: clau2
 region: header

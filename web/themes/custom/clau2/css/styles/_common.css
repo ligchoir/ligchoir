@@ -1,5 +1,15 @@
 #clau-page-container-id {
-  padding-top: 10.0em; 
+  margin-top: 10.0em; 
+}
+
+.ligc-text {
+  font-family: 'Vegur';
+  font-style: normal;
+}
+
+.ligc-heading {
+  font-weight: 700;
+  color: white;
 }
 
 header {
@@ -7,7 +17,7 @@ header {
 }
 
 nav {
-  
+
 }
 
 main {

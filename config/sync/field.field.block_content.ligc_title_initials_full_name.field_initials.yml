@@ -1,0 +1,21 @@
+uuid: c567ee05-7f0b-46b7-b773-e5b08c47efac
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ligc_title_initials_full_name
+    - field.storage.block_content.field_initials
+id: block_content.ligc_title_initials_full_name.field_initials
+field_name: field_initials
+entity_type: block_content
+bundle: ligc_title_initials_full_name
+label: Initials
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: LIGC
+default_value_callback: ''
+settings: {  }
+field_type: string

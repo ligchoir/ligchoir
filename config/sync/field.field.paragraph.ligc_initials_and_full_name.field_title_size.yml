@@ -1,0 +1,21 @@
+uuid: d7c69f3b-aec7-4b2e-bb34-0aab40c48a81
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title_size
+    - paragraphs.paragraphs_type.ligc_initials_and_full_name
+  module:
+    - options
+id: paragraph.ligc_initials_and_full_name.field_title_size
+field_name: field_title_size
+entity_type: paragraph
+bundle: ligc_initials_and_full_name
+label: 'Title Size'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

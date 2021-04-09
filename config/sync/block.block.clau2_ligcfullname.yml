@@ -1,6 +1,6 @@
 uuid: 3342617f-b364-4695-b779-9d85ea3b3c34
 langcode: en
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:ligc_full_name:c6326ef0-06ec-4b16-87fa-f178e4d16721'
@@ -12,7 +12,7 @@ dependencies:
     - clau2
 third_party_settings:
   block_classes:
-    block_class: clau-2-initials-full-name
+    block_class: 'ligc-heading ligc-title-large'
 id: clau2_ligcfullname
 theme: clau2
 region: content

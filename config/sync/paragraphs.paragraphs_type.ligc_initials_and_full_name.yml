@@ -1,0 +1,10 @@
+uuid: 6f458e08-870c-4e0c-988c-9e199034c860
+langcode: en
+status: true
+dependencies: {  }
+id: ligc_initials_and_full_name
+label: 'LIGC initials and full name'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

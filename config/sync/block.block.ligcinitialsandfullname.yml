@@ -1,0 +1,37 @@
+uuid: 4c5c6910-d29b-4d05-ae6a-8097a442b94f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:ligc_title_initials_full_name:74ea35df-a50c-44c0-be35-022274a13010'
+  module:
+    - block_classes
+    - block_content
+    - ctools
+  theme:
+    - clau2
+third_party_settings:
+  block_classes:
+    block_class: 'ligc-text ligc-heading ligc-title-small'
+id: ligcinitialsandfullname
+theme: clau2
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
+settings:
+  id: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
+  label: 'LIGC initials and full name'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      home: home
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

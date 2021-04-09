@@ -1,31 +1,53 @@
 
 
-#block-clau2-ligcinitials {
-  font-family: 'Vegur';
-  font-style: normal;
-  font-weight: 700;
-  
-  color: white;
+
+
+.ligc-title-large .field--name-field-initials {
   font-size: 15em;
-  padding-left: 0;
-  padding-top: 0;
-  padding-bottom: 0;
 }
 
-#block-clau2-ligcfullname {
-  font-family: 'Vegur';
-  font-style: normal;
-  font-weight: 700;
-
-  color: white;
+.ligc-title-large .field--name-field-full-name {
   font-size: 2.0em;
   padding-left: 0.4em;
   position: relative;
   top: -1.5em;
 }
 
+.ligc-title-small .field--name-field-initials {
+  font-size: 6.0em;
+  position: absolute;
+  line-height: 0.8em;
+}
 
-#block-clau2-ligcinitials-2 {
+.ligc-title-small .field--name-field-full-name  {
+  font-size: 0.8em;
+  position: absolute;
+}
+
+
+
+
+/*
+.ligc-title-initials-large {
+
+
+  font-size: 15em;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.ligc-title-full-name-large {
+  font-family: 'Vegur';
+  font-style: normal;
+  font-weight: 700;
+
+  color: white;
+
+}
+
+
+.ligc-title-initials-small {
   font-family: 'Vegur';
   font-style: normal;
   font-weight: 700;
@@ -39,7 +61,7 @@
   line-height: 0.8em;
 }
 
-#block-clau2-ligcfullname-2{
+.ligc-title-full-name-small {
   color: white;
   font-size: 0.8em;
   position: absolute;
@@ -47,6 +69,7 @@
 
 
 }
+*/
 
 
 @media screen and (max-width: 991) {
