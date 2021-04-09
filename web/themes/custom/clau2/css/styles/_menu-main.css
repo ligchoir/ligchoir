@@ -1,22 +1,28 @@
-#block-clau2-main-menu {
+.ligc-main-menu {
   font-size: 24px;
   width: 100%;
 }
   
-#block-clau2-main-menu li {
+.ligc-main-menu li {
   margin-right: 5px;
   display: inline;
 }
 
-#block-clau2-main-menu li a {
-  font-size: 24px;
-  color: rgb(224, 224, 224);
+.ligc-main-menu li a {
+  font-weight: 700;
+  color: rgb(200, 200, 200);
   text-decoration: none;
 }
-  
-#block-clau2-main-menu li a.is-active {
-  font-size: 24px;
+
+.ligc-main-menu li a:hover {
+  font-weight: 700;
   color: white;
+}
+
+  
+.ligc-main-menu ul.menu a.is-active {
+  color: white;
+  font-size: 24px;
   background-color:transparent;
 }
 
@@ -43,19 +49,16 @@
   }
   */
 
-#block-clau2-main-menu ul a:hover {
-  color: white;
-}
 
-#block-clau2-main-menu ul a {
-  font-family: 'Vegur';
-  font-style: normal;
+
+
+.ligc-main-menu ul a {
   font-weight: 700;
   padding-left: 0;
 }
 
 /*
-#block-clau2-main-menu li a.is-active {
+.ligc-main-menu li a.is-active {
    content: "" 
   position: absolute;
   width: 72px;
@@ -66,7 +69,7 @@
 }
 */
 
-#block-clau2-main-menu li a.is-active {
+.ligc-main-menu li a.is-active {
   border-bottom: 4px solid rgb(255, 0, 0);
   padding-bottom: 10px;
 }

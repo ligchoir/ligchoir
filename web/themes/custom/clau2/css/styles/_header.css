@@ -1,7 +1,4 @@
 
-
-
-
 .ligc-title-large .field--name-field-initials {
   font-size: 15em;
 }
@@ -24,54 +21,7 @@
   position: absolute;
 }
 
-
-
-
 /*
-.ligc-title-initials-large {
-
-
-  font-size: 15em;
-  padding-left: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.ligc-title-full-name-large {
-  font-family: 'Vegur';
-  font-style: normal;
-  font-weight: 700;
-
-  color: white;
-
-}
-
-
-.ligc-title-initials-small {
-  font-family: 'Vegur';
-  font-style: normal;
-  font-weight: 700;
-
-  color: white;
-  font-size: 6.0em;
-  position: absolute;
-
-
-
-  line-height: 0.8em;
-}
-
-.ligc-title-full-name-small {
-  color: white;
-  font-size: 0.8em;
-  position: absolute;
-
-
-
-}
-*/
-
-
 @media screen and (max-width: 991) {
   #block-clau2-ligcinitials-2 {
     left: 0.5em;
@@ -92,7 +42,7 @@
   }
 }
 
-/*
+
 @media screen and (min-width: 1200) { {
   .region-navigation #block-ligcinitials-2 {
     left: -0.9em;
