@@ -1,6 +1,10 @@
 #clau-page-container-id {
   margin-top: 10.0em; 
-  width: 80%;
+}
+
+.layout-container {
+  max-width: 80%;
+  margin: auto;
 }
 
 .ligc-text {
