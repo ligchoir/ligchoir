@@ -9,7 +9,7 @@ _core:
 id: clau2_local_tasks
 theme: clau2
 region: content
-weight: -3
+weight: -2
 provider: null
 plugin: local_tasks_block
 settings:

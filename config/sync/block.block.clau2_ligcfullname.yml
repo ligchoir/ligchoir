@@ -5,14 +5,18 @@ dependencies:
   content:
     - 'block_content:ligc_full_name:c6326ef0-06ec-4b16-87fa-f178e4d16721'
   module:
+    - block_classes
     - block_content
     - ctools
   theme:
     - clau2
+third_party_settings:
+  block_classes:
+    block_class: clau-2-initials-full-name
 id: clau2_ligcfullname
 theme: clau2
-region: header
-weight: -2
+region: content
+weight: -3
 provider: null
 plugin: 'block_content:c6326ef0-06ec-4b16-87fa-f178e4d16721'
 settings:
