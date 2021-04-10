@@ -1,0 +1,19 @@
+uuid: 0179ae64-f71c-49aa-aed4-209285c05535
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+name: Text
+format: text
+weight: 0
+filters:
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }

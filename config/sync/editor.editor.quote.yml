@@ -1,0 +1,36 @@
+uuid: 3ecb5d87-3ffd-4aa4-b4a0-375d1466372d
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.quote
+  module:
+    - ckeditor
+format: quote
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    language:
+      language_list: un
+    stylescombo:
+      styles: ''
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null
