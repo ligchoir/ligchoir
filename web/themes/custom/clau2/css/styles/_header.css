@@ -14,18 +14,22 @@
   top: -1.5em;
 }
 
+.ligc-title-small > * {
+  margin-left: 50px;
+}
+
 .ligc-title-small .field--name-field-initials {
   font-size: 6.0em;
+  line-height: 0.8em;
   position: absolute;
   top: 0.5em;
-  line-height: 0.8em;
 }
 
 .ligc-title-small .field--name-field-full-name  {
   left: 0.4em;
   font-size: 0.8em;
-  top: 9.5em;
   position: absolute;
+  top: 9.5em;
 }
 
 /*
