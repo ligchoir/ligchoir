@@ -8,12 +8,15 @@ span.ligc-cta a
 .ligc-cta {
   border-radius: 0.5em;
   border: 0.2em solid;
-  padding: 0.8em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 2em;
+  padding-right: 2em;
   color: white;
   display: inline-block;
 }
 
 .ligc-cta-outer {
   padding-top: 1.0em;
-  padding-left: 0.8em;
+  padding-left: 1.5em;
 }
