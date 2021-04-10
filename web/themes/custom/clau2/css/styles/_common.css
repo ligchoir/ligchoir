@@ -12,11 +12,13 @@
   color: white;
 }
 
+/* block regions dont render if empty */
 .ligc-header {
 
 }
 
 header[role='banner'] {
+  margin-top: 50px;
   height: 8em;
 }
 
