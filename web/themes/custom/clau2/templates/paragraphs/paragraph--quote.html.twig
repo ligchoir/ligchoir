@@ -53,7 +53,15 @@
     <div>
       {{ content.field_quote }}
     </div>
-    <hr class="ligc-small-bar"/>
+    <hr style="
+      width: 20px;
+      height: 2px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: {{ paragraph.field_colour_text.0.entity.field_mod_color.value.0.color }};
+      border: 0;
+    "
+    />
     <div>
       {{ content.field_quote_source }}
     </div>
