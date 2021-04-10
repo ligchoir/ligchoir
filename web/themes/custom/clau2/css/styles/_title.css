@@ -28,6 +28,12 @@
   font-size: 0.8em;
 }
 
+.ligc-landing-page-title {
+  padding-left: 1em;
+  font-size: 2.5em;
+}
+
+
 /*
 @media screen and (max-width: 991) {
   #block-clau2-ligcinitials-2 {

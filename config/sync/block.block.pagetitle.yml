@@ -1,0 +1,30 @@
+uuid: fc9a3ed5-878c-4f4b-a28a-2d4fef942270
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - look
+  theme:
+    - clau2
+third_party_settings:
+  block_classes:
+    block_class: 'ligc-text ligc-heading ligc-justify ligc-landing-page-title'
+id: pagetitle
+theme: clau2
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  look:
+    id: look
+    looks:
+      1: '1'
+    negate: true
+    context_mapping: {  }

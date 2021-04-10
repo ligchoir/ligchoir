@@ -7,6 +7,7 @@ design:
       css/styles/_cta.css: {}
       css/styles/_title.css: {}
       css/styles/_menu-main.css: {}
+      css/styles/_quote.css: {}
       css/common/style.css: {}
   js:
     js/theme.js: {}

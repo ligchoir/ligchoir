@@ -7,26 +7,22 @@ dependencies:
     - taxonomy.vocabulary.modifiers_color
   module:
     - color_field
-    - text
+    - field_formatter_class
 id: taxonomy_term.modifiers_color.default
 targetEntityType: taxonomy_term
 bundle: modifiers_color
 mode: default
 content:
-  description:
-    label: hidden
-    type: text_default
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_mod_color:
     type: color_field_formatter_text
-    weight: 1
+    weight: 0
     region: content
     label: hidden
     settings:
+      opacity: true
       format: hex
-      opacity: '1'
-    third_party_settings: {  }
-hidden: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+hidden:
+  description: true
