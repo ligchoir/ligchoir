@@ -1,6 +1,6 @@
 uuid: 3cb1f4e4-f286-4bb1-b216-19ffe57c947f
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: clau2_messages
 theme: clau2
-region: content
-weight: 2
+region: help
+weight: -3
 provider: null
 plugin: system_messages_block
 settings:

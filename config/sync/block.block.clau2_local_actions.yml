@@ -8,8 +8,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: clau2_local_actions
 theme: clau2
-region: content
-weight: 0
+region: help
+weight: -1
 provider: null
 plugin: local_actions_block
 settings:

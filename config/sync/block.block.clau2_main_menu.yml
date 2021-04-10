@@ -5,15 +5,19 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - block_classes
     - system
   theme:
     - clau2
+third_party_settings:
+  block_classes:
+    block_class: 'ligc-text ligc-main-menu'
 _core:
   default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
 id: clau2_main_menu
 theme: clau2
 region: primary_menu
-weight: -5
+weight: -3
 provider: null
 plugin: 'system_menu_block:main'
 settings:

@@ -1,5 +1,5 @@
 #clau-page-container-id {
-  margin-top: 15.0em; 
+
 }
 
 .ligc-text {
@@ -10,6 +10,14 @@
 .ligc-heading {
   font-weight: 700;
   color: white;
+}
+
+.ligc-header {
+
+}
+
+header[role='banner'] {
+  height: 8em;
 }
 
 .ligc-justify {

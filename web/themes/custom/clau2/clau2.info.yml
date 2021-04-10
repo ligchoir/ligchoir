@@ -15,6 +15,7 @@ libraries:
 
 
 regions:
+  help: Help
   header: Header
   primary_menu: Primary Menu
   content: Content

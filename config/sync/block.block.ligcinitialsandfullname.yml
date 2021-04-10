@@ -16,7 +16,7 @@ third_party_settings:
 id: ligcinitialsandfullname
 theme: clau2
 region: header
-weight: 0
+weight: -3
 provider: null
 plugin: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
 settings:
