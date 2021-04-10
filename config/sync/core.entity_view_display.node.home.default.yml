@@ -52,7 +52,7 @@ content:
       link: ''
     third_party_settings:
       field_formatter_class:
-        class: ligc-cta-outer
+        class: ''
       ds:
         ds_limit: ''
     type: entity_reference_revisions_entity_view
