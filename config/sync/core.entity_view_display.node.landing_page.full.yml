@@ -9,7 +9,9 @@ dependencies:
     - field.field.node.landing_page.field_main_call_to_action_area
     - node.type.landing_page
   module:
+    - ds
     - entity_reference_revisions
+    - field_formatter_class
     - layout_builder
     - user
 third_party_settings:
@@ -38,7 +40,11 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ligc-justify
+      ds:
+        ds_limit: ''
 hidden:
   field_look: true
   layout_builder__layout: true
