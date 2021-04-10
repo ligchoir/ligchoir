@@ -26,6 +26,9 @@ web/sites/*/settings.local.php
 # Ignore Drupal's file directory
 /web/sites/*/files/
 
+# ignore local services.yml settings
+web/sites/default/services.yml
+
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
 

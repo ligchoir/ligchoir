@@ -2,11 +2,6 @@
   margin-top: 10.0em; 
 }
 
-.layout-container {
-  max-width: 80%;
-  margin: auto;
-}
-
 .ligc-text {
   font-family: 'Vegur';
   font-style: normal;
@@ -15,6 +10,11 @@
 .ligc-heading {
   font-weight: 700;
   color: white;
+}
+
+.ligc-justify {
+  max-width: 80%;
+  margin: auto;
 }
 
 header {
