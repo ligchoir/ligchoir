@@ -35,6 +35,10 @@
   {% endif %}
   {{ title_suffix }}
   {{ content }}
+  {# https://stackoverflow.com/a/8355239 #}
+  {{ term.description.value | raw }}
+
+  {{ vardumper( term.description ) }}
 </div>
 {% else %}
 <h1>other</h1>
