@@ -1,3 +1,30 @@
+.ligc-cta-outer {
+  padding-top: 1.0em;
+  padding-left: 1.5em;
+}
+
+.field--name-field-main-call-to-action-area {
+  margin-bottom: 5em;
+}
+
+
+.ligc-cta-fixed {
+  border-radius: 0.5em;
+  border: 0.2em solid;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  width: 15em;
+  color: white;
+  display: inline-block;
+  text-align: center;
+}
+
+span.ligc-cta-fixed a
+{
+  text-decoration: none;
+  color: white;
+}
+
 
 span.ligc-cta a
 {
@@ -14,13 +41,4 @@ span.ligc-cta a
   padding-right: 2em;
   color: white;
   display: inline-block;
-}
-
-.ligc-cta-outer {
-  padding-top: 1.0em;
-  padding-left: 1.5em;
-}
-
-.field--name-field-main-call-to-action-area {
-  margin-bottom: 5em;
 }
