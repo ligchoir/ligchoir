@@ -1,0 +1,30 @@
+uuid: bc4848bb-0bd5-498b-a809-2b52f7c38a06
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_text_block_width_units
+field_name: field_text_block_width_units
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '%'
+      label: '%'
+    -
+      value: em
+      label: em
+    -
+      value: px
+      label: px
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

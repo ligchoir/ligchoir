@@ -4,8 +4,12 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_tickets
+    - field.field.node.event.field_venue
     - node.type.event
   module:
+    - paragraphs
     - path
     - text
 id: node.event.default
@@ -29,6 +33,40 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_dates:
+    type: entity_reference_paragraphs
+    weight: 122
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_tickets:
+    type: entity_reference_paragraphs
+    weight: 125
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_venue:
+    weight: 124
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   path:
     type: path
     weight: 30

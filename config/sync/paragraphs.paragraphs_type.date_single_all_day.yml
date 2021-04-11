@@ -1,0 +1,10 @@
+uuid: e6dae60d-e181-46fc-ab17-e7a25f6809ae
+langcode: en
+status: true
+dependencies: {  }
+id: date_single_all_day
+label: 'Date Single All Day'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,21 @@
+uuid: cb41222d-1d13-4612-b8e6-95875c36ac07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date_range_all_day
+    - paragraphs.paragraphs_type.date_range_all_day
+  module:
+    - datetime_range
+id: paragraph.date_range_all_day.field_date_range_all_day
+field_name: field_date_range_all_day
+entity_type: paragraph
+bundle: date_range_all_day
+label: 'Date Range All Day'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

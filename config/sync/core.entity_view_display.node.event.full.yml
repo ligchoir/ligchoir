@@ -1,0 +1,67 @@
+uuid: 35603147-6aa9-40f6-8ff3-273e35057b11
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.body
+    - field.field.node.event.field_dates
+    - field.field.node.event.field_tickets
+    - field.field.node.event.field_venue
+    - node.type.event
+  module:
+    - ds
+    - entity_reference_revisions
+    - field_formatter_class
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_dates:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+    region: content
+  field_tickets:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_venue: true

@@ -1,0 +1,31 @@
+uuid: 919b7891-2c1f-42a5-8465-32c14566a985
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_time_single.field_date_time_single
+    - paragraphs.paragraphs_type.date_time_single
+  module:
+    - datetime
+id: paragraph.date_time_single.default
+targetEntityType: paragraph
+bundle: date_time_single
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_date_time_single:
+    weight: -9
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden:
+  created: true
+  status: true

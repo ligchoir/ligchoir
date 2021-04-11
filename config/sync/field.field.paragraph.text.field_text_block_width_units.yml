@@ -1,0 +1,23 @@
+uuid: abcafaf5-6f97-4eaf-a81e-f1e0e2a61f7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text_block_width_units
+    - paragraphs.paragraphs_type.text
+  module:
+    - options
+id: paragraph.text.field_text_block_width_units
+field_name: field_text_block_width_units
+entity_type: paragraph
+bundle: text
+label: 'Text block width units'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '%'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

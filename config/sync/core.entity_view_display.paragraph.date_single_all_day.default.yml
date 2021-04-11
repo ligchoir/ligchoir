@@ -1,0 +1,24 @@
+uuid: 1e8aed39-882f-4ddc-9b25-0657fe7014d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_single_all_day.field_date_single_all_day
+    - paragraphs.paragraphs_type.date_single_all_day
+  module:
+    - datetime
+id: paragraph.date_single_all_day.default
+targetEntityType: paragraph
+bundle: date_single_all_day
+mode: default
+content:
+  field_date_single_all_day:
+    weight: 0
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

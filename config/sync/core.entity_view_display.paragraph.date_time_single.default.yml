@@ -1,0 +1,24 @@
+uuid: 33edd31f-c0d5-4f64-a143-c6bcf595f841
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.date_time_single.field_date_time_single
+    - paragraphs.paragraphs_type.date_time_single
+  module:
+    - datetime
+id: paragraph.date_time_single.default
+targetEntityType: paragraph
+bundle: date_time_single
+mode: default
+content:
+  field_date_time_single:
+    weight: 0
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

@@ -1,0 +1,10 @@
+uuid: bdda31ee-a1d6-4a51-9900-bb6ef1dc4d49
+langcode: en
+status: true
+dependencies: {  }
+id: date_range_all_day
+label: 'Date Range All Day'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

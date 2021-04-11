@@ -1,0 +1,81 @@
+uuid: bf1e89c3-08c3-4c16-943f-3da55138a177
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.event
+    - paragraphs.paragraphs_type.date_range_all_day
+    - paragraphs.paragraphs_type.date_single_all_day
+    - paragraphs.paragraphs_type.date_time_single
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: node.event.field_dates
+field_name: field_dates
+entity_type: node
+bundle: event
+label: Dates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      date_range_all_day: date_range_all_day
+      date_single_all_day: date_single_all_day
+      date_time_single: date_time_single
+    target_bundles_drag_drop:
+      about_intro:
+        weight: 17
+        enabled: false
+      call_to_action:
+        weight: 18
+        enabled: false
+      call_to_action_with_content:
+        weight: 19
+        enabled: false
+      colors_modifier:
+        weight: 20
+        enabled: false
+      contact:
+        weight: 21
+        enabled: false
+      custom_colors_modifier:
+        weight: 22
+        enabled: false
+      date_range_all_day:
+        enabled: true
+        weight: 16
+      date_single_all_day:
+        enabled: true
+        weight: 23
+      date_time_single:
+        enabled: true
+        weight: 24
+      image:
+        weight: 25
+        enabled: false
+      image_bg_modifier:
+        weight: 26
+        enabled: false
+      image_fx_modifier:
+        weight: 27
+        enabled: false
+      quote:
+        weight: 28
+        enabled: false
+      social_and_contact_links:
+        weight: 29
+        enabled: false
+      text:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

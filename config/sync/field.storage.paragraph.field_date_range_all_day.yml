@@ -1,0 +1,20 @@
+uuid: c8ae9db9-e80a-4001-b2e5-1bddf3065d3e
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - paragraphs
+id: paragraph.field_date_range_all_day
+field_name: field_date_range_all_day
+entity_type: paragraph
+type: daterange
+settings:
+  datetime_type: allday
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -6,8 +6,11 @@ dependencies:
     - field.field.paragraph.text.field_colour_background
     - field.field.paragraph.text.field_colour_text
     - field.field.paragraph.text.field_text
+    - field.field.paragraph.text.field_text_block_width
+    - field.field.paragraph.text.field_text_block_width_units
     - paragraphs.paragraphs_type.text
   module:
+    - options
     - text
 id: paragraph.text.default
 targetEntityType: paragraph
@@ -16,7 +19,7 @@ mode: default
 content:
   field_colour_background:
     weight: 2
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -24,7 +27,7 @@ content:
     region: content
   field_colour_text:
     weight: 1
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -36,5 +39,20 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_text_block_width:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_text_block_width_units:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
     region: content
 hidden: {  }
