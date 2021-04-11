@@ -47,11 +47,18 @@
   ]
 %}
 {% block paragraph %}
+
+{{ vardumper( paragraph.field_link.0.uri ) }}
+
+
   <div class="ligc-cta-outer">
+  <a href="{{ paragraph.field_link.0.url }}">
     <span{{ attributes.addClass(classes).addClass('ligc-cta-fixed') }}>
       {% block content %}
         {{ content }}
       {% endblock %}
     </span>
+    </a>
   </div>
+
 {% endblock paragraph %}
