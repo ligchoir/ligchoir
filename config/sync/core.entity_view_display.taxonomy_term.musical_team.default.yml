@@ -1,0 +1,30 @@
+uuid: 530fb973-2fa8-4f7e-bfbb-af8ff6a766e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.musical_team.field_image
+    - taxonomy.vocabulary.musical_team
+  module:
+    - text
+id: taxonomy_term.musical_team.default
+targetEntityType: taxonomy_term
+bundle: musical_team
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }
