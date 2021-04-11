@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - taxonomy.vocabulary.musical_team
   module:
     - taxonomy
@@ -57,7 +58,7 @@ display:
         type: 'entity:taxonomy_term'
         options:
           relationship: none
-          view_mode: default
+          view_mode: teaser
       fields:
         name:
           id: name
@@ -181,10 +182,11 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: 'Musical Team Block'
     position: 1
     display_options:
       display_extenders: {  }
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:

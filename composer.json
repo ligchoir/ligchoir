@@ -43,6 +43,7 @@
         "drupal/structure_sync": "^1.16",
         "drupal/token": "^1.6",
         "drupal/twig_vardumper": "2.2",
+        "drupal/viewsreference": "^1.7",
         "drupal/webform": "^6.0",
         "drush/drush": "^10.2"
     },

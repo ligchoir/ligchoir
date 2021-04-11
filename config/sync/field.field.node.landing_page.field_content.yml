@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.social_and_contact_links
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
     - paragraph_blocks
@@ -35,10 +36,11 @@ settings:
     negate: 0
     target_bundles:
       about_intro: about_intro
-      text: text
       call_to_action: call_to_action
+      text: text
       call_to_action_with_content: call_to_action_with_content
       contact: contact
+      view: view
       image: image
       quote: quote
       social_and_contact_links: social_and_contact_links
@@ -61,6 +63,15 @@ settings:
       custom_colors_modifier:
         weight: 17
         enabled: false
+      date_range_all_day:
+        weight: 24
+        enabled: false
+      date_single_all_day:
+        weight: 25
+        enabled: false
+      date_time_single:
+        weight: 26
+        enabled: false
       image:
         enabled: true
         weight: 18
@@ -79,4 +90,7 @@ settings:
       text:
         enabled: true
         weight: 13
+      view:
+        enabled: true
+        weight: 17
 field_type: entity_reference_revisions

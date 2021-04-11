@@ -1,2 +1,18 @@
 <?php
 
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for taxonomies.
+ *
+ * {@inheritdoc}
+ */
+
+ /*
+function clau2_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars, $hook) {
+  if($vars['elements']['#view_mode'] == 'teaser') {
+    $suggestions[] = 'taxonomy_term__teaser'; // note underscores
+  }
+}
+*/
+
+
+
