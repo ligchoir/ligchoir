@@ -48,21 +48,14 @@
 %}
 {% block paragraph %}
 
-<h1>uri<h1>
-{{ vardumper( paragraph.field_link.0.uri ) }}
-
-<h1>url</h1>
-{{ vardumper( paragraph.field_link.0.url ) }}
-
-
   <div class="ligc-cta-outer">
   <a href="{{ paragraph.field_link.0.url }}">
     <span{{ attributes.addClass(classes).addClass('ligc-cta-fixed') }}>
       {% block content %}
-        {{ content }}
+        {{ paragraph.field_link.0.title }}
       {% endblock %}
     </span>
-    </a>
+  </a>
   </div>
 
 {% endblock paragraph %}
