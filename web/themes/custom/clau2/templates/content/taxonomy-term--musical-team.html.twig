@@ -27,18 +27,9 @@
 #}
 {# taxonomy-term--musical-team--teaser.html.twig doesnt work #}
 {% if view_mode == "teaser" %}
-<h1>{{view_mode}}</h1>
 <div{{ attributes }}>
-  {{ title_prefix }}
-  {% if name and not page %}
-    <h2><a href="{{ url }}">{{ name }}</a></h2>
-  {% endif %}
-  {{ title_suffix }}
-  {{ content }}
   {# https://stackoverflow.com/a/8355239 #}
   {{ term.description.value | raw }}
-
-  {{ vardumper( term.description ) }}
 </div>
 {% else %}
 <h1>other</h1>
