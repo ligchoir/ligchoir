@@ -9,9 +9,11 @@
 .ligc-term-img img {
     width: 30%;
     height: 30%;
+    margin: 0;
 }
 
-.ligc-term-img img {
+.ligc-term-img {
+    width: 30%;
 }
 
 .ligc-term-desc {
