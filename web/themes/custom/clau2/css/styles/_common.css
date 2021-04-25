@@ -43,6 +43,10 @@ header[role='banner'] {
 }
 
 
+.ligc-encl {
+  overflow: hidden;
+}
+
 header {
 
 }

@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.view.field_colour_background
+    - field.field.paragraph.view.field_colour_text
     - field.field.paragraph.view.field_views_display
     - paragraphs.paragraphs_type.view
   module:
@@ -20,6 +22,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_colour_background:
+    weight: -8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_colour_text:
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_views_display:
     weight: -9
     settings:

@@ -164,7 +164,21 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
-      sorts: {  }
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
       title: 'Musical Team'
       header: {  }
       footer: {  }
@@ -179,9 +193,9 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags: {  }
-  block_1:
+  musical_team_block:
     display_plugin: block
-    id: block_1
+    id: musical_team_block
     display_title: 'Musical Team Block'
     position: 1
     display_options:

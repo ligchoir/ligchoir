@@ -1,0 +1,29 @@
+uuid: 21783cb9-483c-41de-9f98-e3701c6a5436
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colour_background
+    - paragraphs.paragraphs_type.view
+    - taxonomy.vocabulary.modifiers_color
+id: paragraph.view.field_colour_background
+field_name: field_colour_background
+entity_type: paragraph
+bundle: view
+label: 'Colour - Background'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modifiers_color: modifiers_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
