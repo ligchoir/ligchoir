@@ -1,0 +1,23 @@
+.view-display-id-musical_team_block .views-row {
+    clear: both;
+}
+
+.ligc-term-left {
+  float: left; 
+}
+
+.ligc-term-img img {
+    width: 30%;
+    height: 30%;
+}
+
+.ligc-term-img img {
+}
+
+.ligc-term-desc {
+    width: 70%;
+}
+
+.ligc-term-right {
+  float: right;
+}
