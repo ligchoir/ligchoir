@@ -8,6 +8,7 @@ dependencies:
     - field.storage.node.field_tickets
     - node.type.event
   module:
+    - datetime
     - entity_reference_revisions
     - node
     - paragraphs
@@ -279,7 +280,59 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts: {  }
+      sorts:
+        field_date_range_all_day_value:
+          id: field_date_range_all_day_value
+          table: paragraph__field_date_range_all_day
+          field: field_date_range_all_day_value
+          relationship: field_dates
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
+        field_date_range_all_day_end_value:
+          id: field_date_range_all_day_end_value
+          table: paragraph__field_date_range_all_day
+          field: field_date_range_all_day_end_value
+          relationship: field_dates
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
+        field_date_single_all_day_value:
+          id: field_date_single_all_day_value
+          table: paragraph__field_date_single_all_day
+          field: field_date_single_all_day_value
+          relationship: field_dates
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
+        field_date_time_single_value:
+          id: field_date_time_single_value
+          table: paragraph__field_date_time_single
+          field: field_date_time_single_value
+          relationship: field_dates
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
       title: Events
       header: {  }
       footer: {  }
