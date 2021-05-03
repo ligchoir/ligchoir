@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_dates
     - field.storage.node.field_tickets
     - node.type.event
   module:
     - entity_reference_revisions
     - node
+    - paragraphs
     - user
 id: events
 label: Events
@@ -57,7 +59,10 @@ display:
       style:
         type: default
       row:
-        type: fields
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
       fields:
         title:
           id: title
@@ -274,27 +279,21 @@ display:
           expose:
             operator_limit_selection: false
             operator_list: {  }
-      sorts:
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          order: DESC
-          entity_type: node
-          entity_field: created
-          plugin_id: date
-          relationship: none
-          group_type: group
-          admin_label: ''
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
+      sorts: {  }
       title: Events
       header: {  }
       footer: {  }
       empty: {  }
-      relationships: {  }
+      relationships:
+        field_dates:
+          id: field_dates
+          table: node__field_dates
+          field: field_dates
+          relationship: none
+          group_type: group
+          admin_label: 'field_dates: Paragraph'
+          required: true
+          plugin_id: standard
       arguments: {  }
       display_extenders: {  }
     cache_metadata:
@@ -307,9 +306,9 @@ display:
       tags:
         - 'config:field.storage.node.field_dates'
         - 'config:field.storage.node.field_tickets'
-  block_1:
+  events_listing:
     display_plugin: block
-    id: block_1
+    id: events_listing
     display_title: Block
     position: 1
     display_options:
