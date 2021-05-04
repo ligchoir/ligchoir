@@ -7,6 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.date_time_single
   module:
     - datetime
+    - field_formatter_class
 id: paragraph.date_time_single.default
 targetEntityType: paragraph
 bundle: date_time_single
@@ -16,9 +17,11 @@ content:
     weight: 0
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
-    third_party_settings: {  }
+      format_type: long_date_time_12h
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     type: datetime_default
     region: content
 hidden: {  }
