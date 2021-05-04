@@ -14,7 +14,7 @@
   padding-top: 0.8em;
   padding-bottom: 0.8em;
   width: 15em;
-  color: white;
+  color: inherit;
   display: inline-block;
   text-align: center;
 }
@@ -22,14 +22,14 @@
 span.ligc-cta-fixed a
 {
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 
 
 span.ligc-cta a
 {
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 .ligc-cta {
