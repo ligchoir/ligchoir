@@ -35,13 +35,21 @@
 }
 */
 
+.ligc-event-summary {
+    padding-top: 2em;
+    padding-bottom: 2em;  
+}
+
+.ligc-event-summary .field--name-title {
+  display: block;
+}
 
 .ligc-event-summary .field--name-field-dates {
-   /*float: left; */
+  display: inline-block;
 }
 
 .ligc-event-summary .field--name-field-venue {
-   float: left; 
+  display: inline-block;
 }
 
 /*
@@ -52,7 +60,6 @@
     width:47%;
     margin-left: auto; 
     margin-right: auto; 
-    padding-top: 2em;
-    padding-bottom: 2em;
-    background-color: red;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
