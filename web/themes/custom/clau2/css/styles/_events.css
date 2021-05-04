@@ -1,0 +1,36 @@
+.view-display-id-musical_team_block .views-row {
+    clear: both;
+    width:47%;
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+/*
+.ligc-term-left {
+  float: left; 
+}
+*/
+
+
+.ligc-event-summary{
+    float: left; 
+    width: 76%;
+    /*
+    padding-top: 1em;
+    padding-bottom: 1em;
+    */
+}
+
+.ligc-event-tickets {
+    width: 24%;
+    float: right;
+}
+
+
+/*
+.ligc-term-right {
+  float: right;
+}
+*/

@@ -9,6 +9,7 @@ design:
       css/styles/_menu-main.css: {}
       css/styles/_quote.css: {}
       css/styles/_team.css: {}
+      css/styles/_events.css: {}
       css/common/style.css: {}
   js:
     js/theme.js: {}
