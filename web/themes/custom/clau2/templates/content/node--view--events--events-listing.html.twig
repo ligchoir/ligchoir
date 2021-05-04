@@ -84,14 +84,16 @@
 
 <article{{ attributes.addClass(classes) }}>
 <div{{ content_attributes.addClass('node__content') }}>
+<div>
 <a href="{{ url }}" rel="bookmark">
   {{ label }}
   {{ content.field_dates }}
-  {# venue #}
+  {{ content.field_venue }}
 </a>
 </div>
 <div>
   {{ content.field_tickets }}
+</div>
 </div>
 </article>
 
