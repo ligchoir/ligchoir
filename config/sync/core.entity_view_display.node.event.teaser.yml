@@ -21,7 +21,7 @@ mode: teaser
 content:
   field_dates:
     type: entity_reference_revisions_entity_view
-    weight: 1
+    weight: 0
     region: content
     label: hidden
     settings:
@@ -41,11 +41,15 @@ content:
         class: ''
       ds:
         ds_limit: ''
-  links:
-    weight: 0
+  field_venue:
+    type: entity_reference_entity_view
+    weight: 1
     region: content
-    settings: {  }
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
     third_party_settings: {  }
 hidden:
   body: true
-  field_venue: true
+  links: true
