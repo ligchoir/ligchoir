@@ -18,7 +18,7 @@ content:
     label: hidden
     settings:
       timezone_override: ''
-      format_type: long_date_only
+      format_type: month_short_hand_day
     third_party_settings:
       field_formatter_class:
         class: ''

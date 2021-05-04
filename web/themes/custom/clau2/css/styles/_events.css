@@ -63,3 +63,12 @@
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
+.ligc-event-summary a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ligc-event-tickets .ligc-cta-fixed {
+  color: inherit;
+}
