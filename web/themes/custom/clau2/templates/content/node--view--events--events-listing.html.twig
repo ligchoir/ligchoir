@@ -82,8 +82,7 @@
 %}
 {{ attach_library('classy/node') }}
 
-<article{{ attributes.addClass(classes) }}>
-<div{{ content_attributes.addClass('node__content') }}>
+<div{{ attributes.addClass(classes).addClass('ligc-event-list-item') }}>
 <div class="ligc-event-summary">
 <a href="{{ url }}" rel="bookmark">
   {{ label }}
@@ -95,7 +94,6 @@
   {{ content.field_tickets }}
 </div>
 </div>
-</article>
 
 
 

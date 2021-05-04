@@ -34,3 +34,25 @@
   float: right;
 }
 */
+
+
+.ligc-event-summary .field--name-field-dates {
+   /*float: left; */
+}
+
+.ligc-event-summary .field--name-field-venue {
+   float: left; 
+}
+
+/*
+.node--type-event .node--view-mode-teaser 
+*/
+.ligc-event-list-item {
+    clear: both;
+    width:47%;
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 2em;
+    padding-bottom: 2em;
+    background-color: red;
+}
