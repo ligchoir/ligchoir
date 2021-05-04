@@ -25,6 +25,10 @@ span.ligc-cta-fixed a
   color: inherit;
 }
 
+.ligc-cta-fixed {
+  color: white;
+}
+
 
 span.ligc-cta a
 {
