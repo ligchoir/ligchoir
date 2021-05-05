@@ -10,6 +10,7 @@ design:
       css/styles/_quote.css: {}
       css/styles/_team.css: {}
       css/styles/_events.css: {}
+      css/styles/_contact.css: {}
       css/common/style.css: {}
   js:
     js/theme.js: {}

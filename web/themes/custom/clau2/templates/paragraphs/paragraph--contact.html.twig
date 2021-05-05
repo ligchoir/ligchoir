@@ -49,7 +49,14 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-      {{ content }}
+      <div class="ligc-contact-left">
+       {{ content.field_form_title }}
+       {{ content.field_guidance }}
+       {{ content.field_webform }}
+      </div>
+      <div class="ligc-contact-right">
+        {{ content.field_content }}
+      </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}
