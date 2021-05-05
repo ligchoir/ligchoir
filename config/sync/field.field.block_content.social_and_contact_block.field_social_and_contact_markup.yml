@@ -1,0 +1,24 @@
+uuid: d46dd2c1-9974-4184-a81b-776b64d6ef84
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_and_contact_block
+    - field.storage.block_content.field_social_and_contact_markup
+  module:
+    - text
+id: block_content.social_and_contact_block.field_social_and_contact_markup
+field_name: field_social_and_contact_markup
+entity_type: block_content
+bundle: social_and_contact_block
+label: 'Social and contact markup'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<div class=\"social-contact-circle-outer ligc-ig\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-instagram\"></span></div></div>\r\n\r\n<div class=\"social-contact-circle-outer ligc-tw\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-instagram\"></span></div></div>\r\n\r\n<div class=\"social-contact-circle-outer ligc-fb\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-facebook-f\"></span></div></div>\r\n"
+    format: font_awesome_compatible
+default_value_callback: ''
+settings: {  }
+field_type: text_long

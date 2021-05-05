@@ -3,7 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_and_contact_links.field_text
+    - field.field.paragraph.social_and_contact_links.field_contact_action
+    - field.field.paragraph.social_and_contact_links.field_social_and_contact_markup
     - paragraphs.paragraphs_type.social_and_contact_links
   module:
     - text
@@ -20,8 +21,16 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_text:
-    weight: -9
+  field_contact_action:
+    weight: -8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_and_contact_markup:
+    weight: -7
     settings:
       rows: 5
       placeholder: ''

@@ -1,0 +1,19 @@
+uuid: 81f47051-ea36-405c-8699-a33d9e13f99d
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_social_and_contact_markup
+field_name: field_social_and_contact_markup
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

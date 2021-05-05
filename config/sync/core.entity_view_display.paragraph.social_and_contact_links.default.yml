@@ -3,7 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.social_and_contact_links.field_text
+    - field.field.paragraph.social_and_contact_links.field_contact_action
+    - field.field.paragraph.social_and_contact_links.field_social_and_contact_markup
     - paragraphs.paragraphs_type.social_and_contact_links
   module:
     - text
@@ -12,9 +13,17 @@ targetEntityType: paragraph
 bundle: social_and_contact_links
 mode: default
 content:
-  field_text:
+  field_contact_action:
     weight: 0
-    label: above
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_and_contact_markup:
+    weight: 2
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default

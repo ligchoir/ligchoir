@@ -1,0 +1,25 @@
+uuid: 37f29811-0d88-4ccf-9ea6-bad479bbb403
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_and_contact_block:f10ea123-f4a3-4890-aa55-32ab55efd722'
+  module:
+    - block_content
+  theme:
+    - clau2
+id: socialandcontactblockforfooter
+theme: clau2
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
+settings:
+  id: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
+  label: 'Social and contact block for footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
