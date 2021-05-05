@@ -107,6 +107,12 @@ footer {
   padding-bottom: 1em;
 }
 
-.field--name-field-social-and-contact-markup {
+.field--name-field-contact-action {
+  padding-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1em;
+}
 
+.field--name-field-social-and-contact-markup a {
+  text-decoration: none;
 }
