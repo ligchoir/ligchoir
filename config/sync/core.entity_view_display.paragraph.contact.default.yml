@@ -4,13 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.contact.field_content
-    - field.field.paragraph.contact.field_form
     - field.field.paragraph.contact.field_form_title
     - field.field.paragraph.contact.field_guidance
+    - field.field.paragraph.contact.field_webform
     - paragraphs.paragraphs_type.contact
   module:
     - entity_reference_revisions
     - text
+    - webform
 id: paragraph.contact.default
 targetEntityType: paragraph
 bundle: contact
@@ -19,24 +20,15 @@ content:
   field_content:
     type: entity_reference_revisions_entity_view
     weight: 1
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    region: content
-  field_form:
-    weight: 0
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
     region: content
   field_form_title:
     weight: 2
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -44,9 +36,17 @@ content:
     region: content
   field_guidance:
     weight: 3
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_webform:
+    weight: 4
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
     region: content
 hidden: {  }

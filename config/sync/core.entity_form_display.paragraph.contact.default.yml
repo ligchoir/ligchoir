@@ -4,14 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.contact.field_content
-    - field.field.paragraph.contact.field_form
     - field.field.paragraph.contact.field_form_title
     - field.field.paragraph.contact.field_guidance
+    - field.field.paragraph.contact.field_webform
     - paragraphs.paragraphs_type.contact
   module:
-    - entity_reference_revisions
     - paragraphs
     - text
+    - webform
 id: paragraph.contact.default
 targetEntityType: paragraph
 bundle: contact
@@ -37,16 +37,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
-  field_form:
-    weight: -9
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
-    region: content
   field_form_title:
     weight: -7
     settings:
@@ -62,6 +52,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+    region: content
+  field_webform:
+    weight: -5
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
     region: content
 hidden:
   created: true
