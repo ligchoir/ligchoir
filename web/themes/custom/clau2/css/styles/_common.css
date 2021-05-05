@@ -102,8 +102,9 @@ footer {
 
 #block-socialandcontactblockforfooter {
   text-align: center;
-  height: auto;
   background-color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .field--name-field-social-and-contact-markup {

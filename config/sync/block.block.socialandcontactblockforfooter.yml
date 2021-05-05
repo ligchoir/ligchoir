@@ -6,6 +6,7 @@ dependencies:
     - 'block_content:social_and_contact_block:f10ea123-f4a3-4890-aa55-32ab55efd722'
   module:
     - block_content
+    - ctools
   theme:
     - clau2
 id: socialandcontactblockforfooter
@@ -22,4 +23,11 @@ settings:
   status: true
   info: ''
   view_mode: full
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      home: home
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
