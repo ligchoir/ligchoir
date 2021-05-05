@@ -48,15 +48,23 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-      <div class="ligc-contact-left">
-       {{ content.field_form_title }}
-       {{ content.field_guidance }}
-       {{ content.field_webform }}
-      </div>
-      <div class="ligc-contact-right">
-        {{ content.field_content }}
-      </div>
-    {% endblock %}
+    <div class="ligc-encl" style="background-color: {{ paragraph.field_colour_background.0.entity.  field_mod_color.value.0.color }}; opacity: {{ paragraph.field_colour_background.0.entity.field_mod_color.value.0.opacity }}">
+      {% block content %}
+        <div class="ligc-contact">
+          <div class="ligc-contact-left">
+            <div class="ligc-webform">
+              {{ content.field_form_title }}
+              {{ content.field_guidance }}
+              {{ content.field_webform }}
+            </div>
+          </div>
+          <div class="ligc-contact-right">
+            <div class="ligc-contact-content">
+              {{ content.field_content }}
+            </div>
+          </div>
+        </div>
+      {% endblock %}
+    </div>
   </div>
 {% endblock paragraph %}

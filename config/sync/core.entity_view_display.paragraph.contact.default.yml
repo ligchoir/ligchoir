@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.contact.field_colour_background
     - field.field.paragraph.contact.field_content
     - field.field.paragraph.contact.field_form_title
     - field.field.paragraph.contact.field_guidance
@@ -17,6 +18,14 @@ targetEntityType: paragraph
 bundle: contact
 mode: default
 content:
+  field_colour_background:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_content:
     type: entity_reference_revisions_entity_view
     weight: 1

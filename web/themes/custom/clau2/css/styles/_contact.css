@@ -7,3 +7,17 @@
   float: right;
   width: 50%;
 }
+
+.ligc-webform {
+  padding: 3em;
+}
+
+.ligc-contact {
+  padding-left: 5em;
+  padding-right: 5em;  
+}
+
+.ligc-contact-content {
+  padding-left: 1em;
+  padding-right: 1em; 
+}

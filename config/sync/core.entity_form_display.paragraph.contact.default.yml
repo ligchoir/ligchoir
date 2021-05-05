@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.contact.field_colour_background
     - field.field.paragraph.contact.field_content
     - field.field.paragraph.contact.field_form_title
     - field.field.paragraph.contact.field_guidance
@@ -25,6 +26,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_colour_background:
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_content:
     type: entity_reference_paragraphs
     weight: -8
