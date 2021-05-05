@@ -47,18 +47,24 @@
   ]
 %}
 {% block paragraph %}
-  {# https://stackoverflow.com/questions/17009620/background-color-not-filling-entire-div #}
+  {# following style insert enables targeting cta when inside view #}
+  {# we could also consider doing this in the view mode template for the cta paragraph #}
+  {# web/themes/custom/clau2/templates/paragraphs/paragraph--call-to-action--teaser.html.twig #}
   <style>
     .views-row .ligc-cta-fixed { color: {{ paragraph.field_colour_text.0.entity.field_mod_color.value.0.color }};
   }
   </style>
-  <div class="ligc-encl ligc-event-container" style="background-color: {{ paragraph.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ paragraph.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ paragraph.field_colour_text.0.entity.field_mod_color.value.0.color }};">
-  <div{{ attributes.addClass(classes).addClass('ligc-text') }}>
-    {% block content %}
-    <div>
-      {{ content.field_views_display }}
+  {# https://stackoverflow.com/a/67399247/227926 #}
+  <div class="ligc-event-container-outer">
+    {# https://stackoverflow.com/questions/17009620/background-color-not-filling-entire-div #}
+    <div class="ligc-encl ligc-event-container" style="background-color: {{ paragraph.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ paragraph.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ paragraph.field_colour_text.0.entity.field_mod_color.value.0.color }};">
+      <div{{ attributes.addClass(classes).addClass('ligc-text') }}>
+        {% block content %}
+        <div>
+          {{ content.field_views_display }}
+        </div>
+        {% endblock %}
+      </div>
     </div>
-    {% endblock %}
-  </div>
   </div>
 {% endblock paragraph %}

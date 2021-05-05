@@ -78,3 +78,8 @@
 .ligc-event-container {
   margin: 3em;
 }
+
+/* https://stackoverflow.com/a/67399247/227926 */
+.ligc-event-container-outer {
+  overflow: hidden;
+}
