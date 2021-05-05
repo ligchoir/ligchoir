@@ -7,6 +7,7 @@ dependencies:
     - field.field.block_content.social_and_contact_block.field_contact_action
     - field.field.block_content.social_and_contact_block.field_social_and_contact_markup
   module:
+    - field_formatter_class
     - text
 id: block_content.social_and_contact_block.default
 targetEntityType: block_content
@@ -18,7 +19,9 @@ content:
     label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ligc-text
     type: string
     region: content
   field_social_and_contact_markup:

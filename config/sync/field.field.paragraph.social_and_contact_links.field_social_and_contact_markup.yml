@@ -17,8 +17,8 @@ required: false
 translatable: false
 default_value:
   -
-    value: "<div class=\"social-contact-circle-outer ligc-ig\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-instagram\"></span></div></div>\r\n\r\n<div class=\"social-contact-circle-outer ligc-tw\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-instagram\"></span></div></div>\r\n\r\n<div class=\"social-contact-circle-outer ligc-fb\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-facebook-f\"></span></div></div>"
-    format: full_html
+    value: "<a href=\"https://instagram.com/ligchoir\">\r\n<div class=\"social-contact-circle-outer ligc-ig\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-instagram\"></span></div></div>\r\n</a>\r\n\r\n<a href=\"https://twitter.com/ligchoir\">\r\n<div class=\"social-contact-circle-outer ligc-tw\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-twitter\"></span></div></div>\r\n</a>\r\n\r\n<a href=\"https://www.facebook.com/LIGChoir\">\r\n<div class=\"social-contact-circle-outer ligc-fb\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-facebook-f\"></span></div></div>\r\n</a>"
+    format: font_awesome_compatible
 default_value_callback: ''
 settings: {  }
 field_type: text_long
