@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.call_to_action_with_content
     - paragraphs.paragraphs_type.contact
+    - paragraphs.paragraphs_type.content_2_column
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.social_and_contact_links
@@ -42,6 +43,7 @@ settings:
       contact: contact
       view: view
       image: image
+      content_2_column: content_2_column
       quote: quote
       social_and_contact_links: social_and_contact_links
     target_bundles_drag_drop:
@@ -60,6 +62,9 @@ settings:
       contact:
         enabled: true
         weight: 16
+      content_2_column:
+        enabled: true
+        weight: 18
       custom_colors_modifier:
         weight: 17
         enabled: false
