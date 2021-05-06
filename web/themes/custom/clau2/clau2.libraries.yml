@@ -11,6 +11,7 @@ design:
       css/styles/_team.css: {}
       css/styles/_events.css: {}
       css/styles/_contact.css: {}
+      css/styles/_content.css: {}
       css/common/style.css: {}
   js:
     js/theme.js: {}
