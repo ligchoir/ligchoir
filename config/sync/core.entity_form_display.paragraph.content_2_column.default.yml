@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.content_2_column.field_colour_background
+    - field.field.paragraph.content_2_column.field_colour_text
     - field.field.paragraph.content_2_column.field_content_left_column
     - field.field.paragraph.content_2_column.field_content_right_column
     - paragraphs.paragraphs_type.content_2_column
@@ -21,6 +23,18 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_colour_background:
+    weight: -6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_colour_text:
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_content_left_column:
     type: entity_reference_paragraphs
     weight: -9
