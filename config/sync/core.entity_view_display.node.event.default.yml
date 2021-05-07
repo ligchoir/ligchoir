@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_dates
+    - field.field.node.event.field_modifiers
     - field.field.node.event.field_tickets
     - field.field.node.event.field_venue
     - node.type.event
@@ -32,6 +33,15 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_modifiers:
+    weight: 4
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
     region: content
   field_tickets:
     type: entity_reference_revisions_entity_view

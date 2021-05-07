@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.home.field_content
     - field.field.node.home.field_look
     - field.field.node.home.field_main_call_to_action_area
-    - field.field.node.home.field_modifiers
     - node.type.home
   module:
     - paragraphs
@@ -55,18 +54,6 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     type: entity_reference_paragraphs
-    region: content
-  field_modifiers:
-    type: entity_reference_paragraphs
-    weight: 123
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
     region: content
   path:
     type: path
