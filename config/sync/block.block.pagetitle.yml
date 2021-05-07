@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - block_classes
+    - ctools
     - look
   theme:
     - clau2
@@ -28,3 +29,10 @@ visibility:
       1: '1'
     negate: true
     context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

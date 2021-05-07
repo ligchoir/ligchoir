@@ -1,0 +1,25 @@
+uuid: 329898c8-fa70-4d27-8f28-39659806d3f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_look
+    - node.type.event
+id: node.event.field_look
+field_name: field_look
+entity_type: node
+bundle: event
+label: look
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:look'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

@@ -31,6 +31,7 @@ visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
     bundles:
+      event: event
       home: home
     negate: true
     context_mapping:

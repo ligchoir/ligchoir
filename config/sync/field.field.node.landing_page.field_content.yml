@@ -7,7 +7,6 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.about_intro
     - paragraphs.paragraphs_type.call_to_action
-    - paragraphs.paragraphs_type.call_to_action_with_content
     - paragraphs.paragraphs_type.contact
     - paragraphs.paragraphs_type.content_2_column
     - paragraphs.paragraphs_type.image
@@ -39,7 +38,6 @@ settings:
       about_intro: about_intro
       call_to_action: call_to_action
       text: text
-      call_to_action_with_content: call_to_action_with_content
       contact: contact
       view: view
       image: image
