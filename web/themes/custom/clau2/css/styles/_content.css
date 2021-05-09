@@ -3,14 +3,32 @@
   padding-right: 5em;  
 }
 
-.ligc-column-left {
-  float: left;
-  width: 50%;
+@media screen and (max-width: 1023px ) {
+  .ligc-column-left {
+    float: left;
+    width: 100%;
+  }
+    
+  .ligc-column-right {
+    float: left;
+     width: 100%;
+  }
+  }
+
+@media screen and (min-width: 1024px ) {
+  .ligc-column-left {
+    float: left;
+    width: 50%;
+  }
+    
+  .ligc-column-right {
+    float: right;
+      width: 50%;
+  }
 }
-  
-.ligc-column-right {
-  float: right;
-   width: 50%;
-}
+
+
+
+
 
   
