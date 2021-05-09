@@ -12,14 +12,14 @@
 }
 
 .ligc-term-img img {
-    width: 67%;
-    height: 67%;
+    width: 12em;
+    height: 12em;
 
     margin-left: auto;
     margin-right: auto;
 
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     display: block;
 }
 
@@ -37,7 +37,7 @@
 
 .ligc-term-desc p {
   padding-left: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
