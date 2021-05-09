@@ -1,20 +1,5 @@
-.ligc-contact-left {
-  float: left;
-  width: 50%;
-}
-
-.ligc-contact-right {
-  float: right;
-  width: 50%;
-}
-
 .ligc-webform {
   padding: 3em;
-}
-
-.ligc-contact {
-  padding-left: 5em;
-  padding-right: 5em;  
 }
 
 .ligc-contact-content {
