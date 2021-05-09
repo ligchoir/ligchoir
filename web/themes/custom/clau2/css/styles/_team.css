@@ -1,6 +1,6 @@
 .view-display-id-musical_team_block .views-row {
     clear: both;
-    width:47%;
+    width:80%;
     margin-left: auto; 
     margin-right: auto; 
     padding-top: 2em;
@@ -12,17 +12,23 @@
 }
 
 .ligc-term-img img {
-    width: 9em;
-    height: 9em;
-    margin: 0;
+    width: 67%;
+    height: 67%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
 }
 
 .ligc-term-img {
-    width: 24%;
+    width: 35%;
 }
 
 .ligc-term-desc {
-    width: 76%;
+    width: 65%;
     padding-top: 1em;
     padding-bottom: 1em;
 }
@@ -31,5 +37,7 @@
   float: right;
 }
 
-
+.ligc-term-desc p {
+  padding-left: 1em;
+}
 
