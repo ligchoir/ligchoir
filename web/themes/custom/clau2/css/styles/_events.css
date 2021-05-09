@@ -7,13 +7,6 @@
     padding-bottom: 2em;
 }
 
-/*
-.ligc-term-left {
-  float: left; 
-}
-*/
-
-
 .ligc-event-summary{
     float: left; 
     width: 76%;
@@ -27,13 +20,6 @@
     width: 24%;
     float: right;
 }
-
-
-/*
-.ligc-term-right {
-  float: right;
-}
-*/
 
 .ligc-event-summary {
     padding-top: 2em;
@@ -68,12 +54,6 @@
   text-decoration: none;
   color: inherit;
 }
-
-/*
-.ligc-event-tickets .ligc-cta-fixed {
-  color: inherit;
-}
-*/
 
 .ligc-event-container {
   margin: 3em;

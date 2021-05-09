@@ -1,0 +1,37 @@
+
+.paragraph--type--social-and-contact-links {
+    text-align: center;
+  }
+  
+  .social-contact-circle-outer {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em; 
+    color: white;
+    display: inline-block;
+  }
+  
+  .social-contact-circle-inner {
+    font-size: 1em;
+    padding:0.75em;
+  }
+  
+  .ligc-ig {
+    background: #E53777
+  }
+  
+  .ligc-tw {
+    background: #40abf5;
+  }
+  
+  .ligc-fb {
+    background: #4364a2;
+  }
+
+  #block-socialandcontactblockforfooter {
+    text-align: center;
+    background-color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  
