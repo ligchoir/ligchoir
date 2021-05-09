@@ -28,7 +28,10 @@
 }
 
 
-
-
+/* .paragraph--type--image .paragraph--view-mode--default img { */
+  .paragraph--type--image .field--name-field-media-image img {
+  width: 80%;
+  height: 80%;
+} 
 
   

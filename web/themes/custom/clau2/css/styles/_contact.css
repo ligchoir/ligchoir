@@ -7,11 +7,13 @@
   padding-right: 1em; 
 }
 
+/*
 .paragraph--type--image .field--name-field-media-image img {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
+*/
 
 .paragraph--type--contact .field--name-field-contact-action {
     padding-top: 0.5em;
