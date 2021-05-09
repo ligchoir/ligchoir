@@ -1,43 +1,97 @@
-.view-display-id-musical_team_block .views-row {
-    clear: both;
-    width:80%;
-    margin-left: auto; 
-    margin-right: auto; 
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
 
-.ligc-term-left {
-  float: left; 
-}
+@media screen and (max-width: 1023px ) {
+  .view-display-id-musical_team_block .views-row {
+      clear: both;
+      width:60%;
+      margin-left: auto; 
+      margin-right: auto; 
+      padding-top: 2em;
+      padding-bottom: 2em;
+  }
 
-.ligc-term-img img {
-    width: 12em;
-    height: 12em;
 
-    margin-left: auto;
-    margin-right: auto;
 
+  .ligc-term-img img {
+      width: 12em;
+      height: 12em;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      margin-top: 2em;
+      margin-bottom: 2em;
+      display: block;
+  }
+
+
+  .ligc-term-img {
+    width: 100%;
+  }
+
+  .ligc-term-desc {
+    width: 100%;
+  }
+
+  .ligc-term-left {
+    float: left; 
+  }
+
+  .ligc-term-right {
+    float: left;
+  }
+
+  .ligc-term-desc p {
+    padding-left: 1em;
     margin-top: 2em;
     margin-bottom: 2em;
-    display: block;
+  }
 }
 
-.ligc-term-img {
-    width: 35%;
-}
 
-.ligc-term-desc {
-    width: 65%;
-}
+@media screen and (min-width: 1024px ) {
+  .view-display-id-musical_team_block .views-row {
+      clear: both;
+      width:80%;
+      margin-left: auto; 
+      margin-right: auto; 
+      padding-top: 2em;
+      padding-bottom: 2em;
+  }
+  
 
-.ligc-term-right {
-  float: right;
-}
+  
+  .ligc-term-img img {
+      width: 12em;
+      height: 12em;
+  
+      margin-left: auto;
+      margin-right: auto;
+  
+      margin-top: 2em;
+      margin-bottom: 2em;
+      display: block;
+  }
+  
 
-.ligc-term-desc p {
-  padding-left: 1em;
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
+  .ligc-term-img {
+      width: 35%;
+  }
 
+  .ligc-term-desc {
+      width: 65%;
+  }
+
+  .ligc-term-left {
+    float: left; 
+  }
+
+  .ligc-term-right {
+    float: right;
+  }
+  
+  .ligc-term-desc p {
+    padding-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
