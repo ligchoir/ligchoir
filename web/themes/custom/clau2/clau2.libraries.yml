@@ -12,6 +12,7 @@ design:
       css/styles/_events.css: {}
       css/styles/_contact.css: {}
       css/styles/_content.css: {}
+      css/styles/_social.css: {}
       css/common/style.css: {}
   js:
     js/theme.js: {}
