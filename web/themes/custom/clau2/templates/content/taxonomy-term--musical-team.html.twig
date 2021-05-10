@@ -27,6 +27,7 @@
 #}
 {# taxonomy-term--musical-team--teaser.html.twig doesnt work #}
 {% if view_mode == "teaser" %}
+  {# for correct odds and evens, note weight for first item starts at 0 and increments by 1 in admin/structure/taxonomy/manage/musical_team/overview #}
   {% if term.weight.value is odd %}
     {# https://stackoverflow.com/a/37755292/227926 #}
     <div{{ attributes.addClass('odd') }}>

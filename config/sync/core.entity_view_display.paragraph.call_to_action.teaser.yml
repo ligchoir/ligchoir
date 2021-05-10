@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.call_to_action.field_modifiers
     - paragraphs.paragraphs_type.call_to_action
   module:
-    - entity_reference_revisions
     - field_formatter_class
     - layout_builder
     - link
@@ -35,13 +34,5 @@ content:
         class: ''
     type: link
     region: content
-  field_modifiers:
-    type: entity_reference_revisions_entity_view
-    weight: 1
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  field_modifiers: true

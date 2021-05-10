@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_dates
     - field.field.node.event.field_look
-    - field.field.node.event.field_modifiers
     - field.field.node.event.field_tickets
     - field.field.node.event.field_venue
     - node.type.event
@@ -61,5 +60,4 @@ content:
     region: content
 hidden:
   field_look: true
-  field_modifiers: true
   links: true
