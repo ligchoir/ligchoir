@@ -1,35 +1,18 @@
-
-/*
-
-TODO:
-
-https://stackoverflow.com/questions/17455811/swap-div-position-with-css-only
-
-*/
-
-
-@media screen and (max-width: 767px ) {
-  .view-display-id-musical_team_block .views-row {
-    clear: both;
-    width: 80%;
-    margin-left: auto; 
-    margin-right: auto; 
-    padding-top: 2em;
-    padding-bottom: 2em;
-  }
-}
-
-
-@media screen and (min-width: 768px ) and (max-width: 1023px ){
+@media screen and (max-width: 1023px ){
   .view-display-id-musical_team_block .views-row {
       clear: both;
-      width:60%;
+      width:80%;
       margin-left: auto; 
       margin-right: auto; 
       padding-top: 2em;
       padding-bottom: 2em;
   }
 
+  /* https://stackoverflow.com/a/37755292/227926 */
+  .view-display-id-musical_team_block .views-row .even {
+    display:flex;
+    flex-direction: column-reverse;
+  }
 
 
   .ligc-term-img img {

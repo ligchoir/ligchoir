@@ -27,12 +27,13 @@
 #}
 {# taxonomy-term--musical-team--teaser.html.twig doesnt work #}
 {% if view_mode == "teaser" %}
-<div{{ attributes }}>
-  {# show row weights to set them /admin/structure/taxonomy/manage/musical_team/overview #}
-  {# /admin/structure/views/view/musical_team - added sort by weight ascending order #}
-  {# https://drupal.stackexchange.com/questions/229009/print-custom-image-field-for-taxonomy-page-page-taxonomy-html-twig-template#comment384293_229045 #}
+  {% if term.weight.value is odd %}
+    {# https://stackoverflow.com/a/37755292/227926 #}
+    <div{{ attributes.addClass('odd') }}>
+      {# show row weights to set them /admin/structure/taxonomy/manage/musical_team/overview #}
+      {# /admin/structure/views/view/musical_team - added sort by weight ascending order #}
+      {# https://drupal.stackexchange.com/questions/229009/print-custom-image-field-for-taxonomy-page-page-taxonomy-html-twig-template#comment384293_229045 #}
 
-    {% if term.weight.value is odd %}
       {# https://stackoverflow.com/a/8355239 #}
       <div class="ligc-term-left ligc-term-desc">
         {{ term.description.value | raw }}
@@ -40,17 +41,26 @@
       <div class="ligc-term-right ligc-term-img">
         <img src="{{ file_url(term.field_image.entity.field_media_image.0.entity.uri.value) }}"/>
       </div>
-    {% else %}
+      <div class="ligc-term">
+      </div>
+    </div>
+  {% else %}
+    {# https://stackoverflow.com/a/37755292/227926 #}
+    <div{{ attributes.addClass('even') }}>
+      {# show row weights to set them /admin/structure/taxonomy/manage/musical_team/overview #}
+      {# /admin/structure/views/view/musical_team - added sort by weight ascending order #}
+      {# https://drupal.stackexchange.com/questions/229009/print-custom-image-field-for-taxonomy-page-page-taxonomy-html-twig-template#comment384293_229045 #}
+
       <div class="ligc-term-left ligc-term-img">
         <img src="{{ file_url(term.field_image.entity.field_media_image.0.entity.uri.value) }}"/>
       </div>
       <div class="ligc-term-right ligc-term-desc">
         {{ term.description.value | raw }}
       </div>
-    {% endif %}
-    <div class="ligc-term">
+      <div class="ligc-term">
+      </div>
     </div>
-</div>
+  {% endif %}
 {% else %}
 <div{{ attributes }}>
   {{ title_prefix }}
