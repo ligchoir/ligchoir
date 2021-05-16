@@ -83,28 +83,32 @@
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+  <div style="background-color: {{ node.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};">
 
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
+    {{ title_prefix }}
+    {% if label and not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif %}
+    {{ title_suffix }}
 
-  <div{{ content_attributes.addClass('node__content') }}>
-  {{ label }}
-  {{ content.field_dates }}
-  {{ content.field_tickets }}
+    {% if display_submitted %}
+      <footer class="node__meta">
+        {{ author_picture }}
+        <div{{ author_attributes.addClass('node__submitted') }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
+        </div>
+      </footer>
+    {% endif %}
+
+    <div{{ content_attributes.addClass('node__content') }}>
+    {{ label }}
+    {{ content.field_dates }}
+    {{ content.field_tickets }}
+    </div>
+
   </div>
 
 </article>

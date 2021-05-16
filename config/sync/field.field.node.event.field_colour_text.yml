@@ -1,0 +1,33 @@
+uuid: 78114cd8-7f22-4d80-8565-d49a6d134688
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colour_text
+    - node.type.event
+    - taxonomy.vocabulary.modifiers_color
+  content:
+    - 'taxonomy_term:modifiers_color:96d2edcb-61cb-4629-9608-7f1a3b4b9636'
+id: node.event.field_colour_text
+field_name: field_colour_text
+entity_type: node
+bundle: event
+label: 'Colour - Text'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 96d2edcb-61cb-4629-9608-7f1a3b4b9636
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modifiers_color: modifiers_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

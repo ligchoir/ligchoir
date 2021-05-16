@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.event.body
+    - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_text
     - field.field.node.event.field_dates
     - field.field.node.event.field_look
     - field.field.node.event.field_tickets
@@ -69,5 +71,7 @@ content:
       view_mode: default
     third_party_settings: {  }
 hidden:
+  field_colour_background: true
+  field_colour_text: true
   field_look: true
   links: true

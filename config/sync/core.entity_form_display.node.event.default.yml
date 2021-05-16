@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_text
     - field.field.node.event.field_dates
     - field.field.node.event.field_look
     - field.field.node.event.field_tickets
@@ -34,6 +36,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_colour_background:
+    weight: 127
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_colour_text:
+    weight: 128
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_dates:
     type: entity_reference_paragraphs
     weight: 122
