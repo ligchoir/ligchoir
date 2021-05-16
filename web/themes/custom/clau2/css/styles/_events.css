@@ -1,4 +1,5 @@
-.ligc-event-summary{
+.ligc-event-summary,
+.ligc-event-full {
     float: left; 
     width: 76%;
     /*
@@ -12,20 +13,24 @@
     float: right;
 }
 
-.ligc-event-summary {
+.ligc-event-summary,
+.ligc-event-full {
     padding-top: 2em;
     padding-bottom: 2em;  
 }
 
-.ligc-event-summary .field--name-title {
+.ligc-event-summary .field--name-title,
+.ligc-event-full .field--name-title {
   display: block;
 }
 
-.ligc-event-summary .field--name-field-dates {
+.ligc-event-summary .field--name-field-when,
+.ligc-event-full .field--name-field-when {
   display: inline-block;
 }
 
-.ligc-event-summary .field--name-field-venue {
+.ligc-event-summary .field--name-field-venue,
+.ligc-event-full .field--name-field-venue {
   display: inline-block;
 }
 
@@ -41,7 +46,8 @@
     padding-bottom: 1em;
 }
 
-.ligc-event-summary a {
+.ligc-event-summary a,
+.ligc-event-full a {
   text-decoration: none;
   color: inherit;
 }

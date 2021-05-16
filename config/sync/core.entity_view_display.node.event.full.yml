@@ -62,7 +62,7 @@ content:
     type: smartdate_custom
     weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
       date_format: 'D, j M Y'
       custom_date_format: ''

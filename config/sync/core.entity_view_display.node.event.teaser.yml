@@ -51,7 +51,7 @@ content:
     region: content
     label: hidden
     settings:
-      date_format: 'D, M j'
+      date_format: 'M j'
       custom_date_format: ''
       timezone: ''
       separator: ' - '
