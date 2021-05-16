@@ -81,6 +81,7 @@
   ]
 %}
 {{ attach_library('classy/node') }}
+
 <article{{ attributes.addClass(classes) }}>
 
   <div style="background-color: {{ node.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};">
@@ -104,13 +105,23 @@
     {% endif %}
 
     <div{{ content_attributes.addClass('node__content') }}>
-    {{ label }}
-    {{ content.field_when }}
-    {{ content.field_tickets }}
-    </div>
+      <div class="ligc-event-full-outer">
+        <div class="ligc-event-full">
+          <a href="{{ url }}" rel="bookmark">
+            {{ label }}
 
+            <span>{{ content.field_when }}</span> |
+            <span>{{ content.field_venue }}</span>
+          </a>
+        </div>
+        <div class="ligc-event-tickets">
+          {{ content.field_tickets }}
+        </div>
+      </div>
+    </div>
   </div>
 
 </article>
+
 
 
