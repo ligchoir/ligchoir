@@ -10,11 +10,13 @@ dependencies:
     - field.field.node.event.field_look
     - field.field.node.event.field_tickets
     - field.field.node.event.field_venue
+    - field.field.node.event.field_when
     - node.type.event
   module:
     - ds
     - entity_reference_revisions
     - field_formatter_class
+    - smart_date
     - text
     - user
 id: node.event.default
@@ -75,6 +77,28 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
+  field_when:
+    weight: 6
+    label: hidden
+    settings:
+      separator: ' - '
+      join: ', '
+      time_format: 'g:ia'
+      time_hour_format: ga
+      date_format: 'D, M j Y'
+      allday_label: 'All day'
+      date_first: '1'
+      ampm_reduce: '1'
+      site_time_toggle: '1'
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+    type: smartdate_custom
     region: content
 hidden:
   field_look: true

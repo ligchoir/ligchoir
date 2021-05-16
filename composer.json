@@ -40,6 +40,7 @@
         "drupal/modifiers_pack": "^1.4",
         "drupal/paragraph_blocks": "^3.0",
         "drupal/paragraphs": "^1.10",
+        "drupal/smart_date": "^3.2",
         "drupal/smtp": "^1.0@beta",
         "drupal/structure_sync": "^1.16",
         "drupal/token": "^1.6",

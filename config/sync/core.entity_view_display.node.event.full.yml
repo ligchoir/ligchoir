@@ -11,12 +11,14 @@ dependencies:
     - field.field.node.event.field_look
     - field.field.node.event.field_tickets
     - field.field.node.event.field_venue
+    - field.field.node.event.field_when
     - node.type.event
   module:
     - ds
     - entity_reference_revisions
     - field_formatter_class
     - layout_builder
+    - smart_date
     - text
     - user
 third_party_settings:
@@ -31,7 +33,7 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 4
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -50,7 +52,7 @@ content:
     region: content
   field_tickets:
     type: entity_reference_revisions_entity_view
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -69,6 +71,19 @@ content:
     settings:
       link: true
       view_mode: default
+    third_party_settings: {  }
+  field_when:
+    type: smartdate_default
+    weight: 2
+    region: content
+    label: above
+    settings:
+      format: default
+      force_chronological: false
+      add_classes: false
+      time_wrapper: true
+      format_type: medium
+      timezone_override: ''
     third_party_settings: {  }
 hidden:
   field_colour_background: true

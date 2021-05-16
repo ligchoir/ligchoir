@@ -10,10 +10,12 @@ dependencies:
     - field.field.node.event.field_look
     - field.field.node.event.field_tickets
     - field.field.node.event.field_venue
+    - field.field.node.event.field_when
     - node.type.event
   module:
     - paragraphs
     - path
+    - smart_date
     - text
 id: node.event.default
 targetEntityType: node
@@ -91,6 +93,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_when:
+    weight: 129
+    settings:
+      modal: false
+      default_duration: 60
+      default_duration_increments: "30\n60|1 hour\n90\n120|2 hours\ncustom"
+      show_extra: true
+      hide_date: true
+    third_party_settings: {  }
+    type: smartdate_default
     region: content
   path:
     type: path
