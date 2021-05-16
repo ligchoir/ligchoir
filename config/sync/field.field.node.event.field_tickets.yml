@@ -35,23 +35,17 @@ settings:
       call_to_action:
         enabled: true
         weight: 17
-      call_to_action_with_content:
-        weight: 18
-        enabled: false
       colors_modifier:
         weight: 19
         enabled: false
       contact:
         weight: 20
         enabled: false
+      content_2_column:
+        weight: 19
+        enabled: false
       custom_colors_modifier:
         weight: 21
-        enabled: false
-      date_range_all_day:
-        weight: 22
-        enabled: false
-      date_single_all_day:
-        weight: 23
         enabled: false
       date_time_single:
         weight: 24
@@ -73,5 +67,8 @@ settings:
         enabled: false
       text:
         weight: 30
+        enabled: false
+      view:
+        weight: 28
         enabled: false
 field_type: entity_reference_revisions

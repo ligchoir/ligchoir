@@ -41,9 +41,6 @@ settings:
       call_to_action:
         enabled: true
         weight: 20
-      call_to_action_with_content:
-        weight: 21
-        enabled: false
       colors_modifier:
         weight: 22
         enabled: false
@@ -55,12 +52,6 @@ settings:
         enabled: false
       custom_colors_modifier:
         weight: 24
-        enabled: false
-      date_range_all_day:
-        weight: 25
-        enabled: false
-      date_single_all_day:
-        weight: 26
         enabled: false
       date_time_single:
         weight: 27
