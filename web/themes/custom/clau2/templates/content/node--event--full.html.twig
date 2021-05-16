@@ -104,19 +104,17 @@
       </footer>
     {% endif %}
 
-    <div{{ content_attributes.addClass('node__content') }}>
-      <div class="ligc-event-full-outer">
-        <div class="ligc-event-full">
-          <a href="{{ url }}" rel="bookmark">
-            {{ label }}
+    <div{{ content_attributes.addClass('node__content ligc-event-full-outer ligc-justify') }}>
+      <div class="ligc-event-full">
+        <a href="{{ url }}" rel="bookmark">
+          {{ label }}
 
-            <span>{{ content.field_when }}</span> |
-            <span>{{ content.field_venue }}</span>
-          </a>
-        </div>
-        <div class="ligc-event-tickets">
-          {{ content.field_tickets }}
-        </div>
+          <span>{{ content.field_when }}</span> |
+          <span>{{ content.field_venue }}</span>
+        </a>
+      </div>
+      <div class="ligc-event-tickets">
+        {{ content.field_tickets }}
       </div>
     </div>
   </div>

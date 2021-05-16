@@ -1,6 +1,10 @@
 .ligc-event-summary,
 .ligc-event-full {
-    float: left; 
+  float: left; 
+}
+
+.ligc-event-list-item .ligc-event-summary {
+
     width: 76%;
     /*
     padding-top: 1em;
@@ -9,14 +13,22 @@
 }
 
 .ligc-event-tickets {
+  float: right;
+}
+
+.ligc-event-list-item .ligc-event-tickets {
     width: 24%;
-    float: right;
+
 }
 
 .ligc-event-summary,
 .ligc-event-full {
     padding-top: 2em;
     padding-bottom: 2em;  
+}
+
+.ligc-event-full {
+  padding-left: 1.3em;
 }
 
 .ligc-event-summary .field--name-title,
@@ -45,6 +57,11 @@
     margin-right: auto; 
     padding-top: 1em;
     padding-bottom: 1em;
+
+}
+
+.ligc-event-full-outer {
+  overflow: auto;
 }
 
 .ligc-event-list-item {
@@ -64,4 +81,10 @@
 /* https://stackoverflow.com/a/67399247/227926 */
 .ligc-event-container-outer {
   overflow: hidden;
+}
+
+
+.ligc-event-tickets .ligc-cta-outer {
+  padding-left: 0em;
+  margin: auto;
 }
