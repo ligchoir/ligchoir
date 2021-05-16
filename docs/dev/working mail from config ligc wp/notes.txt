@@ -1,0 +1,17 @@
+
+reliable email
+
+use out settings for email on
+https://mail.zoho.com/zm/#settings
+
+- for the account you are logged in as
+
+
+test the mailing from wordpress at 
+https://internationalgospelchoir.uk/wp-admin/admin.php?page=wp-mail-smtp
+
+
+ensure that
+From (Mail tab section)
+is the same email address as the sending (out) settings
+https://internationalgospelchoir.uk/wp-admin/admin.php?page=wpcf7&post=3744&active-tab=0
