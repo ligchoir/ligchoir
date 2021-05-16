@@ -38,6 +38,7 @@
         "drupal/mailsystem": "^4.2",
         "drupal/modifiers": "^1.4",
         "drupal/modifiers_pack": "^1.4",
+        "drupal/multiple_fields_remove_button": "^1.0@alpha",
         "drupal/paragraph_blocks": "^3.0",
         "drupal/paragraphs": "^1.10",
         "drupal/smart_date": "^3.2",
