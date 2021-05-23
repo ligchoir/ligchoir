@@ -3,22 +3,35 @@
   float: left; 
 }
 
-.ligc-event-list-item .ligc-event-summary {
+@media screen and (min-width: 1024px ) {
+  .ligc-event-list-item .ligc-event-summary {
+      width: 76%;
+      /*
+      padding-top: 1em;
+      padding-bottom: 1em;
+      */
+  }
 
-    width: 76%;
-    /*
-    padding-top: 1em;
-    padding-bottom: 1em;
-    */
+  .ligc-event-tickets {
+    float: right;
+  }
+
+  .ligc-event-list-item .ligc-event-tickets {
+      width: 24%;
+  }
 }
 
-.ligc-event-tickets {
-  float: right;
-}
 
-.ligc-event-list-item .ligc-event-tickets {
-    width: 24%;
+@media screen and (max-width: 1023px ) {
+  .ligc-event-list-item .ligc-event-summary {
+    float: left;
+    width: 100%;
+  }
 
+  .ligc-event-list-item .ligc-event-tickets {
+    float: left;
+    width: 100%;
+  }
 }
 
 .ligc-event-summary,

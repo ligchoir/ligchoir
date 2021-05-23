@@ -5,8 +5,9 @@
 /**/*.example
 /.dbimageBuild
 /.dbimageExtra
-/.ddev-docker-*.yaml
-/.*downloads
+/.ddev-docker-compose-base.yaml
+/.ddev-docker-compose-full.yaml
+/.ddevlive-downloads
 /.global_commands
 /.homeadditions
 /.sshimageBuild
