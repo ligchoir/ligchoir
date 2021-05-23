@@ -78,7 +78,7 @@
   }
 }
 
-@media screen and (max-width: 1023px ) {
+@media screen and (max-width: 1101px ) {
   .ligc-event-full {
     width: 100%;
     text-align: center;
@@ -88,10 +88,16 @@
     text-align: center;
   }
 
+  .node__content.ligc-event-full-outer .ligc-event-tickets {
+    width: 100%;
+  }
+
   .ligc-event-full-outer {
     padding-bottom: 3em;
   }
 }
+
+
 
 
 .ligc-event-summary .field--name-title,
