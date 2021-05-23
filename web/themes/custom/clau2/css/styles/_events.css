@@ -58,23 +58,27 @@
 
 
 @media screen and (min-width: 1024px ) {
-.ligc-event-full {
-  padding-left: 1.3em;
-}
+  .ligc-event-full {
+    padding-left: 1.3em;
+  }
 
-.ligc-event-summary .field--name-title,
-.ligc-event-full .field--name-title {
-  display: block;
-}
+  .ligc-event-summary .field--name-title,
+  .ligc-event-full .field--name-title {
+    display: block;
+  }
 
-.ligc-event-list-item,
-.ligc-event-full-outer {
+  .ligc-event-list-item,
+  .ligc-event-full-outer {
     clear: both;
 
     margin-left: auto; 
     margin-right: auto; 
     padding-top: 1em;
     padding-bottom: 1em;
+  }
+
+  .ligc-event-list-item {
+    width:70%;
   }
 }
 
@@ -121,9 +125,6 @@
   overflow: auto;
 }
 
-.ligc-event-list-item {
-  width:70%;
-}
 
 .ligc-event-summary a,
 .ligc-event-full a {
