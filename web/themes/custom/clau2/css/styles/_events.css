@@ -19,6 +19,12 @@
   .ligc-event-list-item .ligc-event-tickets {
       width: 24%;
   }
+
+  .ligc-event-summary,
+  .ligc-event-full {
+    padding-top: 2em;
+    padding-bottom: 2em;  
+  }
 }
 
 
@@ -26,19 +32,31 @@
   .ligc-event-list-item .ligc-event-summary {
     float: left;
     width: 100%;
+    text-align: center;
   }
 
   .ligc-event-list-item .ligc-event-tickets {
     float: left;
     width: 100%;
+    text-align: center;
+  }
+
+  .ligc-event-container {
+    padding-bottom: 3em;
+  }
+
+  .ligc-cta-outer {
+    padding-top: 0em;
+  }
+
+  .ligc-event-summary,
+  .ligc-event-full {
+    padding-top: 2em;
+    padding-bottom: 1em;  
   }
 }
 
-.ligc-event-summary,
-.ligc-event-full {
-    padding-top: 2em;
-    padding-bottom: 2em;  
-}
+
 
 .ligc-event-full {
   padding-left: 1.3em;
