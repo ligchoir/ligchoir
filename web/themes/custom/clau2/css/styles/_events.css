@@ -57,10 +57,42 @@
 }
 
 
-
+@media screen and (min-width: 1024px ) {
 .ligc-event-full {
   padding-left: 1.3em;
 }
+
+.ligc-event-summary .field--name-title,
+.ligc-event-full .field--name-title {
+  display: block;
+}
+
+.ligc-event-list-item,
+.ligc-event-full-outer {
+    clear: both;
+
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 1023px ) {
+  .ligc-event-full {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ligc-event-tickets .ligc-cta-outer {
+    text-align: center;
+  }
+
+  .ligc-event-full-outer {
+    padding-bottom: 3em;
+  }
+}
+
 
 .ligc-event-summary .field--name-title,
 .ligc-event-full .field--name-title {
@@ -77,19 +109,7 @@
   display: inline-block;
 }
 
-/*
-.node--type-event .node--view-mode-teaser 
-*/
-.ligc-event-list-item,
-.ligc-event-full-outer {
-    clear: both;
 
-    margin-left: auto; 
-    margin-right: auto; 
-    padding-top: 1em;
-    padding-bottom: 1em;
-
-}
 
 .ligc-event-full-outer {
   overflow: auto;
