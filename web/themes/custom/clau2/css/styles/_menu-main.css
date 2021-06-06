@@ -2,10 +2,26 @@
   font-size: 24px;
   width: 100%;
 }
-  
-.ligc-main-menu li {
-  margin-right: 1.15em;
-  display: inline;
+
+/* desktop - horixontal menu items */
+@media screen and (min-width: 768px ) {
+  .ligc-main-menu li {
+    margin-right: 1.15em;
+    display: inline;
+  }
+}
+
+/* mobile - vertical and hidden - revealed by click on menu symbol */
+@media screen and (max-width: 767px ) {
+  .ligc-main-menu li {
+    margin-right: 1.15em;
+    display: block;
+    padding-bottom: 1.5em;
+  }
+
+  .region-primary-menu {
+    display: inline-block;
+  }
 }
 
 .ligc-main-menu li a {

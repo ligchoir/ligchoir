@@ -82,6 +82,7 @@
   }
 }
 
+/* seems to be an overlap with the above but there must be a good reason! */
 @media screen and (max-width: 1101px ) {
   .ligc-event-full {
     width: 100%;
