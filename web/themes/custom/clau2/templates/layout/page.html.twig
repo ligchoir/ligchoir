@@ -43,21 +43,24 @@
  */
 #}
 <div class="layout-container">
-
   <div class="ligc-title-menu-combo">
-  <div id="ligc-front-and-leaf-sml-hdr">
-  </div>
-  <header role="banner">
-    {{ page.header }}
-  </header>
+    {# place-holder for logo in mobile versions of front page and leaf content pages (non-landing pages) #}
+    <div id="ligc-front-and-leaf-sml-hdr">
+    </div>
+    <header role="banner">
+      {{ page.header }}
+    </header>
 
-  {{ page.primary_menu }}
-  <div id="ligc-mob-menu-toggle"></div>
-  </div>
+    {{ page.primary_menu }}
+
+    {# place-holder for mobile menu burger and x symbol #}
+    <div id="ligc-mob-menu-toggle"></div>
+  </div>{# /.ligc-title-menu-combo #}
 
   {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}
+
 
   {{ page.highlighted }}
 
@@ -81,7 +84,6 @@
         {{ page.sidebar_second }}
       </aside>
     {% endif %}
-
   </main>
 
   {% if page.footer %}
