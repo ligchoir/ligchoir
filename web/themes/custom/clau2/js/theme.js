@@ -17,15 +17,7 @@
             $(window).resize(checkSize);
 
 
-            var togl_expd = document.getElementById('ligc-togl-expand');
 
-            // mobile menu toggle hide/reveal
-            togl_expd.addEventListener('click', function (e) {
-              // only for mobile
-               if ($(".ligc-main-menu li").css("display") == "block" ){
-                togl_expd.classList.toggle('ligc-togl-expand--open');
-               }
-            });
 
             //$("#ligc-mob-menu-toggle").
 
@@ -62,8 +54,38 @@
                  $("#ligc-mob-menu-toggle").append(menuicon);
                }
                 
+               /*
+               var togl_expd = document.getElementById('ligc-togl-expand');
 
+               // mobile menu toggle hide/reveal
+               togl_expd.addEventListener('click', function (e) {
+                 // only for mobile
+                  if ($(".ligc-main-menu li").css("display") == "block" ){
+                   togl_expd.classList.toggle('ligc-togl-expand--open');
+                  }
+               });
+               */
 
+               // need to re-add the event each time because the html is destroyed I think
+               // but just in case it's there, want to remove anything that was there before
+               // credit: https://stackoverflow.com/a/11613013/227926
+$('#ligc-togl-expand')
+  .off('.toglexpandns') // remove all events in namespace upload
+  .on({
+      'click.toglexpandns': function(e) {
+          e.stopPropagation();
+          e.preventDefault();
+          if ($(".ligc-main-menu li").css("display") == "block" ){
+            var togl_expd = document.getElementById('ligc-togl-expand');
+            togl_expd.classList.toggle('ligc-togl-expand--open');
+          }
+      }
+      // ...
+  });
+
+  // other refs:
+  // https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault
+  // https://api.jquery.com/on/#event-names
                /* TODO
 
   function isEmpty( el ){
