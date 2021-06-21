@@ -22,10 +22,24 @@
             if ($(".ligc-main-menu li").css("display") == "block" ){
                 // your code here
 
+              // credit: https://stackoverflow.com/a/5360831/227926
+               var menuicon = 
+                 '<a href="#" id="ligc-togl-expand" class="ligc-togl-expand"> \
+                   <div class="menu-icon"> \
+                   <span class="top"></span> \
+                   <span class="middle"></span> \
+                   <span class="bottom"></span> \
+                   </div> \
+                   <div class="menu-text"> \
+                   <span class="icon-burger">MENU</span> \
+                   <span class="icon-close">CLOSE</span> \
+                   </div> \
+                 </a>';
+
                 // credt: https://stackoverflow.com/a/6813294/227926
                if ($('#ligc-mob-menu-toggle').is(':empty')){
                  //do something)
-                 $("#ligc-mob-menu-toggle").append('<h1>X</h1>');
+                 $("#ligc-mob-menu-toggle").append(menuicon);
                }
                 
 

@@ -24,7 +24,7 @@
     vertical-align: top;
   }
 
-  #ligc-mob-menu-toggle {
+  #ligc-mob-menu-ligc-togl {
     display: inline-block;
   }
 }
@@ -53,4 +53,121 @@
 .ligc-main-menu li a.is-active {
   border-bottom: 4px solid rgb(255, 0, 0);
   padding-bottom: 10px;
+}
+
+/* ligc-togl */
+
+.ligc-togl-expand {
+  color: black;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  text-align: center
+}
+
+.ligc-togl-expand:hover {
+  color: white;
+}
+
+.ligc-togl-expand .menu-icon {
+  display: inline-block;
+  position: relative;
+  height: 24px;
+  width: 30px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out
+}
+
+.ligc-togl-expand .menu-icon:hover {
+  cursor: pointer
+}
+
+.ligc-togl-expand .menu-icon span {
+  background: rgb(200, 200, 200);
+  display: block;
+  height: 4px;
+  width: 30px;
+  position: absolute;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all 1s ease-in-out
+}
+
+.ligc-togl-expand .menu-icon span.top {
+  top: 0
+}
+
+.ligc-togl-expand .menu-icon span.middle {
+  top: 10px
+}
+
+.ligc-togl-expand .menu-icon span.bottom {
+  top: 20px
+}
+
+.ligc-togl-expand .menu-text {
+  font-size: 1rem;
+  line-height: 1em;
+  color: rgb(200, 200, 200);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out
+}
+
+.ligc-togl-expand .menu-text .icon-burger {
+  display: block
+}
+
+.ligc-togl-expand .menu-text .icon-close {
+  display: none
+}
+
+.ligc-togl-expand:hover .menu-icon span {
+  background: white;
+}
+
+.ligc-togl-expand:hover .menu-text {
+  color: white;
+}
+
+.ligc-togl-expand.ligc-togl-expand--open:hover .menu-icon span {
+  background: white;
+}
+
+.ligc-togl-expand.ligc-togl-expand--open:hover .menu-text {
+  color: white;
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span {
+  background: rgb(200, 200, 200);
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span.top {
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span.middle {
+  opacity: 0
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span.bottom {
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-text {
+  color: rgb(200, 200, 200);
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-text .icon-burger {
+  display: none
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-text .icon-close {
+  display: block
 }
