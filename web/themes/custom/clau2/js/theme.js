@@ -3,6 +3,8 @@
       attach: function (context, settings) {
 
 
+
+
         // credit: https://css-tricks.com/working-with-javascript-media-queries/
         // but jquery check for a css class event better I think
         // https://www.fourfront.us/blog/jquery-window-width-and-media-queries/
@@ -13,7 +15,25 @@
         
             // run test on resize of the window
             $(window).resize(checkSize);
+
+
+            var togl_expd = document.getElementById('ligc-togl-expand');
+
+            // mobile menu toggle hide/reveal
+            togl_expd.addEventListener('click', function (e) {
+              // only for mobile
+               if ($(".ligc-main-menu li").css("display") == "block" ){
+                togl_expd.classList.toggle('ligc-togl-expand--open');
+               }
+            });
+
+            //$("#ligc-mob-menu-toggle").
+
+              // Use context instead of document IF DRUPAL.
+
         });
+
+        //     .ligc-togl-expand.ligc-togl-expand--open .menu-text {
         
         // credit:  https://www.fourfront.us/blog/jquery-window-width-and-media-queries/
 
@@ -36,12 +56,13 @@
                    </div> \
                  </a>';
 
-                // credt: https://stackoverflow.com/a/6813294/227926
+                // credit: https://stackoverflow.com/a/6813294/227926
                if ($('#ligc-mob-menu-toggle').is(':empty')){
                  //do something)
                  $("#ligc-mob-menu-toggle").append(menuicon);
                }
                 
+
 
                /* TODO
 
@@ -59,7 +80,7 @@
             }
 
 
-        }
+        } // end checksize
 
 /*
 
