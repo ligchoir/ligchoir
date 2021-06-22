@@ -171,3 +171,21 @@
 .ligc-togl-expand.ligc-togl-expand--open .menu-text .icon-close {
   display: block
 }
+
+.ligc-overlay-menu-bg {
+  background-color: #202020;
+  overflow-y: scroll;
+  z-index: 100;
+}
+
+.ligc-overlay-hdr-hgt-togl-expand-mob-menu {
+  height: 100vh;
+}
+
+.ligc-hdr-hgt-init {
+  height: 8em;
+}
+
+.ligc-main-menu-hide {
+  display: none;
+}

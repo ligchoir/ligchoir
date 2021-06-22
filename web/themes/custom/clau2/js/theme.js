@@ -54,6 +54,8 @@
                  $("#ligc-mob-menu-toggle").append(menuicon);
                }
                 
+               // nearly there - i think this should be a media query break point rather than in js
+               //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
                /*
                var togl_expd = document.getElementById('ligc-togl-expand');
 
@@ -78,6 +80,26 @@ $('#ligc-togl-expand')
           if ($(".ligc-main-menu li").css("display") == "block" ){
             var togl_expd = document.getElementById('ligc-togl-expand');
             togl_expd.classList.toggle('ligc-togl-expand--open');
+
+                // nearly there - i think this should be a media query break point rather than in js
+            //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
+
+            $(".layout-container").toggleClass('ligc-overlay-menu-bg');
+
+            // these two classes are never on at the same time
+            //
+            // initially on, so a toggle will turn it off
+            $("#ligc-hdr").toggleClass('ligc-hdr-hgt-init');
+            //
+            // initially off, so a toggle will turn it on
+            $("#ligc-hdr").toggleClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+
+
+
+          }
+          else {
+            // nearly there - i think this should be a media query break point rather than in js
+            //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
           }
       }
       // ...
@@ -99,6 +121,10 @@ $('#ligc-togl-expand')
             }
             else {
                 $("#ligc-mob-menu-toggle").empty();
+
+                // nearly there - i think this should be a media query break point rather than in js
+                //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
+
             }
 
 
