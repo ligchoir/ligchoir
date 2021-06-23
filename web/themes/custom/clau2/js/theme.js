@@ -54,6 +54,13 @@
                  $("#ligc-mob-menu-toggle").append(menuicon);
                }
                 
+
+
+
+                $(".region-primary-menu").css("display","none");
+
+              
+  
                // nearly there - i think this should be a media query break point rather than in js
                //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
                /*
@@ -86,18 +93,31 @@ $('#ligc-togl-expand')
 
             $(".layout-container").toggleClass('ligc-overlay-menu-bg');
 
+            if ( $(".region-primary-menu").css("display") == "none" ) {
+              $(".region-primary-menu").css("display","inline-block");
+              $("#ligc-hdr").addClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+            }
+            else {
+              $(".region-primary-menu").css("display","none");
+              $("#ligc-hdr").removeClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+            }
+
             // these two classes are never on at the same time
             //
             // initially on, so a toggle will turn it off
-            $("#ligc-hdr").toggleClass('ligc-hdr-hgt-init');
+
             //
             // initially off, so a toggle will turn it on
-            $("#ligc-hdr").toggleClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+
 
 
 
           }
           else {
+            $(".region-primary-menu").css("display","inline-block");
+            $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
+
+           // $(".region-primary-menu").css("display","none");
             // nearly there - i think this should be a media query break point rather than in js
             //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
           }
@@ -126,6 +146,10 @@ $('#ligc-togl-expand')
                 //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
 
                 $(".layout-container").removeClass('ligc-overlay-menu-bg');
+
+                $(".region-primary-menu").css("display","inline-block");
+
+                $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
             }
 
 

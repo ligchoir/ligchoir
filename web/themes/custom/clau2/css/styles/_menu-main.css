@@ -20,7 +20,8 @@
   }
 
   .region-primary-menu {
-    display: inline-block;
+    display: none;
+    /* display: inline-block; when menu revealed */
     vertical-align: top;
   }
 
@@ -184,8 +185,4 @@
 
 .ligc-hdr-hgt-init {
   height: 8em;
-}
-
-.ligc-main-menu-hide {
-  display: none;
 }
