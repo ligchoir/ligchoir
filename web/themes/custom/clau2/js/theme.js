@@ -56,9 +56,9 @@
                 
 
 
-
-                $(".region-primary-menu").css("display","none");
-
+                if ( !$("#ligc-togl-expand").hasClass("ligc-togl-expand--open") ) {
+                  $(".region-primary-menu").css("display","none");
+                }
               
   
                // nearly there - i think this should be a media query break point rather than in js
@@ -95,6 +95,7 @@ $('#ligc-togl-expand')
 
             if ( $(".region-primary-menu").css("display") == "none" ) {
               $(".region-primary-menu").css("display","inline-block");
+              $("#ligc-hdr").removeClass('ligc-hdr-hgt-init');
               $("#ligc-hdr").addClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
             }
             else {
@@ -116,6 +117,7 @@ $('#ligc-togl-expand')
           else {
             $(".region-primary-menu").css("display","inline-block");
             $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
+            //$("#ligc-hdr").removeClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
 
            // $(".region-primary-menu").css("display","none");
             // nearly there - i think this should be a media query break point rather than in js
