@@ -32,6 +32,8 @@
         //Function to the css rule
         function checkSize(){
             if ($(".ligc-main-menu li").css("display") == "block" ){
+                // we're at mobile width, so show the burger menu icon
+
                 // your code here
 
               // credit: https://stackoverflow.com/a/5360831/227926
@@ -85,22 +87,40 @@ $('#ligc-togl-expand')
           e.stopPropagation();
           e.preventDefault();
           if ($(".ligc-main-menu li").css("display") == "block" ){
+            // a click on the menu burger symbol occured 
+            //
             var togl_expd = document.getElementById('ligc-togl-expand');
             togl_expd.classList.toggle('ligc-togl-expand--open');
 
                 // nearly there - i think this should be a media query break point rather than in js
             //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
 
+            // TODO could put this inside the if and else - opposite settings
             $(".layout-container").toggleClass('ligc-overlay-menu-bg');
 
             if ( $(".region-primary-menu").css("display") == "none" ) {
+              // menu is not displayed
+              //
+              // so display it
+              //
+              // mobile menu overlay is displayed
               $(".region-primary-menu").css("display","inline-block");
               $("#ligc-hdr").removeClass('ligc-hdr-hgt-init');
               $("#ligc-hdr").addClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+
+              // reposition displayed menu as per design
+              $(".ligc-main-menu").css('position', 'relative');
+              $(".ligc-main-menu").css('top', '8em');
+              $(".ligc-main-menu").css('left', '-9em');
             }
             else {
               $(".region-primary-menu").css("display","none");
               $("#ligc-hdr").removeClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+
+              // reset position of menu when not in use
+              $(".ligc-main-menu").css('position', '');
+              $(".ligc-main-menu").css('top', '');
+              $(".ligc-main-menu").css('left', '');
             }
 
             // these two classes are never on at the same time
@@ -115,8 +135,16 @@ $('#ligc-togl-expand')
 
           }
           else {
+            // click on menu burger occured but we're not at mobile width
+
             $(".region-primary-menu").css("display","inline-block");
             $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
+
+            // reset position of menu when not in use
+            $(".ligc-main-menu").css('position', '');
+            $(".ligc-main-menu").css('top', '');
+            $(".ligc-main-menu").css('left', '');
+
             //$("#ligc-hdr").removeClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
 
            // $(".region-primary-menu").css("display","none");
@@ -142,6 +170,8 @@ $('#ligc-togl-expand')
                */
             }
             else {
+               // we're not at mobile width
+
                 $("#ligc-mob-menu-toggle").empty();
 
                 // nearly there - i think this should be a media query break point rather than in js
@@ -152,6 +182,11 @@ $('#ligc-togl-expand')
                 $(".region-primary-menu").css("display","inline-block");
 
                 $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
+
+                // remove mobile positioning of menu so that menu displayed in correct position at non-mobile widths
+                $(".ligc-main-menu").css('position', '');
+                $(".ligc-main-menu").css('top', '');
+                $(".ligc-main-menu").css('left', '');
             }
 
 
