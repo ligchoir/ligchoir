@@ -62,6 +62,15 @@
                   $(".region-primary-menu").css("display","none");
                 }
               
+
+                if ( $('#ligc-hdr').children().length == 0) {
+                  var $ligc_title = $('#block-ligcinitialsandfullname-2').clone();
+                  $ligc_title.removeClass('ligc-title-large');
+                  $ligc_title.addClass('ligc-title-small');
+                  $ligc_title.attr('id', 'block-ligcinitialsandfullname');
+                  $('#ligc-hdr').html($ligc_title);
+                  $('#ligc-hdr').addClass('ligc-hdr-home');
+                }
   
                // nearly there - i think this should be a media query break point rather than in js
                //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
@@ -108,10 +117,19 @@ $('#ligc-togl-expand')
               $("#ligc-hdr").removeClass('ligc-hdr-hgt-init');
               $("#ligc-hdr").addClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
 
+
+              if ( $('#ligc-hdr').hasClass('ligc-hdr-home')) {
+                $(".ligc-main-menu").css('position', 'relative');
+                $(".ligc-main-menu").css('top', '-28em');
+                $(".ligc-main-menu").css('left', '1.2em');
+              }
+              else {
               // reposition displayed menu as per design
               $(".ligc-main-menu").css('position', 'relative');
               $(".ligc-main-menu").css('top', '8em');
               $(".ligc-main-menu").css('left', '-9em');
+              }
+
             }
             else {
               $(".region-primary-menu").css("display","none");
@@ -187,6 +205,10 @@ $('#ligc-togl-expand')
                 $(".ligc-main-menu").css('position', '');
                 $(".ligc-main-menu").css('top', '');
                 $(".ligc-main-menu").css('left', '');
+
+                if ( $('#ligc-hdr').hasClass('ligc-hdr-home')) {
+                  $('#ligc-hdr').empty();
+                }
             }
 
 
