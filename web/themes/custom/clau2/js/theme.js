@@ -125,6 +125,7 @@ $('#ligc-togl-expand')
                 // nearly there - i think this should be a media query break point rather than in js
                 //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
 
+                $(".layout-container").removeClass('ligc-overlay-menu-bg');
             }
 
 
