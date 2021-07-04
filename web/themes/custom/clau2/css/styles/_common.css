@@ -34,12 +34,11 @@
     margin-top: 50px;
     height: 8em;
   }
-}
 
-
-.ligc-justify {
-  max-width: 80%;
-  margin: auto;
+  .ligc-justify {
+    max-width: 80%;
+    margin: auto;
+  }
 }
 
 
