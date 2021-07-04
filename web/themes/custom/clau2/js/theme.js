@@ -69,7 +69,7 @@
                   $ligc_title.addClass('ligc-title-small');
                   $ligc_title.attr('id', 'block-ligcinitialsandfullname');
                   $('#ligc-hdr').html($ligc_title);
-                  $('#ligc-hdr').addClass('ligc-hdr-home');
+                  $('#ligc-hdr').addClass('ligc-hdr-home ligc-hdr-hgt-init');
 
                   $('#block-ligcinitialsandfullname-2').css('display','none');
                 }
@@ -143,6 +143,7 @@ $('#ligc-togl-expand')
             else {
               $(".region-primary-menu").css("display","none");
               $("#ligc-hdr").removeClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
+              $('#ligc-hdr').addClass('ligc-hdr-hgt-init');
 
               // reset position of menu when not in use
               $(".ligc-main-menu").css('position', '');
