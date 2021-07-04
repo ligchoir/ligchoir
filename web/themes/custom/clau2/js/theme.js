@@ -70,6 +70,8 @@
                   $ligc_title.attr('id', 'block-ligcinitialsandfullname');
                   $('#ligc-hdr').html($ligc_title);
                   $('#ligc-hdr').addClass('ligc-hdr-home');
+
+                  $('#block-ligcinitialsandfullname-2').css('display','none');
                 }
   
                // nearly there - i think this should be a media query break point rather than in js
@@ -198,6 +200,8 @@ $('#ligc-togl-expand')
                // we're not at mobile width
 
                 $("#ligc-mob-menu-toggle").empty();
+
+                $('#block-ligcinitialsandfullname-2').css('display','');
 
                 // nearly there - i think this should be a media query break point rather than in js
                 //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
