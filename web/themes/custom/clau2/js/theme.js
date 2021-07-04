@@ -197,7 +197,7 @@ $('#ligc-togl-expand')
 
                 $(".layout-container").removeClass('ligc-overlay-menu-bg');
 
-                $(".region-primary-menu").css("display","inline-block");
+                $(".region-primary-menu").css("display","block");
 
                 $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
 
