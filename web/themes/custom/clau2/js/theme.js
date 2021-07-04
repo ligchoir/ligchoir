@@ -110,6 +110,7 @@ $('#ligc-togl-expand')
             //$(".layout-container").toggleClass('ligc-overlay-menu-bg');
 
             if ( $(".region-primary-menu").css("display") == "none" ) {
+              $("body").css("overflow","hidden");
               $(".layout-container").addClass('ligc-overlay-menu-bg');
               $(".layout-container").removeClass('ligc-unoverlay-menu-bg');
 
@@ -144,6 +145,7 @@ $('#ligc-togl-expand')
 
             }
             else {
+              $("body").css("overflow","");
               $(".layout-container").removeClass('ligc-overlay-menu-bg');
               $(".layout-container").addClass('ligc-unoverlay-menu-bg');
 
@@ -213,6 +215,7 @@ $('#ligc-togl-expand')
                 // nearly there - i think this should be a media query break point rather than in js
                 //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
 
+                $("body").css("overflow","");
                 $(".layout-container").removeClass('ligc-overlay-menu-bg');
                 $(".layout-container").addClass('ligc-unoverlay-menu-bg');
 
