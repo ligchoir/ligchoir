@@ -107,9 +107,12 @@ $('#ligc-togl-expand')
             //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
 
             // TODO could put this inside the if and else - opposite settings
-            $(".layout-container").toggleClass('ligc-overlay-menu-bg');
+            //$(".layout-container").toggleClass('ligc-overlay-menu-bg');
 
             if ( $(".region-primary-menu").css("display") == "none" ) {
+              $(".layout-container").addClass('ligc-overlay-menu-bg');
+              $(".layout-container").removeClass('ligc-unoverlay-menu-bg');
+
               // menu is not displayed
               //
               // so display it
@@ -141,6 +144,9 @@ $('#ligc-togl-expand')
 
             }
             else {
+              $(".layout-container").removeClass('ligc-overlay-menu-bg');
+              $(".layout-container").addClass('ligc-unoverlay-menu-bg');
+
               $(".region-primary-menu").css("display","none");
               $("#ligc-hdr").removeClass('ligc-overlay-hdr-hgt-togl-expand-mob-menu');
               $('#ligc-hdr').addClass('ligc-hdr-hgt-init');
@@ -208,6 +214,7 @@ $('#ligc-togl-expand')
                 //$("#block-clau2-main-menu").toggleClass('ligc-main-menu-hide');
 
                 $(".layout-container").removeClass('ligc-overlay-menu-bg');
+                $(".layout-container").addClass('ligc-unoverlay-menu-bg');
 
                 $(".region-primary-menu").css("display","block");
 
