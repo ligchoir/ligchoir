@@ -119,9 +119,16 @@ $('#ligc-togl-expand')
 
 
               if ( $('#ligc-hdr').hasClass('ligc-hdr-home')) {
+                $(".ligc-main-menu").css('position', 'absolute');
+                $(".ligc-main-menu").css('top', '7em');
+                $(".ligc-main-menu").css('left', '1.2em');
+
+                /*
                 $(".ligc-main-menu").css('position', 'relative');
                 $(".ligc-main-menu").css('top', '-28em');
                 $(".ligc-main-menu").css('left', '1.2em');
+                */
+              
               }
               else {
               // reposition displayed menu as per design
