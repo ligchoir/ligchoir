@@ -16,7 +16,6 @@
     ],
     "require": {
         "composer/installers": "^1.2",
-        "cweagans/composer-patches": "^1.7",
         "drupal/bg_img_field": "^1.6",
         "drupal/block_classes": "^1.0",
         "drupal/bootstrap": "^3.21",
@@ -48,7 +47,7 @@
         "drupal/twig_vardumper": "2.2",
         "drupal/viewsreference": "^1.7",
         "drupal/webform": "^6.0",
-        "drush/drush": "^10.2"
+        "drush/drush": "^10.5"
     },
     "conflict": {
         "drupal/drupal": "*"
