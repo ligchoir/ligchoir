@@ -12,7 +12,26 @@ id: book_us
 title: 'Book us'
 description: ''
 category: ''
-elements: "your_name:\n  '#type': textfield\n  '#title': 'Your name:'\n  '#required': true\nyour_email:\n  '#type': textfield\n  '#title': 'Your email:'\n  '#required': true\ncall_back_phone_number:\n  '#type': tel\n  '#title': 'Call-back Phone Number: (optional)'\nyour_message:\n  '#type': textarea\n  '#title': 'Your message:'\n  '#required': true\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit__label': 'Send enquiry'"
+elements: |-
+  your_name:
+    '#type': textfield
+    '#title': 'Your name:'
+    '#required': true
+  your_email:
+    '#type': textfield
+    '#title': 'Your email:'
+    '#required': true
+  call_back_phone_number:
+    '#type': tel
+    '#title': 'Call-back Phone Number: (optional)'
+  your_message:
+    '#type': textarea
+    '#title': 'Your message:'
+    '#required': true
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#submit__label': 'Send enquiry'
 css: ''
 javascript: ''
 settings:
