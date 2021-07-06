@@ -232,16 +232,7 @@ display:
       header: {  }
       footer: {  }
       empty: {  }
-      relationships:
-        field_dates:
-          id: field_dates
-          table: node__field_dates
-          field: field_dates
-          relationship: none
-          group_type: group
-          admin_label: 'field_dates: Paragraph'
-          required: true
-          plugin_id: standard
+      relationships: {  }
       arguments: {  }
       display_extenders: {  }
     cache_metadata:

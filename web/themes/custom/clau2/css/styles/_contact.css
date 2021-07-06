@@ -18,3 +18,57 @@
 .paragraph--type--contact .field--name-field-contact-action {
     padding-top: 0.5em;
 }
+
+
+form.webform-submission-form {
+  /*
+	margin: 0 auto;
+	max-width: 600px;
+  */
+}
+.form-email, .form-text {
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	line-height: 1.428571429;
+	color: #333333;
+	vertical-align: middle;
+	background-color: #ffffff;
+}
+textarea {
+	min-height: 200px;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	line-height: 1.428571429;
+	color: #333333;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+}
+input.button{
+    border: 0;
+    width: 100%;
+}
+.paragraph.paragraph--type--contact{
+	line-height: normal;
+
+  /*
+	max-width: 700px;
+	margin: 0 auto 30px;
+  */
+	/* padding: 20px 30px; */
+}
+.paragraph--type--contact{
+  /*
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    */
+}
