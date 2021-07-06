@@ -110,7 +110,10 @@
         "enable-patching": true,
         "patches": {
             "drupal/modifiers_pack": {
-                "Multiple css background attributes": "web/modules/patches/modifiers_pack_enable_multi_bg_css_darken_field_3175641-6.patch.txt"
+                "Multiple css background attributes": "web/modules/patches/modifiers_pack_enable_multi_bg_css_darken_field_3175641-6.patch"
+            },
+            "drupal/look": {
+                "Fix entity look does not have revision created https://www.drupal.org/project/look/issues/3195513#comment-14104518": "look-issue-3195513-comment2-14104518-fix-fatal-does-not-have-revision_created.patch"
             }
         }
     }
