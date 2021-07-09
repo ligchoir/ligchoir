@@ -41,9 +41,11 @@
     text-align: center;
   }
 
+@media screen and (min-width: 768px ) {
   .ligc-event-container {
     padding-bottom: 3em;
   }
+}
 
   .ligc-event-container .ligc-cta-outer {
     padding-top: 0em;
