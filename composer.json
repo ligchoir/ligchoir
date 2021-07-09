@@ -28,6 +28,7 @@
         "drupal/field_formatter_class": "^1.4",
         "drupal/fontawesome": "^2.18",
         "drupal/fontyourface": "^3.2",
+        "drupal/gin": "^3.0@alpha",
         "drupal/image_effects": "^3.0",
         "drupal/image_widget_crop": "^2.2",
         "drupal/inline_entity_form": "^1.0@RC",
