@@ -32,9 +32,23 @@
 
 
 /* .paragraph--type--image .paragraph--view-mode--default img { */
-  .paragraph--type--image .field--name-field-media-image img {
+.paragraph--type--image .field--name-field-media-image img {
+
   width: 80%;
   height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 } 
 
-  
+@media screen and (min-width: 768px ) {
+  .paragraph--type--image .field--name-field-media-image img {
+    padding-top: 1em;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .paragraph--type--image .field--name-field-media-image img {
+    padding-top: 0.1em;
+  } 
+}
