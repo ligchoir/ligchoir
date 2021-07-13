@@ -180,7 +180,20 @@ display:
           entity_field: weight
           plugin_id: standard
       title: 'Musical Team'
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<a id=\"our-musical-team\">\r\n<h3 class=\"ligc-section-heading\">LIGC's musical team</h3>\r\n</a>"
+            format: full_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
