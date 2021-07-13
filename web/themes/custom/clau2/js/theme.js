@@ -261,11 +261,11 @@ $('#ligc-togl-expand')
 */
 
         
-        /*
+        
         // credit: https://stackoverflow.com/a/47650045
         //jQuery for Page Scroll - Single page
         $('a[href*="#"]:not([href="#"])').click(function() {
-          $('#w-nav-overlay-0').css('display', 'none'); // hide the menu overlay so that the item scrolled to can be seen
+          //$('#w-nav-overlay-0').css('display', 'none'); // hide the menu overlay so that the item scrolled to can be seen
   
           if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
               var target = $(this.hash);
@@ -279,7 +279,7 @@ $('#ligc-togl-expand')
           }
         });
         //
-        */
+        
       }
     };
   })(jQuery, Drupal);
