@@ -191,7 +191,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: "<a id=\"our-musical-team\">\r\n<h1class=\"ligc-section-heading\">LIGC's musical team</h1>\r\n</a>"
+            value: "<a id=\"our-musical-team\">\r\n<h1 class=\"ligc-section-heading\">LIGC's musical team</h1>\r\n</a>"
             format: full_html
           plugin_id: text
       footer: {  }
