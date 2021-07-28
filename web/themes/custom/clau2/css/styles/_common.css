@@ -55,13 +55,14 @@
   margin-bottom: 0;
 }
 
-.paragraph--type--text {
+.paragraph--type--text.text-confine-single-column {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
   padding-top: 1em;
   padding-bottom: 1em;
 }
+
 
 .ligc-content-2-column .paragraph--type--text {
   padding: 1.5em;

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.text.field_colour_background
     - field.field.paragraph.text.field_colour_text
+    - field.field.paragraph.text.field_style
     - field.field.paragraph.text.field_text
     - paragraphs.paragraphs_type.text
   module:
@@ -33,6 +34,16 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
+    region: content
+  field_style:
+    weight: -6
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_text:
     weight: -9

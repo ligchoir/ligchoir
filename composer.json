@@ -20,6 +20,7 @@
         "drupal/bg_img_field": "^1.6",
         "drupal/block_classes": "^1.0",
         "drupal/bootstrap": "^3.21",
+        "drupal/classy_paragraphs": "^1.0@beta",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
