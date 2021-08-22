@@ -29,7 +29,7 @@ form.webform-submission-form {
 .form-email, .form-text {
 	border-radius: 5px;
 	display: block;
-	width: 100%;
+	width: 95%;
 	padding: 8px 12px;
 	margin-bottom: 10px;
 	line-height: 1.428571429;
@@ -46,14 +46,22 @@ textarea {
 	margin-bottom: 10px;
 	line-height: 1.428571429;
 	color: #333333;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 	background-color: #ffffff;
-	border: 1px solid #cccccc;
+	border: 2px solid black;
+	/*outline: black solid 5px; */
 }
+
+/*
+#edit-your-message
+*/
+
+/*
 input.button{
     border: 0;
     width: 100%;
 }
+*/
 .paragraph.paragraph--type--contact{
 	line-height: normal;
 
@@ -71,4 +79,42 @@ input.button{
     padding-bottom: 10px;
     padding-left: 20px;
     */
+}
+
+.form-item-call-back-phone-number #edit-call-back-phone-number {
+	font: inherit;
+	margin: 0;
+	border-radius: 5px;
+	display: block;
+	width: 95%;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	color: #333333;
+	background-color: #ffffff;
+}
+
+
+/*.ligc-cta-fixed {*/
+.webform-button--submit {
+	border-radius: 0.5em;
+	border: 2px solid black;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	color: inherit;
+	display: inline-block;
+	text-align: center;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	width: 9em;
+}
+
+/*
+.webform-button--submit {
+
+}
+*/
+
+form {
+	font-family: 'Vegur';
+	font-size: 1.3em;
 }
