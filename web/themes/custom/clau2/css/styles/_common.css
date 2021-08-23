@@ -55,6 +55,7 @@
   margin-bottom: 0;
 }
 
+
 .text-confine-single-column {
   width: 65%;
   margin-left: auto;
@@ -63,7 +64,8 @@
   padding-bottom: 1em;
 }
 
-.text-confine-wide .text-formatted {
+
+.text-confine-wide {
   margin-left: auto;
   margin-right: auto;
   padding-top: 1em;
