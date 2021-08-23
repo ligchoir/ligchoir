@@ -118,3 +118,15 @@ form {
 	font-family: 'Vegur';
 	font-size: 1.3em;
 }
+
+.messages-status {
+	background-size: 1em;
+	padding-left: 2em;
+}
+
+.messages {
+	width: 72%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5em;
+}
