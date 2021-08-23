@@ -131,9 +131,9 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: page
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_type: message
+  confirmation_title: 'Thank you for your booking enquiry'
+  confirmation_message: 'Thank you for your booking enquiry.&nbsp; We will be in touch soon!'
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
