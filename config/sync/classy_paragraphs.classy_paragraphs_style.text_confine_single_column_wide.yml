@@ -3,5 +3,5 @@ langcode: en
 status: true
 dependencies: {  }
 id: text_confine_single_column_wide
-label: 'Text Confine Wide'
-classes: text-confine-wide
+label: 'Text Confine Single Column Wide'
+classes: text-confine-single-column-wide
