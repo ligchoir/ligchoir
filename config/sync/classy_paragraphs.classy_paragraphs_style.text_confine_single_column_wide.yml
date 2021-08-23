@@ -1,0 +1,7 @@
+uuid: cb9fd358-d9e8-4b78-88f9-0e52b6cf97c9
+langcode: en
+status: true
+dependencies: {  }
+id: text_confine_single_column_wide
+label: 'Text Confine Single Column Wide'
+classes: paragraph--type--text.text-confine-single-column-wide
