@@ -55,10 +55,10 @@
   margin-bottom: 0;
 }
 
-.text-confine-single-column {
 /*
 .paragraph--type--text.text-confine-single-column {
 */
+.text-confine-single-column {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
