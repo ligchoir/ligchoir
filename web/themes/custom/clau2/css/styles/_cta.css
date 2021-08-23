@@ -18,7 +18,7 @@
   margin-bottom: 5em;
 }
 
-
+/* CTA fixed is where there is placeholder for a CTA */
 .ligc-cta-fixed {
   border-radius: 0.5em;
   border: 0.2em solid;
@@ -27,6 +27,8 @@
   color: inherit;
   display: inline-block;
   text-align: center;
+  font-family: 'Vegur';
+  font-size: 1.3em;
 }
 
 span.ligc-cta-fixed a
@@ -59,4 +61,6 @@ span.ligc-cta a
   padding-right: 2em;
   color: white;
   display: inline-block;
+  font-family: 'Vegur';
+  font-size: 1.3em;
 }
