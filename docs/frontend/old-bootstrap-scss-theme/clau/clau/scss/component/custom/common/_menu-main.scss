@@ -1,0 +1,88 @@
+
+
+#clau-page-container-id {
+    padding-top: 10.0em; 
+
+}
+
+.page-node-type-home {
+
+}
+
+@media screen and (min-width: #{$screen-sm-min}) {
+
+}
+
+@media screen and (max-width: #{$screen-sm-max}) {
+
+
+
+
+}
+
+.menu--main {
+   padding-top: 5.0em;
+
+    font-size: 24px;
+    width: 100%;
+  }
+  
+  ul.menu.menu--main.nav.navbar-nav li a {
+    font-size: 24px;
+    color: rgb(224, 224, 224);
+  }
+  
+  ul.menu.menu--main.nav.navbar-nav li a.is-active {
+    font-size: 24px;
+    color: white;
+    background-color:transparent;
+  }
+  
+  .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  
+    font-size: 24px;
+
+  }
+  
+
+
+
+.navbar {
+    border: 0;
+    padding-left: 0;
+  }
+  
+  .navbar-default {
+      background-color:transparent;
+  }
+
+ul.menu--main a:hover {
+    color: white;
+}
+
+ul.menu--main a {
+    @include vegur-font('bold');
+    
+    font-size: 0.7em;
+    padding-left: 0;
+}
+
+/*
+ul.menu--main a.is-active {
+    color: white;
+}
+*/
+
+ul.menu--main a.is-active:before {
+content: "";
+position: absolute;
+width: 72px;
+height: 1px;
+//bottom: 80px;
+//left: 0%;
+//right: 8px;
+//margin-bottom: 16px;
+bottom: 0px;
+border-bottom: 4px solid rgb(255, 0, 0);
+//padding-left: 15px;
+}

@@ -1,0 +1,33 @@
+uuid: ea90f4b1-05fe-4309-a6c2-e504fcd0b7ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colour_border
+    - paragraphs.paragraphs_type.view
+    - taxonomy.vocabulary.modifiers_color
+  content:
+    - 'taxonomy_term:modifiers_color:ea7eb66b-9371-49d3-9ed4-ee4aa5623afc'
+id: paragraph.view.field_colour_border
+field_name: field_colour_border
+entity_type: paragraph
+bundle: view
+label: 'Colour - Border'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: ea7eb66b-9371-49d3-9ed4-ee4aa5623afc
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modifiers_color: modifiers_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

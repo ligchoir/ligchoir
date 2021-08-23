@@ -1,0 +1,132 @@
+.ligc-webform {
+  padding: 3em;
+}
+
+.ligc-contact-content {
+  padding-left: 1em;
+  padding-right: 1em; 
+}
+
+/*
+.paragraph--type--image .field--name-field-media-image img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+*/
+
+.paragraph--type--contact .field--name-field-contact-action {
+    padding-top: 0.5em;
+}
+
+
+form.webform-submission-form {
+  /*
+	margin: 0 auto;
+	max-width: 600px;
+  */
+}
+.form-email, .form-text {
+	border-radius: 5px;
+	display: block;
+	width: 95%;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	line-height: 1.428571429;
+	color: #333333;
+	vertical-align: middle;
+	background-color: #ffffff;
+}
+textarea {
+	min-height: 200px;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	line-height: 1.428571429;
+	color: #333333;
+	/* vertical-align: middle; */
+	background-color: #ffffff;
+	border: 2px solid black;
+	/*outline: black solid 5px; */
+}
+
+/*
+#edit-your-message
+*/
+
+/*
+input.button{
+    border: 0;
+    width: 100%;
+}
+*/
+.paragraph.paragraph--type--contact{
+	line-height: normal;
+
+  /*
+	max-width: 700px;
+	margin: 0 auto 30px;
+  */
+	/* padding: 20px 30px; */
+}
+.paragraph--type--contact{
+  /*
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    */
+}
+
+.form-item-call-back-phone-number #edit-call-back-phone-number {
+	font: inherit;
+	margin: 0;
+	border-radius: 5px;
+	display: block;
+	width: 95%;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	color: #333333;
+	background-color: #ffffff;
+}
+
+
+/*.ligc-cta-fixed {*/
+.webform-button--submit {
+	border-radius: 0.5em;
+	border: 2px solid black;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	color: inherit;
+	display: inline-block;
+	text-align: center;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	width: 9em;
+}
+
+/*
+.webform-button--submit {
+
+}
+*/
+
+form {
+	font-family: 'Vegur';
+	font-size: 1.3em;
+}
+
+.messages-status {
+	background-size: 1em;
+	padding-left: 2em;
+}
+
+.messages {
+	width: 72%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5em;
+}

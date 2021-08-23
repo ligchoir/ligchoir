@@ -1,0 +1,22 @@
+uuid: d5e2e65f-f5ce-4f55-b446-547b58cdcb9f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: '-58YzkzPjTD1xs2e5KmfljByZ8cmI1ucjsN6pyY8mHY'
+id: paragraph.field_mod_image_fx_invert
+field_name: field_mod_image_fx_invert
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,1489 @@
+Last login: Thu Feb  6 18:42:53 on console
+user@laptop ~ % ls
+Applications		Insync			Public
+Creative Cloud Files	Library			VirtualBox VMs
+Desktop			Movies			Work
+Documents		Music
+Downloads		Pictures
+user@laptop ~ % cd Work
+user@laptop Work % ls
+mainclients	myprojects	probonoclients
+user@laptop Work % cd probonoclients 
+user@laptop probonoclients % ls
+other-project-2	ligchoir		other-project
+user@laptop probonoclients % cd ligchoir 
+user@laptop ligchoir % ls 
+dev
+user@laptop ligchoir % cd dev
+user@laptop dev % ls
+sites
+user@laptop dev % cd sites
+user@laptop sites % ls
+ligc-develop
+user@laptop sites % cd ligc-develop 
+user@laptop ligc-develop % ls
+LICENSE			config			load.environment.php	vendor
+README.md		content			phpunit.xml.dist	web
+composer.json		docs			scripts
+composer.lock		drush			test
+user@laptop ligc-develop % cd ..
+user@laptop sites % ls
+ligc-develop
+user@laptop sites % cd ligc-develop 
+user@laptop ligc-develop % ls
+LICENSE			config			load.environment.php	vendor
+README.md		content			phpunit.xml.dist	web
+composer.json		docs			scripts
+composer.lock		drush			test
+user@laptop ligc-develop % git status
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .ddev/config.yaml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@laptop ligc-develop % git status
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .ddev/config.yaml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@laptop ligc-develop % git diff
+diff --git a/.ddev/config.yaml b/.ddev/config.yaml
+index 4bf2a22..30b928a 100644
+--- a/.ddev/config.yaml
++++ b/.ddev/config.yaml
+@@ -1,4 +1,4 @@
+-APIVersion: v1.12.2
++APIVersion: v1.12.0
+ name: ligc-develop
+ type: drupal8
+ docroot: web
+@@ -16,8 +16,8 @@ use_dns_when_possible: true
+ timezone: ""
+ 
+ 
+-# This config.yaml was created with ddev version v1.12.2
+-# webimage: drud/ddev-webserver:v1.12.2
++# This config.yaml was created with ddev version v1.12.0
++# webimage: drud/ddev-webserver:v1.12.1
+ # dbimage: drud/ddev-dbserver-mariadb-10.2:v1.12.0
+ # dbaimage: drud/phpmyadmin:v1.12.0
+ # bgsyncimage: drud/ddev-bgsync:v1.12.0
+user@laptop ligc-develop % git add .
+user@laptop ligc-develop % git branch    
+* develop
+  master
+user@laptop ligc-develop % git commit -am "ddev system file updates"
+[develop 5ac0296] ddev system file updates
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+user@laptop ligc-develop % git push origin develop
+To bitbucket.org:ligchoir/ligchoir.git
+ ! [rejected]        develop -> develop (fetch first)
+error: failed to push some refs to 'git@bitbucket.org:ligchoir/ligchoir.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+user@laptop ligc-develop % git pull origin develop
+remote: Counting objects: 76, done.
+remote: Compressing objects: 100% (70/70), done.
+remote: Total 76 (delta 15), reused 0 (delta 0)
+Unpacking objects: 100% (76/76), done.
+From bitbucket.org:ligchoir/ligchoir
+ * branch            develop    -> FETCH_HEAD
+   46cbdb7..65607ca  develop    -> origin/develop
+Merge made by the 'recursive' strategy.
+ config/sync/core.entity_view_mode.font.full.yml                      |   12 +
+ config/sync/core.entity_view_mode.font.teaser.yml                    |   12 +
+ config/sync/core.extension.yml                                       |    2 +
+ config/sync/field.field.font.font.field_classification.yml           |   31 +
+ config/sync/field.field.font.font.field_supported_languages.yml      |   31 +
+ config/sync/field.field.font.font.field_tags.yml                     |   35 +
+ config/sync/field.storage.font.field_classification.yml              |   22 +
+ config/sync/field.storage.font.field_supported_languages.yml         |   22 +
+ config/sync/field.storage.font.field_tags.yml                        |   22 +
+ config/sync/fontyourface.settings.yml                                |    4 +
+ config/sync/local_fonts.local_font_config_entity.vegur_bold.yml      |   19 +
+ config/sync/local_fonts.local_font_config_entity.vegur_light.yml     |   19 +
+ config/sync/local_fonts.local_font_config_entity.vegur_regular.yml   |   19 +
+ config/sync/taxonomy.vocabulary.font_classification.yml              |   10 +
+ config/sync/taxonomy.vocabulary.font_designer.yml                    |   10 +
+ config/sync/taxonomy.vocabulary.font_foundry.yml                     |   10 +
+ config/sync/taxonomy.vocabulary.font_tags.yml                        |   10 +
+ config/sync/taxonomy.vocabulary.languages_supported.yml              |   10 +
+ config/sync/views.view.fontyourface_font_manager.yml                 |  714 +++++++
+ .../CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt        |    0
+ .../invisionapp/fonts/as woff/convertio.co/Vegur-Bold.woff           |   44 +
+ .../invisionapp/fonts/as woff/convertio.co/Vegur-Light.woff          |   40 +
+ .../invisionapp/fonts/as woff/convertio.co/Vegur-Regular.woff        |   43 +
+ .../unzipped/webfontkit-20200203-182659/generator_config.txt         |    5 +
+ .../webfontkit-20200203-182659/specimen_files/grid_12-825-55-15.css  |  129 ++
+ .../specimen_files/specimen_stylesheet.css                           |  396 ++++
+ .../unzipped/webfontkit-20200203-182659/stylesheet.css               |   36 +
+ .../unzipped/webfontkit-20200203-182659/vegur-bold-demo.html         |  589 ++++++
+ .../unzipped/webfontkit-20200203-182659/vegur-bold-webfont.woff      |   70 +
+ .../unzipped/webfontkit-20200203-182659/vegur-bold-webfont.woff2     |   55 +
+ .../unzipped/webfontkit-20200203-182659/vegur-light-demo.html        |  589 ++++++
+ .../unzipped/webfontkit-20200203-182659/vegur-light-webfont.woff     |   61 +
+ .../unzipped/webfontkit-20200203-182659/vegur-light-webfont.woff2    |   56 +
+ .../unzipped/webfontkit-20200203-182659/vegur-regular-demo.html      |  589 ++++++
+ .../unzipped/webfontkit-20200203-182659/vegur-regular-webfont.woff   |   75 +
+ .../unzipped/webfontkit-20200203-182659/vegur-regular-webfont.woff2  |   67 +
+ docs/design/social_media_bitmaps/facebook-128.png                    |   16 +
+ docs/design/social_media_bitmaps/facebook-256.png                    |    6 +
+ docs/design/social_media_bitmaps/facebook-32.png                     |    3 +
+ docs/design/social_media_bitmaps/facebook-48.png                     |    3 +
+ docs/design/social_media_bitmaps/facebook-512.png                    |   35 +
+ docs/design/social_media_bitmaps/facebook-64.gif                     |    2 +
+ docs/design/social_media_bitmaps/facebook-64.png                     |    4 +
+ docs/design/social_media_bitmaps/twitter-128.png                     |   17 +
+ docs/design/social_media_bitmaps/twitter-24.png                      |    3 +
+ docs/design/social_media_bitmaps/twitter-256.png                     |   22 +
+ docs/design/social_media_bitmaps/twitter-32.png                      |    5 +
+ docs/design/social_media_bitmaps/twitter-48.png                      |    9 +
+ docs/design/social_media_bitmaps/twitter-512.png                     |   48 +
+ docs/design/social_media_bitmaps/twitter-64.png                      |   10 +
+ docs/sessions/logs/terminal/2019 10 17 openproject docker.txt        | 1681 +++++++++++++++++
+ docs/sessions/logs/terminal/2020 01 27 ligchoir.txt                  | 3006 ++++++++++++++++++++++++++++++
+ 52 files changed, 8728 insertions(+)
+ create mode 100644 config/sync/core.entity_view_mode.font.full.yml
+ create mode 100644 config/sync/core.entity_view_mode.font.teaser.yml
+ create mode 100644 config/sync/field.field.font.font.field_classification.yml
+ create mode 100644 config/sync/field.field.font.font.field_supported_languages.yml
+ create mode 100644 config/sync/field.field.font.font.field_tags.yml
+ create mode 100644 config/sync/field.storage.font.field_classification.yml
+ create mode 100644 config/sync/field.storage.font.field_supported_languages.yml
+ create mode 100644 config/sync/field.storage.font.field_tags.yml
+ create mode 100644 config/sync/fontyourface.settings.yml
+ create mode 100644 config/sync/local_fonts.local_font_config_entity.vegur_bold.yml
+ create mode 100644 config/sync/local_fonts.local_font_config_entity.vegur_light.yml
+ create mode 100644 config/sync/local_fonts.local_font_config_entity.vegur_regular.yml
+ create mode 100644 config/sync/taxonomy.vocabulary.font_classification.yml
+ create mode 100644 config/sync/taxonomy.vocabulary.font_designer.yml
+ create mode 100644 config/sync/taxonomy.vocabulary.font_foundry.yml
+ create mode 100644 config/sync/taxonomy.vocabulary.font_tags.yml
+ create mode 100644 config/sync/taxonomy.vocabulary.languages_supported.yml
+ create mode 100644 config/sync/views.view.fontyourface_font_manager.yml
+ rename docs/design/ux/invisionapp/fonts/{unzipped/vegur => as woff}/CC0 1.0 Universal (CC0 1.0)  Public Domain Dedication.txt (100%)
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/convertio.co/Vegur-Bold.woff
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/convertio.co/Vegur-Light.woff
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/convertio.co/Vegur-Regular.woff
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/generator_config.txt
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/specimen_files/grid_12-825-55-15.css
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/specimen_files/specimen_stylesheet.css
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/stylesheet.css
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-bold-demo.html
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-bold-webfont.woff
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-bold-webfont.woff2
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-light-demo.html
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-light-webfont.woff
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-light-webfont.woff2
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-regular-demo.html
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-regular-webfont.woff
+ create mode 100644 docs/design/ux/invisionapp/fonts/as woff/fontsquirrel.com/unzipped/webfontkit-20200203-182659/vegur-regular-webfont.woff2
+ create mode 100644 docs/design/social_media_bitmaps/facebook-128.png
+ create mode 100644 docs/design/social_media_bitmaps/facebook-256.png
+ create mode 100644 docs/design/social_media_bitmaps/facebook-32.png
+ create mode 100644 docs/design/social_media_bitmaps/facebook-48.png
+ create mode 100644 docs/design/social_media_bitmaps/facebook-512.png
+ create mode 100644 docs/design/social_media_bitmaps/facebook-64.gif
+ create mode 100644 docs/design/social_media_bitmaps/facebook-64.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-128.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-24.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-256.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-32.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-48.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-512.png
+ create mode 100644 docs/design/social_media_bitmaps/twitter-64.png
+ create mode 100644 docs/sessions/logs/terminal/2019 10 17 openproject docker.txt
+ create mode 100644 docs/sessions/logs/terminal/2020 01 27 ligchoir.txt
+user@laptop ligc-develop % git status
+On branch develop
+Your branch is ahead of 'origin/develop' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+user@laptop ligc-develop % git push origin develop
+Enumerating objects: 12, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 693 bytes | 693.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: 
+remote: Create pull request for develop:
+remote:   https://bitbucket.org/ligchoir/ligchoir/pull-requests/new?source=develop&t=1
+remote: 
+To bitbucket.org:ligchoir/ligchoir.git
+   65607ca..750d73c  develop -> develop
+user@laptop ligc-develop % ls
+LICENSE			config			load.environment.php	vendor
+README.md		content			phpunit.xml.dist	web
+composer.json		docs			scripts
+composer.lock		drush			test
+user@laptop ligc-develop % ddev poweroff
+
+
+A new update is available! please visit https://github.com/drud/ddev/releases/tag/v1.13.0 to download the update.
+For upgrade help see https://ddev.readthedocs.io/en/stable/#installation 
+Removing container: ddev-biteback2030-web 
+Removing container: ddev-biteback2030-dba 
+Removing container: ddev-biteback2030-db 
+Removing ddev-router ... done
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project biteback2030 has been stopped. 
+Removing container: ddev-ligc-develop-web 
+Removing container: ddev-ligc-develop-dba 
+Removing container: ddev-ligc-develop-db 
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project ligc-develop has been stopped. 
+Removing container: ddev-other-develop-web 
+Removing container: ddev-other-develop-dba 
+Removing container: ddev-other-develop-db 
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project other-develop has been stopped. 
+Removing ddev-ssh-agent ... done
+Network ddev_default is external, skipping 
+The ddev-ssh-agent container has been removed. When you start it again you will have to use 'ddev auth ssh' to provide key authentication again. 
+user@laptop ligc-develop % brew upgrade ddev
+Error: Can't create update lock in /usr/local/var/homebrew/locks!
+Fix permissions by running:
+  sudo chown -R $(whoami) /usr/local/var/homebrew
+^C%                                                                                                         user@laptop ligc-develop % sudo chown -R $(whoami) /usr/local/var/homebrew
+Password:
+user@laptop ligc-develop % ls -l /usr/bin
+total 83440
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 2to3- -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/2to3-2.7
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 2to3-2.7 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/2to3-2.7
+-rwxr-xr-x   1 root   wheel     70288 23 Jan 13:58 AssetCacheLocatorUtil
+-rwxr-xr-x   1 root   wheel     67360 23 Jan 13:58 AssetCacheManagerUtil
+-rwxr-xr-x   1 root   wheel     57792 23 Jan 13:58 AssetCacheTetheratorUtil
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 BuildStrings
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 CpMac
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 DeRez
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:58 GetFileInfo
+-rwxr-xr-x   1 root   wheel     86976 23 Jan 13:59 IOAccelMemory
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 MergePef
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 MvMac
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 ResMerger
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 Rez
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 RezDet
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 RezWack
+-rwxr-xr-x   1 root   wheel     45664 23 Jan 13:58 SafeEjectGPU
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 SetFile
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 SplitForks
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 UnRezWack
+-rwxr-xr-x   1 root   wheel     42864 23 Jan 13:58 a2p
+-rwxr-xr-x   1 root   wheel    124816 23 Jan 13:59 a2p5.18
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 actool
+-rwxr-xr-x   1 root   wheel     46928 23 Jan 13:59 addftinfo
+-rwxr-xr-x   1 root   wheel     56496 23 Jan 13:59 afclip
+-rwxr-xr-x   1 root   wheel    133968 23 Jan 13:59 afconvert
+-rwxr-xr-x   1 root   wheel     41616 23 Jan 13:59 afhash
+-rwxr-xr-x   1 root   wheel     89136 23 Jan 13:59 afida
+-rwxr-xr-x   1 root   wheel     83856 23 Jan 13:59 afinfo
+-rwxr-xr-x   1 root   wheel    162321 25 Aug 00:05 afmtodit
+-rwxr-xr-x   1 root   wheel     57392 23 Jan 13:59 afplay
+-rwxr-xr-x   1 root   wheel     46656 23 Jan 13:59 afscexpand
+-rwxr-xr-x   1 root   wheel     43216 23 Jan 13:59 agentxtrap
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 agvtool
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 alias
+-rwxr-xr-x   1 root   wheel     43712 23 Jan 13:59 app-sso
+-rwxr-xr-x   1 root   wheel     50240 23 Jan 13:58 applesingle
+lrwxr-xr-x   1 root   wheel        82  9 Oct 21:57 appletviewer -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/appletviewer
+-rwxr-xr-x   1 root   wheel     32096 23 Jan 13:59 apply
+-r-xr-xr-x   1 root   wheel      2095 16 Oct 08:29 apropos
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 apt -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/apt
+-rwxr-xr-x   1 root   wheel     31440 23 Jan 13:59 ar
+-rwxr-xr-x   1 root   wheel     43456 23 Jan 13:58 arch
+-rwxr-xr-x   1 root   wheel     31440 23 Jan 13:59 as
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 asa
+-rwxr-xr-x   1 root   wheel    137248 23 Jan 13:59 asctl
+-rwxr-xr-x   1 root   wheel    905456 23 Jan 13:58 assetutil
+-r-sr-xr-x   1 root   wheel     51808 23 Jan 13:59 at
+-rwxr-xr-x   1 root   wheel     90560 23 Jan 13:59 atos
+-r-sr-xr-x   1 root   wheel     51808 23 Jan 13:58 atq
+-r-sr-xr-x   1 root   wheel     51808 23 Jan 13:58 atrm
+-rwxr-xr-x   1 root   wheel     42960 23 Jan 13:59 atsutil
+-rwxr-xr-x   1 root   wheel     53312 23 Jan 13:58 automator
+-r-xr-xr-x   1 root   wheel       125 25 Aug 01:12 auval
+-rwxr-xr-x   1 root   wheel    146704 23 Jan 13:59 auvaltool
+-rwxr-xr-x   1 root   wheel     70432 23 Jan 13:59 avbdiagnose
+-rwxr-xr-x   1 root   wheel     72960 23 Jan 13:59 avbutil
+-rwxr-xr-x   1 root   wheel     59808 23 Jan 13:59 avconvert
+-rwxr-xr-x   1 root   wheel     42544 23 Jan 13:59 avmetareadwrite
+-rwxr-xr-x   1 root   wheel    121600 23 Jan 13:59 awk
+-rwxr-xr-x   1 root   wheel     44208 23 Jan 13:59 banner
+-rwxr-xr-x   1 root   wheel     36368 23 Jan 13:59 base64
+-rwxr-xr-x   1 root   wheel     31424 23 Jan 13:59 basename
+-r-xr-xr-x   1 root   wheel      6574 27 Aug 01:58 bashbug
+-r-sr-xr-x   1 root   wheel     51808 23 Jan 13:58 batch
+-rwxr-xr-x   1 root   wheel     94416 23 Jan 13:58 bc
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 bg
+-rwxr-xr-x   1 root   wheel     31360 23 Jan 13:59 biff
+-rwxr-xr-x   1 root   wheel     58912 23 Jan 13:59 binhex
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 binhex.pl
+-r-xr-xr-x   1 root   wheel      3941 25 Aug 03:12 binhex5.18.pl
+-r-xr-xr-x   1 root   wheel      3941 25 Aug 03:12 binhex5.28.pl
+-rwxr-xr-x   1 root   wheel    142256 23 Jan 13:59 bioutil
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 bison
+-rwxr-xr-x   1 root   wheel      1958 25 Aug 00:11 bitesize.d
+-rwxr-xr-x   1 root   wheel    197200 23 Jan 13:59 brctl
+-rwxr-xr-x   1 root   wheel     77056 23 Jan 13:59 bsdtar
+-rwxr-xr-x   1 root   wheel     35968 23 Jan 13:59 bspatch
+-r-xr-xr-x   1 root   wheel       580 25 Aug 00:33 bundle
+-r-xr-xr-x   1 root   wheel       582 25 Aug 00:33 bundler
+-rwxr-xr-x   1 root   wheel     54480 23 Jan 13:59 bunzip2
+-rwxr-xr-x   1 root   wheel     54480 23 Jan 13:59 bzcat
+lrwxr-xr-x   1 root   wheel         6  9 Oct 21:57 bzcmp -> bzdiff
+-rwxr-xr-x   1 root   wheel      2101 24 Aug 23:56 bzdiff
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 bzegrep
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 bzfgrep
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 bzgrep
+-rwxr-xr-x   1 root   wheel     54480 23 Jan 13:59 bzip2
+-rwxr-xr-x   1 root   wheel     35952 23 Jan 13:59 bzip2recover
+lrwxr-xr-x   1 root   wheel         6  9 Oct 21:57 bzless -> bzmore
+-rwxr-xr-x   1 root   wheel      1259 24 Aug 23:56 bzmore
+lrwxr-xr-x   1 root   wheel         7  9 Oct 21:57 c++ -> clang++
+-rwxr-xr-x   1 root   wheel    444704 23 Jan 13:58 c++filt
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 c2ph
+-rwxr-xr-x   1 root   wheel     36642 25 Aug 00:17 c2ph5.18
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 c89
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 c99
+-rwxr-xr-x   1 root   wheel     37552 23 Jan 13:58 caffeinate
+-r-xr-xr-x   1 root   wheel     45392 23 Jan 13:59 cal
+-r-xr-xr-x   1 root   wheel     46720 23 Jan 13:59 calendar
+-r-xr-xr-x   1 root   wheel     36992 23 Jan 13:58 cancel
+-rwxr-xr-x   1 root   wheel     31824 23 Jan 13:59 cap_mkdb
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 captoinfo -> tic
+lrwxr-xr-x   1 root   wheel         5  9 Oct 21:57 cc -> clang
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 cd
+-rwxr-xr-x   1 root   wheel    105040 23 Jan 13:58 certtool
+-rwxr-xr-x   1 root   wheel     40016 23 Jan 13:58 checknr
+-rwxr-xr-x   1 root   wheel     31872 23 Jan 13:59 chflags
+-rwxr-xr-x   1 root   wheel     46240 23 Jan 13:59 chfn
+-rwxr-xr-x   1 root   wheel     36416 23 Jan 13:59 chgrp
+-rwxr-xr-x   1 root   wheel     46240 23 Jan 13:59 chpass
+-rwxr-xr-x   1 root   wheel     46240 23 Jan 13:59 chsh
+-rwxr-xr-x   1 root   wheel     35888 23 Jan 13:59 cksum
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 clang
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 clang++
+-rwxr-xr-x   1 root   wheel     31136 23 Jan 13:58 clear
+-rwxr-xr-x   1 root   wheel     45792 23 Jan 13:58 cmp
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 cmpdylib
+-rwxr-xr-x   1 root   wheel    113968 23 Jan 13:58 codesign
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 codesign_allocate
+-rwxr-xr-x   1 root   wheel     36080 23 Jan 13:59 col
+-rwxr-xr-x   1 root   wheel     31696 23 Jan 13:59 colcrt
+-rwxr-xr-x   1 root   wheel     70784 23 Jan 13:58 colldef
+-rwxr-xr-x   1 root   wheel     31616 23 Jan 13:59 colrm
+-rwxr-xr-x   1 root   wheel     36624 23 Jan 13:59 column
+-rwxr-xr-x   1 root   wheel     31776 23 Jan 13:59 comm
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 command
+-rwxr-xr-x   1 root   wheel     40944 23 Jan 13:58 compress
+-rwxr-xr-x   1 root   wheel     36160 23 Jan 13:59 compression_tool
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 config_data
+-rwxr-xr-x   1 root   wheel      7265 25 Aug 00:17 config_data5.18
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 corelist
+-rwxr-xr-x   1 root   wheel     12790 25 Aug 00:17 corelist5.18
+-rwxr-xr-x   1 root   wheel     15123 25 Aug 00:17 corelist5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 cpan
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 cpan2dist
+-rwxr-xr-x   1 root   wheel     21859 25 Aug 00:17 cpan2dist5.18
+-rwxr-xr-x   1 root   wheel      5895 25 Aug 00:17 cpan5.18
+-rwxr-xr-x   1 root   wheel      8191 25 Aug 00:17 cpan5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 cpanp
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 cpanp-run-perl
+-rwxr-xr-x   1 root   wheel       580 25 Aug 00:17 cpanp-run-perl5.18
+-rwxr-xr-x   1 root   wheel      3433 25 Aug 00:17 cpanp5.18
+-rwxr-xr-x   1 root   wheel     57968 23 Jan 13:59 cpio
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 cpp
+-rwxr-xr-x   1 root   wheel      1402 25 Aug 00:10 cpu_profiler.d
+-rwxr-xr-x   1 root   wheel     31744 23 Jan 13:59 cpuctl
+-rwxr-xr-x   1 root   wheel      1540 25 Aug 00:11 cpuwalk.d
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 crc32
+-r-xr-xr-x   1 root   wheel       871 25 Aug 03:12 crc325.18
+-r-xr-xr-x   1 root   wheel       871 25 Aug 03:12 crc325.28
+-rwxr-xr-x   1 root   wheel       342 25 Aug 00:11 creatbyproc.d
+-rwxr-xr-x   1 root   wheel     48512 23 Jan 13:58 crlrefresh
+-rwsr-xr-x   1 root   wheel     52320 23 Jan 13:59 crontab
+-rwxr-xr-x   1 root   wheel     14990 25 Aug 01:54 csdiagnose
+-rwxr-xr-x   1 root   wheel    551360 23 Jan 13:58 csgather
+-rwxr-xr-x   1 root   wheel     37136 23 Jan 13:59 csplit
+-rwxr-xr-x   1 root   wheel     50960 23 Jan 13:59 csreq
+-rwxr-xr-x   1 root   wheel     42912 23 Jan 13:59 csrutil
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 ctags
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 ctf_insert
+-r-xr-xr-x   1 _uucp  wheel    142432 23 Jan 13:59 cu
+-r-xr-xr-x   1 root   wheel      2527  2 Dec 02:29 cups-config
+-r-xr-xr-x   1 root   wheel     76544 23 Jan 13:59 cupstestppd
+-rwxr-xr-x   1 root   wheel    203680 23 Jan 13:59 curl
+-rwxr-xr-x   1 root   wheel      5441 24 Aug 23:56 curl-config
+-rwxr-xr-x   1 root   wheel     36832 23 Jan 13:58 cut
+lrwxr-xr-x   1 root   wheel        59  9 Oct 21:57 cvaffinity -> /System/Library/Filesystems/acfs.fs/Contents/bin/cvaffinity
+lrwxr-xr-x   1 root   wheel        53  9 Oct 21:57 cvcp -> /System/Library/Filesystems/acfs.fs/Contents/bin/cvcp
+lrwxr-xr-x   1 root   wheel        56  9 Oct 21:57 cvmkdir -> /System/Library/Filesystems/acfs.fs/Contents/bin/cvmkdir
+lrwxr-xr-x   1 root   wheel        57  9 Oct 21:57 cvmkfile -> /System/Library/Filesystems/acfs.fs/Contents/bin/cvmkfile
+-rwxr-xr-x   1 root   wheel      7163 25 Aug 00:11 dappprof
+-rwxr-xr-x   1 root   wheel      7878 25 Aug 00:11 dapptrace
+-rwxr-xr-x   1 root   wheel    152704 23 Jan 13:58 darwinup
+-r-xr-xr-x   1 root   wheel   1032560 23 Jan 13:58 db_archive
+-r-xr-xr-x   1 root   wheel   1032640 23 Jan 13:58 db_checkpoint
+-r-xr-xr-x   1 root   wheel   1044880 23 Jan 13:59 db_codegen
+-r-xr-xr-x   1 root   wheel   1032640 23 Jan 13:58 db_deadlock
+-r-xr-xr-x   1 root   wheel   1036816 23 Jan 13:59 db_dump
+-r-xr-xr-x   1 root   wheel   1041072 23 Jan 13:59 db_hotbackup
+-r-xr-xr-x   1 root   wheel   1045520 23 Jan 13:58 db_load
+-r-xr-xr-x   1 root   wheel   1071296 23 Jan 13:59 db_printlog
+-r-xr-xr-x   1 root   wheel   1032704 23 Jan 13:59 db_recover
+-r-xr-xr-x   1 root   wheel   1036688 23 Jan 13:59 db_stat
+-r-xr-xr-x   1 root   wheel   1032560 23 Jan 13:59 db_upgrade
+-r-xr-xr-x   1 root   wheel   1032576 23 Jan 13:59 db_verify
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 dbicadmin
+-r-xr-xr-x   1 root   wheel      7195 25 Aug 03:12 dbicadmin5.18
+-r-xr-xr-x   1 root   wheel      7195 25 Aug 03:12 dbicadmin5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 dbilogstrip
+-r-xr-xr-x   1 root   wheel      1469 25 Aug 03:12 dbilogstrip5.18
+-r-xr-xr-x   1 root   wheel      1469 25 Aug 03:12 dbilogstrip5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 dbiprof
+-r-xr-xr-x   1 root   wheel      6295 25 Aug 03:12 dbiprof5.18
+-r-xr-xr-x   1 root   wheel      6295 25 Aug 03:12 dbiprof5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 dbiproxy
+-r-xr-xr-x   1 root   wheel      5479 25 Aug 03:12 dbiproxy5.18
+-r-xr-xr-x   1 root   wheel      5479 25 Aug 03:12 dbiproxy5.28
+-rwxr-xr-x   1 root   wheel     59344 23 Jan 13:59 dc
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 debinhex.pl
+-r-xr-xr-x   1 root   wheel      5882 25 Aug 03:12 debinhex5.18.pl
+-r-xr-xr-x   1 root   wheel      5882 25 Aug 03:12 debinhex5.28.pl
+-rwxr-xr-x   1 root   wheel     53200 23 Jan 13:58 defaults
+-rwxr-xr-x   1 root   wheel   1897280 23 Jan 13:58 delv
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 desdp
+-rwxr-xr-x   1 root   wheel      2391 14 Sep 05:55 diagnose-fu
+-rwxr-xr-x   1 root   wheel    118784 23 Jan 13:59 diff
+-rwxr-xr-x   1 root   wheel     50240 23 Jan 13:58 diff3
+-rwxr-xr-x   1 root   wheel     54192 23 Jan 13:59 diffstat
+-rwxr-xr-x   1 root   wheel   1898752 23 Jan 13:59 dig
+-rwxr-xr-x   1 root   wheel     31248 23 Jan 13:59 dirname
+-rwxr-xr-x   1 root   wheel      1290 25 Aug 00:11 dispqlen.d
+-rwxr-xr-x   1 root   wheel     47824 23 Jan 13:58 ditto
+-rwxr-xr-x   1 root   wheel     42032 23 Jan 13:58 dmc
+-rwxr-xr-x   1 root   wheel     75968 23 Jan 13:59 dns-sd
+-rwxr-xr-x   1 root   wheel    273088 23 Jan 13:59 drutil
+-rwxr-xr-x   1 root   wheel     47360 23 Jan 13:59 dscacheutil
+-rwxr-xr-x   1 root   wheel    199360 23 Jan 13:59 dscl
+-rwxr-xr-x   1 root   wheel     31152 23 Jan 13:58 dserr
+-rwxr-xr-x   1 root   wheel     46480 23 Jan 13:58 dsexport
+-rwxr-xr-x   1 root   wheel     88912 23 Jan 13:58 dsimport
+-rwxr-xr-x   1 root   wheel     36768 23 Jan 13:59 dsmemberutil
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 dsymutil
+-rwxr-xr-x   1 root   wheel     30607 25 Aug 00:11 dtruss
+-rwxr-xr-x   1 root   wheel     36784 23 Jan 13:59 du
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 dwarfdump
+-rwxr-xr-x   2 root   wheel       544 25 Aug 03:43 easy_install
+-rwxr-xr-x   2 root   wheel       544 25 Aug 03:43 easy_install-2.7
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:58 egrep
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 enc2xs
+-rwxr-xr-x   1 root   wheel     39189 25 Aug 00:17 enc2xs5.18
+-rwxr-xr-x   1 root   wheel     42079 25 Aug 00:17 enc2xs5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 encguess
+-rwxr-xr-x   1 root   wheel      3101 25 Aug 00:17 encguess5.28
+-rwxr-xr-x   1 root   wheel     41984 23 Jan 13:58 encode_keychange
+-rwxr-xr-x   1 root   wheel     36640 23 Jan 13:58 env
+-rwxr-xr-x   1 root   wheel    149952 23 Jan 13:59 eqn
+-r-xr-xr-x   1 root   wheel      5136 25 Aug 00:33 erb
+-rwxr-xr-x   1 root   wheel      4516 25 Aug 00:11 errinfo
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 ex -> vim
+-rwxr-xr-x   1 root   wheel      5115 25 Aug 00:11 execsnoop
+-rwxr-xr-x   1 root   wheel     31696 23 Jan 13:59 expand
+-r-xr-xr-x   1 root   wheel     36192 23 Jan 13:59 expect
+lrwxr-xr-x   1 root   wheel        78  9 Oct 21:57 extcheck -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/extcheck
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 eyapp
+-r-xr-xr-x   1 root   wheel     12841 25 Aug 03:12 eyapp5.18
+-r-xr-xr-x   1 root   wheel     12841 25 Aug 03:12 eyapp5.28
+-rwxr-xr-x   1 root   wheel     30944 23 Jan 13:59 false
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 fc
+-rwxr-xr-x   1 root   wheel      2668 25 Aug 00:11 fddist
+-rwxr-xr-x   1 root   wheel    320192 23 Jan 13:59 fdesetup
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 fg
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 fgrep
+-rwxr-xr-x   1 root   wheel    141120 23 Jan 13:59 file
+-rwxr-xr-x   1 root   wheel       272 25 Aug 00:11 filebyproc.d
+-rwxr-xr-x   1 root   wheel    326000 23 Jan 13:59 fileproviderctl
+-rwxr-xr-x   1 root   wheel     83904 23 Jan 13:59 filtercalltree
+-rwxr-xr-x   1 root   wheel     65040 23 Jan 13:59 find
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 find2perl
+-rwxr-xr-x   1 root   wheel     23634 25 Aug 00:17 find2perl5.18
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 findrule
+-r-xr-xr-x   1 root   wheel      3418 25 Aug 03:12 findrule5.18
+-r-xr-xr-x   1 root   wheel      3418 25 Aug 03:12 findrule5.28
+-rwxr-xr-x   1 root   wheel     47104 23 Jan 13:59 finger
+-rwxr-xr-x   1 root   wheel     15523 25 Aug 01:47 fixproc
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 flex
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 flex++
+-rwxr-xr-x   1 root   wheel     36336 23 Jan 13:58 fmt
+-rwxr-xr-x   1 root   wheel     31920 23 Jan 13:59 fold
+lrwxr-xr-x   1 root   wheel       126  9 Oct 21:57 fontrestore -> ../../System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Support/fontmover
+-rwxr-xr-x   1 root   wheel    209920 23 Jan 13:59 footprint
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 format-sql
+-r-xr-xr-x   1 root   wheel       448 25 Aug 03:12 format-sql5.18
+-r-xr-xr-x   1 root   wheel       448 25 Aug 03:12 format-sql5.28
+-rwxr-xr-x   1 root   wheel     31840 23 Jan 13:59 from
+-rwxr-xr-x   1 root   wheel     73696 23 Jan 13:59 fs_usage
+-rwxr-xr-x   1 root   wheel     48592 23 Jan 13:58 funzip
+-r-xr-xr-x   1 root   wheel      2610 25 Aug 00:15 fuser
+-rwxr-xr-x   1 root   wheel     47056 23 Jan 13:58 fwkdp
+-rwxr-xr-x   1 root   wheel     55440 23 Jan 13:58 fwkpfv
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 g++
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 gatherheaderdoc
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 gcc
+-rwxr-xr-x   1 root   wheel     97840 23 Jan 13:59 gcore
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 gcov
+-rwxr-xr-x   1 root   wheel      7198 25 Aug 00:05 gdiffmk
+-r-xr-xr-x   1 root   wheel       596 25 Aug 00:33 gem
+-r-xr-xr-x   1 root   wheel     79113 25 Aug 00:45 gen_bridge_metadata
+-rwxr-xr-x   1 root   wheel     40608 23 Jan 13:58 gencat
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 genstrings
+-rwxr-xr-x   1 root   wheel     44320 23 Jan 13:59 getconf
+-rwxr-xr-x   1 root   wheel     31120 23 Jan 13:58 getopt
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 getopts
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 git
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:58 git-receive-pack
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 git-shell
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 git-upload-archive
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:58 git-upload-pack
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 gm4
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 gnumake
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 gperf
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 grep
+-rwxr-xr-x   1 root   wheel     81360 23 Jan 13:59 grn
+-rwxr-xr-x   1 root   wheel     96400 23 Jan 13:59 grodvi
+-rwxr-xr-x   1 root   wheel     81376 23 Jan 13:59 groff
+-rwxr-xr-x   1 root   wheel      7074 25 Aug 00:05 groffer
+-rwxr-xr-x   1 root   wheel      2471 25 Aug 00:05 grog
+-rwxr-xr-x   1 root   wheel    100032 23 Jan 13:59 grolbp
+-rwxr-xr-x   1 root   wheel     95952 23 Jan 13:58 grolj4
+-rwxr-xr-x   1 root   wheel    129888 23 Jan 13:58 grops
+-rwxr-xr-x   1 root   wheel     96128 23 Jan 13:59 grotty
+-rwxr-xr-x   1 root   wheel     36352 23 Jan 13:59 groups
+-rwxr-xr-x   1 root   wheel     66832 23 Jan 13:58 gunzip
+-rwxr-xr-x   1 root   wheel     66832 23 Jan 13:59 gzcat
+-rwxr-xr-x   1 root   wheel      4085 24 Aug 23:53 gzexe
+-rwxr-xr-x   1 root   wheel     60288 23 Jan 13:59 gzip
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 h2ph
+-rwxr-xr-x   1 root   wheel     28167 25 Aug 00:17 h2ph5.18
+-rwxr-xr-x   1 root   wheel     29259 25 Aug 00:17 h2ph5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 h2xs
+-rwxr-xr-x   1 root   wheel     60725 25 Aug 00:17 h2xs5.18
+-rwxr-xr-x   1 root   wheel     60901 25 Aug 00:17 h2xs5.28
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 hash
+-rwxr-xr-x   1 root   wheel     31072 23 Jan 13:58 hdid
+-rwxr-xr-x   1 root   wheel    349376 23 Jan 13:59 hdiutil
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:58 hdxml2manxml
+-rwxr-xr-x   1 root   wheel     32160 23 Jan 13:59 head
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:58 headerdoc2html
+-rwxr-xr-x   1 root   wheel    111264 23 Jan 13:59 heap
+-rwxr-xr-x   1 root   wheel     45984 23 Jan 13:59 hexdump
+-rwxr-xr-x   1 root   wheel     52464 23 Jan 13:58 hidutil
+-rwxr-xr-x   1 root   wheel    123392 23 Jan 13:59 hiutil
+-rwxr-xr-x   1 root   wheel   1882128 23 Jan 13:59 host
+-rwxr-xr-x   1 root   wheel     31760 23 Jan 13:58 hostinfo
+-rwxr-xr-x   1 root   wheel      1939 25 Aug 00:11 hotspot.d
+-rwxr-xr-x   1 root   wheel    135728 23 Jan 13:59 hpftodit
+-rwxr-xr-x   1 root   wheel    101376 23 Jan 13:58 hpmdiagnose
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 htmltree
+-r-xr-xr-x   1 root   wheel      1177 25 Aug 03:12 htmltree5.18
+-r-xr-xr-x   1 root   wheel      1177 25 Aug 03:12 htmltree5.28
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 ibtool
+-rwxr-xr-x   1 root   wheel     46064 23 Jan 13:59 iconutil
+-rwxr-xr-x   1 root   wheel     45328 23 Jan 13:58 iconv
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 ictool
+-rwxr-xr-x   1 root   wheel     36352 23 Jan 13:59 id
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 idle -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/idle2.7
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 idle2.7 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/idle2.7
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 idlj -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/idlj
+-rwxr-xr-x   1 root   wheel      8545 26 Sep 04:35 imptrace
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 indent
+-rwxr-xr-x   1 root   wheel     57504 23 Jan 13:59 indxbib
+-rwxr-xr-x   1 root   wheel    184176 23 Jan 13:58 info
+-rwxr-xr-x   1 root   wheel     67792 23 Jan 13:59 infocmp
+-rwxr-xr-x   1 root   wheel     68560 23 Jan 13:58 infokey
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 infotocap -> tic
+-rwxr-xr-x   1 root   wheel     41776 23 Jan 13:59 install
+-rwxr-xr-x   1 root   wheel     73216 23 Jan 13:59 install-info
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 install_name_tool
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 instmodsh
+-rwxr-xr-x   1 root   wheel      4288 25 Aug 00:17 instmodsh5.18
+-rwxr-xr-x   1 root   wheel      4322 25 Aug 00:17 instmodsh5.28
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 instruments
+-rwxr-xr-x   1 root   wheel      1976 25 Aug 00:11 iofile.d
+-rwxr-xr-x   1 root   wheel      1573 25 Aug 00:11 iofileb.d
+-rwxr-xr-x   1 root   wheel      6604 25 Aug 00:11 iopattern
+-rwxr-xr-x   1 root   wheel      5946 25 Aug 00:11 iopending
+-rwxr-xr-x   1 root   wheel     12137 25 Aug 00:11 iosnoop
+-rwxr-xr-x   1 root   wheel     11884 25 Aug 00:11 iotop
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 ip2cc
+-r-xr-xr-x   1 root   wheel      2116 25 Aug 03:12 ip2cc5.18
+-r-xr-xr-x   1 root   wheel      2116 25 Aug 03:12 ip2cc5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 ipcount
+-r-xr-xr-x   1 root   wheel      3728 25 Aug 03:12 ipcount5.18
+-r-xr-xr-x   1 root   wheel      3728 25 Aug 03:12 ipcount5.28
+-rwxr-xr-x   1 root   wheel     31712 23 Jan 13:58 ipcrm
+-rwxr-xr-x   1 root   wheel     40160 23 Jan 13:58 ipcs
+-r-xr-xr-x   1 root   wheel    126096 23 Jan 13:58 ippeveprinter
+-r-xr-xr-x   1 root   wheel     60400 23 Jan 13:59 ippfind
+-r-xr-xr-x   1 root   wheel     89024 23 Jan 13:59 ipptool
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 iprofiler
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 iptab
+-r-xr-xr-x   1 root   wheel       986 25 Aug 03:12 iptab5.18
+-r-xr-xr-x   1 root   wheel       986 25 Aug 03:12 iptab5.28
+-r-xr-xr-x   1 root   wheel       558 25 Aug 00:33 irb
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 jar -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jar
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 jarsigner -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jarsigner
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 java -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 javac -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/javac
+lrwxr-xr-x   1 root   wheel        77  9 Oct 21:57 javadoc -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/javadoc
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 javah -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/javah
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 javap -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/javap
+lrwxr-xr-x   1 root   wheel        82  9 Oct 21:57 javapackager -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/javapackager
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 javaws -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/javaws
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 jcmd -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jcmd
+lrwxr-xr-x   1 root   wheel        78  9 Oct 21:57 jconsole -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jconsole
+lrwxr-xr-x   1 root   wheel        78  9 Oct 21:57 jcontrol -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jcontrol
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 jdb -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jdb
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 jdeps -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jdeps
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 jhat -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jhat
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 jhsdb -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jhsdb
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 jimage -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jimage
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 jinfo -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jinfo
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 jjs -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jjs
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 jmap -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jmap
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 jmc -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jmc
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 jobs
+-rwxr-xr-x   1 root   wheel     36656 23 Jan 13:58 join
+-rwxr-xr-x   1 root   wheel     36224 23 Jan 13:59 jot
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 jps -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jps
+lrwxr-xr-x   1 root   wheel        80  9 Oct 21:57 jrunscript -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jrunscript
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 jsadebugd -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jsadebugd
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 jshell -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jshell
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 json_pp
+-rwxr-xr-x   1 root   wheel      3953 25 Aug 00:17 json_pp5.18
+-rwxr-xr-x   1 root   wheel      4414 25 Aug 00:17 json_pp5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 json_xs
+-r-xr-xr-x   1 root   wheel      7102 25 Aug 03:12 json_xs5.28
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 jstack -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jstack
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 jstat -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jstat
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 jstatd -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jstatd
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 jvisualvm -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/jvisualvm
+-rwxr-xr-x   1 root   wheel     86784 23 Jan 13:59 kcc
+-rwxr-xr-x   1 root   wheel     50208 23 Jan 13:59 kdestroy
+-rwxr-xr-x   1 root   wheel    108896 23 Jan 13:59 kextutil
+lrwxr-xr-x   1 root   wheel        77  9 Oct 21:57 keytool -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/keytool
+-rwxr-xr-x   1 root   wheel     51392 23 Jan 13:59 kgetcred
+-rwxr-xr-x   1 root   wheel      1621 25 Aug 00:11 kill.d
+-rwxr-xr-x   1 root   wheel     37120 23 Jan 13:59 killall
+-rwxr-xr-x   1 root   wheel     76944 23 Jan 13:58 kinit
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 klist -> kcc
+-rwxr-xr-x   1 root   wheel     55360 23 Jan 13:59 kpasswd
+-rwxr-xr-x   1 root   wheel      3253 25 Aug 01:07 krb5-config
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 kswitch -> kcc
+-rwxr-xr-x   1 root   wheel     88704 23 Jan 13:59 ktrace
+-rwxr-xr-x   1 root   wheel     31744 23 Jan 13:59 lam
+-rwxr-xr-x   1 root   wheel     36528 23 Jan 13:59 last
+-rwxr-xr-x   1 root   wheel     32048 23 Jan 13:59 lastcomm
+-rwxr-xr-x   1 root   wheel      2297 25 Aug 00:11 lastwords
+-rwxr-xr-x   1 root   wheel     58400 23 Jan 13:59 latency
+-rwxr-xr-x   1 root   wheel    798192 23 Jan 13:58 layerutil
+-rwxr-xr-x   1 root   wheel     31440 23 Jan 13:59 ld
+lrwxr-xr-x   1 root   wheel        10  9 Oct 21:57 ldapadd -> ldapmodify
+-rwxr-xr-x   1 root   wheel    319056 23 Jan 13:59 ldapcompare
+-rwxr-xr-x   1 root   wheel    318992 23 Jan 13:59 ldapdelete
+-rwxr-xr-x   1 root   wheel    319072 23 Jan 13:59 ldapexop
+-rwxr-xr-x   1 root   wheel    327584 23 Jan 13:58 ldapmodify
+-rwxr-xr-x   1 root   wheel    314896 23 Jan 13:59 ldapmodrdn
+-rwxr-xr-x   1 root   wheel    314784 23 Jan 13:59 ldappasswd
+-rwxr-xr-x   1 root   wheel    347536 23 Jan 13:59 ldapsearch
+-rwxr-xr-x   1 root   wheel    265360 23 Jan 13:59 ldapurl
+-rwxr-xr-x   1 root   wheel    314880 23 Jan 13:58 ldapwhoami
+-rwxr-xr-x   1 root   wheel    181664 23 Jan 13:59 leaks
+-r-xr-xr-x   1 root   wheel     31536 23 Jan 13:59 leave
+-rwxr-xr-x   1 root   wheel    146976 23 Jan 13:59 less
+-rwxr-xr-x   1 root   wheel     31440 23 Jan 13:59 lessecho
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 lex
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 libnetcfg
+-rwxr-xr-x   1 root   wheel     15754 25 Aug 00:17 libnetcfg5.18
+-rwxr-xr-x   1 root   wheel     15810 25 Aug 00:17 libnetcfg5.28
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 libtool
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 lipo
+-rwxr-xr-x   1 root   wheel     63680 23 Jan 13:59 lkbib
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 lldb
+lrwxr-xr-x   1 root   wheel         7  9 Oct 21:57 llvm-g++ -> clang++
+lrwxr-xr-x   1 root   wheel         5  9 Oct 21:57 llvm-gcc -> clang
+-rwxr-xr-x   1 root   wheel      1936 25 Aug 00:11 loads.d
+-rwxr-xr-x   1 root   wheel     77440 23 Jan 13:59 locale
+-rwxr-xr-x   1 root   wheel     30650 25 Aug 00:22 localedef
+-rwxr-xr-x   1 root   wheel     36560 23 Jan 13:59 locate
+-rwxr-xr-x   1 root   wheel     70720 23 Jan 13:58 lockstat
+-rwxr-xr-x   1 root   wheel    276976 23 Jan 13:59 log
+-r-xr-xr-x   1 root   wheel     31968 23 Jan 13:59 logger
+-r-sr-xr-x   1 root   wheel     48688 23 Jan 13:59 login
+-rwxr-xr-x   1 root   wheel     31296 23 Jan 13:58 logname
+-rwxr-xr-x   1 root   wheel     31936 23 Jan 13:59 look
+-rwxr-xr-x   1 root   wheel     63920 23 Jan 13:59 lookbib
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 lorder
+-r-xr-xr-x   1 root   wheel     41616 23 Jan 13:59 lp
+-r-xr-xr-x   1 root   wheel     37568 23 Jan 13:59 lpoptions
+-r-xr-xr-x   1 root   wheel     37328 23 Jan 13:59 lpq
+-r-xr-xr-x   1 root   wheel     37248 23 Jan 13:59 lpr
+-r-xr-xr-x   1 root   wheel     31856 23 Jan 13:58 lprm
+-r-xr-xr-x   1 root   wheel     50432 23 Jan 13:58 lpstat
+-rwxr-xr-x   1 root   wheel    241184 23 Jan 13:59 lsappinfo
+-rwxr-xr-x   1 root   wheel     42352 23 Jan 13:59 lsbom
+-rwxr-xr-x   1 root   wheel     45136 23 Jan 13:59 lskq
+-rwxr-xr-x   1 root   wheel     61776 23 Jan 13:59 lsm
+-rwxr-xr-x   1 root   wheel     58944 23 Jan 13:59 lsmp
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 lsvfs
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 lwp-download
+-r-xr-xr-x   1 root   wheel      8639 25 Aug 03:12 lwp-download5.18
+-r-xr-xr-x   1 root   wheel      8639 25 Aug 03:12 lwp-download5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 lwp-dump
+-r-xr-xr-x   1 root   wheel      2802 25 Aug 03:12 lwp-dump5.18
+-r-xr-xr-x   1 root   wheel      2802 25 Aug 03:12 lwp-dump5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 lwp-mirror
+-r-xr-xr-x   1 root   wheel      2482 25 Aug 03:12 lwp-mirror5.18
+-r-xr-xr-x   1 root   wheel      2482 25 Aug 03:12 lwp-mirror5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 lwp-request
+-r-xr-xr-x   1 root   wheel     15063 25 Aug 03:12 lwp-request5.18
+-r-xr-xr-x   1 root   wheel     15063 25 Aug 03:12 lwp-request5.28
+-rwxr-xr-x   1 root   wheel     31440 23 Jan 13:59 m4
+-rwxr-xr-x   1 root   wheel     55168 23 Jan 13:59 macbinary
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 macerror
+-r-xr-xr-x   1 root   wheel       728 25 Aug 03:12 macerror5.18
+-r-xr-xr-x   1 root   wheel       728 25 Aug 03:12 macerror5.28
+-rwxr-xr-x   1 root   wheel     43456 23 Jan 13:59 machine
+-rwxr-xr-x   1 root   wheel    103136 23 Jan 13:59 mail
+lrwxr-xr-x   1 root   wheel        16  9 Oct 21:57 mailq -> ../sbin/sendmail
+-rwxr-xr-x   1 root   wheel    103136 23 Jan 13:59 mailx
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 make
+-rwxr-xr-x   1 root   wheel    252224 23 Jan 13:59 makeinfo
+-rwxr-xr-x   1 root   wheel    126848 23 Jan 13:59 malloc_history
+-r-xr-xr-x   1 root   wheel     83424 23 Jan 13:59 man
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 manpath -> man
+-rwxr-xr-x   1 root   wheel    101792 23 Jan 13:59 mcxquery
+-rwxr-xr-x   1 root   wheel     36592 23 Jan 13:59 mcxrefresh
+-rwxr-xr-x   1 root   wheel    161152 23 Jan 13:59 mddiagnose
+-rwxr-xr-x   1 root   wheel     42512 23 Jan 13:59 mdfind
+-rwxr-xr-x   1 root   wheel    301984 23 Jan 13:59 mdimport
+-rwxr-xr-x   1 root   wheel     37232 23 Jan 13:58 mdls
+-rwxr-xr-x   1 root   wheel    127312 23 Jan 13:59 mdutil
+-rwxr-xr-x   1 root   wheel     49072 23 Jan 13:59 memory_pressure
+-r-xr-xr-x   1 root   wheel     31360 23 Jan 13:58 mesg
+-rwxr-xr-x   1 root   wheel    170576 23 Jan 13:59 mg
+-rwxr-xr-x   1 root   wheel     43760 25 Aug 01:47 mib2c
+-rwxr-xr-x   1 root   wheel      8780 25 Aug 01:47 mib2c-update
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 mig
+-rwxr-xr-x   1 root   wheel     33024 23 Jan 13:59 mkbom
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 mkdep
+-rwxr-xr-x   1 root   wheel     31520 23 Jan 13:59 mkfifo
+-rwxr-xr-x   1 root   wheel     53472 23 Jan 13:58 mklocale
+-rwxr-xr-x   1 root   wheel     31920 23 Jan 13:58 mktemp
+-rwxr-xr-x   1 root   wheel      2975 25 Aug 00:05 mmroff
+-rwxr-xr-x   1 root   wheel     41840 23 Jan 13:59 mnthome
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 moo-outdated
+-r-xr-xr-x   1 root   wheel       448 25 Aug 03:12 moo-outdated5.18
+-r-xr-xr-x   1 root   wheel       448 25 Aug 03:12 moo-outdated5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 moose-outdated
+-r-xr-xr-x   1 root   wheel       455 25 Aug 03:12 moose-outdated5.18
+-r-xr-xr-x   1 root   wheel       455 25 Aug 03:12 moose-outdated5.28
+-rwxr-xr-x   1 root   wheel    146976 23 Jan 13:59 more
+-r-xr-xr-x   1 root   wheel      1271 25 Aug 03:19 mp2bug
+-rwxr-xr-x   1 root   wheel     42448 23 Jan 13:59 msgs
+-rwxr-xr-x   1 root   wheel    154416 23 Jan 13:59 nano
+lrwxr-xr-x   1 root   wheel        82  9 Oct 21:57 native2ascii -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/native2ascii
+-rwxr-xr-x   1 root   wheel     43248 23 Jan 13:59 nbdst
+-r-xr-xr-x   1 root   wheel     64208 23 Jan 13:59 nc
+-r-xr-xr-x   1 root   wheel     45392 23 Jan 13:59 ncal
+-rwxr-xr-x   1 root   wheel     36720 23 Jan 13:58 ncctl
+lrwxr-xr-x   1 root   wheel         7  9 Oct 21:57 ncdestroy -> ./ncctl
+lrwxr-xr-x   1 root   wheel         7  9 Oct 21:57 ncinit -> ./ncctl
+lrwxr-xr-x   1 root   wheel         7  9 Oct 21:57 nclist -> ./ncctl
+-rwxr-xr-x   1 root   wheel      4977 24 Aug 23:59 ncurses5.4-config
+-rwxr-xr-x   1 root   wheel       271 25 Aug 00:05 neqn
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 net-server
+-r-xr-xr-x   1 root   wheel      3429 25 Aug 03:12 net-server5.18
+-r-xr-xr-x   1 root   wheel      3429 25 Aug 03:12 net-server5.28
+-rwxr-xr-x   1 root   wheel     78699 25 Aug 01:47 net-snmp-cert
+-rwxr-xr-x   1 root   wheel     24007 25 Aug 01:48 net-snmp-config
+-rwxr-xr-x   1 root   wheel      3640 25 Aug 01:46 net-snmp-create-v3-user
+-rwxr-xr-x   1 root   wheel     80800 23 Jan 13:59 nettop
+lrwxr-xr-x   1 root   wheel        16  9 Oct 21:57 newaliases -> ../sbin/sendmail
+-r-sr-xr-x   1 root   wheel     37136 23 Jan 13:58 newgrp
+-rwxr-xr-x   1 root   wheel      4376 25 Aug 00:11 newproc.d
+-rwxr-xr-x   1 root   wheel     57664 23 Jan 13:58 nfsstat
+-rwxr-xr-x   1 root   wheel     31520 23 Jan 13:59 nice
+-rwxr-xr-x   1 root   wheel     36672 23 Jan 13:59 nl
+-rwxr-xr-x   1 root   wheel     31440 23 Jan 13:59 nm
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 nmedit
+-rwxr-xr-x   1 root   wheel     31760 23 Jan 13:59 nohup
+-rwxr-xr-x   1 root   wheel     42800 23 Jan 13:59 notifyutil
+-rwxr-xr-x   1 root   wheel      2357 25 Aug 00:05 nroff
+-rwxr-xr-x   1 root   wheel    101984 23 Jan 13:59 nscurl
+-rwxr-xr-x   1 root   wheel   1882176 23 Jan 13:59 nslookup
+-rwxr-xr-x   1 root   wheel   1872528 23 Jan 13:58 nsupdate
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 objdump
+-rwxr-xr-x   1 root   wheel     54016 23 Jan 13:59 ocspcheck
+-rwxr-xr-x   1 root   wheel     45984 23 Jan 13:59 od
+-rwxr-xr-x   1 root   wheel    112672 23 Jan 13:59 odutil
+-rwxr-xr-x   1 root   wheel    119312 23 Jan 13:59 open
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 opendiff
+-rwxr-xr-x   1 root   wheel      8038 25 Aug 00:11 opensnoop
+-rwxr-xr-x   1 root   wheel    509952 23 Jan 13:59 openssl
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 orbd -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/orbd
+-rwxr-xr-x   1 root   wheel     55232 23 Jan 13:59 osacompile
+-rwxr-xr-x   1 root   wheel     33088 23 Jan 13:59 osadecompile
+-rwxr-xr-x   1 root   wheel     31728 23 Jan 13:58 osalang
+-rwxr-xr-x   1 root   wheel     56528 23 Jan 13:59 osascript
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 otool
+lrwxr-xr-x   1 root   wheel        77  9 Oct 21:57 pack200 -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/pack200
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 package-stash-conflicts
+-r-xr-xr-x   1 root   wheel       844 25 Aug 03:12 package-stash-conflicts5.18
+-r-xr-xr-x   1 root   wheel       844 25 Aug 03:12 package-stash-conflicts5.28
+-rwxr-xr-x   1 root   wheel      2006 26 Sep 04:18 pagesize
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 pagestuff
+-rwxr-xr-x   1 root   wheel     45232 23 Jan 13:59 passwd
+-rwxr-xr-x   1 root   wheel     31728 23 Jan 13:59 paste
+-rwxr-xr-x   1 root   wheel    108304 23 Jan 13:59 patch
+-rwxr-xr-x   1 root   wheel     31632 23 Jan 13:58 pathchk
+-rwxr-xr-x   1 root   wheel      2378 25 Aug 00:11 pathopens.d
+-rwxr-xr-x   1 root   wheel     36800 23 Jan 13:59 pbcopy
+-rwxr-xr-x   1 root   wheel     36800 23 Jan 13:58 pbpaste
+-rwxr-xr-x   1 root   wheel      1622  4 Sep 01:38 pcap-config
+-rwxr-xr-x   1 root   wheel     31968 23 Jan 13:59 pcsctest
+-rwxr-xr-x   1 root   wheel     42864 23 Jan 13:59 perl
+-rwxr-xr-x   1 root   wheel     37552 23 Jan 13:59 perl5.18
+-rwxr-xr-x   1 root   wheel     36176 23 Jan 13:59 perl5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 perlbug
+-rwxr-xr-x   1 root   wheel     41944 13 Dec 23:04 perlbug5.18
+-rwxr-xr-x   1 root   wheel     46397 13 Dec 23:04 perlbug5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 perldoc
+-rwxr-xr-x   1 root   wheel       259 25 Aug 00:17 perldoc5.18
+-rwxr-xr-x   1 root   wheel       297 25 Aug 00:17 perldoc5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 perlivp
+-rwxr-xr-x   1 root   wheel     10807 25 Aug 00:17 perlivp5.18
+-rwxr-xr-x   1 root   wheel     10848 25 Aug 00:17 perlivp5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 perlthanks
+-rwxr-xr-x   1 root   wheel     41944 13 Dec 23:04 perlthanks5.18
+-rwxr-xr-x   1 root   wheel     46397 13 Dec 23:04 perlthanks5.28
+-rwxr-xr-x   1 root   wheel     36048 23 Jan 13:59 pfbtops
+-rwxr-xr-x   1 root   wheel     43648 23 Jan 13:59 pgrep
+lrwxr-xr-x   1 root   wheel         9  9 Oct 21:57 phar -> phar.phar
+-rwxr-xr-x   1 root   wheel     14811 14 Dec 03:22 phar.phar
+-rwxr-xr-x   1 root   wheel  14128656 23 Jan 13:59 php
+-rwxr-xr-x   1 root   wheel      4033 14 Dec 03:23 php-config
+-rwxr-xr-x   1 root   wheel      4545 25 Aug 03:40 phpize
+-rwxr-xr-x   1 root   wheel    222288 23 Jan 13:58 pic
+lrwxr-xr-x   1 root   wheel         4  9 Oct 21:57 pico -> nano
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 piconv
+-rwxr-xr-x   1 root   wheel      7372 25 Aug 00:17 piconv5.18
+-rwxr-xr-x   1 root   wheel      8392 25 Aug 00:17 piconv5.28
+-rwxr-xr-x   1 root   wheel      1295 25 Aug 00:11 pidpersec.d
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 pip3
+-rwxr-xr-x   1 root   wheel     96080 23 Jan 13:59 pkgbuild
+-rwxr-xr-x   1 root   wheel     43648 23 Jan 13:59 pkill
+-rwxr-xr-x   1 root   wheel     36064 23 Jan 13:58 pl
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pl2pm
+-rwxr-xr-x   1 root   wheel      4566 25 Aug 00:17 pl2pm5.18
+-rwxr-xr-x   1 root   wheel      4568 25 Aug 00:17 pl2pm5.28
+-rwxr-xr-x   1 root   wheel     46576 23 Jan 13:59 plockstat
+-rwxr-xr-x   1 root   wheel     47424 23 Jan 13:59 pluginkit
+-rwxr-xr-x   1 root   wheel     77360 23 Jan 13:59 plutil
+-rwxr-xr-x   1 root   wheel    159216 23 Jan 13:59 pmset
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pod2html
+-rwxr-xr-x   1 root   wheel      2073 25 Aug 00:17 pod2html5.18
+-rwxr-xr-x   1 root   wheel      4169 25 Aug 00:17 pod2html5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pod2latex
+-rwxr-xr-x   1 root   wheel     10374 25 Aug 00:17 pod2latex5.18
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pod2man
+-rwxr-xr-x   1 root   wheel     13700 25 Aug 00:17 pod2man5.18
+-rwxr-xr-x   1 root   wheel     15248 25 Aug 00:17 pod2man5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 pod2readme
+-r-xr-xr-x   1 root   wheel      1603 25 Aug 03:12 pod2readme5.18
+-r-xr-xr-x   1 root   wheel      1603 25 Aug 03:12 pod2readme5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pod2text
+-rwxr-xr-x   1 root   wheel     11123 25 Aug 00:17 pod2text5.18
+-rwxr-xr-x   1 root   wheel     11145 25 Aug 00:17 pod2text5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pod2usage
+-rwxr-xr-x   1 root   wheel      3790 25 Aug 00:17 pod2usage5.18
+-rwxr-xr-x   1 root   wheel      3983 25 Aug 00:17 pod2usage5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 podchecker
+-rwxr-xr-x   1 root   wheel      3819 25 Aug 00:17 podchecker5.18
+-rwxr-xr-x   1 root   wheel      3693 25 Aug 00:17 podchecker5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 podselect
+-rwxr-xr-x   1 root   wheel      2647 25 Aug 00:17 podselect5.18
+-rwxr-xr-x   1 root   wheel      2562 25 Aug 00:17 podselect5.28
+lrwxr-xr-x   1 root   wheel        80  9 Oct 21:57 policytool -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/policytool
+-rwxr-xr-x   1 root   wheel    160672 23 Jan 13:59 post-grohtml
+-rwxr-xr-x   1 root   wheel       951 25 Aug 00:10 power_report.sh
+-rwxr-xr-x   1 root   wheel    146608 23 Jan 13:59 powermetrics
+-r-xr-xr-x   1 root   wheel    123856 23 Jan 13:59 ppdc
+-r-xr-xr-x   1 root   wheel    119104 23 Jan 13:58 ppdhtml
+-r-xr-xr-x   1 root   wheel    123472 23 Jan 13:59 ppdi
+-r-xr-xr-x   1 root   wheel     37376 23 Jan 13:58 ppdmerge
+-r-xr-xr-x   1 root   wheel    119008 23 Jan 13:58 ppdpo
+-rwxr-xr-x   1 root   wheel     45344 23 Jan 13:59 pr
+-rwxr-xr-x   1 root   wheel     87104 23 Jan 13:59 pre-grohtml
+-rwxr-xr-x   1 root   wheel      1839 25 Aug 00:11 priclass.d
+-rwxr-xr-x   1 root   wheel      1836 25 Aug 00:11 pridist.d
+-rwxr-xr-x   1 root   wheel     31280 23 Jan 13:59 printenv
+-rwxr-xr-x   1 root   wheel     36416 23 Jan 13:58 printf
+-rwxr-xr-x   1 root   wheel      6348 25 Aug 00:11 procsystime
+-rwxr-xr-x   1 root   wheel    131824 23 Jan 13:59 productbuild
+-rwxr-xr-x   1 root   wheel     47712 23 Jan 13:58 productsign
+-rwxr-xr-x   1 root   wheel    194096 23 Jan 13:59 profiles
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 prove
+-rwxr-xr-x   1 root   wheel     11120 25 Aug 00:17 prove5.18
+-rwxr-xr-x   1 root   wheel     13690 25 Aug 00:17 prove5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 psed
+-rwxr-xr-x   1 root   wheel     53364 25 Aug 00:17 psed5.18
+-rwxr-xr-x   1 root   wheel     37088 23 Jan 13:59 pstopdf
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 pstruct
+-rwxr-xr-x   1 root   wheel     36642 25 Aug 00:17 pstruct5.18
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 ptar
+-rwxr-xr-x   1 root   wheel      3559 25 Aug 00:17 ptar5.18
+-rwxr-xr-x   1 root   wheel      3584 25 Aug 00:17 ptar5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 ptardiff
+-rwxr-xr-x   1 root   wheel      2507 25 Aug 00:17 ptardiff5.18
+-rwxr-xr-x   1 root   wheel      2663 25 Aug 00:17 ptardiff5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 ptargrep
+-rwxr-xr-x   1 root   wheel      4274 25 Aug 00:17 ptargrep5.18
+-rwxr-xr-x   1 root   wheel      4427 25 Aug 00:17 ptargrep5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 pwhich
+-r-xr-xr-x   1 root   wheel      3106 25 Aug 03:12 pwhich5.18
+-r-xr-xr-x   1 root   wheel      3106 25 Aug 03:12 pwhich5.28
+-rwxr-xr-x   1 root   wheel     61072 23 Jan 13:59 pwpolicy
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 pydoc -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/pydoc2.7
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 pydoc2.7 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/pydoc2.7
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 python -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+lrwxr-xr-x   1 root   wheel        82  9 Oct 21:57 python-config -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7-config
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 python2 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 python2.7 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+lrwxr-xr-x   1 root   wheel        82  9 Oct 21:57 python2.7-config -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7-config
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 python3
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 pythonw -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/pythonw2.7
+lrwxr-xr-x   1 root   wheel        76  9 Oct 21:57 pythonw2.7 -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/pythonw2.7
+lrwxr-xr-x   1 root   wheel        98  9 Oct 21:57 qlmanage -> ../../System/Library/Frameworks/QuickLook.framework/Resources/qlmanage.app/Contents/MacOS/qlmanage
+-r-sr-xr-x   1 root   wheel     36672 23 Jan 13:59 quota
+-r-xr-xr-x   1 root   wheel       549 25 Aug 00:33 rails
+-r-xr-xr-x   1 root   wheel       564 25 Aug 00:33 rake
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 ranlib
+-r-xr-xr-x   1 root   wheel       564 25 Aug 00:33 rdoc
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 read
+-rwxr-xr-x   1 root   wheel     40688 23 Jan 13:59 readlink
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 rebase
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 redo_prebinding
+-rwxr-xr-x   1 root   wheel    127024 23 Jan 13:58 refer
+-rwxr-xr-x   1 root   wheel     31424 23 Jan 13:59 renice
+lrwxr-xr-x   1 root   wheel         4  9 Oct 21:57 reset -> tset
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 resolveLinks
+-rwxr-xr-x   1 root   wheel     31536 23 Jan 13:59 rev
+-r-xr-xr-x   1 root   wheel       560 25 Aug 00:33 ri
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 rmic -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/rmic
+lrwxr-xr-x   1 root   wheel        74  9 Oct 21:57 rmid -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/rmid
+lrwxr-xr-x   1 root   wheel        81  9 Oct 21:57 rmiregistry -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/rmiregistry
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 rpcgen
+-rwxr-xr-x   1 root   wheel     35840 23 Jan 13:59 rs
+-rwxr-xr-x   1 root   wheel    300672 23 Jan 13:59 rsync
+-r-xr-xr-x   1 root   wheel     36624 23 Jan 13:59 ruby
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 rview -> vim
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 rvim -> vim
+-rwxr-xr-x   1 root   wheel      1657 25 Aug 00:11 rwbypid.d
+-rwxr-xr-x   1 root   wheel      2473 25 Aug 00:11 rwbytype.d
+-rwxr-xr-x   1 root   wheel      6357 25 Aug 00:11 rwsnoop
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 s2p
+-rwxr-xr-x   1 root   wheel     53364 25 Aug 00:17 s2p5.18
+lrwxr-xr-x   1 root   wheel        91  9 Oct 21:57 safaridriver -> /Library/Apple/System/Library/CoreServices/SafariSupport.bundle/Contents/MacOS/safaridriver
+-rwxr-xr-x   1 root   wheel     84432 23 Jan 13:59 sample
+-rwxr-xr-x   1 root   wheel      2544 25 Aug 00:11 sampleproc
+-rwxr-xr-x   1 root   wheel     36960 23 Jan 13:59 sandbox-exec
+-rwxr-xr-x   1 root   wheel     68048 23 Jan 13:58 say
+-rwxr-xr-x   1 root   wheel     50512 23 Jan 13:58 sc_usage
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 scandeps.pl
+-r-xr-xr-x   1 root   wheel      5815 25 Aug 03:12 scandeps5.18.pl
+-r-xr-xr-x   1 root   wheel      5815 25 Aug 03:12 scandeps5.28.pl
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 schemagen -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/schemagen
+-rwxr-xr-x   1 root   wheel     94080 23 Jan 13:59 scp
+-rwxr-xr-x   1 root   wheel    303504 23 Jan 13:59 screen
+-rwxr-xr-x   1 root   wheel     37312 23 Jan 13:59 script
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 sdef
+-rwxr-xr-x   1 root   wheel     50752 23 Jan 13:59 sdiff
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 sdp
+lrwxr-xr-x   1 root   wheel        32  9 Oct 21:57 sdx -> ../../System/Library/Tcl/bin/sdx
+-rwxr-xr-x   1 root   wheel    302112 23 Jan 13:59 security
+-rwxr-xr-x   1 root   wheel     59568 23 Jan 13:59 sed
+-rwxr-xr-x   1 root   wheel      2041 25 Aug 00:11 seeksize.d
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 segedit
+-rwxr-xr-x   1 root   wheel     36128 23 Jan 13:59 seq
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 serialver -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/serialver
+lrwxr-xr-x   1 root   wheel        80  9 Oct 21:57 servertool -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/servertool
+-r-xr-xr-x   1 root   wheel     38560 23 Jan 13:59 setregion
+-rwxr-xr-x   1 root   wheel      1606 25 Aug 00:11 setuids.d
+-rwxr-xr-x   1 root   wheel     88816 23 Jan 13:59 sfltool
+-rwxr-xr-x   1 root   wheel    132880 23 Jan 13:58 sftp
+-rwxr-xr-x   1 root   wheel      2516 24 Aug 23:53 shar
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 shasum
+-rwxr-xr-x   1 root   wheel      8629 25 Aug 00:17 shasum5.18
+-rwxr-xr-x   1 root   wheel     10011 25 Aug 00:17 shasum5.28
+-rwxr-xr-x   1 root   wheel     36144 23 Jan 13:59 shlock
+-rwxr-xr-x   1 root   wheel     37856 23 Jan 13:59 showmount
+-rwxr-xr-x   1 root   wheel      1603 25 Aug 00:11 sigdist.d
+-rwxr-xr-x   1 root   wheel    211392 23 Jan 13:59 sips
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 size
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 slogin -> ssh
+-r-xr-xr-x   1 root   wheel    118656 23 Jan 13:59 smbutil
+-rwxr-xr-x   1 root   wheel     18681 25 Aug 02:41 smtpd.py
+lrwxr-xr-x   1 root   wheel        77  9 Oct 21:57 smtpd2.7.py -> ../../System/Library/Frameworks/Python.framework/Versions/2.7/bin/smtpd2.7.py
+lrwxr-xr-x   1 root   wheel        59  9 Oct 21:57 snfsdefrag -> /System/Library/Filesystems/acfs.fs/Contents/bin/snfsdefrag
+-rwxr-xr-x   1 root   wheel     30680 25 Aug 01:47 snmp-bridge-mib
+-rwxr-xr-x   1 root   wheel     36768 23 Jan 13:58 snmpbulkget
+-rwxr-xr-x   1 root   wheel     37184 23 Jan 13:58 snmpbulkwalk
+-rwxr-xr-x   1 root   wheel     26136 25 Aug 01:47 snmpconf
+-rwxr-xr-x   1 root   wheel     42656 23 Jan 13:58 snmpdelta
+-rwxr-xr-x   1 root   wheel     36832 23 Jan 13:59 snmpdf
+-rwxr-xr-x   1 root   wheel     32560 23 Jan 13:59 snmpget
+-rwxr-xr-x   1 root   wheel     32576 23 Jan 13:59 snmpgetnext
+lrwxr-xr-x   1 root   wheel         8  9 Oct 21:57 snmpinform -> snmptrap
+-rwxr-xr-x   1 root   wheel     68464 23 Jan 13:59 snmpnetstat
+-rwxr-xr-x   1 root   wheel     36688 23 Jan 13:58 snmpset
+-rwxr-xr-x   1 root   wheel     37296 23 Jan 13:59 snmpstatus
+-rwxr-xr-x   1 root   wheel     42208 23 Jan 13:58 snmptable
+-rwxr-xr-x   1 root   wheel     37792 23 Jan 13:58 snmptest
+-rwxr-xr-x   1 root   wheel     38288 23 Jan 13:59 snmptranslate
+-rwxr-xr-x   1 root   wheel     37248 23 Jan 13:58 snmptrap
+-rwxr-xr-x   1 root   wheel     59440 23 Jan 13:59 snmpusm
+-rwxr-xr-x   1 root   wheel     53312 23 Jan 13:59 snmpvacm
+-rwxr-xr-x   1 root   wheel     37056 23 Jan 13:59 snmpwalk
+-rwxr-xr-x   1 root   wheel    174640 23 Jan 13:59 sntp
+-rwxr-xr-x   1 root   wheel     52032 23 Jan 13:59 soelim
+-rwxr-xr-x   1 root   wheel     74912 23 Jan 13:58 sort
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 spfd
+-r-xr-xr-x   1 root   wheel      9486 25 Aug 03:12 spfd5.18
+-r-xr-xr-x   1 root   wheel      9486 25 Aug 03:12 spfd5.28
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 spfquery
+-r-xr-xr-x   1 root   wheel     23081 25 Aug 03:12 spfquery5.18
+-r-xr-xr-x   1 root   wheel     23081 25 Aug 03:12 spfquery5.28
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 splain
+-rwxr-xr-x   1 root   wheel     18681 25 Aug 00:17 splain5.18
+-rwxr-xr-x   1 root   wheel     19185 25 Aug 00:17 splain5.28
+-rwxr-xr-x   1 root   wheel     36240 23 Jan 13:58 split
+-rwxr-xr-x   1 root   wheel   2312464 23 Jan 13:59 sqlite3
+-rwxr-xr-x   1 root   wheel   2122880 23 Jan 13:59 ssh
+-rwxr-xr-x   1 root   wheel   1812752 23 Jan 13:59 ssh-add
+-rwxr-xr-x   1 root   wheel   1785296 23 Jan 13:59 ssh-agent
+-rwxr-xr-x   1 root   wheel     10658 25 Aug 01:04 ssh-copy-id
+-rwxr-xr-x   1 root   wheel   1866992 23 Jan 13:58 ssh-keygen
+-rwxr-xr-x   1 root   wheel   1873072 23 Jan 13:59 ssh-keyscan
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 stapler
+-rwxr-xr-x   1 root   wheel     40688 23 Jan 13:59 stat
+-rwxr-xr-x   1 root   wheel     98752 23 Jan 13:58 stringdups
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 strings
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 strip
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 stty.pl
+-r-xr-xr-x   1 root   wheel       277 25 Aug 03:12 stty5.18.pl
+-r-xr-xr-x   1 root   wheel       277 25 Aug 03:12 stty5.28.pl
+-rwsr-xr-x   1 root   wheel     42752 23 Jan 13:59 su
+-r-s--x--x   1 root   wheel    451840 23 Jan 13:58 sudo
+-rwxr-xr-x   1 root   wheel     35888 23 Jan 13:58 sum
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 svn
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 svnlook
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 svnversion
+-rwxr-xr-x   1 root   wheel     31968 23 Jan 13:59 sw_vers
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 swift
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 swiftc
+-rwxr-xr-x   1 root   wheel    168928 23 Jan 13:59 symbols
+-rwxr-xr-x   1 root   wheel    126016 23 Jan 13:59 symbolscache
+-rwxr-xr-x   1 root   wheel      1260 25 Aug 00:11 syscallbypid.d
+-rwxr-xr-x   1 root   wheel       253 25 Aug 00:11 syscallbyproc.d
+-rwxr-xr-x   1 root   wheel       248 25 Aug 00:11 syscallbysysc.d
+-rwxr-xr-x   1 root   wheel    843936 23 Jan 13:59 sysdiagnose
+-rwxr-xr-x   1 root   wheel     80848 23 Jan 13:59 syslog
+-rwxr-xr-x   1 root   wheel     42368 23 Jan 13:59 systemextensionsctl
+-rwxr-xr-x   1 root   wheel     35792 23 Jan 13:59 tab2space
+-rwxr-xr-x   1 root   wheel     35824 23 Jan 13:58 tabs
+-rwxr-xr-x   1 root   wheel     41696 23 Jan 13:59 tail
+-rwxr-xr-x   1 root   wheel     70704 23 Jan 13:59 tailspin
+-r-xr-xr-x   1 root   wheel     44064 23 Jan 13:59 talk
+lrwxr-xr-x   1 root   wheel         6  9 Oct 21:57 tar -> bsdtar
+-rwxr-xr-x   1 root   wheel     51616 23 Jan 13:59 taskinfo
+-rwxr-xr-x   1 root   wheel    120096 23 Jan 13:59 tbl
+-rwxr-xr-x   1 root   wheel     68416 23 Jan 13:59 tbtdiagnose
+-rwxr-xr-x   1 root   wheel     32976 23 Jan 13:59 tccutil
+lrwxr-xr-x   1 root   wheel         8  9 Oct 21:57 tclsh -> tclsh8.5
+lrwxr-xr-x   1 root   wheel        67  9 Oct 21:57 tclsh8.5 -> ../../System/Library/Frameworks/Tcl.framework/Versions/8.5/tclsh8.5
+-rwxr-xr-x   1 root   wheel     31520 23 Jan 13:59 tee
+-rwxr-xr-x   1 root   wheel     28218 24 Aug 23:55 texi2dvi
+-rwxr-xr-x   1 root   wheel       660 24 Aug 23:55 texi2pdf
+-rwxr-xr-x   1 root   wheel     65568 23 Jan 13:58 texindex
+-rwxr-xr-x   1 root   wheel     62048 23 Jan 13:59 textutil
+-rwxr-xr-x   1 root   wheel     52304 23 Jan 13:59 tfmtodit
+-r-xr-xr-x   1 root   wheel     47968 23 Jan 13:59 tftp
+-rwxr-xr-x   1 root   wheel     39392 23 Jan 13:59 thermal
+-rwxr-xr-x   1 root   wheel     68976 23 Jan 13:59 tic
+-rwxr-xr-x   1 root   wheel     47248 23 Jan 13:59 tidy
+-rwxr-xr-x   1 root   wheel     36720 23 Jan 13:58 tiff2icns
+-rwxr-xr-x   1 root   wheel    345184 23 Jan 13:59 tiffutil
+-rwxr-xr-x   1 root   wheel     31648 23 Jan 13:59 time
+-rwxr-xr-x   1 root   wheel      2886 25 Aug 00:10 timer_analyser.d
+-rwxr-xr-x   1 root   wheel      6537 26 Sep 04:35 timerfires
+-rwxr-xr-x   1 root   wheel     93616 23 Jan 13:59 timesyncanalyse
+lrwxr-xr-x   1 root   wheel        43  9 Oct 21:57 tkcon -> ../../System/Library/Tcl/tkcon2.6/tkcon.tcl
+-rwxr-xr-x   1 root   wheel     30924 25 Aug 01:47 tkmib
+-rwxr-xr-x   1 root   wheel    185456 23 Jan 13:59 tmdiagnose
+-rwxr-xr-x   1 root   wheel    307968 23 Jan 13:59 tmutil
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 tnameserv -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/tnameserv
+-rwxr-xr-x   1 root   wheel     37792 23 Jan 13:58 toe
+-r-sr-xr-x   1 root   wheel    101616 23 Jan 13:59 top
+-rwxr-xr-x   1 root   wheel    112576 23 Jan 13:59 tops
+-rwxr-xr-x   1 root   wheel      4603 25 Aug 00:11 topsyscall
+-rwxr-xr-x   1 root   wheel      2950 25 Aug 00:11 topsysproc
+-rwxr-xr-x   1 root   wheel     36496 23 Jan 13:59 touch
+-rwxr-xr-x   1 root   wheel     37312 23 Jan 13:58 tput
+-rwxr-xr-x   1 root   wheel     40832 23 Jan 13:59 tr
+-rwxr-xr-x   1 root   wheel     63200 23 Jan 13:58 trace
+-rwxr-xr-x   1 root   wheel      2207 25 Aug 01:47 traptoemail
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 treereg
+-r-xr-xr-x   1 root   wheel     10339 25 Aug 03:12 treereg5.18
+-r-xr-xr-x   1 root   wheel     10339 25 Aug 03:12 treereg5.28
+-rwxr-xr-x   1 root   wheel     42976 23 Jan 13:59 trimforce
+-rwxr-xr-x   1 root   wheel    466944 23 Jan 13:58 troff
+-rwxr-xr-x   1 root   wheel     30944 23 Jan 13:59 true
+-rwxr-xr-x   1 root   wheel     41936 23 Jan 13:59 tset
+-r-xr-xr-x   1 root   wheel     36096 23 Jan 13:58 tsort
+-rwxr-xr-x   1 root   wheel     31168 23 Jan 13:58 tty
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 type
+-rwxr-xr-x   1 root   wheel     36320 23 Jan 13:58 ul
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 ulimit
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 umask
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 unalias
+-rwxr-xr-x   1 root   wheel     31552 23 Jan 13:59 uname
+-rwxr-xr-x   1 root   wheel     40944 23 Jan 13:59 uncompress
+-rwxr-xr-x   1 root   wheel     31696 23 Jan 13:58 unexpand
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 unifdef
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 unifdefall
+-rwxr-xr-x   1 root   wheel     36400 23 Jan 13:59 uniq
+-r-xr-xr-x   1 root   wheel     40896 23 Jan 13:59 units
+lrwxr-xr-x   1 root   wheel        79  9 Oct 21:57 unpack200 -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/unpack200
+-rwxr-xr-x   1 root   wheel     31520 23 Jan 13:59 unvis
+-rwxr-xr-x   1 root   wheel    198688 23 Jan 13:58 unzip
+-rwxr-xr-x   1 root   wheel    101200 23 Jan 13:59 unzipsfx
+-rwxr-xr-x   1 root   wheel    967792 23 Jan 13:59 update_dyld_shared_cache
+-rwxr-xr-x   1 root   wheel    966448 23 Jan 13:58 update_dyld_shared_cache_root_mode
+-rwxr-xr-x   1 root   wheel     37344 23 Jan 13:59 uptime
+-rwxr-xr-x   1 root   wheel     31504 23 Jan 13:59 users
+-r-xr-xr-x   1 _uucp  wheel    110976 23 Jan 13:58 uucp
+-r-xr-xr-x   1 root   wheel     37360 23 Jan 13:58 uudecode
+-r-xr-xr-x   1 root   wheel     36016 23 Jan 13:58 uuencode
+-rwxr-xr-x   1 root   wheel     68416 23 Jan 13:59 uuidgen
+-rwxr-xr-x   1 root   wheel     79216 23 Jan 13:59 uulog
+-r-xr-xr-x   1 _uucp  wheel     61408 23 Jan 13:59 uuname
+-rwxr-xr-x   1 root   wheel     88576 23 Jan 13:59 uupick
+-r-xr-xr-x   1 _uucp  wheel    119392 23 Jan 13:59 uustat
+-rwxr-xr-x   1 root   wheel      1958 25 Aug 00:01 uuto
+-r-xr-xr-x   1 _uucp  wheel    110928 23 Jan 13:59 uux
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 vi -> vim
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 view -> vim
+-rwxr-xr-x   1 root   wheel   2052448 23 Jan 13:58 vim
+lrwxr-xr-x   1 root   wheel         3  9 Oct 21:57 vimdiff -> vim
+-rwxr-xr-x   1 root   wheel      2121  6 Sep 05:03 vimtutor
+-rwxr-xr-x   1 root   wheel     31664 23 Jan 13:59 vis
+-rwxr-xr-x   1 root   wheel     36192 23 Jan 13:58 vm_stat
+-rwxr-xr-x   1 root   wheel     89776 23 Jan 13:59 vmmap
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 vtool
+-rwxr-xr-x   1 root   wheel     37344 23 Jan 13:58 w
+-rwxr-xr-x  15 root   wheel       190 25 Aug 00:00 wait
+-r-xr-xr-x   1 root   wheel     37904 23 Jan 13:59 wall
+-rwxr-xr-x   1 root   wheel     36192 23 Jan 13:59 wc
+-rwxr-xr-x   1 root   wheel    105936 23 Jan 13:58 wdutil
+-rwxr-xr-x   1 root   wheel     31216 23 Jan 13:59 what
+-r-xr-xr-x   1 root   wheel      2093 16 Oct 08:29 whatis
+-rwxr-xr-x   1 root   wheel     31664 23 Jan 13:59 whereis
+-rwxr-xr-x   1 root   wheel     31696 23 Jan 13:59 which
+-rwxr-xr-x   1 root   wheel     36672 23 Jan 13:58 who
+-rwxr-xr-x   1 root   wheel     36352 23 Jan 13:59 whoami
+-rwxr-xr-x   1 root   wheel     36912 23 Jan 13:59 whois
+lrwxr-xr-x   1 root   wheel         7  9 Oct 21:57 wish -> wish8.5
+-r-xr-xr-x   1 root   wheel       127 25 Aug 02:10 wish8.5
+-r-xr-sr-x   1 root   tty       37072 23 Jan 13:59 write
+lrwxr-xr-x   1 root   wheel        75  9 Oct 21:57 wsgen -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/wsgen
+lrwxr-xr-x   1 root   wheel        78  9 Oct 21:57 wsimport -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/wsimport
+-rwxr-xr-x   1 root   wheel     51792 23 Jan 13:59 xar
+-rwxr-xr-x   1 root   wheel     41456 23 Jan 13:59 xargs
+-rwxr-xr-x   2 root   wheel       512 25 Aug 03:43 xattr
+-rwxr-xr-x   2 root   wheel       512 25 Aug 03:43 xattr-2.7
+-rwxr-xr-x   1 root   wheel     37104 23 Jan 13:59 xcode-select
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:58 xcodebuild
+-rwxr-xr-x   1 root   wheel     31088 23 Jan 13:59 xcrun
+-rwxr-xr-x   1 root   wheel     31472 23 Jan 13:59 xcscontrol
+-rwxr-xr-x   1 root   wheel     31488 23 Jan 13:59 xcsdiagnose
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 xed
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 xgettext.pl
+-r-xr-xr-x   1 root   wheel      6650 25 Aug 03:12 xgettext5.18.pl
+-r-xr-xr-x   1 root   wheel      6650 25 Aug 03:12 xgettext5.28.pl
+-rwxr-xr-x   1 root   wheel     41936 23 Jan 13:58 xip
+lrwxr-xr-x   1 root   wheel        73  9 Oct 21:57 xjc -> /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/xjc
+-rwxr-xr-x   1 root   wheel      1874 25 Aug 00:20 xml2-config
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:59 xml2man
+-rwxr-xr-x   1 root   wheel     41600 23 Jan 13:59 xmlcatalog
+-rwxr-xr-x   1 root   wheel     81344 23 Jan 13:59 xmllint
+-rwxr-xr-x  33 root   wheel       811 25 Aug 03:12 xpath
+-r-xr-xr-x   1 root   wheel      1445 25 Aug 03:12 xpath5.18
+-r-xr-xr-x   1 root   wheel      1445 25 Aug 03:12 xpath5.28
+-rwxr-xr-x   1 root   wheel      2546 24 Aug 23:56 xslt-config
+-rwxr-xr-x   1 root   wheel     47600 23 Jan 13:59 xsltproc
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 xsubpp
+-rwxr-xr-x   1 root   wheel      4591 25 Aug 00:17 xsubpp5.18
+-rwxr-xr-x   1 root   wheel      5199 25 Aug 00:17 xsubpp5.28
+-rwxr-xr-x   1 root   wheel     40544 23 Jan 13:59 xxd
+-rwxr-xr-x   1 root   wheel     78112 23 Jan 13:59 yaa
+-rwxr-xr-x   1 root   wheel     31456 23 Jan 13:58 yacc
+-rwxr-xr-x   1 root   wheel     30944 23 Jan 13:59 yes
+-rwxr-xr-x   1 root   wheel     66832 23 Jan 13:58 zcat
+-rwxr-xr-x   2 root   wheel      3264 24 Aug 23:53 zcmp
+-rwxr-xr-x   2 root   wheel      3264 24 Aug 23:53 zdiff
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 zegrep
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:58 zfgrep
+-rwxr-xr-x   1 root   wheel      1454 24 Aug 23:53 zforce
+-rwxr-xr-x   1 root   wheel     47136 23 Jan 13:59 zgrep
+-rwxr-xr-x   1 root   wheel    180896 23 Jan 13:59 zip
+-rwxr-xr-x   1 root   wheel     91392 23 Jan 13:58 zipcloak
+-rwxr-xr-x  39 root   wheel       811 25 Aug 00:17 zipdetails
+-rwxr-xr-x   1 root   wheel     48113 25 Aug 00:17 zipdetails5.18
+-rwxr-xr-x   1 root   wheel     48532 25 Aug 00:17 zipdetails5.28
+-rwxr-xr-x   1 root   wheel      2953 24 Aug 23:56 zipgrep
+-rwxr-xr-x   1 root   wheel    198688 23 Jan 13:59 zipinfo
+-rwxr-xr-x   1 root   wheel     86592 23 Jan 13:58 zipnote
+-rwxr-xr-x   1 root   wheel     90864 23 Jan 13:59 zipsplit
+-rwxr-xr-x   2 root   wheel      2080 24 Aug 23:53 zless
+-rwxr-xr-x   2 root   wheel      2080 24 Aug 23:53 zmore
+-rwxr-xr-x   1 root   wheel      3376 24 Aug 23:53 znew
+-rwxr-xr-x   1 root   wheel     47024 23 Jan 13:59 zprint
+user@laptop ligc-develop % ls
+LICENSE			config			load.environment.php	vendor
+README.md		content			phpunit.xml.dist	web
+composer.json		docs			scripts
+composer.lock		drush			test
+user@laptop ligc-develop % brew upgrade ddev                              
+Updating Homebrew...
+==> Auto-updated Homebrew!
+Updated 2 taps (drud/ddev and homebrew/core).
+==> New Formulae
+cctz                                grex                                rubyfmt
+git-annex-remote-rclone             kcptun
+==> Updated Formulae
+drud/ddev/ddev ✔  conan             helmfile          mono              phpstan           telegraf
+node ✔            csvq              imagemagick       movgrab           pioneer           util-linux
+node@10 ✔         doctl             imagemagick@6     ngt               poco              v8
+yarn ✔            embree            inlets            nifi              procs             varnish
+angular-cli       exploitdb         legit             node-build        profanity         whistle
+apache-forrest    findomain         luaradio          node@12           pulumi            wtfutil
+apollo            flow              mercurial         nqp               rakudo            wxmaxima
+awscli            frpc              micronaut         openjdk           screen            xmrig
+borgmatic         frps              minikube          openjdk@11        serverless        zint
+coinutils         geoserver         mmctl             openjdk@12        tdlib
+composer          git-annex         moarvm            pdfcpu            tektoncd-cli
+
+Error: The following directories are not writable by your user:
+/usr/local/etc/bash_completion.d
+/usr/local/include
+/usr/local/lib
+/usr/local/lib/pkgconfig
+/usr/local/lib/python3.7/site-packages
+/usr/local/share/aclocal
+/usr/local/share/doc
+/usr/local/share/info
+/usr/local/share/locale
+/usr/local/share/man
+/usr/local/share/man/man1
+/usr/local/share/man/man3
+/usr/local/share/man/man5
+/usr/local/share/man/man7
+/usr/local/share/man/man8
+/usr/local/share/zsh
+/usr/local/share/zsh/site-functions
+/usr/local/var/log
+
+You should change the ownership of these directories to your user.
+  sudo chown -R $(whoami) /usr/local/etc/bash_completion.d /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/lib/python3.7/site-packages /usr/local/share/aclocal /usr/local/share/doc /usr/local/share/info /usr/local/share/locale /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/man/man8 /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var/log
+
+And make sure that your user has write permission.
+  chmod u+w /usr/local/etc/bash_completion.d /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/lib/python3.7/site-packages /usr/local/share/aclocal /usr/local/share/doc /usr/local/share/info /usr/local/share/locale /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/man/man8 /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var/log
+user@laptop ligc-develop % sudo chown -R $(whoami) /usr/local/etc/bash_completion.d /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/lib/python3.7/site-packages /usr/local/share/aclocal /usr/local/share/doc /usr/local/share/info /usr/local/share/locale /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/man/man8 /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var/log
+user@laptop ligc-develop % sudo chmod u+w /usr/local/etc/bash_completion.d /usr/local/include /usr/local/lib /usr/local/lib/pkgconfig /usr/local/lib/python3.7/site-packages /usr/local/share/aclocal /usr/local/share/doc /usr/local/share/info /usr/local/share/locale /usr/local/share/man /usr/local/share/man/man1 /usr/local/share/man/man3 /usr/local/share/man/man5 /usr/local/share/man/man7 /usr/local/share/man/man8 /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var/log
+user@laptop ligc-develop % brew upgrade ddev
+Updating Homebrew...
+==> Upgrading 1 outdated package:
+drud/ddev/ddev 1.12.2 -> 1.13.0
+==> Upgrading drud/ddev/ddev 
+==> Downloading https://github.com/drud/ddev/releases/download/v1.13.0//ddev-1.13.0.sierra.bottle.tar.gz
+==> Downloading from https://github-production-release-asset-2e65be.s3.amazonaws.com/80669528/4fd8ca80-4768-
+######################################################################## 100.0%
+==> Pouring ddev-1.13.0.sierra.bottle.tar.gz
+cp: /usr/local/Cellar/ddev/./1.13.0: Permission denied
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0: Permission denied
+cp: /usr/local/Cellar/ddev/./1.13.0/LICENSE: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/bin: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/bin/ddev: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/bin: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc/bash_completion.d: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d/ddev: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc/bash_completion.d: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/README.md: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0: Permission denied
+cp: utimes: /usr/local/Cellar/ddev/.: Operation not permitted
+Error: Failure while executing; `cp -pR /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/. /usr/local/Cellar/ddev` exited with 1. Here's the output:
+cp: /usr/local/Cellar/ddev/./1.13.0: Permission denied
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0: Permission denied
+cp: /usr/local/Cellar/ddev/./1.13.0/LICENSE: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/bin: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/bin/ddev: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/bin: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0/bin: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc/bash_completion.d: unable to copy extended attributes to /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d/ddev: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc/bash_completion.d: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0/etc/bash_completion.d: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0/etc: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0/etc: No such file or directory
+cp: /usr/local/Cellar/ddev/./1.13.0/README.md: No such file or directory
+cp: utimes: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: chown: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: chmod: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: chflags: /usr/local/Cellar/ddev/./1.13.0: No such file or directory
+cp: /var/folders/tm/0zgdhfz56z53jtdg1mjgb7_r0000gp/T/d20200206-7959-1vbx1lm/ddev/./1.13.0: unable to copy ACL to /usr/local/Cellar/ddev/./1.13.0: Permission denied
+cp: utimes: /usr/local/Cellar/ddev/.: Operation not permitted
+
+Warning: Bottle installation failed: building from source.
+==> Downloading https://github.com/drud/ddev/archive/v1.13.0.tar.gz
+==> Downloading from https://codeload.github.com/drud/ddev/tar.gz/v1.13.0
+######################################################################## 100.0%
+Error: An exception occurred within a child process:
+  Errno::EACCES: Permission denied @ dir_s_mkdir - /usr/local/Cellar/ddev/1.13.0
+user@laptop ligc-develop % sudo chown -R user:staff /usr/local/Cellar
+Password:
+user@laptop ligc-develop % brew upgrade ddev                                     
+==> Upgrading 1 outdated package:
+drud/ddev/ddev 1.12.2 -> 1.13.0
+==> Upgrading drud/ddev/ddev 
+==> Downloading https://github.com/drud/ddev/releases/download/v1.13.0//ddev-1.13.0.sierra.bottle.tar.gz
+Already downloaded: /Users/user/Library/Caches/Homebrew/downloads/883f86751e65e69acc022a30d23dbfb20a0aea69b8eace0cc8a346cdc762a492--ddev-1.13.0.sierra.bottle.tar.gz
+==> Pouring ddev-1.13.0.sierra.bottle.tar.gz
+==> Caveats
+Make sure to do a `mkcert -install` if you haven't done it before, it may require your sudo password.
+
+ddev requires docker and docker-compose.
+Docker installation instructions at https://ddev.readthedocs.io/en/stable/users/docker_installation/
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/ddev/1.13.0: 5 files, 24.6MB
+==> `brew cleanup` has not been run in 30 days, running now...
+Removing: /usr/local/Cellar/ddev/1.12.2... (5 files, 24.4MB)
+Removing: /Users/user/Library/Caches/Homebrew/ddev--1.12.0.sierra.bottle.tar.gz... (11.1MB)
+Removing: /Users/user/Library/Caches/Homebrew/glib--2.62.3.catalina.bottle.tar.gz... (4.5MB)
+Removing: /Users/user/Library/Caches/Homebrew/node--13.3.0.catalina.bottle.tar.gz... (16MB)
+Removing: /Users/user/Library/Caches/Homebrew/node@10--10.17.0_1.catalina.bottle.tar.gz... (13.4MB)
+Removing: /Users/user/Library/Caches/Homebrew/nspr--4.24.catalina.bottle.tar.gz... (344.3KB)
+Removing: /Users/user/Library/Caches/Homebrew/nspr--4.24.tar.gz... (1MB)
+Removing: /Users/user/Library/Caches/Homebrew/nss--3.48.catalina.bottle.tar.gz... (9.7MB)
+Removing: /Users/user/Library/Caches/Homebrew/php--7.4.0.catalina.bottle.tar.gz... (19.4MB)
+Removing: /Users/user/Library/Caches/Homebrew/yarn--1.21.1.tar.gz... (1.2MB)
+Removing: /Users/user/Library/Caches/Homebrew/youtube-dl--2019.11.28.tar.gz... (3MB)
+Removing: /Users/user/Library/Logs/Homebrew/libiconv... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/nghttp2... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/glib... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/nss... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/node@10... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/yarn... (100B)
+Removing: /Users/user/Library/Logs/Homebrew/php... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/libsodium... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/libpq... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/oniguruma... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/youtube-dl... (106B)
+Removing: /Users/user/Library/Logs/Homebrew/node... (64B)
+Removing: /Users/user/Library/Logs/Homebrew/nspr... (64B)
+==> Checking for dependents of upgraded formulae...
+==> No dependents found!
+user@laptop ligc-develop % ddev --version
+
+
+^C
+user@laptop ligc-develop % ddev version
+DDEV-Local version	v1.13.0                                
+commit            	v1.13.0                                
+db                	drud/ddev-dbserver-mariadb-10.2:v1.13.0
+dba               	phpmyadmin/phpmyadmin:5                
+ddev-ssh-agent    	drud/ddev-ssh-agent:v1.13.0            
+docker            	19.03.5                                
+docker-compose    	1.25.2                                 
+os                	darwin                                 
+router            	drud/ddev-router:v1.13.0               
+web               	drud/ddev-webserver:v1.13.0             
+user@laptop ligc-develop % ls
+LICENSE			composer.lock		docs			phpunit.xml.dist	vendor
+README.md		config			drush			scripts			web
+composer.json		content			load.environment.php	test
+user@laptop ligc-develop % ddev poweroff
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project biteback2030 has been stopped. 
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project other-develop has been stopped. 
+user@laptop ligc-develop % 

@@ -1,0 +1,17 @@
+name: Image Background Modifier
+type: module
+description: Provides a Modifier to set the image background on an element.
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: Modifiers
+dependencies:
+  - modifiers:modifiers
+  - paragraphs:paragraphs
+  - drupal:media
+  - drupal:options
+  - color_field:color_field
+
+# Information added by Drupal.org packaging script on 2020-03-31
+version: '8.x-1.4'
+project: 'modifiers_pack'
+datestamp: 1585665735

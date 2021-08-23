@@ -1,0 +1,7 @@
+uuid: a1f746dc-fbb3-49b2-be6a-d2e9d6148942
+langcode: en
+status: true
+dependencies: {  }
+id: text_confine_single_column
+label: 'Text Confine Single Column'
+classes: text-confine-single-column

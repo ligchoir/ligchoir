@@ -1,0 +1,25 @@
+user@workstation:~/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop$ ddev start
+not adding command drush (/home/user/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop/.ddev/.global_commands/web/drush) because it was already added to project ligc-develop
+Starting ligc-develop...
+Running  Command=ip address show dev docker0
+Building db
+Building web
+Creating ddev-ligc-develop-db ... done
+Creating ddev-ligc-develop-dba ... done
+Creating ddev-ligc-develop-web ... done
+
+ddev-router is up-to-date
+Ensuring write permissions for ligc-develop
+Ensuring write permissions for ligc-develop
+Existing settings.php file includes settings.ddev.php
+Successfully started ligc-develop
+Project can be reached at https://ligc-develop.ddev.site https://127.0.0.1:32789
+user@workstation:~/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop$ ddev drush cex
+not adding command drush (/home/user/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop/.ddev/.global_commands/web/drush) because it was already added to project ligc-develop
+ [success] Configuration successfully exported to sites/default/files/sync.
+sites/default/files/sync
+user@workstation:~/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop$ ddev drush sql-dump ../../database-dumps/
+1-current/    2-to-archive/ 
+user@workstation:~/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop$ ddev drush sql-dump > ../../database-dumps/1-current/2020-12-24-1536-ligc-dev.sql
+not adding command drush (/home/user/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop/.ddev/.global_commands/web/drush) because it was already added to project ligc-develop
+user@workstation:~/Work/probonoclients/1-current/internationalgospelchoir.uk/dev/sites/ligc-develop$ 

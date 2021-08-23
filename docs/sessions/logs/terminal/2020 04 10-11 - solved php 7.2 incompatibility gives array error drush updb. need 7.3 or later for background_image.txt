@@ -1,0 +1,1239 @@
+user@workstation:~$ ls
+ Desktop     examples.desktop   Pictures   snap       'VirtualBox VMs'
+ Documents   Insync             Postman    Templates   Work
+ Downloads   Music              Public     Videos
+user@workstation:~$ cd Work
+user@workstation:~/Work$ ls
+mainclients  myprojects  probonoclients
+user@workstation:~/Work$ ls
+mainclients  myprojects  probonoclients
+user@workstation:~/Work$ cd probonoclients/
+user@workstation:~/Work/probonoclients$ ls
+other-project-2  ligchoir  contact  other-project
+user@workstation:~/Work/probonoclients$ cd ligchoir
+user@workstation:~/Work/probonoclients/ligchoir$ ls
+dev
+user@workstation:~/Work/probonoclients/ligchoir$ cd dev
+user@workstation:~/Work/probonoclients/ligchoir/dev$ ls
+code-snapshots  database-dumps  sites
+user@workstation:~/Work/probonoclients/ligchoir/dev$ cd sites
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites$ ls
+ligc-develop
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites$ cd ligc-develop
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ls
+composer.json  composer.lock  config  docs  drush  LICENSE  load.environment.php  phpunit.xml.dist  README.md  scripts  test  vendor  web
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+^C
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ^C
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ^C
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 0 installs, 4 updates, 2 removals
+  - Removing jakub-onderka/php-console-highlighter (v0.4)
+  - Removing jakub-onderka/php-console-color (v0.2)
+  - Updating drupal/background_image (1.4.0 => 2.0.0): Downloading (100%)         
+  - Updating drupal/mailsystem (4.2.0 => 4.3.0): Downloading (100%)         
+  - Updating nikic/php-parser (v4.3.0 => v4.4.0): Downloading (100%)         
+  - Updating psy/psysh (v0.10.2 => v0.10.3): Downloading (100%)         
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ls
+composer.json  composer.lock  config  docs  drush  LICENSE  load.environment.php  phpunit.xml.dist  README.md  scripts  test  vendor  web
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   composer.json
+	modified:   composer.lock
+	modified:   config/sync/user.role.anonymous.yml
+	modified:   config/sync/user.role.authenticated.yml
+	modified:   web/README.txt
+	deleted:    web/themes/custom/clau/node_modules/console-control-strings/README.md~
+	deleted:    web/themes/custom/clau/node_modules/form-data/README.md.bak
+	deleted:    web/themes/custom/clau/node_modules/in-publish/README.md~
+	modified:   web/themes/custom/clau/templates/system/page.html.twig
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git add .
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git commit -am "background_image updated to 2.0.0 - should fix background image issue"
+[develop 4992f91] background_image updated to 2.0.0 - should fix background image issue
+ 9 files changed, 140 insertions(+), 582 deletions(-)
+ delete mode 100644 web/themes/custom/clau/node_modules/console-control-strings/README.md~
+ delete mode 100644 web/themes/custom/clau/node_modules/form-data/README.md.bak
+ delete mode 100644 web/themes/custom/clau/node_modules/in-publish/README.md~
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ls
+composer.json  composer.lock  config  docs  drush  LICENSE  load.environment.php  phpunit.xml.dist  README.md  scripts  test  vendor  web
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git branch
+* develop
+  master
+  staging
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git push origin develop
+Counting objects: 20, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (20/20), 2.87 KiB | 1.44 MiB/s, done.
+Total 20 (delta 15), reused 0 (delta 0)
+remote: Checking connectivity: 20, done.
+remote: 
+remote: Create pull request for develop:
+remote:   https://bitbucket.org/ligchoir/ligchoir/pull-requests/new?source=develop&t=1
+remote: 
+To bitbucket.org:ligchoir/ligchoir.git
+   bfe1053..4992f91  develop -> develop
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+
+nothing to commit, working tree clean
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev start
+Starting ligc-develop... 
+Building ddev-ssh-agent 
+Recreating ddev-ssh-agent ... done
+ 
+ssh-agent container is running: If you want to add authentication to the ssh-agent container, run 'ddev auth ssh' to enable your keys. 
+Running   Command=ip address show dev docker0
+Building db 
+Building web 
+Creating ddev-ligc-develop-db ... done
+Creating ddev-ligc-develop-web ... done
+Creating ddev-ligc-develop-dba ... done
+ 
+Starting ddev-router ... done
+ 
+Ensuring write permissions for ligc-develop 
+drush.yml already exists and is managed by the user. 
+Ensuring write permissions for ligc-develop 
+Existing settings.php file includes settings.ddev.php 
+settings.ddev.php already exists and is managed by the user. 
+Successfully started ligc-develop 
+Project can be reached at https://ligc-develop.ddev.site https://127.0.0.1:32770 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev poweroff
+Removing container: ddev-gmb-develop-web 
+Removing container: ddev-gmb-develop-dba 
+Removing container: ddev-gmb-develop-db 
+Project gmb-develop has been stopped. 
+Project ligc has been stopped. 
+Stopping ddev-ligc-develop-web ... done
+Stopping ddev-ligc-develop-dba ... done
+Stopping ddev-ligc-develop-db  ... done
+ 
+Stopping ddev-router ... done
+Removing ddev-router ... done
+Network ddev_default is external, skipping 
+Removing container: ddev-ligc-develop-web 
+Removing container: ddev-ligc-develop-dba 
+Removing container: ddev-ligc-develop-db 
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project ligc-develop has been stopped. 
+Removing container: ddev-theelders-develop-web 
+Removing container: ddev-theelders-develop-dba 
+Removing container: ddev-theelders-develop-db 
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project theelders-develop has been stopped. 
+Stopping ddev-ssh-agent ... done
+Removing ddev-ssh-agent ... done
+Network ddev_default is external, skipping 
+The ddev-ssh-agent container has been removed. When you start it again you will have to use 'ddev auth ssh' to provide key authentication again. 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev start
+Starting ligc-develop... 
+Building ddev-ssh-agent 
+Creating ddev-ssh-agent ... done
+ 
+ssh-agent container is running: If you want to add authentication to the ssh-agent container, run 'ddev auth ssh' to enable your keys. 
+Pushing mkcert rootca certs to ddev-global-cache 
+Pushed mkcert rootca certs to ddev-global-cache 
+Running   Command=ip address show dev docker0
+Building db 
+Building web 
+Creating ddev-ligc-develop-db ... done
+Creating ddev-ligc-develop-dba ... done
+Creating ddev-ligc-develop-web ... done
+ 
+Creating ddev-router ... done
+ 
+Ensuring write permissions for ligc-develop 
+drush.yml already exists and is managed by the user. 
+Ensuring write permissions for ligc-develop 
+Existing settings.php file includes settings.ddev.php 
+settings.ddev.php already exists and is managed by the user. 
+Successfully started ligc-develop 
+Project can be reached at https://ligc-develop.ddev.site https://127.0.0.1:32773 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer require drupal/image_effects
+Using version ^3.0 for drupal/image_effects
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 6 installs, 0 updates, 0 removals
+  - Installing lsolesen/pel (0.9.8): Downloading (100%)         
+  - Installing phenx/php-font-lib (0.5.1): Downloading (100%)         
+  - Installing drupal/file_mdm (2.0.0): Downloading (100%)         
+  - Installing drupal/file_mdm_font (2.0.0)
+  - Installing drupal/file_mdm_exif (2.0.0)
+  - Installing drupal/image_effects (3.0.0): Downloading (100%)         
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer require drupal/inline_entity_form
+Using version ^1.0@RC for drupal/inline_entity_form
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing drupal/inline_entity_form (1.0.0-rc3): Downloading (100%)         
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   composer.json
+	modified:   composer.lock
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git add .
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git commit -am "inline_entity_form"
+[develop 299953c] inline_entity_form
+ 2 files changed, 369 insertions(+), 1 deletion(-)
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git branch
+* develop
+  master
+  staging
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git push origin develop
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.17 KiB | 1.08 MiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: 
+remote: Create pull request for develop:
+remote:   https://bitbucket.org/ligchoir/ligchoir/pull-requests/new?source=develop&t=1
+remote: 
+To bitbucket.org:ligchoir/ligchoir.git
+   4992f91..299953c  develop -> develop
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush en inline_entity_form
+ [success] Successfully enabled: inline_entity_form
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush en image_effects
+The following module(s) will be enabled: image_effects, file_mdm_exif, file_mdm, file_mdm_font
+
+ Do you want to continue? (yes/no) [yes]:
+ > yes
+
+ [success] Successfully enabled: image_effects, file_mdm_exif, file_mdm, file_mdm_font
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush pm-uninstall bg_img_field
+ [success] Successfully uninstalled: bg_img_field
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer remove drupal/bg_img_field
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 0 installs, 0 updates, 2 removals
+  - Removing drupal/token (1.6.0)
+Deleting web/modules/contrib/token - deleted
+  - Removing drupal/bg_img_field (1.6.0)
+Deleting web/modules/contrib/bg_img_field - deleted
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush uli
+ [warning] include_once(/var/www/html/web/modules/contrib/token/token.module): failed to open stream: No such file or directory Extension.php:147
+ [warning] include_once(): Failed opening '/var/www/html/web/modules/contrib/token/token.module' for inclusion (include_path='/var/www/html/vendor/pear/archive_tar:/var/www/html/vendor/pear/console_getopt:/var/www/html/vendor/pear/pear-core-minimal/src:/var/www/html/vendor/pear/pear_exception:.:/usr/share/php') Extension.php:147
+ [error]  Error: Class 'Drupal\token\Commands\TokenCommands' not found in Drupal\Component\DependencyInjection\Container->createService() (line 269 of /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php) #0 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(173): Drupal\Component\DependencyInjection\Container->createService(Array, 'devel.command')
+#1 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(487): Drupal\Component\DependencyInjection\Container->get('devel.command', 1)
+#2 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(326): Drupal\Component\DependencyInjection\Container->resolveServicesAndParameters(Array)
+#3 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(173): Drupal\Component\DependencyInjection\Container->createService(Array, 'drush.command.s...')
+#4 /var/www/html/vendor/drush/drush/src/Boot/DrupalBoot8.php(290): Drupal\Component\DependencyInjection\Container->get('drush.command.s...')
+#5 /var/www/html/vendor/drush/drush/src/Boot/DrupalBoot8.php(256): Drush\Boot\DrupalBoot8->addDrupalModuleDrushCommands(Object(Drush\Boot\BootstrapManager))
+#6 /var/www/html/vendor/drush/drush/src/Boot/BootstrapManager.php(293): Drush\Boot\DrupalBoot8->bootstrapDrupalFull(Object(Drush\Boot\BootstrapManager), NULL)
+#7 /var/www/html/vendor/drush/drush/src/Commands/core/LoginCommands.php(54): Drush\Boot\BootstrapManager->doBootstrap(5)
+#8 [internal function]: Drush\Commands\core\LoginCommands->login('', Array)
+#9 /var/www/html/vendor/consolidation/annotated-command/src/CommandProcessor.php(257): call_user_func_array(Array, Array)
+#10 /var/www/html/vendor/consolidation/annotated-command/src/CommandProcessor.php(212): Consolidation\AnnotatedCommand\CommandProcessor->runCommandCallback(Array, Object(Consolidation\AnnotatedCommand\CommandData))
+#11 /var/www/html/vendor/consolidation/annotated-command/src/CommandProcessor.php(178): Consolidation\AnnotatedCommand\CommandProcessor->validateRunAndAlter(Array, Array, Object(Consolidation\AnnotatedCommand\CommandData))
+#12 /var/www/html/vendor/consolidation/annotated-command/src/AnnotatedCommand.php(302): Consolidation\AnnotatedCommand\CommandProcessor->process(Object(Symfony\Component\Console\Output\ConsoleOutput), Array, Array, Object(Consolidation\AnnotatedCommand\CommandData))
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Consolidation\AnnotatedCommand\AnnotatedCommand->execute(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /var/www/html/vendor/symfony/console/Application.php(1000): Symfony\Component\Console\Command\Command->run(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /var/www/html/vendor/symfony/console/Application.php(255): Symfony\Component\Console\Application->doRunCommand(Object(Consolidation\AnnotatedCommand\AnnotatedCommand), Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(148): Symfony\Component\Console\Application->doRun(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /var/www/html/vendor/drush/drush/src/Runtime/Runtime.php(118): Symfony\Component\Console\Application->run(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /var/www/html/vendor/drush/drush/src/Runtime/Runtime.php(49): Drush\Runtime\Runtime->doRun(Array, Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /var/www/html/vendor/drush/drush/drush.php(72): Drush\Runtime\Runtime->run(Array)
+#20 /var/www/html/vendor/drush/drush/includes/preflight.inc(18): require('/var/www/html/v...')
+#21 phar:///usr/local/bin/drush/bin/drush.php(141): drush_main()
+#22 /usr/local/bin/drush(10): require('phar:///usr/loc...')
+#23 {main}. 
+Error: Class 'Drupal\token\Commands\TokenCommands' not found in /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php on line 269 #0 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(173): Drupal\Component\DependencyInjection\Container->createService(Array, 'devel.command')
+#1 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(487): Drupal\Component\DependencyInjection\Container->get('devel.command', 1)
+#2 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(326): Drupal\Component\DependencyInjection\Container->resolveServicesAndParameters(Array)
+#3 /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php(173): Drupal\Component\DependencyInjection\Container->createService(Array, 'drush.command.s...')
+#4 /var/www/html/vendor/drush/drush/src/Boot/DrupalBoot8.php(290): Drupal\Component\DependencyInjection\Container->get('drush.command.s...')
+#5 /var/www/html/vendor/drush/drush/src/Boot/DrupalBoot8.php(256): Drush\Boot\DrupalBoot8->addDrupalModuleDrushCommands(Object(Drush\Boot\BootstrapManager))
+#6 /var/www/html/vendor/drush/drush/src/Boot/BootstrapManager.php(293): Drush\Boot\DrupalBoot8->bootstrapDrupalFull(Object(Drush\Boot\BootstrapManager), NULL)
+#7 /var/www/html/vendor/drush/drush/src/Commands/core/LoginCommands.php(54): Drush\Boot\BootstrapManager->doBootstrap(5)
+#8 [internal function]: Drush\Commands\core\LoginCommands->login('', Array)
+#9 /var/www/html/vendor/consolidation/annotated-command/src/CommandProcessor.php(257): call_user_func_array(Array, Array)
+#10 /var/www/html/vendor/consolidation/annotated-command/src/CommandProcessor.php(212): Consolidation\AnnotatedCommand\CommandProcessor->runCommandCallback(Array, Object(Consolidation\AnnotatedCommand\CommandData))
+#11 /var/www/html/vendor/consolidation/annotated-command/src/CommandProcessor.php(178): Consolidation\AnnotatedCommand\CommandProcessor->validateRunAndAlter(Array, Array, Object(Consolidation\AnnotatedCommand\CommandData))
+#12 /var/www/html/vendor/consolidation/annotated-command/src/AnnotatedCommand.php(302): Consolidation\AnnotatedCommand\CommandProcessor->process(Object(Symfony\Component\Console\Output\ConsoleOutput), Array, Array, Object(Consolidation\AnnotatedCommand\CommandData))
+#13 /var/www/html/vendor/symfony/console/Command/Command.php(255): Consolidation\AnnotatedCommand\AnnotatedCommand->execute(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /var/www/html/vendor/symfony/console/Application.php(1000): Symfony\Component\Console\Command\Command->run(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /var/www/html/vendor/symfony/console/Application.php(255): Symfony\Component\Console\Application->doRunCommand(Object(Consolidation\AnnotatedCommand\AnnotatedCommand), Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /var/www/html/vendor/symfony/console/Application.php(148): Symfony\Component\Console\Application->doRun(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /var/www/html/vendor/drush/drush/src/Runtime/Runtime.php(118): Symfony\Component\Console\Application->run(Object(Drush\Symfony\DrushArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /var/www/html/vendor/drush/drush/src/Runtime/Runtime.php(49): Drush\Runtime\Runtime->doRun(Array, Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /var/www/html/vendor/drush/drush/drush.php(72): Drush\Runtime\Runtime->run(Array)
+#20 /var/www/html/vendor/drush/drush/includes/preflight.inc(18): require('/var/www/html/v...')
+#21 phar:///usr/local/bin/drush/bin/drush.php(141): drush_main()
+#22 /usr/local/bin/drush(10): require('phar:///usr/loc...')
+#23 {main}
+Error: Class &#039;Drupal\token\Commands\TokenCommands&#039; not found in Drupal\Component\DependencyInjection\Container->createService() (line 269 of /var/www/html/web/core/lib/Drupal/Component/DependencyInjection/Container.php).
+ [warning] Drush command terminated abnormally.
+Failed to run drush uli: exit status 1 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [warning] include_once(/var/www/html/web/modules/contrib/token/token.module): failed to open stream: No such file or directory Extension.php:147
+ [warning] include_once(): Failed opening '/var/www/html/web/modules/contrib/token/token.module' for inclusion (include_path='/var/www/html/vendor/pear/archive_tar:/var/www/html/vendor/pear/console_getopt:/var/www/html/vendor/pear/pear-core-minimal/src:/var/www/html/vendor/pear/pear_exception:.:/usr/share/php') Extension.php:147
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+ [error]   (Currently using Missing or invalid module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > yes
+
+
+In Process.php line 235:
+                                                                                                                                                                        
+  The command "/usr/local/bin/drush updatedb:status --no-entity-updates --uri=https://ligc-develop.ddev.site --root=/var/www/html/web" failed.                          
+                                                                                                                                                                        
+  Exit Code: 1(General error)                                                                                                                                           
+                                                                                                                                                                        
+  Working directory:                                                                                                                                                    
+                                                                                                                                                                        
+  Output:                                                                                                                                                               
+  ================                                                                                                                                                      
+                                                                                                                                                                        
+                                                                                                                                                                        
+  Error Output:                                                                                                                                                         
+  ================                                                                                                                                                      
+                                                                                                                                                                        
+  In ExtensionList.php line 265:                                                                                                                                        
+                                                                                                                                                                        
+    The module token does not exist.                                                                                                                                    
+                                                                                                                                                                        
+                                                                                                                                                                        
+  updatedb:status [--format [FORMAT]] [--entity-updates [ENTITY-UPDATES]] [--post-updates [POST-UPDATES]] [--no-entity-updates] [--no-post-updates] [--fields FIELDS]   
+  [--field FIELD] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-ho  
+  st REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--filter [FILTER]] [--notify [NOTIFY]] [--dr  
+  uplicon] [--xh-link XH-LINK] [--] <command>                                                                                                                           
+                                                                                                                                                                        
+
+updatedb [--cache-clear [CACHE-CLEAR]] [--entity-updates] [--post-updates [POST-UPDATES]] [--no-cache-clear] [--no-post-updates] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--notify] [--druplicon] [--xh-link XH-LINK] [--] <command>
+
+Failed to run drush updb: exit status 1 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer require drupal/bg_img_field
+Using version ^1.6 for drupal/bg_img_field
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 2 installs, 0 updates, 0 removals
+  - Installing drupal/token (1.6.0): Downloading (100%)         
+  - Installing drupal/bg_img_field (1.6.0): Downloading (100%)         
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush pm-uninstall bg_img_field
+ [success] Successfully uninstalled: bg_img_field
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cron
+ [notice] Starting execution of comment_cron().
+ [notice] Starting execution of dblog_cron(), execution of comment_cron() took 6.16ms.
+ [notice] Starting execution of field_cron(), execution of dblog_cron() took 2.54ms.
+ [notice] Starting execution of file_cron(), execution of field_cron() took 2.87ms.
+ [notice] Starting execution of history_cron(), execution of file_cron() took 33.37ms.
+ [notice] Starting execution of layout_builder_cron(), execution of history_cron() took 0.9ms.
+ [notice] Starting execution of node_cron(), execution of layout_builder_cron() took 6.98ms.
+ [notice] Starting execution of search_cron(), execution of node_cron() took 8.55ms.
+ [notice] Starting execution of system_cron(), execution of search_cron() took 12.57ms.
+ [notice] Starting execution of update_cron(), execution of system_cron() took 23.21ms.
+ [notice] Execution of update_cron() took 36.69ms.
+ [notice] Cron run completed.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > yes
+
+ [success] No pending updates.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > no
+
+
+In UpdateDBCommands.php line 55:
+              
+  Cancelled.  
+              
+
+updatedb [--cache-clear [CACHE-CLEAR]] [--entity-updates] [--post-updates [POST-UPDATES]] [--no-cache-clear] [--no-post-updates] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--notify] [--druplicon] [--xh-link XH-LINK] [--] <command>
+
+Failed to run drush updb: exit status 1 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer update 'drupal/*' --with-dependencies
+Dependency "composer/installers" is also a root requirement, but is not explicitly whitelisted. Ignoring.
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Nothing to install or update
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > yes
+
+ [success] No pending updates.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush watchdog:show
+ ----- -------------- ------ ---------- -------------------------------------------------------------------------------------- 
+  ID    Date           Type   Severity   Message                                                                               
+ ----- -------------- ------ ---------- -------------------------------------------------------------------------------------- 
+  419   10/Apr 21:41   cron   Notice     Cron run completed.                                                                   
+  418   10/Apr 21:41   cron   Notice     Execution of update_cron() took 36.69ms.                                              
+  417   10/Apr 21:41   cron   Notice     Starting execution of update_cron(), execution of system_cron() took 23.21ms.         
+  416   10/Apr 21:41   cron   Notice     Starting execution of system_cron(), execution of search_cron() took 12.57ms.         
+  415   10/Apr 21:41   cron   Notice     Starting execution of search_cron(), execution of node_cron() took 8.55ms.            
+  414   10/Apr 21:41   cron   Notice     Starting execution of node_cron(), execution of layout_builder_cron() took 6.98ms.    
+  413   10/Apr 21:41   cron   Notice     Starting execution of layout_builder_cron(), execution of history_cron() took 0.9ms.  
+  412   10/Apr 21:41   cron   Notice     Starting execution of history_cron(), execution of file_cron() took 33.37ms.          
+  411   10/Apr 21:41   cron   Notice     Starting execution of file_cron(), execution of field_cron() took 2.87ms.             
+  410   10/Apr 21:41   cron   Notice     Starting execution of field_cron(), execution of dblog_cron() took 2.54ms.            
+ ----- -------------- ------ ---------- -------------------------------------------------------------------------------------- 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Nothing to install or update
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ls
+composer.json  composer.lock  config  docs  drush  LICENSE  load.environment.php  phpunit.xml.dist  README.md  scripts  test  vendor  web
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ rm -Rf vendor
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ rm composer.lock 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer clear-cache
+Cache directory does not exist (cache-vcs-dir): 
+Clearing cache (cache-repo-dir): /home/user/.cache/composer/repo
+Clearing cache (cache-files-dir): /home/user/.cache/composer/files
+Clearing cache (cache-dir): /home/user/.cache/composer
+All caches cleared.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer update
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 101 installs, 0 updates, 0 removals
+  - Installing drupal/core-composer-scaffold (8.8.5): Downloading (100%)         
+  - Installing composer/installers (v1.7.0): Downloading (100%)         
+  - Installing symfony/polyfill-mbstring (v1.12.0): Downloading (100%)         
+  - Installing symfony/polyfill-php72 (v1.15.0): Downloading (100%)         
+  - Installing psr/log (1.1.0): Downloading (100%)         
+  - Installing pear/pear_exception (v1.0.0): Downloading (100%)         
+  - Installing pear/console_getopt (v1.4.2): Downloading (100%)         
+  - Installing pear/pear-core-minimal (v1.10.9): Downloading (100%)         
+  - Installing pear/archive_tar (1.4.9): Downloading (100%)         
+  - Installing symfony/polyfill-ctype (v1.12.0): Downloading (100%)         
+  - Installing symfony/var-dumper (v4.4.7): Downloading (100%)         
+  - Installing psr/container (1.0.0): Downloading (100%)         
+  - Installing symfony/debug (v3.4.35): Downloading (100%)         
+  - Installing symfony/polyfill-util (v1.12.0): Downloading (100%)         
+  - Installing symfony/polyfill-php56 (v1.12.0): Downloading (100%)         
+  - Installing paragonie/random_compat (v9.99.99): Downloading (100%)         
+  - Installing symfony/polyfill-php70 (v1.12.0): Downloading (100%)         
+  - Installing symfony/http-foundation (v3.4.35): Downloading (100%)         
+  - Installing symfony/event-dispatcher (v3.4.35): Downloading (100%)         
+  - Installing symfony/http-kernel (v3.4.35): Downloading (100%)         
+  - Installing asm89/stack-cors (1.2.0): Downloading (100%)         
+  - Installing composer/semver (1.5.0): Downloading (100%)         
+  - Installing psr/http-message (1.0.1): Downloading (100%)         
+  - Installing masterminds/html5 (2.3.0): Downloading (100%)         
+  - Installing doctrine/lexer (1.0.2): Downloading (100%)         
+  - Installing egulias/email-validator (2.1.11): Downloading (100%)         
+  - Installing stack/builder (v1.0.5): Downloading (100%)         
+  - Installing symfony/routing (v3.4.35): Downloading (100%)         
+  - Installing ralouphie/getallheaders (3.0.3): Downloading (100%)         
+  - Installing guzzlehttp/psr7 (1.6.1): Downloading (100%)         
+  - Installing guzzlehttp/promises (v1.3.1): Downloading (100%)         
+  - Installing doctrine/annotations (v1.4.0): Downloading (100%)         
+  - Installing typo3/phar-stream-wrapper (v3.1.3): Downloading (100%)         
+  - Installing symfony/polyfill-iconv (v1.12.0): Downloading (100%)         
+  - Installing symfony/class-loader (v3.4.35): Downloading (100%)         
+  - Installing symfony/psr-http-message-bridge (v1.1.2): Downloading (100%)         
+  - Installing easyrdf/easyrdf (0.9.1): Downloading (100%)         
+  - Installing symfony-cmf/routing (1.4.1): Downloading (100%)         
+  - Installing guzzlehttp/guzzle (6.3.3): Downloading (100%)         
+  - Installing doctrine/collections (v1.4.0): Downloading (100%)         
+  - Installing doctrine/cache (v1.6.2): Downloading (100%)         
+  - Installing doctrine/inflector (v1.2.0): Downloading (100%)         
+  - Installing doctrine/common (v2.7.3): Downloading (100%)         
+  - Installing twig/twig (v1.42.3): Downloading (100%)         
+  - Installing symfony/yaml (v3.4.35): Downloading (100%)         
+  - Installing symfony/process (v3.4.35): Downloading (100%)         
+  - Installing symfony/translation (v3.4.35): Downloading (100%)         
+  - Installing symfony/validator (v3.4.35): Downloading (100%)         
+  - Installing symfony/serializer (v3.4.35): Downloading (100%)         
+  - Installing symfony/dependency-injection (v3.4.35): Downloading (100%)         
+  - Installing symfony/console (v3.4.35): Downloading (100%)         
+  - Installing zendframework/zend-diactoros (1.8.7): Downloading (100%)         
+  - Installing zendframework/zend-stdlib (3.2.1): Downloading (100%)         
+  - Installing zendframework/zend-escaper (2.6.1): Downloading (100%)         
+  - Installing zendframework/zend-feed (2.12.0): Downloading (100%)         
+  - Installing drupal/core (8.8.5): Downloading (100%)         
+  - Installing drupal/token (1.6.0): Downloading (100%)         
+  - Installing webmozart/assert (1.7.0): Downloading (100%)         
+  - Installing drupal/bg_img_field (1.6.0): Downloading (100%)         
+  - Installing drupal/background_image (2.0.0): Downloading (100%)         
+  - Installing drupal/bootstrap (3.21.0): Downloading (100%)         
+  - Installing drupal/content_sync (2.1.0): Downloading (100%)         
+  - Installing drupal/core-recommended (8.8.5)
+  - Installing drupal/ds (3.5.0): Downloading (100%)         
+  - Installing drupal/fontyourface (3.2.0): Downloading (100%)         
+  - Installing lsolesen/pel (0.9.8): Downloading (100%)         
+  - Installing phenx/php-font-lib (0.5.1): Downloading (100%)         
+  - Installing drupal/file_mdm (2.0.0): Downloading (100%)         
+  - Installing drupal/file_mdm_font (2.0.0)
+  - Installing drupal/file_mdm_exif (2.0.0)
+  - Installing drupal/image_effects (3.0.0): Downloading (100%)         
+  - Installing drupal/crop (1.5.0): Downloading (100%)         
+  - Installing drupal/image_widget_crop (2.3.0): Downloading (100%)         
+  - Installing drupal/inline_entity_form (1.0.0-rc3): Downloading (100%)         
+  - Installing drupal/mailsystem (4.3.0): Downloading (100%)         
+  - Installing drupal/entity_reference_revisions (1.8.0): Downloading (100%)         
+  - Installing drupal/paragraphs (1.11.0): Downloading (100%)         
+  - Installing drupal/smtp (1.0.0-beta7): Downloading (100%)         
+  - Installing webmozart/path-util (2.3.0): Downloading (100%)         
+  - Installing webflo/drupal-finder (1.2.0): Downloading (100%)         
+  - Installing symfony/finder (v4.4.7): Downloading (100%)         
+  - Installing nikic/php-parser (v4.4.0): Downloading (100%)         
+  - Installing dnoegel/php-xdg-base-dir (v0.1.1): Downloading (100%)         
+  - Installing psy/psysh (v0.10.3): Downloading (100%)         
+  - Installing container-interop/container-interop (1.2.0): Downloading (100%)         
+  - Installing league/container (2.4.1): Downloading (100%)         
+  - Installing dflydev/dot-access-data (v1.1.0): Downloading (100%)         
+  - Installing grasmash/yaml-expander (1.4.0): Downloading (100%)         
+  - Installing grasmash/expander (1.0.0): Downloading (100%)         
+  - Installing consolidation/config (1.2.1): Downloading (100%)         
+  - Installing consolidation/site-alias (3.0.0): Downloading (100%)         
+  - Installing consolidation/site-process (2.1.0): Downloading (100%)         
+  - Installing symfony/filesystem (v4.4.7): Downloading (100%)         
+  - Installing consolidation/self-update (1.1.5): Downloading (100%)         
+  - Installing consolidation/log (1.1.1): Downloading (100%)         
+  - Installing consolidation/output-formatters (3.5.0): Downloading (100%)         
+  - Installing consolidation/annotated-command (2.12.0): Downloading (100%)         
+  - Installing consolidation/robo (1.4.12): Downloading (100%)         
+  - Installing consolidation/filter-via-dot-access-data (1.0.0): Downloading (100%)         
+  - Installing chi-teck/drupal-code-generator (1.31.0): Downloading (100%)         
+  - Installing drush/drush (10.2.2): Downloading (100%)         
+pear/archive_tar suggests installing ext-bz2 (Bz2 compression support.)
+pear/archive_tar suggests installing ext-xz (Lzma2 compression support.)
+symfony/var-dumper suggests installing ext-intl (To show region name in time zone dump)
+paragonie/random_compat suggests installing ext-libsodium (Provides a modern crypto API that can be used to generate random bytes.)
+symfony/http-kernel suggests installing symfony/browser-kit
+symfony/http-kernel suggests installing symfony/config
+egulias/email-validator suggests installing ext-intl (PHP Internationalization Libraries are required to use the SpoofChecking validation)
+symfony/routing suggests installing symfony/config (For using the all-in-one router or any loader)
+symfony/routing suggests installing symfony/expression-language (For using expression matching)
+guzzlehttp/psr7 suggests installing zendframework/zend-httphandlerrunner (Emit PSR-7 responses)
+symfony/class-loader suggests installing symfony/polyfill-apcu (For using ApcClassLoader on HHVM)
+symfony/psr-http-message-bridge suggests installing nyholm/psr7 (For a super lightweight PSR-7/17 implementation)
+easyrdf/easyrdf suggests installing ml/json-ld (~1.0)
+symfony/translation suggests installing symfony/config
+symfony/validator suggests installing psr/cache-implementation (For using the metadata cache.)
+symfony/validator suggests installing symfony/intl
+symfony/validator suggests installing symfony/config
+symfony/validator suggests installing symfony/property-access (For accessing properties within comparison constraints)
+symfony/validator suggests installing symfony/expression-language (For using the Expression validator)
+symfony/serializer suggests installing psr/cache-implementation (For using the metadata cache.)
+symfony/serializer suggests installing symfony/property-info (To deserialize relations.)
+symfony/serializer suggests installing symfony/config (For using the XML mapping loader.)
+symfony/serializer suggests installing symfony/property-access (For using the ObjectNormalizer.)
+symfony/dependency-injection suggests installing symfony/config
+symfony/dependency-injection suggests installing symfony/expression-language (For using expressions in service container configuration)
+symfony/dependency-injection suggests installing symfony/proxy-manager-bridge (Generate service proxies to lazy load them)
+symfony/console suggests installing symfony/lock
+zendframework/zend-feed suggests installing zendframework/zend-cache (Zend\Cache component, for optionally caching feeds between requests)
+zendframework/zend-feed suggests installing zendframework/zend-db (Zend\Db component, for use with PubSubHubbub)
+zendframework/zend-feed suggests installing zendframework/zend-http (Zend\Http for PubSubHubbub, and optionally for use with Zend\Feed\Reader)
+zendframework/zend-feed suggests installing zendframework/zend-servicemanager (Zend\ServiceManager component, for easily extending ExtensionManager implementations)
+zendframework/zend-feed suggests installing zendframework/zend-validator (Zend\Validator component, for validating email addresses used in Atom feeds and entries when using the Writer subcomponent)
+drupal/paragraphs suggests installing drupal/entity_browser (Recommended for an improved user experience when using the Paragraphs library module)
+psy/psysh suggests installing ext-pdo-sqlite (The doc command requires SQLite to work.)
+psy/psysh suggests installing hoa/console (A pure PHP readline implementation. You'll want this if your PHP install doesn't already support readline or libedit.)
+consolidation/robo suggests installing henrikbjorn/lurker (For monitoring filesystem changes in taskWatch)
+consolidation/robo suggests installing patchwork/jsqueeze (For minifying JS files in taskMinify)
+consolidation/robo suggests installing natxet/CssMin (For minifying CSS files in taskMinify)
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > yes
+
+ [success] No pending updates.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > yes
+
+ [success] No pending updates.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev pm-uninstall bg_img_field
+Error: unknown command "pm-uninstall" for "ddev"
+Run 'ddev --help' for usage.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush pm-uninstall bg_img_field
+ [success] Successfully uninstalled: bg_img_field
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cron
+ [notice] Starting execution of comment_cron().
+ [notice] Starting execution of dblog_cron(), execution of comment_cron() took 2.32ms.
+ [notice] Starting execution of field_cron(), execution of dblog_cron() took 2.2ms.
+ [notice] Starting execution of file_cron(), execution of field_cron() took 3.23ms.
+ [notice] Starting execution of history_cron(), execution of file_cron() took 31.84ms.
+ [notice] Starting execution of layout_builder_cron(), execution of history_cron() took 0.69ms.
+ [notice] Starting execution of node_cron(), execution of layout_builder_cron() took 5.95ms.
+ [notice] Starting execution of search_cron(), execution of node_cron() took 7.08ms.
+ [notice] Starting execution of system_cron(), execution of search_cron() took 12.75ms.
+ [notice] Starting execution of update_cron(), execution of system_cron() took 20.25ms.
+ [notice] Execution of update_cron() took 1107.68ms.
+ [notice] Cron run completed.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer remove drupal/bg_img_field
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 0 installs, 0 updates, 2 removals
+  - Removing drupal/token (1.6.0)
+Deleting web/modules/contrib/token - deleted
+  - Removing drupal/bg_img_field (1.6.0)
+Deleting web/modules/contrib/bg_img_field - deleted
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [warning] include_once(/var/www/html/web/modules/contrib/token/token.module): failed to open stream: No such file or directory Extension.php:147
+ [warning] include_once(): Failed opening '/var/www/html/web/modules/contrib/token/token.module' for inclusion (include_path='/var/www/html/vendor/pear/archive_tar:/var/www/html/vendor/pear/console_getopt:/var/www/html/vendor/pear/pear-core-minimal/src:/var/www/html/vendor/pear/pear_exception:.:/usr/share/php') Extension.php:147
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ composer require drupal/token
+Using version ^1.6 for drupal/token
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing drupal/token (1.6.0): Loading from cache
+Package container-interop/container-interop is abandoned, you should avoid using it. Use psr/container instead.
+Package zendframework/zend-diactoros is abandoned, you should avoid using it. Use laminas/laminas-diactoros instead.
+Package zendframework/zend-escaper is abandoned, you should avoid using it. Use laminas/laminas-escaper instead.
+Package zendframework/zend-feed is abandoned, you should avoid using it. Use laminas/laminas-feed instead.
+Package zendframework/zend-stdlib is abandoned, you should avoid using it. Use laminas/laminas-stdlib instead.
+Writing lock file
+Generating autoload files
+4 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+Scaffolding files for drupal/core:
+  - Copy [project-root]/.editorconfig from assets/scaffold/files/editorconfig
+  - Copy [project-root]/.gitattributes from assets/scaffold/files/gitattributes
+  - Copy [web-root]/.csslintrc from assets/scaffold/files/csslintrc
+  - Copy [web-root]/.eslintignore from assets/scaffold/files/eslintignore
+  - Copy [web-root]/.eslintrc.json from assets/scaffold/files/eslintrc.json
+  - Copy [web-root]/.ht.router.php from assets/scaffold/files/ht.router.php
+  - Copy [web-root]/.htaccess from assets/scaffold/files/htaccess
+  - Copy [web-root]/example.gitignore from assets/scaffold/files/example.gitignore
+  - Copy [web-root]/index.php from assets/scaffold/files/index.php
+  - Copy [web-root]/INSTALL.txt from assets/scaffold/files/drupal.INSTALL.txt
+  - Copy [web-root]/README.txt from assets/scaffold/files/drupal.README.txt
+  - Copy [web-root]/robots.txt from assets/scaffold/files/robots.txt
+  - Copy [web-root]/update.php from assets/scaffold/files/update.php
+  - Copy [web-root]/web.config from assets/scaffold/files/web.config
+  - Copy [web-root]/sites/README.txt from assets/scaffold/files/sites.README.txt
+  - Copy [web-root]/sites/development.services.yml from assets/scaffold/files/development.services.yml
+  - Copy [web-root]/sites/example.settings.local.php from assets/scaffold/files/example.settings.local.php
+  - Copy [web-root]/sites/example.sites.php from assets/scaffold/files/example.sites.php
+  - Copy [web-root]/sites/default/default.services.yml from assets/scaffold/files/default.services.yml
+  - Copy [web-root]/sites/default/default.settings.php from assets/scaffold/files/default.settings.php
+  - Copy [web-root]/modules/README.txt from assets/scaffold/files/modules.README.txt
+  - Copy [web-root]/profiles/README.txt from assets/scaffold/files/profiles.README.txt
+  - Copy [web-root]/themes/README.txt from assets/scaffold/files/themes.README.txt
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cr
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev updb
+Error: unknown command "updb" for "ddev"
+Run 'ddev --help' for usage.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ [error]   (Currently using Incompatible module Array) 
+
+ Requirements check reports errors. Do you wish to continue? (yes/no) [yes]:
+ > no
+
+
+In UpdateDBCommands.php line 55:
+              
+  Cancelled.  
+              
+
+updatedb [--cache-clear [CACHE-CLEAR]] [--entity-updates] [--post-updates [POST-UPDATES]] [--no-cache-clear] [--no-post-updates] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--notify] [--druplicon] [--xh-link XH-LINK] [--] <command>
+
+Failed to run drush updb: exit status 1 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cex
+ [notice] Differences of the active config to the export directory:
++------------+--------------------------------------------+-----------+
+| Collection | Config                                     | Operation |
++------------+--------------------------------------------+-----------+
+|            | file_mdm.file_metadata_plugin.getimagesize | Create    |
+|            | file_mdm.settings                          | Create    |
+|            | file_mdm_exif.file_metadata_plugin.exif    | Create    |
+|            | file_mdm_font.file_metadata_plugin.font    | Create    |
+|            | image_effects.settings                     | Create    |
+|            | core.extension                             | Update    |
++------------+--------------------------------------------+-----------+
+
+
+ The .yml files in your export directory (../config/sync) will be deleted and replaced with the active config. (yes/no) [yes]:
+ > yes
+
+ [success] Configuration successfully exported to ../config/sync.
+../config/sync
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ vi core.extension
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git diff
+diff --git a/composer.json b/composer.json
+index 6e852d4..e92655d 100644
+--- a/composer.json
++++ b/composer.json
+@@ -17,7 +17,6 @@
+     "require": {
+         "composer/installers": "^1.2",
+         "drupal/background_image": "^2.0",
+-        "drupal/bg_img_field": "^1.4",
+         "drupal/bootstrap": "^3.21",
+         "drupal/content_sync": "^2.1",
+         "drupal/core-composer-scaffold": "^8.8",
+@@ -31,6 +30,7 @@
+         "drupal/mailsystem": "^4.2",
+         "drupal/paragraphs": "^1.10",
+         "drupal/smtp": "^1.0@beta",
++        "drupal/token": "^1.6",
+         "drush/drush": "^10.2"
+     },
+     "require-dev": {
+diff --git a/composer.lock b/composer.lock
+index dbd4369..baafbe7 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "e24b71b8e1d43170d17e4d66c9cc8f23",
++    "content-hash": "4471b432581c969a23e2168e5bbda197",
+     "packages": [
+         {
+             "name": "asm89/stack-cors",
+@@ -1594,62 +1594,6 @@
+                 "source": "https://git.drupalcode.org/project/background_image"
+             }
+         },
+-        {
+-            "name": "drupal/bg_img_field",
+-            "version": "1.6.0",
+-            "source": {
+-                "type": "git",
+-                "url": "https://git.drupalcode.org/project/bg_img_field.git",
+-                "reference": "8.x-1.6"
+-            },
+-            "dist": {
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   composer.json
+	modified:   composer.lock
+	modified:   config/sync/core.extension.yml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	config/sync/file_mdm.file_metadata_plugin.getimagesize.yml
+	config/sync/file_mdm.settings.yml
+	config/sync/file_mdm_exif.file_metadata_plugin.exif.yml
+	config/sync/file_mdm_font.file_metadata_plugin.font.yml
+	config/sync/image_effects.settings.yml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git diff config/sync/core.extension.yml
+diff --git a/config/sync/core.extension.yml b/config/sync/core.extension.yml
+index 45d86ea..c2bb28d 100644
+--- a/config/sync/core.extension.yml
++++ b/config/sync/core.extension.yml
+@@ -19,10 +19,15 @@ module:
+   field: 0
+   field_ui: 0
+   file: 0
++  file_mdm: 0
++  file_mdm_exif: 0
++  file_mdm_font: 0
+   filter: 0
+   help: 0
+   history: 0
+   image: 0
++  image_effects: 0
++  inline_entity_form: 0
+   layout_builder: 0
+   layout_discovery: 0
+   link: 0
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush pm-uninstall Array
+
+In PmCommands.php line 292:
+                                               
+  A specified extension does not exist: Array  
+                                               
+
+pm:uninstall [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--notify [NOTIFY]] [--druplicon] [--xh-link XH-LINK] [--] <command> [<modules>]...
+
+Failed to run drush pm-uninstall Array: exit status 1 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush cim
+ [notice] There are no changes to import.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush uli
+https://ligc-develop.ddev.site/user/reset/1/1586558997/Q4ElgZWJEzK2iWF3Y4VwwCh2XMECf_C0AENlpZO9YtE/login
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ cd ..
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites$ ls
+ligc-develop
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites$ cd ..
+user@workstation:~/Work/probonoclients/ligchoir/dev$ ls
+code-snapshots  database-dumps  sites
+user@workstation:~/Work/probonoclients/ligchoir/dev$ cd sites
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites$ ls
+ligc-develop
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites$ cd ligc-develop/
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ls
+composer.json  composer.lock  config  docs  drush  LICENSE  load.environment.php  phpunit.xml.dist  README.md  scripts  test  vendor  web
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ls -al
+total 336
+drwxr-xr-x 11 user user   4096 Apr 10 23:44 .
+drwxr-xr-x  3 user user   4096 Apr  5 20:20 ..
+-rw-rw-r--  1 user user   3312 Apr 10 23:40 composer.json
+-rw-r--r--  1 user user 237561 Apr 10 23:41 composer.lock
+drwxr-xr-x  3 user user   4096 Feb 15 10:03 config
+drwxr-xr-x  9 user user   4096 Apr 10 18:52 .ddev
+drwxr-xr-x  7 user user   4096 Feb 15 10:03 docs
+drwxr-xr-x  4 user user   4096 Apr 10 18:52 drush
+-rw-r--r--  1 user user    357 Apr 10 23:41 .editorconfig
+-rw-r--r--  1 user user    746 Dec  3 22:27 .env.example
+drwxr-xr-x  8 user user   4096 Apr 10 23:44 .git
+-rw-r--r--  1 user user   3858 Apr 10 23:41 .gitattributes
+-rw-r--r--  1 user user   2609 Feb 15 10:03 .gitignore
+-rw-r--r--  1 user user  18046 Dec  3 22:27 LICENSE
+-rw-r--r--  1 user user    414 Dec  3 22:27 load.environment.php
+-rw-r--r--  1 user user    481 Dec  3 22:27 phpunit.xml.dist
+-rw-r--r--  1 user user   6475 Dec  3 22:27 README.md
+drwxr-xr-x  3 user user   4096 Dec  3 22:27 scripts
+drwxr-xr-x  2 user user   4096 Dec 23 22:24 test
+-rw-r--r--  1 user user   1644 Dec  3 22:27 .travis.yml
+drwxr-xr-x 35 user user   4096 Apr 10 23:41 vendor
+drwxr-xr-x  8 user user   4096 Apr 10 23:41 web
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ cd .ddev
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop/.ddev$ ls
+commands  config.yaml  db-build  docker-compose.yaml  homeadditions  web-build
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop/.ddev$ vi config.yaml 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop/.ddev$ cd ..
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .ddev/config.yaml
+	modified:   composer.json
+	modified:   composer.lock
+	modified:   config/sync/core.extension.yml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	config/sync/file_mdm.file_metadata_plugin.getimagesize.yml
+	config/sync/file_mdm.settings.yml
+	config/sync/file_mdm_exif.file_metadata_plugin.exif.yml
+	config/sync/file_mdm_font.file_metadata_plugin.font.yml
+	config/sync/image_effects.settings.yml
+
+no changes added to commit (use "git add" and/or "git commit -a")
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev poweroff
+Project ligc has been stopped. 
+Stopping ddev-ligc-develop-web ... done
+Stopping ddev-ligc-develop-dba ... done
+Stopping ddev-ligc-develop-db  ... done
+ 
+Stopping ddev-router ... done
+Removing ddev-router ... done
+Network ddev_default is external, skipping 
+Removing container: ddev-ligc-develop-web 
+Removing container: ddev-ligc-develop-dba 
+Removing container: ddev-ligc-develop-db 
+Network ddev_default is external, skipping 
+Network ddev_default is external, skipping 
+Project ligc-develop has been stopped. 
+Stopping ddev-ssh-agent ... done
+Removing ddev-ssh-agent ... done
+Network ddev_default is external, skipping 
+The ddev-ssh-agent container has been removed. When you start it again you will have to use 'ddev auth ssh' to provide key authentication again. 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev start
+Starting ligc-develop... 
+Building ddev-ssh-agent 
+Creating ddev-ssh-agent ... done
+ 
+ssh-agent container is running: If you want to add authentication to the ssh-agent container, run 'ddev auth ssh' to enable your keys. 
+Pushing mkcert rootca certs to ddev-global-cache 
+Pushed mkcert rootca certs to ddev-global-cache 
+Running   Command=ip address show dev docker0
+Building db 
+Building web 
+Creating ddev-ligc-develop-db ... done
+Creating ddev-ligc-develop-web ... done
+Creating ddev-ligc-develop-dba ... done
+ 
+Creating ddev-router ... done
+ 
+Ensuring write permissions for ligc-develop 
+drush.yml already exists and is managed by the user. 
+Ensuring write permissions for ligc-develop 
+Existing settings.php file includes settings.ddev.php 
+settings.ddev.php already exists and is managed by the user. 
+Successfully started ligc-develop 
+Project can be reached at https://ligc-develop.ddev.site https://127.0.0.1:32776 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush updb
+ ------------------ ----------- --------------- ---------------------------------------------------- 
+  Module             Update ID   Type            Description                                         
+ ------------------ ----------- --------------- ---------------------------------------------------- 
+  background_image   8401        hook_update_n   Ensure all entity targets are stored using UUIDs.   
+ ------------------ ----------- --------------- ---------------------------------------------------- 
+
+
+ Do you wish to run the specified pending updates? (yes/no) [yes]:
+ > yes
+
+>  [notice] Update started: background_image_update_8401
+>  [notice] Update completed: background_image_update_8401
+ [success] Finished performing updates.
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ ddev drush ws
+ ----- -------------- ------ ---------- --------------------------------------------------------------------------------------- 
+  ID    Date           Type   Severity   Message                                                                                
+ ----- -------------- ------ ---------- --------------------------------------------------------------------------------------- 
+  433   10/Apr 22:50   user   Notice     User ligcadmin used one-time login link at time 1586558997.                            
+  432   10/Apr 22:50   user   Notice     Session opened for ligcadmin.                                                          
+  431   10/Apr 22:37   cron   Notice     Cron run completed.                                                                    
+  430   10/Apr 22:37   cron   Notice     Execution of update_cron() took 1107.68ms.                                             
+  429   10/Apr 22:37   cron   Notice     Starting execution of update_cron(), execution of system_cron() took 20.25ms.          
+  428   10/Apr 22:37   cron   Notice     Starting execution of system_cron(), execution of search_cron() took 12.75ms.          
+  427   10/Apr 22:37   cron   Notice     Starting execution of search_cron(), execution of node_cron() took 7.08ms.             
+  426   10/Apr 22:37   cron   Notice     Starting execution of node_cron(), execution of layout_builder_cron() took 5.95ms.     
+  425   10/Apr 22:37   cron   Notice     Starting execution of layout_builder_cron(), execution of history_cron() took 0.69ms.  
+  424   10/Apr 22:37   cron   Notice     Starting execution of history_cron(), execution of file_cron() took 31.84ms.           
+ ----- -------------- ------ ---------- --------------------------------------------------------------------------------------- 
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ echo https://www.drupal.org/project/background_image/issues/3126763
+https://www.drupal.org/project/background_image/issues/3126763
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ echo https://www.drupal.org/project/drupal/issues/3124797#comment-13548763
+https://www.drupal.org/project/drupal/issues/3124797#comment-13548763
+user@workstation:~/Work/probonoclients/ligchoir/dev/sites/ligc-develop$ 

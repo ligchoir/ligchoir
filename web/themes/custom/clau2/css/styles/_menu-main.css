@@ -1,0 +1,198 @@
+.ligc-main-menu {
+  font-size: 24px;
+  width: 100%;
+}
+
+/* desktop - horixontal menu items */
+@media screen and (min-width: 768px ) {
+  .ligc-main-menu li {
+    margin-right: 1.15em;
+    display: inline;
+  }
+}
+
+/* mobile - vertical and hidden - revealed by click on menu symbol */
+@media screen and (max-width: 767px ) {
+  .ligc-main-menu li {
+    margin-right: 1.15em;
+    display: block;
+    padding-bottom: 1.5em;
+  }
+
+  .region-primary-menu {
+    display: none;
+    /* display: inline-block; when menu revealed */
+    vertical-align: top;
+  }
+
+  #ligc-mob-menu-ligc-togl {
+    display: inline-block;
+  }
+}
+
+.ligc-main-menu li a {
+  font-weight: 700;
+  color: rgb(200, 200, 200);
+  text-decoration: none;
+}
+
+.ligc-main-menu li a:hover {
+  font-weight: 700;
+  color: white;
+}
+
+.ligc-main-menu ul.menu a.is-active {
+  color: white;
+  font-size: 24px;
+}
+
+.ligc-main-menu ul a {
+  font-weight: 700;
+  padding-left: 0;
+}
+
+.ligc-main-menu li a.is-active {
+  border-bottom: 4px solid rgb(255, 0, 0);
+  padding-bottom: 10px;
+}
+
+/* ligc-togl */
+
+.ligc-togl-expand {
+  color: black;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  right: 50px;
+  top: 2.3em;
+  text-align: center
+}
+
+.ligc-togl-expand:hover {
+  color: white;
+}
+
+.ligc-togl-expand .menu-icon {
+  display: inline-block;
+  position: relative;
+  height: 24px;
+  width: 30px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out
+}
+
+.ligc-togl-expand .menu-icon:hover {
+  cursor: pointer
+}
+
+.ligc-togl-expand .menu-icon span {
+  background: rgb(200, 200, 200);
+  display: block;
+  height: 4px;
+  width: 30px;
+  position: absolute;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out
+}
+
+.ligc-togl-expand .menu-icon span.top {
+  top: 0
+}
+
+.ligc-togl-expand .menu-icon span.middle {
+  top: 10px
+}
+
+.ligc-togl-expand .menu-icon span.bottom {
+  top: 20px
+}
+
+.ligc-togl-expand .menu-text {
+  font-size: 1rem;
+  line-height: 1em;
+  color: rgb(200, 200, 200);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out
+}
+
+.ligc-togl-expand .menu-text .icon-burger {
+  display: block
+}
+
+.ligc-togl-expand .menu-text .icon-close {
+  display: none
+}
+
+.ligc-togl-expand:hover .menu-icon span {
+  background: white;
+}
+
+.ligc-togl-expand:hover .menu-text {
+  color: white;
+}
+
+.ligc-togl-expand.ligc-togl-expand--open:hover .menu-icon span {
+  background: white;
+}
+
+.ligc-togl-expand.ligc-togl-expand--open:hover .menu-text {
+  color: white;
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span {
+  background: rgb(200, 200, 200);
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span.top {
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg)
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span.middle {
+  opacity: 0
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-icon span.bottom {
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg)
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-text {
+  color: rgb(200, 200, 200);
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-text .icon-burger {
+  display: none
+}
+
+.ligc-togl-expand.ligc-togl-expand--open .menu-text .icon-close {
+  display: block
+}
+
+.ligc-overlay-menu-bg {
+  background-color: black;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  overflow-y: scroll;
+  z-index: 100;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ligc-unoverlay-menu-bg {
+  background-color: transparent;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.ligc-overlay-hdr-hgt-togl-expand-mob-menu {
+  height: 100vh;
+}
+
+.ligc-hdr-hgt-init {
+  height: 8em;
+}

@@ -1,0 +1,24 @@
+uuid: 28258e63-8a92-402b-98d9-7f4cb2264157
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_and_contact_markup
+    - paragraphs.paragraphs_type.social_and_contact_links
+  module:
+    - text
+id: paragraph.social_and_contact_links.field_social_and_contact_markup
+field_name: field_social_and_contact_markup
+entity_type: paragraph
+bundle: social_and_contact_links
+label: 'Social and contact markup'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: "<a href=\"https://instagram.com/ligchoir\">\r\n<div class=\"social-contact-circle-outer ligc-ig\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-instagram\"></span></div></div>\r\n</a>\r\n\r\n<a href=\"https://twitter.com/ligchoir\">\r\n<div class=\"social-contact-circle-outer ligc-tw\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-twitter\"></span></div></div>\r\n</a>\r\n\r\n<a href=\"https://www.facebook.com/LIGChoir\">\r\n<div class=\"social-contact-circle-outer ligc-fb\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-facebook-f\"></span></div></div>\r\n</a>"
+    format: font_awesome_compatible
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,14 @@
+.ligc-quote {
+  text-align: center;
+}
+
+.ligc-text.ligc-quote p {
+}
+
+.paragraph--type--quote {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}

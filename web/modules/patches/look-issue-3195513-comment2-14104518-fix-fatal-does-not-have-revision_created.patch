@@ -1,0 +1,16 @@
+diff --git a/src/Entity/Look.php b/src/Entity/Look.php
+index ff5197a..895a7fb 100644
+--- a/src/Entity/Look.php
++++ b/src/Entity/Look.php
+@@ -17,6 +17,11 @@ use Drupal\user\UserInterface;
+  * @ContentEntityType(
+  *   id = "look",
+  *   label = @Translation("Look"),
++ *   revision_metadata_keys = {
++ *   "revision_user" = "revision_user",
++ *   "revision_created" = "revision_created",
++ *   "revision_log_message" = "revision_log_message",
++ *   },
+  *   handlers = {
+  *     "storage" = "Drupal\look\LookStorage",
+  *     "storage_schema" = "Drupal\look\LookStorageSchema",

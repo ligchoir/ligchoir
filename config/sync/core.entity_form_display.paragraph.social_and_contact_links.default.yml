@@ -1,0 +1,42 @@
+uuid: b6d9fbfd-3424-4590-a745-6ec8b0bb1ada
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_and_contact_links.field_contact_action
+    - field.field.paragraph.social_and_contact_links.field_social_and_contact_markup
+    - paragraphs.paragraphs_type.social_and_contact_links
+  module:
+    - text
+id: paragraph.social_and_contact_links.default
+targetEntityType: paragraph
+bundle: social_and_contact_links
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contact_action:
+    weight: -8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_social_and_contact_markup:
+    weight: -7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

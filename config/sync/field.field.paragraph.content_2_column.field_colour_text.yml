@@ -1,0 +1,29 @@
+uuid: efd16e47-a01e-4bc6-b9d1-3b8453bf0c06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colour_text
+    - paragraphs.paragraphs_type.content_2_column
+    - taxonomy.vocabulary.modifiers_color
+id: paragraph.content_2_column.field_colour_text
+field_name: field_colour_text
+entity_type: paragraph
+bundle: content_2_column
+label: 'Colour - Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modifiers_color: modifiers_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

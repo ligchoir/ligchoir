@@ -1,0 +1,61 @@
+uuid: a099abd5-2e83-467c-a816-d60c15b1032e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.home.field_content
+    - field.field.node.home.field_look
+    - field.field.node.home.field_main_call_to_action_area
+    - node.type.home
+  module:
+    - ds
+    - entity_reference_revisions
+    - field_formatter_class
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: layout_onecol
+      library: layout_discovery/onecol
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        label: ''
+    regions:
+      content:
+        - field_main_call_to_action_area
+        - field_content
+id: node.home.default
+targetEntityType: node
+bundle: home
+mode: default
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+    region: content
+  field_main_call_to_action_area:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  field_look: true
+  links: true

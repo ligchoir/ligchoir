@@ -1,0 +1,13 @@
+default: ''
+default_admin: ''
+mapping:
+  clau:
+    field_modifiers:
+      selector: body
+      weight: '50'
+  clau2:
+    field_modifiers:
+      selector: body
+      weight: '50'
+_core:
+  default_config_hash: y0sJ_2ZfCHxGSdyo_76zNey5p3gWobtGrUm4_JiLBQk

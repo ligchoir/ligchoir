@@ -1,0 +1,22 @@
+uuid: 2f09d06c-b843-41b6-ad4c-4a2f8bcd86d7
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+_core:
+  default_config_hash: Tfwm5dAEqzhUbaKjdxRMlbAH7ZSjfHfBchSGtHnqBA0
+id: paragraph.field_mod_image_fx_opacity
+field_name: field_mod_image_fx_opacity
+entity_type: paragraph
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

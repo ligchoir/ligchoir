@@ -1,0 +1,39 @@
+user@workstation:~/Work/probonoclients/internationalgospelchoir.uk/dev/sites/ligc-develop/web/modules/contrib/modifiers_pack/modules$ ddev drush cim -y --partial --source=modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional
++------------+------------------------------------------------------------------+-----------+
+| Collection | Config                                                           | Operation |
++------------+------------------------------------------------------------------+-----------+
+|            | field.storage.paragraph.field_mod_media_query                    | Update    |
+|            | field.storage.paragraph.field_mod_image_style                    | Update    |
+|            | field.storage.paragraph.field_mod_image_position                 | Update    |
+|            | field.storage.paragraph.field_mod_image                          | Update    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                  | Update    |
+|            | paragraphs.paragraphs_type.image_bg_modifier                     | Update    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_media_query    | Update    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_image_style    | Update    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_image_position | Update    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_image          | Update    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val  | Update    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default     | Update    |
+|            | core.entity_form_display.paragraph.image_bg_modifier.default     | Update    |
++------------+------------------------------------------------------------------+-----------+
+
+ // Import the listed configuration changes?: yes.                                                                      
+
+ [notice] Synchronized configuration: update field.storage.paragraph.field_mod_media_query.
+ [notice] Synchronized configuration: update field.storage.paragraph.field_mod_image_style.
+ [notice] Synchronized configuration: update field.storage.paragraph.field_mod_image_position.
+ [notice] Synchronized configuration: update field.storage.paragraph.field_mod_image.
+ [notice] Synchronized configuration: update field.storage.paragraph.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: update paragraphs.paragraphs_type.image_bg_modifier.
+ [notice] Synchronized configuration: update field.field.paragraph.image_bg_modifier.field_mod_media_query.
+ [notice] Synchronized configuration: update field.field.paragraph.image_bg_modifier.field_mod_image_style.
+ [notice] Synchronized configuration: update field.field.paragraph.image_bg_modifier.field_mod_image_position.
+ [notice] Synchronized configuration: update field.field.paragraph.image_bg_modifier.field_mod_image.
+ [notice] Synchronized configuration: update field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: update core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: update core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Finalizing configuration synchronization.
+ [success] The configuration was imported successfully.
+user@workstation:~/Work/probonoclients/internationalgospelchoir.uk/dev/sites/ligc-develop/web/modules/contrib/modifiers_pack/modules$ ddev drush cr
+ [success] Cache rebuild complete.
+user@workstation:~/Work/probonoclients/internationalgospelchoir.uk/dev/sites/ligc-develop/web/modules/contrib/modifiers_pack/modules$

@@ -1,0 +1,31 @@
+uuid: e988c9f8-6884-4dac-97d3-878f0edc6181
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_and_contact_links.field_contact_action
+    - field.field.paragraph.social_and_contact_links.field_social_and_contact_markup
+    - paragraphs.paragraphs_type.social_and_contact_links
+  module:
+    - text
+id: paragraph.social_and_contact_links.default
+targetEntityType: paragraph
+bundle: social_and_contact_links
+mode: default
+content:
+  field_contact_action:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_social_and_contact_markup:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

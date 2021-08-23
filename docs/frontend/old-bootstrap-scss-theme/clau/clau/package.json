@@ -1,0 +1,33 @@
+{
+  "name": "other-project.example",
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "description": "drupal-sites",
+  "repository": {
+    "type": "git",
+    "url": "none defined"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "run-sequence": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-install": "^1.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-watch": "^5.0.1",
+    "gulp4-run-sequence": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": ""
+}

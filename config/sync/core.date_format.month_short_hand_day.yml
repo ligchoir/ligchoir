@@ -1,0 +1,8 @@
+uuid: da3e527a-61c1-4e38-9a2a-402cf98e6320
+langcode: en
+status: true
+dependencies: {  }
+id: month_short_hand_day
+label: 'Month (short-hand) day'
+locked: false
+pattern: 'M j'

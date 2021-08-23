@@ -1,0 +1,8 @@
+uuid: c3d87ffd-7e98-4667-a41d-bbdd826eb68b
+langcode: en
+status: true
+dependencies: {  }
+id: month_short_hand_day_time_12h
+label: 'Month (short-hand) day time 12h'
+locked: false
+pattern: 'M j @ g:i a'

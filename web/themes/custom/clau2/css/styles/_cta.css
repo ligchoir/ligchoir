@@ -1,0 +1,66 @@
+@media screen and (min-width: 768px ) {
+  .ligc-cta-outer {
+    padding-top: 1.0em;
+    padding-left: 1.5em;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .ligc-cta-outer {
+    padding-top: 1.0em;
+    padding-left: 50px; 
+    /* in line with logo */
+  }
+}
+
+
+.field--name-field-main-call-to-action-area {
+  margin-bottom: 5em;
+}
+
+/* CTA fixed is where there is placeholder for a CTA */
+.ligc-cta-fixed {
+  border-radius: 0.5em;
+  border: 0.2em solid;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  color: inherit;
+  display: inline-block;
+  text-align: center;
+  font-family: 'Vegur';
+  font-size: 1.3em;
+}
+
+span.ligc-cta-fixed a
+{
+  text-decoration: none;
+  color: inherit;
+}
+
+.ligc-cta-fixed-default {
+  color: white;
+  width: 9em;
+}
+
+.ligc-cta-fixed-teaser {
+  width: 9em;
+}
+
+span.ligc-cta a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.ligc-cta {
+  border-radius: 0.5em;
+  border: 0.2em solid;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 2em;
+  padding-right: 2em;
+  color: white;
+  display: inline-block;
+  font-family: 'Vegur';
+  font-size: 1.3em;
+}

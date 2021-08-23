@@ -1,4 +1,4 @@
-uuid: 46dcc547-1806-48a1-9a6c-5705287b47f6
+uuid: 94d85bbc-3a7f-4c19-af03-5e85be4bb97b
 langcode: en
 status: true
 dependencies:
@@ -17,6 +17,8 @@ content:
   author:
     weight: -2
     region: content
+    settings: {  }
+    third_party_settings: {  }
   comment_body:
     type: text_textarea
     weight: 11

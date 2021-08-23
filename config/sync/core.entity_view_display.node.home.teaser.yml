@@ -1,0 +1,26 @@
+uuid: a45ab568-50db-4f40-90ea-ca24246c0b4a
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.home.field_content
+    - field.field.node.home.field_look
+    - field.field.node.home.field_main_call_to_action_area
+    - node.type.home
+  module:
+    - user
+id: node.home.teaser
+targetEntityType: node
+bundle: home
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_content: true
+  field_look: true
+  field_main_call_to_action_area: true

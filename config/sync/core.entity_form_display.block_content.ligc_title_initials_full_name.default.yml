@@ -1,0 +1,38 @@
+uuid: 3e842120-15eb-4dbc-a9c3-d29bfc467faf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ligc_title_initials_full_name
+    - field.field.block_content.ligc_title_initials_full_name.field_full_name
+    - field.field.block_content.ligc_title_initials_full_name.field_initials
+id: block_content.ligc_title_initials_full_name.default
+targetEntityType: block_content
+bundle: ligc_title_initials_full_name
+mode: default
+content:
+  field_full_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_initials:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

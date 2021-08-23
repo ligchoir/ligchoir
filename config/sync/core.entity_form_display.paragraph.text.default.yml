@@ -1,0 +1,58 @@
+uuid: 4f467067-73d9-455f-9dd3-27442c54048c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text.field_colour_background
+    - field.field.paragraph.text.field_colour_text
+    - field.field.paragraph.text.field_style
+    - field.field.paragraph.text.field_text
+    - paragraphs.paragraphs_type.text
+  module:
+    - text
+id: paragraph.text.default
+targetEntityType: paragraph
+bundle: text
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_colour_background:
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_colour_text:
+    weight: -8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_style:
+    weight: -6
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_text:
+    weight: -9
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+hidden:
+  created: true
+  status: true

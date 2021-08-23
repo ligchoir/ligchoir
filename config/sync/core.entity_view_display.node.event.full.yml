@@ -1,0 +1,87 @@
+uuid: 35603147-6aa9-40f6-8ff3-273e35057b11
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.body
+    - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_text
+    - field.field.node.event.field_look
+    - field.field.node.event.field_tickets
+    - field.field.node.event.field_venue
+    - field.field.node.event.field_when
+    - node.type.event
+  module:
+    - ds
+    - entity_reference_revisions
+    - field_formatter_class
+    - layout_builder
+    - smart_date
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_tickets:
+    type: entity_reference_revisions_entity_view
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+  field_venue:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_when:
+    type: smartdate_custom
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      date_format: 'D, j M Y'
+      custom_date_format: ''
+      timezone: ''
+      separator: ' - '
+      join: ', '
+      time_format: 'g:ia'
+      time_hour_format: 'g:ia'
+      allday_label: 'All day'
+      date_first: '1'
+      ampm_reduce: '1'
+      site_time_toggle: '1'
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+hidden:
+  field_colour_background: true
+  field_colour_text: true
+  field_look: true
+  links: true

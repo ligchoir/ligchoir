@@ -1,0 +1,21 @@
+uuid: 990821fc-a33f-4763-a81f-035637e32325
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_quote_source
+    - paragraphs.paragraphs_type.quote
+  module:
+    - text
+id: paragraph.quote.field_quote_source
+field_name: field_quote_source
+entity_type: paragraph
+bundle: quote
+label: 'Quote Source'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

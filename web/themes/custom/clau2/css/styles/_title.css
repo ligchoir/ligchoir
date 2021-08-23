@@ -1,0 +1,70 @@
+
+.ligc-title-large {
+  margin-left: 0.55em;
+}
+
+.ligc-title-large .field--name-field-initials {
+  font-size: 15em;
+}
+
+.ligc-title-large .field--name-field-full-name {
+  font-size: 2.0em;
+  padding-left: 0.4em;
+  position: relative;
+  top: -1.5em;
+}
+
+.ligc-title-small > * {
+  margin-left: 50px;
+}
+
+.ligc-title-small .field--name-field-initials {
+  font-size: 6.0em;
+  line-height: 0.8em;
+}
+
+.ligc-title-small .field--name-field-full-name  {
+  padding-left: 0.4em;
+  font-size: 0.8em;
+}
+
+.ligc-landing-page-title {
+  padding-left: 1em;
+  font-size: 2.5em;
+}
+
+
+/*
+@media screen and (max-width: 991) {
+  #block-clau2-ligcinitials-2 {
+    left: 0.5em;
+  }
+  #block-clau2-ligcfullname-2 {  
+
+    left: 4.1em;
+  }
+}
+
+@media screen and (min-width: 769) {
+  #block-clau2-ligcinitials-2 {
+    left: 0em;
+  }
+  #block-clau2-ligcfullname-2 {  
+
+    left: 0em;
+  }
+}
+
+
+@media screen and (min-width: 1200) { {
+  .region-navigation #block-ligcinitials-2 {
+    left: -0.9em;
+  }
+  .region-navigation #block-ligcfullname-2 {
+    left: -6.4em;
+  }
+}
+*/
+
+
+

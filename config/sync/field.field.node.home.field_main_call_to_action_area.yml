@@ -1,0 +1,65 @@
+uuid: d51a7e12-044c-417b-8d32-e53991510dd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_main_call_to_action_area
+    - node.type.home
+    - paragraphs.paragraphs_type.call_to_action
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: node.home.field_main_call_to_action_area
+field_name: field_main_call_to_action_area
+entity_type: node
+bundle: home
+label: 'Main Call to Action Area'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      call_to_action: call_to_action
+    target_bundles_drag_drop:
+      about_intro:
+        weight: 12
+        enabled: false
+      call_to_action:
+        enabled: true
+        weight: 13
+      call_to_action_with_content:
+        weight: 14
+        enabled: false
+      colors_modifier:
+        weight: 15
+        enabled: false
+      contact:
+        weight: 16
+        enabled: false
+      custom_colors_modifier:
+        weight: 17
+        enabled: false
+      image:
+        weight: 18
+        enabled: false
+      image_bg_modifier:
+        weight: 19
+        enabled: false
+      image_fx_modifier:
+        weight: 20
+        enabled: false
+      quote:
+        weight: 21
+        enabled: false
+      social_and_contact_links:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

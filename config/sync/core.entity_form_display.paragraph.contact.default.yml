@@ -1,0 +1,73 @@
+uuid: 726f78fc-2e0c-4724-a697-ead28d4e1879
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact.field_colour_background
+    - field.field.paragraph.contact.field_content
+    - field.field.paragraph.contact.field_form_title
+    - field.field.paragraph.contact.field_guidance
+    - field.field.paragraph.contact.field_webform
+    - paragraphs.paragraphs_type.contact
+  module:
+    - paragraphs
+    - text
+    - webform
+id: paragraph.contact.default
+targetEntityType: paragraph
+bundle: contact
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_colour_background:
+    weight: -4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_content:
+    type: entity_reference_paragraphs
+    weight: -8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_form_title:
+    weight: -7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_guidance:
+    weight: -6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_webform:
+    weight: -5
+    settings:
+      default_data: true
+      webforms: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+hidden:
+  created: true
+  status: true

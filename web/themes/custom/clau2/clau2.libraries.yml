@@ -1,0 +1,23 @@
+design:
+  version: VERSION
+  css:
+    base:
+      css/common/normalize.css: {}
+      css/styles/_common.css: {}
+      css/styles/_cta.css: {}
+      css/styles/_title.css: {}
+      css/styles/_menu-main.css: {}
+      css/styles/_quote.css: {}
+      css/styles/_team.css: {}
+      css/styles/_events.css: {}
+      css/styles/_contact.css: {}
+      css/styles/_content.css: {}
+      css/styles/_social.css: {}
+      css/common/style.css: {}
+  js:
+    js/theme.js: {}
+video-responsive:
+  version: VERSION
+  css:
+    base:
+      css/video-responsive/video-responsive.css: {}

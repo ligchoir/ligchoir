@@ -1,0 +1,34 @@
+uuid: 0857bb5b-3b57-4193-ae5e-22afe175a4d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_and_contact_block
+    - field.field.block_content.social_and_contact_block.field_contact_action
+    - field.field.block_content.social_and_contact_block.field_social_and_contact_markup
+  module:
+    - field_formatter_class
+    - text
+id: block_content.social_and_contact_block.default
+targetEntityType: block_content
+bundle: social_and_contact_block
+mode: default
+content:
+  field_contact_action:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      field_formatter_class:
+        class: ligc-text
+    type: string
+    region: content
+  field_social_and_contact_markup:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

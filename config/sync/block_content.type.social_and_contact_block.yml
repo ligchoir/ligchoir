@@ -1,0 +1,8 @@
+uuid: 608858ac-738c-4b3b-8b81-c5ece1e45aef
+langcode: en
+status: true
+dependencies: {  }
+id: social_and_contact_block
+label: 'Social and contact block'
+revision: 0
+description: ''

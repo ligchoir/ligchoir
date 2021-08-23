@@ -1,0 +1,64 @@
+uuid: e5d5caec-20b1-417f-bf9f-f0ff96066d9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.content_2_column.field_colour_background
+    - field.field.paragraph.content_2_column.field_colour_text
+    - field.field.paragraph.content_2_column.field_content_left_column
+    - field.field.paragraph.content_2_column.field_content_right_column
+    - paragraphs.paragraphs_type.content_2_column
+  module:
+    - paragraphs
+id: paragraph.content_2_column.default
+targetEntityType: paragraph
+bundle: content_2_column
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_colour_background:
+    weight: -6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_colour_text:
+    weight: -7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_content_left_column:
+    type: entity_reference_paragraphs
+    weight: -9
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_content_right_column:
+    type: entity_reference_paragraphs
+    weight: -8
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

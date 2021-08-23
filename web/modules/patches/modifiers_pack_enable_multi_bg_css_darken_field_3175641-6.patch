@@ -1,0 +1,179 @@
+diff --git a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_form_display.paragraph.image_bg_modifier.default.yml b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_form_display.paragraph.image_bg_modifier.default.yml
+index 44a2f44..40cb624 100644
+--- a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_form_display.paragraph.image_bg_modifier.default.yml
++++ b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_form_display.paragraph.image_bg_modifier.default.yml
+@@ -6,6 +6,7 @@ dependencies:
+     - field.field.paragraph.image_bg_modifier.field_mod_image
+     - field.field.paragraph.image_bg_modifier.field_mod_image_position
+     - field.field.paragraph.image_bg_modifier.field_mod_image_style
++    - field.field.paragraph.image_bg_modifier.field_mod_image_darken
+     - field.field.paragraph.image_bg_modifier.field_mod_media_query
+     - paragraphs.paragraphs_type.image_bg_modifier
+   module:
+@@ -44,6 +45,14 @@ content:
+     region: content
+     settings: {  }
+     third_party_settings: {  }
++  field_mod_image_darken:
++    type: string_textfield
++    weight: 2
++    region: content
++    settings:
++      size: 4
++      placeholder: ''
++    third_party_settings: {  }
+   field_mod_media_query:
+     type: string_textfield
+     weight: 4
+diff --git a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_view_display.paragraph.image_bg_modifier.default.yml b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_view_display.paragraph.image_bg_modifier.default.yml
+index 16761e8..05f5b92 100644
+--- a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_view_display.paragraph.image_bg_modifier.default.yml
++++ b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/core.entity_view_display.paragraph.image_bg_modifier.default.yml
+@@ -6,6 +6,7 @@ dependencies:
+     - field.field.paragraph.image_bg_modifier.field_mod_image
+     - field.field.paragraph.image_bg_modifier.field_mod_image_position
+     - field.field.paragraph.image_bg_modifier.field_mod_image_style
++    - field.field.paragraph.image_bg_modifier.field_mod_image_darken
+     - field.field.paragraph.image_bg_modifier.field_mod_media_query
+     - image.style.thumbnail
+     - paragraphs.paragraphs_type.image_bg_modifier
+@@ -50,6 +51,14 @@ content:
+     third_party_settings: {  }
+     type: list_default
+     region: content
++  field_mod_image_darken:
++    weight: 2
++    label: inline
++    settings:
++      link_to_entity: false
++    third_party_settings: {  }
++    type: string
++    region: content
+   field_mod_media_query:
+     weight: 4
+     label: inline
+diff --git a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/field.storage.paragraph.field_mod_image_style.yml b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/field.storage.paragraph.field_mod_image_style.yml
+index 69273d0..9e0556f 100644
+--- a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/field.storage.paragraph.field_mod_image_style.yml
++++ b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/field.storage.paragraph.field_mod_image_style.yml
+@@ -28,7 +28,7 @@ settings:
+   allowed_values_function: ''
+ module: options
+ locked: false
+-cardinality: 1
++cardinality: -1
+ translatable: true
+ indexes: {  }
+ persist_with_no_fields: false
+diff --git a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/src/Plugin/modifiers/ImageBgModifier.php b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/src/Plugin/modifiers/ImageBgModifier.php
+index 6477616..eb613b9 100644
+--- a/modules/contrib/modifiers_pack/modules/modifiers_bg_image/src/Plugin/modifiers/ImageBgModifier.php
++++ b/modules/contrib/modifiers_pack/modules/modifiers_bg_image/src/Plugin/modifiers/ImageBgModifier.php
+@@ -24,25 +24,46 @@ class ImageBgModifier extends ModifierPluginBase {
+     if (!empty($config['image'])) {
+       $media = parent::getMediaQuery($config);
+ 
+-      $css[$media][$selector][] = 'background-image:url("' . $config['image'] . '")';
+-      $attributes[$media][$selector]['class'][] = 'modifiers-has-background';
+-
+-      if (!empty($config['image_style'])) {
+-
+-        switch ($config['image_style']) {
++      // is image_darken is set? (using ctype_space - ref https://stackoverflow.com/a/2992388/227926 )
++      if (ctype_space($config['image_darken']) || !array_key_exists( 'image_darken', $config ) || empty($config['image_darken']) ) {
++        $css[$media][$selector][] = 'background-image:url("' . $config['image'] . '")';
++      }
++      else {
++        // https://stackoverflow.com/a/31632494/227926
++        $css[$media][$selector][] 
++          = "background: linear-gradient( rgba(0, 0, 0, ". $config['image_darken']. "),". 
++            "rgba(0, 0, 0, ". $config['image_darken']. ") ),". 
++            "url('" . $config['image'] . "');";
++            $css[$media][$selector][] .= " height: 100vh";
++      }
+ 
+-          case 'stretch':
+-            $css[$media][$selector][] = 'background-size:cover';
+-            break;
++      $attributes[$media][$selector]['class'][] = 'modifiers-has-background';
+ 
+-          case 'no-repeat':
+-          case 'repeat':
+-          case 'repeat-x':
+-          case 'repeat-y':
+-            $css[$media][$selector][] = 'background-repeat:' . $config['image_style'];
+-            break;
++      // if the image style only accepts 1 value, as did originally,
++      // then we're dealing with a string to put csss
++      //
++      // single value - config: cardinality: 1 in:
++      // set web/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/field.storage.paragraph.field_mod_image_style.yml
++      //
++      if (gettype($config['image_style']) == "string") {
++        $css[$media][$selector][] .= self::_populateCssStylesFromSelection($config['image_style']);
++      }
++      else {
++        // if the style input field has been configured to accept multiple values
++        // then we are dealing with an array
++        //
++        // multiple values - config: cardinality: -1 in:
++        // set web/modules/contrib/modifiers_pack/modules/modifiers_bg_image/config/optional/field.storage.paragraph.field_mod_image_style.yml
++        //
++        if (gettype($config['image_style']) == "array") {
++          foreach($config['image_style'] as $index => $style_setting) {
++            $css[$media][$selector][] 
++              .= self::_populateCssStylesFromSelection($style_setting)
++              .' ';
++          }
+         }
+       }
++
+       if (!empty($config['image_position'])) {
+         $position = str_replace('-', ' ', $config['image_position']);
+         $css[$media][$selector][] = 'background-position:' . $position;
+@@ -56,4 +77,45 @@ class ImageBgModifier extends ModifierPluginBase {
+     return NULL;
+   }
+ 
++  /**
++   * helper function
++   * 
++   * generates css from style setting provided by user as input into the modifier settings form
++   * 
++   * called for each setting that's been made by the user, returns the equivalent css
++   * 
++   */
++  private static function _populateCssStylesFromSelection($style_setting) {
++    $css_statement = "";
++    
++    if (!empty($style_setting)) {
++      switch ($style_setting) {
++
++        case 'stretch':
++          $css_statement = 'background-size:cover';
++          // TODO: do we need to add browser-specific css as well?
++          // ref: https://stackoverflow.com/a/31632494/227926
++          /*
++            #home {
++              background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('file:///Volumes/Animus/Jon/Dropbox/website/hellcity.jpg');
++              -webkit-background-size: cover;
++              -moz-background-size:  cover;
++              -o-background-size: cover;
++              background-size: cover;
++            }
++          */
++          break;
++
++        case 'no-repeat':
++        case 'repeat':
++        case 'repeat-x':
++        case 'repeat-y':
++          $css_statement = 'background-repeat:' . $style_setting;
++          break;
++      }
++    }
++
++    return $css_statement;
++  }
++
+ }

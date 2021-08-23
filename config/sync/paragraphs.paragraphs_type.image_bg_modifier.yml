@@ -1,0 +1,10 @@
+uuid: a954ee91-7725-470c-9815-bdf11421fd73
+langcode: en
+status: true
+dependencies: {  }
+id: image_bg_modifier
+label: 'Image Background Modifier'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

@@ -1,0 +1,151 @@
+.ligc-event-summary,
+.ligc-event-full {
+  float: left; 
+}
+
+@media screen and (min-width: 1024px ) {
+  .ligc-event-list-item .ligc-event-summary {
+      width: 76%;
+      /*
+      padding-top: 1em;
+      padding-bottom: 1em;
+      */
+  }
+
+  .ligc-event-tickets {
+    float: right;
+  }
+
+  .ligc-event-list-item .ligc-event-tickets {
+      width: 24%;
+  }
+
+  .ligc-event-summary,
+  .ligc-event-full {
+    padding-top: 2em;
+    padding-bottom: 2em;  
+  }
+}
+
+
+@media screen and (max-width: 1023px ) {
+  .ligc-event-list-item .ligc-event-summary {
+    float: left;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ligc-event-list-item .ligc-event-tickets {
+    float: left;
+    width: 100%;
+    text-align: center;
+  }
+
+@media screen and (min-width: 768px ) {
+  .ligc-event-container {
+    padding-bottom: 3em;
+  }
+}
+
+  .ligc-event-container .ligc-cta-outer {
+    padding-top: 0em;
+  }
+
+  .ligc-event-summary,
+  .ligc-event-full {
+    padding-top: 2em;
+    padding-bottom: 1em;  
+  }
+}
+
+
+@media screen and (min-width: 1024px ) {
+  .ligc-event-full {
+    padding-left: 1.3em;
+  }
+
+  .ligc-event-summary .field--name-title,
+  .ligc-event-full .field--name-title {
+    display: block;
+  }
+
+  .ligc-event-list-item,
+  .ligc-event-full-outer {
+    clear: both;
+
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .ligc-event-list-item {
+    width:70%;
+  }
+}
+
+/* seems to be an overlap with the above but there must be a good reason! */
+@media screen and (max-width: 1101px ) {
+  .ligc-event-full {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ligc-event-tickets .ligc-cta-outer {
+    text-align: center;
+  }
+
+  .node__content.ligc-event-full-outer .ligc-event-tickets {
+    width: 100%;
+  }
+
+  .ligc-event-full-outer {
+    padding-bottom: 3em;
+  }
+}
+
+
+
+
+.ligc-event-summary .field--name-title,
+.ligc-event-full .field--name-title {
+  display: block;
+}
+
+.ligc-event-summary .field--name-field-when,
+.ligc-event-full .field--name-field-when {
+  display: inline-block;
+}
+
+.ligc-event-summary .field--name-field-venue,
+.ligc-event-full .field--name-field-venue {
+  display: inline-block;
+}
+
+
+
+.ligc-event-full-outer {
+  overflow: auto;
+}
+
+
+.ligc-event-summary a,
+.ligc-event-full a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ligc-event-container {
+  margin: 3em;
+}
+
+/* https://stackoverflow.com/a/67399247/227926 */
+.ligc-event-container-outer {
+  overflow: hidden;
+}
+
+
+.ligc-event-tickets .ligc-cta-outer {
+  padding-left: 0em;
+  margin: auto;
+}

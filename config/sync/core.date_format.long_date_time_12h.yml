@@ -1,0 +1,8 @@
+uuid: 08d8f8b1-be21-46ef-b87e-b0ac20f9ffad
+langcode: en
+status: true
+dependencies: {  }
+id: long_date_time_12h
+label: 'Long date time 12h'
+locked: false
+pattern: 'l, F j, Y - g:i a'

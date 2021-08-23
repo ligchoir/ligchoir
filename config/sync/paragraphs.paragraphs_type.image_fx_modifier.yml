@@ -1,0 +1,12 @@
+uuid: 05135006-56b2-459a-bb5e-98ccfb0b6927
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: QefgAA5LQSQ-whzr9ueQ4GZQnAtrqQIl_V8J1KLoD3E
+id: image_fx_modifier
+label: 'Image FX Modifier'
+icon_uuid: null
+icon_default: null
+description: null
+behavior_plugins: {  }

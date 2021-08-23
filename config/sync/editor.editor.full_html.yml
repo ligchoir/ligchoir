@@ -1,4 +1,4 @@
-uuid: 53d50464-4427-4c55-b250-91faf12b6bcd
+uuid: 95f5314e-19c3-4627-9e48-207e908b89c4
 langcode: en
 status: true
 dependencies:
@@ -51,6 +51,8 @@ settings:
             - ShowBlocks
             - Source
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: ''
 image_upload:
@@ -59,5 +61,5 @@ image_upload:
   directory: inline-images
   max_size: ''
   max_dimensions:
-    width: 0
-    height: 0
+    width: null
+    height: null
