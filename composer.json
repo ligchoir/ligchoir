@@ -41,7 +41,7 @@
         "drupal/paragraph_blocks": "^3.0",
         "drupal/paragraphs": "^1.10",
         "drupal/smart_date": "^3.2",
-        "drupal/smtp": "^1.0@beta",
+        "drupal/smtp": "^1.0",
         "drupal/token": "^1.6",
         "drupal/twig_vardumper": "2.2",
         "drupal/viewsreference": "^1.7",
