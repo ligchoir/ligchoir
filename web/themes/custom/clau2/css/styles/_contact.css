@@ -2,6 +2,13 @@
   padding: 3em;
 }
 
+.ligc-webform {
+	padding-top: 0em;
+	padding-bottom: 3em;
+	padding-left: 3em;
+	padding-right: 3em;
+  }
+
 .ligc-contact-content {
   padding-left: 1em;
   padding-right: 1em; 

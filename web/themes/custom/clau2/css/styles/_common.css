@@ -70,8 +70,20 @@
   margin-right: auto;
   padding-top: 1em;
   padding-bottom: 1em;
-  padding-left: 5em;
-  padding-right: 5em;
+}
+
+@media screen and (min-width: 768px ) {
+  .text-confine-single-column-wide {
+    padding-left: 8em;
+    padding-right: 8em;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .text-confine-single-column-wide {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
 }
 
 
