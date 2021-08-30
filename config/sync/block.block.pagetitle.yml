@@ -6,6 +6,7 @@ dependencies:
     - block_classes
     - ctools
     - look
+    - node
   theme:
     - clau2
 third_party_settings:
@@ -33,5 +34,13 @@ visibility:
     bundles:
       event: event
     negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+      landing_page: landing_page
+    negate: false
     context_mapping:
       node: '@node.node_route_context:node'
