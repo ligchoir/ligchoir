@@ -14,6 +14,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  crop: 0
   ctools: 0
   datetime: 0
   datetime_range: 0
@@ -36,6 +37,7 @@ module:
   history: 0
   image: 0
   image_effects: 0
+  image_widget_crop: 0
   inline_entity_form: 0
   layout_builder: 0
   layout_discovery: 0
@@ -69,6 +71,7 @@ module:
   token: 0
   toolbar: 0
   tour: 0
+  twig_tweak: 0
   twig_vardumper: 0
   update: 0
   user: 0

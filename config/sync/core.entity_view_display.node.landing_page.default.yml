@@ -6,10 +6,13 @@ dependencies:
     - field.field.node.landing_page.field_background_media
     - field.field.node.landing_page.field_content
     - field.field.node.landing_page.field_main_call_to_action_area
+    - image.style.background_image_xl
     - node.type.landing_page
   module:
     - entity_reference_revisions
+    - field_formatter_class
     - layout_builder
+    - media
     - user
 third_party_settings:
   layout_builder:
@@ -21,13 +24,15 @@ bundle: landing_page
 mode: default
 content:
   field_background_media:
-    type: entity_reference_entity_view
+    type: media_thumbnail
     weight: 3
     label: above
     settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
+      image_style: background_image_xl
+      image_link: ''
+    third_party_settings:
+      field_formatter_class:
+        class: ''
     region: content
   field_content:
     weight: 1

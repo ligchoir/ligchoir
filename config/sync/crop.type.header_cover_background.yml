@@ -1,0 +1,12 @@
+uuid: 32e47c3e-79ac-4674-95b3-e47d9ae99139
+langcode: en
+status: true
+dependencies: {  }
+id: header_cover_background
+label: 'Header cover background'
+description: ''
+aspect_ratio: '1:1'
+soft_limit_width: null
+soft_limit_height: 600
+hard_limit_width: null
+hard_limit_height: null
