@@ -96,6 +96,11 @@ set bg_img_url = node.field_background_media.entity.field_media_image.0.entity.u
 }
 #}
 
+{#
+  https://drupal.stackexchange.com/a/305913/1082
+  https://www.drupal.org/project/bg_img_field/issues/3129018#comment-14204516
+#}
+
 {# have to explicity select the image style #}
 {#
   set bg_img_styled_url = node.field_background_media.entity.uri.value | image_style('background_image_xl')

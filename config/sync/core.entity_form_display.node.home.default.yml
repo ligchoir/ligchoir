@@ -3,11 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.home.field_background_media
     - field.field.node.home.field_content
-    - field.field.node.home.field_look
     - field.field.node.home.field_main_call_to_action_area
     - node.type.home
   module:
+    - media_library
     - paragraphs
     - path
 id: node.home.default
@@ -21,6 +22,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_background_media:
+    weight: 127
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
   field_content:
     type: entity_reference_paragraphs
     weight: 125
@@ -32,16 +40,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_look:
-    weight: 124
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
     region: content
   field_main_call_to_action_area:
     weight: 126

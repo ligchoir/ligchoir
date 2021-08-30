@@ -25,8 +25,7 @@ settings:
 visibility:
   look:
     id: look
-    looks:
-      1: '1'
+    looks: {  }
     negate: true
     context_mapping: {  }
   'entity_bundle:node':
