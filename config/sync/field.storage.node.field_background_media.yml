@@ -1,21 +1,19 @@
-uuid: f4bfe559-f1de-439f-953b-2b9635250644
+uuid: 57b1e2f2-8f2f-4fac-9b5d-947414847f7c
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - taxonomy
-_core:
-  default_config_hash: WpOE_bs8Bs_HY2ns7n2r__de-xno0-Bxkqep5-MsHAs
-id: node.field_tags
-field_name: field_tags
+id: node.field_background_media
+field_name: field_background_media
 entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: media
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false
