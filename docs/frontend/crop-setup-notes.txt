@@ -1,0 +1,4 @@
+https://ligc-develop.ddev.site/admin/config/media/crop
+https://ligc-develop.ddev.site/admin/config/media/image-styles
+- add crop
+- but where?
