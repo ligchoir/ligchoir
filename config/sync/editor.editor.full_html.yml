@@ -45,6 +45,10 @@ settings:
           name: 'Block Formatting'
           items:
             - Format
+            - JustifyRight
+            - JustifyCenter
+            - JustifyBlock
+            - JustifyLeft
         -
           name: Tools
           items:

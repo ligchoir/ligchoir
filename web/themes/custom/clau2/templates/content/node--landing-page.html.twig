@@ -113,7 +113,7 @@ set bg_img_url = node.field_background_media.entity.field_media_image.0.entity.u
 <style>
 
 
-
+{#
 #clau-page-container-id {
     background: linear-gradient( rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2) ), url({{ bg_img_styled_url }});
     height: 100vh;
@@ -121,6 +121,31 @@ set bg_img_url = node.field_background_media.entity.field_media_image.0.entity.u
     background-position: left top;
     background-color: rgba(0,0,0,0.5);
 }
+#}
+
+
+  @media screen and (max-width: 767px ) {
+    #clau-page-container-id {
+        background: linear-gradient( 180deg, rgba(0,0,0,1) 2%, rgba(0,0,0,0.2) 5%, rgba(255,255,255,0.2) 100%), url({{ bg_img_styled_url }});
+
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: left 10em;
+        background-color: rgba(0,0,0,1);
+    }
+  }
+
+
+  @media screen and (min-width: 768px ) {
+    #clau-page-container-id {
+        background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 18%, rgba(255,255,255,0.4) 100%), url({{ bg_img_styled_url }});
+        height: 100vh;
+        background-size: cover;
+        background-position: left top;
+        background-color: rgba(0,0,0,1);
+    }
+  }
+
 
 
 
