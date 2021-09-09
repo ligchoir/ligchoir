@@ -1,0 +1,21 @@
+uuid: ed76a860-ab21-4a25-b6c6-e2ffff318025
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video
+    - paragraphs.paragraphs_type.video
+id: paragraph.video.field_video
+field_name: field_video
+entity_type: paragraph
+bundle: video
+label: Video
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings: {  }
+field_type: entity_reference
