@@ -1,11 +1,19 @@
 
-.ligc-title-large {
+.ligc-title-encl {
+  text-decoration: none;
+}
+
+/* note: some of this css may be obsolete following putting title and initials inside link for home page. because some of the css selectors targetted without the a tag */
+
+.ligc-title-large a {
   margin-left: 0.55em;
+  color: white;
 }
 
 .ligc-title-large .field--name-field-initials {
   font-size: 15em;
   text-shadow: 0px 0px 30px rgb(0 0 0 / 90%), 0px 0px 20px rgb(0 0 0 / 50%);
+  line-height: 0.9em;
 }
 
 .ligc-title-large .field--name-field-full-name {
@@ -18,18 +26,21 @@
 
 .ligc-title-small > * {
   margin-left: 50px;
+  color: white;
 }
 
 .ligc-title-small .field--name-field-initials {
   font-size: 6.0em;
-  line-height: 0.8em;
+  line-height: 0.4em;
   text-shadow: 0px 0px 30px rgb(0 0 0 / 90%), 0px 0px 20px rgb(0 0 0 / 50%);
+  margin-left: 0.52em;
 }
 
 .ligc-title-small .field--name-field-full-name  {
   padding-left: 0.4em;
   font-size: 0.8em;
   text-shadow: 0px 0px 30px rgb(0 0 0 / 90%), 0px 0px 20px rgb(0 0 0 / 50%);
+  margin-left: 50px;
 }
 
 .ligc-landing-page-title {
