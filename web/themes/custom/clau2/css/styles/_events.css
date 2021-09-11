@@ -229,3 +229,11 @@
 .node--type--event.node--view-mode-full .ligc-cta-outer span {
   margin-top: 1.0em;
 }
+
+/* this seems a bit weird, because inspect highlights (what I think are) the wrong elements, but this seems to work fine */
+@media screen and (max-width: 767px) {
+  .view-display-id-events_listing .view-content .views-row:last-child {
+      padding-bottom: 14em;
+      clear: both;
+  }
+}
