@@ -82,19 +82,31 @@
 %}
 {{ attach_library('classy/node') }}
 
+{# {{ content }} #}
+
+
+
+
 <div{{ attributes.addClass(classes).addClass('ligc-event-list-item') }}>
   <div class="ligc-event-summary">
-  <a href="{{ url }}" rel="bookmark">
-    {{ label }}
+    <a href="{{ url }}" rel="bookmark">
+      {{ label }}
 
-    <span>{{ content.field_when }} | </span>
-    <span>{{ content.field_venue }}</span>
-  </a>
+      {{ content.field_when }} | 
+      {{ content.field_venue }}
+    </a>
   </div>
   <div class="ligc-event-tickets">
     {{ content.field_tickets }}
   </div>
 </div>
+<div class="event-spacer-container">
+  <hr class="event-spacer-hr"/>
+</div>
+
+
+
+
 
 
 

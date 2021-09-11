@@ -231,9 +231,56 @@
 }
 
 /* this seems a bit weird, because inspect highlights (what I think are) the wrong elements, but this seems to work fine */
+/* maybe invalid or incomplete html or incorrect css? */
 @media screen and (max-width: 767px) {
   .view-display-id-events_listing .view-content .views-row:last-child {
-      padding-bottom: 14em;
-      clear: both;
+      padding-bottom: 2em;
   }
+}
+
+
+.view-display-id-events_listing .views-row:not(:last-child) .event-spacer-container .event-spacer-hr {
+  width: 300px;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #bfbfbf; 
+  border: 0;
+}
+
+
+.view-display-id-events_listing .views-row:last-child .event-spacer-container .event-spacer-hr {
+  width: 200px;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  display:none;
+  border: 0;
+}
+
+
+.event-spacer-container {
+  padding-top: 3em;
+}
+
+/*.view-display-id-events_listing .views-row:after { */
+  /*
+.event-listing-item:after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: gray;
+  position: absolute;
+  bottom: -4px;
+}
+*/
+
+/*
+.view-display-id-events_listing .views-row {
+  padding-bottom: 2em;
+}
+*/
+
+.ligc-event-list-item {
+  padding-bottom: 8.5em;
 }
