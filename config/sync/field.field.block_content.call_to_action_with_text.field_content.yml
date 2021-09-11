@@ -1,0 +1,76 @@
+uuid: babae070-5725-43de-a3fe-a82cc2b9e14a
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_with_text
+    - field.storage.block_content.field_content
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.text
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: block_content.call_to_action_with_text.field_content
+field_name: field_content
+entity_type: block_content
+bundle: call_to_action_with_text
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      call_to_action: call_to_action
+      text: text
+    target_bundles_drag_drop:
+      about_intro:
+        weight: 15
+        enabled: false
+      call_to_action:
+        enabled: true
+        weight: 16
+      colors_modifier:
+        weight: 17
+        enabled: false
+      contact:
+        weight: 18
+        enabled: false
+      content_2_column:
+        weight: 19
+        enabled: false
+      custom_colors_modifier:
+        weight: 20
+        enabled: false
+      image:
+        weight: 21
+        enabled: false
+      image_bg_modifier:
+        weight: 22
+        enabled: false
+      image_fx_modifier:
+        weight: 23
+        enabled: false
+      quote:
+        weight: 24
+        enabled: false
+      social_and_contact_links:
+        weight: 25
+        enabled: false
+      text:
+        enabled: true
+        weight: 26
+      video:
+        weight: 27
+        enabled: false
+      view:
+        weight: 28
+        enabled: false
+field_type: entity_reference_revisions

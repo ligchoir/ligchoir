@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.call_to_action.field_link
     - field.field.paragraph.call_to_action.field_modifiers
+    - field.field.paragraph.call_to_action.field_style
     - paragraphs.paragraphs_type.call_to_action
   module:
     - link
@@ -41,6 +42,16 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
+    region: content
+  field_style:
+    weight: -7
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
 hidden:
   created: true

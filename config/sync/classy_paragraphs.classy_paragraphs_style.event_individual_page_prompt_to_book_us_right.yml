@@ -1,0 +1,7 @@
+uuid: 05ae95fe-617e-4a58-8a09-a3cf4890e99a
+langcode: en
+status: true
+dependencies: {  }
+id: event_individual_page_prompt_to_book_us_right
+label: 'Event individual page - prompt to book us - right'
+classes: event-book-right

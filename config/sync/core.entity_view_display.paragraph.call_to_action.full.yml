@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.paragraph.full
     - field.field.paragraph.call_to_action.field_link
     - field.field.paragraph.call_to_action.field_modifiers
+    - field.field.paragraph.call_to_action.field_style
     - paragraphs.paragraphs_type.call_to_action
   module:
     - entity_reference_revisions
@@ -44,4 +45,5 @@ content:
       link: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_style: true

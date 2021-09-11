@@ -1,0 +1,24 @@
+uuid: 3dc3f193-de47-4514-8061-c5dab99d52b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.call_to_action_with_text
+    - field.field.block_content.call_to_action_with_text.field_content
+  module:
+    - entity_reference_revisions
+id: block_content.call_to_action_with_text.default
+targetEntityType: block_content
+bundle: call_to_action_with_text
+mode: default
+content:
+  field_content:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

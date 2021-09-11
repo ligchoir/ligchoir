@@ -1,0 +1,33 @@
+uuid: 8ac34652-a7d0-4995-84fc-a4423d81c0e3
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:call_to_action_with_text:a7d6ced2-1fb6-4dd7-8454-c5742bef07c1'
+  module:
+    - block_content
+    - ctools
+  theme:
+    - clau2
+id: calltoactioneventindividualbookus
+theme: clau2
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:a7d6ced2-1fb6-4dd7-8454-c5742bef07c1'
+settings:
+  id: 'block_content:a7d6ced2-1fb6-4dd7-8454-c5742bef07c1'
+  label: 'Call to Action - Event individual - book us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

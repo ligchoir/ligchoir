@@ -23,7 +23,7 @@
   .ligc-event-summary,
   .ligc-event-full {
     padding-top: 2em;
-    padding-bottom: 2em;  
+    padding-bottom: 1em;  
   }
 }
 
@@ -148,4 +148,84 @@
 .ligc-event-tickets .ligc-cta-outer {
   padding-left: 0em;
   margin: auto;
+}
+
+.ligc-event-full h1 {
+  font-size: 2.0em;
+  padding-bottom: 1.0em;
+}
+
+
+#block-calltoactioneventindividualbookus {
+  background-color: black;
+}
+
+#block-calltoactioneventindividualbookus .ligc-cta-outer {
+  background-color: black;
+
+
+}
+
+@media screen and (max-width: 767px) {
+  #block-calltoactioneventindividualbookus {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #block-calltoactioneventindividualbookus {
+    padding-top: 1em;
+    padding-bottom: 2em;
+  }
+}
+
+#block-calltoactioneventindividualbookus .ligc-cta-outer a {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  #block-calltoactioneventindividualbookus .field__item  {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #block-calltoactioneventindividualbookus .field__item  {
+    display: inline-block;
+  }
+}
+
+#block-calltoactioneventindividualbookus .field__item:first-child {
+  padding-bottom: 1.0em;
+}
+
+#block-calltoactioneventindividualbookus .field__items {
+  background-color: black;
+  text-align:center;
+}
+
+.event-book-left {
+
+}
+
+.event-book-right {
+
+  
+}
+
+.event-book-right .ligc-cta-outer {
+
+}
+
+
+@media screen and (max-width: 767px) {
+  .ligc-cta-outer {
+    padding-left: 0px;
+  }
+}
+
+
+.node--type-event.node--view-mode-full .ligc-cta-outer span {
+  margin-top: 1.0em;
 }

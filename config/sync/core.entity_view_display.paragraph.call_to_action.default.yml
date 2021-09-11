@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.paragraph.call_to_action.field_link
     - field.field.paragraph.call_to_action.field_modifiers
+    - field.field.paragraph.call_to_action.field_style
     - paragraphs.paragraphs_type.call_to_action
   module:
     - entity_reference_revisions
@@ -37,5 +38,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_style:
+    weight: 2
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
 hidden: {  }

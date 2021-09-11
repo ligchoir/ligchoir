@@ -106,12 +106,12 @@
 
     <div{{ content_attributes.addClass('node__content ligc-event-full-outer ligc-justify ligc-text') }}>
       <div class="ligc-event-full">
-        <a href="{{ url }}" rel="bookmark">
-          {{ label }}
+
+          <h1>{{ label }}</h1>
 
           <span>{{ content.field_when }} | </span>
           <span>{{ content.field_venue }}</span>
-        </a>
+
       </div>
       <style>
        .ligc-event-full-outer .ligc-cta-fixed { color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};
