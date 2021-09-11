@@ -220,12 +220,12 @@
 
 
 @media screen and (max-width: 767px) {
-  .ligc-cta-outer {
+  #block-calltoactioneventindividualbookus .ligc-cta-outer {
     padding-left: 0px;
   }
 }
 
 
-.node--type-event.node--view-mode-full .ligc-cta-outer span {
+.node--type--event.node--view-mode-full .ligc-cta-outer span {
   margin-top: 1.0em;
 }
