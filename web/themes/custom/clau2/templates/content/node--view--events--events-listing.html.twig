@@ -82,11 +82,6 @@
 %}
 {{ attach_library('classy/node') }}
 
-{# {{ content }} #}
-
-
-
-
 <div{{ attributes.addClass(classes).addClass('ligc-event-list-item') }}>
   <div class="ligc-event-summary">
     <a href="{{ url }}" rel="bookmark">
@@ -94,6 +89,8 @@
 
       {{ content.field_when }} | 
       {{ content.field_venue }}
+
+      <p class="read-more">Read more...</p>
     </a>
   </div>
   <div class="ligc-event-tickets">
@@ -105,7 +102,7 @@
 </div>
 
 
-
+{# the view for this would be: views-view-unformatted--events--events-listing.html.twig #}
 
 
 

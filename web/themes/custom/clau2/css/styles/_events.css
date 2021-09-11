@@ -258,9 +258,28 @@
   border: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .event-spacer-container {
+    padding-top: 5em;
+  }
+}
 
-.event-spacer-container {
-  padding-top: 3em;
+@media screen and (max-width: 1023px) {
+  .ligc-event-list-item {
+    padding-bottom: 10em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .event-spacer-container {
+    padding-top: 3em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ligc-event-list-item {
+    padding-bottom: 8.5em;
+  }
 }
 
 /*.view-display-id-events_listing .views-row:after { */
@@ -281,6 +300,13 @@
 }
 */
 
-.ligc-event-list-item {
-  padding-bottom: 8.5em;
+
+
+
+
+.node--type-event.node--view-mode-teaser .read-more {
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 0.5em;
+  text-transform: uppercase;
 }
