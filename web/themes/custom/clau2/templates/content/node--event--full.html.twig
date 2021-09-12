@@ -82,6 +82,37 @@
 %}
 {{ attach_library('classy/node') }}
 
+{%
+  set bg_img_url = node.field_background_media.entity.field_media_image.0.entity.uri.value
+%}
+{%
+  set bg_img_styled_url = node.field_background_media.entity.field_media_image.0.entity.uri.value | image_style('background_image_xl')
+%}
+
+<style>
+  @media screen and (max-width: 767px ) {
+    #clau-page-container-id {
+        background: linear-gradient( 180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 1%, rgba(255,255,255,0.2) 100%), url({{ bg_img_styled_url }});
+
+        background-size: 125%;
+        background-repeat: no-repeat;
+        background-position: center 9em;
+        background-color: rgba(0,0,0,1);
+    }
+  }
+
+
+  @media screen and (min-width: 768px ) {
+    #clau-page-container-id {
+        background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 18%, rgba(255,255,255,0.4) 100%), url({{ bg_img_styled_url }});
+        height: 100vh;
+        background-size: cover;
+        background-position: center top;
+        background-color: rgba(0,0,0,1);
+    }
+  }
+</style>
+
 {% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
 {% set date_now_as_unix_time_int = "now" | date('U') %}
 
@@ -90,7 +121,7 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  <div style="background-color: {{ node.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};">
+  <div style="background-color: {{ node.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};"> 
 
     {{ title_prefix }}
     {% if label and not page %}
@@ -135,7 +166,7 @@
         {% endif %}  
       </div>
     </div>
-  </div>
+  </div> 
 
 </article>
 

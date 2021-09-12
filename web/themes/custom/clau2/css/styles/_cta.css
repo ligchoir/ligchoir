@@ -71,8 +71,10 @@ span.ligc-cta a
   */
 }
 
-.main-cta-area {
-  max-width: 80%;
+@media screen and (min-width: 768px ) {
+  .main-cta-area {
+    margin-left: 10%;
+  }
 }
 
 .main-cta-area .ligc-cta-fixed {

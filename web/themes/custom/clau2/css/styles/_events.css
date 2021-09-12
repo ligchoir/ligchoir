@@ -318,3 +318,29 @@
 .view-display-id-block_events_past .view-footer {
   text-align:center;
 }
+
+
+/*
+@media screen and (max-width: 767px) {
+  .page-node-type-event .ligc-title-menu-combo {
+    height: 20em;
+  }
+}
+*/
+
+
+
+
+@media screen and (max-width: 767px) {
+  .ligc-event-full-outer {
+    margin-top: 20em;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .ligc-event-full-outer {
+    margin-top: 10em;
+  }
+}
