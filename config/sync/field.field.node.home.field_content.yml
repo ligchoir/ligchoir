@@ -12,6 +12,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.social_and_contact_links
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.vertical_space
   module:
     - entity_reference_revisions
     - paragraph_blocks
@@ -39,34 +40,29 @@ settings:
       image: image
       quote: quote
       social_and_contact_links: social_and_contact_links
+      vertical_space: vertical_space
       text: text
     target_bundles_drag_drop:
       about_intro:
         enabled: true
         weight: 12
+      anchor:
+        weight: 18
+        enabled: false
       call_to_action:
         enabled: true
         weight: 13
-      call_to_action_with_content:
-        enabled: true
-        weight: 14
       colors_modifier:
         weight: 15
         enabled: false
       contact:
         enabled: true
         weight: 16
+      content_2_column:
+        weight: 22
+        enabled: false
       custom_colors_modifier:
         weight: 17
-        enabled: false
-      date_range_all_day:
-        weight: 23
-        enabled: false
-      date_single_all_day:
-        weight: 24
-        enabled: false
-      date_time_single:
-        weight: 25
         enabled: false
       image:
         enabled: true
@@ -86,6 +82,12 @@ settings:
       text:
         enabled: true
         weight: 31
+      vertical_space:
+        enabled: true
+        weight: 30
+      video:
+        weight: 31
+        enabled: false
       view:
         weight: 32
         enabled: false

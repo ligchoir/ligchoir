@@ -1,0 +1,31 @@
+uuid: f3dfd8b4-0caa-46e1-ad36-e73baf4e8043
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vertical_space.field_height
+    - paragraphs.paragraphs_type.vertical_space
+id: paragraph.vertical_space.default
+targetEntityType: paragraph
+bundle: vertical_space
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_height:
+    weight: -9
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

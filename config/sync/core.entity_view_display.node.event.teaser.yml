@@ -5,9 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
+    - field.field.node.event.field_background_media
     - field.field.node.event.field_colour_background
     - field.field.node.event.field_colour_text
-    - field.field.node.event.field_look
     - field.field.node.event.field_tickets
     - field.field.node.event.field_venue
     - field.field.node.event.field_when
@@ -69,7 +69,7 @@ content:
         ds_limit: ''
 hidden:
   body: true
+  field_background_media: true
   field_colour_background: true
   field_colour_text: true
-  field_look: true
   links: true

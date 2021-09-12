@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_content
     - node.type.landing_page
     - paragraphs.paragraphs_type.about_intro
+    - paragraphs.paragraphs_type.anchor
     - paragraphs.paragraphs_type.call_to_action
     - paragraphs.paragraphs_type.contact
     - paragraphs.paragraphs_type.content_2_column
@@ -13,6 +14,7 @@ dependencies:
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.social_and_contact_links
     - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.vertical_space
     - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
@@ -40,20 +42,22 @@ settings:
       text: text
       contact: contact
       view: view
-      image: image
+      anchor: anchor
       content_2_column: content_2_column
+      image: image
       quote: quote
       social_and_contact_links: social_and_contact_links
+      vertical_space: vertical_space
     target_bundles_drag_drop:
       about_intro:
         enabled: true
         weight: 12
+      anchor:
+        enabled: true
+        weight: 18
       call_to_action:
         enabled: true
         weight: 13
-      call_to_action_with_content:
-        enabled: true
-        weight: 14
       colors_modifier:
         weight: 15
         enabled: false
@@ -65,15 +69,6 @@ settings:
         weight: 18
       custom_colors_modifier:
         weight: 17
-        enabled: false
-      date_range_all_day:
-        weight: 24
-        enabled: false
-      date_single_all_day:
-        weight: 25
-        enabled: false
-      date_time_single:
-        weight: 26
         enabled: false
       image:
         enabled: true
@@ -93,6 +88,12 @@ settings:
       text:
         enabled: true
         weight: 13
+      vertical_space:
+        enabled: true
+        weight: 30
+      video:
+        weight: 31
+        enabled: false
       view:
         enabled: true
         weight: 17
