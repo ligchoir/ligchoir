@@ -70,3 +70,12 @@ span.ligc-cta a
   text-shadow: 0px 0px 30px rgb(0 0 0 / 90%), 0px 0px 20px rgb(0 0 0 / 50%);
   */
 }
+
+.main-cta-area {
+  max-width: 80%;
+}
+
+.main-cta-area .ligc-cta-fixed {
+  color: white;
+  margin-bottom: 1em;
+}

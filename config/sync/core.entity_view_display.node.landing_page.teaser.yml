@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.landing_page.field_background_media
     - field.field.node.landing_page.field_content
-    - field.field.node.landing_page.field_main_call_to_action_area
     - node.type.landing_page
   module:
     - user
@@ -23,4 +22,3 @@ content:
 hidden:
   field_background_media: true
   field_content: true
-  field_main_call_to_action_area: true
