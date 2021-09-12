@@ -1,0 +1,7 @@
+uuid: afc438a4-c4a9-4125-890c-3d7502a832c9
+langcode: en
+status: true
+dependencies: {  }
+id: main_call_to_action_area
+label: 'Main Call to Action Area'
+classes: ligc-justify
