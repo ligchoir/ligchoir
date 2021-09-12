@@ -310,3 +310,7 @@
   padding-top: 0.5em;
   text-transform: uppercase;
 }
+
+.view-display-id-events_listing .view-footer {
+  text-align:center;
+}
