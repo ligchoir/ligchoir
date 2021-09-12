@@ -233,13 +233,15 @@
 /* this seems a bit weird, because inspect highlights (what I think are) the wrong elements, but this seems to work fine */
 /* maybe invalid or incomplete html or incorrect css? */
 @media screen and (max-width: 767px) {
-  .view-display-id-events_listing .view-content .views-row:last-child {
+  .view-display-id-events_listing .view-content .views-row:last-child,
+  .view-display-id-block_events_past .view-content .views-row:last-child {
       padding-bottom: 2em;
   }
 }
 
 
-.view-display-id-events_listing .views-row:not(:last-child) .event-spacer-container .event-spacer-hr {
+.view-display-id-events_listing .views-row:not(:last-child) .event-spacer-container .event-spacer-hr,
+.view-display-id-block_events_past .views-row:not(:last-child) .event-spacer-container .event-spacer-hr {
   width: 300px;
   height: 2px;
   margin-left: auto;
@@ -249,7 +251,8 @@
 }
 
 
-.view-display-id-events_listing .views-row:last-child .event-spacer-container .event-spacer-hr {
+.view-display-id-events_listing .views-row:last-child .event-spacer-container .event-spacer-hr,
+.view-display-id-block_events_past .views-row:last-child .event-spacer-container .event-spacer-hr {
   width: 200px;
   height: 2px;
   margin-left: auto;
@@ -311,6 +314,7 @@
   text-transform: uppercase;
 }
 
-.view-display-id-events_listing .view-footer {
+.view-display-id-events_listing .view-footer,
+.view-display-id-block_events_past .view-footer {
   text-align:center;
 }

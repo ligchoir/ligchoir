@@ -113,7 +113,11 @@
     <div{{ content_attributes.addClass('node__content ligc-event-full-outer ligc-justify ligc-text') }}>
       <div class="ligc-event-full">
 
-          <h1>{{ label }}</h1>
+          {% if date_event_as_unix_time_int > date_now_as_unix_time_int %}
+            <h1>{{ label }}</h1>
+          {% else %} 
+            <h1>Past Event: {{ label }}</h1>
+          {% endif %}  
 
           <span>{{ content.field_when }} | </span>
           <span>{{ content.field_venue }}</span>

@@ -42,6 +42,7 @@
         "drupal/multiple_fields_remove_button": "^1.0@alpha",
         "drupal/paragraph_blocks": "^3.0",
         "drupal/paragraphs": "^1.10",
+        "drupal/quick_node_clone": "^1.14",
         "drupal/smart_date": "^3.2",
         "drupal/smtp": "^1.0",
         "drupal/token": "^1.6",
