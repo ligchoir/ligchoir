@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "038da6b819716321830ad55e4b58d0ca",
+    "content-hash": "964aaec5161600c9b90e3d46372fa9ef",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1387,6 +1387,58 @@
             },
             "abandoned": "roave/better-reflection",
             "time": "2020-10-27T21:46:55+00:00"
+        },
+        {
+            "name": "drupal/better_social_sharing_buttons",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/better_social_sharing_buttons.git",
+                "reference": "8.x-3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/better_social_sharing_buttons-8.x-3.2.zip",
+                "reference": "8.x-3.2",
+                "shasum": "9e6ec10d1bb8c149d32fb86b31b56780ae07157e"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "drupal/token": "^1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-3.2",
+                    "datestamp": "1621006602",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Joery Lemmens (flyke)",
+                    "homepage": "https://www.drupal.org/u/flyke",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Shelane French",
+                    "homepage": "https://www.drupal.org/u/shelane",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Better Social Sharing Buttons",
+            "homepage": "https://www.drupal.org/project/better_social_sharing_buttons",
+            "support": {
+                "source": "https://git.drupalcode.org/project/better_social_sharing_buttons",
+                "issues": "https://www.drupal.org/project/issues/better_social_sharing_buttons"
+            }
         },
         {
             "name": "drupal/bg_img_field",
