@@ -82,6 +82,12 @@
 %}
 {{ attach_library('classy/node') }}
 
+{% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
+{% set date_now_as_unix_time_int = "now" | date('U') %}
+
+{# credit https://www.dannyenglander.com/blog/drupal-8-theming-how-to-render-custom-datetime-formats-with-twig/ #}
+{# but the way to access the values has changed since the blog #}
+
 <article{{ attributes.addClass(classes) }}>
 
   <div style="background-color: {{ node.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};">
@@ -117,8 +123,12 @@
        .ligc-event-full-outer .ligc-cta-fixed { color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};
       }
       </style>
+
+      {# can't buy tickets for an event in the past #}
       <div class="ligc-event-tickets">
-        {{ content.field_tickets }}
+        {% if date_event_as_unix_time_int > date_now_as_unix_time_int %}
+          {{ content.field_tickets }}
+        {% endif %}  
       </div>
     </div>
   </div>

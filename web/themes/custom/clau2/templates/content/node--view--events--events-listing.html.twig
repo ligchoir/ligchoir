@@ -82,6 +82,9 @@
 %}
 {{ attach_library('classy/node') }}
 
+{% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
+{% set date_now_as_unix_time_int = "now" | date('U') %}
+
 <div{{ attributes.addClass(classes).addClass('ligc-event-list-item') }}>
   <div class="ligc-event-summary">
     <a href="{{ url }}" rel="bookmark">
@@ -94,7 +97,9 @@
     </a>
   </div>
   <div class="ligc-event-tickets">
-    {{ content.field_tickets }}
+    {% if date_event_as_unix_time_int > date_now_as_unix_time_int %}
+      {{ content.field_tickets }}
+    {% endif %} 
   </div>
 </div>
 <div class="event-spacer-container">
