@@ -31,6 +31,20 @@
 }
 
 
+@media screen and (min-width: 1024px ) {
+  .single-column-form .ligc-column-left {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    
+  .single-column-form .ligc-column-right {
+    float: right;
+      width: 00%;
+  }
+}
+
+
 /* .paragraph--type--image .paragraph--view-mode--default img { */
 .paragraph--type--image .field--name-field-media-image img {
 

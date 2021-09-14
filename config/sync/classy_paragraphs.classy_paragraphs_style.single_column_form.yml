@@ -1,0 +1,7 @@
+uuid: 9b558d31-408b-42da-b2ff-3f3df75d5e90
+langcode: en
+status: true
+dependencies: {  }
+id: single_column_form
+label: 'Single Column Form'
+classes: single-column-form

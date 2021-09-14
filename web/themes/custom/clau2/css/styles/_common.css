@@ -165,3 +165,8 @@ h1.page-title {
   }
 }
 
+p a,
+h2 a {
+  color: #D63836;
+  font-weight: bold;
+}

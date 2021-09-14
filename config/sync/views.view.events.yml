@@ -413,7 +413,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<h2>See our <a href="/events/past-events">future events</a></h2>'
+            value: '<h2>See our <a href="/events">future events</a></h2>'
             format: full_html
           plugin_id: text
     cache_metadata:
