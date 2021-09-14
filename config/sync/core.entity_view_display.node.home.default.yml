@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.home.field_background_media
     - field.field.node.home.field_content
-    - field.field.node.home.field_main_call_to_action_area
     - node.type.home
   module:
     - ds
@@ -50,19 +49,6 @@ content:
         class: ''
       ds:
         ds_limit: ''
-    region: content
-  field_main_call_to_action_area:
-    weight: 0
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-      ds:
-        ds_limit: ''
-    type: entity_reference_revisions_entity_view
     region: content
 hidden:
   links: true

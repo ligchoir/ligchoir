@@ -1,0 +1,7 @@
+uuid: 5cbe574a-160f-4233-904f-053487ad5ea2
+langcode: en
+status: true
+dependencies: {  }
+id: text_on_main_background_image
+label: 'Text on main background image'
+classes: ligc-on-bg-image-text

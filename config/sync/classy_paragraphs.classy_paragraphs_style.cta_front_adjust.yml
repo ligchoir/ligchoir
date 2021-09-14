@@ -1,0 +1,7 @@
+uuid: 010d1671-ca23-4943-a10f-43c182605724
+langcode: en
+status: true
+dependencies: {  }
+id: cta_front_adjust
+label: 'CTA Front adjust'
+classes: ligc-on-bg-image-cta-front

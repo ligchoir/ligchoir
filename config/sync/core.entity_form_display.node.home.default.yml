@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.field.node.home.field_background_media
     - field.field.node.home.field_content
-    - field.field.node.home.field_main_call_to_action_area
     - node.type.home
   module:
     - media_library
@@ -40,18 +39,6 @@ content:
       form_display_mode: default
       default_paragraph_type: ''
     third_party_settings: {  }
-    region: content
-  field_main_call_to_action_area:
-    weight: 126
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
-    third_party_settings: {  }
-    type: entity_reference_paragraphs
     region: content
   path:
     type: path
