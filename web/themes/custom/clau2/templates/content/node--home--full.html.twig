@@ -110,9 +110,12 @@
 <style>
   @media screen and (min-width: 768px ) {
     #clau-page-container-id {
-        background: linear-gradient(135deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.5) 30%, rgba(255,255,255,0.5) 100%), url({{ bg_img_styled_url }});
+        /* background: linear-gradient(135deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.5) 30%, rgba(255,255,255,0.5) 100%), url({{ bg_img_styled_url }}); */
+
+        background: linear-gradient(135deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.5) 30%, rgba(255,255,255,0)), linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0)), url({{ bg_img_styled_url }});
         height: 100vh;
         background-size: cover;
+        background-repeat: no-repeat;
         background-position: center top;
         background-color: rgba(0,0,0,1);
     }
