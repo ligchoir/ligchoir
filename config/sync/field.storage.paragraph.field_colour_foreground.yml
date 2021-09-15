@@ -1,0 +1,20 @@
+uuid: 4279b9c4-810d-47d0-869a-034c93c5a7c0
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_colour_foreground
+field_name: field_colour_foreground
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

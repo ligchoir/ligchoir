@@ -1,0 +1,12 @@
+uuid: 3713590d-664e-4b2f-b423-aed607d8914e
+langcode: en
+status: true
+dependencies: {  }
+id: generic
+label: Generic
+description: ''
+aspect_ratio: '4:3'
+soft_limit_width: null
+soft_limit_height: null
+hard_limit_width: null
+hard_limit_height: null

@@ -1,0 +1,33 @@
+uuid: d9139a58-6e48-401a-8856-90c5ccb20e35
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colour_foreground
+    - paragraphs.paragraphs_type.contact
+    - taxonomy.vocabulary.modifiers_color
+  content:
+    - 'taxonomy_term:modifiers_color:62e612a0-50f6-475b-b533-2285807df0c5'
+id: paragraph.contact.field_colour_foreground
+field_name: field_colour_foreground
+entity_type: paragraph
+bundle: contact
+label: 'Colour - Foreground'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 62e612a0-50f6-475b-b533-2285807df0c5
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      modifiers_color: modifiers_color
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

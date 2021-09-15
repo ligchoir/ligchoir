@@ -2,9 +2,13 @@ uuid: a3fc5da1-02b3-475a-8e56-cdd4eab4033f
 langcode: en
 status: true
 dependencies:
+  config:
+    - crop.type.generic
   enforced:
     module:
       - responsive_image
+  module:
+    - crop
 _core:
   default_config_hash: xW1ApqbWjK7oCBCl8jVHA42u2MekQDq4gry3xfZzdWY
 name: max_1300x1300
@@ -13,8 +17,14 @@ effects:
   04caae9a-fa3e-4ea6-ae09-9c26aec7d308:
     uuid: 04caae9a-fa3e-4ea6-ae09-9c26aec7d308
     id: image_scale
-    weight: 1
+    weight: 2
     data:
       width: 1300
       height: 1300
       upscale: false
+  8193bf92-63a4-4405-92b3-bc6f5bc00c52:
+    uuid: 8193bf92-63a4-4405-92b3-bc6f5bc00c52
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: generic

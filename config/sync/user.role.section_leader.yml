@@ -6,4 +6,5 @@ id: section_leader
 label: 'Section Leader'
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'display eu cookie compliance popup'

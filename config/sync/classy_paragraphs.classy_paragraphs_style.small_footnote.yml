@@ -1,0 +1,7 @@
+uuid: 19e5e5b8-3512-4d50-bcd0-478fbcc17fcb
+langcode: en
+status: true
+dependencies: {  }
+id: small_footnote
+label: 'Small Footnote'
+classes: small-footnote

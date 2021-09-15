@@ -170,3 +170,7 @@ h2 a {
   color: #D63836;
   font-weight: bold;
 }
+
+.small-footnote {
+  padding: 1em;
+}

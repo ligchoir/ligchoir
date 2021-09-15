@@ -1,0 +1,25 @@
+uuid: 49720f89-806b-4109-a221-bf969163b087
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.profile_pic
+  module:
+    - crop
+name: profile_pic
+label: 'Profile Pic'
+effects:
+  67500c15-4d8c-4090-bc46-a1db47fe045a:
+    uuid: 67500c15-4d8c-4090-bc46-a1db47fe045a
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: profile_pic
+  c0eb1d13-1bf5-4de8-9894-f01d9961eff9:
+    uuid: c0eb1d13-1bf5-4de8-9894-f01d9961eff9
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 250
+      height: 250
+      anchor: center-center
