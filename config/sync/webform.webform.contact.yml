@@ -232,7 +232,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: '[current-user:mail]'
+      to_mail: 'c@example.com, a@example.com'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -269,7 +269,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: _default
+      to_mail: 'c@example.com, a@example.com'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
