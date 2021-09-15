@@ -85,8 +85,14 @@
   set bg_img_styled_url = node.field_background_media.entity.field_media_image.0.entity.uri.value | image_style('background_image_xl')
 %}
 
+{#
 {%
   set bg_img_url = file_url(node.field_image.entity.field_media_image.0.entity.uri.value)
+%}
+#}
+
+{%
+  set bg_img_url = file_url(node.field_background_media.entity.field_media_image.0.entity.uri.value)
 %}
 
 
@@ -98,11 +104,16 @@
 {{ attach_library('classy/node') }}
 
 
+{#
+        background: linear-gradient( 
+    180deg, rgba(0,0,0,1) calc( 17em + 60vh - 50vw), rgba(0,0,0,0.2) calc( 20em + 60vh - 50vw), rgba(255,255,255,0.2) 100vh), url({{ bg_img_url }});
+#}
+
 <style>
   @media screen and (max-width: 767px ) {
     #clau-page-container-id {
         background: linear-gradient( 
-    180deg, rgba(0,0,0,1) calc( 17em + 60vh - 50vw), rgba(0,0,0,0.2) calc( 20em + 60vh - 50vw), rgba(255,255,255,0.2) 100vh), url({{ bg_img_url }});
+    180deg, rgba(0,0,0,1) calc( 21em + 60vh - 50vw), rgba(0,0,0,0.2) calc( 27em + 60vh - 50vw), rgba(255,255,255,0.2) 100vh), url({{ bg_img_url }});
         background-size: 100%;
         height: 100vh;
         background-repeat: no-repeat;
