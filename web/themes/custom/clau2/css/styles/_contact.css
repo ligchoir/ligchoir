@@ -103,7 +103,7 @@ input.button{
 
 /*.ligc-cta-fixed {*/
 .webform-button--submit {
-	border-radius: 0.5em;
+	border-radius: 1em;
 	/* border: 2px solid black; */
 	border: 2px solid;
 	padding-top: 0.8em;
