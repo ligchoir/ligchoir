@@ -236,3 +236,25 @@
 .ligc-hdr-hgt-init {
   height: 8em;
 }
+
+.ligc-mob-menu-open-non-home {
+  position: absolute;
+  top: 7em;
+  left: 1.2em;
+}
+
+.ligc-mob-menu-open-home {
+  position: relative;
+  top: 8em;
+  left: -9em;
+}
+
+
+.ligc-mob-menu-null {
+  position: unset;
+  top: unset;
+  left: unset;
+}
+
+
+

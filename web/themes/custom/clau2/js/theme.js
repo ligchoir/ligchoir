@@ -125,9 +125,13 @@ $('#ligc-togl-expand')
 
 
               if ( $('#ligc-hdr').hasClass('ligc-hdr-home')) {
+
+                $(".ligc-main-menu").addClass('ligc-mob-menu-open-non-home');
+                /*
                 $(".ligc-main-menu").css('position', 'absolute');
                 $(".ligc-main-menu").css('top', '7em');
                 $(".ligc-main-menu").css('left', '1.2em');
+                */
 
                 /*
                 $(".ligc-main-menu").css('position', 'relative');
@@ -137,10 +141,16 @@ $('#ligc-togl-expand')
               
               }
               else {
+              // not home page
+              //
               // reposition displayed menu as per design
+              
+              $(".ligc-main-menu").addClass('ligc-mob-menu-open-home');
+              /*
               $(".ligc-main-menu").css('position', 'relative');
               $(".ligc-main-menu").css('top', '8em');
               $(".ligc-main-menu").css('left', '-9em');
+              */
               }
 
             }
@@ -154,6 +164,10 @@ $('#ligc-togl-expand')
               $('#ligc-hdr').addClass('ligc-hdr-hgt-init');
 
               // reset position of menu when not in use
+
+              $(".ligc-main-menu").removeClass('ligc-mob-menu-open-non-home');
+              $(".ligc-main-menu").removeClass('ligc-mob-menu-open-home');
+              //
               $(".ligc-main-menu").css('position', '');
               $(".ligc-main-menu").css('top', '');
               $(".ligc-main-menu").css('left', '');
@@ -177,6 +191,9 @@ $('#ligc-togl-expand')
             $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
 
             // reset position of menu when not in use
+            $(".ligc-main-menu").removeClass('ligc-mob-menu-open-non-home');
+            $(".ligc-main-menu").removeClass('ligc-mob-menu-open-home');
+            //
             $(".ligc-main-menu").css('position', '');
             $(".ligc-main-menu").css('top', '');
             $(".ligc-main-menu").css('left', '');
@@ -224,6 +241,9 @@ $('#ligc-togl-expand')
                 $("#ligc-hdr").addClass('ligc-hdr-hgt-init');
 
                 // remove mobile positioning of menu so that menu displayed in correct position at non-mobile widths
+                $(".ligc-main-menu").removeClass('ligc-mob-menu-open-non-home');
+                $(".ligc-main-menu").removeClass('ligc-mob-menu-open-home');
+                //
                 $(".ligc-main-menu").css('position', '');
                 $(".ligc-main-menu").css('top', '');
                 $(".ligc-main-menu").css('left', '');
