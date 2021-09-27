@@ -36,7 +36,7 @@
   .ligc-main-menu li {
     margin-right: 1.15em;
     display: block;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.0em;
   }
 
   .region-primary-menu {
@@ -237,16 +237,40 @@
   height: 8em;
 }
 
-.ligc-mob-menu-open-non-home {
+.ligc-mob-menu-open-home {
   position: absolute;
-  top: 7em;
   left: 1.2em;
 }
 
-.ligc-mob-menu-open-home {
+@media screen and (max-height: 499px ) {
+  .ligc-mob-menu-open-home {
+    top: 4.7em;
+  }
+}
+
+@media screen and (min-height: 500px ) {
+  .ligc-mob-menu-open-home {
+    top: 7em;
+  }
+}
+
+
+.ligc-mob-menu-open-non-home {
   position: relative;
-  top: 8em;
   left: -9em;
+}
+
+@media screen and (max-height: 499px ) {
+  .ligc-mob-menu-open-non-home {
+    top: 4.7em;
+  }
+}
+
+
+@media screen and (min-height: 500px ) {
+  .ligc-mob-menu-open-non-home {
+    top: 8em;
+  }
 }
 
 

@@ -1,0 +1,96 @@
+uuid: 92f6d12c-be77-465d-a1df-bd0f7bb53c22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_after_webform
+    - paragraphs.paragraphs_type.about_intro
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.contact
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.social_and_contact_links
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.vertical_space
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+    - paragraph_blocks
+third_party_settings:
+  paragraph_blocks:
+    status: 1
+id: paragraph.contact.field_content_after_webform
+field_name: field_content_after_webform
+entity_type: paragraph
+bundle: contact
+label: 'Content After Webform'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      about_intro: about_intro
+      call_to_action: call_to_action
+      image: image
+      quote: quote
+      social_and_contact_links: social_and_contact_links
+      text: text
+      vertical_space: vertical_space
+      video: video
+      view: view
+    target_bundles_drag_drop:
+      about_intro:
+        enabled: true
+        weight: 17
+      anchor:
+        weight: 18
+        enabled: false
+      call_to_action:
+        enabled: true
+        weight: 19
+      colors_modifier:
+        weight: 20
+        enabled: false
+      contact:
+        weight: 21
+        enabled: false
+      content_2_column:
+        weight: 22
+        enabled: false
+      custom_colors_modifier:
+        weight: 23
+        enabled: false
+      image:
+        enabled: true
+        weight: 24
+      image_bg_modifier:
+        weight: 25
+        enabled: false
+      image_fx_modifier:
+        weight: 26
+        enabled: false
+      quote:
+        enabled: true
+        weight: 27
+      social_and_contact_links:
+        enabled: true
+        weight: 28
+      text:
+        enabled: true
+        weight: 29
+      vertical_space:
+        enabled: true
+        weight: 30
+      video:
+        enabled: true
+        weight: 31
+      view:
+        enabled: true
+        weight: 32
+field_type: entity_reference_revisions

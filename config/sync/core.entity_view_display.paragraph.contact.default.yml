@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.contact.field_colour_background
     - field.field.paragraph.contact.field_colour_foreground
     - field.field.paragraph.contact.field_content
+    - field.field.paragraph.contact.field_content_after_webform
     - field.field.paragraph.contact.field_form_title
     - field.field.paragraph.contact.field_guidance
     - field.field.paragraph.contact.field_style
@@ -39,6 +40,15 @@ content:
   field_content:
     type: entity_reference_revisions_entity_view
     weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_content_after_webform:
+    type: entity_reference_revisions_entity_view
+    weight: 8
     label: hidden
     settings:
       view_mode: default

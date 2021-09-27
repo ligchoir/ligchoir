@@ -126,7 +126,7 @@ $('#ligc-togl-expand')
 
               if ( $('#ligc-hdr').hasClass('ligc-hdr-home')) {
 
-                $(".ligc-main-menu").addClass('ligc-mob-menu-open-non-home');
+                $(".ligc-main-menu").addClass('ligc-mob-menu-open-home');
                 /*
                 $(".ligc-main-menu").css('position', 'absolute');
                 $(".ligc-main-menu").css('top', '7em');
@@ -145,7 +145,7 @@ $('#ligc-togl-expand')
               //
               // reposition displayed menu as per design
               
-              $(".ligc-main-menu").addClass('ligc-mob-menu-open-home');
+              $(".ligc-main-menu").addClass('ligc-mob-menu-open-non-home');
               /*
               $(".ligc-main-menu").css('position', 'relative');
               $(".ligc-main-menu").css('top', '8em');

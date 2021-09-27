@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.contact.field_colour_background
     - field.field.paragraph.contact.field_colour_foreground
     - field.field.paragraph.contact.field_content
+    - field.field.paragraph.contact.field_content_after_webform
     - field.field.paragraph.contact.field_form_title
     - field.field.paragraph.contact.field_guidance
     - field.field.paragraph.contact.field_style
@@ -43,6 +44,18 @@ content:
   field_content:
     type: entity_reference_paragraphs
     weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_content_after_webform:
+    type: entity_reference_paragraphs
+    weight: 8
     settings:
       title: Paragraph
       title_plural: Paragraphs
