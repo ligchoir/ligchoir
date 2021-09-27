@@ -179,7 +179,7 @@ h2 a {
 .disagree-button.eu-cookie-compliance-more-button, .eu-cookie-compliance-agree-button, .eu-cookie-compliance-default-button, .eu-cookie-compliance-hide-button, .eu-cookie-compliance-more-button-thank-you, .eu-cookie-withdraw-button, .eu-cookie-compliance-save-preferences-button {
 */
 .eu-cookie-compliance-default-button.agree-button {
-  border-radius: 1em;
+  border-radius: 2em;
   border: 0.2em solid;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -197,7 +197,7 @@ h2 a {
 
 
 .eu-cookie-compliance-default-button.agree-button:hover {
-  border-radius: 1em;
+  border-radius: 2em;
   border: 0.2em solid;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
