@@ -344,3 +344,10 @@
     margin-top: 10em;
   }
 }
+
+
+.view-events .view-empty {
+  text-align: center;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
