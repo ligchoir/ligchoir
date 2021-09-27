@@ -174,3 +174,55 @@ h2 a {
 .small-footnote {
   padding: 1em;
 }
+
+/*
+.disagree-button.eu-cookie-compliance-more-button, .eu-cookie-compliance-agree-button, .eu-cookie-compliance-default-button, .eu-cookie-compliance-hide-button, .eu-cookie-compliance-more-button-thank-you, .eu-cookie-withdraw-button, .eu-cookie-compliance-save-preferences-button {
+*/
+.eu-cookie-compliance-default-button.agree-button {
+  border-radius: 1em;
+  border: 0.2em solid;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: inherit;
+  display: inline-block;
+  background-color: transparent;
+  background-image: none;
+  text-align: center;
+  font-family: 'Vegur';
+  font-size: 1.3em;
+  text-shadow: none;
+}
+
+
+.eu-cookie-compliance-default-button.agree-button:hover {
+  border-radius: 1em;
+  border: 0.2em solid;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: inherit;
+  display: inline-block;
+  background-color: transparent;
+  background-image: none;
+  text-align: center;
+  font-family: 'Vegur';
+  font-size: 1.3em;
+  text-shadow: none;
+}
+
+.eu-cookie-compliance-message {
+  font-family: 'Vegur';
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.eu-cookie-compliance-banner {
+  background-color: #3f0000;
+  color: white;
+}
