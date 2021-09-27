@@ -397,6 +397,7 @@ display:
         filters: false
         filter_groups: false
         footer: false
+        empty: false
       filter_groups:
         operator: AND
         groups:
@@ -414,6 +415,20 @@ display:
           tokenize: false
           content:
             value: '<h2>See our <a href="/events">future events</a></h2>'
+            format: full_html
+          plugin_id: text
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<h2>Please check back here later on for  details of our past events.</h2>\r\n<h2>In the meantime, how about <a href=\"/book\">booking us</a> for your event?</h2>"
             format: full_html
           plugin_id: text
     cache_metadata:
@@ -449,6 +464,21 @@ display:
           plugin_id: text
       defaults:
         footer: false
+        empty: false
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<h2>Please check back here later on for forthcoming events.</h2>\r\n<h2>In the meantime, how about <a href=\"/book\">booking us</a> for your event?</h2>"
+            format: full_html
+          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:
