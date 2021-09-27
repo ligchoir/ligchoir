@@ -215,11 +215,17 @@ h2 a {
 
 .eu-cookie-compliance-message {
   font-family: 'Vegur';
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 600px)  {
+  .eu-cookie-compliance-message {
+    font-family: 'Vegur';
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 }
 
 .eu-cookie-compliance-banner {
