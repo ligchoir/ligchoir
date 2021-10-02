@@ -13,6 +13,7 @@ design:
       css/styles/_contact.css: {}
       css/styles/_content.css: {}
       css/styles/_social.css: {}
+      css/styles/_people.css: {}
       css/common/style.css: {}
   js:
     js/theme.js: {}
