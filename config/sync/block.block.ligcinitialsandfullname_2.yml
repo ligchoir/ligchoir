@@ -7,7 +7,7 @@ dependencies:
   module:
     - block_classes
     - block_content
-    - ctools
+    - system
   theme:
     - clau2
 third_party_settings:
@@ -28,11 +28,7 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    bundles:
-      event: event
-      home: home
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/user/*\r\n/event*"
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
