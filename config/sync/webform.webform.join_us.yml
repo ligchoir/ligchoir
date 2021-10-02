@@ -227,16 +227,16 @@ handlers:
       from_mail: _default
       from_options: {  }
       from_name: _default
-      subject: _default
-      body: _default
+      subject: 'Joining the choir enquiry via LIGC website'
+      body: "A joining enquiry has been made via the LIGC website join contact form. \r\n\r\nDetails are below:\r\n\r\nName:\r\n[webform_submission:values:your_name]\r\n\r\nEmail:\r\n[webform_submission:values:your_email]\r\n\r\nMessage:\r\n[webform_submission:values:your_message]\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
       exclude_attachments: false
-      html: true
+      html: false
       attachments: false
-      twig: false
+      twig: true
       debug: false
       reply_to: ''
       return_path: ''
