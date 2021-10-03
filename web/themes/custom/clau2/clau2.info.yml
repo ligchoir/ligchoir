@@ -13,9 +13,11 @@ libraries:
 # /Users/user/Work/ligchoir/dev/sites/ligc-develop/web/core/lib/Drupal/Core/Extension/ThemeExtensionList.php
 # so we need to redefine the order for it to more easily correspond to the ordering on the screem
 
+# adding "Page Specific Action Tabs" for the edit tabs available to a page. These used to go in header but this disrupted js logic for the mobile site title on the front page
 
 regions:
   help: Help
+  page_specific_action_tabs: Page Specific Action Tabs
   header: Header
   primary_menu: Primary Menu
   content: Content
