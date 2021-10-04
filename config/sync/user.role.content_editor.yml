@@ -1,0 +1,32 @@
+uuid: 7dd7f674-f31d-41f8-9cd9-2c2dc07f1179
+langcode: en
+status: true
+dependencies: {  }
+id: content_editor
+label: 'Content Editor'
+weight: 4
+is_admin: null
+permissions:
+  - 'clone event content'
+  - 'clone page content'
+  - 'create event content'
+  - 'create home content'
+  - 'create page content'
+  - 'create terms in musical_team'
+  - 'create terms in venues'
+  - 'delete any event content'
+  - 'delete own event content'
+  - 'delete own page content'
+  - 'delete terms in musical_team'
+  - 'delete terms in venues'
+  - 'edit any event content'
+  - 'edit any home content'
+  - 'edit any landing_page content'
+  - 'edit any page content'
+  - 'edit own event content'
+  - 'edit own home content'
+  - 'edit own landing_page content'
+  - 'edit own page content'
+  - 'edit terms in musical_team'
+  - 'edit terms in venues'
+  - 'view own unpublished content'
