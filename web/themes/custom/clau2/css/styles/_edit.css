@@ -1,11 +1,24 @@
 #block-clau2-local-tasks {
   text-align: center;
-  color: white;
+  color: #ccc;
   background-color: #2a2a2d;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  border-top: 1px solid;
+  border-color: #ccc;
+  position: fixed;
+  top: 3.4em;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ligc-login-page #block-clau2-local-tasks { 
+  top: 0em;
 }
 
 #block-clau2-local-tasks a {
-  color: white;
+  color: #ccc;
 }
 
 #block-clau2-local-tasks .is-active a, 
