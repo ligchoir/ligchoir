@@ -37,3 +37,8 @@ article.profile {
 #block-clau2-content {
   color: white;
 }
+
+#user-form #edit-submit,
+#user-form #edit-timezone--2 {
+  color: black;
+}
