@@ -1,0 +1,15 @@
+#block-clau2-local-tasks {
+  text-align: center;
+  color: white;
+  background-color: #2a2a2d;
+}
+
+#block-clau2-local-tasks a {
+  color: white;
+}
+
+#block-clau2-local-tasks .is-active a, 
+#block-clau2-local-tasks .is-active {
+  color: black;
+  background-color: #e57372;
+}
