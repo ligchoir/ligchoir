@@ -7,6 +7,14 @@ label: 'Content Editor'
 weight: 4
 is_admin: null
 permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access in-place editing'
+  - 'access taxonomy overview'
+  - 'access toolbar'
+  - 'access tour'
+  - 'access user profiles'
   - 'clone event content'
   - 'clone page content'
   - 'create event content'
@@ -29,4 +37,7 @@ permissions:
   - 'edit own page content'
   - 'edit terms in musical_team'
   - 'edit terms in venues'
+  - 'revert event revisions'
+  - 'view event revisions'
   - 'view own unpublished content'
+  - 'view the administration theme'
