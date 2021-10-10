@@ -23,16 +23,18 @@
         $("#edit-field-time-tbc-value").change(function() {
           if(this.checked) {
             // https://stackoverflow.com/a/587408/227926
-            $('.field--type-smartdate .time-start').each( function() {
-              if ($(this).length) {
-                $(this).attr('value','00:00:00');
-              }
+            $('.field--type-smartdate .time-start.form-time').each( function() {
+
+                console.log( $(this).attr('value'));
+                $(this).val('00:00:00');
+
             });
 
-            $('.field--type-smartdate .time-end').each( function() {
-              if ($(this).length) {
-                $(this).attr('value','00:00:00');
-              }
+            $('.field--type-smartdate .time-end.form-time').each( function() {
+
+                console.log( $(this).attr('value'));
+                $(this).val('00:00:00');
+
             });
           }
         });
