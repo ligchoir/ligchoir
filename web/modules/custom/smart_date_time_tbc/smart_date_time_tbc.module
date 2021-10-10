@@ -2,6 +2,6 @@
 
 function smart_date_time_tbc_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if (isset($form['#attributes']['class'][1]) && $form['#attributes']['class'][1] == 'node-form') {
-    $form['#attached']['library'][] = 'smart_date_time_tbc/interface';
+    $form['#attached']['library'][] = 'smart_date_time_tbc/smart_date_time_tbc';
   }
 }
