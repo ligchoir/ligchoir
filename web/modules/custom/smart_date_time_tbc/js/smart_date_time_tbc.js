@@ -24,17 +24,11 @@
           if(this.checked) {
             // https://stackoverflow.com/a/587408/227926
             $('.field--type-smartdate .time-start.form-time').each( function() {
-
-                console.log( $(this).attr('value'));
-                $(this).val('00:00:00');
-
+              $(this).val('00:00:00');
             });
 
             $('.field--type-smartdate .time-end.form-time').each( function() {
-
-                console.log( $(this).attr('value'));
-                $(this).val('00:00:00');
-
+              $(this).val('00:00:00');
             });
           }
         });
