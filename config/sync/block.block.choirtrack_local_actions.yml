@@ -1,0 +1,20 @@
+uuid: 597a2430-4187-4259-a3fa-e75ee26841eb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - choirtrack
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: choirtrack_local_actions
+theme: choirtrack
+region: sidebar_first
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

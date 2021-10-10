@@ -1,0 +1,46 @@
+uuid: 98e5ce68-85de-469f-b16d-4bd90f2930be
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_classes
+    - ctools
+    - look
+    - node
+  theme:
+    - choirtrack
+third_party_settings:
+  block_classes:
+    block_class: 'ligc-text ligc-heading ligc-justify ligc-landing-page-title'
+id: choirtrack_pagetitle
+theme: choirtrack
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  look:
+    id: look
+    looks: {  }
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+      landing_page: landing_page
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

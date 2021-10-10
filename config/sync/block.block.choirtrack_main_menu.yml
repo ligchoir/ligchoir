@@ -1,0 +1,31 @@
+uuid: 91901d42-36d9-4b05-a92c-82b77497e2bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_classes
+    - system
+  theme:
+    - choirtrack
+third_party_settings:
+  block_classes:
+    block_class: 'ligc-text ligc-main-menu'
+_core:
+  default_config_hash: ChCx7DYNUrPTt5uiRdQAPDKJQMc-_SyAQTrZh8H0o-c
+id: choirtrack_main_menu
+theme: choirtrack
+region: primary_menu
+weight: -3
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

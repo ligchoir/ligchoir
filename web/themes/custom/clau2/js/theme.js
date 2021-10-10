@@ -298,9 +298,11 @@ $('#ligc-togl-expand')
                   }
           }
         });
+
         //
-        
       }
     };
+
+
   })(jQuery, Drupal);
   

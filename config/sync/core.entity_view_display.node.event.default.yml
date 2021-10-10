@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.event.field_colour_background
     - field.field.node.event.field_colour_text
     - field.field.node.event.field_tickets
+    - field.field.node.event.field_time_tbc
     - field.field.node.event.field_venue
     - field.field.node.event.field_when
     - node.type.event
@@ -66,6 +67,16 @@ content:
         class: ''
       ds:
         ds_limit: ''
+    region: content
+  field_time_tbc:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
     region: content
   field_venue:
     weight: 1
