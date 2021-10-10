@@ -1,5 +1,5 @@
 (function ($, Drupal) {
-    Drupal.behaviors.aboutus = {
+    Drupal.behaviors.smart_date_time_tbc = {
       attach: function (context, settings) {
 
         /// credit: https://css-tricks.com/working-with-javascript-media-queries/

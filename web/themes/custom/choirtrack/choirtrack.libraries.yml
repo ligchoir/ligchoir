@@ -1,5 +1,0 @@
-interface:
-  version: VERSION
-  js:
-    js/theme.js: {}
-

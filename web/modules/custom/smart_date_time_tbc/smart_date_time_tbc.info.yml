@@ -1,0 +1,9 @@
+name: 'Smart Date Time TBC'
+description: 'Smart Date Time TBC'
+project: smart_date_time_tbc
+version: '1.0'
+type: module
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - smart_date_time_tbc/smart_date_time_tbc
