@@ -115,6 +115,7 @@
 </style>
 
 {% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
+{% set date_event_day_only = date_event_as_unix_time_int | date('D, j M Y') %}
 {% set date_now_as_unix_time_int = "now" | date('U') %}
 
 {# credit https://www.dannyenglander.com/blog/drupal-8-theming-how-to-render-custom-datetime-formats-with-twig/ #}
@@ -152,7 +153,7 @@
           {% endif %}  
     
           {% if node.field_time_tbc.value %}
-            <span>Time TBC | </span>
+             <span>{{ date_event_day_only }}, Time TBC | </span>
           {% else %}
             <span>{{ content.field_when }} | </span>
           {% endif %}
