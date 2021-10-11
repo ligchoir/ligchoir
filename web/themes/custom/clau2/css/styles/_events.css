@@ -62,6 +62,7 @@
 @media screen and (min-width: 1024px ) {
   .ligc-event-full {
     padding-left: 1.3em;
+    width: 70%;
   }
 
   .ligc-event-summary .field--name-title,
@@ -350,4 +351,9 @@
   text-align: center;
   padding-top: 5em;
   padding-bottom: 5em;
+}
+
+
+.ligc-event-full .field--name-body {
+  padding-top: 2em;
 }

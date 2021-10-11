@@ -150,11 +150,19 @@
           {% else %} 
             <h1>Past Event: {{ label }}</h1>
           {% endif %}  
+    
+          {% if node.field_time_tbc.value %}
+            Time TBC
+          {% else %}
+            <span>{{ content.field_when }} | </span>
+          {% endif %}
 
-          <span>{{ content.field_when }} | </span>
           <span>{{ content.field_venue }}</span>
 
+          <div>{{ content.body }}</div>
+
       </div>
+
       <style>
        .ligc-event-full-outer .ligc-cta-fixed { color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};
       }
