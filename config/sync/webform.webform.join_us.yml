@@ -226,8 +226,8 @@ handlers:
       bcc_options: {  }
       from_mail: _default
       from_options: {  }
-      from_name: _default
-      subject: 'Joining the choir enquiry via LIGC website'
+      from_name: '[webform_submission:values:your_name:raw]'
+      subject: 'Joining the choir enquiry via LIGC website - from [webform_submission:values:your_name] - [webform_submission:values:your_email]'
       body: "A joining enquiry has been made via the LIGC website join contact form. \r\n\r\nDetails are below:\r\n\r\nName:\r\n[webform_submission:values:your_name]\r\n\r\nEmail:\r\n[webform_submission:values:your_email]\r\n\r\nMessage:\r\n[webform_submission:values:your_message]\r\n"
       excluded_elements: {  }
       ignore_access: false
@@ -238,7 +238,7 @@ handlers:
       attachments: false
       twig: true
       debug: false
-      reply_to: ''
+      reply_to: '[webform_submission:values:your_email]'
       return_path: ''
       sender_mail: ''
       sender_name: ''
