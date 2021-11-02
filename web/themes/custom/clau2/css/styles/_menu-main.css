@@ -11,6 +11,14 @@
   }
 }
 
+@media screen and (max-width: 767px ) {
+  ul.menu {
+    position: absolute;
+    width: 300px;
+  }
+}
+
+
 /* mobile - vertical and hidden - revealed by click on menu symbol */
 @media screen and (max-width: 767px ) and (min-height: 500px ) {
   .ligc-main-menu li {
