@@ -222,7 +222,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'g@example.com, a@example.com'
+      to_mail: 'g@example.com, a@example.com, c@example.com'
       to_options: {  }
       cc_mail: ''
       cc_options: {  }
@@ -242,7 +242,7 @@ handlers:
       attachments: false
       twig: true
       debug: false
-      reply_to: ''
+      reply_to: '[webform_submission:values:your_email:raw]'
       return_path: ''
       sender_mail: ''
       sender_name: ''

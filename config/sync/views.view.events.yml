@@ -398,6 +398,7 @@ display:
         filter_groups: false
         footer: false
         empty: false
+        sorts: false
       filter_groups:
         operator: AND
         groups:
@@ -431,6 +432,20 @@ display:
             value: "<h2>Please check back here later on for  details of our past events.</h2>\r\n<h2>In the meantime, how about <a href=\"/book\">booking us</a> for your event?</h2>"
             format: full_html
           plugin_id: text
+      sorts:
+        field_when_value:
+          id: field_when_value
+          table: node__field_when
+          field: field_when_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: date
     cache_metadata:
       max-age: -1
       contexts:
