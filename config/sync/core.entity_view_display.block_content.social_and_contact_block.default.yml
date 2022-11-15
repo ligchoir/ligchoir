@@ -15,20 +15,20 @@ bundle: social_and_contact_block
 mode: default
 content:
   field_contact_action:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings:
       field_formatter_class:
         class: ligc-text
-    type: string
+    weight: 0
     region: content
   field_social_and_contact_markup:
-    weight: 1
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 1
     region: content
 hidden: {  }

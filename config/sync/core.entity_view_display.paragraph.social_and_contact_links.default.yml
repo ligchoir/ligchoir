@@ -14,18 +14,18 @@ bundle: social_and_contact_links
 mode: default
 content:
   field_contact_action:
-    weight: 0
+    type: string
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 0
     region: content
   field_social_and_contact_markup:
-    weight: 2
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
+    weight: 2
     region: content
 hidden: {  }

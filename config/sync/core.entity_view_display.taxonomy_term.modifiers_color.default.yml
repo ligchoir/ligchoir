@@ -15,14 +15,14 @@ mode: default
 content:
   field_mod_color:
     type: color_field_formatter_text
-    weight: 0
-    region: content
     label: hidden
     settings:
-      opacity: true
       format: hex
+      opacity: true
     third_party_settings:
       field_formatter_class:
         class: ''
+    weight: 0
+    region: content
 hidden:
   description: true

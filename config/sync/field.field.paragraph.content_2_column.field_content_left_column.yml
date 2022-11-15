@@ -28,19 +28,19 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       call_to_action: call_to_action
       image: image
       social_and_contact_links: social_and_contact_links
       text: text
+    negate: 0
     target_bundles_drag_drop:
       about_intro:
         weight: 19
         enabled: false
       call_to_action:
-        enabled: true
         weight: 20
+        enabled: true
       colors_modifier:
         weight: 22
         enabled: false
@@ -57,8 +57,8 @@ settings:
         weight: 27
         enabled: false
       image:
-        enabled: true
         weight: 28
+        enabled: true
       image_bg_modifier:
         weight: 29
         enabled: false
@@ -69,11 +69,11 @@ settings:
         weight: 31
         enabled: false
       social_and_contact_links:
-        enabled: true
         weight: 32
-      text:
         enabled: true
+      text:
         weight: 33
+        enabled: true
       view:
         weight: 34
         enabled: false

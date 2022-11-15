@@ -26,8 +26,6 @@ mode: teaser
 content:
   field_tickets:
     type: entity_reference_revisions_entity_view
-    weight: 3
-    region: content
     label: hidden
     settings:
       view_mode: teaser
@@ -37,25 +35,25 @@ content:
         class: ''
       ds:
         ds_limit: ''
+    weight: 3
+    region: content
   field_venue:
     type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
     weight: 2
     region: content
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
   field_when:
     type: smartdate_custom
-    weight: 1
-    region: content
     label: hidden
     settings:
+      separator: ' - '
       date_format: 'M j'
       custom_date_format: ''
       timezone: ''
-      separator: ' - '
       join: ', '
       time_format: 'g:ia'
       time_hour_format: 'g:ia'
@@ -68,6 +66,8 @@ content:
         class: ''
       ds:
         ds_limit: ''
+    weight: 1
+    region: content
 hidden:
   body: true
   field_background_media: true

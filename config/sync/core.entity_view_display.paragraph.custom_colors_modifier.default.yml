@@ -22,69 +22,69 @@ bundle: custom_colors_modifier
 mode: default
 content:
   field_mod_background_color_val:
-    weight: 0
+    type: color_field_formatter_text
     label: inline
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 0
     region: content
   field_mod_h_background_color_val:
-    weight: 3
+    type: color_field_formatter_text
     label: inline
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 3
     region: content
   field_mod_h_link_color_val:
-    weight: 5
+    type: color_field_formatter_text
     label: inline
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 5
     region: content
   field_mod_h_text_color_val:
-    weight: 4
+    type: color_field_formatter_text
     label: inline
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 4
     region: content
   field_mod_link_color_val:
-    weight: 2
+    type: color_field_formatter_text
     label: inline
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 2
     region: content
   field_mod_media_query:
-    weight: 7
+    type: string
     label: inline
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
+    weight: 7
     region: content
   field_mod_text_color_val:
-    weight: 1
+    type: color_field_formatter_text
     label: inline
     settings:
       format: hex
-      opacity: '1'
+      opacity: true
     third_party_settings: {  }
-    type: color_field_formatter_text
+    weight: 1
     region: content
   field_mod_transition_duration:
-    weight: 6
+    type: number_decimal
     label: inline
     settings:
       thousand_separator: ''
@@ -92,7 +92,7 @@ content:
       scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_decimal
+    weight: 6
     region: content
 hidden:
   created: true

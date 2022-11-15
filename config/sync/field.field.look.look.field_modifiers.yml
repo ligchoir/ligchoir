@@ -26,10 +26,10 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       image_bg_modifier: image_bg_modifier
       image_fx_modifier: image_fx_modifier
+    negate: 0
     target_bundles_drag_drop:
       call_to_action:
         weight: 5
@@ -41,9 +41,9 @@ settings:
         weight: 7
         enabled: false
       image_bg_modifier:
-        enabled: true
         weight: 8
-      image_fx_modifier:
         enabled: true
+      image_fx_modifier:
         weight: 10
+        enabled: true
 field_type: entity_reference_revisions

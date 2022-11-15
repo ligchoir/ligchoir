@@ -26,18 +26,18 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       colors_modifier: colors_modifier
       custom_colors_modifier: custom_colors_modifier
+    negate: 0
     target_bundles_drag_drop:
       call_to_action:
         weight: 4
         enabled: false
       colors_modifier:
-        enabled: true
         weight: 5
-      custom_colors_modifier:
         enabled: true
+      custom_colors_modifier:
         weight: 6
+        enabled: true
 field_type: entity_reference_revisions

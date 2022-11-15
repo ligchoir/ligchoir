@@ -23,10 +23,10 @@ content:
   field_image:
     type: media_library_widget
     weight: -9
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   created: true
   status: true

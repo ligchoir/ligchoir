@@ -22,13 +22,13 @@ plugin: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
 settings:
   id: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
   label: 'LIGC initials and full name (large front/home page header)'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/user/*\r\n/event/*"
     negate: false
+    pages: "<front>\r\n/user/*\r\n/event/*"

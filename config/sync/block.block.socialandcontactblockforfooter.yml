@@ -18,16 +18,16 @@ plugin: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
 settings:
   id: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
   label: 'Social and contact block for footer'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      home: home
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      home: home

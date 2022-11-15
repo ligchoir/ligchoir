@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - crop.type.generic
+  module:
+    - crop
   enforced:
     module:
       - responsive_image
-  module:
-    - crop
 _core:
   default_config_hash: xW1ApqbWjK7oCBCl8jVHA42u2MekQDq4gry3xfZzdWY
 name: max_1300x1300

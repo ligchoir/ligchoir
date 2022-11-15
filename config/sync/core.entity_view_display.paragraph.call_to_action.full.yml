@@ -15,15 +15,15 @@ dependencies:
     - link
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: paragraph.call_to_action.full
 targetEntityType: paragraph
 bundle: call_to_action
 mode: full
 content:
   field_link:
-    weight: 0
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -34,16 +34,16 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: link
+    weight: 0
     region: content
   field_modifiers:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   field_style: true

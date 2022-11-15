@@ -17,7 +17,7 @@ bundle: call_to_action
 mode: default
 content:
   field_link:
-    weight: 0
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -28,23 +28,23 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: link
+    weight: 0
     region: content
   field_modifiers:
     type: entity_reference_revisions_entity_view
-    weight: 1
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: 1
     region: content
   field_style:
-    weight: 2
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 2
     region: content
 hidden: {  }

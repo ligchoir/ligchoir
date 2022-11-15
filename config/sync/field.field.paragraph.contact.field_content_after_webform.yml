@@ -33,7 +33,6 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       about_intro: about_intro
       call_to_action: call_to_action
@@ -44,16 +43,17 @@ settings:
       vertical_space: vertical_space
       video: video
       view: view
+    negate: 0
     target_bundles_drag_drop:
       about_intro:
-        enabled: true
         weight: 17
+        enabled: true
       anchor:
         weight: 18
         enabled: false
       call_to_action:
-        enabled: true
         weight: 19
+        enabled: true
       colors_modifier:
         weight: 20
         enabled: false
@@ -67,8 +67,8 @@ settings:
         weight: 23
         enabled: false
       image:
-        enabled: true
         weight: 24
+        enabled: true
       image_bg_modifier:
         weight: 25
         enabled: false
@@ -76,21 +76,21 @@ settings:
         weight: 26
         enabled: false
       quote:
-        enabled: true
         weight: 27
+        enabled: true
       social_and_contact_links:
-        enabled: true
         weight: 28
+        enabled: true
       text:
-        enabled: true
         weight: 29
+        enabled: true
       vertical_space:
-        enabled: true
         weight: 30
+        enabled: true
       video:
-        enabled: true
         weight: 31
-      view:
         enabled: true
+      view:
         weight: 32
+        enabled: true
 field_type: entity_reference_revisions

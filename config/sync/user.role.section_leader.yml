@@ -1,7 +1,9 @@
 uuid: 17f444f4-2b33-411f-b918-56e9e74137c8
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - eu_cookie_compliance
 id: section_leader
 label: 'Section Leader'
 weight: 3

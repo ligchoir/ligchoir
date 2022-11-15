@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   address: 0
   automated_cron: 0
@@ -59,6 +61,7 @@ module:
   modifiers_custom_colors: 0
   modifiers_image_fx: 0
   multiple_fields_remove_button: 0
+  mysql: 0
   node: 0
   options: 0
   page_cache: 0
@@ -107,5 +110,3 @@ theme:
   claro: 0
   gin: 0
 profile: standard
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

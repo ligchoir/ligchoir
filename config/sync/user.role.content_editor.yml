@@ -1,7 +1,28 @@
 uuid: 7dd7f674-f31d-41f8-9cd9-2c2dc07f1179
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - media.type.audio
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+    - node.type.event
+    - node.type.home
+    - node.type.landing_page
+    - node.type.page
+    - taxonomy.vocabulary.musical_team
+    - taxonomy.vocabulary.venues
+  module:
+    - media
+    - node
+    - quick_node_clone
+    - quickedit
+    - system
+    - taxonomy
+    - toolbar
+    - tour
 id: content_editor
 label: 'Content Editor'
 weight: 4

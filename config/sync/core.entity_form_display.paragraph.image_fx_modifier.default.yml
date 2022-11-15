@@ -42,152 +42,152 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_mod_image_fx_blur:
+    type: number
     weight: 0
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_brightness:
+    type: number
     weight: 1
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_contrast:
+    type: number
     weight: 2
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_duration:
+    type: number
     weight: 20
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_grayscale:
+    type: number
     weight: 5
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_blur:
+    type: number
     weight: 10
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_brightness:
+    type: number
     weight: 11
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_contrast:
+    type: number
     weight: 12
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_grayscale:
+    type: number
     weight: 15
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_hue_rotate:
+    type: number
     weight: 13
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_invert:
+    type: number
     weight: 14
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_opacity:
+    type: number
     weight: 18
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_saturate:
+    type: number
     weight: 16
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_scale:
+    type: number
     weight: 19
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_h_sepia:
+    type: number
     weight: 17
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_hue_rotate:
+    type: number
     weight: 3
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_invert:
+    type: number
     weight: 4
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_opacity:
+    type: number
     weight: 8
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_saturate:
+    type: number
     weight: 6
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_scale:
+    type: number
     weight: 9
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_image_fx_sepia:
+    type: number
     weight: 7
+    region: content
     settings:
       placeholder: ''
     third_party_settings: {  }
-    type: number
-    region: content
   field_mod_media_query:
     type: string_textfield
     weight: 22

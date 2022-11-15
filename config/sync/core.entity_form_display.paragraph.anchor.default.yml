@@ -19,13 +19,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_anchor_id:
+    type: string_textfield
     weight: -9
+    region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
-    region: content
 hidden:
   created: true
   status: true

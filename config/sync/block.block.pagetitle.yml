@@ -21,8 +21,8 @@ plugin: page_title_block
 settings:
   id: page_title_block
   label: 'Page title'
-  provider: core
   label_display: '0'
+  provider: core
 visibility:
   look:
     id: look
@@ -31,16 +31,9 @@ visibility:
     context_mapping: {  }
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      event: event
-    negate: true
-    context_mapping:
-      node: '@node.node_route_context:node'
-  node_type:
-    id: node_type
-    bundles:
-      event: event
-      landing_page: landing_page
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      event: event
+      landing_page: landing_page

@@ -16,36 +16,36 @@ bundle: view
 mode: default
 content:
   field_colour_background:
-    weight: 1
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 1
     region: content
   field_colour_border:
-    weight: 3
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 3
     region: content
   field_colour_text:
-    weight: 2
+    type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
+    weight: 2
     region: content
   field_views_display:
-    weight: 0
+    type: viewsreference_formatter
     label: hidden
     settings:
       plugin_types:
         - block
     third_party_settings: {  }
-    type: viewsreference_formatter
+    weight: 0
     region: content
 hidden: {  }

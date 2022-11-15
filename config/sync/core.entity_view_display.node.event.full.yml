@@ -23,24 +23,22 @@ dependencies:
     - user
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: node.event.full
 targetEntityType: node
 bundle: event
 mode: full
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 4
     region: content
   field_tickets:
     type: entity_reference_revisions_entity_view
-    weight: 3
-    region: content
     label: hidden
     settings:
       view_mode: full
@@ -50,25 +48,25 @@ content:
         class: ''
       ds:
         ds_limit: ''
+    weight: 3
+    region: content
   field_venue:
     type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
     weight: 0
     region: content
-    label: hidden
-    settings:
-      link: true
-      view_mode: default
-    third_party_settings: {  }
   field_when:
     type: smartdate_custom
-    weight: 2
-    region: content
     label: hidden
     settings:
+      separator: ' - '
       date_format: 'D, j M Y'
       custom_date_format: ''
       timezone: ''
-      separator: ' - '
       join: ', '
       time_format: 'g:ia'
       time_hour_format: 'g:ia'
@@ -81,6 +79,8 @@ content:
         class: ''
       ds:
         ds_limit: ''
+    weight: 2
+    region: content
 hidden:
   field_background_media: true
   field_colour_background: true

@@ -18,16 +18,16 @@ plugin: 'block_content:a7d6ced2-1fb6-4dd7-8454-c5742bef07c1'
 settings:
   id: 'block_content:a7d6ced2-1fb6-4dd7-8454-c5742bef07c1'
   label: 'Call to Action - Event individual - book us'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      event: event
     negate: false
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      event: event

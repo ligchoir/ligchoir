@@ -14,15 +14,15 @@ dependencies:
     - link
 third_party_settings:
   layout_builder:
-    allow_custom: false
     enabled: false
+    allow_custom: false
 id: paragraph.call_to_action.teaser
 targetEntityType: paragraph
 bundle: call_to_action
 mode: teaser
 content:
   field_link:
-    weight: 0
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -33,7 +33,7 @@ content:
     third_party_settings:
       field_formatter_class:
         class: ''
-    type: link
+    weight: 0
     region: content
 hidden:
   field_modifiers: true

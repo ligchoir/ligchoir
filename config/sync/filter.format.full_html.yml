@@ -45,8 +45,8 @@ filters:
     weight: 100
     settings:
       default_view_mode: default
-      allowed_media_types: {  }
       allowed_view_modes: {  }
+      allowed_media_types: {  }
   filter_htmlcorrector:
     id: filter_htmlcorrector
     provider: filter

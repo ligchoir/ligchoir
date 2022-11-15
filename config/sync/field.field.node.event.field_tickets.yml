@@ -25,16 +25,16 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    negate: 0
     target_bundles:
       call_to_action: call_to_action
+    negate: 0
     target_bundles_drag_drop:
       about_intro:
         weight: 16
         enabled: false
       call_to_action:
-        enabled: true
         weight: 17
+        enabled: true
       colors_modifier:
         weight: 19
         enabled: false

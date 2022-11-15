@@ -16,21 +16,21 @@ mode: default
 content:
   field_modifiers:
     type: entity_reference_revisions_entity_view
-    weight: -9
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    weight: -9
     region: content
   name:
-    label: hidden
     type: string
-    weight: -10
-    region: content
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    weight: -10
+    region: content
 hidden:
   field_look_path: true
   field_look_theme: true

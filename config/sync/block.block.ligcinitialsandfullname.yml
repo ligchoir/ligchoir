@@ -22,17 +22,17 @@ plugin: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
 settings:
   id: 'block_content:74ea35df-a50c-44c0-be35-022274a13010'
   label: 'LIGC initials and full name'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
-    bundles:
-      event: event
-      home: home
     negate: true
     context_mapping:
       node: '@node.node_route_context:node'
+    bundles:
+      event: event
+      home: home

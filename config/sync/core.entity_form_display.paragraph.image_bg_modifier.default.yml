@@ -26,23 +26,23 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_mod_bgi_color_val:
+    type: color_field_widget_default
     weight: 1
+    region: content
     settings:
       placeholder_color: ''
       placeholder_opacity: ''
     third_party_settings: {  }
-    type: color_field_widget_default
-    region: content
   field_mod_image:
+    type: entity_reference_autocomplete
     weight: 0
+    region: content
     settings:
       match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
-      match_limit: 10
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   field_mod_image_darken:
     type: string_textfield
     weight: 2
@@ -52,11 +52,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_mod_image_position:
+    type: options_select
     weight: 3
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_select
-    region: content
   field_mod_image_style:
     type: options_select
     weight: 2
