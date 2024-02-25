@@ -225,7 +225,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'g@example.com, a@example.com, c@example.com'
+      to_mail: 'd@example.com, c@example.com, a@example.com'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
