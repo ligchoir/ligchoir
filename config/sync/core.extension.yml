@@ -51,15 +51,9 @@ module:
   layout_builder: 0
   layout_discovery: 0
   link: 0
-  look: 0
   media: 0
   media_library: 0
   menu_ui: 0
-  modifiers: 0
-  modifiers_bg_image: 0
-  modifiers_colors: 0
-  modifiers_custom_colors: 0
-  modifiers_image_fx: 0
   multiple_fields_remove_button: 0
   mysql: 0
   node: 0
