@@ -13,6 +13,7 @@ dependencies:
     - paragraphs.paragraphs_type.social_and_contact_links
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.vertical_space
+    - paragraphs.paragraphs_type.youtube_video
   module:
     - entity_reference_revisions
     - paragraph_blocks
@@ -36,6 +37,7 @@ settings:
       about_intro: about_intro
       call_to_action: call_to_action
       contact: contact
+      youtube_video: youtube_video
       image: image
       quote: quote
       social_and_contact_links: social_and_contact_links
@@ -91,4 +93,7 @@ settings:
       view:
         weight: 32
         enabled: false
+      youtube_video:
+        weight: 18
+        enabled: true
 field_type: entity_reference_revisions

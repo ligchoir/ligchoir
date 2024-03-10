@@ -1,0 +1,23 @@
+uuid: bdbaf500-c6d2-4a31-9e4b-4b6bf9ef7cbe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.youtube_video
+id: paragraph.youtube_video.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: youtube_video
+label: Style
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference
