@@ -18,8 +18,8 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: !!float 0
-  max: !!float 360
+  min: 0.0
+  max: 360.0
   prefix: ''
   suffix: deg
 field_type: decimal

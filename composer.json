@@ -16,7 +16,6 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-
         "drupal/address": "^1.9",
         "drupal/block_classes": "^1.0",
         "drupal/bootstrap": "^3.21",
@@ -45,7 +44,8 @@
         "drupal/upgrade_status": "^4.1",
         "drupal/viewsreference": "^2.0@beta",
         "drupal/webform": "^6.2",
-        "drupal/youtube": "^2.0"
+        "drupal/youtube": "^2.0",
+        "drush/drush": "^12.4"
     },
     "conflict": {
         "drupal/drupal": "*"

@@ -9,6 +9,7 @@ dependencies:
     - comment
     - contact
     - eu_cookie_compliance
+    - file
     - filter
     - fontawesome
     - media
@@ -27,6 +28,7 @@ permissions:
   - 'access fontawesome additional settings'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'post comments'
   - 'search content'

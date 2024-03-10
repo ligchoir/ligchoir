@@ -1,0 +1,69 @@
+                                                                                                                                                   
+  There were errors validating the config synchronization.                                                                                         
+  Configuration <em class="placeholder">block.block.bartik_account_menu</em> depends on the <em class="placeholder">bartik</em> theme that will n  
+  ot be installed after import.                                                                                                                    
+  Configuration <em class="placeholder">block.block.bartik_branding</em> depends on the <em class="placeholder">bartik</em> theme that will not b  
+  e installed after import.                                                                                                                        
+  Configuration <em class="placeholder">block.block.bartik_breadcrumbs</em> depends on the <em class="placeholder">bartik</em> theme that will no  
+  t be installed after import.                                                                                                                     
+  Configuration <em class="placeholder">block.block.bartik_content</em> depends on the <em class="placeholder">bartik</em> theme that will not be  
+   installed after import.                                                                                                                         
+  Configuration <em class="placeholder">block.block.bartik_footer</em> depends on the <em class="placeholder">bartik</em> theme that will not be   
+  installed after import.                                                                                                                          
+  Configuration <em class="placeholder">block.block.bartik_help</em> depends on the <em class="placeholder">bartik</em> theme that will not be in  
+  stalled after import.                                                                                                                            
+  Configuration <em class="placeholder">block.block.bartik_local_actions</em> depends on the <em class="placeholder">bartik</em> theme that will   
+  not be installed after import.                                                                                                                   
+  Configuration <em class="placeholder">block.block.bartik_local_tasks</em> depends on the <em class="placeholder">bartik</em> theme that will no  
+  t be installed after import.                                                                                                                     
+  Configuration <em class="placeholder">block.block.bartik_main_menu</em> depends on the <em class="placeholder">bartik</em> theme that will not   
+  be installed after import.                                                                                                                       
+  Configuration <em class="placeholder">block.block.bartik_messages</em> depends on the <em class="placeholder">bartik</em> theme that will not b  
+  e installed after import.                                                                                                                        
+  Configuration <em class="placeholder">block.block.bartik_page_title</em> depends on the <em class="placeholder">bartik</em> theme that will not  
+   be installed after import.                                                                                                                      
+  Configuration <em class="placeholder">block.block.bartik_powered</em> depends on the <em class="placeholder">bartik</em> theme that will not be  
+   installed after import.                                                                                                                         
+  Configuration <em class="placeholder">block.block.bartik_search</em> depends on the <em class="placeholder">bartik</em> theme that will not be   
+  installed after import.                                                                                                                          
+  Configuration <em class="placeholder">block.block.bartik_tools</em> depends on the <em class="placeholder">bartik</em> theme that will not be i  
+  nstalled after import.                                                                                                                           
+  Configuration <em class="placeholder">block.block.seven_breadcrumbs</em> depends on the <em class="placeholder">seven</em> theme that will not   
+  be installed after import.                                                                                                                       
+  Configuration <em class="placeholder">block.block.seven_content</em> depends on the <em class="placeholder">seven</em> theme that will not be i  
+  nstalled after import.                                                                                                                           
+  Configuration <em class="placeholder">block.block.seven_help</em> depends on the <em class="placeholder">seven</em> theme that will not be inst  
+  alled after import.                                                                                                                              
+  Configuration <em class="placeholder">block.block.seven_local_actions</em> depends on the <em class="placeholder">seven</em> theme that will no  
+  t be installed after import.                                                                                                                     
+  Configuration <em class="placeholder">block.block.seven_messages</em> depends on the <em class="placeholder">seven</em> theme that will not be   
+  installed after import.                                                                                                                          
+  Configuration <em class="placeholder">block.block.seven_page_title</em> depends on the <em class="placeholder">seven</em> theme that will not b  
+  e installed after import.                                                                                                                        
+  Configuration <em class="placeholder">block.block.seven_primary_local_tasks</em> depends on the <em class="placeholder">seven</em> theme that w  
+  ill not be installed after import.                                                                                                               
+  Configuration <em class="placeholder">block.block.seven_secondary_local_tasks</em> depends on the <em class="placeholder">seven</em> theme that  
+   will not be installed after import.                                                                                                             
+  Configuration <em class="placeholder">editor.editor.basic_html</em> depends on the <em class="placeholder">ckeditor</em> module that will not b  
+  e installed after import.                                                                                                                        
+  Configuration <em class="placeholder">editor.editor.full_html</em> depends on the <em class="placeholder">ckeditor</em> module that will not be  
+   installed after import.                                                                                                                         
+  Configuration <em class="placeholder">editor.editor.quote</em> depends on the <em class="placeholder">ckeditor</em> module that will not be ins  
+  talled after import.                                                                                                                             
+  Configuration <em class="placeholder">editor.editor.text</em> depends on the <em class="placeholder">ckeditor</em> module that will not be inst  
+  alled after import.                                                                                                                              
+  Configuration <em class="placeholder">editor.editor.webform_default</em> depends on the <em class="placeholder">ckeditor</em> module that will   
+  not be installed after import.                                                                                                                   
+  Configuration <em class="placeholder">rdf.mapping.comment.comment</em> depends on the <em class="placeholder">rdf</em> extension that will not   
+  be installed after import.                                                                                                                       
+  Configuration <em class="placeholder">rdf.mapping.node.page</em> depends on the <em class="placeholder">rdf</em> extension that will not be ins  
+  talled after import.                                                                                                                             
+  Configuration <em class="placeholder">rdf.mapping.taxonomy_term.tags</em> depends on the <em class="placeholder">rdf</em> extension that will n  
+  ot be installed after import.                                                                                                                    
+  Configuration <em class="placeholder">rdf.mapping.user.user</em> depends on the <em class="placeholder">rdf</em> extension that will not be ins  
+  talled after import.                                                                                                                             
+  Configuration <em class="placeholder">seven.settings</em> depends on the <em class="placeholder">seven</em> extension that will not be installe  
+  d after import.                                                                                                                                  
+  Configuration <em class="placeholder">user.role.content_editor</em> depends on the <em class="placeholder">quickedit</em> module that will not   
+  be installed after import.                                                                                                                       
+                                              
