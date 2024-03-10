@@ -6,33 +6,21 @@ dependencies:
     - block_content.type.call_to_action_with_text
     - field.field.block_content.call_to_action_with_text.field_content
   module:
-    - default_paragraphs
+    - entity_reference_revisions
 id: block_content.call_to_action_with_text.default
 targetEntityType: block_content
 bundle: call_to_action_with_text
 mode: default
 content:
   field_content:
-    type: default_paragraphs
-    weight: 26
+    type: entity_reference_revisions_autocomplete
+    weight: 27
     region: content
     settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      closed_mode: summary
-      autocollapse: none
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_types:
-        call_to_action:
-          value: '1'
-          edit_mode: edit
-          weight: '0'
-        text:
-          value: '1'
-          edit_mode: edit
-          weight: '1'
-      edit_mode: closed
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   info:
     type: string_textfield
