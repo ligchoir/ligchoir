@@ -7,7 +7,7 @@ dependencies:
   module:
     - block_classes
     - block_content
-    - ctools
+    - node
   theme:
     - clau2
 third_party_settings:

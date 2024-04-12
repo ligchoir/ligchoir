@@ -20,10 +20,9 @@ content:
     weight: 0
     region: content
   field_image:
-    type: entity_reference_entity_view
-    label: hidden
+    type: entity_reference_label
+    label: inline
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
     weight: 1

@@ -429,6 +429,7 @@ display:
           1: AND
       defaults:
         empty: false
+        title: true
         sorts: false
         filters: false
         filter_groups: false

@@ -6,7 +6,7 @@ dependencies:
     - 'block_content:social_and_contact_block:f10ea123-f4a3-4890-aa55-32ab55efd722'
   module:
     - block_content
-    - ctools
+    - node
   theme:
     - clau2
 id: socialandcontactblockforfooter
