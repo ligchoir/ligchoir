@@ -5,8 +5,6 @@ dependencies:
   config:
     - field.storage.paragraph.field_modifiers
     - paragraphs.paragraphs_type.call_to_action
-    - paragraphs.paragraphs_type.colors_modifier
-    - paragraphs.paragraphs_type.custom_colors_modifier
   module:
     - entity_reference_revisions
     - paragraph_blocks
@@ -26,9 +24,7 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles:
-      colors_modifier: colors_modifier
-      custom_colors_modifier: custom_colors_modifier
+    target_bundles: {  }
     negate: 0
     target_bundles_drag_drop:
       call_to_action:
