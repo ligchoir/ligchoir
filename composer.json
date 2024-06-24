@@ -30,7 +30,7 @@
         "drupal/entity_class_formatter": "^2.0",
         "drupal/eu_cookie_compliance": "^1.14",
         "drupal/field_formatter_class": "^1.4",
-        "drupal/fontawesome": "^2.18",
+        "drupal/fontawesome": "2.26",
         "drupal/fontyourface": "^4.0",
         "drupal/gin": "^3.0@RC",
         "drupal/image_effects": "^3.0",
