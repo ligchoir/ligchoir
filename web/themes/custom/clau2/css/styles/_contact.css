@@ -14,6 +14,10 @@
   padding-right: 1em; 
 }
 
+.ligc-contact-content a {
+  text-decoration: none;
+}
+
 /*
 .paragraph--type--image .field--name-field-media-image img {
   margin-left: auto;
