@@ -1,0 +1,478 @@
+user@laptop ligc-staging % ddev drush en color_field
+ [notice] Already enabled: color_field
+user@laptop ligc-staging % ddev drush cim           
++------------+-----------------------------------------------------------------+-----------+
+| Collection | Config                                                          | Operation |
++------------+-----------------------------------------------------------------+-----------+
+|            | core.entity_form_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | core.entity_view_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | field.field.taxonomy_term.modifiers_color.field_mod_color       | Delete    |
+|            | field.storage.taxonomy_term.field_mod_color                     | Delete    |
+|            | core.entity_form_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                 | Delete    |
++------------+-----------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [notice] Synchronized configuration: delete core.entity_form_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete field.field.taxonomy_term.modifiers_color.field_mod_color.
+ [notice] Synchronized configuration: delete field.storage.taxonomy_term.field_mod_color.
+ [notice] Synchronized configuration: delete core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: delete field.storage.paragraph.field_mod_bgi_color_val.
+
+In FieldConfigStorageBase.php line 31:
+                                                                                                                                                      
+  Unable to determine class for field type 'color_field_type' found in the 'field.field.taxonomy_term.modifiers_color.field_mod_color' configuration  
+                                                                                                                                                      
+
+In DiscoveryTrait.php line 53:
+                                                                                                                                                                 
+  The "color_field_type" plugin does not exist. Valid plugin IDs for Drupal\Core\Field\FieldTypePluginManager are: address, address_zone, address_country, comm  
+  ent, datetime, daterange, entity_reference_revisions, file_uri, file, fontawesome_icon, image, layout_section, link, list_integer, list_string, list_float, p  
+  ath, smartdate, text_with_summary, text, text_long, viewsreference, webform, youtube, changed, boolean, uri, language, float, password, entity_reference, tim  
+  estamp, map, string, created, string_long, integer, email, decimal, uuid                                                                                       
+                                                                                                                                                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % ddev drush config-delete field.field.taxonomy_term.modifiers_color.field_mod_color
+user@laptop ligc-staging % ddev drush cim                                                                    
++------------+-----------------------------------------------------------------+-----------+
+| Collection | Config                                                          | Operation |
++------------+-----------------------------------------------------------------+-----------+
+|            | core.entity_form_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | core.entity_view_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | field.storage.taxonomy_term.field_mod_color                     | Delete    |
+|            | core.entity_form_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                 | Delete    |
++------------+-----------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [notice] Synchronized configuration: delete core.entity_form_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete field.storage.taxonomy_term.field_mod_color.
+ [notice] Synchronized configuration: delete core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: delete field.storage.paragraph.field_mod_bgi_color_val.
+ [notice] Finalizing configuration synchronization.
+ [error]  Drupal\Core\Config\ConfigException: Errors occurred during import in Drush\Commands\config\ConfigImportCommands->doImport() (line 276 of /var/www/html/vendor/drush/drush/src/Commands/config/ConfigImportCommands.php). 
+
+In ConfigImportCommands.php line 290:
+                                                                                                                                                                 
+  The import failed due to the following reasons:                                                                                                                
+  Unexpected error during import with operation delete for field.storage.taxonomy_term.field_mod_color: Unable to determine class for field type &#039;color_fi  
+  eld_type&#039; found in the &#039;field.storage.taxonomy_term.field_mod_color&#039; configuration                                                              
+  Unexpected error during import with operation delete for core.entity_form_display.paragraph.image_bg_modifier.default: Unable to determine class for field ty  
+  pe &#039;color_field_type&#039; found in the &#039;field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val&#039; configuration                         
+  Unexpected error during import with operation delete for core.entity_view_display.paragraph.image_bg_modifier.default: Unable to determine class for field ty  
+  pe &#039;color_field_type&#039; found in the &#039;field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val&#039; configuration                         
+  Unexpected error during import with operation delete for field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val: Unable to determine class for field  
+   type &#039;color_field_type&#039; found in the &#039;field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val&#039; configuration                      
+  Unexpected error during import with operation delete for field.storage.paragraph.field_mod_bgi_color_val: Unable to determine class for field type &#039;colo  
+  r_field_type&#039; found in the &#039;field.storage.paragraph.field_mod_bgi_color_val&#039; configuration                                                      
+                                                                                                                                                                 
+
+In ConfigImportCommands.php line 276:
+                                 
+  Errors occurred during import  
+                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % ddev drush config-delete field.storage.taxonomy_term.field_mod_color
+user@laptop ligc-staging % ddev drush cim                                                      
++------------+-----------------------------------------------------------------+-----------+
+| Collection | Config                                                          | Operation |
++------------+-----------------------------------------------------------------+-----------+
+|            | core.entity_form_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                 | Delete    |
++------------+-----------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [notice] Synchronized configuration: delete core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: delete field.storage.paragraph.field_mod_bgi_color_val.
+ [notice] Finalizing configuration synchronization.
+ [error]  Drupal\Core\Config\ConfigException: Errors occurred during import in Drush\Commands\config\ConfigImportCommands->doImport() (line 276 of /var/www/html/vendor/drush/drush/src/Commands/config/ConfigImportCommands.php). 
+
+In ConfigImportCommands.php line 290:
+                                                                                                                                                                 
+  The import failed due to the following reasons:                                                                                                                
+  Unexpected error during import with operation delete for core.entity_form_display.paragraph.image_bg_modifier.default: Unable to determine class for field ty  
+  pe &#039;color_field_type&#039; found in the &#039;field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val&#039; configuration                         
+  Unexpected error during import with operation delete for core.entity_view_display.paragraph.image_bg_modifier.default: Unable to determine class for field ty  
+  pe &#039;color_field_type&#039; found in the &#039;field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val&#039; configuration                         
+  Unexpected error during import with operation delete for field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val: Unable to determine class for field  
+   type &#039;color_field_type&#039; found in the &#039;field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val&#039; configuration                      
+  Unexpected error during import with operation delete for field.storage.paragraph.field_mod_bgi_color_val: Unable to determine class for field type &#039;colo  
+  r_field_type&#039; found in the &#039;field.storage.paragraph.field_mod_bgi_color_val&#039; configuration                                                      
+                                                                                                                                                                 
+
+In ConfigImportCommands.php line 276:
+                                 
+  Errors occurred during import  
+                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % ddev drush config-delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val
+user@laptop ligc-staging % ddev drush config-delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val
+ [error]  Config field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val does not exist 
+Failed to run drush config-delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val: exit status 1
+user@laptop ligc-staging % ddev drush cim                                                                          
++------------+--------------------------------------------------------------+-----------+
+| Collection | Config                                                       | Operation |
++------------+--------------------------------------------------------------+-----------+
+|            | core.entity_form_display.paragraph.image_bg_modifier.default | Delete    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val              | Delete    |
++------------+--------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [notice] Synchronized configuration: delete core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete field.storage.paragraph.field_mod_bgi_color_val.
+ [notice] Finalizing configuration synchronization.
+ [error]  Drupal\Core\Config\ConfigException: Errors occurred during import in Drush\Commands\config\ConfigImportCommands->doImport() (line 276 of /var/www/html/vendor/drush/drush/src/Commands/config/ConfigImportCommands.php). 
+
+In ConfigImportCommands.php line 290:
+                                                                                                                                                                 
+  The import failed due to the following reasons:                                                                                                                
+  Unexpected error during import with operation delete for field.storage.paragraph.field_mod_bgi_color_val: Unable to determine class for field type &#039;colo  
+  r_field_type&#039; found in the &#039;field.storage.paragraph.field_mod_bgi_color_val&#039; configuration                                                      
+                                                                                                                                                                 
+
+In ConfigImportCommands.php line 276:
+                                 
+  Errors occurred during import  
+                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % ddev drush config-delete field.storage.paragraph.field_mod_bgi_color_val
+user@laptop ligc-staging % ddev drush cim                                                          
+ [notice] There are no changes to import.
+user@laptop ligc-staging % ddev drush cex
+ [notice] The active configuration is identical to the configuration in the export directory (../config/sync).
+../config/sync
+user@laptop ligc-staging %         
+
+
+user@laptop ligc-staging % ddev drush en color_field
+ [notice] Already enabled: color_field
+user@laptop ligc-staging % ddev drush cim           
++------------+-----------------------------------------------------------------+-----------+
+| Collection | Config                                                          | Operation |
++------------+-----------------------------------------------------------------+-----------+
+|            | core.entity_form_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | core.entity_view_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | field.field.taxonomy_term.modifiers_color.field_mod_color       | Delete    |
+|            | field.storage.taxonomy_term.field_mod_color                     | Delete    |
+|            | core.entity_form_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                 | Delete    |
++------------+-----------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [notice] Synchronized configuration: delete core.entity_form_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete field.field.taxonomy_term.modifiers_color.field_mod_color.
+ [notice] Synchronized configuration: delete field.storage.taxonomy_term.field_mod_color.
+ [notice] Synchronized configuration: delete core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: delete field.storage.paragraph.field_mod_bgi_color_val.
+
+In FieldConfigStorageBase.php line 31:
+                                                                                                                                                      
+  Unable to determine class for field type 'color_field_type' found in the 'field.field.taxonomy_term.modifiers_color.field_mod_color' configuration  
+                                                                                                                                                      
+
+In DiscoveryTrait.php line 53:
+                                                                                                                                                                 
+  The "color_field_type" plugin does not exist. Valid plugin IDs for Drupal\Core\Field\FieldTypePluginManager are: address, address_zone, address_country, comm  
+  ent, datetime, daterange, entity_reference_revisions, file_uri, file, fontawesome_icon, image, layout_section, link, list_integer, list_string, list_float, p  
+  ath, smartdate, text_with_summary, text, text_long, viewsreference, webform, youtube, changed, boolean, uri, language, float, password, entity_reference, tim  
+  estamp, map, string, created, string_long, integer, email, decimal, uuid                                                                                       
+                                                                                                                                                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % ddev drush config-delete field.field.taxonomy_term.modifiers_color.field_mod_color
+user@laptop ligc-staging % 
+
+
+user@laptop ligc-staging % ddev drush cim               
++------------+-----------------------------------------------------------------+-----------+
+| Collection | Config                                                          | Operation |
++------------+-----------------------------------------------------------------+-----------+
+|            | core.entity_form_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | core.entity_view_display.taxonomy_term.modifiers_color.default  | Delete    |
+|            | field.field.taxonomy_term.modifiers_color.field_mod_color       | Delete    |
+|            | field.storage.taxonomy_term.field_mod_color                     | Delete    |
+|            | core.entity_form_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | core.entity_view_display.paragraph.image_bg_modifier.default    | Delete    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                 | Delete    |
++------------+-----------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [notice] Synchronized configuration: delete core.entity_form_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.taxonomy_term.modifiers_color.default.
+ [notice] Synchronized configuration: delete field.field.taxonomy_term.modifiers_color.field_mod_color.
+ [notice] Synchronized configuration: delete field.storage.taxonomy_term.field_mod_color.
+ [notice] Synchronized configuration: delete core.entity_form_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete core.entity_view_display.paragraph.image_bg_modifier.default.
+ [notice] Synchronized configuration: delete field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val.
+ [notice] Synchronized configuration: delete field.storage.paragraph.field_mod_bgi_color_val.
+
+In FieldConfigStorageBase.php line 31:
+                                                                                                                                                      
+  Unable to determine class for field type 'color_field_type' found in the 'field.field.taxonomy_term.modifiers_color.field_mod_color' configuration  
+                                                                                                                                                      
+
+In DiscoveryTrait.php line 53:
+                                                                                                                                                                 
+  The "color_field_type" plugin does not exist. Valid plugin IDs for Drupal\Core\Field\FieldTypePluginManager are: address, address_zone, address_country, comm  
+  ent, datetime, daterange, entity_reference_revisions, file_uri, file, fontawesome_icon, image, layout_section, link, list_integer, list_string, list_float, p  
+  ath, smartdate, text_with_summary, text, text_long, viewsreference, webform, youtube, changed, boolean, uri, language, float, password, entity_reference, tim  
+  estamp, map, string, created, string_long, integer, email, decimal, uuid                                                                                       
+                                                                                                                                                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % 
+
+
+
+user@laptop ligc-staging % ddev drush pm-uninstall color
+
+In FieldStorageConfigStorage.php line 167:
+                                                                                                                                            
+  Unable to determine class for field type 'color_field_type' found in the 'field.storage.paragraph.field_mod_bgi_color_val' configuration  
+                                                                                                                                            
+
+In DiscoveryTrait.php line 53:
+                                                                                                                                                                 
+  The "color_field_type" plugin does not exist. Valid plugin IDs for Drupal\Core\Field\FieldTypePluginManager are: address, address_zone, address_country, comm  
+  ent, datetime, daterange, entity_reference_revisions, file_uri, file, fontawesome_icon, image, layout_section, link, list_integer, list_string, list_float, p  
+  ath, smartdate, text_with_summary, text, text_long, viewsreference, webform, youtube, changed, boolean, uri, language, float, password, entity_reference, tim  
+  estamp, map, string, created, string_long, integer, email, decimal, uuid                                                                                       
+                                                                                                                                                                 
+
+Failed to run drush pm-uninstall color: exit status 1
+user@laptop ligc-staging % ddev drush cim
++------------+-----------------------------------------------------------------+-----------+
+| Collection | Config                                                          | Operation |
++------------+-----------------------------------------------------------------+-----------+
+|            | field.field.taxonomy_term.modifiers_color.field_mod_color       | Delete    |
+|            | field.storage.taxonomy_term.field_mod_color                     | Delete    |
+|            | field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val | Delete    |
+|            | field.storage.paragraph.field_mod_bgi_color_val                 | Delete    |
++------------+-----------------------------------------------------------------+-----------+
+
+ Import the listed configuration changes? (yes/no) [yes]:
+ > yes
+
+ [error]  Drupal\Core\Config\ConfigImporterException: There were errors validating the config synchronization.
+Configuration <em class="placeholder">core.entity_form_display.paragraph.image_bg_modifier.default</em> depends on the <em class="placeholder">field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val</em> configuration that will not exist after import.
+Configuration <em class="placeholder">core.entity_form_display.taxonomy_term.modifiers_color.default</em> depends on the <em class="placeholder">field.field.taxonomy_term.modifiers_color.field_mod_color</em> configuration that will not exist after import.
+Configuration <em class="placeholder">core.entity_view_display.paragraph.image_bg_modifier.default</em> depends on the <em class="placeholder">field.field.paragraph.image_bg_modifier.field_mod_bgi_color_val</em> configuration that will not exist after import.
+Configuration <em class="placeholder">core.entity_view_display.taxonomy_term.modifiers_color.default</em> depends on the <em class="placeholder">field.field.taxonomy_term.modifiers_color.field_mod_color</em> configuration that will not exist after import. in Drupal\Core\Config\ConfigImporter->validate() (line 814 of /var/www/html/web/core/lib/Drupal/Core/Config/ConfigImporter.php). 
+
+In ConfigImportCommands.php line 290:
+                                                                                                                                                                 
+  The import failed due to the following reasons:                                                                                                                
+  Configuration <em class="placeholder">core.entity_form_display.paragraph.image_bg_modifier.default</em> depends on the <em class="placeholder">field.field.pa  
+  ragraph.image_bg_modifier.field_mod_bgi_color_val</em> configuration that will not exist after import.                                                         
+  Configuration <em class="placeholder">core.entity_form_display.taxonomy_term.modifiers_color.default</em> depends on the <em class="placeholder">field.field.  
+  taxonomy_term.modifiers_color.field_mod_color</em> configuration that will not exist after import.                                                             
+  Configuration <em class="placeholder">core.entity_view_display.paragraph.image_bg_modifier.default</em> depends on the <em class="placeholder">field.field.pa  
+  ragraph.image_bg_modifier.field_mod_bgi_color_val</em> configuration that will not exist after import.                                                         
+  Configuration <em class="placeholder">core.entity_view_display.taxonomy_term.modifiers_color.default</em> depends on the <em class="placeholder">field.field.  
+  taxonomy_term.modifiers_color.field_mod_color</em> configuration that will not exist after import.                                                             
+                                                                                                                                                                 
+
+In ConfigImporter.php line 814:
+                                                                                                                                                                 
+  There were errors validating the config synchronization.                                                                                                       
+  Configuration <em class="placeholder">core.entity_form_display.paragraph.image_bg_modifier.default</em> depends on the <em class="placeholder">field.field.pa  
+  ragraph.image_bg_modifier.field_mod_bgi_color_val</em> configuration that will not exist after import.                                                         
+  Configuration <em class="placeholder">core.entity_form_display.taxonomy_term.modifiers_color.default</em> depends on the <em class="placeholder">field.field.  
+  taxonomy_term.modifiers_color.field_mod_color</em> configuration that will not exist after import.                                                             
+  Configuration <em class="placeholder">core.entity_view_display.paragraph.image_bg_modifier.default</em> depends on the <em class="placeholder">field.field.pa  
+  ragraph.image_bg_modifier.field_mod_bgi_color_val</em> configuration that will not exist after import.                                                         
+  Configuration <em class="placeholder">core.entity_view_display.taxonomy_term.modifiers_color.default</em> depends on the <em class="placeholder">field.field.  
+  taxonomy_term.modifiers_color.field_mod_color</em> configuration that will not exist after import.                                                             
+                                                                                                                                                                 
+
+Failed to run drush cim: exit status 1
+user@laptop ligc-staging % 
+
+
+
+
+user@laptop ligc-staging % ddev drush pm-uninstall color
+
+In FieldStorageConfigStorage.php line 167:
+                                                                                                                                            
+  Unable to determine class for field type 'color_field_type' found in the 'field.storage.paragraph.field_mod_bgi_color_val' configuration  
+                                                                                                                                            
+
+In DiscoveryTrait.php line 53:
+                                                                                                                                                                 
+  The "color_field_type" plugin does not exist. Valid plugin IDs for Drupal\Core\Field\FieldTypePluginManager are: address, address_zone, address_country, comm  
+  ent, datetime, daterange, entity_reference_revisions, file_uri, file, fontawesome_icon, image, layout_section, link, list_integer, list_string, list_float, p  
+  ath, smartdate, text_with_summary, text, text_long, viewsreference, webform, youtube, changed, boolean, uri, language, float, password, entity_reference, tim  
+  estamp, map, string, created, string_long, integer, email, decimal, uuid                                                                                       
+                                                                                                                                                                 
+
+Failed to run drush pm-uninstall color: exit status 1
+user@laptop ligc-staging % ddev drush cim
+ [notice] There are no changes to import.
+user@laptop ligc-staging % 
+
+
+
+The website encountered an unexpected error. Try again later.
+
+Drupal\Component\Plugin\Exception\PluginNotFoundException: Unable to determine class for field type 'color_field_type' found in the 'field.storage.taxonomy_term.field_mod_color' configuration in Drupal\field\FieldStorageConfigStorage->mapFromStorageRecords() (line 167 of core/modules/field/src/FieldStorageConfigStorage.php).
+Drupal\Core\Plugin\DefaultPluginManager->getDefinition('color_field_type') (Line: 246)
+Drupal\Core\Field\FieldTypePluginManager->getPluginClass('color_field_type') (Line: 163)
+Drupal\field\FieldStorageConfigStorage->mapFromStorageRecords(Array) (Line: 186)
+Drupal\Core\Config\Entity\ConfigEntityStorage->doLoadMultiple(Array) (Line: 312)
+Drupal\Core\Entity\EntityStorageBase->loadMultiple(Array) (Line: 513)
+Drupal\Core\Entity\EntityBase::loadMultiple(Array) (Line: 183)
+field_entity_field_storage_info(Object) (Line: 592)
+Drupal\Core\Entity\EntityFieldManager->Drupal\Core\Entity\{closure}(Object, 'field') (Line: 388)
+Drupal\Core\Extension\ModuleHandler->invokeAllWith('entity_field_storage_info', Object) (Line: 605)
+Drupal\Core\Entity\EntityFieldManager->buildFieldStorageDefinitions('taxonomy_term') (Line: 466)
+Drupal\Core\Entity\EntityFieldManager->getFieldStorageDefinitions('taxonomy_term') (Line: 122)
+Drupal\views\EntityViewsData->getFieldStorageDefinitions() (Line: 439)
+Drupal\views\EntityViewsData->mapFieldDefinition('taxonomy_term_data', 'uuid', Object, Object, Array) (Line: 334)
+Drupal\views\EntityViewsData->getViewsData() (Line: 16)
+Drupal\taxonomy\TermViewsData->getViewsData() (Line: 180)
+views_views_data() (Line: 228)
+Drupal\views\ViewsData->Drupal\views\{closure}(Object, 'views') (Line: 388)
+Drupal\Core\Extension\ModuleHandler->invokeAllWith('views_data', Object) (Line: 236)
+Drupal\views\ViewsData->getData() (Line: 151)
+Drupal\views\ViewsData->get('block_content') (Line: 93)
+Drupal\ds\Plugin\Derivative\DsEntityRow->getDerivativeDefinitions(Array) (Line: 101)
+Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator->getDerivatives(Array) (Line: 87)
+Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator->getDefinitions() (Line: 323)
+Drupal\Core\Plugin\DefaultPluginManager->findDefinitions() (Line: 205)
+Drupal\Core\Plugin\DefaultPluginManager->getDefinitions() (Line: 146)
+views_theme(Array, 'module', 'views', 'core/modules/views') (Line: 479)
+Drupal\Core\Theme\Registry->processExtension(Array, 'views', 'module', 'views', 'core/modules/views') (Line: 372)
+Drupal\Core\Theme\Registry->Drupal\Core\Theme\{closure}(Object, 'views') (Line: 388)
+Drupal\Core\Extension\ModuleHandler->invokeAllWith('theme', Object) (Line: 373)
+Drupal\Core\Theme\Registry->build() (Line: 255)
+Drupal\Core\Theme\Registry->get() (Line: 88)
+Drupal\Core\Utility\ThemeRegistry->initializeRegistry() (Line: 69)
+Drupal\Core\Utility\ThemeRegistry->__construct('theme_registry:runtime:clau2', Object, Object, Array, 1) (Line: 291)
+Drupal\Core\Theme\Registry->getRuntime() (Line: 193)
+Drupal\Core\Entity\EntityViewBuilder->getBuildDefaults(Object, 'full') (Line: 61)
+Drupal\node\NodeViewBuilder->getBuildDefaults(Object, 'full') (Line: 157)
+Drupal\Core\Entity\EntityViewBuilder->viewMultiple(Array, 'full', NULL) (Line: 123)
+Drupal\Core\Entity\EntityViewBuilder->view(Object, 'full') (Line: 134)
+Drupal\Core\Entity\Controller\EntityViewController->view(Object, 'full') (Line: 66)
+Drupal\node\Controller\NodeViewController->view(Object, 'full', NULL)
+call_user_func_array(Array, Array) (Line: 123)
+Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}() (Line: 627)
+Drupal\Core\Render\Renderer->executeInRenderContext(Object, Object) (Line: 124)
+Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext(Array, Array) (Line: 97)
+Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}() (Line: 181)
+Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object, 1) (Line: 76)
+Symfony\Component\HttpKernel\HttpKernel->handle(Object, 1, 1) (Line: 58)
+Drupal\Core\StackMiddleware\Session->handle(Object, 1, 1) (Line: 48)
+Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object, 1, 1) (Line: 28)
+Drupal\Core\StackMiddleware\ContentLength->handle(Object, 1, 1) (Line: 32)
+Drupal\big_pipe\StackMiddleware\ContentLength->handle(Object, 1, 1) (Line: 191)
+Drupal\page_cache\StackMiddleware\PageCache->fetch(Object, 1, 1) (Line: 128)
+Drupal\page_cache\StackMiddleware\PageCache->lookup(Object, 1, 1) (Line: 82)
+Drupal\page_cache\StackMiddleware\PageCache->handle(Object, 1, 1) (Line: 48)
+Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object, 1, 1) (Line: 51)
+Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object, 1, 1) (Line: 36)
+Drupal\Core\StackMiddleware\AjaxPageState->handle(Object, 1, 1) (Line: 51)
+Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object, 1, 1) (Line: 704)
+Drupal\Core\DrupalKernel->handle(Object) (Line: 19)
+
+
+
+
+The website encountered an unexpected error. Try again later.
+
+Error: Class "Drupal\color_field\Plugin\Field\FieldType\ColorFieldType" not found in Drupal\field\FieldStorageConfigStorage->mapFromStorageRecords() (line 169 of core/modules/field/src/FieldStorageConfigStorage.php).
+Drupal\Core\Config\Entity\ConfigEntityStorage->doLoadMultiple(Array) (Line: 312)
+Drupal\Core\Entity\EntityStorageBase->loadMultiple(Array) (Line: 513)
+Drupal\Core\Entity\EntityBase::loadMultiple(Array) (Line: 183)
+field_entity_field_storage_info(Object) (Line: 592)
+Drupal\Core\Entity\EntityFieldManager->Drupal\Core\Entity\{closure}(Object, 'field') (Line: 388)
+Drupal\Core\Extension\ModuleHandler->invokeAllWith('entity_field_storage_info', Object) (Line: 605)
+Drupal\Core\Entity\EntityFieldManager->buildFieldStorageDefinitions('taxonomy_term') (Line: 466)
+Drupal\Core\Entity\EntityFieldManager->getFieldStorageDefinitions('taxonomy_term') (Line: 122)
+Drupal\views\EntityViewsData->getFieldStorageDefinitions() (Line: 439)
+Drupal\views\EntityViewsData->mapFieldDefinition('taxonomy_term_data', 'uuid', Object, Object, Array) (Line: 334)
+Drupal\views\EntityViewsData->getViewsData() (Line: 16)
+Drupal\taxonomy\TermViewsData->getViewsData() (Line: 180)
+views_views_data() (Line: 228)
+Drupal\views\ViewsData->Drupal\views\{closure}(Object, 'views') (Line: 388)
+Drupal\Core\Extension\ModuleHandler->invokeAllWith('views_data', Object) (Line: 236)
+Drupal\views\ViewsData->getData() (Line: 151)
+Drupal\views\ViewsData->get('block_content') (Line: 93)
+Drupal\ds\Plugin\Derivative\DsEntityRow->getDerivativeDefinitions(Array) (Line: 101)
+Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator->getDerivatives(Array) (Line: 87)
+Drupal\Component\Plugin\Discovery\DerivativeDiscoveryDecorator->getDefinitions() (Line: 323)
+Drupal\Core\Plugin\DefaultPluginManager->findDefinitions() (Line: 205)
+Drupal\Core\Plugin\DefaultPluginManager->getDefinitions() (Line: 146)
+views_theme(Array, 'module', 'views', 'core/modules/views') (Line: 479)
+Drupal\Core\Theme\Registry->processExtension(Array, 'views', 'module', 'views', 'core/modules/views') (Line: 372)
+Drupal\Core\Theme\Registry->Drupal\Core\Theme\{closure}(Object, 'views') (Line: 388)
+Drupal\Core\Extension\ModuleHandler->invokeAllWith('theme', Object) (Line: 373)
+Drupal\Core\Theme\Registry->build() (Line: 255)
+Drupal\Core\Theme\Registry->get() (Line: 88)
+Drupal\Core\Utility\ThemeRegistry->initializeRegistry() (Line: 69)
+Drupal\Core\Utility\ThemeRegistry->__construct('theme_registry:runtime:clau2', Object, Object, Array, 1) (Line: 291)
+Drupal\Core\Theme\Registry->getRuntime() (Line: 193)
+Drupal\Core\Entity\EntityViewBuilder->getBuildDefaults(Object, 'full') (Line: 61)
+Drupal\node\NodeViewBuilder->getBuildDefaults(Object, 'full') (Line: 157)
+Drupal\Core\Entity\EntityViewBuilder->viewMultiple(Array, 'full', NULL) (Line: 123)
+Drupal\Core\Entity\EntityViewBuilder->view(Object, 'full') (Line: 134)
+Drupal\Core\Entity\Controller\EntityViewController->view(Object, 'full') (Line: 66)
+Drupal\node\Controller\NodeViewController->view(Object, 'full', NULL)
+call_user_func_array(Array, Array) (Line: 123)
+Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}() (Line: 627)
+Drupal\Core\Render\Renderer->executeInRenderContext(Object, Object) (Line: 124)
+Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->wrapControllerExecutionInRenderContext(Array, Array) (Line: 97)
+Drupal\Core\EventSubscriber\EarlyRenderingControllerWrapperSubscriber->Drupal\Core\EventSubscriber\{closure}() (Line: 181)
+Symfony\Component\HttpKernel\HttpKernel->handleRaw(Object, 1) (Line: 76)
+Symfony\Component\HttpKernel\HttpKernel->handle(Object, 1, 1) (Line: 58)
+Drupal\Core\StackMiddleware\Session->handle(Object, 1, 1) (Line: 48)
+Drupal\Core\StackMiddleware\KernelPreHandle->handle(Object, 1, 1) (Line: 28)
+Drupal\Core\StackMiddleware\ContentLength->handle(Object, 1, 1) (Line: 32)
+Drupal\big_pipe\StackMiddleware\ContentLength->handle(Object, 1, 1) (Line: 191)
+Drupal\page_cache\StackMiddleware\PageCache->fetch(Object, 1, 1) (Line: 128)
+Drupal\page_cache\StackMiddleware\PageCache->lookup(Object, 1, 1) (Line: 82)
+Drupal\page_cache\StackMiddleware\PageCache->handle(Object, 1, 1) (Line: 48)
+Drupal\Core\StackMiddleware\ReverseProxyMiddleware->handle(Object, 1, 1) (Line: 51)
+Drupal\Core\StackMiddleware\NegotiationMiddleware->handle(Object, 1, 1) (Line: 36)
+Drupal\Core\StackMiddleware\AjaxPageState->handle(Object, 1, 1) (Line: 51)
+Drupal\Core\StackMiddleware\StackedHttpKernel->handle(Object, 1, 1) (Line: 704)
+Drupal\Core\DrupalKernel->handle(Object) (Line: 19)
