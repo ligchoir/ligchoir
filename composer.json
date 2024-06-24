@@ -22,7 +22,6 @@
         "drupal/bootstrap": "^3.21",
         "drupal/classy": "^1.0",
         "drupal/classy_paragraphs": "^1.0@beta",
-        "drupal/color": "^1.0",
         "drupal/color_field": "3.0",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
