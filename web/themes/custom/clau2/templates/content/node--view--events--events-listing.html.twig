@@ -80,7 +80,7 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-{{ attach_library('classy/node') }}
+
 
 {% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
 {% set date_event_day_only = date_event_as_unix_time_int | date('D, j M Y') %}
