@@ -1,0 +1,52 @@
+uuid: ea5bdc89-836f-4b81-b01c-6e55ed06fb7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.modifiers_color.field_color
+    - taxonomy.vocabulary.modifiers_color
+  module:
+    - color_field
+    - path
+    - text
+id: taxonomy_term.modifiers_color.default
+targetEntityType: taxonomy_term
+bundle: modifiers_color
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_color:
+    type: color_field_widget_html5
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 100
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

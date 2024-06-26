@@ -123,7 +123,7 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  <div style="background-color: {{ node.field_colour_background.0.entity.field_mod_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_mod_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};"> 
+  <div style="background-color: {{ node.field_colour_background.0.entity.field_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_color.value.0.color }};"> 
 
     {{ title_prefix }}
     {% if label and not page %}
@@ -165,7 +165,7 @@
       </div>
 
       <style>
-       .ligc-event-full-outer .ligc-cta-fixed { color: {{ node.field_colour_text.0.entity.field_mod_color.value.0.color }};
+       .ligc-event-full-outer .ligc-cta-fixed { color: {{ node.field_colour_text.0.entity.field_color.value.0.color }};
       }
       </style>
 

@@ -1,0 +1,22 @@
+uuid: e049a871-f468-4c9e-8adc-5817bb23484d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.modifiers_color
+  module:
+    - color_field
+id: taxonomy_term.modifiers_color.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: modifiers_color
+label: color
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type
