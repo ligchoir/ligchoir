@@ -1,0 +1,73 @@
+user@laptop ligc-staging % ./composer require 'drupal/smart_date:^4.1'
+./composer.json has been updated
+Running composer update drupal/smart_date
+Loading composer repositories with package information
+Updating dependencies
+Your requirements could not be resolved to an installable set of packages.
+
+  Problem 1
+    - drupal/smart_date[4.1.0-beta1, ..., 4.1.3] require simshaun/recurr ^5 -> found simshaun/recurr[v5.0.0, v5.0.1, v5.0.2] but the package is fixed to v4.0.5 (lock file version) by a partial update and that version does not match. Make sure you list it as an argument for the update command.
+    - Root composer.json requires drupal/smart_date ^4.1 -> satisfiable by drupal/smart_date[4.1.0-beta1, ..., 4.1.3].
+
+Use the option --with-all-dependencies (-W) to allow upgrades, downgrades and removals for packages currently locked to specific versions.
+
+Installation failed, reverting ./composer.json and ./composer.lock to their original content.
+user@laptop ligc-staging % ./composer require 'drupal/smart_date:^4.1' --with-all-dependencies
+./composer.json has been updated
+Running composer update drupal/smart_date --with-all-dependencies
+Loading composer repositories with package information
+Updating dependencies
+Lock file operations: 0 installs, 3 updates, 0 removals
+  - Upgrading doctrine/collections (1.8.0 => 2.2.2)
+  - Upgrading drupal/smart_date (3.7.2 => 4.1.3)
+  - Upgrading simshaun/recurr (v4.0.5 => v5.0.2)
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Package operations: 0 installs, 3 updates, 0 removals
+  - Downloading doctrine/collections (2.2.2)
+  - Downloading simshaun/recurr (v5.0.2)
+  - Downloading drupal/smart_date (4.1.3)
+  - Upgrading doctrine/collections (1.8.0 => 2.2.2): Extracting archive
+  - Upgrading simshaun/recurr (v4.0.5 => v5.0.2): Extracting archive
+  - Upgrading drupal/smart_date (3.7.2 => 4.1.3): Extracting archive
+Generating autoload files
+51 packages you are using are looking for funding.
+Use the `composer fund` command to find out more!
+No security vulnerability advisories found
+user@laptop ligc-staging % ddev drush updb
+\ ------------ --------------- ------------- -------------------------------------- 
+  Module       Update ID       Type          Description                           
+ ------------ --------------- ------------- -------------------------------------- 
+  smart_date   increase_colu   post-update   Increase the storage size to resolve  
+               mn_revisions                  the 2038 problem on revisions.        
+  smart_date   increase_colu   post-update   Increase the storage size to resolve  
+               mn_storage                    the 2038 problem.                     
+  smart_date   refresh_value   post-update   Increase the storage size to resolve  
+               _schema                       the 2038 problem on revisions.        
+  smart_date   resize_durati   post-update   Increase the storage size for the     
+               on                            duration column.                      
+  smart_date   resize_durati   post-update   Increase the schema size for          
+               on_schema                     durations.                            
+ ------------ --------------- ------------- -------------------------------------- 
+
+
+ Do you wish to run the specified pending updates? (yes/no) [yes]:
+ > yes
+
+>  [notice] Update started: smart_date_post_update_increase_column_revisions
+>  [notice] Successfully updated entity revisions 'node' field 'field_when' to remove year 2038 limitation.
+>  [notice] Update completed: smart_date_post_update_increase_column_revisions
+>  [notice] Update started: smart_date_post_update_increase_column_storage
+>  [notice] Successfully updated entity 'node' field 'field_when' to remove year 2038 limitation.
+>  [notice] Update completed: smart_date_post_update_increase_column_storage
+>  [notice] Update started: smart_date_post_update_refresh_value_schema
+>  [notice] Successfully updated stored schema for 'node' field 'field_when'.
+>  [notice] Update completed: smart_date_post_update_refresh_value_schema
+>  [notice] Update started: smart_date_post_update_resize_duration
+>  [notice] Successfully updated 'node' field 'field_when' to increase duration storage.
+>  [notice] Update completed: smart_date_post_update_resize_duration
+>  [notice] Update started: smart_date_post_update_resize_duration_schema
+>  [notice] Successfully updated stored schema for 'node' field 'field_when'.
+>  [notice] Update completed: smart_date_post_update_resize_duration_schema
+ [success] Finished performing updates.
+user@laptop ligc-staging % 
