@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Musical Team'
 vid: musical_team
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: ligc_title_initials_full_name
 label: 'LIGC title - initials and full name'
-revision: 0
+revision: false
 description: ''

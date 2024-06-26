@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: social_and_contact_block
 label: 'Social and contact block'
-revision: 0
+revision: false
 description: ''

@@ -6,5 +6,6 @@ _core:
   default_config_hash: DarVi0MP2IajoHGrSLIlh_9NbpfJr_pWPtym2Ya6sRg
 name: Color
 vid: modifiers_color
-description: ''
+description: null
 weight: 0
+new_revision: false
