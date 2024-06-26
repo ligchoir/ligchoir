@@ -1,0 +1,32 @@
+uuid: 2d049b6b-7370-4a14-b09e-b516a52532cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.image_bg_modifier.field_mod_image
+    - field.field.paragraph.image_bg_modifier.field_mod_image_darken
+    - field.field.paragraph.image_bg_modifier.field_mod_image_position
+    - field.field.paragraph.image_bg_modifier.field_mod_image_style
+    - field.field.paragraph.image_bg_modifier.field_mod_media_query
+    - paragraphs.paragraphs_type.image_bg_modifier
+id: paragraph.image_bg_modifier.default
+targetEntityType: paragraph
+bundle: image_bg_modifier
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_mod_image: true
+  field_mod_image_darken: true
+  field_mod_image_position: true
+  field_mod_image_style: true
+  field_mod_media_query: true
+  status: true
