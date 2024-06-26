@@ -809,6 +809,7 @@ if (file_exists($app_root . '/' . $site_path . '/settings.ddev.php') && getenv('
 
 // do this last, so we stick to our config dir and dont allow prior env, like ddev to override them
 
+
 // This specifies the default configuration sync directory.
 // $config_directories (pre-Drupal 8.8) and
 // $settings['config_sync_directory'] are supported
@@ -816,9 +817,15 @@ if (file_exists($app_root . '/' . $site_path . '/settings.ddev.php') && getenv('
 if (defined('CONFIG_SYNC_DIRECTORY') && empty($config_directories[CONFIG_SYNC_DIRECTORY])) {
   $config_directories[CONFIG_SYNC_DIRECTORY] = '../config/sync';
 }
+
+/*
 elseif (empty($settings['config_sync_directory'])) {
   $settings['config_sync_directory'] = '../config/sync'; 
 }
 else {
   $settings['config_sync_directory'] = '../config/sync'; 
 }
+*/
+
+$settings['config_sync_directory'] = '../config/sync'; 
+

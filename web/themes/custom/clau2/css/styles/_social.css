@@ -21,7 +21,7 @@
   }
   
   .ligc-tw {
-    background: #40abf5;
+    background: black;
   }
   
   .ligc-fb {
@@ -30,6 +30,10 @@
 
   .ligc-yt {
     background: #ff0000;
+  }
+
+  .ligc-sp {
+    background: #1db954;
   }
 
   #block-socialandcontactblockforfooter {
