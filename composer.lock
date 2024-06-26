@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aec014cf3e5f3eadee3cf1cc61c23d95",
+    "content-hash": "c4982ff7428ef3b39b41b1e8be4505b8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3755,6 +3755,47 @@
                 "source": "https://git.drupalcode.org/project/smart_date",
                 "issues": "https://www.drupal.org/project/issues/smart_date",
                 "documentation": "https://www.drupal.org/docs/contributed-modules/smart-date"
+            }
+        },
+        {
+            "name": "drupal/smart_date_time_tbc",
+            "version": "dev-1.0.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/smart_date_time_tbc.git",
+                "reference": "b7a52578159cbbe55b2ef05890d6d28e5a9a7175"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.x": "1.0.x-dev"
+                },
+                "drupal": {
+                    "version": "1.0.x-dev",
+                    "datestamp": "1719437177",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "therobyouknow",
+                    "homepage": "https://www.drupal.org/user/197207"
+                }
+            ],
+            "description": "Smart Date Time TBC",
+            "homepage": "https://www.drupal.org/project/smart_date_time_tbc",
+            "support": {
+                "source": "https://git.drupalcode.org/project/smart_date_time_tbc"
             }
         },
         {
@@ -9443,10 +9484,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "stability-flags": {
         "drupal/inline_entity_form": 5,
-        "drupal/viewsreference": 10
+        "drupal/smart_date_time_tbc": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

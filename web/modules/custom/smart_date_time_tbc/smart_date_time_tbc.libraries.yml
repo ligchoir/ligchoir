@@ -1,4 +1,0 @@
-smart_date_time_tbc:
-  version: VERSION
-  js:
-    js/smart_date_time_tbc.js: {}
