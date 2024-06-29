@@ -82,5 +82,26 @@
 }
 */
 
+.layout-content .page-title span {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 3em;
+    line-height: 1.3em;
+    color: white;
+    font-family: 'Vegur';
+    font-style: normal;
+
+}
 
 
+@media screen and (max-width: 767px ) {
+  .layout-content .page-title span {
+    padding-left: 45px;
+  }
+}
+
+@media screen and (min-width: 768px ) {
+  .layout-content .page-title span {
+    padding-left: 3em;
+  }
+}

@@ -1,0 +1,18 @@
+uuid: cf1285fb-887b-43e8-b59c-085fd0669daf
+langcode: en
+status: true
+dependencies:
+  theme:
+    - clau2
+id: clau2_pagetitle
+theme: clau2
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

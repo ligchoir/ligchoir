@@ -12,7 +12,7 @@ dependencies:
 id: calltoactioneventindividualbookus
 theme: clau2
 region: content
-weight: 0
+weight: -3
 provider: null
 plugin: 'block_content:a7d6ced2-1fb6-4dd7-8454-c5742bef07c1'
 settings:

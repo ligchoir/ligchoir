@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4982ff7428ef3b39b41b1e8be4505b8",
+    "content-hash": "7a69e91c2f7f4163436a3a5d21db4236",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3275,28 +3275,28 @@
         },
         {
             "name": "drupal/paragraph_blocks",
-            "version": "3.1.8",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/paragraph_blocks.git",
-                "reference": "3.1.8"
+                "reference": "4.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/paragraph_blocks-3.1.8.zip",
-                "reference": "3.1.8",
-                "shasum": "cf4ce4f9a6a728a512922663ff4db7a3547a21cd"
+                "url": "https://ftp.drupal.org/files/projects/paragraph_blocks-4.0.0.zip",
+                "reference": "4.0.0",
+                "shasum": "c7a3820f00749387248a8b915030b052f54809a8"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10",
-                "drupal/ctools": "^3.0 || ^4.0",
-                "drupal/paragraphs": "^1.8"
+                "drupal/core": "^10",
+                "drupal/ctools": "^4.0",
+                "drupal/paragraphs": "^1.15"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.1.8",
-                    "datestamp": "1686941922",
+                    "version": "4.0.0",
+                    "datestamp": "1707218073",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
