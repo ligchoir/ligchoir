@@ -163,19 +163,66 @@ form {
     overflow-wrap: break-word;
 }
 
-.messages--status {
-    color: #325e1c;
+
+.clau2-webform-submit-symbol {
+
+}
+
+.clau2-webform-submit-wrapper{
+	width: 80%;
+	margin: 0 auto;
+    padding-left: 1.5em;
+    padding-top: 0.2em;
+    padding-right: 1em;
+	border: 1px solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 2px;
+	word-wrap: break-word;
+	background: no-repeat 10px 17px;
+	overflow-wrap: break-word;
+	color: #325e1c;
     border-color: #c9e1bd #c9e1bd #c9e1bd transparent;
     background-color: #f3faef;
     background-image: url(/core/misc/icons/73b355/check.svg);
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
     box-shadow: -8px 0 0 #77b259;
 	font-size: 1.5em;
 }
 
-.messages__wrapper {
+.webform-confirmation__back a {
+	color: #325e1c;
+	font-weight: bold;
+}
+
+
+/*
+.clau2-webform-submit-symbol {
+    color: #325e1c;
+    border-color: #c9e1bd #c9e1bd #c9e1bd transparent;
+    background-color: #f3faef;
+    background-image: url(/core/misc/icons/73b355/check.svg);
+	background-repeat: no-repeat;
+    box-shadow: -8px 0 0 #77b259;
+	font-size: 1.5em;
+}
+
+.clau2-webform-submit-wrapper{
 	width: 80%;
 	margin: 0 auto;
 	padding-bottom: 1em;
+	border: 1px solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 2px;
+	padding: 15px 20px 15px 35px;
+	word-wrap: break-word;
+	background: no-repeat 10px 17px;
+	overflow-wrap: break-word;
+}
+	*/
+
+.clau2-webform-submit-text {
+
 }
 
 .ligc-webform button, 

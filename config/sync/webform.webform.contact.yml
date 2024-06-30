@@ -146,10 +146,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url_message
+  confirmation_type: inline
   confirmation_url: '<front>'
   confirmation_title: ''
-  confirmation_message: 'Thank you for contacting us! We will get back to you soon!'
+  confirmation_message: '<p>Thank you for contacting us! We will get back to you soon!</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
