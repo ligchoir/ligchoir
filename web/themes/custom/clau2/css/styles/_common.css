@@ -12,6 +12,7 @@
 .ligc-heading {
   font-weight: 700;
   color: white;
+  padding-left:1.4em;
 }
 
 /* block regions dont render if empty */

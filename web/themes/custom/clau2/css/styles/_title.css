@@ -44,11 +44,22 @@
 }
 
 .ligc-landing-page-title {
-  padding-left: 1em;
   font-size: 2.5em;
   text-shadow: 0px 0px 30px rgb(0 0 0 / 90%), 0px 0px 20px rgb(0 0 0 / 50%);
 }
 
+@media screen and (min-width: 769px) {
+  .ligc-landing-page-title {
+    padding-left: 2em;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .ligc-landing-page-title {
+    padding-left: 1em;
+  }
+}
 
 /*
 @media screen and (max-width: 991) {
@@ -85,7 +96,7 @@
 .layout-content .page-title span {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 3em;
+    /*font-size: 3em;*/
     line-height: 1.3em;
     color: white;
     font-family: 'Vegur';
@@ -94,6 +105,7 @@
 }
 
 
+/*
 @media screen and (max-width: 767px ) {
   .layout-content .page-title span {
     padding-left: 45px;
@@ -105,3 +117,4 @@
     padding-left: 3em;
   }
 }
+  */

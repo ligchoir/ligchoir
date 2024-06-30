@@ -2,8 +2,13 @@ uuid: cf1285fb-887b-43e8-b59c-085fd0669daf
 langcode: en
 status: true
 dependencies:
+  module:
+    - block_classes
   theme:
     - clau2
+third_party_settings:
+  block_classes:
+    block_class: 'ligc-text ligc-heading ligc-justify ligc-landing-page-title'
 id: clau2_pagetitle
 theme: clau2
 region: content
