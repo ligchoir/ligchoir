@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - block_classes
+    - node
   theme:
     - clau2
 third_party_settings:
@@ -20,4 +21,12 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      event: event
+      landing_page: landing_page
