@@ -136,7 +136,7 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: inline
+  confirmation_type: message
   confirmation_url: ''
   confirmation_title: 'Thank you for your booking enquiry'
   confirmation_message: '<p>Thank you for your booking enquiry.&nbsp; We will be in touch soon!</p>'

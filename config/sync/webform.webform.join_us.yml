@@ -135,7 +135,7 @@ settings:
   confirmation_type: message
   confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: 'Thank you so much for enquiring about joining us! We will be in touch soon!'
+  confirmation_message: '<p>Thank you so much for enquiring about joining us! We will be in touch soon!</p>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
