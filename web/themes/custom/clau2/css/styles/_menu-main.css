@@ -14,8 +14,7 @@
 @media screen and (max-width: 767px ) {
   ul.menu {
     position: absolute;
-    /* was: width: 300px; */
-    min-width: 100px;
+    width: 300px;
   }
 }
 
