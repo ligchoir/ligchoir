@@ -12,7 +12,7 @@ dependencies:
 id: socialandcontactblockforfooter
 theme: clau2
 region: footer
-weight: -5
+weight: 0
 provider: null
 plugin: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
 settings:
