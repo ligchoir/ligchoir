@@ -139,7 +139,7 @@ settings:
   confirmation_type: message
   confirmation_url: ''
   confirmation_title: 'Thank you for your booking enquiry'
-  confirmation_message: '<p>Thank you for your booking enquiry.&nbsp; We will be in touch soon!</p>'
+  confirmation_message: 'Thank you for your booking enquiry.&nbsp; We will be in touch soon!'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''

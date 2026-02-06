@@ -91,7 +91,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_when:
-    type: smartdate_default
+    type: smartdate_inline
     weight: 13
     region: content
     settings:
@@ -105,6 +105,10 @@ content:
         custom
       show_extra: false
       hide_date: true
+      allday: true
+      remove_seconds: false
+      duration_overlay: true
+      separator: to
     third_party_settings: {  }
   path:
     type: path
