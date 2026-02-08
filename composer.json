@@ -17,6 +17,7 @@
     "require": {
         "composer/installers": "^2.0",
         "drupal/address": "^1.9",
+        "drupal/antibot": "^2.0",
         "drupal/bartik": "^1.0",
         "drupal/block_classes": "^1.0",
         "drupal/bootstrap": "^3.21",
