@@ -52,6 +52,7 @@
         "drupal/smart_date_time_tbc": "1.0.x-dev",
         "drupal/smtp": "^1.4",
         "drupal/stable": "^2.0",
+        "drupal/structure_sync": "^2.0",
         "drupal/token": "^1.15",
         "drupal/twig_tweak": "^3.1",
         "drupal/upgrade_status": "^4.3",
