@@ -1,0 +1,20 @@
+_core:
+  default_config_hash: 2TnP0TViNExHGuA7Cdr4L3uxhYGNzKyL0XnoAhtSHMQ
+form_ids:
+  - 'comment_*'
+  - user_login_form
+  - user_pass
+  - user_register_form
+  - 'contact_message_*'
+  - book_us
+  - webform_submission_book_us_paragraph_52_add_form
+  - contact
+  - webform_submission_contact_paragraph_114_add_form
+  - join_us
+  - webform_submission_join_us_paragraph_55_add_form
+  - liv_book
+  - webform_submission_liv_book_paragraph_159_add_form
+  - ''
+excluded_form_ids:
+  - ''
+show_form_ids: false

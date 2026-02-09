@@ -8,5 +8,5 @@ description: ''
 aspect_ratio: '6:4'
 soft_limit_width: 2000
 soft_limit_height: 1333
-hard_limit_width: 2000
-hard_limit_height: 1333
+hard_limit_width: 800
+hard_limit_height: 600
