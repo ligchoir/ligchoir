@@ -16,20 +16,23 @@
 
 
   .ligc-term-img img {
-      width: 12em;
-      height: 12em;
-
-      margin-left: auto;
-      margin-right: auto;
-
-      margin-top: 2em;
-      margin-bottom: 2em;
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0% 10%;
+      border-radius: 50%;
   }
 
 
   .ligc-term-img {
     width: 100%;
+    padding-top: 100%; /* Makes the height equal to the width */
+    position: relative; /* Needed for absolute positioning of the image */
+    margin-top: 2em; /* Re-add vertical spacing */
+    margin-bottom: 2em; /* Re-add vertical spacing */
   }
 
   .ligc-term-desc {
@@ -67,20 +70,23 @@
 
   
   .ligc-term-img img {
-      width: 12em;
-      height: 12em;
-  
-      margin-left: auto;
-      margin-right: auto;
-  
-      margin-top: 2em;
-      margin-bottom: 2em;
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0% 10%;
+      border-radius: 50%;
   }
   
 
   .ligc-term-img {
       width: 35%;
+      padding-top: 35%; /* Makes the height equal to the width (35% of parent's width) */
+      position: relative; /* Needed for absolute positioning of the image */
+      margin-top: 2em; /* Re-add vertical spacing */
+      margin-bottom: 2em; /* Re-add vertical spacing */
   }
 
   .ligc-term-desc {
