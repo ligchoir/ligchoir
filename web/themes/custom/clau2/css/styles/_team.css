@@ -26,11 +26,11 @@
 
 
   .ligc-term-img {
-    width: 80%; /* Adjusted for better mobile size */
-    padding-top: 80%; /* Makes the height equal to the width */
-    position: relative; /* Needed for absolute positioning of the image */
-    margin-top: 2em; /* Re-add vertical spacing */
-    margin-bottom: 2em; /* Re-add vertical spacing */
+    width: 68%; /* 15% smaller than previous 80% */
+    aspect-ratio: 1 / 1; /* Guarantees a perfect circle */
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 
 
@@ -74,13 +74,11 @@
   
 
   .ligc-term-img {
-      width: 35%; /* Keep base width */
-      padding-top: 35%; /* Makes the height equal to the width (35% of parent's width) */
-      max-width: 150px; /* Cap the max width of the image container */
-      max-height: 150px; /* Cap the max height of the image container */
-      position: relative; /* Needed for absolute positioning of the image */
-      margin-top: 2em; /* Re-add vertical spacing */
-      margin-bottom: 2em; /* Re-add vertical spacing */
+      width: 173px; /* 15% larger than previous 150px cap */
+      aspect-ratio: 1 / 1; /* Guarantees a perfect circle at any screen width */
+      position: relative;
+      margin-top: 2em;
+      margin-bottom: 2em;
   }
 
 
