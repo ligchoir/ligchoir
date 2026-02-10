@@ -820,12 +820,16 @@ if (defined('CONFIG_SYNC_DIRECTORY') && empty($config_directories[CONFIG_SYNC_DI
 
 /*
 elseif (empty($settings['config_sync_directory'])) {
-  $settings['config_sync_directory'] = '../config/sync'; 
+  $settings['config_sync_directory'] = '../config/sync';
 }
 else {
-  $settings['config_sync_directory'] = '../config/sync'; 
+  $settings['config_sync_directory'] = '../config/sync';
 }
 */
 
-$settings['config_sync_directory'] = '../config/sync'; 
+$settings['config_sync_directory'] = '../config/sync';
+
+// Content sync directory for content_sync module.
+global $content_directories;
+$content_directories['sync'] = '../content/sync';
 
