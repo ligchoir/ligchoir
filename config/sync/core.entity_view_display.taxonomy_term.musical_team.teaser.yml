@@ -35,5 +35,12 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-hidden:
-  field_role: true
+  field_role:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }
