@@ -6,13 +6,12 @@
       margin-right: auto; 
       padding-top: 2em;
       padding-bottom: 2em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
   }
 
-  /* https://stackoverflow.com/a/37755292/227926 */
-  .view-display-id-musical_team_block .views-row .odd {
-    display:flex;
-    flex-direction: column-reverse;
-  }
+
 
 
   .ligc-term-img img {
@@ -35,17 +34,9 @@
     margin-bottom: 2em; /* Re-add vertical spacing */
   }
 
-  .ligc-term-desc {
-    width: 100%;
-  }
 
-  .ligc-term-left {
-    float: left; 
-  }
 
-  .ligc-term-right {
-    float: left;
-  }
+
 
   /*
   .ligc-term-desc p {
@@ -65,6 +56,9 @@
       margin-right: auto; 
       padding-top: 2em;
       padding-bottom: 2em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
   }
   
 
@@ -89,17 +83,9 @@
       margin-bottom: 2em; /* Re-add vertical spacing */
   }
 
-  .ligc-term-desc {
-      width: 65%;
-  }
 
-  .ligc-term-left {
-    float: left; 
-  }
 
-  .ligc-term-right {
-    float: right;
-  }
+
   
   .ligc-term-desc p {
     padding-left: 1em;
@@ -112,3 +98,14 @@
   color: #d63836;
   text-align: center;
 }
+.ligc-musical-team-grid-item {
+  text-align: center; /* Center the image and title */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.ligc-term-content {
+  margin-top: 1em; /* Add some space between image and content */
+}
+
