@@ -15,6 +15,7 @@ module:
   comment: 0
   config: 0
   contact: 0
+  content_sync: 0
   contextual: 0
   crop: 0
   csv_importer: 0
