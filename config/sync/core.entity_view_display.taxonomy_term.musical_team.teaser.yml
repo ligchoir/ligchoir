@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.musical_team.field_image
+    - field.field.taxonomy_term.musical_team.field_role
     - taxonomy.vocabulary.musical_team
   module:
     - layout_builder
@@ -33,5 +34,13 @@ content:
       link: true
     third_party_settings: {  }
     weight: 1
+    region: content
+  field_role:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden: {  }

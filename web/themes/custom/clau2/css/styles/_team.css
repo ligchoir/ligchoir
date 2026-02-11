@@ -1,48 +1,41 @@
 @media screen and (max-width: 1023px ){
-  .view-display-id-musical_team_block .views-row {
-      clear: both;
-      width:80%;
-      margin-left: auto; 
-      margin-right: auto; 
+  .view-display-id-musical_team_block .view-content {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-template-columns: 1fr; /* 1 item per row for mobile */
+      gap: 20px;
       padding-top: 2em;
       padding-bottom: 2em;
   }
 
-  /* https://stackoverflow.com/a/37755292/227926 */
-  .view-display-id-musical_team_block .views-row .odd {
-    display:flex;
-    flex-direction: column-reverse;
-  }
+
 
 
   .ligc-term-img img {
-      width: 12em;
-      height: 12em;
-
-      margin-left: auto;
-      margin-right: auto;
-
-      margin-top: 2em;
-      margin-bottom: 2em;
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /*object-position: 0% 10%;*/
+      border-radius: 50%;
   }
 
 
   .ligc-term-img {
-    width: 100%;
+    width: 68%; /* 15% smaller than previous 80% */
+    aspect-ratio: 1 / 1; /* Guarantees a perfect circle */
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 2em;
   }
 
-  .ligc-term-desc {
-    width: 100%;
-  }
 
-  .ligc-term-left {
-    float: left; 
-  }
 
-  .ligc-term-right {
-    float: left;
-  }
+
 
   /*
   .ligc-term-desc p {
@@ -55,11 +48,13 @@
 
 
 @media screen and (min-width: 1024px ) {
-  .view-display-id-musical_team_block .views-row {
-      clear: both;
-      width:80%;
-      margin-left: auto; 
-      margin-right: auto; 
+  .view-display-id-musical_team_block .view-content {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row for desktop */
+      gap: 20px;
       padding-top: 2em;
       padding-bottom: 2em;
   }
@@ -67,33 +62,28 @@
 
   
   .ligc-term-img img {
-      width: 12em;
-      height: 12em;
-  
-      margin-left: auto;
-      margin-right: auto;
-  
-      margin-top: 2em;
-      margin-bottom: 2em;
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /*object-position: 0% 10%;*/
+      border-radius: 50%;
   }
   
 
   .ligc-term-img {
-      width: 35%;
+      width: 173px; /* 15% larger than previous 150px cap */
+      aspect-ratio: 1 / 1; /* Guarantees a perfect circle at any screen width */
+      position: relative;
+      margin-top: 2em;
+      margin-bottom: 2em;
   }
 
-  .ligc-term-desc {
-      width: 65%;
-  }
 
-  .ligc-term-left {
-    float: left; 
-  }
 
-  .ligc-term-right {
-    float: right;
-  }
+
   
   .ligc-term-desc p {
     padding-left: 1em;
@@ -106,3 +96,14 @@
   color: #d63836;
   text-align: center;
 }
+.ligc-musical-team-grid-item {
+  text-align: center; /* Center the image and title */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.ligc-term-content {
+  margin-top: 1em; /* Add some space between image and content */
+}
+
