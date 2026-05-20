@@ -25,6 +25,8 @@
 /providers/platform.yaml
 /providers/upsun.yaml
 /sequelpro.spf
+/share-providers/cloudflared.sh
+/share-providers/ngrok.sh
 /traefik/config/ligc-dev.yaml
 /traefik/certs/ligc-dev.crt
 /traefik/certs/ligc-dev.key
