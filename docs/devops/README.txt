@@ -92,3 +92,21 @@ scripts/content/events/import_events.sh scripts/content/events/data/<file>-updat
 # If the purge reports "field storage does not exist" for field_mod_media_query
 # (both removed types shared that field), remove the dangling entry and re-run:
 ./drush php:eval '$r=\Drupal::service("entity_field.deleted_fields_repository"); foreach ($r->getFieldDefinitions() as $f) { if ($f->getName()==="field_mod_media_query") { $r->removeFieldDefinition($f); } } field_purge_batch(500); print "purged\n";'
+
+# ---------------------------------------------------------------------------
+# LIVE catch-up after the September 2026 updates (code was never installed).
+# Run from the live release code dir. Copy the whole block.
+# ---------------------------------------------------------------------------
+backup_db.sh internationalgospelchoir.uk 1
+git checkout -- drush
+git pull origin main
+./composer install --no-dev --optimize-autoloader
+./drush updb -y
+./drush cim -y
+./drush cr
+./drush php:script scripts/devops/resave_config.php
+./drush cim -y
+./drush cr
+./drush cst
+./drush status --fields=drupal-version,drush-version
+# Expected: cst "No differences", Drupal 10.6.16, Drush 13.8
