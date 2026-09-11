@@ -829,7 +829,3 @@ else {
 
 $settings['config_sync_directory'] = '../config/sync';
 
-// Content sync directory for content_sync module.
-global $content_directories;
-$content_directories['sync'] = '../content/sync';
-
