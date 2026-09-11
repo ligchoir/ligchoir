@@ -13,7 +13,8 @@
  *   --file=PATH   YAML file to import. Relative paths resolve from the repo root.
  *   --dry-run     Report what would happen without writing anything.
  *   --update      When an event already exists (same title + same day), update
- *                 its when/venue/TBC/body/status from the file instead of skipping.
+ *                 it from the file instead of skipping. Date/time/TBC are always
+ *                 rewritten; venue, body and published only if the key is present.
  *
  * The script is idempotent: an event is considered "already present" when an
  * event node exists with the same title (case/whitespace-insensitive) whose
@@ -363,8 +364,13 @@ foreach ($data['events'] as $i => $row) {
       $node = $existing;
       $node->set('field_when', [$when]);
       $node->set('field_time_tbc', $tbc ? 1 : 0);
-      $node->set('field_venue', $venueTerm ? ['target_id' => $venueTerm->id()] : NULL);
-      $node->set('status', $status);
+      // Only touch venue/status when the row says something about them.
+      if (array_key_exists('venue', $row)) {
+        $node->set('field_venue', $venueTerm ? ['target_id' => $venueTerm->id()] : NULL);
+      }
+      if (array_key_exists('published', $row)) {
+        $node->set('status', $status);
+      }
       if (isset($row['body'])) {
         $node->set('body', ['value' => (string) $row['body'], 'format' => $defaults['body_format']]);
       }
@@ -423,7 +429,15 @@ foreach ($data['events'] as $i => $row) {
       $node->save();
     }
     $nid = $dryRun ? '?' : $node->id();
-    $venueLabel = $venueTerm ? $venueTerm->getName() : '(no venue)';
+    if ($venueTerm) {
+      $venueLabel = $venueTerm->getName();
+    }
+    elseif ($existing && !array_key_exists('venue', $row)) {
+      $venueLabel = '(venue unchanged)';
+    }
+    else {
+      $venueLabel = '(no venue)';
+    }
     echo "{$prefix}#{$n} {$verb} {$date} {$timeLabel}  \"{$title}\" @ {$venueLabel} -> node/{$nid}" . ($status ? '' : ' [unpublished]') . "\n";
   }
   catch (\Throwable $e) {

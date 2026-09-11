@@ -39,8 +39,10 @@ Files:
 
 - **Idempotent.** An event is treated as already present when an Event node
   exists with the same title (case and whitespace insensitive) starting on the
-  same calendar day. Re-running a file is safe. Pass `--update` to overwrite
-  the when/venue/TBC/body/status of matched events from the file.
+  same calendar day. Re-running a file is safe. Pass `--update` to rewrite
+  matched events from the file instead: date/time/TBC are always replaced,
+  venue, body and published only when that key is present in the row. Keep
+  updates in their own data file so re-running the original file stays a no-op.
 - **Venues.** Matched by name against the Venues vocabulary, ignoring case,
   whitespace, a trailing ", London" and a trailing postcode. Unmatched venues
   are created with the short name from `venue`; `venue_address` (if given)
