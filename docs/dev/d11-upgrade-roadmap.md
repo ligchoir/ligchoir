@@ -151,8 +151,10 @@ What it took, for the record:
   single node-links block in it (an old experiment; the site is built with
   Paragraphs and no node has a layout override). Disable Layout Builder on
   that display, then uninstall the module.
-- Server prerequisite still to confirm before deploying: **PHP 8.3+** on
-  server03 (`php -v`). Composer's platform check refuses the install otherwise.
+- Server: PHP 8.3.6 confirmed (CLI and web). **Reload php-fpm after composer
+  install** (`sudo systemctl reload php8.3-fpm`): on staging OPcache kept
+  running Drupal 10 code and the main menu lost its active-link class until
+  the reload. Now in deploy.sh and the README.
 
 Original plan:
 

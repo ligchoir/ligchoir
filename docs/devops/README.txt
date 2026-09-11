@@ -35,6 +35,7 @@ update_symlink.sh
 # stayed at 10.6.9 on live for a week after the 10.6.16 security update).
 
 ./composer install --no-dev --optimize-autoloader
+sudo systemctl reload php8.3-fpm            # ALWAYS after a code change: OPcache keeps old code otherwise
 ./drush updb -y
 ./drush cim -y
 ./drush cr
@@ -151,6 +152,7 @@ ddev drush cst
 backup_db.sh internationalgospelchoir.uk <db_number>
 git pull origin <branch>
 ./composer install --no-dev --optimize-autoloader
+sudo systemctl reload php8.3-fpm
 ./drush updb -y
 ./drush cim -y
 ./drush cr
@@ -158,3 +160,10 @@ git pull origin <branch>
 ./drush status --fields=drupal-version,php-version
 # Expected: no differences, Drupal 11.4.x. Then check /, /events, an event,
 # admin login, admin/content, admin/reports/status (only SMTP-type warnings).
+
+# ---------------------------------------------------------------------------
+# PHP-FPM RELOAD after every code deploy. Seen Sep 2026 on the Drupal 11
+# release: the web PHP kept running cached Drupal 10 code after composer
+# install (OPcache), so menu links lost their active class while drush (a
+# fresh process) was fine. Reload, then drush cr:
+sudo systemctl reload php8.3-fpm
