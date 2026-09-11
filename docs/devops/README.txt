@@ -27,6 +27,19 @@ site_status.sh
 sync_files.sh
 update_symlink.sh
 
+
+# IMPORTANT - after ANY "git pull" into a release directory, install the code
+# the lock file describes, before drush. deploy.sh does this for a new release;
+# a pull into an existing release does not. Without it Drupal keeps running the
+# old core/modules while importing new config (this happened Sep 2026: core
+# stayed at 10.6.9 on live for a week after the 10.6.16 security update).
+
+./composer install --no-dev --optimize-autoloader
+./drush updb -y
+./drush cim -y
+./drush cr
+./drush status --fields=drupal-version     # confirm the version you expect
+
 # Bulk event import on live (see scripts/content/events/README.md)
 #
 # Option A - from inside the release code dir, e.g.
