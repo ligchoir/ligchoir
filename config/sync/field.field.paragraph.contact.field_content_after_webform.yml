@@ -54,27 +54,15 @@ settings:
       call_to_action:
         weight: 19
         enabled: true
-      colors_modifier:
-        weight: 20
-        enabled: false
       contact:
         weight: 21
         enabled: false
       content_2_column:
         weight: 22
         enabled: false
-      custom_colors_modifier:
-        weight: 23
-        enabled: false
       image:
         weight: 24
         enabled: true
-      image_bg_modifier:
-        weight: 25
-        enabled: false
-      image_fx_modifier:
-        weight: 26
-        enabled: false
       quote:
         weight: 27
         enabled: true

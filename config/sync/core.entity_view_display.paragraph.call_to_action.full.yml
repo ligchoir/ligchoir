@@ -5,11 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.full
     - field.field.paragraph.call_to_action.field_link
-    - field.field.paragraph.call_to_action.field_modifiers
     - field.field.paragraph.call_to_action.field_style
     - paragraphs.paragraphs_type.call_to_action
   module:
-    - entity_reference_revisions
     - field_formatter_class
     - layout_builder
     - link
@@ -35,15 +33,6 @@ content:
       field_formatter_class:
         class: ''
     weight: 0
-    region: content
-  field_modifiers:
-    type: entity_reference_revisions_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   field_style: true

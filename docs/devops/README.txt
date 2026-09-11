@@ -65,3 +65,17 @@ scripts/content/events/import_events.sh scripts/content/events/data/<file>-updat
 
 # If cim still complains "Entities exist of type Taxonomy term and Vocabulary X",
 # run: ./drush entity:delete taxonomy_term --bundle=<vocabulary machine name> -y
+
+# Release removing the modifier paragraph types (image_bg_modifier, image_fx_modifier)
+# and the field_modifiers field. Delete their paragraphs before cim, then purge
+# the deleted field data (normally cron does this; running it now surfaces errors).
+
+./drush entity:delete paragraph --bundle=image_bg_modifier -y
+./drush entity:delete paragraph --bundle=image_fx_modifier -y
+./drush cim -y
+./drush cr
+./drush php:eval 'field_purge_batch(500); print "purged\n";'
+
+# If the purge reports "field storage does not exist" for field_mod_media_query
+# (both removed types shared that field), remove the dangling entry and re-run:
+./drush php:eval '$r=\Drupal::service("entity_field.deleted_fields_repository"); foreach ($r->getFieldDefinitions() as $f) { if ($f->getName()==="field_mod_media_query") { $r->removeFieldDefinition($f); } } field_purge_batch(500); print "purged\n";'
