@@ -2,7 +2,7 @@ name: Clau2
 type: theme
 description: Self-contained theme
 base theme: false
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^10 || ^11
 version: 1.0
 libraries:
   - clau2/design
