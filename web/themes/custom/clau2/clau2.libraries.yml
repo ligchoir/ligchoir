@@ -2,6 +2,7 @@ design:
   version: VERSION
   css:
     base:
+      css/common/fonts.css: {}
       css/common/normalize.css: {}
       css/styles/_common.css: {}
       css/styles/_cta.css: {}

@@ -65,8 +65,8 @@ urgent because of the core advisories.
 
 ### Phase B: housekeeping on Drupal 10 (each item is its own small branch)
 
-**B1. Vegur font hosted by the theme, drop fontyourface**
-Vegur is already local, served by fontyourface's `local_fonts` submodule from
+**B1. Vegur font hosted by the theme, drop fontyourface** (done 2026-09-11 on `chore/vegur-local-font`: fonts in `clau2/fonts/`, rules in `css/common/fonts.css`; note the Font content entities had to be deleted with `drush entity:delete font` before the module would uninstall)
+Vegur was already local, served by fontyourface's `local_fonts` submodule from
 `sites/default/files/fontyourface/local_fonts/vegur_{light,regular,bold}/font.woff`
 (about 20 KB each). Steps:
 1. Copy the three `.woff` files into `web/themes/custom/clau2/fonts/` (they are
