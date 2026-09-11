@@ -37,7 +37,7 @@
         "drupal/paragraphs": "^1.10",
         "drupal/pathauto": "^1.8",
         "drupal/smart_date": "^4.1",
-        "drupal/smart_date_time_tbc": "1.0.x-dev",
+        "drupal/smart_date_time_tbc": "^1.0.2",
         "drupal/smtp": "^1.4",
         "drupal/stable": "^2.0",
         "drupal/structure_sync": "^2.0",
