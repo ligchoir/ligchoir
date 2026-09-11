@@ -97,8 +97,7 @@ site-specific:
   reference it through `field_colour_background` and `field_colour_text`, and
   `node--event--full.html.twig` reads the colour from the term.
 
-Remove the two paragraph types and `field_modifiers` now. Keep `modifiers_color`
-until the new theme replaces the per-event colour handling.
+Done 2026-09-11 on `chore/remove-modifiers`: the 13 `field_modifiers` rows all pointed at paragraphs that no longer existed and the two modifier paragraphs were orphans, so the field, both paragraph types and their 30-odd fields were deleted. Server steps in docs/devops/README.txt. `modifiers_color` stays until the new theme replaces the per-event colour handling. Eight `field_content`-style field configs still list the removed types under `target_bundles_drag_drop`; harmless widget-ordering leftovers that disappear when those fields are next saved.
 
 **B4. smart_date_time_tbc release for Drupal 11**
 This is Rob's own contrib module (https://www.drupal.org/project/smart_date_time_tbc),

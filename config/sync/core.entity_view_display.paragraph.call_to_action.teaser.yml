@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.paragraph.teaser
     - field.field.paragraph.call_to_action.field_link
-    - field.field.paragraph.call_to_action.field_modifiers
     - field.field.paragraph.call_to_action.field_style
     - paragraphs.paragraphs_type.call_to_action
   module:
@@ -36,5 +35,4 @@ content:
     weight: 0
     region: content
 hidden:
-  field_modifiers: true
   field_style: true
