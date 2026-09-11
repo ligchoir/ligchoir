@@ -12,7 +12,7 @@ that date. Re-check versions before each phase.
 | PHP | 8.3.30 (Drupal 11 needs 8.3+, fine) |
 | Drush | 13.8.0 (Drupal 11 needs 13) |
 | Composer | 2.9.5 (blocks packages with security advisories from resolving, so an insecure core must be updated before anything else will resolve) |
-| Database | MariaDB 10.4 locally. **Drupal 11 needs MariaDB 10.6+ or MySQL 8.0+.** Check the server and bump ddev before Phase C. |
+| Database | Server (live and staging): MariaDB 10.11.13, fine for Drupal 11 (needs 10.6+). Local ddev: MariaDB 10.4, must be bumped to 10.11 before Phase C (change `database.version` in `.ddev/config.yaml`, then re-import the database with `fetch_and_import_env_db.sh`, since ddev cannot upgrade a data directory in place across major versions). |
 | Custom theme | `clau2`, no base theme, attaches `classy/node` in 4 templates. upgrade_status: only `core_version_requirement` needs changing. |
 | Contrib module maintained by Rob | `smart_date_time_tbc` (drupal.org, 1.0.x-dev), 1 form_alter + 1 JS file. Needs a `core_version_requirement` update on drupal.org (Phase B4). |
 | Config | Fully in `config/sync`, matched DB before and after the update. |
@@ -128,8 +128,7 @@ content moves: structure_sync for taxonomies/menus/blocks, single_content_sync
 
 ### Phase C: Drupal 11
 
-Prerequisites: B4 and B5 done, server database MariaDB 10.6+ (or MySQL 8),
-`.ddev/config.yaml` database bumped to match.
+Prerequisites: B4 done (B5 done 2026-09-11; server database confirmed MariaDB 10.11), local ddev database bumped to 10.11 and re-imported.
 
 1. `clau2.info.yml`: `core_version_requirement: ^10 || ^11`.
 2. `composer require -W drupal/core-recommended:^11 drupal/core-composer-scaffold:^11 drupal/core-project-message:^11 drupal/gin:^5 drupal/gin_toolbar:^3 drupal/youtube:^3@beta` and remove or bump upgrade_status.
