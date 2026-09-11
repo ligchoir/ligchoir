@@ -129,3 +129,16 @@ git pull origin main
 ./drush php:eval '\Drupal::keyValue("system.schema")->delete("content_sync"); print "schema entry removed\n";'
 ./drush sqlq "DROP TABLE IF EXISTS cs_db_snapshot, cs_logs"
 ./drush cr
+
+# ---------------------------------------------------------------------------
+# Local ddev: changing the database version (done 10.4 -> 10.11, Sep 2026).
+# ddev cannot upgrade the data volume across major versions, so: dump, delete
+# the volume, change the version, start, re-import. Run from the project root.
+# ---------------------------------------------------------------------------
+ddev export-db --file=databases/ligc-local-pre-bump-$(date +%Y%m%d_%H%M%S).sql.gz
+ddev delete -O -y                      # removes containers + DB volume, keeps files and config
+ddev config --database=mariadb:10.11
+ddev start -y
+ddev import-db --file=databases/<the dump above>
+ddev drush sqlq "SELECT VERSION()"
+ddev drush cst
