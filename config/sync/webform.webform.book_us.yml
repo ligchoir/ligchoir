@@ -28,6 +28,11 @@ elements: |-
     '#type': textarea
     '#title': 'Your message:'
     '#required': true
+  date_and_time_provisional:
+    '#type': datetime
+    '#title': 'Date and time (provisional)'
+    '#required_error': 'Please enter your a time for your booking, this can be provisional.'
+    '#date_date_min': '2026'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -241,7 +246,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'Book us enquiry via LIGC website'
-      body: "A booking enquiry has been made via the LIGC website booking contact form. \r\n\r\nDetails are below:\r\n\r\nName:\r\n[webform_submission:values:your_name]\r\n\r\nEmail:\r\n[webform_submission:values:your_email]\r\n\r\nPhone:\r\n[webform_submission:values:call_back_phone_number]\r\n\r\nMessage:\r\n[webform_submission:values:your_message]\r\n"
+      body: "A booking enquiry has been made via the LIGC website booking contact form. \r\n\r\nDetails are below:\r\n\r\nName:\r\n[webform_submission:values:your_name]\r\n\r\nEmail:\r\n[webform_submission:values:your_email]\r\n\r\nPhone:\r\n[webform_submission:values:call_back_phone_number]\r\n\r\nMessage:\r\n[webform_submission:values:your_message]\r\n\r\nDate/Time for booking (provisional):\r\n[webform_submission:values:date_and_time_provisional]\r\n"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
