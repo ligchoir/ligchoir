@@ -146,8 +146,11 @@ What it took, for the record:
 - Status report leftovers for Drupal 12 (not blockers): Contact, History and
   Layout Builder Expose All Field Blocks are deprecated; `enable_html5_validation`
   will default to FALSE; PHP 8.4 recommended. Contact and History are unused
-  and can be uninstalled any time; the field-blocks module is used by the
-  page full display.
+  and can be uninstalled any time. The field-blocks module is only needed
+  because Layout Builder is enabled on the Basic page full display with a
+  single node-links block in it (an old experiment; the site is built with
+  Paragraphs and no node has a layout override). Disable Layout Builder on
+  that display, then uninstall the module.
 - Server prerequisite still to confirm before deploying: **PHP 8.3+** on
   server03 (`php -v`). Composer's platform check refuses the install otherwise.
 
