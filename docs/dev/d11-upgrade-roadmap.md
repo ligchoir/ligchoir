@@ -14,7 +14,7 @@ that date. Re-check versions before each phase.
 | Composer | 2.9.5 (blocks packages with security advisories from resolving, so an insecure core must be updated before anything else will resolve) |
 | Database | MariaDB 10.4 locally. **Drupal 11 needs MariaDB 10.6+ or MySQL 8.0+.** Check the server and bump ddev before Phase C. |
 | Custom theme | `clau2`, no base theme, attaches `classy/node` in 4 templates. upgrade_status: only `core_version_requirement` needs changing. |
-| Custom module | `smart_date_time_tbc`, pulled from a drupal.org 1.0.x-dev branch, 1 form_alter + 1 JS file. Needs `core_version_requirement` changing, so move it to `web/modules/custom`. |
+| Contrib module maintained by Rob | `smart_date_time_tbc` (drupal.org, 1.0.x-dev), 1 form_alter + 1 JS file. Needs a `core_version_requirement` update on drupal.org (Phase B4). |
 | Config | Fully in `config/sync`, matched DB before and after the update. |
 
 Drupal 10 is in its final minor (10.6). Its security support ends around the
@@ -37,10 +37,10 @@ stable 2, structure_sync, token, viewsreference, webform 6.3.
 
 **Blockers with no Drupal 11 release**
 - content_sync 4.0.0-rc2. No Drupal 11 release. Used only for the taxonomy export/import workflow in `docs/dev/content_sync.md`. Replace with structure_sync (already installed, Drupal 11 ready) or drop.
-- smart_date_time_tbc dev branch. Move into `web/modules/custom/` (see Phase B).
+- smart_date_time_tbc: Rob's own contrib module, needs a core_version_requirement release (see Phase B4).
 
-**Enabled but unused. Recommend uninstall, then composer remove**
-No config depends on them and no theme template uses them. Confirm in the UI before uninstalling.
+**Enabled but unused. Uninstalled and removed on `chore/remove-unused-modules` (2026-09-11)**
+No config depended on them. Deploy via `drush cim` (the export removes them from core.extension).
 
 | Module | Notes |
 |--------|-------|
@@ -51,7 +51,7 @@ No config depends on them and no theme template uses them. Confirm in the UI bef
 | rdf | Removed from core in 10; nothing uses it. |
 | views_data_export | No view uses a data export display. |
 | entity_class_formatter | No display uses it. |
-| twig_tweak | No template calls its functions. |
+| twig_tweak | Was used once: the `image_style` filter in `node--home--full.html.twig`. Replaced by `clau2_preprocess_node()` in `clau2.theme` (done on `chore/remove-unused-modules`). |
 | image_effects, file_mdm, file_mdm_exif, file_mdm_font | No image style uses an image_effects effect. Removing also removes the file_mdm pin that blocked the file_mdm update. |
 | bartik, seven themes | Default theme is clau2, admin is gin. |
 | stable theme | Keep until the new theme drops the `classy/node` library attachments; classy 2 still uses stable as base. |
@@ -100,11 +100,26 @@ site-specific:
 Remove the two paragraph types and `field_modifiers` now. Keep `modifiers_color`
 until the new theme replaces the per-event colour handling.
 
-**B4. smart_date_time_tbc to custom**
-Copy the module to `web/modules/custom/smart_date_time_tbc`, set
-`core_version_requirement: ^10 || ^11`, `composer remove drupal/smart_date_time_tbc`.
-No uninstall needed; Drupal finds the module at its new path after a cache
-rebuild. The importer relies only on the `field_time_tbc` boolean, not the module.
+**B4. smart_date_time_tbc release for Drupal 11**
+This is Rob's own contrib module (https://www.drupal.org/project/smart_date_time_tbc),
+so the fix is a commit to its 1.0.x branch on drupal.org rather than a move to
+custom. The code is one form_alter and one jQuery behaviour and needs no
+changes for Drupal 11. Two edits:
+1. `smart_date_time_tbc.info.yml`: `core_version_requirement: ^10 || ^11`.
+2. `smart_date_time_tbc.libraries.yml`: declare what the JS uses, so it does
+   not depend on another library having loaded jQuery first:
+   ```yaml
+   smart_date_time_tbc:
+     version: VERSION
+     js:
+       js/smart_date_time_tbc.js: {}
+     dependencies:
+       - core/jquery
+       - core/drupal
+   ```
+Tag a 1.0.1 release (or keep the site on 1.0.x-dev) and `composer update
+drupal/smart_date_time_tbc`. The events importer relies only on the
+`field_time_tbc` boolean, not on the module.
 
 **B5. content_sync**
 Uninstall and remove. Use structure_sync for taxonomy moves, or the events
