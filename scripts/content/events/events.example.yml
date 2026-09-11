@@ -1,0 +1,47 @@
+# Example data file for scripts/content/events/import_events.php
+#
+# Copy to data/<something>.yml, fill in one entry per event (one per date -
+# a run of shows becomes several entries), then dry-run before importing.
+#
+# Keys per event:
+#   title          required
+#   date           required. 2026-10-11 | 11/10/2026 | Sat 11 Oct 2026 | 11th October 2026
+#   start          optional. 18:30 | 6.30pm | 6pm | 1830 | tbc  (blank or tbc => Time TBC on)
+#   end            optional. same formats. Blank => no end time.
+#   time           optional alternative to start/end: "18:30 - 20:00", "6.30pm to 8pm"
+#   tbc            optional. true forces Time TBC even if a start time is given.
+#   venue          optional. Short venue name. Matched loosely against existing Venues
+#                  terms (case/whitespace-insensitive, trailing ", London"/postcode ignored).
+#                  Created if not found.
+#   venue_address  optional. Only used when the venue term is created: stored as the
+#                  term description (the address line shown on the site).
+#   body           optional. HTML (basic_html).
+#   tickets        optional. List of {url, title} -> call-to-action paragraphs.
+#   published      optional. Default true.
+#
+# Top-level keys:
+#   timezone       optional. Default UTC (matches site convention: times are wall-clock).
+#   defaults       optional. Override uid/promote/status/colour_background/colour_text.
+
+events:
+  - title: "Example Carol Service"
+    date: 2026-12-20
+    start: "18:30"
+    end: "20:00"
+    venue: "St Mary's Islington"
+    body: "<p>LIGC will be singing three pieces during the service.</p>"
+    tickets:
+      - url: https://www.stmaryislington.org
+        title: "venue website"
+
+  - title: "Example Festival Slot (time to be confirmed)"
+    date: 11/07/2027
+    start: tbc
+    venue: "Example Park Bandstand"
+    venue_address: "Example Park, Example Road, London N1 1AA"
+
+  - title: "Example Late Show"
+    date: "Sat 31 Jul 2027"
+    time: "10.30pm - 1am"
+    venue: "Rich Mix"
+    published: false
