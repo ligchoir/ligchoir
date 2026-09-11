@@ -81,9 +81,8 @@
   ]
 %}
 
-{%
-  set bg_img_styled_url = node.field_background_media.entity.field_media_image.0.entity.uri.value | image_style('background_image_xl')
-%}
+{# bg_img_styled_url is set in clau2_preprocess_node() (clau2.theme): the
+   background_image_xl styled URL of field_background_media. #}
 
 {#
 {%
