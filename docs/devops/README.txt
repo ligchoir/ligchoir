@@ -110,3 +110,22 @@ git pull origin main
 ./drush cst
 ./drush status --fields=drupal-version,drush-version
 # Expected: cst "No differences", Drupal 10.6.16, Drush 13.8
+
+# ---------------------------------------------------------------------------
+# ORDER MATTERS when a release REMOVES a module (uninstalled + composer remove
+# in the same release): run cim BEFORE composer install, so Drupal uninstalls
+# the module while its code is still present. Otherwise composer deletes the
+# code first, the import can only edit core.extension, and the module's own
+# uninstall (dropping its tables, system.schema entry) never runs.
+#
+#   git pull origin <branch>
+#   ./drush cim -y            # uninstalls removed modules with code present
+#   ./composer install --no-dev --optimize-autoloader
+#   ./drush updb -y
+#   ./drush cim -y
+#   ./drush cr
+#
+# If it already happened the other way round (live, Sep 2026, content_sync):
+./drush php:eval '\Drupal::keyValue("system.schema")->delete("content_sync"); print "schema entry removed\n";'
+./drush sqlq "DROP TABLE IF EXISTS cs_db_snapshot, cs_logs"
+./drush cr
