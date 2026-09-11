@@ -36,7 +36,7 @@ stable 2, structure_sync, token, viewsreference, webform 6.3.
 - upgrade_status: 5.0.0-alpha3 for Drupal 11, or remove it after the upgrade.
 
 **Blockers with no Drupal 11 release**
-- content_sync 4.0.0-rc2. No Drupal 11 release. Used only for the taxonomy export/import workflow in `docs/dev/content_sync.md`. Replace with structure_sync (already installed, Drupal 11 ready) or drop.
+- content_sync 4.0.0-rc2: no Drupal 11 release. Removed (Phase B5).
 - smart_date_time_tbc: Rob's own contrib module, needs a core_version_requirement release (see Phase B4).
 
 **Enabled but unused. Uninstalled and removed on `chore/remove-unused-modules` (2026-09-11)**
@@ -120,9 +120,11 @@ Tag a 1.0.1 release (or keep the site on 1.0.x-dev) and `composer update
 drupal/smart_date_time_tbc`. The events importer relies only on the
 `field_time_tbc` boolean, not on the module.
 
-**B5. content_sync**
-Uninstall and remove. Use structure_sync for taxonomy moves, or the events
-importer pattern for content.
+**B5. content_sync** (done 2026-09-11 on `chore/remove-content-sync`)
+Uninstalled and removed with its export folder and settings line. For future
+content moves: structure_sync for taxonomies/menus/blocks, single_content_sync
+(Drupal 11 supported) for general content export, or the events importer. See
+`docs/dev/content_sync.md`.
 
 ### Phase C: Drupal 11
 
