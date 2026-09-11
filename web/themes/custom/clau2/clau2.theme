@@ -14,5 +14,30 @@ function clau2_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars, $hook
 }
 */
 
-
-
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ *
+ * Provides bg_img_styled_url to node--home--full.html.twig: the
+ * background_image_xl styled URL of the node's background media image.
+ * Replaces the twig_tweak image_style filter the template used before.
+ */
+function clau2_preprocess_node(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+  if (!$node || $node->bundle() !== 'home' || ($variables['view_mode'] ?? '') !== 'full') {
+    return;
+  }
+  $variables['bg_img_styled_url'] = NULL;
+  if (!$node->hasField('field_background_media') || $node->get('field_background_media')->isEmpty()) {
+    return;
+  }
+  $media = $node->get('field_background_media')->entity;
+  if (!$media || !$media->hasField('field_media_image') || $media->get('field_media_image')->isEmpty()) {
+    return;
+  }
+  $file = $media->get('field_media_image')->entity;
+  $style = \Drupal\image\Entity\ImageStyle::load('background_image_xl');
+  if ($file && $style) {
+    $url = $style->buildUrl($file->getFileUri());
+    $variables['bg_img_styled_url'] = \Drupal::service('file_url_generator')->transformRelative($url);
+  }
+}
