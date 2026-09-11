@@ -52,6 +52,8 @@ module:
   responsive_image: 0
   rest: 0
   search: 0
+  search_help: 0
+  search_node: 0
   serialization: 0
   shortcut: 0
   smart_date: 0
