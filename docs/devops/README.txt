@@ -48,3 +48,20 @@ scripts/content/events/import_events.sh scripts/content/events/data/<file>-updat
 ./import_events.sh internationalgospelchoir.uk live scripts/content/events/data/<file>-updates.yml --update --dry-run
 ./import_events.sh internationalgospelchoir.uk live scripts/content/events/data/<file>-updates.yml --update
 
+
+
+# Deploying a release that uninstalls modules (config import removes them)
+# Run in the release code dir. Order matters: entities that belong to a module
+# being removed must be deleted BEFORE cim, or the import validation fails.
+#
+# Release 2.0.7 (fontyourface removal) needed exactly this:
+
+./drush entity:delete font -y
+./drush entity:delete taxonomy_term --bundle=languages_supported -y
+./drush entity:delete taxonomy_term --bundle=font_classification -y
+./drush updb -y
+./drush cim -y
+./drush cr
+
+# If cim still complains "Entities exist of type Taxonomy term and Vocabulary X",
+# run: ./drush entity:delete taxonomy_term --bundle=<vocabulary machine name> -y
