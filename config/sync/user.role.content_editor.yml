@@ -22,7 +22,6 @@ dependencies:
     - system
     - taxonomy
     - toolbar
-    - tour
 id: content_editor
 label: 'Content Editor'
 weight: 4
@@ -35,7 +34,6 @@ permissions:
   - 'access media overview'
   - 'access taxonomy overview'
   - 'access toolbar'
-  - 'access tour'
   - 'access user profiles'
   - 'create audio media'
   - 'create document media'

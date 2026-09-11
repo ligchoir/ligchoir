@@ -142,3 +142,19 @@ ddev start -y
 ddev import-db --file=databases/<the dump above>
 ddev drush sqlq "SELECT VERSION()"
 ddev drush cst
+
+# ---------------------------------------------------------------------------
+# Drupal 11 release (feature/drupal-11). Prerequisite: PHP 8.3+ on the server
+# (php -v). MariaDB 10.11 already confirmed. No modules removed in this release,
+# so the normal order applies. Run from the release code dir.
+# ---------------------------------------------------------------------------
+backup_db.sh internationalgospelchoir.uk <db_number>
+git pull origin <branch>
+./composer install --no-dev --optimize-autoloader
+./drush updb -y
+./drush cim -y
+./drush cr
+./drush cst
+./drush status --fields=drupal-version,php-version
+# Expected: no differences, Drupal 11.4.x. Then check /, /events, an event,
+# admin login, admin/content, admin/reports/status (only SMTP-type warnings).

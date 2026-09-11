@@ -126,7 +126,32 @@ content moves: structure_sync for taxonomies/menus/blocks, single_content_sync
 (Drupal 11 supported) for general content export, or the events importer. See
 `docs/dev/content_sync.md`.
 
-### Phase C: Drupal 11
+### Phase C: Drupal 11 (done locally 2026-09-11 on `feature/drupal-11`, awaiting staging)
+
+What it took, for the record:
+- Tour uninstalled (removed from core in 11). phpass is still in core 11, so
+  the seven legacy `$S$` password hashes keep working; nothing to add.
+- composer: core-recommended/scaffold/project-message ^11.4, gin ^5, gin_toolbar ^3,
+  youtube ^3@beta, upgrade_status ^5@alpha, `-W`.
+- **allow-plugins must include `symfony/runtime: true`.** Core 11.4's front
+  controller requires `vendor/autoload_runtime.php`, which that plugin writes
+  during composer install. Without it every uncached request fatals while
+  cached pages still look fine.
+- `drush updb`: core 11.x system/views/search/help updates plus post-updates;
+  33 config files changed on export (views normalisation, system.rss and
+  field.settings removed, promote base-field overrides added).
+- Entity definition mismatch on `taxonomy_term.field_role` fixed with
+  `entityDefinitionUpdateManager()->updateFieldStorageDefinition()`.
+- upgrade_status on Drupal 11: no deprecations in clau2 or smart_date_time_tbc.
+- Status report leftovers for Drupal 12 (not blockers): Contact, History and
+  Layout Builder Expose All Field Blocks are deprecated; `enable_html5_validation`
+  will default to FALSE; PHP 8.4 recommended. Contact and History are unused
+  and can be uninstalled any time; the field-blocks module is used by the
+  page full display.
+- Server prerequisite still to confirm before deploying: **PHP 8.3+** on
+  server03 (`php -v`). Composer's platform check refuses the install otherwise.
+
+Original plan:
 
 Prerequisites: all done as of 2026-09-11. B4 released (1.0.2), B5 removed, server MariaDB 10.11 confirmed, local ddev bumped to MariaDB 10.11 (`chore/ddev-mariadb-10.11`).
 
