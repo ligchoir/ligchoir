@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88a0b786df4449eaf09c0573d074de62",
+    "content-hash": "550f678af582c9fc74a96d106c735ad9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2794,23 +2794,27 @@
         },
         {
             "name": "drupal/smart_date_time_tbc",
-            "version": "dev-1.0.x",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/smart_date_time_tbc.git",
-                "reference": "b7a52578159cbbe55b2ef05890d6d28e5a9a7175"
+                "reference": "1.0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/smart_date_time_tbc-1.0.2.zip",
+                "reference": "1.0.2",
+                "shasum": "206589abeb749b761564f8b548de04fa40dc6324"
             },
             "require": {
-                "drupal/core": "^8 || ^9 || ^10"
+                "drupal/core": "^9.3 || ^10 || ^11",
+                "drupal/smart_date": "*"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.0.x": "1.0.x-dev"
-                },
                 "drupal": {
-                    "version": "1.0.x-dev",
-                    "datestamp": "1719437177",
+                    "version": "1.0.2",
+                    "datestamp": "1789159421",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -8550,7 +8554,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/smart_date_time_tbc": 20,
         "drupal/viewsreference": 10
     },
     "prefer-stable": true,

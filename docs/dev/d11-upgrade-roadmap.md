@@ -99,7 +99,7 @@ site-specific:
 
 Done 2026-09-11 on `chore/remove-modifiers`: the 13 `field_modifiers` rows all pointed at paragraphs that no longer existed and the two modifier paragraphs were orphans, so the field, both paragraph types and their 30-odd fields were deleted. Server steps in docs/devops/README.txt. `modifiers_color` stays until the new theme replaces the per-event colour handling. The eight paragraph reference fields that still listed removed types (including the long-gone colors_modifier, custom_colors_modifier and date_time_single) under `target_bundles_drag_drop` were re-saved without them.
 
-**B4. smart_date_time_tbc release for Drupal 11**
+**B4. smart_date_time_tbc release for Drupal 11** (done 2026-09-11: release 1.0.2 on drupal.org, site switched to `^1.0.2` on `chore/tbc-module-1.0.1`; 1.0.1 has a broken core constraint and should not be used)
 This is Rob's own contrib module (https://www.drupal.org/project/smart_date_time_tbc),
 so the fix is a commit to its 1.0.x branch on drupal.org rather than a move to
 custom. The code is one form_alter and one jQuery behaviour and needs no
