@@ -33,6 +33,7 @@ elements: |-
     '#title': 'Date and time (provisional)'
     '#required_error': 'Please enter your a time for your booking, this can be provisional.'
     '#date_date_min': '2026'
+    '#date_time_step': '60'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'

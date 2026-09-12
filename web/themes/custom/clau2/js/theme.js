@@ -306,3 +306,36 @@ $('#ligc-togl-expand')
 
   })(jQuery, Drupal);
   
+
+/**
+ * Event page hero (desktop): size the body background to end exactly where
+ * the event text box starts, whatever the title length or viewport height.
+ * Sets --ligc-hero-h on <body>; css/styles/_events.css uses it as the body
+ * height (falls back to 100vh without JS). Phones use an in-flow hero
+ * element instead, see node--event--full.html.twig.
+ */
+(function (Drupal) {
+  function setHeroHeight() {
+    var box = document.querySelector('.page-node-type-event .ligc-event-full-outer');
+    if (!box) {
+      return;
+    }
+    var top = box.getBoundingClientRect().top + window.scrollY;
+    document.body.style.setProperty('--ligc-hero-h', Math.round(top) + 'px');
+  }
+
+  Drupal.behaviors.ligcEventHero = {
+    attach: function (context) {
+      if (context !== document || document.body.dataset.ligcEventHero) {
+        return;
+      }
+      document.body.dataset.ligcEventHero = '1';
+      setHeroHeight();
+      window.addEventListener('resize', setHeroHeight);
+      window.addEventListener('load', setHeroHeight);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setHeroHeight);
+      }
+    }
+  };
+})(Drupal);

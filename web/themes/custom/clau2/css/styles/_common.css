@@ -84,8 +84,8 @@
 
 @media screen and (max-width: 767px ) {
   .text-confine-single-column-wide {
-    padding-left: 3em;
-    padding-right: 3em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
   }
 }
 
@@ -232,4 +232,43 @@ h2 a {
 .eu-cookie-compliance-banner {
   background-color: #3f0000;
   color: white;
+}
+
+/* ------------------------------------------------------------------
+   Mobile margins (Sep 2026): let text use more of the width on phones.
+   The single-column style was 65% wide at every size, i.e. ~250px on a
+   400px phone.
+   ------------------------------------------------------------------ */
+@media screen and (max-width: 767px ) {
+  .text-confine-single-column {
+    width: auto;
+    margin-left: 1.25em;
+    margin-right: 1.25em;
+  }
+
+  .ligc-content-2-column .paragraph--type--text {
+    padding: 1.25em;
+  }
+}
+
+/* YouTube video paragraph: fill the column and keep 16:9. The youtube
+   module's responsive container already does the ratio (like fitvids);
+   the <figure> default 40px side margins and the 65% column were what
+   made it small, especially on phones. */
+.paragraph.paragraph--type--youtube-video .youtube-container {
+  margin: 0;
+}
+
+@media screen and (max-width: 767px ) {
+  .paragraph.paragraph--type--youtube-video {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 1023px ) {
+  .paragraph.paragraph--type--youtube-video {
+    width: 90%;
+  }
 }

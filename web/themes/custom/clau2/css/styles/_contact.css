@@ -9,6 +9,13 @@
 	padding-right: 3em;
   }
 
+@media screen and (max-width: 767px ) {
+  .ligc-webform {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+}
+
 .ligc-contact-content {
   padding-left: 1em;
   padding-right: 1em; 
@@ -241,4 +248,21 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+}
+
+/* Webform datetime element (Book us: "Date and time (provisional)"): the
+   native date and time inputs, styled like .form-text above. */
+.ligc-webform input.form-date,
+.ligc-webform input.form-time {
+	border-radius: 5px;
+	padding: 8px 12px;
+	margin: 0 0.5em 10px 0;
+	line-height: 1.428571429;
+	color: #333333;
+	background-color: #ffffff;
+	max-width: 100%;
+}
+
+.ligc-webform .form-type-datetime > label {
+	display: block;
 }

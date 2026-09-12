@@ -82,41 +82,21 @@
 %}
 {{ attach_library('classy/node') }}
 
-{%
-  set bg_img_url = file_url(node.field_background_media.entity.field_media_image.0.entity.uri.value)
-%}
+{# Hero image. On phones it is a block between the title and the text box
+   (.ligc-event-hero); on wider screens it is the body background, via the
+   --ligc-event-hero-url custom property. Rules live in css/styles/_events.css;
+   the desktop body height is set by js/theme.js (ligcEventHero). #}
+{% set hero_media = node.field_background_media.entity %}
+{% set hero_file = hero_media ? hero_media.field_media_image.entity : null %}
+{% set bg_img_url = hero_file ? file_url(hero_file.uri.value) : null %}
 
-
-
+{% if bg_img_url %}
 <style>
-  @media screen and (max-width: 767px ) {
-    #clau-page-container-id {
-
-      {% if bg_img_url is not null and bg_img_url is not empty %}
-        background: linear-gradient( 180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 1%, rgba(255,255,255,0.2) 100%), url({{ bg_img_url }});
-      {% endif %}
-
-        background-size: 135%;
-        background-repeat: no-repeat;
-        background-position: center 15em;
-        background-color: rgba(0,0,0,1);
-    }
-  }
-
-
-  @media screen and (min-width: 768px ) {
-    #clau-page-container-id {
-
-      {% if bg_img_url is not null and bg_img_url is not empty %}
-        background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 18%, rgba(255,255,255,0.4) 100%), url({{ bg_img_url }});
-      {% endif %}
-        height: 100vh;
-        background-size: cover;
-        background-position: center top;
-        background-color: rgba(0,0,0,1);
-    }
+  #clau-page-container-id {
+    --ligc-event-hero-url: url({{ bg_img_url }});
   }
 </style>
+{% endif %}
 
 {% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
 {% set date_event_day_only = date_event_as_unix_time_int | date('D, j M Y') %}
@@ -127,7 +107,11 @@
 
 <article{{ attributes.addClass(classes) }}>
 
-  <div style="background-color: {{ node.field_colour_background.0.entity.field_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_color.value.0.color }};"> 
+  {% if bg_img_url %}
+    <div class="ligc-event-hero" style="background-image: url({{ bg_img_url }});"></div>
+  {% endif %}
+
+  <div class="ligc-event-box" style="background-color: {{ node.field_colour_background.0.entity.field_color.value.0.color }}; opacity: {{ node.field_colour_background.0.entity.field_color.value.0.opacity }}; color: {{ node.field_colour_text.0.entity.field_color.value.0.color }};">
 
     {{ title_prefix }}
     {% if label and not page %}
@@ -157,12 +141,11 @@
           {% endif %}  
     
           {% if node.field_time_tbc.value %}
-             <span>{{ date_event_day_only }}, Time TBC | </span>
+            <span class="ligc-event-when">{{ date_event_day_only }}, Time TBC</span>
           {% else %}
-            <span>{{ content.field_when }} | </span>
+            <span class="ligc-event-when">{{ content.field_when }}</span>
           {% endif %}
-
-          <span>{{ content.field_venue }}</span>
+          <span class="ligc-event-venue-wrap"><span class="ligc-event-sep">|</span> {{ content.field_venue }}</span>
 
           <div>{{ content.body }}</div>
 
