@@ -160,6 +160,28 @@ sudo systemctl reload php8.3-fpm
 ./drush status --fields=drupal-version,php-version
 # Expected: no differences, Drupal 11.4.x. Then check /, /events, an event,
 # admin login, admin/content, admin/reports/status (only SMTP-type warnings).
+#
+# After the Drupal 11 release the status report shows "Entity/field definitions:
+# Mismatched" for taxonomy_term.field_role (stored definition metadata only; the
+# table schema is identical, so no data changes). Re-save the definition, once
+# per release/database (done locally 2026-09-11; needed on live and staging):
+./drush php:eval '$m=\Drupal::entityDefinitionUpdateManager(); $i=\Drupal::service("entity_field.manager")->getFieldStorageDefinitions("taxonomy_term")["field_role"]; $m->updateFieldStorageDefinition($i); print json_encode($m->getChangeSummary())."\n";'
+./drush cr
+./drush core:requirements --severity=2       # Entity/field definitions should be gone
+# "Trusted Host Settings: Not enabled" is pre-existing (no trusted_host_patterns
+# in settings), not part of this release.
+
+# ---------------------------------------------------------------------------
+# FILES SYMLINK: check it after create_release, before deploy. Each release
+# has web/sites/default/files -> deployment_environments/<env>/assets/public/files
+# and it must match the environment the release is deployed to. Seen Sep 2026:
+# live release 2.0.7 pointed at the STAGING files directory (live and staging
+# are separate directories), so uploads on live would have landed in staging.
+# Check and fix (from the release code dir):
+readlink web/sites/default/files
+cd web/sites/default && ln -sfn ../../../../../../deployment_environments/live/assets/public/files files && cd -
+# If uploads happened while it was wrong, copy the new files across first:
+# rsync -av --ignore-existing <staging files>/ <live files>/
 
 # ---------------------------------------------------------------------------
 # PHP-FPM RELOAD after every code deploy. Seen Sep 2026 on the Drupal 11

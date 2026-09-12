@@ -126,7 +126,7 @@ content moves: structure_sync for taxonomies/menus/blocks, single_content_sync
 (Drupal 11 supported) for general content export, or the events importer. See
 `docs/dev/content_sync.md`.
 
-### Phase C: Drupal 11 (done locally 2026-09-11 on `feature/drupal-11`, awaiting staging)
+### Phase C: Drupal 11 (LIVE 2026-09-11 as release 2.0.7; staging 2.0.7-staging)
 
 What it took, for the record:
 - Tour uninstalled (removed from core in 11). phpass is still in core 11, so
@@ -165,7 +165,9 @@ Prerequisites: all done as of 2026-09-11. B4 released (1.0.2), B5 removed, serve
 3. `drush updb -y`, `drush cex -y`, review the diff, `drush cr`.
 4. Run `drush upgrade_status:analyze --all` once more on Drupal 11 to catch deprecations that only surface at runtime.
 5. Full page check (front, events listing, event full, about, contact, book us, join us, admin content and media library, webform submissions).
-6. Staging deploy, directors' sign-off, live.
+6. Staging deploy, directors' sign-off, live. Done 2026-09-11 (release 2.0.7).
+   Post-deploy: re-save the `taxonomy_term.field_role` definition on each
+   database (command in docs/devops/README.txt, Drupal 11 block).
 
 ### Phase D: new theme and front page
 
