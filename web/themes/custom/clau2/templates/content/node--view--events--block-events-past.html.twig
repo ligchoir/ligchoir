@@ -83,6 +83,7 @@
 {{ attach_library('classy/node') }}
 
 {% set date_event_as_unix_time_int = content.field_when.0['#value'] %}
+{% set date_event_day_only = date_event_as_unix_time_int | date('D, j M Y') %}
 {% set date_now_as_unix_time_int = "now" | date('U') %}
 
 <div{{ attributes.addClass(classes).addClass('ligc-event-list-item') }}>
@@ -90,8 +91,12 @@
     <a href="{{ url }}" rel="bookmark">
       {{ label }}
 
-      {{ content.field_when }} | 
-      {{ content.field_venue }}
+      {% if node.field_time_tbc.value %}
+        <span class="ligc-event-when">{{ date_event_day_only }}, Time TBC</span>
+      {% else %}
+        <span class="ligc-event-when">{{ content.field_when }}</span>
+      {% endif %}
+      <span class="ligc-event-venue-wrap"><span class="ligc-event-sep">|</span> {{ content.field_venue }}</span>
 
       <p class="read-more">Read more...</p>
     </a>

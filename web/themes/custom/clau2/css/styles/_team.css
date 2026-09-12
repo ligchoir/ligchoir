@@ -29,8 +29,8 @@
     width: 68%; /* 15% smaller than previous 80% */
     aspect-ratio: 1 / 1; /* Guarantees a perfect circle */
     position: relative;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
   }
 
 
@@ -40,8 +40,8 @@
   /*
   .ligc-term-desc p {
     padding-left: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
   */
 }
@@ -77,8 +77,8 @@
       width: 173px; /* 15% larger than previous 150px cap */
       aspect-ratio: 1 / 1; /* Guarantees a perfect circle at any screen width */
       position: relative;
-      margin-top: 2em;
-      margin-bottom: 2em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
   }
 
 
@@ -87,8 +87,8 @@
   
   .ligc-term-desc p {
     padding-left: 1em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -104,6 +104,11 @@
 }
 
 .ligc-term-content {
-  margin-top: 1em; /* Add some space between image and content */
+  margin-top: 0; /* the circle's margin-bottom is the only gap to the name */
+}
+
+.ligc-term-content h2 {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
 }
 

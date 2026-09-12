@@ -92,12 +92,11 @@
       {{ label }}
 
       {% if node.field_time_tbc.value %}
-        <span>{{ date_event_day_only }}, Time TBC | </span>
+        <span class="ligc-event-when">{{ date_event_day_only }}, Time TBC</span>
       {% else %}
-        <span>{{ content.field_when }} | </span>
+        <span class="ligc-event-when">{{ content.field_when }}</span>
       {% endif %}
-
-      {{ content.field_venue }}
+      <span class="ligc-event-venue-wrap"><span class="ligc-event-sep">|</span> {{ content.field_venue }}</span>
 
       <p class="read-more">Read more...</p>
     </a>
