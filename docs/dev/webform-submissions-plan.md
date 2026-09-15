@@ -179,7 +179,7 @@ Each is a branch, tested locally, deployed by Rob.
 | C | Cron | System crontab entries on server03 (via a small toolkit script `install_cron.sh`): `drush cron` every 15 minutes for the live release, the mail-health check daily, the mailbox purge nightly. So purge and the checks run on time rather than on traffic. |
 | D | Mail health | `scripts/devops/mail-health.php` (drush php:script): daily alert, weekly digest, run from the crontab in C. Plus the visitor-facing message when a send fails (Rob's suggestion 2026-09-15): replace core's "Unable to send email. Contact the site administrator if the problem persists." with wording that says email is not working at the moment, the message has been saved and the team alerted, and to use the social media channels if it is urgent. Done with a string override in settings so no code change is needed to the module. The saved submission is then re-sent from the results page once mail is back. |
 | E | Purge script | `scripts/devops/webform-purge.sh` with `--dry-run`, wraps backup + `webform:purge` + count check; README block. |
-| F | Backup pruning | `backup_db.sh`: keep 30 days; note in README. |
+| F | Backup pruning | Already covered: `backup_db.sh` keeps the last 10 dumps per database and deletes older ones. Nothing to build; the pre-purge dump is deleted by hand (README). |
 | G | Mailbox purge script | `scripts/devops/zoho-mailbox-purge.py` (IMAP, lists then with `--yes` deletes mail older than 30 days from Sent, Inbox and Trash), scheduled nightly by C. Credentials from a file on the server (see R). |
 | H | Privacy policy | Draft replacement text for the retention and IP paragraphs, a last-updated date, and the data-request route (contact form on /about); the wording is Rob's to approve and paste into the page. Plus the short note for team members (section 2, item 5). |
 | I | Klaro | Replace eu_cookie_compliance with Klaro 3.1: consent banner, YouTube embed gated until consent, Google Analytics under Consent Mode; config export; theme styling to match the site. |
@@ -189,7 +189,19 @@ Suggested order: X first (read-only, no deploy). Then A, B, C, D and G
 together in one deploy with R alongside. Then E to run the one-off purge,
 then F, H, then I as its own piece of work.
 
-## 7. Notes
+## 7. Status
+
+- 2026-09-15: X done (export and triage; results in Rob's private folder).
+  A, B, C, D and G built on `feature/webform-retention`, tested locally:
+  purge and IP tracking config, dblog row limit 100,000, automated cron off,
+  Honeypot in and Antibot out, `scripts/devops/mail-health.php`,
+  `scripts/devops/zoho-mailbox-purge.py`, toolkit `install_cron.sh`, the
+  failed-send visitor message in `settings.php`. Deploy block and Rob's
+  steps in `docs/devops/README.txt`. Note: once cron is installed the
+  30-day purge starts on its own (100 submissions per run), so E is only
+  needed to do it at once and confirm.
+
+## 8. Notes
 
 - Webform 6.3 has the purge, IP-tracking and spam-words features built in;
   no add-on module is needed for retention.

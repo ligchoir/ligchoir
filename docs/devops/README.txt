@@ -189,3 +189,53 @@ cd web/sites/default && ln -sfn ../../../../../../deployment_environments/live/a
 # install (OPcache), so menu links lost their active class while drush (a
 # fresh process) was fine. Reload, then drush cr:
 sudo systemctl reload php8.3-fpm
+
+# ---------------------------------------------------------------------------
+# Webform retention release (feature/webform-retention, Sep 2026). See
+# docs/dev/webform-submissions-plan.md. This release REMOVES antibot, so cim
+# runs before composer install. It also turns off automated cron (a real
+# cron job replaces it), so run install_cron.sh straight after deploying.
+# From the release code dir on the server:
+# ---------------------------------------------------------------------------
+backup_db.sh internationalgospelchoir.uk 1     # the last dump that holds all 7,500 old submissions
+git pull origin <branch>
+./drush cim -y                                  # uninstalls antibot while its code is present
+./composer install --no-dev --optimize-autoloader
+sudo systemctl reload php8.3-fpm
+./drush updb -y
+./drush cim -y
+./drush cr
+./drush cst                                     # expect no differences
+./drush pml --filter=honeypot                   # honeypot enabled; antibot gone
+
+# Rob's steps after the deploy (package R in the plan):
+#  1. Take superadmin@ off the four to_mail lines in settings/1/settings.local.php.
+#  2. In Zoho Mail for superadmin@: enable IMAP access; create an app-specific
+#     password (My Account, Security, App Passwords). Then on the server:
+mkdir -p ~/.config/ligc && chmod 700 ~/.config/ligc
+cat > ~/.config/ligc/zoho-imap.env <<'ENV'
+ZOHO_IMAP_HOST=imappro.zoho.com
+ZOHO_IMAP_USER=a@example.com
+ZOHO_IMAP_PASSWORD=paste-the-app-password-here
+ENV
+chmod 600 ~/.config/ligc/zoho-imap.env
+python3 scripts/devops/zoho-mailbox-purge.py --list-folders      # checks the login, lists folders
+python3 scripts/devops/zoho-mailbox-purge.py --days 30            # dry run: what would go
+python3 scripts/devops/zoho-mailbox-purge.py --days 30 --yes      # first real clean-out
+#  3. Install the cron jobs (drush cron every 15 min, daily check, weekly digest,
+#     nightly mailbox purge). alert_to is who gets the alerts and the Monday digest:
+install_cron.sh internationalgospelchoir.uk live "a@example.com,<your gmail>"
+#  4. Within about a day the 15-minute cron has purged every submission older
+#     than 30 days (100 per run). To do it at once instead, and confirm:
+./drush webform:purge --all -y
+./drush sqlq "SELECT webform_id, COUNT(*), FROM_UNIXTIME(MIN(created)) FROM webform_submission GROUP BY webform_id"
+#  5. Run the check by hand once to see the report:
+./drush php:script scripts/devops/mail-health.php -- weekly --to=<your gmail>
+#  6. Once happy, delete the pre-purge dump from backups/database (it holds
+#     every old submission). backup_db.sh keeps the last 10 dumps, so it will
+#     age out on its own within a few deploys anyway.
+
+# Honeypot check on the live site: view source of /book and look for
+# name="honeypot_time" and a hidden "url" text field. Submitting the form
+# inside 5 seconds of loading it is rejected with a message asking to wait.
+

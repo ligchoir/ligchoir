@@ -16,7 +16,6 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "drupal/antibot": "^2.0",
         "drupal/block_classes": "^1.0",
         "drupal/classy": "^2.0",
         "drupal/classy_paragraphs": "^2.0",
@@ -31,6 +30,7 @@
         "drupal/fontawesome": "^3.0",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
+        "drupal/honeypot": "^2.2",
         "drupal/image_widget_crop": "^3.0",
         "drupal/mailsystem": "^4.2",
         "drupal/paragraph_blocks": "^4.0",

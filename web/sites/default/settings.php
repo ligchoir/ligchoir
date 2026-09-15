@@ -829,3 +829,16 @@ else {
 
 $settings['config_sync_directory'] = '../config/sync';
 
+
+/**
+ * Visitor-facing message when an email cannot be sent (webform enquiries).
+ * Core's default text tells people to "contact the site administrator",
+ * which is no use when the contact route is the thing that broke. The
+ * submission is still saved for 30 days and the daily mail-health check
+ * (scripts/devops/mail-health.php) alerts the team, who re-send it from the
+ * results page. See docs/dev/webform-submissions-plan.md.
+ */
+$settings['locale_custom_strings_en'][''] = [
+  'Unable to send email. Contact the site administrator if the problem persists.' =>
+  'Sorry, our email is not working at the moment. Your message has been saved and the team has been alerted, so we will still see it. If it is urgent, please contact us through our social media channels.',
+];
