@@ -223,7 +223,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'f@example.com, a@example.com'
+      to_mail: ''
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }

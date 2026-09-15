@@ -13,7 +13,7 @@ server, which overrides the exported config; superadmin is on every form).
 | Form | Page | Sent to | Anti-spam |
 |------|------|---------|-----------|
 | contact | /about | welcome@, superadmin@ | antibot |
-| join_us | /join | f@example.com, superadmin@ | antibot |
+| join_us | /join | <join address>, superadmin@ | antibot |
 | book_us | /book | booking@, welcome@, superadmin@ | antibot |
 | liv_book | /liv | liv@, welcome@, superadmin@ | antibot |
 

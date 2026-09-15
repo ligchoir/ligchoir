@@ -9,7 +9,7 @@ Without --yes it only reports what it would delete. Credentials come from
 an env file (default ~/.config/ligc/zoho-imap.env, mode 600) with lines:
 
   ZOHO_IMAP_HOST=imappro.zoho.com
-  ZOHO_IMAP_USER=a@example.com
+  ZOHO_IMAP_USER=<superadmin address>
   ZOHO_IMAP_PASSWORD=<app-specific password from Zoho, Security, App Passwords>
 
 Set ZOHO_IMAP_ENV to use a different file. The account needs IMAP access

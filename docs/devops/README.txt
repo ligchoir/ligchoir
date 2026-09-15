@@ -215,17 +215,17 @@ sudo systemctl reload php8.3-fpm
 mkdir -p ~/.config/ligc && chmod 700 ~/.config/ligc
 cat > ~/.config/ligc/zoho-imap.env <<'ENV'
 ZOHO_IMAP_HOST=imappro.zoho.com
-ZOHO_IMAP_USER=a@example.com
+ZOHO_IMAP_USER=<superadmin address>
 ZOHO_IMAP_PASSWORD=paste-the-app-password-here
 ENV
 chmod 600 ~/.config/ligc/zoho-imap.env
 python3 scripts/devops/zoho-mailbox-purge.py --list-folders      # checks the login, lists folders
 python3 scripts/devops/zoho-mailbox-purge.py --days 30            # dry run: what would go
 python3 scripts/devops/zoho-mailbox-purge.py --days 30 --yes      # first real clean-out
-#  3. Install the cron jobs (drush cron every 15 min, daily check, weekly digest,
+#  3. Install the cron jobs (drush cron hourly, daily check, weekly digest,
 #     nightly mailbox purge). alert_to is who gets the alerts and the Monday digest:
-install_cron.sh internationalgospelchoir.uk live "a@example.com,<your gmail>"
-#  4. Within about a day the 15-minute cron has purged every submission older
+install_cron.sh internationalgospelchoir.uk live "<superadmin address>,<your gmail>"
+#  4. Within a few days the hourly cron has purged every submission older
 #     than 30 days (100 per run). To do it at once instead, and confirm:
 ./drush webform:purge --all -y
 ./drush sqlq "SELECT webform_id, COUNT(*), FROM_UNIXTIME(MIN(created)) FROM webform_submission GROUP BY webform_id"
@@ -239,3 +239,14 @@ install_cron.sh internationalgospelchoir.uk live "a@example.com,<your gmail>"
 # name="honeypot_time" and a hidden "url" text field. Submitting the form
 # inside 5 seconds of loading it is rejected with a message asking to wait.
 
+
+# ---------------------------------------------------------------------------
+# EMAIL ADDRESSES are not kept in the repo (it may be open-sourced). The
+# webform recipients (to_mail) are empty in config/sync and set per
+# environment in settings/<n>/settings.local.php on the server as
+# $config['webform.webform.<form>']['handlers']['<handler>']['settings']['to_mail'].
+# Alert addresses for the cron jobs are passed to install_cron.sh, which
+# only writes them into the crontab. Placeholders like <superadmin address>
+# in these notes mean the real address. Git history before Sep 2026 still
+# contains the addresses; rewrite or restart the history before publishing.
+# ---------------------------------------------------------------------------
