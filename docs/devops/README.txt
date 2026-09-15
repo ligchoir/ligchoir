@@ -115,7 +115,9 @@ git pull origin main
 # ---------------------------------------------------------------------------
 # ORDER MATTERS when a release REMOVES a module (uninstalled + composer remove
 # in the same release): run cim BEFORE composer install, so Drupal uninstalls
-# the module while its code is still present. Otherwise composer deletes the
+# the module while its code is still present. If the same release also ADDS
+# a module, cim cannot run first either: instead "drush pmu <removed> -y",
+# then composer install, then cim (seen Sep 2026, antibot out / honeypot in). Otherwise composer deletes the
 # code first, the import can only edit core.extension, and the module's own
 # uninstall (dropping its tables, system.schema entry) never runs.
 #
@@ -192,14 +194,17 @@ sudo systemctl reload php8.3-fpm
 
 # ---------------------------------------------------------------------------
 # Webform retention release (feature/webform-retention, Sep 2026). See
-# docs/dev/webform-submissions-plan.md. This release REMOVES antibot, so cim
-# runs before composer install. It also turns off automated cron (a real
-# cron job replaces it), so run install_cron.sh straight after deploying.
-# From the release code dir on the server:
+# docs/dev/webform-submissions-plan.md. This release REMOVES antibot AND ADDS
+# honeypot, so neither "cim first" nor "composer first" works on its own
+# (cim first: cannot install honeypot, code missing; composer first: antibot
+# code gone before Drupal uninstalls it). Uninstall the removed module by
+# hand while its code is present, then install, then import. It also turns
+# off automated cron (a real cron job replaces it), so run install_cron.sh
+# straight after deploying. From the release code dir on the server:
 # ---------------------------------------------------------------------------
 backup_db.sh internationalgospelchoir.uk 1     # the last dump that holds all 7,500 old submissions
 git pull origin <branch>
-./drush cim -y                                  # uninstalls antibot while its code is present
+./drush pmu antibot -y                          # while its code is still present
 ./composer install --no-dev --optimize-autoloader
 sudo systemctl reload php8.3-fpm
 ./drush updb -y
