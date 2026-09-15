@@ -1,9 +1,9 @@
 # Webform enquiries: housekeeping and retention plan
 
 Written 2026-09-15 from the live database (read-only), the exported config
-and the server settings. Nothing has been purged yet. This is the brief for
-the scripts and config work that follows; the decisions Rob needs to make
-are in section 5.
+and the server settings; decisions agreed with Rob the same evening
+(section 5). Nothing has been purged yet. This is the brief for the scripts
+and config work in section 6.
 
 ## 1. What is in place today
 
@@ -64,9 +64,17 @@ re-send if mail breaks. Proposal:
 2. **Stop storing IP addresses.** Webform setting "Disable the tracking of
    user IP address" (`form_disable_remote_addr`) on all four forms. Antibot
    does not need it.
-3. **superadmin@ mailbox: 30 days, then delete.** Two ways, pick one in
-   section 5: a Zoho Mail retention rule set in the Zoho admin console (no
-   code, preferred), or a small IMAP script run from the server by cron.
+3. **superadmin@ mailbox: nothing accumulates.** superadmin@ comes off
+   the recipient list of all four forms (a one-line edit each in
+   `settings.local.php` on the server). The site still sends *as*
+   superadmin@, and Zoho keeps a copy of every SMTP-sent message in that
+   account's Sent folder by default. Turn that off in Zoho Mail: Settings,
+   Mail Accounts, pick the address, SMTP section, untick "Save copy of sent
+   emails". After the one-off purge (section 4) the mailbox then stays
+   empty. No retention rule or script is needed going forward. (Zoho's own
+   retention policy is part of eDiscovery, only on Mail Premium and
+   Workplace Professional plans, and it governs the eDiscovery archive, not
+   the live Inbox and Sent folders, so it would not have done the job.)
 4. **Database backups: 30 days.** Add pruning to `backup_db.sh` so dumps
    older than 30 days are removed. The pre-purge backup taken in section 4
    is deleted once the purge is confirmed.
@@ -100,27 +108,55 @@ until the last step:
    per form with `drush webform:purge contact -y` etc.
 3. Confirm counts are zero: `drush sqlq "SELECT webform_id, COUNT(*) FROM
    webform_submission GROUP BY webform_id"`.
-4. Purge the superadmin@ mailbox in Zoho (manual, or the script).
+4. Empty the superadmin@ mailbox: Inbox, Sent, Trash. Manually in Zoho
+   Mail (select all in each folder, delete, then empty Trash), or with the
+   IMAP script below if the volume makes that tedious.
 5. Delete the pre-purge dump and any older dumps once satisfied.
 
-These steps will be wrapped in `scripts/devops/webform-purge.sh` with a
+Steps 1 to 3 will be wrapped in `scripts/devops/webform-purge.sh` with a
 dry-run mode.
 
-## 5. Decisions for Rob
+**The mailbox script, for the record.** A short Python script using the
+standard `imaplib` library: connects to Zoho IMAP (imappro.zoho.com, port
+993, TLS) with an app-specific password generated in Zoho's security
+settings (not the account password), lists the messages in a named folder
+older than N days, prints what it would delete, and only deletes and
+expunges with an explicit `--yes`. Run from Rob's machine or the server;
+the password lives in an environment variable or a file readable only by
+the user, never in the repo. Because superadmin@ stops receiving and
+storing mail (item 3 in section 2), this script is only for the one-off
+clean-out, if wanted, not something to run on a schedule.
 
-1. Retention period for the website copy: 30 days (proposed), or other.
-2. Keep superadmin@ as a recipient on every form, or rely on the daily
-   check and weekly digest instead? Keeping it is fine with a 30-day
-   mailbox rule.
-3. Mailbox purge: Zoho retention rule (no code) or IMAP script on the
-   server (needs an app password stored in the server environment).
-4. Spam: start with Honeypot (module 2.2.2, Drupal 11, no user
-   interaction, adds a hidden field and a minimum fill time), review after
-   a month, and only add a CAPTCHA (Cloudflare Turnstile, free, module
-   1.2.0) if spam is still a problem. Turnstile shows a small widget to
-   users.
-5. Data requests contact in the privacy policy: keep "via the online
-   forms" or publish welcome@ (or a dedicated privacy@) for it.
+## 5. Decisions (agreed 2026-09-15)
+
+1. **Retention: 30 days** for the website copy of submissions.
+2. **superadmin@ is dropped as a recipient** on all four forms. Delivery
+   is proven by the daily check and weekly digest (section 3) instead.
+3. **Mailbox: no rule, no scheduled script.** Zoho's retention policy
+   turned out not to apply to the live mailbox (see section 2, item 3), so
+   the approach is: stop the mail arriving (item 2) and stop Zoho saving
+   SMTP copies to Sent, then a one-off clean-out. The IMAP script is
+   documented above as an option for the clean-out only.
+4. **Spam: Honeypot only, and Antibot to be reconsidered.** Honeypot is
+   entirely server-side (a hidden field and a minimum fill time), so forms
+   keep working with JavaScript off. Antibot, already installed, is the
+   opposite: its project page says that without JavaScript "the form is
+   hidden and a message is present in its place, telling them they need
+   JavaScript in order to use the form". So the current setup is the one
+   with the accessibility problem. Package B adds Honeypot; after a month
+   with both, decide whether Antibot can go. Turnstile is held in reserve:
+   it is free (Cloudflare's free plan allows 20 widgets and unlimited
+   checks, no need to route the site through Cloudflare) but it also needs
+   JavaScript, so it would only be added if Honeypot alone is not enough.
+5. **Data requests: via the contact form on /about.** No email address on
+   the page. The policy text will say so.
+
+Also agreed: **move cookie consent to Klaro**, including gating the
+YouTube embed on the front page until consent. The Klaro module is at
+3.1.1 (July 2026), supports Drupal 11, ships with a predefined service for
+oEmbed and social media embeds (which covers the YouTube paragraph) and
+supports Google Consent Mode v2. Added as package I; it replaces
+eu_cookie_compliance.
 
 ## 6. Work packages for Claude Code
 
@@ -134,11 +170,14 @@ Each is a branch, tested locally, deployed by Rob.
 | D | Mail health | `scripts/devops/mail-health.php` (drush php:script): daily alert, weekly digest, run from the crontab in C. |
 | E | Purge script | `scripts/devops/webform-purge.sh` with `--dry-run`, wraps backup + `webform:purge` + count check; README block. |
 | F | Backup pruning | `backup_db.sh`: keep 30 days; note in README. |
-| G | Mailbox purge | Only if the script option is chosen in decision 3: `scripts/devops/zoho-mailbox-purge.py` (IMAP, deletes mail older than N days from one folder, dry-run first). |
-| H | Privacy policy | Draft replacement text for the retention and IP paragraphs, a last-updated date, and the data-request contact; the wording is Rob's to approve and paste into the page. Plus the short note for team members (section 2, item 5). |
+| G | Mailbox clean-out script | Optional, one-off: `scripts/devops/zoho-mailbox-purge.py` (IMAP, lists then deletes mail older than N days from one folder, `--yes` to act). |
+| H | Privacy policy | Draft replacement text for the retention and IP paragraphs, a last-updated date, and the data-request route (contact form on /about); the wording is Rob's to approve and paste into the page. Plus the short note for team members (section 2, item 5). |
+| I | Klaro | Replace eu_cookie_compliance with Klaro 3.1: consent banner, YouTube embed gated until consent, Google Analytics under Consent Mode; config export; theme styling to match the site. |
+| R | Rob, on the server and in Zoho | Remove superadmin@ from the four `to_mail` lines in `settings.local.php`; in Zoho untick "Save copy of sent emails" for superadmin@; after E, empty the mailbox. Documented in `docs/devops/README.txt` when A ships. |
 
 Suggested order: A, B, C and D together in one deploy (they are small and
-reinforce each other), then E to run the one-off purge, then F, G, H.
+reinforce each other) with R alongside, then E to run the one-off purge,
+then F, H, then I as its own piece of work.
 
 ## 7. Notes
 
