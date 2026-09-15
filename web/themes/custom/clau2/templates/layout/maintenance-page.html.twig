@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override for the site maintenance page (#31).
+ *
+ * Styled like the other pages: black page, the small LIGC header used on
+ * inner pages, then the maintenance message. No blocks render in
+ * maintenance mode, so the title is written here with the header block's
+ * classes instead of coming from the block.
+ *
+ * Available variables:
+ * - site_name: The name of the site.
+ * - front_page: The URL of the front page.
+ * - title: The page title ("Site under maintenance").
+ * - page.content: The maintenance message from admin/config/development/maintenance.
+ *
+ * @see template_preprocess_maintenance_page()
+ */
+#}
+<div class="layout-container ligc-maintenance">
+  <div class="ligc-title-menu-combo">
+    <header role="banner" id="ligc-hdr" class="ligc-hdr-hgt-init">
+      <div id="block-ligcinitialsandfullname" class="ligc-text ligc-heading ligc-title-small">
+        <a class="ligc-title-encl" href="{{ front_page }}" rel="home">
+          <div class="field field--name-field-initials field--type-string field--label-hidden field__item">LIGC</div>
+        </a>
+        <a class="ligc-title-encl" href="{{ front_page }}" rel="home">
+          <div class="field field--name-field-full-name field--type-string field--label-hidden field__item">London International Gospel Choir</div>
+        </a>
+      </div>
+    </header>
+  </div>
+
+  <main role="main" class="ligc-maintenance-main ligc-text">
+    {% if title %}
+      <h1 class="page-title"><span>{{ title }}</span></h1>
+    {% endif %}
+    {{ page.highlighted }}
+    <div class="ligc-maintenance-message">
+      {{ page.content }}
+    </div>
+  </main>
+</div>

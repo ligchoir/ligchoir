@@ -24,11 +24,10 @@
 <div data-drupal-messages>
 {% for type, messages in message_list %}
   <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
-      <div role="alert">
-    {% else %}
-      <div class="clau2-webform-submit-wrapper">
-    {% endif %}
+    {# One box style for all types (the green success box already used on
+       the webform confirmation page), with a per-type modifier for colour
+       and icon: see css/styles/_contact.css. #}
+    <div class="clau2-webform-submit-wrapper clau2-message clau2-message--{{ type }}"{% if type == 'error' %} role="alert"{% endif %}>
     {% if status_headings[type] %}
       <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
     {% endif %}

@@ -134,12 +134,11 @@
     <div{{ content_attributes.addClass('node__content ligc-event-full-outer ligc-justify ligc-text') }}>
       <div class="ligc-event-full">
 
-          {% if date_event_as_unix_time_int > date_now_as_unix_time_int %}
-            <h1>{{ label }}</h1>
-          {% else %} 
-            <h1>Past Event: {{ label }}</h1>
-          {% endif %}  
-    
+          {# The title is the page title block over the hero; not repeated here (#20). #}
+          {% if date_event_as_unix_time_int <= date_now_as_unix_time_int %}
+            <div class="ligc-event-past">Past event</div>
+          {% endif %}
+
           {% if node.field_time_tbc.value %}
             <span class="ligc-event-when">{{ date_event_day_only }}, Time TBC</span>
           {% else %}

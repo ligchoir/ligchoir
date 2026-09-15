@@ -47,7 +47,8 @@ form.webform-submission-form {
 .form-email, .form-text {
 	border-radius: 5px;
 	display: block;
-	width: 95%;
+	width: 100%;
+	box-sizing: border-box; /* same outer width as the textarea (#23) */
 	padding: 8px 12px;
 	margin-bottom: 10px;
 	line-height: 1.428571429;
@@ -60,6 +61,7 @@ textarea {
 	border-radius: 5px;
 	display: block;
 	width: 100%;
+	box-sizing: border-box;
 	padding: 8px 12px;
 	margin-bottom: 10px;
 	line-height: 1.428571429;
@@ -104,7 +106,8 @@ input.button{
 	margin: 0;
 	border-radius: 5px;
 	display: block;
-	width: 95%;
+	width: 100%;
+	box-sizing: border-box;
 	padding: 8px 12px;
 	margin-bottom: 10px;
 	color: #333333;
@@ -265,4 +268,45 @@ input[type="submit"] {
 
 .ligc-webform .form-type-datetime > label {
 	display: block;
+}
+
+/* ------------------------------------------------------------------
+   Drupal status messages (#9, #30). The success look is the existing
+   .clau2-webform-submit-wrapper (green, tick). Errors and warnings get
+   the same box with their own colour and icon; before, errors had no
+   styling at all and were invisible over the dark hero.
+   ------------------------------------------------------------------ */
+.clau2-message--warning {
+	color: #734c00;
+	border-color: #f4daa6 #f4daa6 #f4daa6 transparent;
+	background-color: #fdf8ed;
+	background-image: url(/core/misc/icons/e29700/warning.svg);
+	box-shadow: -8px 0 0 #e09600;
+}
+
+.clau2-message--error {
+	color: #a51b00;
+	border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+	background-color: #fcf4f2;
+	background-image: url(/core/misc/icons/e32700/error.svg);
+	box-shadow: -8px 0 0 #e62600;
+}
+
+.clau2-message ul {
+	margin: 0;
+	padding-left: 1.2em;
+}
+
+.clau2-message a {
+	color: inherit;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 767px ) {
+	.clau2-message {
+		width: auto;
+		margin-left: 1.25em;
+		margin-right: 1.25em;
+		font-size: 1.2em;
+	}
 }
