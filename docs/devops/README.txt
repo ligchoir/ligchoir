@@ -228,8 +228,12 @@ python3 scripts/devops/zoho-mailbox-purge.py --list-folders      # checks the lo
 python3 scripts/devops/zoho-mailbox-purge.py --days 30            # dry run: what would go
 python3 scripts/devops/zoho-mailbox-purge.py --days 30 --yes      # first real clean-out
 #  3. Install the cron jobs (drush cron hourly, daily check, weekly digest,
-#     nightly mailbox purge). alert_to is who gets the alerts and the Monday digest:
-install_cron.sh internationalgospelchoir.uk live "<superadmin address>,<your gmail>"
+#     nightly mailbox purge). alert_to is who gets the alerts and the Monday
+#     digest. The toolkit copies on the server live in
+#     ~/infrastructure/provision-site/toolkit (not on PATH); copy new scripts
+#     there from the release, then run:
+cp tools/infrastructure/provision-site/toolkit/install_cron.sh ~/infrastructure/provision-site/toolkit/
+~/infrastructure/provision-site/toolkit/install_cron.sh internationalgospelchoir.uk live "<superadmin address>,<your gmail>"
 #  4. Within a few days the hourly cron has purged every submission older
 #     than 30 days (100 per run). To do it at once instead, and confirm:
 ./drush webform:purge --all -y
