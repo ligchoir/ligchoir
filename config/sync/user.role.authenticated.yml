@@ -8,10 +8,10 @@ dependencies:
   module:
     - comment
     - contact
-    - eu_cookie_compliance
     - file
     - filter
     - fontawesome
+    - klaro
     - media
     - search
     - shortcut
@@ -29,10 +29,10 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'delete own files'
-  - 'display eu cookie compliance popup'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'use klaro'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view media'

@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - eu_cookie_compliance
     - file
 id: section_leader
 label: 'Section Leader'
@@ -11,4 +10,3 @@ weight: 3
 is_admin: null
 permissions:
   - 'delete own files'
-  - 'display eu cookie compliance popup'

@@ -132,3 +132,6 @@ out/
 # not ignored at this time, may ignore useful files by mistake
 #target/
 
+
+# Klaro JS library, installed by composer (drupal/klaro_js) into web/libraries
+web/libraries/klaro/

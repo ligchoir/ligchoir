@@ -182,7 +182,7 @@ Each is a branch, tested locally, deployed by Rob.
 | F | Backup pruning | Already covered: `backup_db.sh` keeps the last 10 dumps per database and deletes older ones. Nothing to build; the pre-purge dump is deleted by hand (README). |
 | G | Mailbox purge script | `scripts/devops/zoho-mailbox-purge.py` (IMAP, lists then with `--yes` deletes mail older than 30 days from Sent, Inbox and Trash), scheduled nightly by C. Credentials from a file on the server (see R). |
 | H | Privacy policy | Draft replacement text for the retention and IP paragraphs, a last-updated date, and the data-request route (contact form on /about); the wording is Rob's to approve and paste into the page. Plus the short note for team members (section 2, item 5). |
-| I | Klaro | Replace eu_cookie_compliance with Klaro 3.1: consent banner, YouTube embed gated until consent, Google Analytics under Consent Mode; config export; theme styling to match the site. |
+| I | Klaro | Replace eu_cookie_compliance with Klaro 3.1. Done 2026-09-16 on `feature/klaro`: no banner (the site sets no cookies for visitors and has no analytics, so "silent" mode), the YouTube embed shows a placeholder until accepted, "Manage privacy settings" opens the dialog, styled to match the site. The webforms need nothing: no external resources, no cookies, Honeypot is server-side. |
 | R | Rob, on the server and in Zoho | Remove superadmin@ from the four `to_mail` lines in `settings.local.php`; in Zoho enable IMAP access and create an app-specific password for superadmin@ and put it in `/home/rob/.config/ligc/zoho-imap.env` (mode 600); run `install_cron.sh`; run the purge script after X. Documented in `docs/devops/README.txt` when A ships. |
 
 Suggested order: X first (read-only, no deploy). Then A, B, C, D and G
@@ -191,6 +191,11 @@ then F, H, then I as its own piece of work.
 
 ## 7. Status
 
+- 2026-09-16: A to D and G deployed to live by Rob; cron installed; mailbox
+  cleared (24,079 messages). I (Klaro) built on `feature/klaro`. For H: the
+  site now sets no cookies for visitors at all; Klaro stores a consent
+  cookie only after the visitor accepts the YouTube video, and there is no
+  Google Analytics (the current policy text says there is).
 - 2026-09-15: X done (export and triage; results in Rob's private folder).
   A, B, C, D and G built on `feature/webform-retention`, tested locally:
   purge and IP tracking config, dblog row limit 100,000, automated cron off,
