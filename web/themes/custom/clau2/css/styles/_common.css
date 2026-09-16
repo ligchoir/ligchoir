@@ -192,10 +192,25 @@ h2 a {
   --border-radius: 1em;
 }
 
-/* The "Manage privacy settings" modal: links legible on the dark ground. */
+/* The "Manage privacy settings" modal: links legible on the dark ground,
+   buttons in the site red. */
 .klaro .cm-modal a,
 .klaro .cm-modal .cm-link {
   color: #ff9b99;
+}
+
+.klaro .cm-modal .cm-btn,
+.klaro .cm-modal .cm-btn.cm-btn-success,
+.klaro .cm-modal .cm-btn.cm-btn-info {
+  background: #d63836;
+  color: #fff;
+  border-radius: 1em;
+  font-family: 'Vegur', sans-serif;
+}
+
+.klaro .cm-modal .cm-btn:hover,
+.klaro .cm-modal .cm-btn:focus-visible {
+  background: #b52f2d;
 }
 
 .klaro.cm-as-context-notice .context-notice {
