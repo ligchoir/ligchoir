@@ -334,3 +334,14 @@ body.maintenance-page {
     padding-top: 2em;
   }
 }
+
+.ligc-video-fallback {
+  text-align: center;
+  padding-top: 0.75em;
+}
+
+.ligc-video-fallback a {
+  color: #fff;
+  font-weight: normal;
+  text-decoration: underline;
+}
