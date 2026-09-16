@@ -182,9 +182,10 @@ h2 a {
    site: Vegur, black, red button. Variables are Klaro's own. */
 .klaro {
   --font-family: 'Vegur', sans-serif;
-  --dark1: #1c1517;
-  --dark2: #3f0000;
+  --dark1: #1c1517;          /* dialog ground */
+  --dark2: #ff9b99;          /* "(always required)" labels sit on the dark ground */
   --light1: #ffffff;
+  --light3: #d9cfd0;         /* "Purpose: ..." lines */
   --green1: #d63836;
   --green2: #b52f2d;
   --blue1: #d63836;
@@ -193,7 +194,15 @@ h2 a {
 }
 
 /* The "Manage privacy settings" modal: links legible on the dark ground,
-   buttons in the site red. */
+   buttons in the site red, secondary text light enough to read. */
+/* Klaro's own selectors for the modal are very specific, so the secondary
+   text colours are set through its variables above; only the description
+   needs a rule. "body" prefix because this file is in the theme's "base"
+   CSS group, which loads before Klaro's stylesheet. */
+body .klaro .cm-modal .cm-list-description {
+  color: #d9cfd0;
+}
+
 .klaro .cm-modal a,
 .klaro .cm-modal .cm-link {
   color: #ff9b99;
