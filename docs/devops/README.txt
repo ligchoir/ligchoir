@@ -259,3 +259,27 @@ cp tools/infrastructure/provision-site/toolkit/install_cron.sh ~/infrastructure/
 # in these notes mean the real address. Git history before Sep 2026 still
 # contains the addresses; rewrite or restart the history before publishing.
 # ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Klaro release (feature/klaro, Sep 2026): cookie/consent management moves
+# from eu_cookie_compliance to Klaro. No banner: the site sets no cookies
+# for visitors, so Klaro runs in "silent" mode and only gates the YouTube
+# embed on the front page (a placeholder until the visitor accepts). The
+# Klaro JS library is installed by composer into web/libraries/klaro (git
+# ignored). This release REMOVES eu_cookie_compliance and ADDS klaro, so the
+# same order as the retention release. From the release code dir:
+# ---------------------------------------------------------------------------
+git pull origin <branch>
+./drush pmu eu_cookie_compliance -y             # while its code is still present
+./composer install --no-dev --optimize-autoloader
+sudo systemctl reload php8.3-fpm
+./drush updb -y
+./drush cim -y                                  # installs klaro, its 3 apps and 2 purposes, grants "use klaro"
+./drush cr
+./drush cst
+ls web/libraries/klaro/dist | head -3            # klaro-no-translations-no-css.js must be there
+# Check: front page as a logged-out visitor shows "Load external content
+# supplied by YouTube?" over the video; "Yes (this time)" loads it; "Manage
+# privacy settings" opens the dialog. No cookie banner anywhere.
+# To show a banner instead: admin/config/system/klaro, Dialog mode "Notice".
+

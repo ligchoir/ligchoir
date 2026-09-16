@@ -34,6 +34,7 @@ module:
   honeypot: 0
   image: 0
   image_widget_crop: 0
+  klaro: 0
   layout_builder: 0
   layout_builder_expose_all_field_blocks: 0
   layout_discovery: 0
@@ -80,7 +81,6 @@ module:
   views: 10
   paragraphs: 11
   standard: 1000
-  eu_cookie_compliance: 1001
 theme:
   stable: 0
   classy: 0

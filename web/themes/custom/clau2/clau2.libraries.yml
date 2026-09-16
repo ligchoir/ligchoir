@@ -19,6 +19,10 @@ design:
       css/common/style.css: {}
   js:
     js/theme.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once
 video-responsive:
   version: VERSION
   css:

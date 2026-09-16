@@ -176,62 +176,84 @@ h2 a {
   padding: 1em;
 }
 
-/*
-.disagree-button.eu-cookie-compliance-more-button, .eu-cookie-compliance-agree-button, .eu-cookie-compliance-default-button, .eu-cookie-compliance-hide-button, .eu-cookie-compliance-more-button-thank-you, .eu-cookie-withdraw-button, .eu-cookie-compliance-save-preferences-button {
-*/
-.eu-cookie-compliance-default-button.agree-button {
+/* Klaro consent (cookie/consent management). Only the YouTube embed needs
+   consent on this site, so Klaro runs in "silent" mode: no banner, just a
+   placeholder on the video until the visitor accepts. Styling matches the
+   site: Vegur, black, red button. Variables are Klaro's own. */
+.klaro {
+  --font-family: 'Vegur', sans-serif;
+  --dark1: #1c1517;
+  --dark2: #3f0000;
+  --light1: #ffffff;
+  --green1: #d63836;
+  --green2: #b52f2d;
+  --blue1: #d63836;
+  --blue2: #b52f2d;
+  --border-radius: 1em;
+}
+
+/* The "Manage privacy settings" modal: links legible on the dark ground,
+   buttons in the site red. */
+.klaro .cm-modal a,
+.klaro .cm-modal .cm-link {
+  color: #ff9b99;
+}
+
+.klaro .cm-modal .cm-btn,
+.klaro .cm-modal .cm-btn.cm-btn-success,
+.klaro .cm-modal .cm-btn.cm-btn-info {
+  background: #d63836;
+  color: #fff;
   border-radius: 1em;
-  border: 0.2em solid;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: inherit;
-  display: inline-block;
-  background-color: transparent;
-  background-image: none;
-  text-align: center;
-  font-family: 'Vegur';
-  font-size: 1.3em;
-  text-shadow: none;
+  font-family: 'Vegur', sans-serif;
 }
 
+.klaro .cm-modal .cm-btn:hover,
+.klaro .cm-modal .cm-btn:focus-visible {
+  background: #b52f2d;
+}
 
-.eu-cookie-compliance-default-button.agree-button:hover {
+.klaro.cm-as-context-notice .context-notice {
+  background: #000;
+  color: #fff;
+  font-family: 'Vegur', sans-serif;
+  border: 0;
+  border-radius: 0;
+}
+
+.klaro.cm-as-context-notice .context-notice p {
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+/* The first paragraph is the iframe's title attribute ("Embedded video for
+   Home > Content" from the youtube module); the question below it is enough. */
+.klaro.cm-as-context-notice .context-notice > p:nth-last-of-type(4) {
+  display: none;
+}
+
+.klaro.cm-as-context-notice .context-notice .cm-buttons .cm-btn.cm-btn-success {
+  background: transparent;
+  color: #fff;
+  border: 0.2em solid #fff;
   border-radius: 1em;
-  border: 0.2em solid;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: inherit;
-  display: inline-block;
-  background-color: transparent;
-  background-image: none;
-  text-align: center;
-  font-family: 'Vegur';
-  font-size: 1.3em;
-  text-shadow: none;
+  padding: 0.6em 1.4em;
+  font-family: 'Vegur', sans-serif;
+  font-size: 1em;
 }
 
-.eu-cookie-compliance-message {
-  font-family: 'Vegur';
+.klaro.cm-as-context-notice .context-notice .cm-buttons .cm-btn.cm-btn-success:hover,
+.klaro.cm-as-context-notice .context-notice .cm-buttons .cm-btn.cm-btn-success:focus-visible {
+  background: #d63836;
+  border-color: #d63836;
 }
 
-@media screen and (min-width: 600px)  {
-  .eu-cookie-compliance-message {
-    font-family: 'Vegur';
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-}
-
-.eu-cookie-compliance-banner {
-  background-color: #3f0000;
-  color: white;
+.klaro.cm-as-context-notice .context-notice .cm-dialog-link a {
+  color: #fff;
+  font-weight: normal;
+  text-decoration: underline;
 }
 
 /* ------------------------------------------------------------------
@@ -311,4 +333,34 @@ body.maintenance-page {
     padding-left: 3.4em;
     padding-top: 2em;
   }
+}
+
+.ligc-video-fallback {
+  text-align: center;
+  padding-top: 0.75em;
+}
+
+.ligc-video-fallback a {
+  color: #fff;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+/* Inside the responsive video box, let the placeholder fill the 16:9 area
+   and centre its text, instead of a strip along the top. */
+.youtube-container--responsive .klaro.cm-as-context-notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youtube-container--responsive .klaro.cm-as-context-notice .context-notice {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
