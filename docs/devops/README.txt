@@ -53,7 +53,7 @@ scripts/content/events/import_events.sh scripts/content/events/data/<file>.yml
 scripts/content/events/import_events.sh scripts/content/events/data/<file>-updates.yml --update --dry-run
 scripts/content/events/import_events.sh scripts/content/events/data/<file>-updates.yml --update
 
-# Option B - toolkit wrapper (tools/infrastructure/provision-site/toolkit/import_events.sh,
+# Option B - toolkit wrapper (import_events.sh from the infrastructure repo, provision-site/toolkit/,
 # copied to the server scripts dir like the other toolkit scripts). Finds the live release,
 # backs up the DB before a real run, clears cache after.
 
@@ -232,7 +232,7 @@ python3 scripts/devops/zoho-mailbox-purge.py --days 30 --yes      # first real c
 #     digest. The toolkit copies on the server live in
 #     ~/infrastructure/provision-site/toolkit (not on PATH); copy new scripts
 #     there from the release, then run:
-cp tools/infrastructure/provision-site/toolkit/install_cron.sh ~/infrastructure/provision-site/toolkit/
+# (install_cron.sh comes from the infrastructure repo, provision-site/toolkit/; pull it there)
 ~/infrastructure/provision-site/toolkit/install_cron.sh internationalgospelchoir.uk live "<superadmin address>,<your gmail>"
 #  4. Within a few days the hourly cron has purged every submission older
 #     than 30 days (100 per run). To do it at once instead, and confirm:

@@ -14,7 +14,7 @@ an env file (default ~/.config/ligc/zoho-imap.env, mode 600) with lines:
 
 Set ZOHO_IMAP_ENV to use a different file. The account needs IMAP access
 enabled in Zoho Mail (Settings, Mail Accounts, IMAP access).
-Scheduled nightly by tools/infrastructure/provision-site/toolkit/install_cron.sh.
+Scheduled nightly by install_cron.sh from the infrastructure repo (provision-site/toolkit/).
 See docs/dev/webform-submissions-plan.md.
 """
 import argparse, datetime, imaplib, os, sys

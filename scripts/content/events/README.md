@@ -12,7 +12,7 @@ Files:
 | `import_events.sh` | Runner: resolves the repo root and calls drush with the right arguments. |
 | `events.example.yml` | Documented example of the data file format. |
 | `data/*.yml` | Real data files, one per batch. Committed so live runs the same file as local. |
-| `tools/infrastructure/provision-site/toolkit/import_events.sh` | Server wrapper: finds the release, backs up the DB, runs the import, clears cache. |
+| `provision-site/toolkit/import_events.sh` (infrastructure repo) | Server wrapper: finds the release, backs up the DB, runs the import, clears cache. |
 
 ## Workflow
 

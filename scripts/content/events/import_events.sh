@@ -7,7 +7,7 @@
 # Local (ddev):
 #   ddev exec scripts/content/events/import_events.sh scripts/content/events/data/2026-09.yml --dry-run
 #
-# Live/staging: see tools/infrastructure/provision-site/toolkit/import_events.sh,
+# Live/staging: see import_events.sh in the infrastructure repo (provision-site/toolkit/),
 # or run this directly from the release's code directory.
 
 set -e

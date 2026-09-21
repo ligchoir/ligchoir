@@ -89,15 +89,10 @@
  * @endcode
  */
 
-// Real database credentials live in settings.local.php (not version controlled).
-$databases['default']['default'] = array (
-  'database' => 'drupaldb',
-  'username' => 'drupaldb',
-  'password' => 'REDACTED',
-  'host' => 'localhost',
-  'port' => '3306',
-  'driver' => 'mysql',
-);
+// Database credentials are not version controlled. Production and staging set
+// $databases in settings.local.php; DDEV sets them in settings.ddev.php (both
+// included near the end of this file).
+$databases = [];
 
 /**
  * Customizing database settings.

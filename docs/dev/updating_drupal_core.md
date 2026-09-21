@@ -52,12 +52,13 @@ gitignored and rebuilt from the lockfile on the server.
 ## Deploying to live
 
 The site is deployed on the DigitalOcean server using the release-based
-toolkit at `tools/infrastructure/provision-site/toolkit/`. See that
-folder's `README.md` for full script documentation.
+toolkit in the separate infrastructure repository
+(https://github.com/therobyouknow/infrastructure, folder `provision-site/toolkit/`).
+See that folder's `README.md` for full script documentation.
 
 ### 0. Pick a release version
 
-Use the next semver patch (look at `tools/infrastructure/version.md` and
+Use the next semver patch (look at `version.md` in the infrastructure repository and
 the existing `releases/` directories on the server for the current
 number). The version string is used only as the on-disk release folder
 name; it does not have to match Drupal's version.
