@@ -73,7 +73,7 @@ cd /var/www/05/<domain>/releases && ls -1 | sort -V | tail -5
 
 ```bash
 # On the server, as rob, in the toolkit dir
-cd ~/scripts    # or wherever the toolkit lives — see install.sh
+cd ~/infrastructure/provision-site/toolkit    # clone of the infrastructure repo; git pull first
 
 # Clones the repo at the current tip of the default branch
 ./create_release.sh <domain> <new_release_version> git@github.com:ligchoir/ligchoir.git
@@ -92,7 +92,7 @@ ln -sf ../../../../../../deployment_environments/staging/assets/public/files fil
 
 # Deploy: backs up DB, runs composer install --no-dev, flips the symlink,
 # runs drush updb -y and drush cr.
-cd ~/scripts
+cd ~/infrastructure/provision-site/toolkit
 ./deploy.sh <domain> staging <new_release_version>
 ```
 
@@ -120,7 +120,7 @@ cd /var/www/05/<domain>/releases/<new_release_version>/code/web/sites/default
 ln -sf ../../../../../../deployment_environments/live/assets/public/files files
 
 # Deploy to live
-cd ~/scripts
+cd ~/infrastructure/provision-site/toolkit
 ./deploy.sh <domain> live <new_release_version>
 ```
 
