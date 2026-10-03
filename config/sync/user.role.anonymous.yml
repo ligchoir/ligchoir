@@ -6,7 +6,6 @@ dependencies:
     - filter.format.restricted_html
   module:
     - comment
-    - contact
     - filter
     - klaro
     - media
@@ -21,7 +20,6 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
-  - 'access site-wide contact form'
   - 'search content'
   - 'use klaro'
   - 'use text format restricted_html'

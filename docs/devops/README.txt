@@ -283,3 +283,30 @@ ls web/libraries/klaro/dist | head -3            # klaro-no-translations-no-css.
 # privacy settings" opens the dialog. No cookie banner anywhere.
 # To show a banner instead: admin/config/system/klaro, Dialog mode "Notice".
 
+
+# ---------------------------------------------------------------------------
+# Status report clean-up release (fix/status-report, Oct 2026). Uninstalls
+# contact, history and layout_builder_expose_all_field_blocks (all core, so no
+# composer removal and the normal order applies), turns off the Webform CDN
+# warning, and settings.php now sets trusted_host_patterns, READ COMMITTED
+# transaction isolation, enable_html5_validation = FALSE (forms get
+# "novalidate"; Drupal's own messages do the checking - test book/join/contact
+# on staging) and auto-detects a private files directory. From the release
+# code dir, after deploy.sh:
+# ---------------------------------------------------------------------------
+# Once per environment: the private files tree, sibling of the public one.
+E=live    # or staging
+mkdir -p /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private/files
+chown rob:www-data /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private/files
+chmod 770 /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private/files
+# Then the release itself:
+./drush cim -y
+./drush php:script scripts/devops/fix_definitions.php   # re-saves taxonomy_term.field_role, drops the stale "tour" schema entry; safe to repeat
+./drush cr
+./drush core:requirements --severity=2                   # only the SMTP-type items, if any
+# Status report after this: no "Entity/field definitions", "Trusted Host
+# Settings", "Deprecated modules", "Transaction isolation level", "HTML5
+# validation", "Webform: Private files" or "Webform: External libraries"
+# entries. Still there and not fixable in the repo: "GD library: AVIF
+# unsupported" (the server's PHP GD build lacks libavif; harmless, images are
+# JPEG/PNG/WebP).

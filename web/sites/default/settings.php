@@ -837,3 +837,51 @@ $settings['locale_custom_strings_en'][''] = [
   'Unable to send email. Contact the site administrator if the problem persists.' =>
   'Sorry, our email is not working at the moment. Your message has been saved and the team has been alerted, so we will still see it. If it is urgent, please contact us through our social media channels.',
 ];
+
+/**
+ * Hardening and status-report items (Drupal 11.4, October 2026). These sit
+ * after the settings.local.php / settings.ddev.php includes so they apply on
+ * every environment; each one yields to a value set in those files.
+ */
+
+// Trusted host patterns. ddev sets its own ('.*') in settings.ddev.php.
+if (empty($settings['trusted_host_patterns'])) {
+  $settings['trusted_host_patterns'] = [
+    '^internationalgospelchoir\.uk$',
+    '^www\.internationalgospelchoir\.uk$',
+    '^staging\.internationalgospelchoir\.uk$',
+  ];
+}
+
+// Browser-side (HTML5) form validation is off, as it will be by default in
+// Drupal 12; the status report warns until it is FALSE. Forms get the
+// "novalidate" attribute, so required/email checks come from Drupal's own
+// validation messages after submit. Set TRUE here to restore the old behaviour.
+if (!isset($settings['enable_html5_validation'])) {
+  $settings['enable_html5_validation'] = FALSE;
+}
+
+// Drupal recommends READ COMMITTED on MySQL/MariaDB (status report warning).
+if (!empty($databases['default']['default']) && empty($databases['default']['default']['init_commands']['isolation_level'])) {
+  $databases['default']['default']['init_commands']['isolation_level'] = 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED';
+}
+
+// Private file path (Webform asks for one). On the server each release's
+// sites/default/files is a symlink to
+// deployment_environments/<env>/assets/public/files, so the private tree is
+// its sibling deployment_environments/<env>/assets/private/files; create it
+// (owner rob:www-data, mode 770) and this picks it up. ddev uses <project>/private.
+if (empty($settings['file_private_path'])) {
+  if (getenv('IS_DDEV_PROJECT') == 'true') {
+    $settings['file_private_path'] = $app_root . '/../private';
+  }
+  else {
+    $public_files = realpath($app_root . '/' . $site_path . '/files');
+    if ($public_files !== FALSE) {
+      $private_files = dirname($public_files, 2) . '/private/files';
+      if (is_dir($private_files)) {
+        $settings['file_private_path'] = $private_files;
+      }
+    }
+  }
+}

@@ -135,3 +135,6 @@ out/
 
 # Klaro JS library, installed by composer (drupal/klaro_js) into web/libraries
 web/libraries/klaro/
+
+# Private files for local ddev (see settings.php file_private_path)
+/private/
