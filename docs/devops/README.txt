@@ -285,86 +285,38 @@ ls web/libraries/klaro/dist | head -3            # klaro-no-translations-no-css.
 
 
 # ---------------------------------------------------------------------------
-# Status report clean-up release (fix/status-report, Oct 2026). Uninstalls
-# contact, history and layout_builder_expose_all_field_blocks (all core, so no
-# composer removal and the normal order applies), turns off the Webform CDN
-# warning, and settings.php now sets trusted_host_patterns, READ COMMITTED
-# transaction isolation, enable_html5_validation = FALSE (forms get
-# "novalidate"; Drupal's own messages do the checking - test book/join/contact
-# on staging) and auto-detects a private files directory. From the release
-# code dir, after deploy.sh:
+# October 2026 releases: status report clean-up, local icons (fontawesome
+# removed), musical team as Team member content (musical_team vocabulary
+# removed). One script does every post-deploy step for all of them, in the
+# right order, and is safe to re-run. After the code is in place (deploy.sh,
+# or git pull + ./composer install --no-dev --optimize-autoloader) and the
+# environment's docroot points at the release:
 # ---------------------------------------------------------------------------
-# Once per environment: the private files tree, sibling of the public one.
-E=live    # or staging
-mkdir -p /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private/files
-chown rob:www-data /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private/files
-chmod 770 /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/assets/private/files
-# Then the release itself:
-./drush cim -y
-./drush php:script scripts/devops/fix_definitions.php   # re-saves taxonomy_term.field_role, drops the stale "tour" schema entry; safe to repeat
-./drush cr
-./drush core:requirements --severity=2                   # only the SMTP-type items, if any
-# Status report after this: no "Entity/field definitions", "Trusted Host
-# Settings", "Deprecated modules", "Transaction isolation level", "HTML5
-# validation", "Webform: Private files" or "Webform: External libraries"
-# entries. Still there and not fixable in the repo: "GD library: AVIF
-# unsupported" (the server's PHP GD build lacks libavif; harmless, images are
-# JPEG/PNG/WebP).
-
-# ---------------------------------------------------------------------------
-# Local icons release (feat/local-icons, Oct 2026). Social icons are now SVG
-# files in the theme (clau2/images/icons, Bootstrap Icons) drawn by CSS from
-# the same "fab fa-..." class names, so no content changes. The fontawesome
-# module is REMOVED (uninstalled in config and gone from composer.json), so
-# the module-removal order applies: uninstall while its code is still present,
-# then install the new code, then import. From the release code dir:
-# ---------------------------------------------------------------------------
-./drush pmu fontawesome -y                     # while its code is still present
-./composer install --no-dev --optimize-autoloader
-sudo systemctl reload php8.3-fpm
-./drush updb -y
-./drush cim -y
-./drush cr
-./drush cst                                    # expect no differences
-# Check: /about (team and social links) and the footer social block show the
-# icons in their circles; view source of / has two <link rel="preload" ... woff>
-# lines and no use.fontawesome.com script.
-# If deploy.sh was used for the release (it runs composer install BEFORE you
-# can pmu), the module code is already gone; then run
-#   ./drush php:eval '\Drupal::keyValue("system.schema")->delete("fontawesome");'
-#   ./drush cim -y && ./drush cr
-# cim removes it from core.extension; the key-value line stops drush warning
-# about a missing module (scripts/devops/fix_definitions.php does the same).
-
-# ---------------------------------------------------------------------------
-# Musical team as content (feat/musical-team-nodes, Oct 2026), step 1 of 2.
-# Adds the "Team member" content type (title, Role, Photo, Biography, Order),
-# the "Team members" view (block team_members_block) and the teaser template.
-# Nothing is removed yet, so the normal order applies. After deploy.sh, from
-# the release code dir:
-# ---------------------------------------------------------------------------
-./drush cim -y
-./drush php:script scripts/devops/musical_team_to_nodes.php
-#   creates one published team_member node per musical_team term (order =
-#   the term's weight) and points the About page's "view" paragraph at the
-#   new view. Prints what it did; safe to run again.
-./drush cr
-# Check /about: the team grid is unchanged (same people, order, photos,
-# roles). Editors now manage the team at admin/content, type "Team member"
-# (content_editor can create/edit/delete them). Step 2, the next release,
-# removes the musical_team vocabulary, its fields and the old view; do not
-# deploy step 2 until this script has run on every environment.
-
-# ---------------------------------------------------------------------------
-# Musical team as content, step 2 of 2 (chore/remove-musical-team-vocabulary).
-# Removes the musical_team vocabulary, its two fields, the old "Musical Team"
-# view, the term template, and re-exports structure_sync.data.yml without the
-# people. ONLY after musical_team_to_nodes.php has run on this environment
-# (check /about shows the team from the new view first). Config import will
-# not delete a vocabulary that still has terms, so delete them first:
-# ---------------------------------------------------------------------------
-./drush entity:delete taxonomy_term --bundle=musical_team -y
-./drush cim -y
-./drush cr
-./drush cst                                    # expect no differences
-# Check /about again, and admin/structure/taxonomy no longer lists Musical team.
+scripts/devops/post_deploy.sh staging        # or: live
+# What it does (details at the top of the script):
+#  - checks the docroot, files and settings.local.php symlinks of the release
+#  - creates deployment_environments/<env>/assets/private/files (sudo; the
+#    Webform "private files" item; settings.php picks the directory up)
+#  - fix_definitions.php: drops modules whose code is gone from core.extension
+#    and system.schema (antibot, eu_cookie_compliance on staging; fontawesome,
+#    tour), re-saves the mismatched taxonomy_term.field_role definition
+#  - musical_team_to_nodes.php capture: saves the team terms to state and
+#    deletes them, since cim will not delete a vocabulary with terms
+#  - drush updb, drush cim (twice if needed)
+#  - musical_team_to_nodes.php apply: team_member nodes from the captured
+#    terms, About page paragraph pointed at the team_members view
+#  - php-fpm reload, drush cr, cst, version, status report errors
+# Then check in a browser: / (initials and hero), /about (team grid, social
+# icons), /events, submit a webform (HTML5 browser validation is now off, so
+# "required" messages come from Drupal after submit), admin/reports/status.
+# Expected status report: no Entity/field definitions, Trusted Host, Deprecated
+# modules, Transaction isolation, HTML5 validation, Webform private files or
+# Webform external libraries items. Still there and not fixable in the repo:
+# "GD library: AVIF unsupported" (server PHP build).
+#
+# Settings now in settings.php for every environment: trusted_host_patterns
+# (live, www, staging), READ COMMITTED isolation, enable_html5_validation
+# FALSE, file_private_path auto-detected.
+#
+# Editors manage the team at admin/content, type "Team member" (Role, Photo,
+# Biography, Order = position on /about, lowest first).

@@ -2,21 +2,46 @@
 
 /**
  * @file
- * Clear two status-report leftovers after a deploy. Safe to run repeatedly.
+ * Repair the things that make a config import fail or the status report
+ * complain after a deploy. Safe to run repeatedly; post_deploy.sh runs it
+ * before and after the import.
  *
  *   ./drush php:script scripts/devops/fix_definitions.php
  *
- * 1. "Entity/field definitions: Mismatched" where the only change is that a
+ * 1. Modules still listed in core.extension whose code is no longer in the
+ *    release (a module removed from composer before it was uninstalled, or
+ *    one removed from core: tour). Drupal cannot uninstall them without their
+ *    code; "drush cim" dies with "The module X does not exist" and the status
+ *    report shows "Missing or invalid modules". They are removed from
+ *    core.extension and from the system.schema key-value store, which is the
+ *    documented repair. Their leftover config (X.settings) is removed by the
+ *    following config import.
+ * 2. Stale system.schema entries for modules not on disk (same cause).
+ * 3. "Entity/field definitions: Mismatched" where the only change is that a
  *    field storage definition "needs to be updated" (stored metadata differs,
- *    the table schema does not; seen for taxonomy_term.field_role after the
- *    Drupal 11 upgrade). The definition is re-saved. Any other kind of change
- *    (new or deleted field, entity type change) is printed and left alone,
- *    because those can need data migrations.
- * 2. "The following module is missing from the file system" style warnings
- *    from drush, caused by system.schema key-value entries for modules whose
- *    code is gone (tour after Drupal 11, content_sync earlier). The stale
- *    entries are removed.
+ *    the table does not; taxonomy_term.field_role after the Drupal 11
+ *    upgrade). The definition is re-saved. Other kinds of change are printed
+ *    and left alone, as they can need data migrations.
  */
+
+// reset() rescans the file system; the cached list can still name a module
+// whose code was removed by the composer install that preceded this run.
+$on_disk = array_keys(\Drupal::service('extension.list.module')->reset()->getList());
+$extension = \Drupal::configFactory()->getEditable('core.extension');
+$installed = $extension->get('module') ?: [];
+$gone = array_diff(array_keys($installed), $on_disk);
+if ($gone) {
+  foreach ($gone as $module) {
+    unset($installed[$module]);
+    \Drupal::keyValue('system.schema')->delete($module);
+    print "Removed '$module' from core.extension and system.schema (listed as installed, code not in this release).\n";
+  }
+  $extension->set('module', $installed)->save();
+  drupal_flush_all_caches();
+}
+else {
+  print "core.extension: every installed module is present on disk.\n";
+}
 
 $manager = \Drupal::entityDefinitionUpdateManager();
 $field_manager = \Drupal::service('entity_field.manager');
