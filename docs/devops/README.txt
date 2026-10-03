@@ -354,3 +354,17 @@ sudo systemctl reload php8.3-fpm
 # (content_editor can create/edit/delete them). Step 2, the next release,
 # removes the musical_team vocabulary, its fields and the old view; do not
 # deploy step 2 until this script has run on every environment.
+
+# ---------------------------------------------------------------------------
+# Musical team as content, step 2 of 2 (chore/remove-musical-team-vocabulary).
+# Removes the musical_team vocabulary, its two fields, the old "Musical Team"
+# view, the term template, and re-exports structure_sync.data.yml without the
+# people. ONLY after musical_team_to_nodes.php has run on this environment
+# (check /about shows the team from the new view first). Config import will
+# not delete a vocabulary that still has terms, so delete them first:
+# ---------------------------------------------------------------------------
+./drush entity:delete taxonomy_term --bundle=musical_team -y
+./drush cim -y
+./drush cr
+./drush cst                                    # expect no differences
+# Check /about again, and admin/structure/taxonomy no longer lists Musical team.

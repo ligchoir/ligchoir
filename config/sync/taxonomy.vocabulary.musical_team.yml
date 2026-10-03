@@ -1,9 +1,0 @@
-uuid: 011792e5-fc4a-40ad-975a-bb23d50f15a2
-langcode: en
-status: true
-dependencies: {  }
-name: 'Musical Team'
-vid: musical_team
-description: null
-weight: 0
-new_revision: false
