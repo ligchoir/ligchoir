@@ -106,7 +106,7 @@ imports config and does the release-specific repairs and migrations (see the
 latest block in `docs/devops/README.txt` for what it covers):
 
 ```bash
-/var/www/05/<domain>/releases/<new_release_version>/code/scripts/devops/post_deploy.sh staging
+bash /var/www/05/<domain>/releases/<new_release_version>/code/scripts/devops/post_deploy.sh staging
 ```
 
 ### 3. Smoke-test staging

@@ -292,7 +292,7 @@ ls web/libraries/klaro/dist | head -3            # klaro-no-translations-no-css.
 # or git pull + ./composer install --no-dev --optimize-autoloader) and the
 # environment's docroot points at the release:
 # ---------------------------------------------------------------------------
-scripts/devops/post_deploy.sh staging        # or: live
+bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release sets files to 640)
 # What it does (details at the top of the script):
 #  - checks the docroot, files and settings.local.php symlinks of the release
 #  - creates deployment_environments/<env>/assets/private/files (sudo; the
