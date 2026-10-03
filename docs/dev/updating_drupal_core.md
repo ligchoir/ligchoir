@@ -75,8 +75,11 @@ cd /var/www/05/<domain>/releases && ls -1 | sort -V | tail -5
 # On the server, as rob, in the toolkit dir
 cd ~/infrastructure/provision-site/toolkit    # clone of the infrastructure repo; git pull first
 
-# Clones the repo at the current tip of the default branch
+# Clones the repo at the current tip of the default branch (main) ...
 ./create_release.sh <domain> <new_release_version> git@github.com:ligchoir/ligchoir.git
+# ... or, for a staging test of an unmerged branch, name the branch as the 4th argument.
+# Without it staging gets main, i.e. the code that is already live (seen 2026-10-03).
+./create_release.sh <domain> <new_release_version>-staging git@github.com:ligchoir/ligchoir.git <branch>
 ```
 
 This creates `/var/www/05/<domain>/releases/<new_release_version>/code/`
