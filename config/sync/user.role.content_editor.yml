@@ -12,6 +12,7 @@ dependencies:
     - node.type.home
     - node.type.landing_page
     - node.type.page
+    - node.type.team_member
     - taxonomy.vocabulary.musical_team
     - taxonomy.vocabulary.venues
   module:
@@ -43,6 +44,7 @@ permissions:
   - 'create media'
   - 'create page content'
   - 'create remote_video media'
+  - 'create team_member content'
   - 'create terms in musical_team'
   - 'create terms in venues'
   - 'create video media'
@@ -52,6 +54,7 @@ permissions:
   - 'delete any image media'
   - 'delete any media'
   - 'delete any remote_video media'
+  - 'delete any team_member content'
   - 'delete any video media'
   - 'delete media'
   - 'delete own audio media'
@@ -72,6 +75,7 @@ permissions:
   - 'edit any landing_page content'
   - 'edit any page content'
   - 'edit any remote_video media'
+  - 'edit any team_member content'
   - 'edit any video media'
   - 'edit own audio media'
   - 'edit own document media'

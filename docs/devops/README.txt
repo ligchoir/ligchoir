@@ -335,3 +335,22 @@ sudo systemctl reload php8.3-fpm
 #   ./drush cim -y && ./drush cr
 # cim removes it from core.extension; the key-value line stops drush warning
 # about a missing module (scripts/devops/fix_definitions.php does the same).
+
+# ---------------------------------------------------------------------------
+# Musical team as content (feat/musical-team-nodes, Oct 2026), step 1 of 2.
+# Adds the "Team member" content type (title, Role, Photo, Biography, Order),
+# the "Team members" view (block team_members_block) and the teaser template.
+# Nothing is removed yet, so the normal order applies. After deploy.sh, from
+# the release code dir:
+# ---------------------------------------------------------------------------
+./drush cim -y
+./drush php:script scripts/devops/musical_team_to_nodes.php
+#   creates one published team_member node per musical_team term (order =
+#   the term's weight) and points the About page's "view" paragraph at the
+#   new view. Prints what it did; safe to run again.
+./drush cr
+# Check /about: the team grid is unchanged (same people, order, photos,
+# roles). Editors now manage the team at admin/content, type "Team member"
+# (content_editor can create/edit/delete them). Step 2, the next release,
+# removes the musical_team vocabulary, its fields and the old view; do not
+# deploy step 2 until this script has run on every environment.

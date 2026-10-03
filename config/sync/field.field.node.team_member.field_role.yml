@@ -1,0 +1,19 @@
+uuid: ce6e7ad0-4c7e-4ca6-abf4-3bcff90422f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_role
+    - node.type.team_member
+id: node.team_member.field_role
+field_name: field_role
+entity_type: node
+bundle: team_member
+label: Role
+description: 'For example Musical Director.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

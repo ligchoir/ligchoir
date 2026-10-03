@@ -1,0 +1,11 @@
+uuid: b8a2dd35-e615-4427-b98f-56d58841b943
+langcode: en
+status: true
+dependencies: {  }
+name: 'Team member'
+type: team_member
+description: 'A member of the LIGC team (musical directors, staff). Listed on the About page by the "Team members" view, lowest Order first.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

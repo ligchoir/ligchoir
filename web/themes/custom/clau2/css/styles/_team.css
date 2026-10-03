@@ -1,5 +1,6 @@
 @media screen and (max-width: 1023px ){
-  .view-display-id-musical_team_block .view-content {
+  .view-display-id-musical_team_block .view-content,
+  .view-display-id-team_members_block .view-content {
       width: 80%;
       margin-left: auto;
       margin-right: auto;
@@ -48,7 +49,8 @@
 
 
 @media screen and (min-width: 1024px ) {
-  .view-display-id-musical_team_block .view-content {
+  .view-display-id-musical_team_block .view-content,
+  .view-display-id-team_members_block .view-content {
       width: 100%;
       margin-left: auto;
       margin-right: auto;
