@@ -559,12 +559,13 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: date
-          operator: '>='
+          operator: '>'
           value:
             min: ''
             max: ''
             value: today
             type: offset
+            granularity: second
           group: 2
           exposed: false
           expose:
