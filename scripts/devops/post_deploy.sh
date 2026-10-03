@@ -37,6 +37,23 @@ DRUSH="${CODE}/drush"
 
 log() { echo; echo "[post-deploy] $*"; }
 
+log "0. Tracked files in the release"
+# Drupal hardens web/sites/default to read-only, which makes "git checkout"
+# fail to replace settings.php ("unable to unlink old ... Permission denied")
+# and leaves the previous version in place. Restore it from the branch.
+if [ -d .git ] && ! git diff --quiet -- web/sites/default/settings.php; then
+  chmod u+w web/sites/default
+  git checkout -- web/sites/default/settings.php
+  echo "  settings.php restored from the branch (checkout had left the old file)"
+fi
+if [ -d .git ]; then
+  if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
+    echo "  WARNING: tracked files differ from the branch:"; git status --porcelain --untracked-files=no | sed 's/^/    /'
+  else
+    echo "  clean: $(git rev-parse --abbrev-ref HEAD) at $(git rev-parse --short HEAD)"
+  fi
+fi
+
 if [ "${ENVIRONMENT}" != "local" ]; then
   BASE="$(cd "${CODE}/../../.." && pwd)"           # /var/www/<category>/<domain>
   ENV_PATH="${BASE}/deployment_environments/${ENVIRONMENT}"
@@ -96,6 +113,7 @@ if [ "${ENVIRONMENT}" != "local" ]; then
   fi
 fi
 "${DRUSH}" cr
+"${DRUSH}" php:eval 'update_refresh(); update_fetch_data();' >/dev/null 2>&1 || true   # refresh "available updates" data
 echo "--- config status (expect: No differences)"
 "${DRUSH}" cst
 echo "--- version"

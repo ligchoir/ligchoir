@@ -17,7 +17,11 @@
  *    documented repair. Their leftover config (X.settings) is removed by the
  *    following config import.
  * 2. Stale system.schema entries for modules not on disk (same cause).
- * 3. "Entity/field definitions: Mismatched" where the only change is that a
+ * 3. Entity types "pending installation" and hook_schema tables that do not
+ *    exist: a module listed as installed whose hook_install never ran (klaro
+ *    and honeypot on staging). The entity type is installed and the missing
+ *    tables created from their declared definitions.
+ * 4. "Entity/field definitions: Mismatched" where the only change is that a
  *    field storage definition "needs to be updated" (stored metadata differs,
  *    the table does not; taxonomy_term.field_role after the Drupal 11
  *    upgrade). The definition is re-saved. Other kinds of change are printed
@@ -50,7 +54,14 @@ if (!$changes) {
   print "Entity/field definitions: no changes pending.\n";
 }
 foreach ($changes as $entity_type_id => $change) {
-  if (!empty($change['entity_type'])) {
+  if (($change['entity_type'] ?? NULL) === $manager::DEFINITION_CREATED) {
+    // A module marked installed whose hook_install never ran (klaro on
+    // staging): the entity type is known to the code but was never
+    // registered. Installing it is what the installer would have done.
+    $manager->installEntityType(\Drupal::entityTypeManager()->getDefinition($entity_type_id));
+    print "Installed entity type $entity_type_id (was pending installation).\n";
+  }
+  elseif (!empty($change['entity_type'])) {
     print "LEFT ALONE: entity type $entity_type_id has a pending entity type change (" . $change['entity_type'] . ").\n";
   }
   foreach ($change['field_storage_definitions'] ?? [] as $field_name => $kind) {
@@ -64,6 +75,26 @@ foreach ($changes as $entity_type_id => $change) {
     }
     print "LEFT ALONE: $entity_type_id.$field_name has a pending change of kind $kind.\n";
   }
+}
+
+// Tables declared by an installed module's hook_schema that do not exist
+// (same cause: the module was marked installed without hook_install running;
+// honeypot_user on staging). Created from the declared definition.
+$module_handler = \Drupal::moduleHandler();
+$db_schema = \Drupal::database()->schema();
+$created_tables = 0;
+foreach (array_keys($module_handler->getModuleList()) as $module) {
+  $module_handler->loadInclude($module, 'install');
+  foreach ($module_handler->invoke($module, 'schema') ?: [] as $table => $spec) {
+    if (!$db_schema->tableExists($table)) {
+      $db_schema->createTable($table, $spec);
+      print "Created missing table $table declared by $module.\n";
+      $created_tables++;
+    }
+  }
+}
+if (!$created_tables) {
+  print "hook_schema tables: all present.\n";
 }
 
 $schema = \Drupal::keyValue('system.schema');
