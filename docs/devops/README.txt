@@ -310,3 +310,28 @@ chmod 770 /var/www/05/internationalgospelchoir.uk/deployment_environments/$E/ass
 # entries. Still there and not fixable in the repo: "GD library: AVIF
 # unsupported" (the server's PHP GD build lacks libavif; harmless, images are
 # JPEG/PNG/WebP).
+
+# ---------------------------------------------------------------------------
+# Local icons release (feat/local-icons, Oct 2026). Social icons are now SVG
+# files in the theme (clau2/images/icons, Bootstrap Icons) drawn by CSS from
+# the same "fab fa-..." class names, so no content changes. The fontawesome
+# module is REMOVED (uninstalled in config and gone from composer.json), so
+# the module-removal order applies: uninstall while its code is still present,
+# then install the new code, then import. From the release code dir:
+# ---------------------------------------------------------------------------
+./drush pmu fontawesome -y                     # while its code is still present
+./composer install --no-dev --optimize-autoloader
+sudo systemctl reload php8.3-fpm
+./drush updb -y
+./drush cim -y
+./drush cr
+./drush cst                                    # expect no differences
+# Check: /about (team and social links) and the footer social block show the
+# icons in their circles; view source of / has two <link rel="preload" ... woff>
+# lines and no use.fontawesome.com script.
+# If deploy.sh was used for the release (it runs composer install BEFORE you
+# can pmu), the module code is already gone; then run
+#   ./drush php:eval '\Drupal::keyValue("system.schema")->delete("fontawesome");'
+#   ./drush cim -y && ./drush cr
+# cim removes it from core.extension; the key-value line stops drush warning
+# about a missing module (scripts/devops/fix_definitions.php does the same).

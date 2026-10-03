@@ -26,7 +26,6 @@
         "drupal/ctools": "^4.1",
         "drupal/ds": "^3.30",
         "drupal/field_formatter_class": "^1.4",
-        "drupal/fontawesome": "^3.0",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
         "drupal/honeypot": "^2.2",

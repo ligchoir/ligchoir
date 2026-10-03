@@ -47,3 +47,29 @@
     text-decoration: none;
   }
   
+  /*
+   * Social icons, served from the theme (images/icons, Bootstrap Icons, MIT)
+   * instead of the Font Awesome CDN script that the fontawesome module used
+   * to load on every page. Editor markup keeps the Font Awesome class names
+   * (<span class="fab fa-instagram"></span>), so existing content needs no
+   * change: each class maps to a local SVG drawn through a CSS mask in the
+   * current text colour (white inside the circles).
+   */
+  .fab {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    -webkit-mask: var(--ligc-icon) no-repeat center / contain;
+    mask: var(--ligc-icon) no-repeat center / contain;
+  }
+  .fa-instagram  { --ligc-icon: url(../../images/icons/instagram.svg); }
+  .fa-facebook-f,
+  .fa-facebook   { --ligc-icon: url(../../images/icons/facebook.svg); }
+  .fa-x-twitter  { --ligc-icon: url(../../images/icons/twitter-x.svg); }
+  .fa-twitter    { --ligc-icon: url(../../images/icons/twitter.svg); }
+  .fa-youtube    { --ligc-icon: url(../../images/icons/youtube.svg); }
+  .fa-spotify    { --ligc-icon: url(../../images/icons/spotify.svg); }
+  .fa-linkedin,
+  .fa-x-linkedin { --ligc-icon: url(../../images/icons/linkedin.svg); }
