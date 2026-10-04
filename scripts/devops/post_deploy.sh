@@ -41,14 +41,16 @@ log "0. Tracked files in the release"
 # Drupal hardens web/sites/default to read-only, which makes "git checkout"
 # fail to replace settings.php ("unable to unlink old ... Permission denied")
 # and leaves the previous version in place. Restore it from the branch.
-if [ -d .git ] && ! git diff --quiet -- web/sites/default/settings.php; then
+if [ -d .git ] && ! git -c core.fileMode=false diff --quiet -- web/sites/default/settings.php; then
   chmod u+w web/sites/default
   git checkout -- web/sites/default/settings.php
   echo "  settings.php restored from the branch (checkout had left the old file)"
 fi
+# core.fileMode=false: create_release.sh sets every file to 640, and git would
+# otherwise list each executable file in the repo as modified.
 if [ -d .git ]; then
-  if [ -n "$(git status --porcelain --untracked-files=no)" ]; then
-    echo "  WARNING: tracked files differ from the branch:"; git status --porcelain --untracked-files=no | sed 's/^/    /'
+  if [ -n "$(git -c core.fileMode=false status --porcelain --untracked-files=no)" ]; then
+    echo "  WARNING: tracked files differ from the branch:"; git -c core.fileMode=false status --porcelain --untracked-files=no | sed 's/^/    /'
   else
     echo "  clean: $(git rev-parse --abbrev-ref HEAD) at $(git rev-parse --short HEAD)"
   fi
