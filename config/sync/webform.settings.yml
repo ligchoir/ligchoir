@@ -328,6 +328,7 @@ libraries:
   excluded_libraries:
     - choices
     - jquery.chosen
+    - jquery.timepicker
 requirements:
   cdn: false
   clientside_validation: true

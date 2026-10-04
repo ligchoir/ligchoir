@@ -320,3 +320,11 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 #
 # Editors manage the team at admin/content, type "Team member" (Role, Photo,
 # Biography, Order = position on /about, lowest first).
+
+# ---------------------------------------------------------------------------
+# Webform: no CDN library on /book (fix/webform-no-cdn, Oct 2026). Config only:
+# jquery.timepicker added to webform.settings libraries.excluded_libraries.
+# bash scripts/devops/post_deploy.sh <env>  (or just ./drush cim -y && ./drush cr)
+# Check: view source of /book has no cdn.jsdelivr.net and the time field is
+# still <input type="time">. Background: docs/dev/webform-libraries.md
+# ---------------------------------------------------------------------------
