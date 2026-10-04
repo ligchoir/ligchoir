@@ -171,6 +171,10 @@ Prerequisites: all done as of 2026-09-11. B4 released (1.0.2), B5 removed, serve
 
 ### Phase D: new theme and front page
 
+**2026-10-04: superseded by `docs/frontend/new-theme-plan.md`** (branch
+`feat/new-theme`), which also absorbs Phase E. The notes below are kept
+for the Solent file references.
+
 Start a fresh theme (`clau3`), no base theme, like Solent's `customsolent`.
 Keep LIGC's palette and Vegur; take structure and mechanics from Solent.
 
