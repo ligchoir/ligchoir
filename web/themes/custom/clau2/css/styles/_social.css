@@ -73,6 +73,13 @@
     -webkit-mask: var(--ligc-icon) no-repeat center / contain;
     mask: var(--ligc-icon) no-repeat center / contain;
   }
+  /* Icon size relative to the circle, so it is the same everywhere. 52% of
+     the 2.5em circle is the size the page paragraphs showed (1.3em), which
+     reads better than the 1em the footer block used to get. */
+  .social-contact-circle-inner .fab {
+    width: 52%;
+    height: 52%;
+  }
   .fa-instagram  { --ligc-icon: url(../../images/icons/instagram.svg); }
   .fa-facebook-f,
   .fa-facebook   { --ligc-icon: url(../../images/icons/facebook.svg); }
