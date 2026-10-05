@@ -62,8 +62,8 @@
     {# Vegur is used above the fold on every page (the LIGC initials are 15em
        Vegur bold). Preloading starts the font downloads with the HTML instead
        of after the aggregated CSS has arrived and been parsed. #}
-    <link rel="preload" href="{{ base_path ~ directory }}/fonts/vegur-bold.woff" as="font" type="font/woff" crossorigin>
-    <link rel="preload" href="{{ base_path ~ directory }}/fonts/vegur-regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/{{ directory }}/fonts/vegur-bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="/{{ directory }}/fonts/vegur-regular.woff" as="font" type="font/woff" crossorigin>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
