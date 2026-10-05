@@ -1,0 +1,23 @@
+uuid: ea475a70-d191-4364-9a79-fafbc81f76d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_2000
+label: 'Wide 16:9, 2000'
+effects:
+  f9a58afb-3e14-4cda-8534-42e081164762:
+    uuid: f9a58afb-3e14-4cda-8534-42e081164762
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 2000
+      height: 1125
+      crop_type: focal_point
+  8397fff8-05a2-4a29-a173-3c0b3c2f65bb:
+    uuid: 8397fff8-05a2-4a29-a173-3c0b3c2f65bb
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

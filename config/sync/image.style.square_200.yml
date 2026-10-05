@@ -1,0 +1,23 @@
+uuid: 463ad1ad-9b4f-4ab5-afce-9542e08cb8cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: square_200
+label: 'Square 1:1, 200'
+effects:
+  53f21448-452a-42c1-ae54-e540bf3998da:
+    uuid: 53f21448-452a-42c1-ae54-e540bf3998da
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      crop_type: focal_point
+  d4dab169-5853-4dba-8e1d-49fa7bd596a4:
+    uuid: d4dab169-5853-4dba-8e1d-49fa7bd596a4
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

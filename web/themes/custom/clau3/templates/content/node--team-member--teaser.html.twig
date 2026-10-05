@@ -7,9 +7,9 @@
  */
 #}
 <div{{ attributes.addClass('ligc-musical-team-grid-item') }}>
-  {% if node.field_image.entity.field_media_image.entity %}
+  {% if team_image_url %}
     <div class="ligc-term-img">
-      <img src="{{ file_url(node.field_image.entity.field_media_image.entity.uri.value) }}" alt="{{ node.label }}"/>
+      <img src="{{ team_image_url }}" width="400" height="400" loading="lazy" alt="{{ node.label }}"/>
     </div>
   {% endif %}
   <div class="ligc-term-content">

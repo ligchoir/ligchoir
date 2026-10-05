@@ -1,0 +1,23 @@
+uuid: 8ccf9d56-c61c-4ce0-b76b-3b91a6b996d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_800
+label: 'Wide 16:9, 800'
+effects:
+  1f137c33-bd72-49a7-aeba-6b15b6390cc4:
+    uuid: 1f137c33-bd72-49a7-aeba-6b15b6390cc4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 450
+      crop_type: focal_point
+  c9607593-da31-4de6-8553-171dae228d2e:
+    uuid: c9607593-da31-4de6-8553-171dae228d2e
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

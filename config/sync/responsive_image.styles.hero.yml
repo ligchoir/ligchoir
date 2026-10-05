@@ -1,0 +1,25 @@
+uuid: ef2034c6-2bf6-46e5-8b1f-253cfc5b9c84
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.wide_1200
+    - image.style.wide_1600
+    - image.style.wide_2000
+    - image.style.wide_800
+id: hero
+label: 'Hero (16:9, full width)'
+image_style_mappings:
+  -
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: 100vw
+      sizes_image_styles:
+        - wide_800
+        - wide_1200
+        - wide_1600
+        - wide_2000
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+breakpoint_group: responsive_image
+fallback_image_style: wide_1200

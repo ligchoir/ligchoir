@@ -1,0 +1,23 @@
+uuid: 90df5d1f-3772-4ef0-9960-d58d2f447b8a
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: card_400
+label: 'Card 3:2, 400'
+effects:
+  ba8382d1-5318-4143-8520-7255d4a19461:
+    uuid: ba8382d1-5318-4143-8520-7255d4a19461
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 267
+      crop_type: focal_point
+  e5a1daac-6fe6-4cf1-80b1-a65091471a63:
+    uuid: e5a1daac-6fe6-4cf1-80b1-a65091471a63
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

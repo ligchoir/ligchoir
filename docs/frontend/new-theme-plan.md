@@ -475,14 +475,18 @@ replaces drawing a crop per aspect ratio, and the same point serves every
 style. If the team still wants a manual crop for a particular shape, the
 two widgets can coexist on different crop types.
 
-**Crop types** (aspect ratios the design uses), each with the focal
-point widget:
+**Shapes** (aspect ratios the design uses). Correction made while
+building step 2: Focal Point stores one point per image in its own crop
+type (`focal_point`, created by the module); the shapes are not crop
+types but the target boxes of the image styles below, which all read that
+one point. The old crop types (`generic`, `header_cover_background`,
+`profile_pic`) are retired with their styles at launch.
 
-| Crop type | Ratio | Used by |
-|-----------|-------|---------|
+| Shape | Ratio | Used by |
+|-------|-------|---------|
 | wide | 16:9 | hero images, event page banner |
 | card | 3:2 | event cards, project cards, three-column cards |
-| square | 1:1 | people (replaces `profile_pic`), organisation logos |
+| square | 1:1 | people (replaces `profile_pic`), collaborator logos |
 
 **Image styles**, one family per crop type, each effect chain being
 `focal_point_scale_and_crop` to the target box, then `image_convert` to
@@ -612,9 +616,19 @@ is merged and released as one version.
    search results page styling (core markup inside the frame), and the
    landing pages' tiny page title over the old background band, which the
    hero paragraph replaces in step 6.
-2. **Media workflow**: focal_point, crop types, image styles, responsive
-   styles, media form widget; re-save existing media so derivatives
-   exist. Editor guidance page.
+2. **Media workflow** — DONE 2026-10-06 (on `feat/new-theme`): focal_point
+   2.1.3 installed and enabled; image styles `wide_800/1200/1600/2000`,
+   `card_400/800`, `square_200/400` (focal-point scale and crop, then
+   convert to WebP); responsive styles `hero` (sizes 100vw) and `card`;
+   the media image form uses the focal point widget with previews instead
+   of the manual crop widget; WebP originals allowed; GD quality 80 (the
+   GD toolkit uses its one quality setting for WebP too). Derivatives
+   generate on demand with a centred point for existing media, so no
+   re-save was needed. First use: the team grid portraits now come from
+   `square_400`. Editor guidance: `docs/functionality-documentation/images.md`.
+   Left for launch (step 9): uninstall image_widget_crop, delete the old
+   crop types and `background_image_*`, `max_*`, `profile_pic`,
+   `crop_thumbnail` styles once no template uses them.
 3. **Front page**: hero paragraph type and component, video pipeline
    script and the first clip, events cards display, card and card_row
    paragraph types, rebuild the home node's `field_content` in the new

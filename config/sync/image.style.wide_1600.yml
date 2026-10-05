@@ -1,0 +1,23 @@
+uuid: 77b04d9d-4d47-4494-b416-17f8ccdff902
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: wide_1600
+label: 'Wide 16:9, 1600'
+effects:
+  24c9e540-85f5-488b-b523-0951e21571dd:
+    uuid: 24c9e540-85f5-488b-b523-0951e21571dd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1600
+      height: 900
+      crop_type: focal_point
+  11244865-f0d3-4c13-a993-fd1c61a4a408:
+    uuid: 11244865-f0d3-4c13-a993-fd1c61a4a408
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp

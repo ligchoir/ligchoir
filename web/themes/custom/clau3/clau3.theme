@@ -97,7 +97,16 @@ function clau3_theme_suggestions_block_alter(array &$suggestions, array $variabl
  */
 function clau3_preprocess_node(array &$variables): void {
   $node = $variables['node'] ?? NULL;
-  if (!$node || $node->bundle() !== 'home' || ($variables['view_mode'] ?? '') !== 'full') {
+  if (!$node) {
+    return;
+  }
+  // Team grid: the round portrait through the square_400 style (WebP, focal
+  // point) instead of the original upload.
+  if ($node->bundle() === 'team_member' && ($variables['view_mode'] ?? '') === 'teaser') {
+    $variables['team_image_url'] = _clau3_styled_media_url($node, 'field_image', 'square_400');
+    return;
+  }
+  if ($node->bundle() !== 'home' || ($variables['view_mode'] ?? '') !== 'full') {
     return;
   }
   $variables['bg_img_styled_url'] = NULL;
@@ -114,4 +123,23 @@ function clau3_preprocess_node(array &$variables): void {
     $url = $style->buildUrl($file->getFileUri());
     $variables['bg_img_styled_url'] = \Drupal::service('file_url_generator')->transformRelative($url);
   }
+}
+
+/**
+ * Relative URL of an image style derivative for a media image field on an entity.
+ */
+function _clau3_styled_media_url($entity, string $field, string $style_name): ?string {
+  if (!$entity->hasField($field) || $entity->get($field)->isEmpty()) {
+    return NULL;
+  }
+  $media = $entity->get($field)->entity;
+  if (!$media || !$media->hasField('field_media_image') || $media->get('field_media_image')->isEmpty()) {
+    return NULL;
+  }
+  $file = $media->get('field_media_image')->entity;
+  $style = ImageStyle::load($style_name);
+  if (!$file || !$style) {
+    return NULL;
+  }
+  return \Drupal::service('file_url_generator')->transformRelative($style->buildUrl($file->getFileUri()));
 }

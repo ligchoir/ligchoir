@@ -1,0 +1,23 @@
+uuid: 9d4d1e78-59ce-43fd-a26a-7f6c8c93c4d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: card_800
+label: 'Card 3:2, 800'
+effects:
+  f0b43fbc-1672-4f65-91c8-746e92e374a0:
+    uuid: f0b43fbc-1672-4f65-91c8-746e92e374a0
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 533
+      crop_type: focal_point
+  b1984a6a-dc01-44db-8ed6-233f1147a48e:
+    uuid: b1984a6a-dc01-44db-8ed6-233f1147a48e
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
