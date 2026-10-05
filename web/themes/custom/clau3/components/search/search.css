@@ -1,0 +1,106 @@
+.site-search__toggle,
+.site-search__nojs {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: var(--ligc-touch);
+  padding: 0.5em 0.75em;
+  background: transparent;
+  color: var(--ligc-text-on-ink);
+  border: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-search__toggle:hover,
+.site-search__nojs:hover,
+.site-search__toggle[aria-expanded="true"] {
+  text-decoration: underline;
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.site-search__icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  background-color: currentColor;
+  -webkit-mask: url(../../images/icons/search.svg) no-repeat center / contain;
+  mask: url(../../images/icons/search.svg) no-repeat center / contain;
+}
+
+/* JS present: button; no JS: link. */
+.site-search__toggle { display: none; }
+html.js .site-search__toggle { display: flex; }
+html.js .site-search__nojs { display: none; }
+
+.site-search__panel {
+  padding: var(--ligc-space-sm) 0.75em;
+}
+
+.site-search__panel form {
+  display: flex;
+  gap: var(--ligc-space-xs);
+  align-items: center;
+  max-width: 32rem;
+}
+
+.site-search__panel .form-item {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.site-search__panel input[type="search"],
+.site-search__panel input[type="text"] {
+  width: 100%;
+  min-height: var(--ligc-touch);
+  padding: 0.5em 0.75em;
+  font: inherit;
+  color: var(--ligc-text-on-paper);
+  background: var(--ligc-paper);
+  border: 2px solid var(--ligc-paper);
+  border-radius: 0.5rem;
+}
+
+.site-search__panel .form-actions {
+  margin: 0;
+}
+
+.site-search__panel .button,
+.site-search__panel input[type="submit"] {
+  min-height: var(--ligc-touch);
+  padding: 0.5em 1.2em;
+  background: var(--ligc-red);
+  color: var(--ligc-text-on-red);
+  border: 0;
+  border-radius: 0.5rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.site-search__panel .button:hover,
+.site-search__panel input[type="submit"]:hover {
+  background: var(--ligc-red-dark);
+}
+
+/* Desktop: the form drops down under the header bar, full width, black. */
+@media (min-width: 800px) {
+  .site-search__panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 10;
+    background: var(--ligc-ink);
+    border-bottom: 1px solid var(--ligc-rule-on-ink);
+    padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  }
+
+  .site-search__panel form {
+    margin-left: auto;
+  }
+}

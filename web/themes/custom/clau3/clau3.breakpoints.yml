@@ -1,0 +1,29 @@
+# Breakpoints the CSS uses (600, 800, 1200), for responsive image styles.
+clau3.mobile:
+  label: Mobile
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+    - 2x
+clau3.narrow:
+  label: Narrow
+  mediaQuery: 'all and (min-width: 600px)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 2x
+clau3.wide:
+  label: Wide
+  mediaQuery: 'all and (min-width: 800px)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 2x
+clau3.xwide:
+  label: 'Extra wide'
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 2x

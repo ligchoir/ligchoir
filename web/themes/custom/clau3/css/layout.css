@@ -1,0 +1,23 @@
+/* Page frame: header, main, footer. The footer stays at the bottom of short
+   pages. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1 0 auto;
+}
+
+/* Local tasks (edit tabs), messages and help: aligned to the grid, kept off
+   the content so the legacy page templates are not disturbed. */
+.region-local-tasks,
+.region-highlighted,
+.region-help {
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+.region-local-tasks:not(:empty) {
+  padding-block: var(--ligc-space-xs);
+}

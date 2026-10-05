@@ -1,0 +1,49 @@
+.site-footer {
+  background: var(--ligc-ink);
+  color: var(--ligc-text-on-ink-soft);
+  border-top: 1px solid var(--ligc-rule-on-ink);
+  padding-block: var(--ligc-space-lg);
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ligc-space-md);
+}
+
+.site-footer__legal p {
+  margin: 0 0 var(--ligc-space-xs);
+}
+
+.site-footer__legal a {
+  color: var(--ligc-text-on-ink);
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* The social block from clau2 (white band, centred) sits on the black
+   footer: keep the circles, drop the white band. */
+.site-footer #block-clau3-social {
+  background: transparent;
+  color: var(--ligc-text-on-ink-soft);
+  padding: 0;
+  text-align: left;
+}
+
+.site-footer .field--name-field-contact-action {
+  color: var(--ligc-text-on-ink);
+}
+
+@media (min-width: 800px) {
+  .site-footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .site-footer__legal {
+    text-align: right;
+  }
+}

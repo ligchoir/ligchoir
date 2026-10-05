@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * The "LIGC initials and full name" custom block rendered as the brand.
+ * Suggestion added by clau3_theme_suggestions_block_alter().
+ */
+#}
+{% include 'clau3:brand' with {
+  url: path('<front>'),
+  initials: content.field_initials|render|striptags|trim,
+  name: content.field_full_name|render|striptags|trim,
+} only %}

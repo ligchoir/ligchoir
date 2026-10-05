@@ -1,0 +1,347 @@
+/*
+ * LEGACY: copied from clau2/css/styles/_common.css for the clau3 skeleton
+ * (plan section 15, step 1) with the header and footer frame rules removed.
+ * Everything else in here belongs to paragraph output, Klaro or the
+ * maintenance page and is replaced step by step.
+ */
+
+#clau-page-container-id {
+  background-color: black;
+}
+
+
+.ligc-text {
+  font-family: 'Vegur';
+  font-style: normal;
+}
+
+
+/* block regions dont render if empty */
+.ligc-header {
+
+}
+
+
+
+
+.ligc-text p,
+.ligc-text span {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+.ligc-text h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.text-confine-single-column {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+
+.text-confine-single-column-wide {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+@media screen and (min-width: 768px ) {
+  .text-confine-single-column-wide {
+    padding-left: 8em;
+    padding-right: 8em;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .text-confine-single-column-wide {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+}
+
+
+.ligc-content-2-column .paragraph--type--text {
+  padding: 1.5em;
+}
+
+
+.ligc-encl {
+  overflow: hidden;
+}
+
+
+
+
+.field--name-field-contact-action {
+  padding-bottom: 0.5em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.field--name-field-social-and-contact-markup a {
+  text-decoration: none;
+}
+
+h1.page-title {
+  font-size: 1em;
+}
+
+@media screen and (max-width: 767px ) {
+  h1 {
+    margin-left: 0.2em;
+  }
+}
+
+.field--type-text-long.text-formatted h1,
+.view-header h1 {
+  font-size: 2.0em;
+}
+
+
+@media screen and (max-width: 767px) {
+  .ligc-on-bg-image-text {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .ligc-on-bg-image-text {
+    padding-left: 11%;
+    width: 65%;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .ligc-on-bg-image-text {
+    padding-left: 11%;
+    width: 65%;
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .ligc-on-bg-image-cta-front {
+    padding-left: 0;
+  }
+}
+
+p a,
+h2 a {
+  color: #D63836;
+  font-weight: bold;
+}
+
+.small-footnote {
+  padding: 1em;
+}
+
+/* Klaro consent (cookie/consent management). Only the YouTube embed needs
+   consent on this site, so Klaro runs in "silent" mode: no banner, just a
+   placeholder on the video until the visitor accepts. Styling matches the
+   site: Vegur, black, red button. Variables are Klaro's own. */
+.klaro {
+  --font-family: 'Vegur', sans-serif;
+  --dark1: #1c1517;          /* dialog ground */
+  --dark2: #ff9b99;          /* "(always required)" labels sit on the dark ground */
+  --light1: #ffffff;
+  --light3: #d9cfd0;         /* "Purpose: ..." lines */
+  --green1: #d63836;
+  --green2: #b52f2d;
+  --blue1: #d63836;
+  --blue2: #b52f2d;
+  --border-radius: 1em;
+}
+
+/* The "Manage privacy settings" modal: links legible on the dark ground,
+   buttons in the site red, secondary text light enough to read. */
+/* Klaro's own selectors for the modal are very specific, so the secondary
+   text colours are set through its variables above; only the description
+   needs a rule. "body" prefix because this file is in the theme's "base"
+   CSS group, which loads before Klaro's stylesheet. */
+body .klaro .cm-modal .cm-list-description {
+  color: #d9cfd0;
+}
+
+.klaro .cm-modal a,
+.klaro .cm-modal .cm-link {
+  color: #ff9b99;
+}
+
+.klaro .cm-modal .cm-btn,
+.klaro .cm-modal .cm-btn.cm-btn-success,
+.klaro .cm-modal .cm-btn.cm-btn-info {
+  background: #d63836;
+  color: #fff;
+  border-radius: 1em;
+  font-family: 'Vegur', sans-serif;
+}
+
+.klaro .cm-modal .cm-btn:hover,
+.klaro .cm-modal .cm-btn:focus-visible {
+  background: #b52f2d;
+}
+
+.klaro.cm-as-context-notice .context-notice {
+  background: #000;
+  color: #fff;
+  font-family: 'Vegur', sans-serif;
+  border: 0;
+  border-radius: 0;
+}
+
+.klaro.cm-as-context-notice .context-notice p {
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  margin-bottom: 1em;
+}
+
+/* The first paragraph is the iframe's title attribute ("Embedded video for
+   Home > Content" from the youtube module); the question below it is enough. */
+.klaro.cm-as-context-notice .context-notice > p:nth-last-of-type(4) {
+  display: none;
+}
+
+.klaro.cm-as-context-notice .context-notice .cm-buttons .cm-btn.cm-btn-success {
+  background: transparent;
+  color: #fff;
+  border: 0.2em solid #fff;
+  border-radius: 1em;
+  padding: 0.6em 1.4em;
+  font-family: 'Vegur', sans-serif;
+  font-size: 1em;
+}
+
+.klaro.cm-as-context-notice .context-notice .cm-buttons .cm-btn.cm-btn-success:hover,
+.klaro.cm-as-context-notice .context-notice .cm-buttons .cm-btn.cm-btn-success:focus-visible {
+  background: #d63836;
+  border-color: #d63836;
+}
+
+.klaro.cm-as-context-notice .context-notice .cm-dialog-link a {
+  color: #fff;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------
+   Mobile margins (Sep 2026): let text use more of the width on phones.
+   The single-column style was 65% wide at every size, i.e. ~250px on a
+   400px phone.
+   ------------------------------------------------------------------ */
+@media screen and (max-width: 767px ) {
+  .text-confine-single-column {
+    width: auto;
+    margin-left: 1.25em;
+    margin-right: 1.25em;
+  }
+
+  .ligc-content-2-column .paragraph--type--text {
+    padding: 1.25em;
+  }
+}
+
+/* YouTube video paragraph: fill the column and keep 16:9. The youtube
+   module's responsive container already does the ratio (like fitvids);
+   the <figure> default 40px side margins and the 65% column were what
+   made it small, especially on phones. */
+.paragraph.paragraph--type--youtube-video .youtube-container {
+  margin: 0;
+}
+
+@media screen and (max-width: 767px ) {
+  .paragraph.paragraph--type--youtube-video {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 1023px ) {
+  .paragraph.paragraph--type--youtube-video {
+    width: 90%;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Maintenance page (#31): templates/layout/maintenance-page.html.twig.
+   Core attaches its own maintenance-page.css, hence the body override.
+   ------------------------------------------------------------------ */
+body.maintenance-page {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.ligc-maintenance .ligc-title-small .field--name-field-initials {
+  line-height: 1em;
+}
+
+.ligc-maintenance-main {
+  color: #fff;
+  padding: 1em 50px 4em;
+}
+
+.ligc-maintenance-main h1.page-title {
+  font-size: 2.5em;
+  text-shadow: 0px 0px 30px rgb(0 0 0 / 90%), 0px 0px 20px rgb(0 0 0 / 50%);
+  margin-bottom: 0.5em;
+}
+
+.ligc-maintenance-message {
+  max-width: 40em;
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+@media screen and (min-width: 768px ) {
+  .ligc-maintenance-main {
+    padding-left: 3.4em;
+    padding-top: 2em;
+  }
+}
+
+.ligc-video-fallback {
+  text-align: center;
+  padding-top: 0.75em;
+}
+
+.ligc-video-fallback a {
+  color: #fff;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+/* Inside the responsive video box, let the placeholder fill the 16:9 area
+   and centre its text, instead of a strip along the top. */
+.youtube-container--responsive .klaro.cm-as-context-notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.youtube-container--responsive .klaro.cm-as-context-notice .context-notice {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

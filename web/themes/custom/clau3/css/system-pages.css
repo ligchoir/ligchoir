@@ -1,0 +1,76 @@
+/* Drupal's own bare pages (log in, reset password, 404, 403): a heading, an
+   intro and a white box, via _clau3_system_page() in clau3.theme. */
+.ligc-system-page {
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: var(--ligc-space-xl) var(--ligc-gutter);
+}
+
+.ligc-system-page__title {
+  margin: 0 0 var(--ligc-space-sm);
+  font-size: 2rem;
+}
+
+.ligc-system-page__intro {
+  margin: 0 0 var(--ligc-space-md);
+  color: var(--ligc-text-on-ink-soft);
+  font-size: 1.1rem;
+}
+
+.ligc-system-page__box {
+  padding: var(--ligc-space-md);
+  background: var(--ligc-paper);
+  color: var(--ligc-text-on-paper);
+  border-radius: 0.5rem;
+}
+
+.ligc-system-page__box a {
+  color: var(--ligc-red);
+}
+
+.ligc-system-page__box input[type="text"],
+.ligc-system-page__box input[type="password"],
+.ligc-system-page__box input[type="email"] {
+  width: 100%;
+  padding: 0.6em;
+  font: inherit;
+  border: 1px solid #767676;
+  border-radius: 0.25rem;
+}
+
+.ligc-system-page__box .form-item {
+  margin-block: 0 var(--ligc-space-sm);
+}
+
+.ligc-system-page__box .button,
+.ligc-system-page__box input[type="submit"] {
+  padding: 0.6em 1.4em;
+  background: var(--ligc-red);
+  color: var(--ligc-text-on-red);
+  border: 0;
+  border-radius: 1.5em;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ligc-system-page__box .button:hover,
+.ligc-system-page__box input[type="submit"]:hover {
+  background: var(--ligc-red-dark);
+}
+
+.ligc-system-page__links {
+  list-style: none;
+  margin: var(--ligc-space-md) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ligc-space-xs) var(--ligc-space-md);
+}
+
+.ligc-system-page__links a {
+  color: var(--ligc-text-on-ink);
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}

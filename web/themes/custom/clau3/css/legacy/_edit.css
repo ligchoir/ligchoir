@@ -1,0 +1,47 @@
+/* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
+#block-clau2-local-tasks {
+  text-align: center;
+  color: #ccc;
+  background-color: #2a2a2d;
+  padding-top: 0.5em;
+  padding-bottom: 0.3em;
+  border-top: 1px solid;
+  border-color: #ccc;
+  position: fixed;
+  top: 3.4em;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+}
+
+.ligc-user #block-clau2-local-tasks { 
+  top: 0em;
+}
+
+#block-clau2-local-tasks a {
+  color: #ccc;
+}
+
+#block-clau2-local-tasks .is-active a, 
+#block-clau2-local-tasks .is-active {
+  color: black;
+  background-color: #e57372;
+}
+
+#block-clau2-local-tasks ul.tabs {
+  margin: 0 0 0.5em;
+  padding: 0;
+  list-style: none;
+}
+
+#block-clau2-local-tasks .tabs > li {
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+#block-clau2-local-tasks .tabs a {
+  display: block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+}

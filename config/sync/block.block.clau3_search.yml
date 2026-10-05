@@ -1,0 +1,21 @@
+uuid: 8e9f6887-260f-4df3-9345-b1f0c0425b2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - clau3
+id: clau3_search
+theme: clau3
+region: search
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

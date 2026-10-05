@@ -1,0 +1,33 @@
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: var(--ligc-touch);
+  color: var(--ligc-text-on-ink);
+  text-decoration: none;
+  line-height: 1.05;
+}
+
+.brand__initials {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.brand__name {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ligc-text-on-ink-soft);
+}
+
+@media (max-width: 379px) {
+  .brand__name {
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  .brand__initials {
+    font-size: 2.1rem;
+  }
+}

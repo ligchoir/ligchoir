@@ -1,0 +1,313 @@
+/* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
+.ligc-webform {
+  padding: 3em;
+}
+
+.ligc-webform {
+	padding-top: 0em;
+	padding-bottom: 3em;
+	padding-left: 3em;
+	padding-right: 3em;
+  }
+
+@media screen and (max-width: 767px ) {
+  .ligc-webform {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+}
+
+.ligc-contact-content {
+  padding-left: 1em;
+  padding-right: 1em; 
+}
+
+.ligc-contact-content a {
+  text-decoration: none;
+}
+
+/*
+.paragraph--type--image .field--name-field-media-image img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+*/
+
+.paragraph--type--contact .field--name-field-contact-action {
+    padding-top: 0.5em;
+}
+
+
+form.webform-submission-form {
+  /*
+	margin: 0 auto;
+	max-width: 600px;
+  */
+}
+.form-email, .form-text {
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box; /* same outer width as the textarea (#23) */
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	line-height: 1.428571429;
+	color: #333333;
+	vertical-align: middle;
+	background-color: #ffffff;
+}
+textarea {
+	min-height: 200px;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	line-height: 1.428571429;
+	color: #333333;
+	/* vertical-align: middle; */
+	background-color: #ffffff;
+	border: 2px solid black;
+	/*outline: black solid 5px; */
+}
+
+/*
+#edit-your-message
+*/
+
+/*
+input.button{
+    border: 0;
+    width: 100%;
+}
+*/
+.paragraph.paragraph--type--contact{
+	line-height: normal;
+
+  /*
+	max-width: 700px;
+	margin: 0 auto 30px;
+  */
+	/* padding: 20px 30px; */
+}
+.paragraph--type--contact{
+  /*
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    */
+}
+
+.form-item-call-back-phone-number #edit-call-back-phone-number {
+	font: inherit;
+	margin: 0;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	color: #333333;
+	background-color: #ffffff;
+}
+
+
+/*.ligc-cta-fixed {*/
+.webform-button--submit {
+	border-radius: 1em;
+	/* border: 2px solid black; */
+	border: 2px solid;
+	padding-top: 0.8em;
+	padding-bottom: 0.8em;
+	color: inherit;
+	display: inline-block;
+	text-align: center;
+	background-color: Transparent;
+    background-repeat:no-repeat;
+	width: 9em;
+}
+
+/*
+.webform-button--submit {
+
+}
+*/
+
+form {
+	font-family: 'Vegur';
+	font-size: 1.3em;
+}
+
+/*
+.messages--status {
+  background-size: 1em;
+  padding-left: 2em;
+  background-color: green;
+}
+*/
+
+.messages-status {
+	background-size: 1em;
+	padding-left: 2em;
+}
+
+/*
+.messages {
+	width: 72%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.5em;
+}
+*/
+
+/*
+.messages {
+    padding: 15px 20px 15px 35px;
+    word-wrap: break-word;
+    border: 1px solid;
+    border-width: 1px 1px 1px 0;
+    border-radius: 2px;
+    background: no-repeat 10px 17px;
+    overflow-wrap: break-word;
+}
+	*/
+
+
+.clau2-webform-submit-symbol {
+
+}
+
+.clau2-webform-submit-wrapper{
+	width: 60%;
+	margin: 0 auto;
+
+
+    padding-left: 2.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 1em;
+
+	border: 1px solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 2px;
+	word-wrap: break-word;
+	background: no-repeat 10px 17px;
+	overflow-wrap: break-word;
+	color: #325e1c;
+    border-color: #c9e1bd #c9e1bd #c9e1bd transparent;
+    background-color: #f3faef;
+    background-image: url(/core/misc/icons/73b355/check.svg);
+	background-size: 30px 30px;
+	background-position: 10px 50%;
+	background-repeat: no-repeat;
+    box-shadow: -8px 0 0 #77b259;
+	font-size: 1.5em;
+
+	margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.webform-confirmation__back a {
+	color: #325e1c;
+	font-weight: bold;
+}
+
+
+/*
+.clau2-webform-submit-symbol {
+    color: #325e1c;
+    border-color: #c9e1bd #c9e1bd #c9e1bd transparent;
+    background-color: #f3faef;
+    background-image: url(/core/misc/icons/73b355/check.svg);
+	background-repeat: no-repeat;
+    box-shadow: -8px 0 0 #77b259;
+	font-size: 1.5em;
+}
+
+.clau2-webform-submit-wrapper{
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 1em;
+	border: 1px solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 2px;
+	padding: 15px 20px 15px 35px;
+	word-wrap: break-word;
+	background: no-repeat 10px 17px;
+	overflow-wrap: break-word;
+}
+	*/
+
+.clau2-webform-submit-text {
+
+}
+
+.ligc-webform button, 
+.ligc-webform html input[type="button"], 
+input[type="reset"], 
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* Webform datetime element (Book us: "Date and time (provisional)"): the
+   native date and time inputs, styled like .form-text above. */
+.ligc-webform input.form-date,
+.ligc-webform input.form-time {
+	border-radius: 5px;
+	padding: 8px 12px;
+	margin: 0 0.5em 10px 0;
+	line-height: 1.428571429;
+	color: #333333;
+	background-color: #ffffff;
+	max-width: 100%;
+}
+
+.ligc-webform .form-type-datetime > label {
+	display: block;
+}
+
+/* ------------------------------------------------------------------
+   Drupal status messages (#9, #30). The success look is the existing
+   .clau2-webform-submit-wrapper (green, tick). Errors and warnings get
+   the same box with their own colour and icon; before, errors had no
+   styling at all and were invisible over the dark hero.
+   ------------------------------------------------------------------ */
+.clau2-message--warning {
+	color: #734c00;
+	border-color: #f4daa6 #f4daa6 #f4daa6 transparent;
+	background-color: #fdf8ed;
+	background-image: url(/core/misc/icons/e29700/warning.svg);
+	box-shadow: -8px 0 0 #e09600;
+}
+
+.clau2-message--error {
+	color: #a51b00;
+	border-color: #f9c9bf #f9c9bf #f9c9bf transparent;
+	background-color: #fcf4f2;
+	background-image: url(/core/misc/icons/e32700/error.svg);
+	box-shadow: -8px 0 0 #e62600;
+}
+
+.clau2-message ul {
+	margin: 0;
+	padding-left: 1.2em;
+}
+
+.clau2-message a {
+	color: inherit;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 767px ) {
+	.clau2-message {
+		width: auto;
+		margin-left: 1.25em;
+		margin-right: 1.25em;
+		font-size: 1.2em;
+	}
+}

@@ -1,0 +1,23 @@
+uuid: a433ff81-d470-4447-86b2-c3a2b0dde083
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:social_and_contact_block:f10ea123-f4a3-4890-aa55-32ab55efd722'
+  module:
+    - block_content
+  theme:
+    - clau3
+id: clau3_social
+theme: clau3
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
+settings:
+  id: 'block_content:f10ea123-f4a3-4890-aa55-32ab55efd722'
+  label: 'Footer: social and contact links'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

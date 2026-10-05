@@ -1,0 +1,13 @@
+<div class="site-search" data-site-search>
+  <button class="site-search__toggle" type="button" aria-expanded="false" aria-controls="{{ panel_id }}">
+    <span class="site-search__icon" aria-hidden="true"></span>
+    <span>{{ 'Search'|t }}</span>
+  </button>
+  <a class="site-search__nojs" href="{{ search_url }}">
+    <span class="site-search__icon" aria-hidden="true"></span>
+    <span>{{ 'Search'|t }}</span>
+  </a>
+  <div class="site-search__panel" id="{{ panel_id }}" hidden>
+    {% block form %}{% endblock %}
+  </div>
+</div>

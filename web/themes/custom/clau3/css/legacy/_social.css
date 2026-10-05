@@ -1,0 +1,92 @@
+/* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
+
+.paragraph--type--social-and-contact-links {
+    text-align: center;
+  }
+  
+  .social-contact-circle-outer {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em; 
+    color: white;
+    display: inline-block;
+  }
+  
+  /* Centre the icon whatever the surrounding line-height: the inner box fills
+     the circle and flex-centres its single child. (With padding + an inline
+     icon the line box of the paragraph pushed the icon off centre.) */
+  .social-contact-circle-inner {
+    font-size: 1em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  
+  .ligc-ig {
+    background: #E53777
+  }
+  
+  .ligc-tw {
+    background: black;
+  }
+  
+  .ligc-fb {
+    background: #4364a2;
+  }
+
+  .ligc-yt {
+    background: #ff0000;
+  }
+
+  .ligc-sp {
+    background: #1db954;
+  }
+
+  #block-socialandcontactblockforfooter {
+    text-align: center;
+    background-color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  #block-socialandcontactblockforfooter a {
+    text-decoration: none;
+  }
+  
+  /*
+   * Social icons, served from the theme (images/icons, Bootstrap Icons, MIT)
+   * instead of the Font Awesome CDN script that the fontawesome module used
+   * to load on every page. Editor markup keeps the Font Awesome class names
+   * (<span class="fab fa-instagram"></span>), so existing content needs no
+   * change: each class maps to a local SVG drawn through a CSS mask in the
+   * current text colour (white inside the circles).
+   */
+  .fab {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex: none;
+    vertical-align: -0.125em;
+    background-color: currentColor;
+    -webkit-mask: var(--ligc-icon) no-repeat center / contain;
+    mask: var(--ligc-icon) no-repeat center / contain;
+  }
+  /* Icon size relative to the circle, so it is the same everywhere. 52% of
+     the 2.5em circle is the size the page paragraphs showed (1.3em), which
+     reads better than the 1em the footer block used to get. */
+  .social-contact-circle-inner .fab {
+    width: 52%;
+    height: 52%;
+  }
+  .fa-instagram  { --ligc-icon: url(../../images/icons/instagram.svg); }
+  .fa-facebook-f,
+  .fa-facebook   { --ligc-icon: url(../../images/icons/facebook.svg); }
+  .fa-x-twitter  { --ligc-icon: url(../../images/icons/twitter-x.svg); }
+  .fa-twitter    { --ligc-icon: url(../../images/icons/twitter.svg); }
+  .fa-youtube    { --ligc-icon: url(../../images/icons/youtube.svg); }
+  .fa-spotify    { --ligc-icon: url(../../images/icons/spotify.svg); }
+  .fa-linkedin,
+  .fa-x-linkedin { --ligc-icon: url(../../images/icons/linkedin.svg); }

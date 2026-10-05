@@ -1,0 +1,55 @@
+/*
+ * Design tokens. Every colour on the site is one of these, and every
+ * background token has the text token it is paired with (plan section 12;
+ * contrast ratios checked 2026-10-04). Templates never combine colours
+ * outside those pairs.
+ */
+:root {
+  /* Brand */
+  --ligc-red: #d63836;          /* buttons, accents; white text on it: 4.69:1 */
+  --ligc-red-dark: #b52f2d;     /* hover; white on it: 6.16:1 */
+  --ligc-red-on-ink: #ff9b99;   /* red *text* on black: 10.4:1 (plain #d63836 on black is only 4.48:1) */
+  --ligc-green: #1a7a3a;        /* white text on it: 5.40:1 (the old #77b259 failed at 2.53:1) */
+  --ligc-green-dark: #325e1c;   /* text on pale green: 5.44:1 */
+  --ligc-green-pale: #c9e1bd;
+  --ligc-cream: #f4daa6;
+
+  /* Ground and ink */
+  --ligc-ink: #000000;          /* page ground, header, footer */
+  --ligc-ink-soft: #1c1517;     /* panels on the ground (Klaro dialog) */
+  --ligc-paper: #ffffff;
+  --ligc-rule-on-ink: rgba(255, 255, 255, 0.18);
+
+  /* Text pairs */
+  --ligc-text-on-ink: #ffffff;
+  --ligc-text-on-ink-soft: rgba(255, 255, 255, 0.85);
+  --ligc-text-on-paper: #1a1a1a;
+  --ligc-text-on-red: #ffffff;
+  --ligc-text-on-green: #ffffff;
+  --ligc-text-on-green-pale: #1a1a1a;
+  --ligc-text-on-cream: #1a1a1a;
+
+  /* Keyboard focus marker: used nowhere else, visible on black and on white. */
+  --ligc-focus: #ffbf47;
+
+  /* Type */
+  --ligc-font: 'Vegur', 'Helvetica Neue', Arial, sans-serif;
+  --ligc-font-size: 1rem;
+  --ligc-line-height: 1.45;
+
+  /* Layout */
+  --ligc-container-max: 1200px;
+  --ligc-gutter: 1rem;
+  --ligc-space-xs: 0.5rem;
+  --ligc-space-sm: 1rem;
+  --ligc-space-md: 1.5rem;
+  --ligc-space-lg: 2rem;
+  --ligc-space-xl: 3rem;
+  --ligc-touch: 44px;           /* minimum size of anything tappable */
+}
+
+@media (min-width: 800px) {
+  :root {
+    --ligc-gutter: 1.5rem;
+  }
+}

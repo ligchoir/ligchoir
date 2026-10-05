@@ -1,0 +1,104 @@
+/* Search results page (/search/node): core markup, aligned to the grid.
+   A search-result component can replace this when the listing design lands. */
+.path-search .layout-content {
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: var(--ligc-space-lg) var(--ligc-gutter) var(--ligc-space-xl);
+}
+
+.path-search h1.page-title {
+  font-size: 2rem;
+  margin: 0 0 var(--ligc-space-md);
+}
+
+.path-search .search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ligc-space-xs) var(--ligc-space-sm);
+  align-items: flex-end;
+  margin-bottom: var(--ligc-space-lg);
+}
+
+.path-search .search-form .form-item {
+  flex: 1 1 16rem;
+  margin: 0;
+}
+
+.path-search .search-form label {
+  display: block;
+  margin-bottom: 0.25em;
+  color: var(--ligc-text-on-ink-soft);
+}
+
+.path-search .search-form input[type="search"],
+.path-search .search-form input[type="text"] {
+  width: 100%;
+  min-height: var(--ligc-touch);
+  padding: 0.5em 0.75em;
+  font: inherit;
+  color: var(--ligc-text-on-paper);
+  background: var(--ligc-paper);
+  border: 2px solid var(--ligc-paper);
+  border-radius: 0.5rem;
+}
+
+.path-search .search-form .form-actions {
+  margin: 0;
+}
+
+.path-search .search-form input[type="submit"] {
+  min-height: var(--ligc-touch);
+  padding: 0.5em 1.2em;
+  background: var(--ligc-red);
+  color: var(--ligc-text-on-red);
+  border: 0;
+  border-radius: 0.5rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.path-search .search-form input[type="submit"]:hover {
+  background: var(--ligc-red-dark);
+}
+
+.path-search .search-help-link,
+.path-search .search-form details {
+  color: var(--ligc-text-on-ink-soft);
+}
+
+.path-search h2 {
+  font-size: 1.4rem;
+  margin: var(--ligc-space-lg) 0 var(--ligc-space-sm);
+}
+
+.path-search ol.search-results {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.path-search .search-results li {
+  margin-bottom: var(--ligc-space-md);
+}
+
+.path-search .search-result__title,
+.path-search .search-results h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.25em;
+}
+
+.path-search .search-results a {
+  color: var(--ligc-text-on-ink);
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.path-search .search-results p {
+  margin: 0;
+  color: var(--ligc-text-on-ink-soft);
+}
+
+.path-search .search-results strong {
+  color: var(--ligc-text-on-ink);
+}

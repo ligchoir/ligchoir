@@ -1,0 +1,13 @@
+<header class="site-header" role="banner" data-site-header>
+  <div class="site-header__bar">
+    <div class="site-header__brand">{% block brand %}{% endblock %}</div>
+    <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="{{ menu_id }}" data-menu-toggle>
+      <span class="site-header__toggle-icon" aria-hidden="true"></span>
+      <span class="site-header__toggle-label" data-label-open="{{ 'Menu'|t }}" data-label-close="{{ 'Close'|t }}">{{ 'Menu'|t }}</span>
+    </button>
+  </div>
+  <div class="site-header__nav" id="{{ menu_id }}">
+    {% block menu %}{% endblock %}
+    {% block search %}{% endblock %}
+  </div>
+</header>

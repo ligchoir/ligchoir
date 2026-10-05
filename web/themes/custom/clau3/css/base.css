@@ -1,0 +1,74 @@
+/* Base element styles. Component-specific rules live with their component. */
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: var(--ligc-ink);
+  color: var(--ligc-text-on-ink);
+  font-family: var(--ligc-font);
+  font-size: var(--ligc-font-size);
+  line-height: var(--ligc-line-height);
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font: inherit;
+}
+
+/* One focus marker for the whole site: :focus-visible only, so it shows for
+   keyboard users and never sticks after a mouse or touch click. */
+:focus-visible {
+  outline: 3px solid var(--ligc-focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static !important;
+  overflow: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+}
+
+/* The skip link, when focused, sits on the brand colour at the top. */
+.skip-link.focusable:focus {
+  display: inline-block;
+  padding: var(--ligc-space-xs) var(--ligc-space-sm);
+  background: var(--ligc-red);
+  color: var(--ligc-text-on-red);
+}
+
+/* Alignment grid: content is rendered edge to edge and each component aligns
+   itself to the 1200px column with this padding (Solent pattern). */
+.ligc-container {
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}

@@ -1,0 +1,117 @@
+<?php
+
+/**
+ * @file
+ * Clau3 theme hooks. Design brief: docs/frontend/new-theme-plan.md.
+ */
+
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function clau3_preprocess_html(array &$variables): void {
+  if (_clau3_system_page()) {
+    $variables['attributes']['class'][] = 'page-system';
+  }
+  // Absolute path to the theme for the font preloads in html.html.twig.
+  // ("directory" alone is relative and broke on two-segment paths such as
+  // /search/node, where it resolved to /search/themes/... and 404ed.)
+  $variables['clau3_theme_path'] = \Drupal::request()->getBasePath() . '/' . \Drupal::service('extension.list.theme')->getPath('clau3');
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function clau3_preprocess_page(array &$variables): void {
+  $variables['clau3_site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['clau3_year'] = date('Y');
+  $variables['system_page'] = _clau3_system_page();
+}
+
+/**
+ * Drupal's bare pages get a heading, an intro and useful links.
+ *
+ * @return array|null
+ *   Keys: key, title, intro, links (label => path), replace_content.
+ */
+function _clau3_system_page(): ?array {
+  $pages = [
+    'user.login' => [
+      'key' => 'login',
+      'title' => t('Log in'),
+      'intro' => t('For the choir team who edit the website.'),
+      'links' => [(string) t('Forgotten your password?') => '/user/password'],
+    ],
+    'user.pass' => [
+      'key' => 'password',
+      'title' => t('Reset your password'),
+      'intro' => t('Enter your username or email address and we will send you a link to set a new password.'),
+      'links' => [(string) t('Back to log in') => '/user/login'],
+    ],
+    'system.404' => [
+      'key' => '404',
+      'title' => t('Page not found'),
+      'intro' => t('Sorry, there is no page at this address. It may have moved, or the link may be out of date.'),
+      'links' => [
+        (string) t('Home') => '/',
+        (string) t('Events') => '/events',
+        (string) t('About us') => '/about',
+        (string) t('Join us') => '/join',
+        (string) t('Book us') => '/book',
+      ],
+      'replace_content' => TRUE,
+    ],
+    'system.403' => [
+      'key' => '403',
+      'title' => t('You need to log in to see this page'),
+      'intro' => t('This page is not public. If you are part of the team, log in and try again.'),
+      'links' => [(string) t('Log in') => '/user/login', (string) t('Home') => '/'],
+      'replace_content' => TRUE,
+    ],
+  ];
+  $route = \Drupal::routeMatch()->getRouteName();
+  return $pages[$route] ?? NULL;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ *
+ * Adds block--block-content--BUNDLE so a custom block type can have one
+ * template whichever block instance renders it.
+ */
+function clau3_theme_suggestions_block_alter(array &$suggestions, array $variables): void {
+  $content = $variables['elements']['content'] ?? [];
+  if (!empty($content['#block_content'])) {
+    $bundle = $content['#block_content']->bundle();
+    $suggestions[] = 'block__block_content__' . $bundle;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ *
+ * LEGACY (from clau2): the home template uses the background_image_xl styled
+ * URL of the node's background media. Goes with the hero paragraph (plan
+ * section 15, step 3).
+ */
+function clau3_preprocess_node(array &$variables): void {
+  $node = $variables['node'] ?? NULL;
+  if (!$node || $node->bundle() !== 'home' || ($variables['view_mode'] ?? '') !== 'full') {
+    return;
+  }
+  $variables['bg_img_styled_url'] = NULL;
+  if (!$node->hasField('field_background_media') || $node->get('field_background_media')->isEmpty()) {
+    return;
+  }
+  $media = $node->get('field_background_media')->entity;
+  if (!$media || !$media->hasField('field_media_image') || $media->get('field_media_image')->isEmpty()) {
+    return;
+  }
+  $file = $media->get('field_media_image')->entity;
+  $style = ImageStyle::load('background_image_xl');
+  if ($file && $style) {
+    $url = $style->buildUrl($file->getFileUri());
+    $variables['bg_img_styled_url'] = \Drupal::service('file_url_generator')->transformRelative($url);
+  }
+}

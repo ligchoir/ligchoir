@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Main menu: the top level only, handed to the menu component as plain data.
+ */
+#}
+{% set links = [] %}
+{% for item in items %}
+  {% set links = links|merge([{
+    title: item.title,
+    url: item.url.toString(),
+    active: item.in_active_trail,
+  }]) %}
+{% endfor %}
+{% include 'clau3:menu' with { items: links, label: 'Main'|t } only %}

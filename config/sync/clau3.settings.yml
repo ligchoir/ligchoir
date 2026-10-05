@@ -1,0 +1,4 @@
+favicon:
+  use_default: '0'
+  path: 'public://favicon.png'
+  mimetype: image/png

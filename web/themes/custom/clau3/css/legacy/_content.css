@@ -1,0 +1,70 @@
+/* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
+
+@media screen and (min-width: 768px ) {
+  .ligc-content-2-column {
+    padding-left: 5em;
+    padding-right: 5em;  
+  }
+}
+
+@media screen and (max-width: 1023px ) {
+  .ligc-column-left {
+    float: left;
+    width: 100%;
+  }
+    
+  .ligc-column-right {
+    float: left;
+     width: 100%;
+  }
+  }
+
+@media screen and (min-width: 1024px ) {
+  .ligc-column-left {
+    float: left;
+    width: 50%;
+  }
+    
+  .ligc-column-right {
+    float: right;
+      width: 50%;
+  }
+}
+
+
+@media screen and (min-width: 1024px ) {
+  .single-column-form .ligc-column-left {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+    
+  .single-column-form .ligc-column-right {
+    float: right;
+      width: 00%;
+  }
+}
+
+
+/* .paragraph--type--image .paragraph--view-mode--default img { */
+.paragraph--type--image .field--name-field-media-image img {
+
+  width: 80%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+} 
+
+@media screen and (min-width: 768px ) {
+  .paragraph--type--image .field--name-field-media-image img {
+    padding-top: 1em;
+  }
+}
+
+@media screen and (max-width: 767px ) {
+  .paragraph--type--image .field--name-field-media-image img {
+    padding-top: 0.1em;
+  } 
+}

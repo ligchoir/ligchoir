@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Document skeleton. The "js" class lets the CSS tell JS users (collapsible
+ * menu, search button) from no-JS users (menu in the page, search link). The
+ * body keeps clau2's id while the legacy page templates paint their
+ * background on it.
+ */
+#}
+{%
+  set body_classes = [
+    logged_in ? 'user-logged-in',
+    not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,
+    node_type ? 'page-node-type-' ~ node_type|clean_class,
+    db_offline ? 'db-offline',
+  ]
+%}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <script>document.documentElement.classList.add('js');</script>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    {# Vegur is used above the fold on every page: start the two weights with the HTML. #}
+    <link rel="preload" href="{{ clau3_theme_path }}/fonts/vegur-bold.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="{{ clau3_theme_path }}/fonts/vegur-regular.woff" as="font" type="font/woff" crossorigin>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+  <body{{ attributes.addClass(body_classes).setAttribute('id', 'clau-page-container-id') }}>
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>

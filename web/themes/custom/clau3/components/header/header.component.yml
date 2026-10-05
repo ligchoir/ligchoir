@@ -1,0 +1,18 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Header
+status: stable
+description: 'Site header: brand on the left, menu and search on the same line on desktop; on phones a Menu button reveals the menu in document flow (no overlay, nothing fixed).'
+props:
+  type: object
+  properties:
+    menu_id:
+      type: string
+      title: 'id of the collapsible navigation area'
+      default: site-nav
+slots:
+  brand:
+    title: Brand
+  menu:
+    title: 'Main menu'
+  search:
+    title: 'Search (button that opens the search form)'

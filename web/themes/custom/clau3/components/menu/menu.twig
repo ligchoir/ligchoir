@@ -1,0 +1,9 @@
+<nav class="site-menu" aria-label="{{ label }}">
+  <ul class="site-menu__list">
+    {% for item in items %}
+      <li class="site-menu__item">
+        <a class="site-menu__link" href="{{ item.url }}"{% if item.active %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

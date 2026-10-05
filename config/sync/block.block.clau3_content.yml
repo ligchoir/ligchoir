@@ -1,0 +1,22 @@
+uuid: fcddc7ac-3caa-48b4-b840-0b13d6afb30e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - clau3
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: clau3_content
+theme: clau3
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

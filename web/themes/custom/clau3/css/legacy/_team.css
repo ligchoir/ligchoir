@@ -1,0 +1,115 @@
+/* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
+@media screen and (max-width: 1023px ){
+  .view-display-id-team_members_block .view-content {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-template-columns: 1fr; /* 1 item per row for mobile */
+      gap: 20px;
+      padding-top: 2em;
+      padding-bottom: 2em;
+  }
+
+
+
+
+  .ligc-term-img img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /*object-position: 0% 10%;*/
+      border-radius: 50%;
+  }
+
+
+  .ligc-term-img {
+    width: 68%; /* 15% smaller than previous 80% */
+    aspect-ratio: 1 / 1; /* Guarantees a perfect circle */
+    position: relative;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+
+
+
+
+  /*
+  .ligc-term-desc p {
+    padding-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  */
+}
+
+
+@media screen and (min-width: 1024px ) {
+  .view-display-id-team_members_block .view-content {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row for desktop */
+      gap: 20px;
+      padding-top: 2em;
+      padding-bottom: 2em;
+  }
+  
+
+  
+  .ligc-term-img img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /*object-position: 0% 10%;*/
+      border-radius: 50%;
+  }
+  
+
+  .ligc-term-img {
+      width: 173px; /* 15% larger than previous 150px cap */
+      aspect-ratio: 1 / 1; /* Guarantees a perfect circle at any screen width */
+      position: relative;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+  }
+
+
+
+
+  
+  .ligc-term-desc p {
+    padding-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.ligc-section-heading {
+  color: #d63836;
+  text-align: center;
+}
+.ligc-musical-team-grid-item {
+  text-align: center; /* Center the image and title */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.ligc-term-content {
+  margin-top: 0; /* the circle's margin-bottom is the only gap to the name */
+}
+
+.ligc-term-content h2 {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+

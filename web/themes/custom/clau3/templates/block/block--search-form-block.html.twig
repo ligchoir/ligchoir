@@ -1,0 +1,9 @@
+{#
+/**
+ * @file
+ * The core search block as the last menu item (search component).
+ */
+#}
+{% embed 'clau3:search' with { panel_id: 'site-search-panel', search_url: path('search.view_node_search') } %}
+  {% block form %}{{ content }}{% endblock %}
+{% endembed %}

@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * YouTube video paragraph.
+ *
+ * Same as the default paragraph template, plus a plain link to the video
+ * under the player. The player itself is gated by Klaro until the visitor
+ * accepts YouTube; the link is the fallback for visitors without
+ * JavaScript, and for browsers whose ad blocker hides consent dialogs
+ * (Brave shields and blockers with the cookie filter lists hide Klaro's
+ * placeholder along with any banner, leaving nothing to click).
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% set video_id = paragraph.field_youtube_video.video_id %}
+{% set video_url = video_id ? "https://www.youtube.com/watch?v=" ~ video_id : null %}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      {{ content }}
+      {% if video_url %}
+        <p class="ligc-video-fallback"><a href="{{ video_url }}" rel="noopener">{{ 'Watch this video on YouTube'|t }}</a></p>
+      {% endif %}
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

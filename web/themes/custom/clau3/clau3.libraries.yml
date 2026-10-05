@@ -1,0 +1,32 @@
+# One global library. Component CSS and JS live inside components/<name>/ and
+# are attached by Drupal only when the component is rendered.
+global:
+  version: VERSION
+  css:
+    base:
+      css/normalize.css: {}
+      css/fonts.css: {}
+      css/tokens.css: {}
+      css/base.css: {}
+    layout:
+      css/layout.css: {}
+      css/system-pages.css: {}
+      css/search-page.css: {}
+    component:
+      # Carried over from clau2 so the existing paragraphs, events, team,
+      # forms and Klaro dialog render in the new frame. Each file goes as the
+      # step that replaces that part of the page lands (plan section 15).
+      css/legacy/_common.css: {}
+      css/legacy/_cta.css: {}
+      css/legacy/_title.css: {}
+      css/legacy/_quote.css: {}
+      css/legacy/_team.css: {}
+      css/legacy/_events.css: {}
+      css/legacy/_contact.css: {}
+      css/legacy/_content.css: {}
+      css/legacy/_social.css: {}
+      css/legacy/_people.css: {}
+      css/legacy/_edit.css: {}
+  dependencies:
+    - core/drupal
+    - core/once

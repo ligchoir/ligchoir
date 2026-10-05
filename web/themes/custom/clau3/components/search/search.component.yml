@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Search
+status: stable
+description: 'Search as the last menu item: a button that reveals the search form (focus moves to the input; Escape closes). Without JavaScript it is a plain link to the search page.'
+props:
+  type: object
+  properties:
+    panel_id:
+      type: string
+      default: site-search-panel
+    search_url:
+      type: string
+      title: 'Search page, for the no-JS link'
+      default: /search/node
+slots:
+  form:
+    title: 'The search form'

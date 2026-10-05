@@ -1,0 +1,22 @@
+uuid: 61506ad6-29c5-4d9a-99b5-2483a3c5ae5b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - clau3
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: clau3_local_tasks
+theme: clau3
+region: local_tasks
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

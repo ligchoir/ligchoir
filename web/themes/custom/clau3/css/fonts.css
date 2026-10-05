@@ -1,0 +1,27 @@
+/*
+ * Vegur, hosted by the theme (previously served by the fontyourface
+ * local_fonts module from sites/default/files). Weights match the old
+ * declarations so existing font-weight rules keep working: 100 light,
+ * 400 regular, 700 bold.
+ */
+@font-face {
+  font-family: 'Vegur';
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/vegur-light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Vegur';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/vegur-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Vegur';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('../fonts/vegur-bold.woff') format('woff');
+}

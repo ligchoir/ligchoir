@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Page frame: header (brand, menu, search), edit tabs, messages, content edge
+ * to edge, footer. The content region has no centring wrapper so components
+ * can run full width and align themselves to the grid (plan section 3).
+ */
+#}
+{% embed 'clau3:header' %}
+  {% block brand %}{{ page.header }}{% endblock %}
+  {% block menu %}{{ page.primary_menu }}{% endblock %}
+  {% block search %}{{ page.search }}{% endblock %}
+{% endembed %}
+
+{{ page.local_tasks }}
+{{ page.highlighted }}
+{{ page.help }}
+
+<main role="main" class="site-main">
+  <a id="main-content" tabindex="-1"></a>
+  {% if system_page %}
+    <div class="ligc-system-page ligc-system-page--{{ system_page.key }}">
+      <h1 class="ligc-system-page__title">{{ system_page.title }}</h1>
+      {% if system_page.intro %}
+        <p class="ligc-system-page__intro">{{ system_page.intro }}</p>
+      {% endif %}
+      {% if system_page.replace_content %}
+        {# Render the region for its messages and cache metadata, but show our own text. #}
+        {% set _content = page.content|render %}
+      {% else %}
+        <div class="ligc-system-page__box">
+          {{ page.content }}
+        </div>
+      {% endif %}
+      {% if system_page.links %}
+        <ul class="ligc-system-page__links">
+          {% for label, path in system_page.links %}
+            <li><a href="{{ path }}">{{ label }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="layout-content">
+      {{ page.content }}
+    </div>
+  {% endif %}
+</main>
+
+{% embed 'clau3:footer' with { organisation: clau3_site_name, year: clau3_year } %}
+  {% block social %}{{ page.footer }}{% endblock %}
+  {% block legal %}
+    <p><a href="{{ path('entity.node.canonical', {'node': 13}) }}">{{ 'Privacy notice'|t }}</a> &middot; {{ 'Proudly open source and made with'|t }} <a href="https://www.drupal.org">Drupal</a></p>
+  {% endblock %}
+{% endembed %}

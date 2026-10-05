@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Footer
+status: stable
+description: 'Black band with the site’s social links, a copyright line and the legal links. Stacks on phones.'
+props:
+  type: object
+  required:
+    - organisation
+    - year
+  properties:
+    organisation:
+      type: string
+      title: 'Organisation named in the copyright line'
+    year:
+      type: string
+      title: Year
+slots:
+  social:
+    title: 'Social and contact links'
+  legal:
+    title: 'Legal links (privacy notice, credits)'

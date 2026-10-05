@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Brand
+status: stable
+description: 'Site identity in the header: the LIGC initials and the full name, linking home. Fed by the "LIGC initials and full name" custom block.'
+props:
+  type: object
+  required:
+    - url
+    - initials
+  properties:
+    url:
+      type: string
+      title: 'Home URL'
+    initials:
+      type: string
+      title: Initials
+      examples: ['LIGC']
+    name:
+      type: string
+      title: 'Full name'
+      examples: ['London International Gospel Choir']

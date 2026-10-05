@@ -1,0 +1,485 @@
+/* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
+.ligc-event-summary,
+.ligc-event-full {
+  float: left; 
+}
+
+@media screen and (min-width: 1024px ) {
+  .ligc-event-list-item .ligc-event-summary {
+      width: 76%;
+      /*
+      padding-top: 1em;
+      padding-bottom: 1em;
+      */
+  }
+
+  .ligc-event-tickets {
+    float: right;
+  }
+
+  .ligc-event-list-item .ligc-event-tickets {
+      width: 24%;
+  }
+
+  .ligc-event-summary,
+  .ligc-event-full {
+    padding-top: 2em;
+    padding-bottom: 1em;  
+  }
+}
+
+
+@media screen and (max-width: 1023px ) {
+  .ligc-event-list-item .ligc-event-summary {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .ligc-event-list-item .ligc-event-tickets {
+    float: none;
+    width: 100%;
+    text-align: left;
+    padding-top: 0.5em;
+  }
+
+  .ligc-event-list-item .ligc-event-tickets .ligc-cta-outer {
+    margin: 0;
+    text-align: left;
+  }
+
+@media screen and (min-width: 768px ) {
+  .ligc-event-container {
+    padding-bottom: 3em;
+  }
+}
+
+  .ligc-event-container .ligc-cta-outer {
+    padding-top: 0em;
+  }
+
+  .ligc-event-summary,
+  .ligc-event-full {
+    padding-top: 2em;
+    padding-bottom: 1em;  
+  }
+}
+
+
+@media screen and (min-width: 1024px ) {
+  .ligc-event-full {
+    padding-left: 1.3em;
+    width: 70%;
+  }
+
+  .ligc-event-summary .field--name-title,
+  .ligc-event-full .field--name-title {
+    display: block;
+  }
+
+  .ligc-event-list-item,
+  .ligc-event-full-outer {
+    clear: both;
+
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  .ligc-event-list-item {
+    width:70%;
+  }
+}
+
+/* seems to be an overlap with the above but there must be a good reason! */
+@media screen and (max-width: 1101px ) {
+  .ligc-event-full {
+    width: 100%;
+  }
+
+  .node__content.ligc-event-full-outer .ligc-event-tickets {
+    width: 100%;
+  }
+
+  .ligc-event-full-outer {
+    padding-bottom: 3em;
+  }
+}
+
+
+
+
+.ligc-event-summary .field--name-title,
+.ligc-event-full .field--name-title {
+  display: block;
+}
+
+.ligc-event-summary .field--name-field-when,
+.ligc-event-full .field--name-field-when {
+  display: inline-block;
+}
+
+.ligc-event-summary .field--name-field-venue,
+.ligc-event-full .field--name-field-venue {
+  display: inline-block;
+}
+
+
+
+.ligc-event-full-outer {
+  overflow: auto;
+}
+
+
+.ligc-event-summary a,
+.ligc-event-full a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ligc-event-container {
+  margin: 3em;
+}
+
+@media screen and (max-width: 767px ) {
+  .ligc-event-container {
+    margin: 2em 1em;
+  }
+}
+
+@media screen and (min-width: 768px ) and (max-width: 1023px ) {
+  .ligc-event-container {
+    margin: 2.5em 2em;
+  }
+}
+
+/* Contain the floated summary/tickets columns. Without this the list item
+   had no height of its own, so the divider (in the next sibling) was drawn
+   over the item's own content, and the big paddings below were compensating. */
+.ligc-event-list-item {
+  display: flow-root;
+}
+
+/* https://stackoverflow.com/a/67399247/227926 */
+.ligc-event-container-outer {
+  overflow: hidden;
+}
+
+
+.ligc-event-tickets .ligc-cta-outer {
+  padding-left: 0em;
+  margin: auto;
+}
+
+/* The page title block is the event's title (over the hero); the text box
+   no longer repeats it (#20). A past event gets a small label instead. */
+.ligc-event-past {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.5em;
+}
+
+
+#block-calltoactioneventindividualbookus {
+  background-color: black;
+}
+
+#block-calltoactioneventindividualbookus .ligc-cta-outer {
+  background-color: black;
+
+
+}
+
+@media screen and (max-width: 767px) {
+  #block-calltoactioneventindividualbookus {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #block-calltoactioneventindividualbookus {
+    padding-top: 1em;
+    padding-bottom: 2em;
+  }
+}
+
+#block-calltoactioneventindividualbookus .ligc-cta-outer a {
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  #block-calltoactioneventindividualbookus .field__item  {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #block-calltoactioneventindividualbookus .field__item  {
+    display: inline-block;
+  }
+}
+
+#block-calltoactioneventindividualbookus .field__item:first-child {
+  padding-bottom: 1.0em;
+}
+
+#block-calltoactioneventindividualbookus .field__items {
+  background-color: black;
+  text-align:center;
+}
+
+.event-book-left {
+
+}
+
+.event-book-right {
+
+  
+}
+
+.event-book-right .ligc-cta-outer {
+
+}
+
+
+@media screen and (max-width: 767px) {
+  #block-calltoactioneventindividualbookus .ligc-cta-outer {
+    padding-left: 0px;
+  }
+}
+
+
+.node--type--event.node--view-mode-full .ligc-cta-outer span {
+  margin-top: 1.0em;
+}
+
+/* this seems a bit weird, because inspect highlights (what I think are) the wrong elements, but this seems to work fine */
+/* maybe invalid or incomplete html or incorrect css? */
+@media screen and (max-width: 767px) {
+  .view-display-id-events_listing .view-content .views-row:last-child,
+  .view-display-id-block_events_past .view-content .views-row:last-child {
+      padding-bottom: 2em;
+  }
+}
+
+
+.view-display-id-events_listing .views-row:not(:last-child) .event-spacer-container .event-spacer-hr,
+.view-display-id-block_events_past .views-row:not(:last-child) .event-spacer-container .event-spacer-hr {
+  width: 300px;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #bfbfbf; 
+  border: 0;
+}
+
+
+.view-display-id-events_listing .views-row:last-child .event-spacer-container .event-spacer-hr,
+.view-display-id-block_events_past .views-row:last-child .event-spacer-container .event-spacer-hr {
+  width: 200px;
+  height: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  display:none;
+  border: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .event-spacer-container {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .ligc-event-list-item {
+    padding: 0.5em 1.25em 2em;
+  }
+
+  .ligc-event-list-item .ligc-event-summary {
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .event-spacer-container {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .ligc-event-list-item {
+    padding-bottom: 2.5em;
+  }
+}
+
+/*.view-display-id-events_listing .views-row:after { */
+  /*
+.event-listing-item:after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background: gray;
+  position: absolute;
+  bottom: -4px;
+}
+*/
+
+/*
+.view-display-id-events_listing .views-row {
+  padding-bottom: 2em;
+}
+*/
+
+
+
+
+
+.node--type-event.node--view-mode-teaser .read-more {
+  font-weight: bold;
+  font-size: 1em;
+  padding-top: 0.5em;
+  text-transform: uppercase;
+}
+
+.view-display-id-events_listing .view-footer,
+.view-display-id-block_events_past .view-footer {
+  text-align:center;
+}
+
+
+/*
+@media screen and (max-width: 767px) {
+  .page-node-type-event .ligc-title-menu-combo {
+    height: 20em;
+  }
+}
+*/
+
+
+
+
+@media screen and (max-width: 767px) {
+  .ligc-event-full-outer {
+    margin-top: 0;
+  }
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .ligc-event-full-outer {
+    margin-top: 10em;
+  }
+}
+
+
+.view-events .view-empty {
+  text-align: center;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+
+.ligc-event-full .field--name-body {
+  padding-top: 2em;
+}
+
+/* ------------------------------------------------------------------
+   Date | venue separator (Sep 2026). The pipe is glued to the venue so a
+   line break happens before it, never after it. On phones/tablets the
+   venue goes on its own line and the pipe is dropped.
+   ------------------------------------------------------------------ */
+.ligc-event-venue-wrap {
+  white-space: nowrap;
+}
+
+.ligc-event-venue-wrap .field {
+  white-space: normal;
+}
+
+.ligc-text .ligc-event-venue-wrap span {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+@media screen and (max-width: 1023px) {
+  .ligc-event-venue-wrap {
+    display: block;
+  }
+
+  .ligc-event-sep {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Event page hero (Sep 2026).
+   Phones: the image is a normal block between the title and the text box
+   (16:9, full width), so its bottom edge always meets the box. Before, it
+   was a body background at a fixed offset and the box had a fixed margin,
+   so the gap/overlap depended on the title length and the image ratio.
+   Desktop: still a body background behind the logo and menu, but the body
+   height is the text box's offset (set by js/theme.js as --ligc-hero-h),
+   so the image can never stop short of the box on short viewports.
+   The image URL comes from node--event--full.html.twig as
+   --ligc-event-hero-url.
+   ------------------------------------------------------------------ */
+.ligc-event-hero {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .ligc-event-hero {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+
+  .ligc-event-full {
+    text-align: left;
+    padding: 1.5em 1.25em 0.5em;
+    box-sizing: border-box; /* width is 100%, keep the padding inside it */
+  }
+
+  .ligc-event-full h1 {
+    padding-bottom: 0.5em;
+  }
+
+  .ligc-event-full .field--name-body {
+    padding-top: 1em;
+  }
+
+  .ligc-event-full-outer {
+    padding-bottom: 1.5em;
+  }
+
+  .ligc-event-full-outer .ligc-event-tickets,
+  .ligc-event-full-outer .ligc-event-tickets .ligc-cta-outer {
+    text-align: left;
+  }
+
+  .ligc-event-full-outer .ligc-event-tickets {
+    padding: 0 1.25em 0.5em;
+    box-sizing: border-box; /* width is 100%; without this the padding overflowed the box and showed a scrollbar */
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body#clau-page-container-id.page-node-type-event {
+    height: var(--ligc-hero-h, 100vh);
+    background-color: #000;
+    background-image: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 18%, rgba(255,255,255,0.4) 100%), var(--ligc-event-hero-url);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}

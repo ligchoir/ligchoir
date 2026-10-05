@@ -574,11 +574,19 @@ theme is not yet default), tested locally, then merged into
 `main` until the team signs off the review site, then `feat/new-theme`
 is merged and released as one version.
 
-1. **Theme skeleton** (this session's follow-up): `clau3` info, libraries,
-   tokens, page/html templates, header and menu components, footer
-   block type and component, search. Switch the default theme locally
-   only. Front page and landing pages render with the old paragraph
-   output in the new frame.
+1. **Theme skeleton** — DONE 2026-10-06 (commit on `feat/new-theme`):
+   `clau3` info, libraries, breakpoints, tokens, page/html templates,
+   components `brand`, `header`, `menu`, `search`, `footer`, system pages
+   (log in, password, 403, 404), block placements and `clau3` as the
+   default theme in config (this branch only; `main` stays on clau2).
+   The front page, landing pages, events, team and forms render with the
+   clau2 paragraph templates and CSS copied into `css/legacy/` and
+   `templates/{content,paragraphs,field,views,webform}`. Deferred to later
+   steps: the footer custom block type (section 9; the footer component
+   takes the social block and a template-side legal line for now), the
+   search results page styling (core markup inside the frame), and the
+   landing pages' tiny page title over the old background band, which the
+   hero paragraph replaces in step 6.
 2. **Media workflow**: focal_point, crop types, image styles, responsive
    styles, media form widget; re-save existing media so derivatives
    exist. Editor guidance page.
