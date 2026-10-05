@@ -164,8 +164,10 @@ Desktop: logo left, menu items on the same line, search as the last item
 does). The logo is the same size on every page, small enough to share the
 line with six items at 1200px; if it does not fit at 992px, the fallback
 is the logo on its own line above the menu, which the sketch allows.
-Items: Home, About, Events, Join us, Book us, Projects, Search. The
-sketch omits Events from the bar; see decision 16.2.
+Items, in this order (decision 16.2, 2026-10-06): Home, Events & News,
+Join us, Book us, About, Projects, Search. "Events & News" is the events
+landing page (events first, as the most visited page); news about the
+choir is told through Projects, which the events page links to.
 
 Mobile (below 800px): logo and a burger button on one line; the menu
 opens **in document flow**, pushing the content down (clau2 overlays the
@@ -345,23 +347,26 @@ needed because the three paths already exist or are plain view pages.
 
 ### 7.3 Map
 
-Venues have no location data today. Needed:
+Venues have no location data today. Decision 16.6 (2026-10-06): use the
+**Geolocation** module (drupal/geolocation), not geofield + leaflet; it is
+actively developed, Google-optional, and brings Leaflet with OpenStreetMap
+tiles and address geocoding in its own submodules. Needed:
 
-1. `geofield` module, a `field_location` (geofield) on the `venues`
-   vocabulary, and `geocoder` with the Nominatim (OpenStreetMap) provider
-   so an editor types an address and the point is filled in; or
-   lat/long typed by hand for the 60 existing terms (one evening's work
-   with a CSV and `drush php:script`).
-2. `leaflet` plus `leaflet_views`: a `map` page display on the events
-   view, markers from the venue's location, popups with event title,
-   date and link. Check that the module serves Leaflet's JS and CSS from
-   `web/libraries/leaflet` (asset-packagist or a manual download) and
-   not from a CDN, in keeping with the no-CDN rule.
+1. `geolocation` with its Leaflet submodule; a `field_location`
+   (geolocation) on the `venues` vocabulary with the address-geocoding
+   widget (Nominatim/OpenStreetMap provider), so an editor types an
+   address and the point is filled in; the 60 existing terms get their
+   points from a CSV and a `drush php:script` (one evening's work). Which
+   Geolocation submodules provide Leaflet and Nominatim at the version
+   installed is confirmed at step 4.
+2. A `map` page display on the events view using Geolocation's Leaflet
+   views style: markers from the venue's location, popups with event
+   title, date and link. Check that Leaflet's JS and CSS are served from
+   `web/libraries` and not from a CDN, in keeping with the no-CDN rule.
 3. Map tiles are a request to a third party (tile.openstreetmap.org)
-   and OSM's tile policy forbids heavy use. Options: gate the map behind
-   Klaro like the YouTube embeds (a "Load map" button, the pattern is
-   already in `_common.css`); or use a paid tile provider with a key.
-   Start with Klaro-gated OSM tiles; the traffic is small.
+   and OSM's tile policy forbids heavy use. Gate the map behind Klaro
+   like the YouTube embeds (a "Load map" button, the pattern is already
+   in `_common.css`); a paid tile provider with a key stays the fallback.
 
 Past events: the Past tab is the existing `block_events_past` display.
 Linking a past event to a project is the `field_outcomes` reference on
@@ -394,25 +399,29 @@ left and collaborators right, outcomes list, links, then `field_content`.
 Teaser display is the `card` component; a `projects` view lists cards on
 /projects (a `landing_page` node with a view paragraph, like /events).
 
-**Collaborator**: this is a join record (who, how, what they did) that
-only exists inside one project, so it fits a **paragraph type**
-`collaborator` rather than a content type: `field_party` (entity
-reference, single, to `person` or `organisation` nodes), `field_roles`
-(taxonomy `collaboration_roles`: performed with, commissioned, hosted,
-produced, recorded, funded…), `field_description` (text). If the same
-collaboration ever needs to be shown on several projects, promote it to
-a node then; the fields are identical.
+**Collaborator**: decision 16.3 (2026-10-06): a **content type**, because
+the same collaborator (another choir, a producer, a venue) can take part
+in more than one project. `collaborator` is the party itself and replaces
+the `organisation` type first planned: title, body, `field_image` (media
+image: logo or portrait), `field_website` (link), `field_kind` (list:
+organisation, person). The project's `field_collaborators` is an
+entity reference to collaborator nodes. The per-project role (performed
+with, commissioned, hosted, produced, recorded, funded…) is a small
+`collaboration` paragraph on the project (collaborator reference, roles
+from a `collaboration_roles` vocabulary, optional note) if the team wants
+roles shown; decided at step 5 when the first real project is entered.
+Collaborators have no public page at first (no path alias; shown only on
+project pages), which avoids publishing a page per partner before there is
+anything to say.
 
-**Person and Organisation**: `team_member` is generalised into `person`
-(rename the bundle label and machine name with the migration script
-pattern from `scripts/devops/musical_team_to_nodes.php`, or create
-`person` and move the 9 nodes): title, field_image, body, field_role
-(free text), `field_team_order` (integer, empty for non-team people), plus
-`field_website` (link). The Team members view filters on `field_team_order`
-not empty. New `organisation`: title, body, `field_logo` (media image),
-`field_website` (link). Neither has a public page at first (no path
-alias, display only through collaborator paragraphs), which avoids
-publishing a page per partner before there is anything to say.
+**Person**: decision 16.4 (2026-10-06): `team_member` is renamed in place
+to `person` (bundle label and machine name, with the migration-script
+pattern from `scripts/devops/musical_team_to_nodes.php`): title,
+field_image, body, field_role (free text), `field_team_order` (integer,
+empty for non-team people), plus `field_website` (link). The Team members
+view filters on `field_team_order` not empty. A guest musical director
+who collaborates on a project is a `collaborator` of kind person, not a
+`person`, unless they are also part of the team.
 
 Rob's three scenarios in this model:
 
@@ -436,10 +445,11 @@ inner) and `footer-end.css`. LIGC does the same with less:
   `field_links` (link, unlimited: Privacy, Contact, Join us, Book us),
   `field_social` (the existing `social_and_contact_links` paragraph, so
   the icon markup the team already maintains is reused).
-- `region--footer.html.twig` plus the `footer` SDC: black band, white
-  text at 85% opacity, links at least 4.5:1, social circles in the
-  existing brand colours with the contrast fixes in section 12, stacked
-  on mobile.
+- The `footer` SDC (built in step 1): a **slate grey** band
+  (`--ligc-slate`, #37474f; white text on it is 9.3:1), white text at 85%
+  opacity, links at least 4.5:1, social icons on their coloured discs as
+  now (Rob, 2026-10-06, items 10 and 12) with the contrast fixes in
+  section 12, stacked on mobile.
 - The empty `footer` system menu is deleted or used for the links instead
   of `field_links`; a menu is easier for the team to edit, so prefer the
   menu and drop `field_links`.
@@ -494,6 +504,20 @@ with the `width` descriptors, so one `<img srcset>` per image and no
 breakpoint multipliers. The old `background_image_*`,
 `header_cover_background` and `max_*` styles are deleted after the
 templates stop using them.
+
+**Why WebP, and AVIF** (Rob's question, 2026-10-06): WebP is supported by
+every browser in use since Safari 14 (2020), so a WebP derivative needs no
+JPEG fallback, and at the same visual quality it is about 25 to 35 per
+cent smaller than JPEG. AVIF is smaller again (roughly another 20 to 30
+per cent) and also universal in browsers since 2024, but producing it is a
+**server** matter: Drupal's GD toolkit can only write AVIF when the
+server's PHP GD extension was built with libavif, and the status report
+says this server's build was not (the local ddev PHP is). Options are a
+PHP GD build with libavif on the server, or the ImageMagick toolkit module
+with ImageMagick installed on the server. Neither is a repo change, so the
+plan is WebP now for every derivative (replacing JPEG output), and AVIF as
+a follow-up once the server can encode it; the image styles then just
+switch the convert effect. Originals stay as uploaded.
 
 **Quality and size**: WebP at quality 80 for photos (set in the GD
 toolkit settings; check in `GDToolkit::save()` which quality setting the
@@ -554,7 +578,8 @@ file outside the web root), `X-Robots-Tag: noindex` from nginx and
 `robots.txt` disallow all. Drupal's `trusted_host_patterns` in that
 environment's settings lists the new host. The toolkit changes (a third
 environment number, the nginx template with basic auth) belong in the
-infrastructure repo. ligchoir.com is a different domain from the live
+infrastructure repo github.com/therobyouknow/infrastructure (confirmed
+by Rob, 2026-10-06, item 13). ligchoir.com is a different domain from the live
 internationalgospelchoir.uk; confirm its DNS is at the same provider
 before the session that sets this up.
 
@@ -611,26 +636,29 @@ is merged and released as one version.
    image_widget_crop, delete old image styles and `modifiers_color`,
    update the roadmap.
 
-## 16. Decisions still open (for Rob)
+## 16. Decisions (answered by Rob 2026-10-06 unless marked open)
 
-1. Builder: agree with section 2 (SDC + Paragraphs now, Layout Builder on
-   Project, Canvas as a spike), or go Canvas-first for the front page?
-2. Menu: Events in the top bar (recommended: it is the most used page)
-   or reached only from the front page grid as the sketch shows?
-3. Collaborator as a paragraph (recommended) or as a content type?
-4. Rename `team_member` to `person` in place, or create `person` and
-   migrate the 9 nodes? Both are small; the rename keeps the view and
-   template changes smallest.
-5. Video source: which YouTube video or original file, and who in the
-   team confirms rights to reuse the footage.
-6. Map: Klaro-gated OpenStreetMap tiles (recommended to start) or a paid
-   tile provider.
-7. Focal point (recommended) versus keeping manual crops per aspect
-   ratio.
-8. Colour scheme list for events (red, green, black, cream) or a
-   different set of vetted pairs.
-9. Does ligchoir.com's DNS sit where Rob can add the `new` record, and
-   which team members get the HTTP auth login.
+1. Builder: **agreed** with section 2 (SDC + Paragraphs now, Layout
+   Builder on Project, Canvas as a spike).
+2. Menu: **Events in the bar**, labelled "Events & News"; order Home,
+   Events & News, Join us, Book us, About, Projects, Search (section 4).
+3. Collaborator: **content type**, because one collaborator can be in
+   several projects (section 8).
+4. `team_member` to `person`: **rename in place** (section 8).
+5. Video source: **LIGC's own channel**, youtube.com/@LIGChoir/videos;
+   rights are the choir's own and the review round can discuss the clip.
+6. Map: **Geolocation module** (not geofield), OpenStreetMap tiles via
+   Leaflet, still Klaro-gated (section 7.3).
+7. Focal point: **yes** (section 11).
+8. OPEN: colour scheme list for events (red, green, black, cream) or a
+   different set of vetted pairs. Needed at step 4.
+9. OPEN: ligchoir.com DNS access for the `new` record, and who gets the
+   HTTP auth login. Needed at step 7.
+10. Social icons keep their coloured discs (section 9).
+11. WebP now, AVIF when the server can encode it (section 11).
+12. Footer band is slate grey, not black (section 9).
+13. new.ligchoir.com is set up through the infrastructure repo
+    (section 13).
 
 ## Sources
 

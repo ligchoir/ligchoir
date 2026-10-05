@@ -19,6 +19,10 @@
   --ligc-ink-soft: #1c1517;     /* panels on the ground (Klaro dialog) */
   --ligc-paper: #ffffff;
   --ligc-rule-on-ink: rgba(255, 255, 255, 0.18);
+  --ligc-slate: #37474f;        /* footer band; white text on it: 9.3:1 */
+  --ligc-text-on-slate: #ffffff;
+  --ligc-text-on-slate-soft: rgba(255, 255, 255, 0.85);
+  --ligc-rule-on-slate: rgba(255, 255, 255, 0.22);
 
   /* Text pairs */
   --ligc-text-on-ink: #ffffff;

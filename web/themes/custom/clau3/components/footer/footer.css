@@ -1,7 +1,7 @@
 .site-footer {
-  background: var(--ligc-ink);
-  color: var(--ligc-text-on-ink-soft);
-  border-top: 1px solid var(--ligc-rule-on-ink);
+  background: var(--ligc-slate);
+  color: var(--ligc-text-on-slate-soft);
+  border-top: 1px solid var(--ligc-rule-on-slate);
   padding-block: var(--ligc-space-lg);
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
 }
@@ -17,7 +17,7 @@
 }
 
 .site-footer__legal a {
-  color: var(--ligc-text-on-ink);
+  color: var(--ligc-text-on-slate);
   text-decoration-color: var(--ligc-red-on-ink);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -27,13 +27,13 @@
    footer: keep the circles, drop the white band. */
 .site-footer #block-clau3-social {
   background: transparent;
-  color: var(--ligc-text-on-ink-soft);
+  color: var(--ligc-text-on-slate-soft);
   padding: 0;
   text-align: left;
 }
 
 .site-footer .field--name-field-contact-action {
-  color: var(--ligc-text-on-ink);
+  color: var(--ligc-text-on-slate);
 }
 
 @media (min-width: 800px) {
