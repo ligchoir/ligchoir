@@ -1,0 +1,28 @@
+uuid: cf064e67-243d-4f92-80f7-c8aaf548717e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video
+    - media.type.video
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_video
+field_name: field_video
+entity_type: paragraph
+bundle: hero
+label: Video
+description: 'A short, silent, looping mp4 (see docs/frontend/new-theme-plan.md section 5.1). Leave empty for an image-only hero.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

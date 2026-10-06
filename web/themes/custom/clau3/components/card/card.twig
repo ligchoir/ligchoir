@@ -1,0 +1,10 @@
+<article class="card">
+  <a class="card__link" href="{{ url }}">
+    <div class="card__media">{% block image %}{% endblock %}</div>
+    <div class="card__body">
+      <h3 class="card__heading">{{ heading }}</h3>
+      <div class="card__text">{% block text %}{% endblock %}</div>
+      {% if link_text %}<span class="card__cta">{{ link_text }}</span>{% endif %}
+    </div>
+  </a>
+</article>

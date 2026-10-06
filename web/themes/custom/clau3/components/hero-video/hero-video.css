@@ -1,0 +1,116 @@
+.hero {
+  position: relative;
+  background: var(--ligc-ink);
+  color: var(--ligc-text-on-ink);
+}
+
+/* 16:9 box capped at 70vh on desktop; on phones a taller crop so the clip
+   is worth its download (plan section 5.1). */
+.hero__media {
+  position: relative;
+  width: 100%;
+  /* 16:9 of the viewport width, capped so the events heading stays in view
+     on a 1080px-tall screen. (aspect-ratio + max-height would narrow the
+     box instead of cropping it.) */
+  height: min(56.25vw, 70vh);
+  overflow: hidden;
+  background: var(--ligc-ink);
+}
+
+@media (max-width: 599px) {
+  .hero__media {
+    height: 60vh;
+  }
+}
+
+.hero__video,
+.hero__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* The poster sits under the video; when the video is removed or not
+   playing it is what the visitor sees. */
+.hero__video {
+  z-index: 1;
+}
+
+.hero--video.is-static .hero__video {
+  display: none;
+}
+
+/* Text on a solid panel, overlapping the bottom of the media. */
+.hero__panel {
+  position: relative;
+  z-index: 2;
+  max-width: 36rem;
+  margin: -3rem 0 0;
+  margin-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  padding: var(--ligc-space-md) var(--ligc-space-lg);
+  background: var(--ligc-red);
+  color: var(--ligc-text-on-red);
+}
+
+.hero__heading {
+  margin: 0 0 var(--ligc-space-xs);
+  font-size: clamp(1.6rem, 1rem + 2vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.hero__text {
+  font-size: 1.1rem;
+}
+
+.hero__text p {
+  margin: 0 0 var(--ligc-space-xs);
+}
+
+.hero__text a {
+  color: var(--ligc-text-on-red);
+}
+
+.hero__link.button {
+  display: inline-block;
+  margin-top: var(--ligc-space-xs);
+  padding: 0.6em 1.4em;
+  background: var(--ligc-text-on-red);
+  color: var(--ligc-red);
+  border-radius: 2em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero__link.button:hover {
+  background: var(--ligc-ink);
+  color: var(--ligc-text-on-ink);
+}
+
+.hero__video-link {
+  margin: var(--ligc-space-sm) 0 0;
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  color: var(--ligc-text-on-ink-soft);
+}
+
+.hero__video-link a {
+  color: var(--ligc-text-on-ink);
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 800px) {
+  .hero__panel {
+    margin-top: -5rem;
+    padding: var(--ligc-space-lg) var(--ligc-space-xl);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    display: none;
+  }
+}

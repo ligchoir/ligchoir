@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Event in the "Event card" view mode (front page grid). Links to the event
+ * page only; the organiser link lives on the event page.
+ */
+#}
+{% embed 'clau3:event-card' with {
+  title: label,
+  url: url,
+  venue: node.field_venue.entity ? node.field_venue.entity.label : null,
+} %}
+  {% block image %}{{ event_card_image }}{% endblock %}
+  {% block date %}{{ event_card_date }}{% endblock %}
+{% endembed %}

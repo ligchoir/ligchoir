@@ -328,3 +328,13 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Check: view source of /book has no cdn.jsdelivr.net and the time field is
 # still <input type="time">. Background: docs/dev/webform-libraries.md
 # ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# New theme (feat/new-theme, Oct 2026, release when the team signs off the
+# review site). Content steps that go with the config, from the release code
+# dir after cim; both are idempotent:
+# ---------------------------------------------------------------------------
+./drush php:script scripts/devops/front_page_2026.php   # hero media import, front page paragraphs in the new order, orphan paragraph clean-up
+# Check: / plays the hero loop (poster for reduced-motion users), shows the
+# events cards, About text, the three cards and General enquiry; /about and
+# the events pages still render the old paragraph output in the new frame.

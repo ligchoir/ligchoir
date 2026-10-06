@@ -1,0 +1,10 @@
+uuid: 4529b26f-d1b8-4744-b8fa-2e2269614c36
+langcode: en
+status: true
+dependencies: {  }
+id: card
+label: Card
+icon_uuid: null
+icon_default: null
+description: 'Image, heading, short text and a link. Used in rows of three (Book us / Our projects / Join us) and on the Projects page.'
+behavior_plugins: {  }

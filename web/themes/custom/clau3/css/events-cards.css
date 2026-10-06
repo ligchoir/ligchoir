@@ -1,0 +1,65 @@
+/* Front page events grid (views display "cards"). The cards themselves are
+   the event-card component. */
+.events-cards {
+  padding-block: var(--ligc-space-xl);
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+.events-cards__header h2,
+.ligc-section-heading {
+  margin: 0 0 var(--ligc-space-md);
+  font-size: clamp(1.6rem, 1rem + 1.5vw, 2.2rem);
+  color: var(--ligc-text-on-ink);
+  text-align: left;
+}
+
+.events-cards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ligc-space-md);
+}
+
+.events-cards__grid > .views-row {
+  display: contents;
+}
+
+.events-cards__empty {
+  color: var(--ligc-text-on-ink-soft);
+  font-size: 1.1rem;
+}
+
+.events-cards__empty a {
+  color: var(--ligc-text-on-ink);
+  text-decoration-color: var(--ligc-red-on-ink);
+}
+
+.events-cards__more {
+  margin-top: var(--ligc-space-md);
+}
+
+.events-cards__more a {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--ligc-text-on-ink);
+  border-radius: 2em;
+  color: var(--ligc-text-on-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.events-cards__more a:hover {
+  background: var(--ligc-text-on-ink);
+  color: var(--ligc-ink);
+}
+
+@media (min-width: 600px) {
+  .events-cards__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .events-cards__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

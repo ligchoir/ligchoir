@@ -1,0 +1,10 @@
+uuid: 935a678b-2833-4dd1-8c7f-43c70ef2397a
+langcode: en
+status: true
+dependencies: {  }
+id: card_row
+label: 'Card row'
+icon_uuid: null
+icon_default: null
+description: 'A row of cards, three across on desktop, stacked on phones.'
+behavior_plugins: {  }

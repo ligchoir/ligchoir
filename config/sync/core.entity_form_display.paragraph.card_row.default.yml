@@ -1,0 +1,44 @@
+uuid: 19bfbcc9-b371-4426-bc2e-1b6e7b6b1829
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_row.field_cards
+    - paragraphs.paragraphs_type.card_row
+  module:
+    - paragraphs
+id: paragraph.card_row.default
+targetEntityType: paragraph
+bundle: card_row
+mode: default
+content:
+  admin_title:
+    type: string_textfield
+    weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cards:
+    type: paragraphs
+    weight: 0
+    region: content
+    settings:
+      title: Card
+      title_plural: Cards
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: card
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

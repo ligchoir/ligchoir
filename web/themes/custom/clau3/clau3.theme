@@ -100,6 +100,12 @@ function clau3_preprocess_node(array &$variables): void {
   if (!$node) {
     return;
   }
+  // Front page events grid: image through the card responsive style, date field.
+  if ($node->bundle() === 'event' && ($variables['view_mode'] ?? '') === 'event_card') {
+    $variables['event_card_image'] = _clau3_responsive_media($node, 'field_background_media', 'card');
+    $variables['event_card_date'] = $variables['content']['field_when'] ?? [];
+    return;
+  }
   // Team grid: the round portrait through the square_400 style (WebP, focal
   // point) instead of the original upload.
   if ($node->bundle() === 'team_member' && ($variables['view_mode'] ?? '') === 'teaser') {
@@ -142,4 +148,68 @@ function _clau3_styled_media_url($entity, string $field, string $style_name): ?s
     return NULL;
   }
   return \Drupal::service('file_url_generator')->transformRelative($style->buildUrl($file->getFileUri()));
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph--hero.html.twig.
+ */
+function clau3_preprocess_paragraph__hero(array &$variables): void {
+  $paragraph = $variables['paragraph'];
+  $variables['hero_poster_url'] = _clau3_styled_media_url($paragraph, 'field_image', 'wide_1600');
+  $variables['hero_poster_alt'] = '';
+  if (!$paragraph->get('field_image')->isEmpty() && ($media = $paragraph->get('field_image')->entity)) {
+    $variables['hero_poster_alt'] = $media->get('field_media_image')->alt ?? '';
+  }
+  $variables['hero_video_url'] = NULL;
+  if ($paragraph->hasField('field_video') && !$paragraph->get('field_video')->isEmpty()) {
+    $media = $paragraph->get('field_video')->entity;
+    if ($media && $media->hasField('field_media_video_file') && !$media->get('field_media_video_file')->isEmpty()) {
+      $file = $media->get('field_media_video_file')->entity;
+      if ($file) {
+        $variables['hero_video_url'] = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+      }
+    }
+  }
+  $variables['hero_text'] = $variables['content']['field_text'] ?? [];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph--card.html.twig.
+ */
+function clau3_preprocess_paragraph__card(array &$variables): void {
+  $paragraph = $variables['paragraph'];
+  $variables['card_image'] = _clau3_responsive_media($paragraph, 'field_image', 'card');
+  $variables['card_text'] = $variables['content']['field_text'] ?? [];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for paragraph--card-row.html.twig.
+ */
+function clau3_preprocess_paragraph__card_row(array &$variables): void {
+  $variables['row_cards'] = $variables['content']['field_cards'] ?? [];
+}
+
+/**
+ * Render array for a media image field through a responsive image style.
+ */
+function _clau3_responsive_media($entity, string $field, string $responsive_style): array {
+  if (!$entity->hasField($field) || $entity->get($field)->isEmpty()) {
+    return [];
+  }
+  $media = $entity->get($field)->entity;
+  if (!$media || !$media->hasField('field_media_image') || $media->get('field_media_image')->isEmpty()) {
+    return [];
+  }
+  $item = $media->get('field_media_image')->first();
+  $file = $item->entity;
+  if (!$file) {
+    return [];
+  }
+  return [
+    '#theme' => 'responsive_image',
+    '#responsive_image_style_id' => $responsive_style,
+    '#uri' => $file->getFileUri(),
+    '#attributes' => ['alt' => $item->alt ?? '', 'loading' => 'lazy'],
+    '#cache' => ['tags' => $media->getCacheTags()],
+  ];
 }

@@ -1,0 +1,71 @@
+uuid: 351aef2b-8f34-4e8e-8eb0-f5df34dd8617
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.event_card
+    - field.field.node.event.body
+    - field.field.node.event.field_background_media
+    - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_text
+    - field.field.node.event.field_tickets
+    - field.field.node.event.field_time_tbc
+    - field.field.node.event.field_venue
+    - field.field.node.event.field_when
+    - node.type.event
+  module:
+    - ds
+    - field_formatter_class
+    - smart_date
+id: node.event.event_card
+targetEntityType: node
+bundle: event
+mode: event_card
+content:
+  field_venue:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_when:
+    type: smartdate_custom
+    label: hidden
+    settings:
+      separator: ' - '
+      date_format: 'M j'
+      custom_date_format: ''
+      timezone: ''
+      join: ', '
+      time_format: 'g:ia'
+      time_hour_format: 'g:ia'
+      allday_label: 'All day'
+      date_first: '1'
+      ampm_reduce: '1'
+      site_time_toggle: '1'
+      tooltip:
+        date_format: ''
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+      ds:
+        ds_limit: ''
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_background_media: true
+  field_colour_background: true
+  field_colour_text: true
+  field_tickets: true
+  field_time_tbc: true
+  links: true

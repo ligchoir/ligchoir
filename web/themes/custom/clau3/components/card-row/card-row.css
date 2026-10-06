@@ -1,0 +1,28 @@
+.card-row {
+  padding-block: var(--ligc-space-xl);
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+.card-row__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ligc-space-md);
+}
+
+/* The paragraphs field wrapper is transparent to the grid. */
+.card-row__grid > .field,
+.card-row__grid > .field > .field__item {
+  display: contents;
+}
+
+@media (min-width: 600px) {
+  .card-row__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .card-row__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

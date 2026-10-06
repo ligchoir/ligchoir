@@ -1,0 +1,20 @@
+<section class="hero{{ video_url ? ' hero--video' }}" data-hero>
+  <div class="hero__media">
+    {% if video_url %}
+      <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="{{ poster_url }}" aria-hidden="true" tabindex="-1">
+        <source src="{{ video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+    <img class="hero__poster" src="{{ poster_url }}" alt="{{ poster_alt|default('') }}" width="1600" height="900" fetchpriority="high">
+  </div>
+  <div class="hero__panel">
+    <h1 class="hero__heading">{{ heading }}</h1>
+    <div class="hero__text">{% block text %}{% endblock %}</div>
+    {% if link_url %}
+      <a class="hero__link button" href="{{ link_url }}">{{ link_text|default('Read more'|t) }}</a>
+    {% endif %}
+  </div>
+  {% if video_link_url %}
+    <p class="hero__video-link"><a href="{{ video_link_url }}" rel="noopener">{{ video_link_text|default('Watch the full video on YouTube'|t) }}</a></p>
+  {% endif %}
+</section>

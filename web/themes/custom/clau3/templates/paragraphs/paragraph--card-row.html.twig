@@ -1,0 +1,9 @@
+{#
+/**
+ * @file
+ * Card row paragraph: card-row component around the rendered cards field.
+ */
+#}
+{% embed 'clau3:card-row' %}
+  {% block cards %}{{ row_cards }}{% endblock %}
+{% endembed %}

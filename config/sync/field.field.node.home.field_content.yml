@@ -7,12 +7,15 @@ dependencies:
     - node.type.home
     - paragraphs.paragraphs_type.about_intro
     - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.card_row
     - paragraphs.paragraphs_type.contact
+    - paragraphs.paragraphs_type.hero
     - paragraphs.paragraphs_type.image
     - paragraphs.paragraphs_type.quote
     - paragraphs.paragraphs_type.social_and_contact_links
     - paragraphs.paragraphs_type.text
     - paragraphs.paragraphs_type.vertical_space
+    - paragraphs.paragraphs_type.view
     - paragraphs.paragraphs_type.youtube_video
   module:
     - entity_reference_revisions
@@ -43,6 +46,9 @@ settings:
       social_and_contact_links: social_and_contact_links
       vertical_space: vertical_space
       text: text
+      hero: hero
+      view: view
+      card_row: card_row
     negate: 0
     target_bundles_drag_drop:
       about_intro:
@@ -54,12 +60,18 @@ settings:
       call_to_action:
         weight: 13
         enabled: true
+      card_row:
+        weight: 10
+        enabled: true
       contact:
         weight: 16
         enabled: true
       content_2_column:
         weight: 22
         enabled: false
+      hero:
+        weight: 10
+        enabled: true
       image:
         weight: 18
         enabled: true
@@ -80,7 +92,7 @@ settings:
         enabled: false
       view:
         weight: 32
-        enabled: false
+        enabled: true
       youtube_video:
         weight: 18
         enabled: true

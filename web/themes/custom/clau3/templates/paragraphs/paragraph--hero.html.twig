@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Hero paragraph: hands its fields to the hero-video component. URLs come
+ * from clau3_preprocess_paragraph__hero().
+ */
+#}
+{% embed 'clau3:hero-video' with {
+  heading: paragraph.field_heading.value,
+  poster_url: hero_poster_url,
+  poster_alt: hero_poster_alt,
+  video_url: hero_video_url,
+  link_url: paragraph.field_link.0.url.toString() ?? null,
+  link_text: paragraph.field_link.0.title,
+  video_link_url: paragraph.field_video_link.0.url.toString() ?? null,
+  video_link_text: paragraph.field_video_link.0.title,
+} %}
+  {% block text %}{{ hero_text }}{% endblock %}
+{% endembed %}

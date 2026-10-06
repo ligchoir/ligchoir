@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Card paragraph: card component. Image render array from
+ * clau3_preprocess_paragraph__card().
+ */
+#}
+{% embed 'clau3:card' with {
+  heading: paragraph.field_heading.value,
+  url: paragraph.field_link.0.url.toString(),
+  link_text: paragraph.field_link.0.title,
+} %}
+  {% block image %}{{ card_image }}{% endblock %}
+  {% block text %}{{ card_text }}{% endblock %}
+{% endembed %}

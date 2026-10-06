@@ -1,0 +1,12 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'Card row'
+status: stable
+description: 'Cards three across from 800px, stacked below, aligned to the grid.'
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+slots:
+  cards:
+    title: 'The cards'

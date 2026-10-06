@@ -1,0 +1,19 @@
+uuid: ab2bc483-9ceb-4384-8e10-5b2d7157f1d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.card
+id: paragraph.card.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: card
+label: Heading
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

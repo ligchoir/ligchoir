@@ -1,0 +1,32 @@
+uuid: fd952e21-cd12-422d-95a5-24b4189e7cd9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero.field_heading
+    - field.field.paragraph.hero.field_image
+    - field.field.paragraph.hero.field_link
+    - field.field.paragraph.hero.field_text
+    - field.field.paragraph.hero.field_video
+    - field.field.paragraph.hero.field_video_link
+    - paragraphs.paragraphs_type.hero
+  module:
+    - text
+id: paragraph.hero.default
+targetEntityType: paragraph
+bundle: hero
+mode: default
+content:
+  field_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_heading: true
+  field_image: true
+  field_link: true
+  field_video: true
+  field_video_link: true

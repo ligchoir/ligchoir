@@ -1,0 +1,23 @@
+uuid: 21c7b4e3-5a54-42a4-a92b-8eb2d2d7154d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_link
+    - paragraphs.paragraphs_type.hero
+  module:
+    - link
+id: paragraph.hero.field_video_link
+field_name: field_video_link
+entity_type: paragraph
+bundle: hero
+label: 'Full video link'
+description: 'Optional: a plain link to the full video on YouTube, shown under the panel.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 16
+field_type: link

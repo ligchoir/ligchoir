@@ -629,10 +629,22 @@ is merged and released as one version.
    Left for launch (step 9): uninstall image_widget_crop, delete the old
    crop types and `background_image_*`, `max_*`, `profile_pic`,
    `crop_thumbnail` styles once no template uses them.
-3. **Front page**: hero paragraph type and component, video pipeline
-   script and the first clip, events cards display, card and card_row
-   paragraph types, rebuild the home node's `field_content` in the new
-   order, and clean up the two orphan fields on the home node.
+3. **Front page** — DONE 2026-10-06 (on `feat/new-theme`): paragraph types
+   `hero` (video, poster image, heading, text, Read more link, full-video
+   link), `card` and `card_row`; components hero-video, card, card-row and
+   event-card; node view mode `event_card` and the events view's `cards`
+   display (upcoming, eight, "View all events"); `media/hero-loop.sh` in
+   the infrastructure repo, and the first clip (19 s from 1:20 of "If He
+   Did It Before", 1280x720 CRF 32, 2.6 MB, poster 1920 wide) committed
+   under `scripts/content/front-page/`. `scripts/devops/front_page_2026.php`
+   imports the media, builds the paragraphs (hero, events cards, About
+   text, card row Book us / Our projects / Join us, the existing call to
+   action re-pointed to the general contact anchor), sets the order,
+   deletes the YouTube embed, vertical space and old Welcome paragraphs,
+   and removed the twelve orphan paragraphs whose parent fields were gone.
+   Run it after `cim` on each environment; it is idempotent. Open point:
+   the events grid shows a slate "LIGC" placeholder for the many events
+   without a photo; a per-event photo is an editor task, not a theme one.
 4. **Events**: teaser links, event page template through the image
    styles, colour scheme field and data migration script (one
    `drush php:script` mapping the old colour terms to schemes), strip,

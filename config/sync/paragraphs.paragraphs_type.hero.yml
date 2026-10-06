@@ -1,0 +1,10 @@
+uuid: 57800f22-95ae-428c-977f-921adefd4731
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: Hero
+icon_uuid: null
+icon_default: null
+description: 'Full-width video (or image) with a heading, a short text and a Read more link. Front page and landing page tops.'
+behavior_plugins: {  }

@@ -1,0 +1,6 @@
+<section class="card-row">
+  {% if heading %}<h2 class="card-row__heading ligc-section-heading">{{ heading }}</h2>{% endif %}
+  <div class="card-row__grid">
+    {% block cards %}{% endblock %}
+  </div>
+</section>

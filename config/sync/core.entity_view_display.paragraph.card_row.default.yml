@@ -1,0 +1,24 @@
+uuid: ab3286f9-860a-4b22-b6bb-2772199ddebc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_row.field_cards
+    - paragraphs.paragraphs_type.card_row
+  module:
+    - entity_reference_revisions
+id: paragraph.card_row.default
+targetEntityType: paragraph
+bundle: card_row
+mode: default
+content:
+  field_cards:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

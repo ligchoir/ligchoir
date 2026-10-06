@@ -47,6 +47,13 @@
   ]
 %}
 {% block paragraph %}
+{% if paragraph.field_colour_background.isEmpty %}
+  {# clau3: a view paragraph without the old colour pickers renders bare; the
+     embedded view (e.g. the events "cards" display) brings its own layout. #}
+  <div{{ attributes.addClass(classes) }}>
+    {{ content.field_views_display }}
+  </div>
+{% else %}
   {# following style insert enables targeting cta when inside view #}
   {# we could also consider doing this in the view mode template for the cta paragraph #}
   {# web/themes/custom/clau2/templates/paragraphs/paragraph--call-to-action--teaser.html.twig #}
@@ -67,4 +74,5 @@
       </div>
     </div>
   </div>
+{% endif %}
 {% endblock paragraph %}

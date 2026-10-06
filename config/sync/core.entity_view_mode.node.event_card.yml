@@ -1,0 +1,11 @@
+uuid: afd70549-2812-4002-9949-6bfc55c7803c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.event_card
+label: 'Event card'
+description: null
+targetEntityType: node
+cache: true

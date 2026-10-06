@@ -1,0 +1,22 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Card
+status: stable
+description: 'Image (3:2), heading, short text, whole card is one link.'
+props:
+  type: object
+  required:
+    - heading
+    - url
+  properties:
+    heading:
+      type: string
+    url:
+      type: string
+    link_text:
+      type: string
+      title: 'Optional call to action shown under the text'
+slots:
+  image:
+    title: 'Rendered image (responsive image, card style)'
+  text:
+    title: 'Short text'
