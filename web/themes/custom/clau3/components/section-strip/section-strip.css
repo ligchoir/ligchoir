@@ -1,5 +1,6 @@
 .section-strip {
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  padding-block: var(--ligc-space-sm) var(--ligc-space-md);
   border-bottom: 1px solid var(--ligc-rule-on-ink);
 }
 

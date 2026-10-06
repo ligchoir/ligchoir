@@ -1,0 +1,19 @@
+uuid: 66e656f7-b8a7-4eb8-b18f-741395b512e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_credit
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_credit
+field_name: field_credit
+entity_type: paragraph
+bundle: hero
+label: 'Photo credit'
+description: 'Shown small in the corner of the image, e.g. "Photo: Alex Example".'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

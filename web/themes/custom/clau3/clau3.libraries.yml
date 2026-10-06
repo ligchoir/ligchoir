@@ -15,6 +15,7 @@ global:
       css/events-cards.css: {}
       css/front-page.css: {}
       css/project.css: {}
+      css/book-prompt.css: {}
     component:
       # Carried over from clau2 so the existing paragraphs, events, team,
       # forms and Klaro dialog render in the new frame. Each file goes as the

@@ -311,3 +311,9 @@ input[type="submit"] {
 		font-size: 1.2em;
 	}
 }
+
+/* clau3: room above the form's guidance text ("Contact" heading on About us)
+   (review round 2, A23). */
+.field--name-field-guidance {
+  padding-top: var(--ligc-space-lg);
+}

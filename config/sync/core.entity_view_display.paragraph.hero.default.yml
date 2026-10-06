@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.hero.field_credit
     - field.field.paragraph.hero.field_heading
     - field.field.paragraph.hero.field_image
     - field.field.paragraph.hero.field_link
@@ -26,6 +27,7 @@ content:
     weight: 0
     region: content
 hidden:
+  field_credit: true
   field_heading: true
   field_image: true
   field_link: true

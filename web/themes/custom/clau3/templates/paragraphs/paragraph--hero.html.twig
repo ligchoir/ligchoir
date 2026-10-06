@@ -2,7 +2,9 @@
 /**
  * @file
  * Hero paragraph: hands its fields to the hero-video component. URLs come
- * from clau3_preprocess_paragraph__hero().
+ * from clau3_preprocess_paragraph__hero(), which also sets section_strip on
+ * the events landing pages so the Upcoming / Past / Map strip sits right
+ * under the band (review round 2, A17).
  */
 #}
 {% embed 'clau3:hero-video' with {
@@ -15,7 +17,11 @@
   video_link_url: paragraph.field_video_link.0 ? paragraph.field_video_link.0.url.toString() : '',
   video_link_text: paragraph.field_video_link.0.title|default(''),
   video_on_phones: paragraph.field_video_on_phones.value ? true : false,
+  credit: paragraph.field_credit.value|default(''),
 } %}
   {% block text %}{{ hero_text }}{% endblock %}
   {% block poster %}{{ hero_poster }}{% endblock %}
 {% endembed %}
+{% if section_strip %}
+  {% include 'clau3:section-strip' with { items: section_strip, label: 'Events'|t } only %}
+{% endif %}

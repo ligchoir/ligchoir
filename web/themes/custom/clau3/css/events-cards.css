@@ -5,7 +5,7 @@
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
 }
 
-.events-cards__header h2,
+.events-cards__heading,
 .ligc-section-heading {
   margin: 0 0 var(--ligc-space-md);
   font-size: clamp(1.6rem, 1rem + 1.5vw, 2.2rem);
@@ -34,22 +34,8 @@
 }
 
 .events-cards__more {
-  margin-top: var(--ligc-space-md);
-}
-
-.events-cards__more a {
-  display: inline-block;
-  padding: 0.6em 1.4em;
-  border: 2px solid var(--ligc-text-on-ink);
-  border-radius: 2em;
-  color: var(--ligc-text-on-ink);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.events-cards__more a:hover {
-  background: var(--ligc-text-on-ink);
-  color: var(--ligc-ink);
+  margin: var(--ligc-space-md) 0 0;
+  font-size: 1.1rem;
 }
 
 @media (min-width: 600px) {

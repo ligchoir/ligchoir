@@ -27,6 +27,9 @@ props:
       title: 'Plain link to the full video (no embed)'
     video_link_text:
       type: string
+    credit:
+      type: string
+      title: 'Photo credit, shown small in the bottom left corner of the media'
     video_on_phones:
       type: boolean
       title: 'Play the video below 600px too'

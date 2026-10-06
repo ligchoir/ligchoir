@@ -59,17 +59,37 @@
   display: none;
 }
 
-/* "Watch the full video" sits on the black ground between the media and
-   the panel, right-aligned, with the shared "more" chevron. */
-.hero__video-link {
+/* Corner overlays on the media, each on a black cut-out: the photo credit
+   bottom left, "Watch the full video" bottom right (review round 2, A11). */
+.hero__video-link,
+.hero__credit {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
   margin: 0;
-  padding-block: var(--ligc-space-sm);
-  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
-  text-align: right;
+  padding: 0.5em 0.9em;
+  background: var(--ligc-ink);
+  color: var(--ligc-text-on-ink);
 }
 
-.hero__video-link a {
-  color: var(--ligc-text-on-ink);
+.hero__video-link {
+  right: 0;
+}
+
+.hero__credit {
+  left: 0;
+  font-size: 0.85rem;
+  color: var(--ligc-text-on-ink-soft);
+}
+
+@media (min-width: 800px) {
+  .hero__video-link {
+    right: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  }
+
+  .hero__credit {
+    left: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  }
 }
 
 /* Heading, text and link on a full-width red band under the media. The text
@@ -104,20 +124,15 @@
   color: var(--ligc-text-on-red);
 }
 
-.hero__link.button {
-  display: inline-block;
+/* The panel's link is the site's one call-to-action style, white on red. */
+.hero__link.ligc-more {
   margin-top: var(--ligc-space-xs);
-  padding: 0.6em 1.4em;
-  background: var(--ligc-text-on-red);
-  color: var(--ligc-red);
-  border-radius: 2em;
-  font-weight: 700;
-  text-decoration: none;
+  font-size: 1.1rem;
 }
 
-.hero__link.button:hover {
-  background: var(--ligc-ink);
-  color: var(--ligc-text-on-ink);
+.hero__panel a.ligc-more:hover,
+.hero__panel a.ligc-more:focus-visible {
+  text-decoration-color: currentColor;
 }
 
 @media (min-width: 800px) {

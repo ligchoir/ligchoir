@@ -363,3 +363,7 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Terms of use · Privacy policy · Accessibility / copyright; no round buttons
 # under the heroes on /, /events, /join, /book; /terms-of-use and
 # /accessibility exist (placeholder text until the team writes them).
+./drush php:script scripts/devops/review_round_2_2026.php  # review round 2: vertical-space paragraphs off the landing pages, Join us intro in the wide column, Book us photo credit into the hero, focal points near the top of the Events and Book us images (+ derivative flush), all events on the black scheme
+# Check: /events (strip under the red band, no black gap, heads in view at
+# wide widths), /book (credit bottom-left on the image), an event page (white
+# on black, pink date, red "How about booking us" band with Book us >).

@@ -21,7 +21,7 @@
     {% endif %}
     {% if tickets_url and not is_past %}
       <p class="event-page__tickets">
-        <a class="event-page__tickets-link" href="{{ tickets_url }}" rel="noopener">{{ tickets_label|default('Tickets and details'|t) }}</a>
+        <a class="event-page__tickets-link ligc-more" href="{{ tickets_url }}" rel="noopener">{{ tickets_label|default('Tickets and details'|t) }}</a>
         {% if tickets_domain %}<span class="event-page__tickets-domain">{{ 'at'|t }} {{ tickets_domain }}</span>{% endif %}
       </p>
     {% endif %}

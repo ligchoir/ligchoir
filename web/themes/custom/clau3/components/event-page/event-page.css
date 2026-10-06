@@ -2,7 +2,7 @@
 .event-page--paper { --scheme-bg: var(--ligc-paper); --scheme-text: var(--ligc-text-on-paper); --scheme-accent: var(--ligc-red); --scheme-muted: #444; }
 .event-page--red   { --scheme-bg: var(--ligc-red);   --scheme-text: var(--ligc-text-on-red);   --scheme-accent: var(--ligc-text-on-red); --scheme-muted: rgba(255,255,255,.85); }
 .event-page--green { --scheme-bg: var(--ligc-green); --scheme-text: var(--ligc-text-on-green); --scheme-accent: var(--ligc-text-on-green); --scheme-muted: rgba(255,255,255,.85); }
-.event-page--ink   { --scheme-bg: var(--ligc-ink-soft); --scheme-text: var(--ligc-text-on-ink); --scheme-accent: var(--ligc-red-on-ink); --scheme-muted: var(--ligc-text-on-ink-soft); }
+.event-page--ink   { --scheme-bg: var(--ligc-ink); --scheme-text: var(--ligc-text-on-ink); --scheme-accent: var(--ligc-red-on-ink); --scheme-muted: var(--ligc-text-on-ink-soft); }
 .event-page--cream { --scheme-bg: var(--ligc-cream); --scheme-text: var(--ligc-text-on-cream); --scheme-accent: var(--ligc-red); --scheme-muted: #444; }
 
 .event-page__media {
@@ -33,6 +33,14 @@
 .event-page__media + .event-page__box {
   margin-top: -3rem;
   border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* The black scheme (the default from review round 2, A19) is the page
+   ground itself, so the box sits flush under the image rather than
+   overlapping it as a card. */
+.event-page--ink .event-page__media + .event-page__box {
+  margin-top: 0;
+  border-radius: 0;
 }
 
 .event-page__title {
@@ -89,23 +97,14 @@
   gap: var(--ligc-space-sm);
 }
 
-.event-page__tickets-link {
-  display: inline-block;
-  padding: 0.7em 1.6em;
-  background: var(--scheme-accent);
-  color: var(--scheme-bg);
-  border-radius: 2em;
-  font-weight: 700;
-  text-decoration: none;
+.event-page__tickets-link.ligc-more {
+  color: var(--scheme-accent);
+  font-size: 1.1rem;
 }
 
-.event-page--paper .event-page__tickets-link,
-.event-page--cream .event-page__tickets-link {
-  color: var(--ligc-text-on-red);
-}
-
-.event-page__tickets-link:hover {
-  filter: brightness(0.9);
+.event-page__tickets-link.ligc-more:hover,
+.event-page__tickets-link.ligc-more:focus-visible {
+  text-decoration-color: currentColor;
 }
 
 .event-page__tickets-domain {
@@ -119,6 +118,10 @@
 
   .event-page__media + .event-page__box {
     margin-top: -5rem;
+  }
+
+  .event-page--ink .event-page__media + .event-page__box {
+    margin-top: 0;
   }
 }
 

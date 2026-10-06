@@ -1,14 +1,22 @@
 /* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
-@media screen and (max-width: 1023px ){
+@media screen and (max-width: 1199px ){
   .view-display-id-team_members_block .view-content {
       width: 80%;
       margin-left: auto;
       margin-right: auto;
       display: grid;
-      grid-template-columns: 1fr; /* 1 item per row for mobile */
+      grid-template-columns: 1fr; /* 1 item per row for phones */
       gap: 20px;
       padding-top: 2em;
       padding-bottom: 2em;
+  }
+
+  /* clau3: two across from 600px up to the 3-across desktop grid (review
+     round 2, A22). */
+  @media screen and (min-width: 600px) {
+    .view-display-id-team_members_block .view-content {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
 
@@ -48,7 +56,7 @@
 }
 
 
-@media screen and (min-width: 1024px ) {
+@media screen and (min-width: 1200px ) {
   .view-display-id-team_members_block .view-content {
       width: 100%;
       margin-left: auto;

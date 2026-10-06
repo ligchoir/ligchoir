@@ -1,0 +1,34 @@
+/* "How about booking us for your event?" under an event (block type
+   call_to_action_with_text): red band, prompt centred in black, Book us as
+   a white more-link (review round 2, A19). */
+.book-prompt {
+  background: var(--ligc-red);
+  color: var(--ligc-ink);
+  padding-block: var(--ligc-space-lg);
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  text-align: center;
+}
+
+.book-prompt__text h2,
+.book-prompt__text p {
+  margin: 0 0 var(--ligc-space-xs);
+  color: var(--ligc-ink);
+}
+
+.book-prompt__text h2 {
+  font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem);
+}
+
+.book-prompt__link {
+  margin: var(--ligc-space-xs) 0 0;
+  font-size: 1.15rem;
+}
+
+.book-prompt__link a {
+  color: var(--ligc-text-on-red);
+}
+
+.book-prompt__link a:hover,
+.book-prompt__link a:focus-visible {
+  text-decoration-color: currentColor;
+}

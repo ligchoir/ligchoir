@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.hero.field_credit
     - field.field.paragraph.hero.field_heading
     - field.field.paragraph.hero.field_image
     - field.field.paragraph.hero.field_link
@@ -23,6 +24,14 @@ content:
   admin_title:
     type: string_textfield
     weight: -10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_credit:
+    type: string_textfield
+    weight: 7
     region: content
     settings:
       size: 60

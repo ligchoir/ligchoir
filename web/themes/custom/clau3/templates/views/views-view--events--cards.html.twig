@@ -1,7 +1,10 @@
 {#
 /**
  * @file
- * The events "cards" display: heading, grid of event cards, View all link.
+ * The events "cards" display: a heading that links to the events page, the
+ * grid of event cards, and "View all events" as the same kind of link. Both
+ * links use the display's "more" URL and text, so they stay in the view's
+ * configuration.
  */
 #}
 {%
@@ -14,13 +17,22 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+{% set heading = header|render|striptags|trim %}
+{# The "more" element is a more_link: #url (Url object) and #title. #}
+{% set more_url = more['#url'] is defined ? more['#url'].toString() : '' %}
 <section{{ attributes.addClass(classes) }}>
   {{ title_prefix }}{{ title }}{{ title_suffix }}
-  {% if header %}<div class="events-cards__header">{{ header }}</div>{% endif %}
+  {% if heading %}
+    <h2 class="events-cards__heading">
+      {% if more_url %}<a class="ligc-more" href="{{ more_url }}">{{ heading }}</a>{% else %}{{ heading }}{% endif %}
+    </h2>
+  {% endif %}
   {% if rows %}
     <div class="events-cards__grid">{{ rows }}</div>
   {% elseif empty %}
     <div class="events-cards__empty">{{ empty }}</div>
   {% endif %}
-  {% if more %}<div class="events-cards__more">{{ more }}</div>{% endif %}
+  {% if more_url %}
+    <p class="events-cards__more"><a class="ligc-more" href="{{ more_url }}">{{ more['#title']|default('View all events'|t) }}</a></p>
+  {% endif %}
 </section>

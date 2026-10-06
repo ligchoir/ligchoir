@@ -2,18 +2,19 @@
 /**
  * @file
  * Landing pages (About, Events, Join us, Book us, Past events, Privacy,
- * Projects): the paragraphs, edge to edge. The hero paragraph at the top
- * carries the page's image and title; the events pages get the
- * Upcoming / Past / Map strip (clau3_preprocess_node sets section_strip).
+ * Projects, Terms of use, Accessibility): the paragraphs, edge to edge. The
+ * hero paragraph at the top carries the page's image and title, and on the
+ * events pages prints the Upcoming / Past / Map strip under its band
+ * (paragraph--hero.html.twig). A page without a hero gets a plain H1 and,
+ * if it is an events page, the strip under that.
  */
 #}
 <article{{ attributes.addClass(['node', 'node--type-landing-page', 'node--view-mode-' ~ view_mode|clean_class]) }}>
-  {% if section_strip %}
-    {% include 'clau3:section-strip' with { items: section_strip, label: 'Events'|t } only %}
-  {% endif %}
-  {# Pages whose content does not start with a hero still need their H1. #}
   {% if node.field_content.entity is empty or node.field_content.entity.bundle != 'hero' %}
     <h1 class="page-heading">{{ label }}</h1>
+    {% if section_strip %}
+      {% include 'clau3:section-strip' with { items: section_strip, label: 'Events'|t } only %}
+    {% endif %}
   {% endif %}
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('field_background_media') }}

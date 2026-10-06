@@ -13,11 +13,15 @@
     {% else %}
       <img class="hero__poster" src="{{ poster_url }}" alt="{{ poster_alt|default('') }}" width="1280" height="672" fetchpriority="high">
     {% endif %}
+    {# Overlays in the corners of the media, on black cut-outs: the photo
+       credit (left) and the plain link to the full video (right, no embed). #}
+    {% if credit %}
+      <p class="hero__credit">{{ credit }}</p>
+    {% endif %}
+    {% if video_link_url %}
+      <p class="hero__video-link"><a class="ligc-more" href="{{ video_link_url }}" rel="noopener">{{ video_link_text|default('Watch the full video on YouTube'|t) }}</a></p>
+    {% endif %}
   </div>
-  {# Plain link to the full video, right-aligned between the media and the panel (no embed). #}
-  {% if video_link_url %}
-    <p class="hero__video-link"><a class="ligc-more" href="{{ video_link_url }}" rel="noopener">{{ video_link_text|default('Watch the full video on YouTube'|t) }}</a></p>
-  {% endif %}
   {# Heading, text and link on a full-width solid band below the media, so
      contrast never depends on the frame behind (review round 1, A2). #}
   <div class="hero__panel">
@@ -26,7 +30,7 @@
       {% set text_html = block('text')|trim %}
       {% if text_html %}<div class="hero__text">{{ text_html|raw }}</div>{% endif %}
       {% if link_url %}
-        <a class="hero__link button" href="{{ link_url }}">{{ link_text|default('Read more'|t) }}</a>
+        <a class="hero__link ligc-more" href="{{ link_url }}">{{ link_text|default('Read more'|t) }}</a>
       {% endif %}
     </div>
   </div>

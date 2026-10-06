@@ -726,6 +726,20 @@ is merged and released as one version.
    the Solent pattern (main menu 3 x 2 / 2 x 3 with rules, social links
    right, ruled row of policy links from the `footer` menu, copyright right).
    Terms of use and Accessibility are placeholder pages for the team to write.
+   **Review round 2** (Rob, 2026-10-06, local): one call-to-action style for
+   the whole site, the text-plus-chevron link `.ligc-more` (thicker chevron;
+   hero "Read more", Events heading and "View all events", card links,
+   event tickets link, Book us prompt); no more round buttons anywhere. The
+   video link is overlaid bottom-right on the media on a black cut-out, and
+   the hero gained a `field_credit` (photo credit, bottom-left cut-out; Book
+   us uses it). Events strip sits under the red band (printed by the hero
+   paragraph). Event pages: black scheme is the default (white text, pink
+   date, flush under the image); "How about booking us" is a red band with
+   the prompt centred in black. Team grid 1 / 2 / 3 across at 600 and 1200.
+   `review_round_2_2026.php` removes the vertical-space paragraphs, moves the
+   Join us intro to the wide column, moves the Book us credit into the hero,
+   sets focal points at 50% / 12% on the Events and Book us images and
+   switches every event to the black scheme.
 7. **Review site** and the team's feedback rounds.
 8. **Canvas spike** on a branch off `feat/new-theme`, after step 5, with
    a written verdict in this document.

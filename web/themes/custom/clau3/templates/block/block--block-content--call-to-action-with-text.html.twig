@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * "How about booking us for your event?" under each event: a red band with
+ * the prompt centred and the Book us link as the site's one call-to-action
+ * style (review round 2, A19). Variables from clau3_preprocess_block():
+ * prompt_text (render array of the text paragraph's field_text),
+ * prompt_url, prompt_label.
+ */
+#}
+<aside{{ attributes.addClass(['block', 'book-prompt']) }} aria-label="{{ 'Book us'|t }}">
+  {{ title_prefix }}{{ title_suffix }}
+  <div class="book-prompt__inner">
+    <div class="book-prompt__text">{{ prompt_text }}</div>
+    {% if prompt_url %}
+      <p class="book-prompt__link"><a class="ligc-more" href="{{ prompt_url }}">{{ prompt_label }}</a></p>
+    {% endif %}
+  </div>
+</aside>

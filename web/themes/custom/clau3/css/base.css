@@ -110,9 +110,11 @@ p {
 }
 
 /* "More" link: bold text with a right chevron (Solent's View more pattern).
-   Used by the hero's video link and by editor links given class="ligc-more".
-   The chevron is drawn in the current colour, so it works on any ground. */
-a.ligc-more {
+   The one call-to-action style on the site (review round 2, A12): hero
+   links, Events heading and View all, card links, event tickets, Book us,
+   and editor links given class="ligc-more". The chevron is drawn in the
+   current colour, so it works on any ground. */
+.ligc-more {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
@@ -122,7 +124,7 @@ a.ligc-more {
   text-decoration: none;
 }
 
-a.ligc-more::after {
+.ligc-more::after {
   content: '';
   flex: none;
   width: 0.7em;
@@ -134,19 +136,22 @@ a.ligc-more::after {
 }
 
 a.ligc-more:hover,
-a.ligc-more:focus-visible {
+a.ligc-more:focus-visible,
+a:hover .ligc-more,
+a:focus-visible .ligc-more {
   text-decoration: underline;
   text-decoration-color: var(--ligc-red-on-ink);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
-a.ligc-more:hover::after {
+a.ligc-more:hover::after,
+a:hover .ligc-more::after {
   transform: translateX(3px);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  a.ligc-more::after {
+  .ligc-more::after {
     transition: none;
   }
 }

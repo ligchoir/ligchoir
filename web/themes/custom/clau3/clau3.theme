@@ -196,6 +196,12 @@ function clau3_preprocess_paragraph__hero(array &$variables): void {
     }
   }
   $variables['hero_text'] = $variables['content']['field_text'] ?? [];
+  // Events landing pages: the Upcoming / Past / Map strip under the band.
+  $variables['section_strip'] = NULL;
+  $parent = $paragraph->getParentEntity();
+  if ($parent instanceof \Drupal\node\NodeInterface && $parent->bundle() === 'landing_page' && !$parent->isNew()) {
+    $variables['section_strip'] = _clau3_events_strip($parent->toUrl()->toString());
+  }
   // Responsive poster: phones get the 800px WebP, desktops up to 2000px.
   $poster = _clau3_responsive_media($paragraph, 'field_image', 'hero');
   if ($poster) {
@@ -378,6 +384,23 @@ function clau3_preprocess_block(array &$variables): void {
   // (menu--main--footer.html.twig): a grid with rules, not the header bar.
   if (($variables['plugin_id'] ?? '') === 'system_menu_block:main' && ($variables['elements']['#id'] ?? '') === 'clau3_footer_menu' && isset($variables['content']['#theme'])) {
     $variables['content']['#theme'] = 'menu__main__footer';
+  }
+  // Book us prompt under an event (block type call_to_action_with_text):
+  // the text paragraph's field and the call-to-action paragraph's link, for
+  // block--block-content--call-to-action-with-text.html.twig.
+  if (str_starts_with($variables['plugin_id'] ?? '', 'block_content:') && ($block = $variables['content']['#block_content'] ?? NULL) && $block->bundle() === 'call_to_action_with_text') {
+    $variables['prompt_text'] = [];
+    $variables['prompt_url'] = $variables['prompt_label'] = '';
+    foreach ($block->get('field_content')->referencedEntities() as $paragraph) {
+      if ($paragraph->bundle() === 'text' && !$paragraph->get('field_text')->isEmpty()) {
+        $variables['prompt_text'] = $paragraph->get('field_text')->view(['label' => 'hidden']);
+      }
+      elseif ($paragraph->bundle() === 'call_to_action' && !$paragraph->get('field_link')->isEmpty()) {
+        $link = $paragraph->get('field_link')->first();
+        $variables['prompt_url'] = $link->getUrl()->toString();
+        $variables['prompt_label'] = $link->title ?: (string) t('Book us');
+      }
+    }
   }
   $variables['clau3_hide_page_title'] = FALSE;
   if (($variables['plugin_id'] ?? '') === 'page_title_block') {
