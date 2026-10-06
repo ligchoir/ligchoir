@@ -72,3 +72,39 @@ button {
 .ligc-container {
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
 }
+
+/* Type scale. Components set their own sizes where they need to; this is the
+   default for content that has none. */
+h1, h2, h3, h4 {
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); }
+h2 { font-size: clamp(1.5rem, 1rem + 1.4vw, 2.1rem); }
+h3 { font-size: clamp(1.2rem, 1rem + 0.6vw, 1.5rem); }
+h4 { font-size: 1.1rem; }
+
+p {
+  margin: 0 0 1em;
+}
+
+/* Links in running text: on the black page, use the light red that reads
+   (10.4:1); legacy paragraphs that set their own white box recolour below. */
+.layout-content a:not([class]) {
+  color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.layout-content [style*="background-color: #FFFFFF"] a:not([class]),
+.layout-content [style*="background-color: #ffffff"] a:not([class]) {
+  color: var(--ligc-red);
+}
+
+/* Plain page heading (pages without a hero). */
+.page-heading {
+  margin: 0;
+  padding-block: var(--ligc-space-lg) var(--ligc-space-sm);
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}

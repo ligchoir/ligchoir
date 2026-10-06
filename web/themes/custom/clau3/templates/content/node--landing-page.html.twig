@@ -1,39 +1,19 @@
 {#
 /**
  * @file
- * Landing pages (About, Events, Join us, Book us, Past events, Privacy, LIV):
- * the paragraphs, edge to edge. The events pages get the Upcoming / Past /
- * Map strip (clau3_preprocess_node sets section_strip). The old full-page
- * background image stays as a band under the header until step 6 moves it
- * into a hero paragraph.
+ * Landing pages (About, Events, Join us, Book us, Past events, Privacy,
+ * Projects): the paragraphs, edge to edge. The hero paragraph at the top
+ * carries the page's image and title; the events pages get the
+ * Upcoming / Past / Map strip (clau3_preprocess_node sets section_strip).
  */
 #}
-{% set bg_img_url = node.field_background_media.entity ? file_url(node.field_background_media.entity.field_media_image.0.entity.uri.value) : null %}
-{% if bg_img_url and not section_strip %}
-<style>
-  @media screen and (max-width: 767px ) {
-    #clau-page-container-id {
-        background: linear-gradient( 180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.2) 1%, rgba(255,255,255,0.2) 100%), url({{ bg_img_url }});
-        background-size: 125%;
-        background-repeat: no-repeat;
-        background-position: center 9em;
-        background-color: rgba(0,0,0,1);
-    }
-  }
-  @media screen and (min-width: 768px ) {
-    #clau-page-container-id {
-        background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 18%, rgba(255,255,255,0.4) 100%), url({{ bg_img_url }});
-        height: 100vh;
-        background-size: cover;
-        background-position: center top;
-        background-color: rgba(0,0,0,1);
-    }
-  }
-</style>
-{% endif %}
 <article{{ attributes.addClass(['node', 'node--type-landing-page', 'node--view-mode-' ~ view_mode|clean_class]) }}>
   {% if section_strip %}
     {% include 'clau3:section-strip' with { items: section_strip, label: 'Events'|t } only %}
+  {% endif %}
+  {# Pages whose content does not start with a hero still need their H1. #}
+  {% if node.field_content.entity is empty or node.field_content.entity.bundle != 'hero' %}
+    <h1 class="page-heading">{{ label }}</h1>
   {% endif %}
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content|without('field_background_media') }}

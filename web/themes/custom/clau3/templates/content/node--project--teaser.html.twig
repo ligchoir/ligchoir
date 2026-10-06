@@ -7,7 +7,7 @@
 {% embed 'clau3:card' with {
   heading: label,
   url: url,
-  link_text: project_status_label,
+  link_text: project_status_label|default(''),
 } %}
   {% block image %}{{ project_card_image }}{% endblock %}
   {% block text %}{{ content.body }}{% endblock %}

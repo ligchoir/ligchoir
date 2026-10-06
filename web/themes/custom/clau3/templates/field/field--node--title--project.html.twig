@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Project title: the Layout Builder field block renders it inside the page,
+ * so it is the page's H1 there (the page title block is hidden for projects).
+ */
+#}
+{% if element['#view_mode'] not in ['teaser', 'event_card', 'search_result'] %}
+  <h1{{ attributes.addClass(['field', 'field--name-title', 'page-heading--project']) }}>{% for item in items %}{{ item.content }}{% endfor %}</h1>
+{% else %}
+  <span{{ attributes.addClass(['field', 'field--name-title']) }}>{% for item in items %}{{ item.content }}{% endfor %}</span>
+{% endif %}

@@ -9,12 +9,12 @@
   title: label,
   scheme: node.field_colour_scheme.value|default('paper'),
   is_past: event_is_past,
-  when: event_when,
-  venue: event_venue,
-  tickets_url: event_tickets_url,
-  tickets_label: event_tickets_label,
-  tickets_domain: event_tickets_domain,
-  projects: event_projects,
+  when: event_when|default(''),
+  venue: event_venue|default(''),
+  tickets_url: event_tickets_url|default(''),
+  tickets_label: event_tickets_label|default(''),
+  tickets_domain: event_tickets_domain|default(''),
+  projects: event_projects|default([]),
 } %}
   {% block image %}{{ event_image }}{% endblock %}
   {% block body %}{{ content.body }}{% endblock %}

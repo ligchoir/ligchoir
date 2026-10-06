@@ -16,7 +16,8 @@
   </div>
   <div class="hero__panel">
     <h1 class="hero__heading">{{ heading }}</h1>
-    <div class="hero__text">{% block text %}{% endblock %}</div>
+    {% set text_html = block('text')|trim %}
+    {% if text_html %}<div class="hero__text">{{ text_html|raw }}</div>{% endif %}
     {% if link_url %}
       <a class="hero__link button" href="{{ link_url }}">{{ link_text|default('Read more'|t) }}</a>
     {% endif %}

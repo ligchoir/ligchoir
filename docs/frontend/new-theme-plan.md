@@ -697,8 +697,24 @@ is merged and released as one version.
    menu. Event pages show "Part of our project: …" from `field_outcomes`.
    Not done: the optional `collaboration` paragraph for per-project roles
    (decide when the first collaborator is entered).
-6. **Other pages and polish**: landing pages onto the hero paragraph,
-   typography, forms, Klaro styling, accessibility audit (section 12).
+6. **Other pages and polish** — DONE 2026-10-07 (on `feat/new-theme`):
+   `scripts/devops/landing_heroes_2026.php` gives every landing page with a
+   background image a hero paragraph (image through the responsive style,
+   page title as heading; About, Events, Join us, Book us, Past events) and
+   demotes editor `<h1>`s inside paragraph text to `<h2>` (four found), so
+   each page has one H1; the landing template no longer paints the old
+   full-page background, and pages without a hero (Privacy, Projects) get a
+   plain H1. Image heroes are shorter than the video hero. Page title block
+   hidden by the theme on the bundles whose template renders the H1 (a
+   visibility condition would also have hidden it on search). Type scale in
+   base.css; running-text links use the light red on black. Accessibility
+   pass over eleven pages (headings, alt text, link and button names, form
+   labels, landmarks, skip link): the one real fault was the icon-only
+   social links, which now get `aria-label` and `rel="noopener"` from the
+   theme (the `font_awesome_compatible` text format allows the attributes).
+   The webform pages still need the axe/WAVE run from section 12 by hand,
+   and the colour contrast of the legacy paragraph styles is only as good
+   as their inline colour pickers until those paragraph types are redone.
 7. **Review site** and the team's feedback rounds.
 8. **Canvas spike** on a branch off `feat/new-theme`, after step 5, with
    a written verdict in this document.

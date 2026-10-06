@@ -7,13 +7,13 @@
 #}
 {% embed 'clau3:hero-video' with {
   heading: paragraph.field_heading.value,
-  poster_url: hero_poster_url,
-  poster_alt: hero_poster_alt,
-  video_url: hero_video_url,
-  link_url: paragraph.field_link.0.url.toString() ?? null,
-  link_text: paragraph.field_link.0.title,
-  video_link_url: paragraph.field_video_link.0.url.toString() ?? null,
-  video_link_text: paragraph.field_video_link.0.title,
+  poster_url: hero_poster_url|default(''),
+  poster_alt: hero_poster_alt|default(''),
+  video_url: hero_video_url|default(''),
+  link_url: paragraph.field_link.0 ? paragraph.field_link.0.url.toString() : '',
+  link_text: paragraph.field_link.0.title|default(''),
+  video_link_url: paragraph.field_video_link.0 ? paragraph.field_video_link.0.url.toString() : '',
+  video_link_text: paragraph.field_video_link.0.title|default(''),
   video_on_phones: paragraph.field_video_on_phones.value ? true : false,
 } %}
   {% block text %}{{ hero_text }}{% endblock %}

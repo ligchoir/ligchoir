@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Menu blocks: no heading element. The <nav> from the menu component carries
+ * its own aria-label, so core's visually-hidden <h2> would only add a second
+ * name and an extra heading above the page's H1.
+ */
+#}
+<div{{ attributes.addClass(['block', 'block-menu']) }}>
+  {{ title_prefix }}{{ title_suffix }}
+  {{ content }}
+</div>

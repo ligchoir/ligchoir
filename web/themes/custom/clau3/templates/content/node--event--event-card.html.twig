@@ -8,7 +8,7 @@
 {% embed 'clau3:event-card' with {
   title: label,
   url: url,
-  venue: node.field_venue.entity ? node.field_venue.entity.label : null,
+  venue: node.field_venue.entity ? node.field_venue.entity.label : '',
 } %}
   {% block image %}{{ event_card_image }}{% endblock %}
   {% block date %}{{ event_card_date }}{% endblock %}

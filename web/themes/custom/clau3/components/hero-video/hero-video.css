@@ -23,6 +23,22 @@
   }
 }
 
+/* Image-only heroes (landing pages) are shorter than the video hero. */
+.hero:not(.hero--video) .hero__media {
+  height: min(42vw, 48vh);
+}
+
+@media (max-width: 599px) {
+  .hero:not(.hero--video) .hero__media {
+    height: 40vh;
+  }
+}
+
+/* No text and no link: the panel is just the heading. */
+.hero__text:empty {
+  display: none;
+}
+
 .hero__video,
 .hero__poster {
   position: absolute;

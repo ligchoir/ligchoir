@@ -355,3 +355,6 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Check: /projects (intro + project cards), /liv (project page: image, title,
 # description, booking form), menu Home · Events & News · Join us · Book us ·
 # About · Projects.
+./drush php:script scripts/devops/landing_heroes_2026.php  # hero paragraph from each landing page's background image; editor <h1> in paragraph text -> <h2>
+# Check: /about, /join, /book, /events show the page image in the hero with the
+# title on the red panel; view source has exactly one <h1> per page.

@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Page title block. Hidden on node types whose own template renders the H1
+ * (hero paragraph, event page, project page, front page); see
+ * clau3_preprocess_block(). A visibility condition could not do this, because
+ * a node-bundle condition also hides the block on non-node pages (search).
+ */
+#}
+{% if not clau3_hide_page_title %}
+  <div{{ attributes.addClass(['block', 'block-page-title']) }}>
+    {{ title_prefix }}{{ title_suffix }}
+    {{ content }}
+  </div>
+{% endif %}

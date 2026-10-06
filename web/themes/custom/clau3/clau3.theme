@@ -330,3 +330,53 @@ function _clau3_preprocess_event_full(array &$variables, $node): void {
 function clau3_preprocess_views_view__events__map(array &$variables): void {
   $variables['events_strip'] = _clau3_events_strip('/events/map');
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for the social links markup field.
+ *
+ * The editors' markup is icon-only links (<a><div class="... ligc-ig"><span
+ * class="fab fa-instagram"></span>...). Give each link an accessible name from
+ * its icon class so screen readers announce "Instagram" rather than a URL.
+ */
+function clau3_preprocess_field(array &$variables): void {
+  // Suggestion-specific preprocess hooks only run when a template with that
+  // suggestion exists, so dispatch from the base hook.
+  if (($variables['field_name'] ?? '') !== 'field_social_and_contact_markup') {
+    return;
+  }
+  $names = [
+    'fa-instagram' => 'Instagram', 'fa-x-twitter' => 'X (Twitter)', 'fa-twitter' => 'Twitter',
+    'fa-facebook-f' => 'Facebook', 'fa-facebook' => 'Facebook', 'fa-youtube' => 'YouTube',
+    'fa-spotify' => 'Spotify', 'fa-linkedin' => 'LinkedIn', 'fa-x-linkedin' => 'LinkedIn',
+  ];
+  foreach ($variables['items'] as &$item) {
+    if (empty($item['content']['#text'])) {
+      continue;
+    }
+    $item['content']['#text'] = preg_replace_callback(
+      '~<a\s+href="([^"]*)"(?![^>]*aria-label)([^>]*)>(.*?)</a>~is',
+      function ($m) use ($names) {
+        foreach ($names as $class => $label) {
+          if (str_contains($m[3], $class)) {
+            return '<a href="' . $m[1] . '"' . $m[2] . ' aria-label="' . $label . '" rel="noopener">' . $m[3] . '</a>';
+          }
+        }
+        return $m[0];
+      },
+      $item['content']['#text']
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function clau3_preprocess_block(array &$variables): void {
+  $variables['clau3_hide_page_title'] = FALSE;
+  if (($variables['plugin_id'] ?? '') === 'page_title_block') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface && \Drupal::routeMatch()->getRouteName() === 'entity.node.canonical') {
+      $variables['clau3_hide_page_title'] = in_array($node->bundle(), ['event', 'landing_page', 'home', 'project'], TRUE);
+    }
+  }
+}

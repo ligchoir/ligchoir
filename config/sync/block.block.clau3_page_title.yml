@@ -2,8 +2,6 @@ uuid: e2545170-2597-48a5-8e92-ebafb3919033
 langcode: en
 status: true
 dependencies:
-  module:
-    - node
   theme:
     - clau3
 id: clau3_page_title
@@ -17,12 +15,4 @@ settings:
   label: 'Page title'
   label_display: '0'
   provider: core
-visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      event: event
-      landing_page: landing_page
+visibility: {  }
