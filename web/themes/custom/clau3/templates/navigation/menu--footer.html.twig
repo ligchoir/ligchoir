@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * The "footer" menu: policy links (Contact us, Terms of use, Privacy policy,
+ * Accessibility) in one ruled row of the footer component.
+ */
+#}
+<nav class="footer-legal" aria-label="{{ 'Policies and contact'|t }}">
+  <ul class="footer-legal__list">
+    {% for item in items %}
+      <li class="footer-legal__item">
+        <a class="footer-legal__link" href="{{ item.url }}"{% if item.in_active_trail %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

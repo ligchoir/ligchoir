@@ -108,3 +108,45 @@ p {
   padding-block: var(--ligc-space-lg) var(--ligc-space-sm);
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
 }
+
+/* "More" link: bold text with a right chevron (Solent's View more pattern).
+   Used by the hero's video link and by editor links given class="ligc-more".
+   The chevron is drawn in the current colour, so it works on any ground. */
+a.ligc-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 24px;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+a.ligc-more::after {
+  content: '';
+  flex: none;
+  width: 0.7em;
+  height: 0.7em;
+  background-color: currentColor;
+  -webkit-mask: url(../images/icons/chevron-right.svg) no-repeat center / contain;
+  mask: url(../images/icons/chevron-right.svg) no-repeat center / contain;
+  transition: transform 0.2s ease;
+}
+
+a.ligc-more:hover,
+a.ligc-more:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+a.ligc-more:hover::after {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.ligc-more::after {
+    transition: none;
+  }
+}

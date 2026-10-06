@@ -1,11 +1,16 @@
 <footer class="site-footer" role="contentinfo">
   <div class="site-footer__inner">
-    <div class="site-footer__social">
-      {%- block social %}{% endblock -%}
+    <div class="site-footer__top">
+      <div class="site-footer__menu">
+        {%- block menu %}{% endblock -%}
+      </div>
+      <div class="site-footer__social">
+        {%- block social %}{% endblock -%}
+      </div>
     </div>
     <div class="site-footer__legal">
-      <p class="site-footer__copyright">&copy; {{ year }} {{ organisation }}</p>
       {%- block legal %}{% endblock -%}
     </div>
+    <p class="site-footer__copyright">&copy; {{ year }} {{ organisation }}</p>
   </div>
 </footer>

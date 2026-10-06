@@ -48,8 +48,7 @@
 </main>
 
 {% embed 'clau3:footer' with { organisation: clau3_site_name, year: clau3_year } %}
+  {% block menu %}{{ page.footer_menu }}{% endblock %}
   {% block social %}{{ page.footer }}{% endblock %}
-  {% block legal %}
-    <p><a href="{{ path('entity.node.canonical', {'node': 13}) }}">{{ 'Privacy notice'|t }}</a> &middot; {{ 'Proudly open source and made with'|t }} <a href="https://www.drupal.org">Drupal</a></p>
-  {% endblock %}
+  {% block legal %}{{ page.footer_legal }}{% endblock %}
 {% endembed %}

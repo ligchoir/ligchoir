@@ -12,18 +12,87 @@
   gap: var(--ligc-space-md);
 }
 
-.site-footer__legal p {
-  margin: 0 0 var(--ligc-space-xs);
+/* Layer 1: main menu on the left, social links on the right. */
+.site-footer__top {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ligc-space-md);
 }
 
-.site-footer__legal a {
+/* The main menu as a grid: two columns of three on phones, three columns of
+   two on desktop, a 1px rule between the columns. Each item draws the rule
+   on its own left edge, and with no row gap the rules of the two rows join
+   into one line. */
+.footer-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, max-content));
+}
+
+.footer-menu__item {
+  padding: 0.3em 1.25rem;
+}
+
+.footer-menu__item:nth-child(2n + 1) {
+  padding-left: 0;
+}
+
+.footer-menu__item:nth-child(2n) {
+  border-left: 1px solid var(--ligc-rule-on-slate);
+}
+
+.footer-menu__link,
+.footer-legal__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--ligc-touch);
   color: var(--ligc-text-on-slate);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-legal__link {
+  font-weight: 400;
+}
+
+.footer-menu__link:hover,
+.footer-menu__link:focus-visible,
+.footer-legal__link:hover,
+.footer-legal__link:focus-visible {
+  text-decoration: underline;
   text-decoration-color: var(--ligc-red-on-ink);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
-/* The social block from clau2 (white band, centred) sits on the black
+/* Layer 2: policy links between two 1px rules. Hidden when the menu is empty. */
+.site-footer__legal {
+  border-top: 1px solid var(--ligc-rule-on-slate);
+  border-bottom: 1px solid var(--ligc-rule-on-slate);
+  padding-block: var(--ligc-space-xs);
+}
+
+.site-footer__legal:empty {
+  display: none;
+}
+
+.footer-legal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--ligc-space-lg);
+}
+
+/* Layer 3: copyright. */
+.site-footer__copyright {
+  margin: 0;
+}
+
+/* The social block from clau2 (white band, centred) sits on the slate
    footer: keep the circles, drop the white band. */
 .site-footer #block-clau3-social {
   background: transparent;
@@ -37,13 +106,43 @@
 }
 
 @media (min-width: 800px) {
-  .site-footer__inner {
+  .site-footer__top {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
   }
 
-  .site-footer__legal {
+  .footer-menu__list {
+    grid-template-columns: repeat(3, minmax(0, max-content));
+  }
+
+  .footer-menu__item:nth-child(2n + 1) {
+    padding-left: 1.25rem;
+  }
+
+  .footer-menu__item:nth-child(2n) {
+    border-left: 0;
+  }
+
+  .footer-menu__item:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+
+  .footer-menu__item:nth-child(3n + 2),
+  .footer-menu__item:nth-child(3n) {
+    border-left: 1px solid var(--ligc-rule-on-slate);
+  }
+
+  .site-footer__social,
+  .site-footer #block-clau3-social {
+    text-align: right;
+  }
+
+  .footer-legal__list {
+    justify-content: center;
+  }
+
+  .site-footer__copyright {
     text-align: right;
   }
 }

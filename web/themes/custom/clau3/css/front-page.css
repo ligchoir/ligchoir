@@ -1,15 +1,27 @@
-/* Front page sections that reuse legacy paragraph types until step 6:
-   the About text (a "text" paragraph carrying the ligc-front-about class)
-   and the General enquiry call to action. */
+/* Intro sections that use a legacy "text" paragraph carrying the
+   ligc-front-about class: About us on the front page, Our projects on the
+   Projects page. The text takes two thirds of the content column on desktop
+   (review round 1, A4.1) and lines up with the headings and card grids
+   around it (A10). */
 .ligc-front-about {
-  max-width: 48rem;
   padding-block: var(--ligc-space-lg) var(--ligc-space-md);
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
 }
 
+@media (min-width: 800px) {
+  .ligc-front-about {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .ligc-front-about > * {
+    grid-column: 1;
+  }
+}
+
 /* The legacy wrapper (.ligc-text p, text_confine_single_column_wide) sets
    its own sizes and side padding; neutralise them for this section. */
-.node--type-home .paragraph--type--text .ligc-front-about p,
+.ligc-text .ligc-front-about p,
 .ligc-front-about p {
   font-size: 1.15rem;
   line-height: 1.5;
@@ -29,13 +41,17 @@
   text-underline-offset: 4px;
 }
 
-.node--type-home .text-confine-single-column-wide {
-  padding: 0;
-  margin: 0;
+.ligc-front-about a.ligc-more {
+  text-decoration: none;
+  font-size: 1.15rem;
 }
 
-/* Keep the general enquiry call to action on the grid with room below. */
-.node--type-home .ligc-cta-outer {
-  padding-block: var(--ligc-space-md) var(--ligc-space-xl);
-  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+.ligc-front-about a.ligc-more:hover,
+.ligc-front-about a.ligc-more:focus-visible {
+  text-decoration: underline;
+}
+
+.text-confine-single-column-wide:has(.ligc-front-about) {
+  padding: 0;
+  margin: 0;
 }

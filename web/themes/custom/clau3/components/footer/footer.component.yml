@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Footer
 status: stable
-description: 'Slate grey band with the site’s social links, a copyright line and the legal links. Stacks on phones.'
+description: 'Slate grey band in three layers (Solent pattern): the main menu as a 3 x 2 grid (2 x 3 on phones) with the social links to its right; a ruled row of policy links; the copyright line. Stacks on phones.'
 props:
   type: object
   required:
@@ -15,7 +15,9 @@ props:
       type: string
       title: Year
 slots:
+  menu:
+    title: 'Main menu (rendered by menu--main--footer.html.twig)'
   social:
     title: 'Social and contact links'
   legal:
-    title: 'Legal links (privacy notice, credits)'
+    title: 'Policy links (the "footer" menu, rendered by menu--footer.html.twig)'

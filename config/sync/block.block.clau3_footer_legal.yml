@@ -1,0 +1,25 @@
+uuid: 30d11bef-5997-41a7-8e4f-a960b527219d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - clau3
+id: clau3_footer_legal
+theme: clau3
+region: footer_legal
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: 'Footer: policy links'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

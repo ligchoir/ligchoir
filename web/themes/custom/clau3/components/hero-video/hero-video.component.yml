@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: 'Hero (video or image)'
 status: stable
-description: 'Full-width looping video (muted, no controls) or image, with the heading and text on a solid panel so contrast never depends on the frame behind. Video is replaced by the poster for visitors who prefer reduced motion or save data.'
+description: 'Full-width looping video (muted, no controls) or image, then an optional right-aligned link to the full video, then the heading, text and link on a full-width red band so contrast never depends on the frame behind. Video is replaced by the poster for visitors who prefer reduced motion or save data.'
 props:
   type: object
   required:
@@ -12,7 +12,7 @@ props:
       type: string
     poster_url:
       type: string
-      title: 'Poster / image URL (16:9, WebP)'
+      title: 'Poster / image URL (40:21 for the video hero, WebP)'
     poster_alt:
       type: string
     video_url:

@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * The main menu again, in the footer (clau3_preprocess_block switches the
+ * footer block's menu to this template). Plain list; the footer component's
+ * CSS lays it out as a grid with rules between the columns.
+ */
+#}
+<nav class="footer-menu" aria-label="{{ 'Site pages'|t }}">
+  <ul class="footer-menu__list">
+    {% for item in items %}
+      <li class="footer-menu__item">
+        <a class="footer-menu__link" href="{{ item.url }}"{% if item.in_active_trail %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

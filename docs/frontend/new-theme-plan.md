@@ -715,6 +715,17 @@ is merged and released as one version.
    The webform pages still need the axe/WAVE run from section 12 by hand,
    and the colour contrast of the legacy paragraph styles is only as good
    as their inline colour pickers until those paragraph types are redone.
+   **Review round 1** (Rob, 2026-10-06, local): hero clip re-cut with the top
+   6.67% cropped (1280x672, `hero-loop.sh -C`), the heading/text panel is a
+   full-width red band under the media on every page, "Watch the full video"
+   is a right-aligned chevron link between the two (`a.ligc-more`, shared
+   with "More about us and the team"); the round call-to-action buttons under
+   the heroes and the About footnote are gone (`review_round_1_2026.php`);
+   intro texts take two thirds of the content column and line up with the
+   grid; events listing text back to the editors' dark red; footer rebuilt on
+   the Solent pattern (main menu 3 x 2 / 2 x 3 with rules, social links
+   right, ruled row of policy links from the `footer` menu, copyright right).
+   Terms of use and Accessibility are placeholder pages for the team to write.
 7. **Review site** and the team's feedback rounds.
 8. **Canvas spike** on a branch off `feat/new-theme`, after step 5, with
    a written verdict in this document.

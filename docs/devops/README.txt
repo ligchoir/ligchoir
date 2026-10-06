@@ -336,8 +336,8 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # ---------------------------------------------------------------------------
 ./drush php:script scripts/devops/front_page_2026.php   # hero media import, front page paragraphs in the new order, orphan paragraph clean-up
 # Check: / plays the hero loop (poster for reduced-motion users), shows the
-# events cards, About text, the three cards and General enquiry; /about and
-# the events pages still render the old paragraph output in the new frame.
+# events cards, About text and the three cards; /about and the events pages
+# still render the old paragraph output in the new frame.
 ./drush php:script scripts/devops/event_colour_schemes.php   # every event gets field_colour_scheme (paper) from its old colour terms
 ./drush php:script scripts/devops/geocode_venues.php         # venue locations via Nominatim (1 req/s, ~75 s first time); re-run after adding an "Address for the map" to any venue it could not place
 ./drush php:script scripts/devops/menu_2026.php              # Home, Events & News, Join us, Book us, About (+ Projects when /projects exists)
@@ -357,4 +357,9 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # About · Projects.
 ./drush php:script scripts/devops/landing_heroes_2026.php  # hero paragraph from each landing page's background image; editor <h1> in paragraph text -> <h2>
 # Check: /about, /join, /book, /events show the page image in the hero with the
-# title on the red panel; view source has exactly one <h1> per page.
+# title on the red band under it; view source has exactly one <h1> per page.
+./drush php:script scripts/devops/review_round_1_2026.php  # review round 1: removes the round buttons under the heroes and the About footnote, chevron on "More about us", footer policy links (+ placeholder Terms of use and Accessibility pages)
+# Check: footer on every page = main menu grid + social links / Contact us ·
+# Terms of use · Privacy policy · Accessibility / copyright; no round buttons
+# under the heroes on /, /events, /join, /book; /terms-of-use and
+# /accessibility exist (placeholder text until the team writes them).

@@ -483,3 +483,11 @@
     background-repeat: no-repeat;
   }
 }
+
+/* clau3: the listing's links inherit the box's text colour (the dark red
+   #3F0000 the editors chose, near black) instead of the site-wide red that
+   base.css gives unclassed links inside a white box (review round 1, A7). */
+.layout-content .view-events .ligc-event-summary a:not([class]),
+.layout-content .view-events .ligc-event-full a:not([class]) {
+  color: inherit;
+}
