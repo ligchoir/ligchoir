@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * A collaborator on a project page: logo or portrait, name, kind, website.
+ */
+#}
+<div{{ attributes.addClass(['collaborator', 'collaborator--' ~ node.field_kind.value|clean_class]) }}>
+  {% if collaborator_image %}<div class="collaborator__media">{{ collaborator_image }}</div>{% endif %}
+  <div class="collaborator__body">
+    <h3 class="collaborator__name">{{ label }}</h3>
+    {% if content.body|render|trim %}<div class="collaborator__text">{{ content.body }}</div>{% endif %}
+    {% if node.field_website.0.url %}
+      <a class="collaborator__link" href="{{ node.field_website.0.url.toString() }}" rel="noopener">{{ 'Website'|t }}</a>
+    {% endif %}
+  </div>
+</div>

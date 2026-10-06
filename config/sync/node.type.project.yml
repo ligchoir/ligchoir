@@ -1,0 +1,11 @@
+uuid: 74a1990a-8460-4b9b-8e69-e82c45e3d141
+langcode: en
+status: true
+dependencies: {  }
+name: Project
+type: project
+description: "A strand of LIGC's work: L•I•V, a joint performance, a recording. Has collaborators, outcomes (events) and links, plus the usual page sections."
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

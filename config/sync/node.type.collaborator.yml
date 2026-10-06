@@ -1,0 +1,11 @@
+uuid: 30a865a2-58a2-4cd6-b336-83a06a4d9143
+langcode: en
+status: true
+dependencies: {  }
+name: Collaborator
+type: collaborator
+description: 'An organisation or person LIGC makes music with: another choir, a producer, a venue, a charity. Shown on the projects they take part in; no public page of its own yet.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

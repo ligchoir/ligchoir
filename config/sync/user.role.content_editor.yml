@@ -8,10 +8,12 @@ dependencies:
     - media.type.image
     - media.type.remote_video
     - media.type.video
+    - node.type.collaborator
     - node.type.event
     - node.type.home
     - node.type.landing_page
     - node.type.page
+    - node.type.project
     - node.type.team_member
     - taxonomy.vocabulary.venues
   module:
@@ -36,21 +38,25 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'create audio media'
+  - 'create collaborator content'
   - 'create document media'
   - 'create event content'
   - 'create home content'
   - 'create image media'
   - 'create media'
   - 'create page content'
+  - 'create project content'
   - 'create remote_video media'
   - 'create team_member content'
   - 'create terms in venues'
   - 'create video media'
   - 'delete any audio media'
+  - 'delete any collaborator content'
   - 'delete any document media'
   - 'delete any event content'
   - 'delete any image media'
   - 'delete any media'
+  - 'delete any project content'
   - 'delete any remote_video media'
   - 'delete any team_member content'
   - 'delete any video media'
@@ -65,12 +71,14 @@ permissions:
   - 'delete own video media'
   - 'delete terms in venues'
   - 'edit any audio media'
+  - 'edit any collaborator content'
   - 'edit any document media'
   - 'edit any event content'
   - 'edit any home content'
   - 'edit any image media'
   - 'edit any landing_page content'
   - 'edit any page content'
+  - 'edit any project content'
   - 'edit any remote_video media'
   - 'edit any team_member content'
   - 'edit any video media'

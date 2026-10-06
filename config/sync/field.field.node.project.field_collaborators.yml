@@ -1,0 +1,29 @@
+uuid: 41f47f0e-9c8e-490f-a184-8d9c90892314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collaborators
+    - node.type.collaborator
+    - node.type.project
+id: node.project.field_collaborators
+field_name: field_collaborators
+entity_type: node
+bundle: project
+label: Collaborators
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      collaborator: collaborator
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

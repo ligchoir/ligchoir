@@ -2,9 +2,9 @@ uuid: b8a2dd35-e615-4427-b98f-56d58841b943
 langcode: en
 status: true
 dependencies: {  }
-name: 'Team member'
+name: Person
 type: team_member
-description: 'A member of the LIGC team (musical directors, staff). Listed on the About page by the "Team members" view, lowest Order first.'
+description: 'Someone on the LIGC team (musical directors, staff). People with a Team order appear on the About page in that order; leave it empty for people who are not part of the team.'
 help: null
 new_revision: true
 preview_mode: 1

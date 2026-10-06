@@ -1,0 +1,269 @@
+uuid: 02ceda22-e7c8-429d-9d8e-d0c8625ab97a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.project.body
+    - field.field.node.project.field_collaborators
+    - field.field.node.project.field_content
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_image
+    - field.field.node.project.field_links
+    - field.field.node.project.field_outcomes
+    - field.field.node.project.field_status
+    - node.type.project
+  module:
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Hero
+        components:
+          e7d040ef-9531-4267-8824-14c4ecc15467:
+            uuid: e7d040ef-9531-4267-8824-14c4ecc15467
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_image'
+              label: field_image
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: hero
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 0
+          eb68775a-67de-4dc9-ab11-31a33160af6d:
+            uuid: eb68775a-67de-4dc9-ab11-31a33160af6d
+            region: content
+            configuration:
+              id: 'field_block:node:project:title'
+              label: title
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 1
+          dbcaf200-8e3e-4d6a-bd95-b7f61082e297:
+            uuid: dbcaf200-8e3e-4d6a-bd95-b7f61082e297
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_status'
+              label: field_status
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: 'About and collaborators'
+          column_widths: 67-33
+        components:
+          87ef5cd8-2126-4d2c-8001-2d9eac95f96b:
+            uuid: 87ef5cd8-2126-4d2c-8001-2d9eac95f96b
+            region: first
+            configuration:
+              id: 'field_block:node:project:body'
+              label: body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 0
+          24a55c68-4810-4fa1-a590-2de9d8672b1a:
+            uuid: 24a55c68-4810-4fa1-a590-2de9d8672b1a
+            region: second
+            configuration:
+              id: 'field_block:node:project:field_dates'
+              label: field_dates
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: smartdate_default
+                label: hidden
+                settings:
+                  separator: ' - '
+                  date_format: 'D j M Y'
+                  time_format: 'g:ia'
+                  time_hour_format: 'g:ia'
+                  join: ', '
+                  allday_label: 'All day'
+                  date_first: '1'
+                  ampm_reduce: '1'
+                  site_time_toggle: '1'
+                  timezone: ''
+                  custom_date_format: ''
+                  tooltip:
+                    date_format: ''
+                    custom_date_format: ''
+                  time_diff:
+                    enabled: false
+                    future_format: '@interval hence'
+                    past_format: '@interval ago'
+                    granularity: 2
+                    refresh: 60
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 0
+          23b1f71e-cbf0-41b4-b706-46cd3dd2e7db:
+            uuid: 23b1f71e-cbf0-41b4-b706-46cd3dd2e7db
+            region: second
+            configuration:
+              id: 'field_block:node:project:field_collaborators'
+              label: field_collaborators
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: teaser
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 1
+          5ef4a0c8-1cff-4db8-ae65-8789020fa3c3:
+            uuid: 5ef4a0c8-1cff-4db8-ae65-8789020fa3c3
+            region: second
+            configuration:
+              id: 'field_block:node:project:field_links'
+              label: field_links
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: link
+                label: hidden
+                settings:
+                  trim_length: 80
+                  url_only: false
+                  url_plain: false
+                  rel: noopener
+                  target: ''
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: Outcomes
+        components:
+          73f2443d-877c-466c-bc7c-7e5f5f68092f:
+            uuid: 73f2443d-877c-466c-bc7c-7e5f5f68092f
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_outcomes'
+              label: field_outcomes
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: event_card
+                  link: false
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: 'Page content'
+        components:
+          4f0e1907-fa0f-49b0-9e6b-7b452a928e4b:
+            uuid: 4f0e1907-fa0f-49b0-9e6b-7b452a928e4b
+            region: content
+            configuration:
+              id: 'field_block:node:project:field_content'
+              label: field_content
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 0
+            additional:
+              weight: 0
+        third_party_settings: {  }
+id: node.project.full
+targetEntityType: node
+bundle: project
+mode: full
+content: {  }
+hidden:
+  body: true
+  field_collaborators: true
+  field_content: true
+  field_dates: true
+  field_image: true
+  field_links: true
+  field_outcomes: true
+  field_status: true
+  links: true

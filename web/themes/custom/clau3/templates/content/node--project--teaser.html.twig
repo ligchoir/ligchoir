@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * A project as a card (Projects landing page, "Our projects" lists).
+ */
+#}
+{% embed 'clau3:card' with {
+  heading: label,
+  url: url,
+  link_text: project_status_label,
+} %}
+  {% block image %}{{ project_card_image }}{% endblock %}
+  {% block text %}{{ content.body }}{% endblock %}
+{% endembed %}

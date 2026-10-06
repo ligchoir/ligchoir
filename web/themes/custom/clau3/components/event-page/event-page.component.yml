@@ -27,6 +27,16 @@ props:
       type: string
     tickets_domain:
       type: string
+    projects:
+      type: array
+      title: 'Projects this event belongs to'
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+          url:
+            type: string
 slots:
   image:
     title: 'Rendered hero image'

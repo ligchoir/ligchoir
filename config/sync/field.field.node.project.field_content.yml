@@ -1,0 +1,94 @@
+uuid: 27b62ec6-111d-495e-8a6e-53326fe404cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.project
+    - paragraphs.paragraphs_type.about_intro
+    - paragraphs.paragraphs_type.anchor
+    - paragraphs.paragraphs_type.call_to_action
+    - paragraphs.paragraphs_type.card_row
+    - paragraphs.paragraphs_type.contact
+    - paragraphs.paragraphs_type.content_2_column
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.quote
+    - paragraphs.paragraphs_type.social_and_contact_links
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.vertical_space
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+id: node.project.field_content
+field_name: field_content
+entity_type: node
+bundle: project
+label: 'Page content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      about_intro: about_intro
+      call_to_action: call_to_action
+      text: text
+      contact: contact
+      view: view
+      anchor: anchor
+      content_2_column: content_2_column
+      image: image
+      quote: quote
+      social_and_contact_links: social_and_contact_links
+      vertical_space: vertical_space
+      hero: hero
+      card_row: card_row
+    negate: 0
+    target_bundles_drag_drop:
+      about_intro:
+        weight: 12
+        enabled: true
+      anchor:
+        weight: 18
+        enabled: true
+      call_to_action:
+        weight: 13
+        enabled: true
+      card_row:
+        weight: 10
+        enabled: true
+      contact:
+        weight: 16
+        enabled: true
+      content_2_column:
+        weight: 18
+        enabled: true
+      hero:
+        weight: 10
+        enabled: true
+      image:
+        weight: 18
+        enabled: true
+      quote:
+        weight: 21
+        enabled: true
+      social_and_contact_links:
+        weight: 22
+        enabled: true
+      text:
+        weight: 13
+        enabled: true
+      vertical_space:
+        weight: 30
+        enabled: true
+      video:
+        weight: 31
+        enabled: false
+      view:
+        weight: 17
+        enabled: true
+field_type: entity_reference_revisions

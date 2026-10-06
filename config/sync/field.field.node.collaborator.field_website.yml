@@ -1,0 +1,23 @@
+uuid: 79ed2ca1-bdb9-4c7e-9854-8f66bcffb84b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.collaborator
+  module:
+    - link
+id: node.collaborator.field_website
+field_name: field_website
+entity_type: node
+bundle: collaborator
+label: Website
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link

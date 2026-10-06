@@ -1,0 +1,11 @@
+uuid: 821eee66-4ed8-4ca7-9131-ecbc9bf83c20
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.hero
+label: 'Hero (16:9, full width)'
+description: null
+targetEntityType: media
+cache: true

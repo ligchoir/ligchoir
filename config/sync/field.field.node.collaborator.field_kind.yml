@@ -1,0 +1,23 @@
+uuid: f5d1e91f-305f-487d-b440-0ab728aed5bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_kind
+    - node.type.collaborator
+  module:
+    - options
+id: node.collaborator.field_kind
+field_name: field_kind
+entity_type: node
+bundle: collaborator
+label: Kind
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: organisation
+default_value_callback: ''
+settings: {  }
+field_type: list_string

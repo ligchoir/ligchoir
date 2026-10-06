@@ -1,0 +1,168 @@
+/* Project pages (Layout Builder sections, plan section 8) and collaborator
+   teasers. Layout Builder's own section wrappers are .layout--onecol and
+   .layout--twocol-section with .layout__region--first/--second. */
+.node--type-project.node--view-mode-full .layout--onecol,
+.node--type-project.node--view-mode-full .layout--twocol-section {
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+/* Section 1: image, title, status. */
+.node--type-project.node--view-mode-full .layout--onecol:first-child {
+  padding-inline: 0;
+}
+
+.node--type-project .field--name-field-image img,
+.node--type-project .field--name-field-image picture {
+  display: block;
+  width: 100%;
+  height: min(56.25vw, 60vh);
+  object-fit: cover;
+}
+
+.node--type-project .field--name-title {
+  display: block;
+  margin: calc(-1 * var(--ligc-space-xl)) 0 0;
+  padding: var(--ligc-space-md) var(--ligc-gutter) 0;
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  position: relative;
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
+}
+
+.node--type-project .field--name-field-status {
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+  padding-block: var(--ligc-space-xs) var(--ligc-space-md);
+  color: var(--ligc-red-on-ink);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+/* Section 2: description and the side column. */
+.node--type-project .layout--twocol-section {
+  gap: var(--ligc-space-lg);
+  padding-block: var(--ligc-space-md) var(--ligc-space-xl);
+}
+
+.node--type-project .layout--twocol-section > .layout__region {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 800px) {
+  .node--type-project .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--first { flex: 0 0 calc(67% - var(--ligc-space-lg) / 2); }
+  .node--type-project .layout--twocol-section.layout--twocol-section--67-33 > .layout__region--second { flex: 0 0 calc(33% - var(--ligc-space-lg) / 2); }
+}
+
+.node--type-project .field--name-body {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.node--type-project .field--name-body p {
+  margin: 0 0 var(--ligc-space-sm);
+}
+
+.node--type-project .layout__region--second .field {
+  margin-bottom: var(--ligc-space-md);
+}
+
+.node--type-project .layout__region--second .field__label {
+  display: block;
+  margin-bottom: var(--ligc-space-xs);
+  color: var(--ligc-text-on-ink-soft);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.node--type-project .field--name-field-links a {
+  color: var(--ligc-text-on-ink);
+  font-weight: 700;
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Section 3: outcomes as event cards. */
+.node--type-project .field--name-field-outcomes {
+  padding-block: 0 var(--ligc-space-xl);
+}
+
+.node--type-project .field--name-field-outcomes > .field__label {
+  margin-bottom: var(--ligc-space-md);
+  font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem);
+  font-weight: 700;
+}
+
+.node--type-project .field--name-field-outcomes > .field__items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ligc-space-md);
+}
+
+@media (min-width: 600px) { .node--type-project .field--name-field-outcomes > .field__items { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .node--type-project .field--name-field-outcomes > .field__items { grid-template-columns: repeat(4, 1fr); } }
+
+/* Section 4 (page content paragraphs) is edge to edge like a landing page. */
+.node--type-project.node--view-mode-full .layout--onecol:last-child {
+  padding-inline: 0;
+}
+
+/* Collaborator teaser */
+.collaborator {
+  display: flex;
+  gap: var(--ligc-space-sm);
+  align-items: flex-start;
+  margin-bottom: var(--ligc-space-sm);
+}
+
+.collaborator__media img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: var(--ligc-paper);
+}
+
+.collaborator--person .collaborator__media img {
+  border-radius: 50%;
+}
+
+.collaborator__name {
+  margin: 0 0 0.2em;
+  font-size: 1.1rem;
+}
+
+.collaborator__text {
+  color: var(--ligc-text-on-ink-soft);
+}
+
+.collaborator__text p {
+  margin: 0 0 0.3em;
+}
+
+.collaborator__link {
+  color: var(--ligc-text-on-ink);
+  font-weight: 700;
+  text-decoration-color: var(--ligc-red-on-ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* Projects landing page: the view block is a card grid like the team grid. */
+.view-display-id-projects_block .view-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ligc-space-md);
+  padding-block: var(--ligc-space-lg);
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+@media (min-width: 600px) { .view-display-id-projects_block .view-content { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .view-display-id-projects_block .view-content { grid-template-columns: repeat(3, 1fr); } }
+
+.view-display-id-projects_block .view-content > .views-row { display: contents; }

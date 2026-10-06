@@ -1,0 +1,28 @@
+uuid: f21f4a06-5c46-4851-afd2-308f6ec72484
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image
+    - media.type.image
+    - node.type.collaborator
+id: node.collaborator.field_image
+field_name: field_image
+entity_type: node
+bundle: collaborator
+label: 'Logo or portrait'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

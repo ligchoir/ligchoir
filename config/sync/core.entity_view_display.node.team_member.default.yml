@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.team_member.field_image
     - field.field.node.team_member.field_order
     - field.field.node.team_member.field_role
+    - field.field.node.team_member.field_website
     - node.type.team_member
   module:
     - text
@@ -43,4 +44,5 @@ content:
     region: content
 hidden:
   field_order: true
+  field_website: true
   links: true

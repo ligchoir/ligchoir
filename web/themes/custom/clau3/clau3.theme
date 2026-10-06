@@ -112,6 +112,21 @@ function clau3_preprocess_node(array &$variables): void {
     $variables['event_card_date'] = $variables['content']['field_when'] ?? [];
     return;
   }
+  // Project card (teaser) and collaborator teaser images.
+  if ($node->bundle() === 'project' && ($variables['view_mode'] ?? '') === 'teaser') {
+    $variables['project_card_image'] = _clau3_responsive_media($node, 'field_image', 'card');
+    $status = $node->get('field_status')->value;
+    $labels = ['planned' => t('Coming up'), 'active' => t('Active project'), 'completed' => t('Completed')];
+    $variables['project_status_label'] = $labels[$status] ?? '';
+    return;
+  }
+  if ($node->bundle() === 'collaborator' && ($variables['view_mode'] ?? '') === 'teaser') {
+    $variables['collaborator_image'] = _clau3_styled_media_url($node, 'field_image', 'square_200');
+    if ($variables['collaborator_image']) {
+      $variables['collaborator_image'] = ['#theme' => 'image', '#uri' => $variables['collaborator_image'], '#alt' => $node->label(), '#width' => 64, '#height' => 64];
+    }
+    return;
+  }
   // Events landing pages: the Upcoming / Past / Map strip.
   if ($node->bundle() === 'landing_page' && ($variables['view_mode'] ?? '') === 'full') {
     $variables['section_strip'] = _clau3_events_strip($node->toUrl()->toString());
@@ -280,6 +295,15 @@ function _clau3_preprocess_event_full(array &$variables, $node): void {
   }
   $variables['event_when'] = $when;
   $variables['event_venue'] = $node->get('field_venue')->entity ? $node->get('field_venue')->entity->label() : '';
+
+  // Projects this event is an outcome of (plan section 7.1).
+  $variables['event_projects'] = [];
+  if (\Drupal::entityTypeManager()->getStorage('node_type')->load('project')) {
+    $ids = \Drupal::entityQuery('node')->accessCheck(TRUE)->condition('type', 'project')->condition('status', 1)->condition('field_outcomes', $node->id())->execute();
+    foreach (\Drupal::entityTypeManager()->getStorage('node')->loadMultiple($ids) as $project) {
+      $variables['event_projects'][] = ['title' => $project->label(), 'url' => $project->toUrl()->toString()];
+    }
+  }
 
   // Organiser link from the tickets call-to-action paragraph.
   $variables['event_tickets_url'] = $variables['event_tickets_label'] = $variables['event_tickets_domain'] = '';

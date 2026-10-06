@@ -350,3 +350,8 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Leaflet provider at it. When geolocation_leaflet is updated, compare the
 # version it names in src/Plugin/geolocation/MapProvider/Leaflet.php and
 # refresh web/libraries/leaflet to match.
+./drush php:script scripts/devops/projects_2026.php         # Projects landing page, L•I•V becomes a project at /liv, front page card -> /projects
+./drush php:script scripts/devops/menu_2026.php             # run AGAIN after projects_2026: swaps the L• I• V menu item for Projects
+# Check: /projects (intro + project cards), /liv (project page: image, title,
+# description, booking form), menu Home · Events & News · Join us · Book us ·
+# About · Projects.

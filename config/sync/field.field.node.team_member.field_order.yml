@@ -9,13 +9,11 @@ id: node.team_member.field_order
 field_name: field_order
 entity_type: node
 bundle: team_member
-label: Order
-description: 'Position on the About page: lowest number first.'
+label: 'Team order'
+description: 'Position on the About page, lowest first. Leave empty for someone who is not shown in the team.'
 required: false
 translatable: true
-default_value:
-  -
-    value: 0
+default_value: {  }
 default_value_callback: ''
 settings:
   min: null

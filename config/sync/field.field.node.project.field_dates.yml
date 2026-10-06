@@ -1,0 +1,21 @@
+uuid: ea262213-1af0-40c4-8646-bf270c0bf796
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dates
+    - node.type.project
+  module:
+    - smart_date
+id: node.project.field_dates
+field_name: field_dates
+entity_type: node
+bundle: project
+label: Dates
+description: 'Optional, for a time-boxed project.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: smartdate

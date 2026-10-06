@@ -13,6 +13,12 @@
       {% if venue %}<span class="event-page__venue">{{ venue }}</span>{% endif %}
     </p>
     <div class="event-page__body">{% block body %}{% endblock %}</div>
+    {% if projects %}
+      <p class="event-page__projects">
+        {{ 'Part of our project:'|t }}
+        {% for project in projects %}<a href="{{ project.url }}">{{ project.title }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+      </p>
+    {% endif %}
     {% if tickets_url and not is_past %}
       <p class="event-page__tickets">
         <a class="event-page__tickets-link" href="{{ tickets_url }}" rel="noopener">{{ tickets_label|default('Tickets and details'|t) }}</a>

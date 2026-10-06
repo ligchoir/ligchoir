@@ -678,10 +678,25 @@ is merged and released as one version.
    L• I• V for Projects once /projects exists (step 5); the brand lock-up
    now runs the full name across the width of "LIGC" (1.05rem under
    2.6rem on desktop; measured equal at 234px).
-5. **Projects**: person and organisation types, collaborator paragraph,
-   project type with its Layout Builder display, projects view and
-   landing page, LIV moved into a project node with the /liv alias,
-   menu change.
+5. **Projects** — DONE 2026-10-07 (on `feat/new-theme`): `team_member`
+   relabelled **Person** (Drupal cannot rename a bundle's machine name in
+   place, so it stays `team_member`; Team order is now optional and the
+   team view shows only people who have one; `field_website` added);
+   content types **collaborator** (kind, logo or portrait, about, website;
+   no path alias) and **project** (image, status planned/active/completed,
+   dates, collaborators, outcomes, links, page content paragraphs; pathauto
+   `/projects/[node:title]`); the project full display is **Layout
+   Builder**, per bundle with overrides off, four sections (image + title +
+   status; description beside dates, collaborators and links at 67/33;
+   outcomes as event cards; page content edge to edge); `projects` view
+   (cards) and the `/projects` landing page; `scripts/devops/projects_2026.php`
+   creates the landing page, turns the L•I•V landing page into a project at
+   `/liv` (description from its text paragraph, booking form kept as page
+   content, old page deleted) and points the front page card at /projects;
+   `scripts/devops/menu_2026.php` then replaces L• I• V with Projects in the
+   menu. Event pages show "Part of our project: …" from `field_outcomes`.
+   Not done: the optional `collaboration` paragraph for per-project roles
+   (decide when the first collaborator is entered).
 6. **Other pages and polish**: landing pages onto the hero paragraph,
    typography, forms, Klaro styling, accessibility audit (section 12).
 7. **Review site** and the team's feedback rounds.

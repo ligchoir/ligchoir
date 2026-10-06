@@ -121,3 +121,13 @@
     margin-top: -5rem;
   }
 }
+
+.event-page__projects {
+  margin: var(--ligc-space-md) 0 0;
+  color: var(--scheme-muted);
+}
+
+.event-page__projects a {
+  color: var(--scheme-accent);
+  font-weight: 700;
+}

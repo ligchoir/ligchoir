@@ -1,0 +1,42 @@
+uuid: fbcc2426-baa8-4049-ac9e-4324374cf957
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project.body
+    - field.field.node.project.field_collaborators
+    - field.field.node.project.field_content
+    - field.field.node.project.field_dates
+    - field.field.node.project.field_image
+    - field.field.node.project.field_links
+    - field.field.node.project.field_outcomes
+    - field.field.node.project.field_status
+    - node.type.project
+  module:
+    - text
+    - user
+id: node.project.default
+targetEntityType: node
+bundle: project
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_collaborators: true
+  field_content: true
+  field_dates: true
+  field_image: true
+  field_links: true
+  field_outcomes: true
+  field_status: true
