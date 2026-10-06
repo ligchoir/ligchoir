@@ -100,11 +100,21 @@ function clau3_preprocess_node(array &$variables): void {
   if (!$node) {
     return;
   }
+  // Event page: image through the hero style, date line, organiser link
+  // (future events only), colour scheme class.
+  if ($node->bundle() === 'event' && ($variables['view_mode'] ?? '') === 'full') {
+    _clau3_preprocess_event_full($variables, $node);
+    return;
+  }
   // Front page events grid: image through the card responsive style, date field.
   if ($node->bundle() === 'event' && ($variables['view_mode'] ?? '') === 'event_card') {
     $variables['event_card_image'] = _clau3_responsive_media($node, 'field_background_media', 'card');
     $variables['event_card_date'] = $variables['content']['field_when'] ?? [];
     return;
+  }
+  // Events landing pages: the Upcoming / Past / Map strip.
+  if ($node->bundle() === 'landing_page' && ($variables['view_mode'] ?? '') === 'full') {
+    $variables['section_strip'] = _clau3_events_strip($node->toUrl()->toString());
   }
   // Team grid: the round portrait through the square_400 style (WebP, focal
   // point) instead of the original upload.
@@ -171,6 +181,14 @@ function clau3_preprocess_paragraph__hero(array &$variables): void {
     }
   }
   $variables['hero_text'] = $variables['content']['field_text'] ?? [];
+  // Responsive poster: phones get the 800px WebP, desktops up to 2000px.
+  $poster = _clau3_responsive_media($paragraph, 'field_image', 'hero');
+  if ($poster) {
+    $poster['#attributes']['class'][] = 'hero__poster';
+    $poster['#attributes']['fetchpriority'] = 'high';
+    unset($poster['#attributes']['loading']);
+  }
+  $variables['hero_poster'] = $poster;
 }
 
 /**
@@ -212,4 +230,79 @@ function _clau3_responsive_media($entity, string $field, string $responsive_styl
     '#attributes' => ['alt' => $item->alt ?? '', 'loading' => 'lazy'],
     '#cache' => ['tags' => $media->getCacheTags()],
   ];
+}
+
+/**
+ * Items for the events section strip, or NULL when the path is not an events view.
+ *
+ * Static on purpose: the three paths exist (two landing pages and the map
+ * view page) and need no controller.
+ */
+function _clau3_events_strip(string $current_path): ?array {
+  $items = [
+    ['title' => t('Upcoming'), 'url' => '/events'],
+    ['title' => t('Past'), 'url' => '/events/past-events'],
+    ['title' => t('Map'), 'url' => '/events/map'],
+  ];
+  $current_path = rtrim($current_path, '/');
+  $is_events = FALSE;
+  foreach ($items as &$item) {
+    $item['current'] = $item['url'] === $current_path;
+    $is_events = $is_events || $item['current'];
+  }
+  return $is_events ? $items : NULL;
+}
+
+/**
+ * Variables for node--event--full.html.twig.
+ */
+function _clau3_preprocess_event_full(array &$variables, $node): void {
+  $variables['event_image'] = _clau3_responsive_media($node, 'field_background_media', 'hero');
+  if ($variables['event_image']) {
+    unset($variables['event_image']['#attributes']['loading']);
+    $variables['event_image']['#attributes']['fetchpriority'] = 'high';
+  }
+
+  $start = (int) ($node->get('field_when')->value ?? 0);
+  $end = (int) ($node->get('field_when')->end_value ?? $start);
+  $variables['event_is_past'] = $end > 0 && $end < \Drupal::time()->getRequestTime();
+
+  // Date line: the formatted smart date, or the day only when the time is TBC.
+  $when = '';
+  if ($start) {
+    if (!empty($node->get('field_time_tbc')->value)) {
+      $when = \Drupal::service('date.formatter')->format($start, 'custom', 'D j M Y') . ', ' . t('time TBC');
+    }
+    else {
+      $rendered = $variables['content']['field_when'] ?? [];
+      $when = trim(strip_tags((string) \Drupal::service('renderer')->renderInIsolation($rendered)));
+    }
+  }
+  $variables['event_when'] = $when;
+  $variables['event_venue'] = $node->get('field_venue')->entity ? $node->get('field_venue')->entity->label() : '';
+
+  // Organiser link from the tickets call-to-action paragraph.
+  $variables['event_tickets_url'] = $variables['event_tickets_label'] = $variables['event_tickets_domain'] = '';
+  if (!$node->get('field_tickets')->isEmpty() && ($cta = $node->get('field_tickets')->entity) && !$cta->get('field_link')->isEmpty()) {
+    $link = $cta->get('field_link')->first();
+    try {
+      $url = $link->getUrl();
+      $variables['event_tickets_url'] = $url->toString();
+      $variables['event_tickets_label'] = $link->title ?: (string) t('Tickets and details');
+      if ($url->isExternal()) {
+        $host = parse_url($url->getUri(), PHP_URL_HOST) ?: '';
+        $variables['event_tickets_domain'] = preg_replace('/^www\./', '', $host);
+      }
+    }
+    catch (\Exception $e) {
+      // A broken link on an old event is not worth a page error.
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for views-view--events--map.html.twig.
+ */
+function clau3_preprocess_views_view__events__map(array &$variables): void {
+  $variables['events_strip'] = _clau3_events_strip('/events/map');
 }

@@ -338,3 +338,15 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Check: / plays the hero loop (poster for reduced-motion users), shows the
 # events cards, About text, the three cards and General enquiry; /about and
 # the events pages still render the old paragraph output in the new frame.
+./drush php:script scripts/devops/event_colour_schemes.php   # every event gets field_colour_scheme (paper) from its old colour terms
+./drush php:script scripts/devops/geocode_venues.php         # venue locations via Nominatim (1 req/s, ~75 s first time); re-run after adding an "Address for the map" to any venue it could not place
+./drush php:script scripts/devops/menu_2026.php              # Home, Events & News, Join us, Book us, About (+ Projects when /projects exists)
+# Check: /events (strip Upcoming · Past · Map, teasers without organiser link),
+# an event page (details box, organiser button only for future events),
+# /events/map (Show the map button, then markers; nothing from unpkg or
+# openstreetmap before the click).
+# The events map needs no CDN: Leaflet 1.9.3 is committed under
+# web/libraries/leaflet and the ligc_maps module points the Geolocation
+# Leaflet provider at it. When geolocation_leaflet is updated, compare the
+# version it names in src/Plugin/geolocation/MapProvider/Leaflet.php and
+# refresh web/libraries/leaflet to match.

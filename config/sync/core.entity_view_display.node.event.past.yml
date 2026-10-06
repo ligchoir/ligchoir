@@ -1,0 +1,38 @@
+uuid: a7ef95ab-6535-43b5-8828-10b5cc8c4bca
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.past
+    - field.field.node.event.body
+    - field.field.node.event.field_background_media
+    - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_scheme
+    - field.field.node.event.field_colour_text
+    - field.field.node.event.field_tickets
+    - field.field.node.event.field_time_tbc
+    - field.field.node.event.field_venue
+    - field.field.node.event.field_when
+    - node.type.event
+  module:
+    - user
+id: node.event.past
+targetEntityType: node
+bundle: event
+mode: past
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_background_media: true
+  field_colour_background: true
+  field_colour_scheme: true
+  field_colour_text: true
+  field_tickets: true
+  field_time_tbc: true
+  field_venue: true
+  field_when: true

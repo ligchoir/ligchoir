@@ -1,0 +1,36 @@
+uuid: c1cf25a0-4d5b-430d-9063-c5bb8e9c3c2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_colour_scheme
+field_name: field_colour_scheme
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: paper
+      label: 'Paper: white box, dark text (default)'
+    -
+      value: red
+      label: 'Red: brand red box, white text'
+    -
+      value: green
+      label: 'Green: deep green box, white text'
+    -
+      value: ink
+      label: 'Ink: black box, white text'
+    -
+      value: cream
+      label: 'Cream: cream box, dark text'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

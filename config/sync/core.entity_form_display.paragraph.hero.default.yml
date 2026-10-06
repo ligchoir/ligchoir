@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.hero.field_text
     - field.field.paragraph.hero.field_video
     - field.field.paragraph.hero.field_video_link
+    - field.field.paragraph.hero.field_video_on_phones
     - paragraphs.paragraphs_type.hero
   module:
     - link
@@ -72,6 +73,13 @@ content:
     settings:
       placeholder_url: ''
       placeholder_title: ''
+    third_party_settings: {  }
+  field_video_on_phones:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden:
   created: true

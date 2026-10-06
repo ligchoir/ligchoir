@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Local Leaflet assets for the Geolocation Leaflet map provider.
+ */
+
+/**
+ * Implements hook_geolocation_mapprovider_info_alter().
+ *
+ * The Leaflet provider hard-codes unpkg.com URLs for leaflet.js and
+ * leaflet.css. Swap in a subclass that points at web/libraries/leaflet
+ * (Leaflet 1.9.3, same version), so the map loads nothing from a CDN.
+ */
+function ligc_maps_geolocation_mapprovider_info_alter(array &$definitions): void {
+  if (isset($definitions['leaflet'])) {
+    $definitions['leaflet']['class'] = \Drupal\ligc_maps\Plugin\geolocation\MapProvider\Leaflet::class;
+  }
+}

@@ -1,0 +1,27 @@
+uuid: cb703060-861e-4cc4-a7f6-70100233a829
+langcode: en
+status: true
+dependencies: {  }
+id: openstreetmap
+label: OpenStreetMap
+description: 'The events map is drawn with map tiles from OpenStreetMap, a non-profit, community-made map. Loading it sends your IP address to OpenStreetMap servers.'
+default: false
+purposes:
+  - external_content
+cookies: {  }
+required: false
+opt_out: false
+only_once: false
+contextual_consent_only: null
+contextual_consent_text: null
+info_url: 'https://www.openstreetmap.org/'
+privacy_policy_url: 'https://osmfoundation.org/wiki/Privacy_Policy'
+javascripts:
+  - tile.openstreetmap.org
+callback_code: ''
+on_init: ''
+on_accept: ''
+on_decline: ''
+wrapper_identifier: {  }
+attachments: {  }
+weight: 1

@@ -8,16 +8,22 @@
   line-height: 1.05;
 }
 
+/* Lock-up: the four words of the name run the full width of "LIGC". The
+   name at 1rem is 222.8px wide in Vegur, LIGC at 1rem is 90.2px, so the name
+   is set at 0.405 x the initials size (measured 2026-10-06). The name is real
+   text, so it still reads to screen readers and scales with user settings. */
 .brand__initials {
-  font-size: 1.9rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .brand__name {
-  font-size: 0.85rem;
+  font-size: 0.81rem;
   font-weight: 400;
   color: var(--ligc-text-on-ink-soft);
+  white-space: nowrap;
 }
 
 @media (max-width: 379px) {
@@ -28,6 +34,10 @@
 
 @media (min-width: 800px) {
   .brand__initials {
-    font-size: 2.1rem;
+    font-size: 2.6rem;
+  }
+
+  .brand__name {
+    font-size: 1.05rem;
   }
 }

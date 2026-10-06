@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_background_media
     - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_scheme
     - field.field.node.event.field_colour_text
     - field.field.node.event.field_tickets
     - field.field.node.event.field_time_tbc
@@ -15,7 +16,6 @@ dependencies:
     - node.type.event
   module:
     - ds
-    - entity_reference_revisions
     - field_formatter_class
     - smart_date
     - user
@@ -24,19 +24,6 @@ targetEntityType: node
 bundle: event
 mode: teaser
 content:
-  field_tickets:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: teaser
-      link: ''
-    third_party_settings:
-      field_formatter_class:
-        class: ''
-      ds:
-        ds_limit: ''
-    weight: 3
-    region: content
   field_venue:
     type: entity_reference_entity_view
     label: hidden
@@ -81,6 +68,8 @@ hidden:
   body: true
   field_background_media: true
   field_colour_background: true
+  field_colour_scheme: true
   field_colour_text: true
+  field_tickets: true
   field_time_tbc: true
   links: true

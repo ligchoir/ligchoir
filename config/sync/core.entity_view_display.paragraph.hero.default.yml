@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.hero.field_text
     - field.field.paragraph.hero.field_video
     - field.field.paragraph.hero.field_video_link
+    - field.field.paragraph.hero.field_video_on_phones
     - paragraphs.paragraphs_type.hero
   module:
     - text
@@ -30,3 +31,4 @@ hidden:
   field_link: true
   field_video: true
   field_video_link: true
+  field_video_on_phones: true

@@ -235,10 +235,17 @@ renders:
 
 Design rules: the text sits on a solid panel (brand colour or black at
 full opacity) so contrast does not depend on the frame behind it; the
-video has no sound, no controls, and is replaced by the poster when the
-visitor has `prefers-reduced-motion: reduce` or saves data
-(`navigator.connection.saveData`), and on screens narrower than 600px if
-the file is still over about 2 MB. A small "Watch the full video on
+video has no sound and no controls. **Phones (decision 2026-10-06)**: the
+`<video>` is rendered with no source and no autoplay; `hero-video.js`
+adds the source and plays only when the viewport is 600px or wider (or
+the hero's "Play the video on phones" switch is on), the visitor has not
+asked for reduced motion, and the browser does not report save-data or a
+2G connection. Below 600px the poster shows through the responsive `hero`
+style (about 30 KB) and nothing else is downloaded; without JavaScript,
+the same. This is decided in the browser from what it knows (width,
+motion preference, connection), not by user-agent sniffing on the server
+(mobile_detect would need a cache context on every page and still could
+not tell wifi from mobile data). A small "Watch the full video on
 YouTube" text link under the panel is a plain link, not an embed, so it
 needs no Klaro consent and does not clutter the hero. Autoplay with the
 `muted` attribute is allowed by every current browser.
@@ -645,10 +652,32 @@ is merged and released as one version.
    Run it after `cim` on each environment; it is idempotent. Open point:
    the events grid shows a slate "LIGC" placeholder for the many events
    without a photo; a per-event photo is an editor task, not a theme one.
-4. **Events**: teaser links, event page template through the image
-   styles, colour scheme field and data migration script (one
-   `drush php:script` mapping the old colour terms to schemes), strip,
-   venue locations and the map.
+4. **Events** — DONE 2026-10-06 (on `feat/new-theme`), pending Rob's view
+   on the scheme names (16.8): teasers link to the event page only
+   (organiser link removed from the teaser and past view modes); new event
+   page (component `event-page`: image through the `hero` responsive style,
+   details box in the scheme colours, date line, venue, body, organiser
+   button with its domain shown and only while the event is in the future,
+   "This event has passed" otherwise); `field_colour_scheme` list (paper,
+   red, green, ink, cream) on events with
+   `scripts/devops/event_colour_schemes.php` (every event used the same
+   white/dark-red pair, so all 107 map to `paper`; the two old colour
+   pickers are off the form, the fields and `modifiers_color` go at
+   launch); the Upcoming / Past / Map strip (component `section-strip`) on
+   /events, /events/past-events and /events/map; Geolocation 4.0 with its
+   Leaflet submodule, `field_location` and an optional `field_address` on
+   venues, `scripts/devops/geocode_venues.php` (Nominatim, 60 of 60 venues
+   placed, 13 after an address was added), the events view `map` page
+   display, Leaflet 1.9.3 served from `web/libraries/leaflet` by the small
+   `ligc_maps` module (the stock provider loads it from unpkg), and the
+   `map-gate` component: the map markup waits in a `<template>` until the
+   visitor presses "Show the map", so no tile or script is fetched before
+   consent; the choice is recorded with Klaro as the `openstreetmap`
+   service. Also from the side chat: `scripts/devops/menu_2026.php` sets
+   the menu to Home, Events & News, Join us, Book us, About, and swaps
+   L• I• V for Projects once /projects exists (step 5); the brand lock-up
+   now runs the full name across the width of "LIGC" (1.05rem under
+   2.6rem on desktop; measured equal at 234px).
 5. **Projects**: person and organisation types, collaborator paragraph,
    project type with its Layout Builder display, projects view and
    landing page, LIV moved into a project node with the /liv alias,

@@ -1,0 +1,9 @@
+<nav class="section-strip" aria-label="{{ label }}">
+  <ul class="section-strip__list">
+    {% for item in items %}
+      <li class="section-strip__item">
+        <a class="section-strip__link" href="{{ item.url }}"{% if item.current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

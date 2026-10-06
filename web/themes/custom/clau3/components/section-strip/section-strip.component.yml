@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'Section strip'
+status: stable
+description: 'A row of real links to the views of one section (Upcoming, Past, Map), underlined on the current one. Stacks into 44px rows below 600px; never scrolls sideways.'
+props:
+  type: object
+  required:
+    - items
+  properties:
+    label:
+      type: string
+      default: 'Section'
+    items:
+      type: array
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+          url:
+            type: string
+          current:
+            type: boolean

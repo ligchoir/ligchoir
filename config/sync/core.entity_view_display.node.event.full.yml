@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_background_media
     - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_scheme
     - field.field.node.event.field_colour_text
     - field.field.node.event.field_tickets
     - field.field.node.event.field_time_tbc
@@ -93,6 +94,7 @@ content:
 hidden:
   field_background_media: true
   field_colour_background: true
+  field_colour_scheme: true
   field_colour_text: true
   field_time_tbc: true
   links: true

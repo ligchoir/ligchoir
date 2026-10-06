@@ -1,0 +1,7 @@
+name: 'LIGC maps'
+type: module
+description: 'Serves Leaflet from web/libraries/leaflet instead of the unpkg CDN for the Geolocation Leaflet map provider (no third-party request without consent).'
+package: Custom
+core_version_requirement: ^10.3 || ^11
+dependencies:
+  - geolocation_leaflet:geolocation_leaflet

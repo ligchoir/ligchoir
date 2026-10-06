@@ -1,0 +1,34 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'Event page'
+status: stable
+description: 'One event: wide image (responsive, 16:9) when there is one, then a details box in the chosen colour scheme with date, venue, body and, for future events only, the organiser button with its domain shown.'
+props:
+  type: object
+  required:
+    - title
+    - scheme
+  properties:
+    title:
+      type: string
+    scheme:
+      type: string
+      enum: [paper, red, green, ink, cream]
+      default: paper
+    is_past:
+      type: boolean
+    when:
+      type: string
+      title: 'Date line (already formatted)'
+    venue:
+      type: string
+    tickets_url:
+      type: string
+    tickets_label:
+      type: string
+    tickets_domain:
+      type: string
+slots:
+  image:
+    title: 'Rendered hero image'
+  body:
+    title: 'Body text'

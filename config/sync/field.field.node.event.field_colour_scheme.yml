@@ -1,0 +1,23 @@
+uuid: 29b09e54-5124-40f8-919a-d1a9b7c21570
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colour_scheme
+    - node.type.event
+  module:
+    - options
+id: node.event.field_colour_scheme
+field_name: field_colour_scheme
+entity_type: node
+bundle: event
+label: 'Colour scheme'
+description: 'Colours of the event details box. Each scheme is a tested pair of background and text colours.'
+required: false
+translatable: true
+default_value:
+  -
+    value: paper
+default_value_callback: ''
+settings: {  }
+field_type: list_string

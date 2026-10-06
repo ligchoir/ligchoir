@@ -1,0 +1,14 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: 'Map gate'
+status: stable
+description: 'Consent gate for a third-party map. Shows a placeholder with a Show map button; the map markup waits in a <template> and is only added to the page (so no tiles load) once the visitor agrees. Consent is stored with Klaro when present, else in localStorage.'
+props:
+  type: object
+  properties:
+    service:
+      type: string
+      title: 'Klaro service id'
+      default: openstreetmap
+slots:
+  map:
+    title: 'The map markup'

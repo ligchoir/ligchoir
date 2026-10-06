@@ -1,11 +1,18 @@
-<section class="hero{{ video_url ? ' hero--video' }}" data-hero>
+<section class="hero{{ video_url ? ' hero--video' }}" data-hero{% if video_url %} data-video-src="{{ video_url }}" data-video-on-phones="{{ video_on_phones ? '1' : '0' }}"{% endif %}>
   <div class="hero__media">
+    {# The video element has no source and no autoplay in the markup: hero-video.js
+       adds them only when the viewport is wide enough (or the phones switch is on)
+       and the visitor has not asked for reduced motion or data saving. Nothing but
+       the poster is downloaded otherwise, or without JavaScript. #}
     {% if video_url %}
-      <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="{{ poster_url }}" aria-hidden="true" tabindex="-1">
-        <source src="{{ video_url }}" type="video/mp4">
-      </video>
+      <video class="hero__video" muted loop playsinline preload="none" poster="{{ poster_url }}" aria-hidden="true" tabindex="-1"></video>
     {% endif %}
-    <img class="hero__poster" src="{{ poster_url }}" alt="{{ poster_alt|default('') }}" width="1600" height="900" fetchpriority="high">
+    {% set poster_html = block('poster')|trim %}
+    {% if poster_html %}
+      {{ poster_html|raw }}
+    {% else %}
+      <img class="hero__poster" src="{{ poster_url }}" alt="{{ poster_alt|default('') }}" width="1600" height="900" fetchpriority="high">
+    {% endif %}
   </div>
   <div class="hero__panel">
     <h1 class="hero__heading">{{ heading }}</h1>

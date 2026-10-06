@@ -27,6 +27,12 @@ props:
       title: 'Plain link to the full video (no embed)'
     video_link_text:
       type: string
+    video_on_phones:
+      type: boolean
+      title: 'Play the video below 600px too'
+      default: false
 slots:
   text:
     title: 'Short text under the heading'
+  poster:
+    title: 'Rendered poster image (responsive); replaces poster_url when given'

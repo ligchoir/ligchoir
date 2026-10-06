@@ -1,0 +1,23 @@
+<article class="event-page event-page--{{ scheme }}">
+  {% set image_html = block('image')|trim %}
+  {% if image_html %}
+    <div class="event-page__media">{{ image_html|raw }}</div>
+  {% endif %}
+  <div class="event-page__box">
+    <h1 class="event-page__title">{{ title }}</h1>
+    {% if is_past %}
+      <p class="event-page__past">{{ 'This event has passed'|t }}</p>
+    {% endif %}
+    <p class="event-page__meta">
+      {% if when %}<span class="event-page__when">{{ when }}</span>{% endif %}
+      {% if venue %}<span class="event-page__venue">{{ venue }}</span>{% endif %}
+    </p>
+    <div class="event-page__body">{% block body %}{% endblock %}</div>
+    {% if tickets_url and not is_past %}
+      <p class="event-page__tickets">
+        <a class="event-page__tickets-link" href="{{ tickets_url }}" rel="noopener">{{ tickets_label|default('Tickets and details'|t) }}</a>
+        {% if tickets_domain %}<span class="event-page__tickets-domain">{{ 'at'|t }} {{ tickets_domain }}</span>{% endif %}
+      </p>
+    {% endif %}
+  </div>
+</article>

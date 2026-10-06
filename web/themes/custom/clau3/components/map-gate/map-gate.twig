@@ -1,0 +1,10 @@
+<div class="map-gate" data-map-gate data-service="{{ service }}">
+  <div class="map-gate__placeholder">
+    <p class="map-gate__heading">{{ 'Show the map'|t }}</p>
+    <p class="map-gate__text">{{ 'The map is drawn with OpenStreetMap, a community-made map. Loading it sends your IP address to OpenStreetMap. You can change this later under Manage privacy settings.'|t }}</p>
+    <button class="map-gate__button" type="button">{{ 'Show the map'|t }}</button>
+    <noscript><p class="map-gate__noscript">{{ 'The map needs JavaScript. The Upcoming list has every event with its venue.'|t }}</p></noscript>
+  </div>
+  <template class="map-gate__template">{% block map %}{% endblock %}</template>
+  <div class="map-gate__map"></div>
+</div>

@@ -14,6 +14,8 @@
   link_text: paragraph.field_link.0.title,
   video_link_url: paragraph.field_video_link.0.url.toString() ?? null,
   video_link_text: paragraph.field_video_link.0.title,
+  video_on_phones: paragraph.field_video_on_phones.value ? true : false,
 } %}
   {% block text %}{{ hero_text }}{% endblock %}
+  {% block poster %}{{ hero_poster }}{% endblock %}
 {% endembed %}

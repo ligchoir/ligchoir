@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5dba7c1ced3205d1fdc3b4191ef1e83f",
+    "content-hash": "8a21a91f13ab0b09b6fb0dd910d588ab",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2127,6 +2127,110 @@
                 "source": "https://cgit.drupalcode.org/focal_point",
                 "issues": "https://drupal.org/project/issues/focal_point",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/geolocation",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/geolocation.git",
+                "reference": "4.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/geolocation-4.0.0.zip",
+                "reference": "4.0.0",
+                "shasum": "8020dd31f4ca81bba9d6d2616718be2c6799af3e"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11 || ^12"
+            },
+            "require-dev": {
+                "drupal/address": "^2",
+                "drupal/feeds": "^3.0",
+                "drupal/geocoder": "^4.29",
+                "drupal/geofield": "^1.64",
+                "drupal/geolocation_demo": "*",
+                "drupal/geolocation_geometry": "*",
+                "drupal/geolocation_google_maps": "*",
+                "drupal/geolocation_google_maps_demo": "*",
+                "drupal/geolocation_google_static_maps": "*",
+                "drupal/geolocation_leaflet": "*",
+                "drupal/migrate_plus": "^6.0",
+                "drupal/migrate_tools": "^6.0",
+                "drupal/search_api": "^1.38",
+                "drupal/search_api_location": "^1.x-dev@dev",
+                "drupal/search_api_location_views-search_api_location_views": "*",
+                "drupal/tamper": "^1.0@beta",
+                "gasparesganga/php-shapefile": "^3",
+                "geocodio/geocodio-library-php": "^3.0",
+                "sibyx/phpgpx": "^1.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.0",
+                    "datestamp": "1782326282",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "derjochenmeyer",
+                    "homepage": "https://www.drupal.org/u/derjochenmeyer"
+                },
+                {
+                    "name": "cadamski",
+                    "homepage": "https://www.drupal.org/u/cadamski"
+                }
+            ],
+            "description": "Provides a simple geolocation Drupal field type to store and display location data (lat, lng).",
+            "homepage": "https://www.drupal.org/project/geolocation",
+            "support": {
+                "source": "https://git.drupal.org/project/geolocation.git",
+                "issues": "https://www.drupal.org/project/issues/geolocation"
+            }
+        },
+        {
+            "name": "drupal/geolocation_leaflet",
+            "version": "4.0.0",
+            "require": {
+                "drupal/core": "^10 || ^11 || ^12",
+                "drupal/geolocation": "*"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "4.0.0",
+                    "datestamp": "1782326282",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "christianadamski",
+                    "homepage": "https://www.drupal.org/user/867880"
+                }
+            ],
+            "description": "Leaflet map provider.",
+            "homepage": "https://www.drupal.org/project/geolocation",
+            "support": {
+                "source": "https://git.drupalcode.org/project/geolocation"
             }
         },
         {

@@ -1,0 +1,21 @@
+uuid: 92a3b181-5b0e-49a9-9242-89590611bcee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_location
+    - taxonomy.vocabulary.venues
+  module:
+    - geolocation
+id: taxonomy_term.venues.field_location
+field_name: field_location
+entity_type: taxonomy_term
+bundle: venues
+label: Location
+description: 'Latitude and longitude of the venue, for the events map. scripts/devops/geocode_venues.php fills this in from the venue name; edit here if it landed in the wrong place.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

@@ -1,0 +1,23 @@
+uuid: 1c657a54-4844-492f-aa80-08cab2b4e67a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_on_phones
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_video_on_phones
+field_name: field_video_on_phones
+entity_type: paragraph
+bundle: hero
+label: 'Play the video on phones'
+description: 'Off: phones (under 600px wide) show the poster image and never download the video. On: the loop plays on phones too, so keep the file small.'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

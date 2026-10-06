@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_background_media
     - field.field.node.event.field_colour_background
+    - field.field.node.event.field_colour_scheme
     - field.field.node.event.field_colour_text
     - field.field.node.event.field_tickets
     - field.field.node.event.field_time_tbc
@@ -49,15 +50,9 @@ content:
         - remote_video
         - video
     third_party_settings: {  }
-  field_colour_background:
+  field_colour_scheme:
     type: options_select
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_colour_text:
-    type: options_select
-    weight: 11
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -155,4 +150,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_colour_background: true
+  field_colour_text: true

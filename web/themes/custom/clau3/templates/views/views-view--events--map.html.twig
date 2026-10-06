@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * The events map page: section strip, then the map behind a consent gate.
+ * The map markup sits in a <template> so Leaflet does not initialise (and no
+ * tile is requested) until the visitor agrees; map-gate.js moves it into the
+ * page and records the choice with Klaro (service "openstreetmap").
+ */
+#}
+{% include 'clau3:section-strip' with { items: events_strip, label: 'Events'|t } only %}
+<section{{ attributes.addClass(['view', 'view-events', 'view-display-id-map', 'events-map']) }}>
+  {% embed 'clau3:map-gate' with { service: 'openstreetmap' } %}
+    {% block map %}
+      {{ title_prefix }}{{ title }}{{ title_suffix }}
+      {{ header }}
+      {% if rows %}{{ rows }}{% elseif empty %}{{ empty }}{% endif %}
+      {{ footer }}
+    {% endblock %}
+  {% endembed %}
+</section>

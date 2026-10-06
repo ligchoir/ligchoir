@@ -1,0 +1,123 @@
+/* Colour schemes: tested pairs (plan section 12). */
+.event-page--paper { --scheme-bg: var(--ligc-paper); --scheme-text: var(--ligc-text-on-paper); --scheme-accent: var(--ligc-red); --scheme-muted: #444; }
+.event-page--red   { --scheme-bg: var(--ligc-red);   --scheme-text: var(--ligc-text-on-red);   --scheme-accent: var(--ligc-text-on-red); --scheme-muted: rgba(255,255,255,.85); }
+.event-page--green { --scheme-bg: var(--ligc-green); --scheme-text: var(--ligc-text-on-green); --scheme-accent: var(--ligc-text-on-green); --scheme-muted: rgba(255,255,255,.85); }
+.event-page--ink   { --scheme-bg: var(--ligc-ink-soft); --scheme-text: var(--ligc-text-on-ink); --scheme-accent: var(--ligc-red-on-ink); --scheme-muted: var(--ligc-text-on-ink-soft); }
+.event-page--cream { --scheme-bg: var(--ligc-cream); --scheme-text: var(--ligc-text-on-cream); --scheme-accent: var(--ligc-red); --scheme-muted: #444; }
+
+.event-page__media {
+  position: relative;
+  width: 100%;
+  height: min(56.25vw, 60vh);
+  overflow: hidden;
+  background: var(--ligc-ink);
+}
+
+.event-page__media img,
+.event-page__media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event-page__box {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--ligc-space-lg) var(--ligc-gutter) var(--ligc-space-xl);
+  background: var(--scheme-bg);
+  color: var(--scheme-text);
+}
+
+.event-page__media + .event-page__box {
+  margin-top: -3rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.event-page__title {
+  margin: 0 0 var(--ligc-space-sm);
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.event-page__past {
+  display: inline-block;
+  margin: 0 0 var(--ligc-space-sm);
+  padding: 0.2em 0.8em;
+  border: 2px solid currentColor;
+  border-radius: 1em;
+  font-weight: 700;
+}
+
+.event-page__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em 1em;
+  margin: 0 0 var(--ligc-space-md);
+  font-size: 1.15rem;
+}
+
+.event-page__when {
+  font-weight: 700;
+  color: var(--scheme-accent);
+}
+
+.event-page__venue {
+  color: var(--scheme-muted);
+}
+
+.event-page__body {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.event-page__body p {
+  margin: 0 0 var(--ligc-space-sm);
+}
+
+.event-page__body a {
+  color: var(--scheme-accent);
+  font-weight: 700;
+}
+
+.event-page__tickets {
+  margin: var(--ligc-space-lg) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ligc-space-sm);
+}
+
+.event-page__tickets-link {
+  display: inline-block;
+  padding: 0.7em 1.6em;
+  background: var(--scheme-accent);
+  color: var(--scheme-bg);
+  border-radius: 2em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.event-page--paper .event-page__tickets-link,
+.event-page--cream .event-page__tickets-link {
+  color: var(--ligc-text-on-red);
+}
+
+.event-page__tickets-link:hover {
+  filter: brightness(0.9);
+}
+
+.event-page__tickets-domain {
+  color: var(--scheme-muted);
+}
+
+@media (min-width: 800px) {
+  .event-page__box {
+    padding: var(--ligc-space-xl) var(--ligc-space-xl) calc(var(--ligc-space-xl) * 1.5);
+  }
+
+  .event-page__media + .event-page__box {
+    margin-top: -5rem;
+  }
+}

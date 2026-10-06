@@ -27,6 +27,8 @@
         "drupal/ds": "^3.30",
         "drupal/field_formatter_class": "^1.4",
         "drupal/focal_point": "^2.1",
+        "drupal/geolocation": "^4.0",
+        "drupal/geolocation_leaflet": "*",
         "drupal/gin": "^5.0",
         "drupal/gin_toolbar": "^3.0",
         "drupal/honeypot": "^2.2",

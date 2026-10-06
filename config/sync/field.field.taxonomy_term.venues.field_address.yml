@@ -1,0 +1,19 @@
+uuid: f772b245-200c-4e73-8d6f-77a4abd03613
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_address
+    - taxonomy.vocabulary.venues
+id: taxonomy_term.venues.field_address
+field_name: field_address
+entity_type: taxonomy_term
+bundle: venues
+label: 'Address for the map'
+description: 'Optional. A fuller address or postcode used to find the venue on the map when the name alone is not enough (e.g. "Holy Trinity Church, Sloane Street, London SW1X 9BZ").'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
