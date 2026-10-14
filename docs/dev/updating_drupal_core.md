@@ -1,5 +1,31 @@
 # Updating Drupal core
 
+## 2026-10-14: 11.4.8 → 11.4.10 (security release)
+
+Drupal 11.4.10 (released 2026-10-14) fixes SA-CORE-2026-014 (critical,
+remote code execution), SA-CORE-2026-015 and SA-CORE-2026-016 (moderately
+critical, cross-site scripting). Security fixes only; `drush updatedb`
+reported no pending updates; `composer audit` clean. Live release 2.0.11.
+
+| Package                          | Before  | After   |
+|----------------------------------|---------|---------|
+| `drupal/core`, `core-recommended`, `core-composer-scaffold`, `core-project-message` | 11.4.8 | 11.4.10 |
+| Symfony 7.4.x components (14)    | 7.4.8–7.4.20 | 7.4.21 |
+
+Local: `ddev snapshot --name pre-drupal-11.4.10-update`, then
+`ddev composer update "drupal/core-*" --with-all-dependencies`, `drush updb -y`,
+`drush cr`, `drush status --field=drupal-version`, `composer audit`, pages
+checked. Note: with `feat/new-theme` in progress, the local database had the
+new theme's modules enabled and drush could not boot on `main`; the main-state
+snapshot `all-four-branches-applied` (2026-10-03) was restored for the update
+and the new-theme database saved as snapshot `new-theme-2026-10-14`.
+
+Deploy: the release block "2.0.11" in `docs/devops/README.txt` (same as the
+October flow: create_release → files symlink → deploy.sh → post_deploy.sh).
+
+---
+
+
 Reference from the 10.6.3 → 10.6.9 patch update performed on 2026-05-20.
 
 This is a **patch-level** Drupal core update (10.6.x → 10.6.x). It only touches

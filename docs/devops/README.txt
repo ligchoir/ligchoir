@@ -328,3 +328,30 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Check: view source of /book has no cdn.jsdelivr.net and the time field is
 # still <input type="time">. Background: docs/dev/webform-libraries.md
 # ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Release 2.0.11 (2026-10-14): Drupal 11.4.10, security release (SA-CORE-2026-014
+# critical RCE, -015 and -016 XSS). Code only; no config change of its own, but
+# the release also carries the clau2 font-preload hotfix (8bfa7d6c) that 2.0.10
+# missed. On the server as rob. Staging first (a few minutes), then live.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.11; R=/var/www/05/$D/releases
+
+# Staging
+./create_release.sh $D $V-staging git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/staging/assets/public/files $R/$V-staging/code/web/sites/default/files
+ls -l $R/$V-staging/code/web/sites/default/files      # -> .../deployment_environments/staging/...
+./deploy.sh $D staging $V-staging                     # DB backup, composer install --no-dev, symlink, updb, cr
+bash $R/$V-staging/code/scripts/devops/post_deploy.sh staging
+# Check: https://staging.$D loads; admin/reports/status says 11.4.10.
+
+# Live
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live
+./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.10
+# Check: https://$D front page, /about, /events, /book, log in, admin/reports/status.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.10 && ./drush_run.sh $D live cr
