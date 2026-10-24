@@ -18,6 +18,8 @@
 #   body           optional. HTML (basic_html).
 #   tickets        optional. List of {url, title} -> call-to-action paragraphs.
 #   published      optional. Default true.
+#   match_title    optional, --update only. Current title of the event to update when
+#                  "title" is its new name.
 #
 # Top-level keys:
 #   timezone       optional. Default UTC (matches site convention: times are wall-clock).

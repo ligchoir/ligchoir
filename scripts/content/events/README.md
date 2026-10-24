@@ -41,7 +41,9 @@ Files:
   exists with the same title (case and whitespace insensitive) starting on the
   same calendar day. Re-running a file is safe. Pass `--update` to rewrite
   matched events from the file instead: date/time/TBC are always replaced,
-  venue, body and published only when that key is present in the row. Keep
+  venue, body, tickets and published only when that key is present in the row
+  (`venue: ""` clears the venue, `tickets: []` clears the links). To rename an
+  event, give `match_title` (the current title) and `title` (the new one). Keep
   updates in their own data file so re-running the original file stays a no-op.
 - **Venues.** Matched by name against the Venues vocabulary, ignoring case,
   whitespace, a trailing ", London" and a trailing postcode. Unmatched venues

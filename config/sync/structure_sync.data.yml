@@ -502,6 +502,16 @@ taxonomies:
       uuid: d63db3f9-158e-45d1-ba8a-0df076e71734
     -
       vid: venues
+      tid: '93'
+      langcode: en
+      name: 'Private venue (residents' event)'
+      description__value: '<p>London</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 0b3b1f2f-4f58-4818-bbe4-6e72371ff099
+    -
+      vid: venues
       tid: '81'
       langcode: en
       name: 'Milton Court, Guildhall School of Music'
@@ -510,6 +520,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: d1d19d27-0227-494f-add8-e128e1fd2969
+    -
+      vid: venues
+      tid: '95'
+      langcode: en
+      name: 'North-west London'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: d89ba53e-10bd-433c-a40f-df0fd073baef
     -
       vid: venues
       tid: '66'
@@ -562,6 +582,16 @@ taxonomies:
       uuid: f4b252ed-cf74-4ca2-85f4-140ee854c0fd
     -
       vid: venues
+      tid: '94'
+      langcode: en
+      name: 'Romford Road, Stratford'
+      description__value: '<p>27 Romford Road, Stratford, London E15 4LJ</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 319cbb58-c900-4fc5-ac4d-f8ccf6770640
+    -
+      vid: venues
       tid: '44'
       langcode: en
       name: 'Royal Albert Hall'
@@ -600,6 +630,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 6c126f4a-bba5-4efd-bac8-00d1e4214b28
+    -
+      vid: venues
+      tid: '92'
+      langcode: en
+      name: 'St Albans Cathedral'
+      description__value: '<p>Sumpter Yard, St Albans AL1 1BY</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 7828c027-110a-4ca6-8765-633f06785d49
     -
       vid: venues
       tid: '80'
@@ -750,6 +790,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 8f3c21ba-ab1e-40d8-b42f-55430815a8f1
+    -
+      vid: venues
+      tid: '91'
+      langcode: en
+      name: 'Wembley Stadium'
+      description__value: '<p>Wembley Stadium, London HA9 0WS</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 76a120bd-4b20-4724-aaf4-b4d2ee304feb
     -
       vid: venues
       tid: '41'
