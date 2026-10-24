@@ -1,5 +1,32 @@
 # Updating Drupal core
 
+## 2026-10-24: 11.4.10 → 11.4.11, plus Gin 5.0.16 (security) and Klaro 3.1.2
+
+Prompted by admin/reports/updates on live after release 2.0.12. Gin 5.0.16
+fixes SA-CONTRIB-2026-219 (moderately critical, cross-site scripting in
+tooltip rendering). Drupal 11.4.11 is a bug-fix release (dependency bumps;
+`.htaccess` changes `php_value assert.active 0` to `php_value zend.assertions 0`,
+which the scaffold applied and is committed). Klaro 3.1.2 is a bug-fix release
+(HTML parsing via masterminds/html5). Color Field 3.1.0-beta1 was listed but
+is a pre-release, not the recommended version, and was left alone.
+`drush updatedb` reported no pending updates; no config change. Live release 2.0.13.
+
+| Package                          | Before  | After   |
+|----------------------------------|---------|---------|
+| `drupal/core`, `core-recommended`, `core-composer-scaffold`, `core-project-message` | 11.4.10 | 11.4.11 |
+| `drupal/gin`                     | 5.0.15  | 5.0.16  |
+| `drupal/klaro`                   | 3.1.1   | 3.1.2   |
+| `guzzlehttp/guzzle`, `promises`, `psr7` | 7.15.5, 2.5.3, 2.13.1 | 7.16.0, 2.6.0, 2.13.2 |
+
+Local: on a copy of the live database, `ddev composer update drupal/core-recommended
+drupal/core-composer-scaffold drupal/core-project-message drupal/gin drupal/klaro
+--with-all-dependencies`, `drush updb -y`, `drush cr`, `drush cex --diff` (identical),
+front and admin pages checked, `composer audit`.
+
+Deploy: the release block "2.0.13" in `docs/devops/README.txt`.
+
+---
+
 ## 2026-10-14: 11.4.8 → 11.4.10 (security release)
 
 Drupal 11.4.10 (released 2026-10-14) fixes SA-CORE-2026-014 (critical,

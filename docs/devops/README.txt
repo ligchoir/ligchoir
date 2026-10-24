@@ -330,6 +330,24 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
+# Release 2.0.13 (2026-10-24): Drupal 11.4.11 (bug fix), Gin 5.0.16 (security,
+# SA-CONTRIB-2026-219), Klaro 3.1.2. Code only; no config change, no DB updates.
+# 2.0.12 (same day) was the October events batch. On the server as rob.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.13; R=/var/www/05/$D/releases
+
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live
+./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.11
+# Check: https://$D front page, /events, log in, admin/reports/status, then
+# admin/reports/updates -> "Check manually": core, Gin and Klaro up to date.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.12 && ./drush_run.sh $D live cr
+
+# ---------------------------------------------------------------------------
 # Release 2.0.11 (2026-10-14): Drupal 11.4.10, security release (SA-CORE-2026-014
 # critical RCE, -015 and -016 XSS). Code only; no config change of its own, but
 # the release also carries the clau2 font-preload hotfix (8bfa7d6c) that 2.0.10
