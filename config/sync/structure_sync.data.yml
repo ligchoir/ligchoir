@@ -472,6 +472,16 @@ taxonomies:
       uuid: 1f3a790d-8db9-4c06-bc7f-1d0c09947d3f
     -
       vid: venues
+      tid: '96'
+      langcode: en
+      name: London
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b224faa8-1445-44eb-b745-56142989186b
+    -
+      vid: venues
       tid: '48'
       langcode: en
       name: 'London City Hall'
