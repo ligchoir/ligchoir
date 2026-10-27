@@ -330,7 +330,28 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
-# Release 2.0.13 (2026-10-24): Drupal 11.4.11 (bug fix), Gin 5.0.16 (security,
+# Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one
+# --update data file plus the structure_sync export (new "London" venue term).
+# No DB updates. On the server as rob.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.14; R=/var/www/05/$D/releases
+
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live     # cim: structure_sync.data Update (expected)
+./import_events.sh $D live scripts/content/events/data/2026-10-coordinator-reply.yml --update --dry-run
+./import_events.sh $D live scripts/content/events/data/2026-10-coordinator-reply.yml --update   # updated=5 venues_created=1
+# Check: https://$D/events shows 23 events incl. the two "Private ... Booking (London)"
+# entries, /event/young-leaders-light-wembley-way and
+# /event/sharing-stories-hope-interfaith-event-st-albans-cathedral load.
+# Then, by hand on live: edit Faithful Voices 2026 and add the flyer as Background Media.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.13 && ./drush_run.sh $D live cr
+# (the content changes stay; re-run the 24 Oct -updates file to undo the renames).
+
+: Drupal 11.4.11 (bug fix), Gin 5.0.16 (security,
 # SA-CONTRIB-2026-219), Klaro 3.1.2. Code only; no config change, no DB updates.
 # 2.0.12 (same day) was the October events batch. On the server as rob.
 # ---------------------------------------------------------------------------
