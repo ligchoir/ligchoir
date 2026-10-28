@@ -138,3 +138,7 @@ web/libraries/klaro/
 
 # Private files for local ddev (see settings.php file_private_path)
 /private/
+
+# Front page hero media show choir members; kept out of git
+/scripts/content/front-page/*.mp4
+/scripts/content/front-page/*.webp

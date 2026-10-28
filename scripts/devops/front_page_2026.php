@@ -10,8 +10,9 @@
  * hero, card, card_row; the events view "cards" display). Then, on the Home
  * node (content type home):
  *
- *   1. Imports scripts/content/front-page/hero-1280.mp4 and hero-poster.webp
- *      into the public files directory as media items "Front page hero loop"
+ *   1. Imports hero-1280.mp4 and hero-poster.webp (not in git: they show
+ *      choir members) from $LIGC_HERO_MEDIA_DIR, default
+ *      scripts/content/front-page/, into the public files directory as media items "Front page hero loop"
  *      (video) and "Front page hero poster" (image), unless they exist.
  *   2. Builds the paragraphs: hero (heading and text taken from the existing
  *      "Welcome" text paragraph), events view (cards display), an About text,
@@ -49,7 +50,9 @@ foreach (['hero', 'card', 'card_row'] as $type) {
 }
 
 // --- 1. Media ---------------------------------------------------------------
-$source_dir = dirname(__DIR__) . '/content/front-page';
+// The clip and poster show choir members, so they are kept out of git; copy
+// them in (or point LIGC_HERO_MEDIA_DIR at them) before the first run.
+$source_dir = getenv('LIGC_HERO_MEDIA_DIR') ?: dirname(__DIR__) . '/content/front-page';
 $file_repo = \Drupal::service('file.repository');
 $dest_dir = 'public://2026-10';
 \Drupal::service('file_system')->prepareDirectory($dest_dir, \Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY | \Drupal\Core\File\FileSystemInterface::MODIFY_PERMISSIONS);

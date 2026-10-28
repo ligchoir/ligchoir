@@ -1,5 +1,14 @@
 # Front page hero media
 
+The two files below are not in git (they show choir members; the repo holds
+no identifiable people). Rob keeps the originals privately. Before running
+`scripts/devops/front_page_2026.php`, copy them into this directory (they are
+gitignored here) or set `LIGC_HERO_MEDIA_DIR` to wherever they are, e.g. on
+the server:
+
+    scp hero-1280.mp4 hero-poster.webp server03:/tmp/hero/
+    LIGC_HERO_MEDIA_DIR=/tmp/hero ./drush php:script scripts/devops/front_page_2026.php
+
 - `hero-1280.mp4`: 19 s silent loop, 1280x672, H.264 High, CRF 32, from
   1:20 in "If He Did It Before - London International Gospel Choir"
   (youtube.com/watch?v=RgNVtjKTOhI, LIGC's own channel). The top 6.67% of

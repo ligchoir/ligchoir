@@ -642,8 +642,8 @@ is merged and released as one version.
    event-card; node view mode `event_card` and the events view's `cards`
    display (upcoming, eight, "View all events"); `media/hero-loop.sh` in
    the infrastructure repo, and the first clip (19 s from 1:20 of "If He
-   Did It Before", 1280x720 CRF 32, 2.6 MB, poster 1920 wide) committed
-   under `scripts/content/front-page/`. `scripts/devops/front_page_2026.php`
+   Did It Before", 1280x720 CRF 32, 2.6 MB, poster 1920 wide), kept out of git
+   (see `scripts/content/front-page/README.md`). `scripts/devops/front_page_2026.php`
    imports the media, builds the paragraphs (hero, events cards, About
    text, card row Book us / Our projects / Join us, the existing call to
    action re-pointed to the general contact anchor), sets the order,
