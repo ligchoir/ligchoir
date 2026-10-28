@@ -63,7 +63,6 @@ scripts/content/events/import_events.sh scripts/content/events/data/<file>-updat
 ./import_events.sh internationalgospelchoir.uk live scripts/content/events/data/<file>-updates.yml --update
 
 
-
 # Deploying a release that uninstalls modules (config import removes them)
 # Run in the release code dir. Order matters: entities that belong to a module
 # being removed must be deleted BEFORE cim, or the import validation fails.

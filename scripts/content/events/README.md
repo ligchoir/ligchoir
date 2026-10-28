@@ -11,7 +11,7 @@ Files:
 | `import_events.php` | The importer. Runs under `drush php:script`. |
 | `import_events.sh` | Runner: resolves the repo root and calls drush with the right arguments. |
 | `events.example.yml` | Documented example of the data file format. |
-| `data/*.yml` | Real data files, one per batch. Committed so live runs the same file as local. |
+| `data/*.yml` | Real data files, one per batch. **Not in git** (`data/` is gitignored): they carry booking details and the events coordinator's notes. Kept privately and copied to the server for a live run. |
 | `provision-site/toolkit/import_events.sh` (infrastructure repo) | Server wrapper: finds the release, backs up the DB, runs the import, clears cache. |
 
 ## Workflow
@@ -26,7 +26,11 @@ Files:
    ```bash
    ddev exec scripts/content/events/import_events.sh scripts/content/events/data/2026-09.yml
    ```
-4. Commit the data file, create and deploy a release as usual.
+4. Keep the data file privately (not in git). Copy it into the release on
+   the server:
+   ```bash
+   scp scripts/content/events/data/2026-09.yml server03:/var/www/05/internationalgospelchoir.uk/releases/<version>/code/scripts/content/events/data/
+   ```
 5. On the server (the toolkit scripts are installed system-wide):
    ```bash
    import_events internationalgospelchoir.uk live scripts/content/events/data/2026-09.yml --dry-run

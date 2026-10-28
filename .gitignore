@@ -138,3 +138,6 @@ web/libraries/klaro/
 
 # Private files for local ddev (see settings.php file_private_path)
 /private/
+
+# Event batch data files carry booking details; kept out of git
+/scripts/content/events/data/
