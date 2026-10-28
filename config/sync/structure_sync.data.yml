@@ -265,8 +265,8 @@ taxonomies:
       tid: '86'
       langcode: en
       name: 'Private venue (wedding)'
-      description__value: '<p>London</p>'
-      description__format: basic_html
+      description__value: null
+      description__format: null
       weight: '0'
       parent: '0'
       uuid: 8d571a94-39df-494d-bcbd-5da64d0c920e
@@ -310,16 +310,6 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 68959164-e640-4943-a270-f507a872baf9
-    -
-      vid: venues
-      tid: '90'
-      langcode: en
-      name: 'Private venue (corporate client)'
-      description__value: '<p>London</p>'
-      description__format: basic_html
-      weight: '0'
-      parent: '0'
-      uuid: c543aa8b-1a11-45ec-9fcb-bf356fd3fe82
     -
       vid: venues
       tid: '88'
@@ -452,16 +442,6 @@ taxonomies:
       uuid: b9286e0d-5892-4c88-baa2-a20b33b78405
     -
       vid: venues
-      tid: '87'
-      langcode: en
-      name: "Private venue (north-west London)"
-      description__value: '<p>London</p>'
-      description__format: basic_html
-      weight: '0'
-      parent: '0'
-      uuid: 81a7bc29-8272-411f-874a-d06288c07702
-    -
-      vid: venues
       tid: '76'
       langcode: en
       name: 'Lift New Rickstones'
@@ -510,16 +490,6 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: d63db3f9-158e-45d1-ba8a-0df076e71734
-    -
-      vid: venues
-      tid: '93'
-      langcode: en
-      name: 'Private venue (residents' event)'
-      description__value: '<p>London</p>'
-      description__format: basic_html
-      weight: '0'
-      parent: '0'
-      uuid: 8a8478fd-481b-4e2d-95fb-42ddac482356
     -
       vid: venues
       tid: '81'
