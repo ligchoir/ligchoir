@@ -63,7 +63,6 @@ scripts/content/events/import_events.sh scripts/content/events/data/<file>-updat
 ./import_events.sh internationalgospelchoir.uk live scripts/content/events/data/<file>-updates.yml --update
 
 
-
 # Deploying a release that uninstalls modules (config import removes them)
 # Run in the release code dir. Order matters: entities that belong to a module
 # being removed must be deleted BEFORE cim, or the import validation fails.
@@ -367,3 +366,70 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Check: /events (strip under the red band, no black gap, heads in view at
 # wide widths), /book (credit bottom-left on the image), an event page (white
 # on black, pink date, red "How about booking us" band with Book us >).
+
+# ---------------------------------------------------------------------------
+# Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one
+# --update data file plus the structure_sync export (new "London" venue term).
+# No DB updates. On the server as rob.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.14; R=/var/www/05/$D/releases
+
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live     # cim: structure_sync.data Update (expected)
+./import_events.sh $D live scripts/content/events/data/2026-10-coordinator-reply.yml --update --dry-run
+./import_events.sh $D live scripts/content/events/data/2026-10-coordinator-reply.yml --update   # updated=5 venues_created=1
+# Check: https://$D/events shows 23 events incl. the two "Private ... Booking (London)"
+# entries, /event/young-leaders-light-wembley-way and
+# /event/sharing-stories-hope-interfaith-event-st-albans-cathedral load.
+# Then, by hand on live: edit Faithful Voices 2026 and add the flyer as Background Media.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.13 && ./drush_run.sh $D live cr
+# (the content changes stay; re-run the 24 Oct -updates file to undo the renames).
+
+# ---------------------------------------------------------------------------
+# Release 2.0.13 (2026-10-24): Drupal 11.4.11 (bug fix), Gin 5.0.16 (security,
+# SA-CONTRIB-2026-219), Klaro 3.1.2. Code only; no config change, no DB updates.
+# 2.0.12 (same day) was the October events batch. On the server as rob.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.13; R=/var/www/05/$D/releases
+
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live
+./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.11
+# Check: https://$D front page, /events, log in, admin/reports/status, then
+# admin/reports/updates -> "Check manually": core, Gin and Klaro up to date.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.12 && ./drush_run.sh $D live cr
+
+# ---------------------------------------------------------------------------
+# Release 2.0.11 (2026-10-14): Drupal 11.4.10, security release (SA-CORE-2026-014
+# critical RCE, -015 and -016 XSS). Code only; no config change of its own, but
+# the release also carries the clau2 font-preload hotfix (8bfa7d6c) that 2.0.10
+# missed. On the server as rob. Staging first (a few minutes), then live.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.11; R=/var/www/05/$D/releases
+
+# Staging
+./create_release.sh $D $V-staging git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/staging/assets/public/files $R/$V-staging/code/web/sites/default/files
+ls -l $R/$V-staging/code/web/sites/default/files      # -> .../deployment_environments/staging/...
+./deploy.sh $D staging $V-staging                     # DB backup, composer install --no-dev, symlink, updb, cr
+bash $R/$V-staging/code/scripts/devops/post_deploy.sh staging
+# Check: https://staging.$D loads; admin/reports/status says 11.4.10.
+
+# Live
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live
+./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.10
+# Check: https://$D front page, /about, /events, /book, log in, admin/reports/status.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.10 && ./drush_run.sh $D live cr

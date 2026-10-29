@@ -14,7 +14,9 @@
  *   --dry-run     Report what would happen without writing anything.
  *   --update      When an event already exists (same title + same day), update
  *                 it from the file instead of skipping. Date/time/TBC are always
- *                 rewritten; venue, body and published only if the key is present.
+ *                 rewritten; venue, body, tickets and published only if the key
+ *                 is present. A "match_title" key matches the existing node by
+ *                 that title and renames it to "title".
  *
  * The script is idempotent: an event is considered "already present" when an
  * event node exists with the same title (case/whitespace-insensitive) whose
@@ -235,6 +237,30 @@ function ev_find_venue(string $name): ?Term {
 }
 
 /**
+ * Build call-to-action paragraphs for the Tickets field from {url, title} rows.
+ */
+function ev_build_ctas($links, bool $dryRun): array {
+  $ctas = [];
+  foreach ((array) ($links ?? []) as $link) {
+    if (empty($link['url'])) {
+      continue;
+    }
+    $p = Paragraph::create([
+      'type' => 'call_to_action',
+      'field_link' => [
+        'uri' => $link['url'],
+        'title' => $link['title'] ?? 'more info',
+      ],
+    ]);
+    if (!$dryRun) {
+      $p->save();
+    }
+    $ctas[] = $p;
+  }
+  return $ctas;
+}
+
+/**
  * Find an existing event node by title + day. Returns Node or NULL.
  */
 function ev_find_event(string $title, int $dayStart, int $dayEnd): ?Node {
@@ -344,8 +370,13 @@ foreach ($data['events'] as $i => $row) {
       }
     }
 
-    // Existing?
-    $existing = ev_find_event($title, $dayStart, $dayEnd);
+    // Existing? "match_title" lets an --update row rename an event: the row
+    // is matched on match_title and the node takes the new title.
+    $matchTitle = trim((string) ($row['match_title'] ?? $title));
+    $existing = ev_find_event($matchTitle, $dayStart, $dayEnd);
+    if (!$existing && $matchTitle !== $title) {
+      $existing = ev_find_event($title, $dayStart, $dayEnd);
+    }
     if ($existing && !$updateExisting) {
       $counts['skipped']++;
       echo "{$prefix}#{$n} SKIP   {$date} {$timeLabel}  \"{$title}\" (exists as node/{$existing->id()})\n";
@@ -362,6 +393,9 @@ foreach ($data['events'] as $i => $row) {
 
     if ($existing) {
       $node = $existing;
+      if (ev_norm($node->getTitle()) !== ev_norm($title)) {
+        $node->setTitle($title);
+      }
       $node->set('field_when', [$when]);
       $node->set('field_time_tbc', $tbc ? 1 : 0);
       // Only touch venue/status when the row says something about them.
@@ -373,6 +407,10 @@ foreach ($data['events'] as $i => $row) {
       }
       if (isset($row['body'])) {
         $node->set('body', ['value' => (string) $row['body'], 'format' => $defaults['body_format']]);
+      }
+      // A "tickets" key replaces the call-to-action list; an empty list clears it.
+      if (array_key_exists('tickets', $row)) {
+        $node->set('field_tickets', ev_build_ctas($row['tickets'], $dryRun));
       }
       $node->setNewRevision(TRUE);
       $node->setRevisionLogMessage('Updated by import_events.php');
@@ -401,23 +439,7 @@ foreach ($data['events'] as $i => $row) {
       $node = Node::create($values);
 
       // Optional call-to-action paragraphs in the Tickets field.
-      $ctas = [];
-      foreach ((array) ($row['tickets'] ?? []) as $link) {
-        if (empty($link['url'])) {
-          continue;
-        }
-        $p = Paragraph::create([
-          'type' => 'call_to_action',
-          'field_link' => [
-            'uri' => $link['url'],
-            'title' => $link['title'] ?? 'more info',
-          ],
-        ]);
-        if (!$dryRun) {
-          $p->save();
-        }
-        $ctas[] = $p;
-      }
+      $ctas = ev_build_ctas($row['tickets'] ?? [], $dryRun);
       if ($ctas) {
         $node->set('field_tickets', $ctas);
       }

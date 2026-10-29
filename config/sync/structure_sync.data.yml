@@ -452,6 +452,16 @@ taxonomies:
       uuid: 1f3a790d-8db9-4c06-bc7f-1d0c09947d3f
     -
       vid: venues
+      tid: '96'
+      langcode: en
+      name: London
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 772836e2-c19b-4efa-870c-55a90f8315a7
+    -
+      vid: venues
       tid: '48'
       langcode: en
       name: 'London City Hall'
@@ -490,6 +500,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: d1d19d27-0227-494f-add8-e128e1fd2969
+    -
+      vid: venues
+      tid: '95'
+      langcode: en
+      name: 'North-west London'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 452b248d-3c1b-4c61-9de7-7cbc3289ccc6
     -
       vid: venues
       tid: '66'
@@ -542,6 +562,16 @@ taxonomies:
       uuid: f4b252ed-cf74-4ca2-85f4-140ee854c0fd
     -
       vid: venues
+      tid: '94'
+      langcode: en
+      name: 'Romford Road, Stratford'
+      description__value: '<p>27 Romford Road, Stratford, London E15 4LJ</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: ac321f87-df2d-4141-b0b2-462b00322b55
+    -
+      vid: venues
       tid: '44'
       langcode: en
       name: 'Royal Albert Hall'
@@ -580,6 +610,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 6c126f4a-bba5-4efd-bac8-00d1e4214b28
+    -
+      vid: venues
+      tid: '92'
+      langcode: en
+      name: 'St Albans Cathedral'
+      description__value: '<p>Sumpter Yard, St Albans AL1 1BY</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 52d50709-dc77-4f62-98f0-a6fb1aee353d
     -
       vid: venues
       tid: '80'
@@ -730,6 +770,16 @@ taxonomies:
       weight: '0'
       parent: '0'
       uuid: 8f3c21ba-ab1e-40d8-b42f-55430815a8f1
+    -
+      vid: venues
+      tid: '91'
+      langcode: en
+      name: 'Wembley Stadium'
+      description__value: '<p>Wembley Stadium, London HA9 0WS</p>'
+      description__format: basic_html
+      weight: '0'
+      parent: '0'
+      uuid: 7d75c005-c745-4884-943f-266673f1010d
     -
       vid: venues
       tid: '41'

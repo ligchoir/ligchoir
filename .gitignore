@@ -142,3 +142,5 @@ web/libraries/klaro/
 # Front page hero media show choir members; kept out of git
 /scripts/content/front-page/*.mp4
 /scripts/content/front-page/*.webp
+# Event batch data files carry booking details; kept out of git
+/scripts/content/events/data/
