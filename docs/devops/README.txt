@@ -350,7 +350,8 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live     # cim: structure_sync.dat
 # Rollback if needed: ./update_symlink.sh $D live 2.0.13 && ./drush_run.sh $D live cr
 # (the content changes stay; re-run the 24 Oct -updates file to undo the renames).
 
-: Drupal 11.4.11 (bug fix), Gin 5.0.16 (security,
+# ---------------------------------------------------------------------------
+# Release 2.0.13 (2026-10-24): Drupal 11.4.11 (bug fix), Gin 5.0.16 (security,
 # SA-CONTRIB-2026-219), Klaro 3.1.2. Code only; no config change, no DB updates.
 # 2.0.12 (same day) was the October events batch. On the server as rob.
 # ---------------------------------------------------------------------------
