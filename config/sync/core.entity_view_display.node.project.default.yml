@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.project.body
-    - field.field.node.project.field_collaborators
+    - field.field.node.project.field_collaborations
     - field.field.node.project.field_content
     - field.field.node.project.field_dates
     - field.field.node.project.field_image
@@ -33,7 +33,7 @@ content:
     weight: 100
     region: content
 hidden:
-  field_collaborators: true
+  field_collaborations: true
   field_content: true
   field_dates: true
   field_image: true

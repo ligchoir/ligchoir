@@ -111,6 +111,33 @@
   padding-inline: 0;
 }
 
+/* Collaborations (custom_field on the project, issue #51): one row per
+   partner in the side column: the collaborator teaser, then the role as a
+   small label and the note. */
+.node--type-project .field--name-field-collaborations > .field__item {
+  margin-bottom: var(--ligc-space-md);
+}
+
+.node--type-project .field--name-field-collaborations > .field__item .collaborator {
+  margin-bottom: var(--ligc-space-xs);
+}
+
+.node--type-project .collaboration__role {
+  color: var(--ligc-red-on-ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.node--type-project .collaboration__note {
+  color: var(--ligc-text-on-ink-soft);
+}
+
+.node--type-project .collaboration__note p {
+  margin: 0.2em 0 0;
+}
+
 /* Collaborator teaser */
 .collaborator {
   display: flex;

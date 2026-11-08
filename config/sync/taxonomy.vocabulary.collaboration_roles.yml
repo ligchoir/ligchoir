@@ -1,0 +1,9 @@
+uuid: 6acf19a2-0df2-4cb6-97aa-e7fd52ed2c61
+langcode: en
+status: true
+dependencies: {  }
+name: 'Collaboration roles'
+vid: collaboration_roles
+description: 'How a collaborator took part in a project: performed with, commissioned by, hosted by, and so on. Used by the Collaborations field on Project.'
+weight: 0
+new_revision: false

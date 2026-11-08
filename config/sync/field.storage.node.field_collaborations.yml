@@ -1,0 +1,32 @@
+uuid: 877a8bf6-8072-48b5-812c-8af4984a7fcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_field
+    - node
+    - taxonomy
+id: node.field_collaborations
+field_name: field_collaborations
+entity_type: node
+type: custom
+settings:
+  columns:
+    collaborator:
+      name: collaborator
+      type: entity_reference
+      target_type: node
+    role:
+      name: role
+      type: entity_reference
+      target_type: taxonomy_term
+    note:
+      name: note
+      type: string_long
+module: custom_field
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

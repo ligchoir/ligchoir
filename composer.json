@@ -24,6 +24,7 @@
         "drupal/core-project-message": "^11.4",
         "drupal/core-recommended": "^11.4",
         "drupal/ctools": "^4.1",
+        "drupal/custom_field": "^5.0",
         "drupal/ds": "^3.30",
         "drupal/field_formatter_class": "^1.4",
         "drupal/focal_point": "^2.1",

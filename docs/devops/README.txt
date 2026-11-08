@@ -373,6 +373,9 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # one row on desktop and darker grey, footer at the bottom of /privacy,
 # search button opens a full-width row under the header, /about names at the
 # old size and "We are London..." flush with "About us".
+./drush php:script scripts/devops/collaboration_roles_2026.php  # issue #51: seeds the Collaboration roles vocabulary (performed with, supported, commissioned by, ...) for the new Collaborations field on Project
+# Check: /node/add/project has a "Collaborations" group (collaborator
+# autocomplete, role select, note); /liv still renders (no collaborations yet).
 
 # ---------------------------------------------------------------------------
 # Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one

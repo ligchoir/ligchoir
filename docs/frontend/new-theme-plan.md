@@ -395,7 +395,7 @@ alias of the LIV project node so old links keep working.
 | body | text | Description |
 | field_status | list: planned, active, completed | drives sorting and the "current/past" split on the landing page |
 | field_dates | smart_date (optional) | for time-boxed projects |
-| field_collaborators | paragraph `collaborator`, unlimited | see below |
+| field_collaborations | `custom_field` (collaborator reference, role term, note), unlimited | see below; replaced `field_collaborators` 2026-11-08 |
 | field_outcomes | entity reference to event, unlimited | past or future events; auto-complete |
 | field_links | link, unlimited | Spotify release, press, videos |
 | field_content | paragraphs | the existing page-building types, so LIV's text and booking form (`contact` paragraph with the `liv_book` webform) move across unchanged |
@@ -411,15 +411,25 @@ the same collaborator (another choir, a producer, a venue) can take part
 in more than one project. `collaborator` is the party itself and replaces
 the `organisation` type first planned: title, body, `field_image` (media
 image: logo or portrait), `field_website` (link), `field_kind` (list:
-organisation, person). The project's `field_collaborators` is an
-entity reference to collaborator nodes. The per-project role (performed
-with, commissioned, hosted, produced, recorded, funded…) is a small
-`collaboration` paragraph on the project (collaborator reference, roles
-from a `collaboration_roles` vocabulary, optional note) if the team wants
-roles shown; decided at step 5 when the first real project is entered.
-Collaborators have no public page at first (no path alias; shown only on
-project pages), which avoids publishing a page per partner before there is
-anything to say.
+organisation, person). Collaborators have no public page at first (no
+path alias; shown only on project pages), which avoids publishing a page
+per partner before there is anything to say.
+
+**Collaborations** (decision 16.14, 2026-11-08, issue #51): the project's
+link to its collaborators is `field_collaborations`, a `custom_field`
+(contrib, 5.x) with three sub-fields per row: `collaborator` (entity
+reference to a collaborator node), `role` (term from the
+`collaboration_roles` vocabulary: performed with, supported, commissioned
+by, hosted by, produced by, recorded with, funded by, workshop with,
+organised by, broadcast by; `collaboration_roles_2026.php` seeds them) and
+`note` (formatted text, basic_html). One compound field inside the node
+instead of a paragraph type or a second entity per relationship: the
+research for issue #50 showed almost every project has several partners
+with different roles. Rob uses custom_field on other projects. The plain
+`field_collaborators` reference is deleted (nothing used it: zero
+collaborator nodes). Displayed in the project page's side column
+(Layout Builder block, `custom_formatter`: collaborator teaser, role as a
+small red label, note), styled in `css/project.css`.
 
 **Person**: decision 16.4 (2026-10-06): `team_member` is renamed in place
 to `person` (bundle label and machine name, with the migration-script
@@ -801,6 +811,9 @@ is merged and released as one version.
     review round 3 (2026-11-08).
 13. new.ligchoir.com is set up through the infrastructure repo
     (section 13).
+14. Collaborations on a project are a `custom_field` compound (collaborator
+    reference, role term, note) rather than Collaborator references plus a
+    paragraph (Rob, 2026-11-08, issue #51; section 8).
 
 ## Sources
 

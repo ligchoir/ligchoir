@@ -1,0 +1,70 @@
+uuid: aee46b23-9dbc-4e4d-99fa-0a695e888536
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_collaborations
+    - filter.format.basic_html
+    - node.type.collaborator
+    - node.type.project
+    - taxonomy.vocabulary.collaboration_roles
+  module:
+    - custom_field
+id: node.project.field_collaborations
+field_name: field_collaborations
+entity_type: node
+bundle: project
+label: Collaborations
+description: 'Who the choir worked with on this project and how. One row per partner: the collaborator (another choir, an artist, a venue, a charity), their role, and an optional note.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  add_more_label: 'Add another collaboration'
+  field_settings:
+    collaborator:
+      label: Collaborator
+      check_empty: true
+      required: true
+      translatable: false
+      description: 'Start typing the name of an existing collaborator. Add new ones under Content > Add content > Collaborator first.'
+      description_display: after
+      handler: 'default:node'
+      handler_settings:
+        sort:
+          field: title
+          direction: ASC
+        auto_create: false
+        target_bundles:
+          collaborator: collaborator
+        auto_create_bundle: ''
+    role:
+      label: Role
+      check_empty: false
+      required: false
+      translatable: false
+      description: ''
+      description_display: after
+      handler: 'default:taxonomy_term'
+      handler_settings:
+        sort:
+          field: weight
+          direction: ASC
+        auto_create: false
+        target_bundles:
+          collaboration_roles: collaboration_roles
+        auto_create_bundle: ''
+    note:
+      label: Note
+      check_empty: false
+      required: false
+      translatable: false
+      description: 'Optional: what they did on this project, in a sentence or two.'
+      description_display: after
+      formatted: true
+      default_format: basic_html
+      format:
+        guidelines: false
+        help: false
+field_type: custom

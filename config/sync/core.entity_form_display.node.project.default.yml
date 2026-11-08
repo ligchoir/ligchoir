@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.project.body
-    - field.field.node.project.field_collaborators
+    - field.field.node.project.field_collaborations
     - field.field.node.project.field_content
     - field.field.node.project.field_dates
     - field.field.node.project.field_image
@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.project.field_status
     - node.type.project
   module:
+    - custom_field
     - link
     - media_library
     - paragraphs
@@ -34,15 +35,38 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_collaborators:
-    type: entity_reference_autocomplete
+  field_collaborations:
+    type: custom_stacked
     weight: 5
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      wrapper: details
+      label_value: collaborator
+      label_limit: 60
+      label_prefix: Collaboration
+      auto_collapse: true
+      open: true
+      fields:
+        collaborator:
+          weight: 0
+          type: entity_reference_autocomplete
+          label: Collaborator
+          size: 60
+          placeholder: ''
+          match_operator: CONTAINS
+          match_limit: 10
+        role:
+          weight: 1
+          type: entity_reference_select
+          label: Role
+          empty_option: '- None -'
+        note:
+          weight: 2
+          type: textarea
+          label: Note
+          placeholder: ''
+          maxlength: null
+          rows: 3
     third_party_settings: {  }
   field_content:
     type: entity_reference_paragraphs

@@ -5,7 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.project.body
-    - field.field.node.project.field_collaborators
+    - field.field.node.project.field_collaborations
     - field.field.node.project.field_content
     - field.field.node.project.field_dates
     - field.field.node.project.field_image
@@ -14,6 +14,7 @@ dependencies:
     - field.field.node.project.field_status
     - node.type.project
   module:
+    - custom_field
     - layout_builder
     - layout_discovery
     - user
@@ -118,7 +119,7 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:project:field_dates'
-              label: field_dates
+              label: Dates
               label_display: visible
               provider: layout_builder
               context_mapping:
@@ -156,19 +157,60 @@ third_party_settings:
             uuid: 23b1f71e-cbf0-41b4-b706-46cd3dd2e7db
             region: second
             configuration:
-              id: 'field_block:node:project:field_collaborators'
-              label: field_collaborators
+              id: 'field_block:node:project:field_collaborations'
+              label: Collaborations
               label_display: visible
               provider: layout_builder
               context_mapping:
                 entity: layout_builder.entity
                 view_mode: view_mode
               formatter:
-                type: entity_reference_entity_view
+                type: custom_formatter
                 label: hidden
                 settings:
-                  view_mode: teaser
-                  link: false
+                  fields:
+                    collaborator:
+                      weight: 0
+                      format_type: entity_reference_entity_view
+                      wrappers:
+                        field_wrapper_tag: div
+                        field_wrapper_classes: collaboration__who
+                        field_tag: ''
+                        field_classes: ''
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings:
+                        label_display: hidden
+                        field_label: Collaborator
+                        view_mode: teaser
+                        link: false
+                    role:
+                      weight: 1
+                      format_type: entity_reference_label
+                      wrappers:
+                        field_wrapper_tag: div
+                        field_wrapper_classes: collaboration__role
+                        field_tag: ''
+                        field_classes: ''
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings:
+                        label_display: hidden
+                        field_label: Role
+                        link: false
+                    note:
+                      weight: 2
+                      format_type: text_default
+                      wrappers:
+                        field_wrapper_tag: div
+                        field_wrapper_classes: collaboration__note
+                        field_tag: ''
+                        field_classes: ''
+                        label_tag: ''
+                        label_classes: ''
+                      formatter_settings:
+                        label_display: hidden
+                        field_label: Note
                 third_party_settings: {  }
             weight: 0
             additional:
@@ -178,7 +220,7 @@ third_party_settings:
             region: second
             configuration:
               id: 'field_block:node:project:field_links'
-              label: field_links
+              label: Links
               label_display: visible
               provider: layout_builder
               context_mapping:
@@ -208,7 +250,7 @@ third_party_settings:
             region: content
             configuration:
               id: 'field_block:node:project:field_outcomes'
-              label: field_outcomes
+              label: Outcomes
               label_display: visible
               provider: layout_builder
               context_mapping:
@@ -259,7 +301,7 @@ mode: full
 content: {  }
 hidden:
   body: true
-  field_collaborators: true
+  field_collaborations: true
   field_content: true
   field_dates: true
   field_image: true
