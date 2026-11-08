@@ -1,7 +1,7 @@
 $schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
 name: Footer
 status: stable
-description: 'Slate grey band in three layers (Solent pattern): the main menu as a 3 x 2 grid (2 x 3 on phones) with the social links to its right; a ruled row of policy links; the copyright line. Stacks on phones.'
+description: 'Dark slate band in three layers (Solent pattern): the main menu in one ruled row (two rows of three on phones) with the social links to its right; a ruled row of policy links; the copyright line. Stacks on phones.'
 props:
   type: object
   required:

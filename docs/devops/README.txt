@@ -366,6 +366,13 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # Check: /events (strip under the red band, no black gap, heads in view at
 # wide widths), /book (credit bottom-left on the image), an event page (white
 # on black, pink date, red "How about booking us" band with Book us >).
+./drush php:script scripts/devops/review_round_3_2026.php  # review round 3 (issues #38-#49): Events page titled "Events & News" at /events-news (/events kept as an alias), menu item repointed, Events intro in the wide column, listing's view paragraph without colour pickers
+# Check: /events-news (title and hero "Events & News", upcoming events as cards,
+# "What's on?" text flush with the strip), /events still opens the same page,
+# front page heading "Events & News" linking to /events-news, footer menu in
+# one row on desktop and darker grey, footer at the bottom of /privacy,
+# search button opens a full-width row under the header, /about names at the
+# old size and "We are London..." flush with "About us".
 
 # ---------------------------------------------------------------------------
 # Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one

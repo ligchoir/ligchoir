@@ -1,0 +1,42 @@
+/*
+ * Legacy paragraph columns on the alignment grid (review round 3, A28).
+ *
+ * The clau2 paragraph styles centred their text in a narrower column (8em of
+ * side padding for the wide text column, 5em for the two-column and contact
+ * paragraphs, 1.5em more inside each column), so body text started well to
+ * the right of the hero heading and the events strip above it. Here every
+ * one of those columns takes the same left edge as the components: the
+ * 1200px container padding from base.css. The single (narrow) column keeps
+ * its centred 65% measure: Book us uses it for the "A high-energy..."
+ * statement under the hero, which Rob wants centred.
+ */
+.layout-content .text-confine-single-column-wide,
+.layout-content .ligc-content-2-column {
+  width: auto;
+  margin-inline: 0;
+  padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+/* A wide text column nested inside a two-column or contact paragraph is
+   already on the grid through its parent. */
+.layout-content .ligc-content-2-column .text-confine-single-column-wide {
+  padding-inline: 0;
+}
+
+/* Two columns: the outer edges sit on the grid, the inner padding only
+   separates the two columns. Below 1024px the columns stack, so both lose
+   their side padding. */
+.layout-content .ligc-column-left .paragraph--type--text,
+.layout-content .ligc-column-right .paragraph--type--text {
+  padding-inline: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .layout-content .ligc-column-left .paragraph--type--text {
+    padding-right: 1.5em;
+  }
+
+  .layout-content .ligc-column-right .paragraph--type--text {
+    padding-left: 1.5em;
+  }
+}

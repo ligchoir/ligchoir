@@ -17,6 +17,9 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+{# The header area is editor text through a text format, so after striptags
+   what is left is already escaped ("Events &amp; News"): print it raw rather
+   than escape it twice (review round 3). #}
 {% set heading = header|render|striptags|trim %}
 {# The "more" element is a more_link: #url (Url object) and #title. #}
 {% set more_url = more['#url'] is defined ? more['#url'].toString() : '' %}
@@ -24,7 +27,7 @@
   {{ title_prefix }}{{ title }}{{ title_suffix }}
   {% if heading %}
     <h2 class="events-cards__heading">
-      {% if more_url %}<a class="ligc-more" href="{{ more_url }}">{{ heading }}</a>{% else %}{{ heading }}{% endif %}
+      {% if more_url %}<a class="ligc-more" href="{{ more_url }}">{{ heading|raw }}</a>{% else %}{{ heading|raw }}{% endif %}
     </h2>
   {% endif %}
   {% if rows %}

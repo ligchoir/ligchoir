@@ -119,5 +119,8 @@
 .ligc-term-content h2 {
   margin-top: 0.3em;
   margin-bottom: 0.3em;
+  /* clau3: the browser default size the live site has (1.5em), not the
+     page-heading scale from base.css (review round 3, A26). */
+  font-size: 1.5rem;
 }
 

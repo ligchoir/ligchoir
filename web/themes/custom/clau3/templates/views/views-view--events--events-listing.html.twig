@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * The events "events_listing" display on the Events & News page: every
+ * upcoming event as the same card as the front page grid (review round 3,
+ * A29). No heading of its own (the hero and the strip above it do that
+ * job); the footer area carries the "See our past events" link.
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    'events-cards',
+    'events-cards--listing',
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<section{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}{{ title }}{{ title_suffix }}
+  {% if header %}
+    <div class="events-cards__header">{{ header }}</div>
+  {% endif %}
+  {% if rows %}
+    <div class="events-cards__grid">{{ rows }}</div>
+  {% elseif empty %}
+    <div class="events-cards__empty">{{ empty }}</div>
+  {% endif %}
+  {% if footer %}
+    <div class="events-cards__footer">{{ footer }}</div>
+  {% endif %}
+</section>

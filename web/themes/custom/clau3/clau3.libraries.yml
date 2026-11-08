@@ -10,6 +10,7 @@ global:
       css/base.css: {}
     layout:
       css/layout.css: {}
+      css/content-grid.css: {}
       css/system-pages.css: {}
       css/search-page.css: {}
       css/events-cards.css: {}

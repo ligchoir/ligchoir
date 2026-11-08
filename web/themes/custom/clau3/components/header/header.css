@@ -62,16 +62,26 @@
 }
 
 @media (min-width: 800px) {
+  /* The header is one wrapping flex row: brand bar on the left, menu and
+     search button on the right, and the search panel (when open) as a
+     full-width row underneath (search.css). The nav, region and block
+     wrappers between the header and those pieces take display: contents so
+     the pieces are the header's own flex children. */
   .site-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--ligc-space-md);
+    gap: 0 var(--ligc-space-xs);
   }
 
-  .site-header__nav {
-    display: flex;
-    align-items: center;
-    gap: var(--ligc-space-xs);
+  .site-header__bar {
+    margin-right: auto;
+  }
+
+  .site-header__nav,
+  .site-header__nav > div,
+  .site-header__nav .block,
+  .site-header__nav .site-search {
+    display: contents;
   }
 }

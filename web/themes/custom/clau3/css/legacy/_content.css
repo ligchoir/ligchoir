@@ -1,11 +1,7 @@
 /* LEGACY: copied from clau2 for the clau3 skeleton; replaced step by step (plan section 15). */
 
-@media screen and (min-width: 768px ) {
-  .ligc-content-2-column {
-    padding-left: 5em;
-    padding-right: 5em;  
-  }
-}
+/* .ligc-content-2-column: side padding now comes from css/content-grid.css
+   (review round 3, A28). */
 
 @media screen and (max-width: 1023px ) {
   .ligc-column-left {

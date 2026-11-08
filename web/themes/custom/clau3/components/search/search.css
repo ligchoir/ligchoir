@@ -87,16 +87,15 @@ html.js .site-search__nojs { display: none; }
   background: var(--ligc-red-dark);
 }
 
-/* Desktop: the form drops down under the header bar, full width, black. */
+/* Desktop: the form is a full-width black row under the header bar, in the
+   flow, so it pushes the page down rather than covering it (review round 3,
+   A27). header.css makes the panel a direct flex child of the header. */
 @media (min-width: 800px) {
   .site-search__panel {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    z-index: 10;
+    flex: 1 0 100%;
+    order: 10;
     background: var(--ligc-ink);
-    border-bottom: 1px solid var(--ligc-rule-on-ink);
+    border-top: 1px solid var(--ligc-rule-on-ink);
     padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
   }
 

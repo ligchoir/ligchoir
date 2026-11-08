@@ -1,8 +1,14 @@
-/* Front page events grid (views display "cards"). The cards themselves are
-   the event-card component. */
+/* Events grids: the front page (views display "cards") and the Events & News
+   page (display "events_listing", review round 3, A29). The cards themselves
+   are the event-card component. */
 .events-cards {
   padding-block: var(--ligc-space-xl);
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
+}
+
+/* On the events page the intro text sits above the grid, so less room on top. */
+.events-cards--listing {
+  padding-top: var(--ligc-space-md);
 }
 
 .events-cards__heading,
@@ -36,6 +42,10 @@
 .events-cards__more {
   margin: var(--ligc-space-md) 0 0;
   font-size: 1.1rem;
+}
+
+.events-cards__footer p:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 600px) {

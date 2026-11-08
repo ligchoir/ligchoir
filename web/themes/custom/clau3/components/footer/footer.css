@@ -1,5 +1,5 @@
 .site-footer {
-  background: var(--ligc-slate);
+  background: var(--ligc-slate-dark);
   color: var(--ligc-text-on-slate-soft);
   border-top: 1px solid var(--ligc-rule-on-slate);
   padding-block: var(--ligc-space-lg);
@@ -19,28 +19,26 @@
   gap: var(--ligc-space-md);
 }
 
-/* The main menu as a grid: two columns of three on phones, three columns of
-   two on desktop, a 1px rule between the columns. Each item draws the rule
-   on its own left edge, and with no row gap the rules of the two rows join
-   into one line. */
+/* The main menu as a grid with a 1px rule between the columns: two rows of
+   three on phones, one row on desktop (review round 3, A24). Each item draws
+   the rule on its own left edge; the first item of a row has none, and with
+   no row gap the rules of the two phone rows join into one line. */
 .footer-menu__list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, max-content));
+  grid-template-columns: repeat(3, minmax(0, max-content));
 }
 
 .footer-menu__item {
   padding: 0.3em 1.25rem;
-}
-
-.footer-menu__item:nth-child(2n + 1) {
-  padding-left: 0;
-}
-
-.footer-menu__item:nth-child(2n) {
   border-left: 1px solid var(--ligc-rule-on-slate);
+}
+
+.footer-menu__item:nth-child(3n + 1) {
+  padding-left: 0;
+  border-left: 0;
 }
 
 .footer-menu__link,
@@ -112,25 +110,21 @@
     align-items: center;
   }
 
+  /* One row: every item in its own column, however many there are. */
   .footer-menu__list {
-    grid-template-columns: repeat(3, minmax(0, max-content));
-  }
-
-  .footer-menu__item:nth-child(2n + 1) {
-    padding-left: 1.25rem;
-  }
-
-  .footer-menu__item:nth-child(2n) {
-    border-left: 0;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
   }
 
   .footer-menu__item:nth-child(3n + 1) {
-    padding-left: 0;
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--ligc-rule-on-slate);
   }
 
-  .footer-menu__item:nth-child(3n + 2),
-  .footer-menu__item:nth-child(3n) {
-    border-left: 1px solid var(--ligc-rule-on-slate);
+  .footer-menu__item:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .site-footer__social,

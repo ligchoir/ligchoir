@@ -55,7 +55,7 @@ function _clau3_system_page(): ?array {
       'intro' => t('Sorry, there is no page at this address. It may have moved, or the link may be out of date.'),
       'links' => [
         (string) t('Home') => '/',
-        (string) t('Events') => '/events',
+        (string) t('Events & News') => '/events-news',
         (string) t('About us') => '/about',
         (string) t('Join us') => '/join',
         (string) t('Book us') => '/book',
@@ -259,11 +259,14 @@ function _clau3_responsive_media($entity, string $field, string $responsive_styl
  * Items for the events section strip, or NULL when the path is not an events view.
  *
  * Static on purpose: the three paths exist (two landing pages and the map
- * view page) and need no controller.
+ * view page) and need no controller. The Events & News page moved from
+ * /events to /events-news in review round 3 (A30); /events stays as a second
+ * alias so old links still work, and the past events and map pages keep
+ * their paths.
  */
 function _clau3_events_strip(string $current_path): ?array {
   $items = [
-    ['title' => t('Upcoming'), 'url' => '/events'],
+    ['title' => t('Upcoming'), 'url' => '/events-news'],
     ['title' => t('Past'), 'url' => '/events/past-events'],
     ['title' => t('Map'), 'url' => '/events/map'],
   ];

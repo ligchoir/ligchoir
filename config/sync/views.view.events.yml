@@ -644,7 +644,7 @@ display:
       use_more_always: true
       use_more_text: 'View all events'
       link_display: custom_url
-      link_url: /events
+      link_url: /events-news
       header:
         area:
           id: area
@@ -656,7 +656,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<h2 class="ligc-section-heading">Events</h2>'
+            value: '<h2 class="ligc-section-heading">Events &amp; News</h2>'
             format: basic_html
           tokenize: false
       footer: {  }
@@ -687,8 +687,8 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: "<h2>Please check back here later on for forthcoming events.</h2>\r\n<h2>In the meantime, how about <a href=\"/book\">booking us</a> for your event?</h2>"
-            format: full_html
+            value: '<p>Please check back here later on for forthcoming events. In the meantime, how about <a href="/book">booking us</a> for your event?</p>'
+            format: basic_html
           tokenize: false
       filters:
         status:
@@ -813,12 +813,26 @@ display:
         groups:
           1: AND
           2: OR
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: event_card
       defaults:
         empty: false
+        style: false
+        row: false
         filters: false
         filter_groups: false
         footer: false
-      display_description: ''
+      display_description: 'All upcoming events as cards (the same card as the front page). Embedded on the Events & News page through a view paragraph.'
       footer:
         area:
           id: area
@@ -830,7 +844,7 @@ display:
           plugin_id: text
           empty: true
           content:
-            value: '<h2>See also our <a href="/events/past-events">past events</a></h2>'
+            value: '<p class="events-cards__more"><a class="ligc-more" href="/events/past-events">See our past events</a></p>'
             format: full_html
           tokenize: false
       display_extenders: {  }

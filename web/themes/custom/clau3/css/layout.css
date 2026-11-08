@@ -1,9 +1,18 @@
 /* Page frame: header, main, footer. The footer stays at the bottom of short
-   pages. */
+   pages. Core wraps the page in .dialog-off-canvas-main-canvas (the
+   off-canvas dialog's wrapper), so that div is the flex column that holds
+   header, main and footer; the body only has to let it grow (review round 3,
+   A25). */
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
 }
 
 .site-main {

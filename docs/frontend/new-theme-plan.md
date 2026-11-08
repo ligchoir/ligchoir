@@ -453,10 +453,12 @@ inner) and `footer-end.css`. LIGC does the same with less:
   `field_social` (the existing `social_and_contact_links` paragraph, so
   the icon markup the team already maintains is reused).
 - The `footer` SDC (built in step 1): a **slate grey** band
-  (`--ligc-slate`, #37474f; white text on it is 9.3:1), white text at 85%
-  opacity, links at least 4.5:1, social icons on their coloured discs as
+  (`--ligc-slate`, #37474f; white text on it is 9.3:1; darkened to
+  `--ligc-slate-dark`, #263238, 13.6:1, in review round 3), white text at
+  85% opacity, links at least 4.5:1, social icons on their coloured discs as
   now (Rob, 2026-10-06, items 10 and 12) with the contrast fixes in
-  section 12, stacked on mobile.
+  section 12, stacked on mobile. Main menu in one ruled row on desktop, two
+  rows of three on phones (review round 3).
 - The empty `footer` system menu is deleted or used for the links instead
   of `field_links`; a menu is easier for the team to edit, so prefer the
   menu and drop `field_links`.
@@ -740,6 +742,34 @@ is merged and released as one version.
    Join us intro to the wide column, moves the Book us credit into the hero,
    sets focal points at 50% / 12% on the Events and Book us images and
    switches every event to the black scheme.
+   **Review round 3** (Rob, 2026-11-08, GitHub issues #38 to #49, local):
+   A23 footer band darker (`--ligc-slate-dark` #263238; `--ligc-slate` stays
+   for the card placeholders); A24 footer menu in one ruled row on desktop,
+   two rows of three on phones; A25 footer pinned to the bottom of short
+   pages (core's `.dialog-off-canvas-main-canvas` wrapper is the flex column,
+   not the body); A26 team names on About at the browser's 1.5em, as on the
+   live site; A27 the desktop search form is a full-width row in the flow
+   under the header bar, pushing the page down instead of overlaying it
+   (header wrappers take `display: contents`); A28 the legacy wide text,
+   two-column and contact paragraphs sit on the alignment grid
+   (`css/content-grid.css`; their 8em / 5em side paddings removed from the
+   legacy CSS), so body text lines up with the hero heading on About, Join
+   us, Book us and Events; the narrow centred column stays for the Book us
+   statement; A29 the Events & News page lists upcoming events as the front
+   page's cards (`events_listing` display: `event_card` rows,
+   `views-view--events--events-listing.html.twig`; the legacy teaser template
+   for that display is gone; "See our past events" is a chevron link under
+   the grid); A30 "Events" is "Events & News" everywhere: front page heading
+   (view header), page title and hero heading, menu item, and the page is at
+   `/events-news` (`/events` kept as a second alias, no redirect module;
+   past events and map keep `/events/past-events` and `/events/map`).
+   `review_round_3_2026.php` renames the page and hero, adds the alias,
+   repoints the menu item, moves the Events intro to the wide column and
+   clears the colour pickers on the listing's view paragraph (cards on black).
+   Open from this round: whether the Book us statement "A high-energy
+   musical performance for your event" stays as a paragraph or becomes the
+   hero's text on the red band (#41, Rob to decide); #50 more projects and
+   #51 content types are handled separately.
 7. **Review site** and the team's feedback rounds.
 8. **Canvas spike** on a branch off `feat/new-theme`, after step 5, with
    a written verdict in this document.
@@ -767,7 +797,8 @@ is merged and released as one version.
    HTTP auth login. Needed at step 7.
 10. Social icons keep their coloured discs (section 9).
 11. WebP now, AVIF when the server can encode it (section 11).
-12. Footer band is slate grey, not black (section 9).
+12. Footer band is slate grey, not black (section 9); darker slate from
+    review round 3 (2026-11-08).
 13. new.ligchoir.com is set up through the infrastructure repo
     (section 13).
 
