@@ -20,6 +20,7 @@ if (!\Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($vid)
 }
 $roles = [
   'Performed with',
+  'Performed for',
   'Supported',
   'Commissioned by',
   'Hosted by',

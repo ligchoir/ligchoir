@@ -21,13 +21,20 @@
 
 .node--type-project .field--name-title {
   display: block;
-  margin: calc(-1 * var(--ligc-space-xl)) 0 0;
-  padding: var(--ligc-space-md) var(--ligc-gutter) 0;
+  margin: 0;
+  padding: var(--ligc-space-lg) var(--ligc-gutter) 0;
   padding-inline: max(var(--ligc-gutter), calc((100% - var(--ligc-container-max)) / 2 + var(--ligc-gutter)));
   position: relative;
   font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem);
   font-weight: 700;
   line-height: 1.1;
+}
+
+/* With an image the title rides up over its bottom edge; without one (most
+   of the first batch of projects) it simply sits under the header. */
+.node--type-project .layout--onecol:has(.field--name-field-image) .field--name-title {
+  margin-top: calc(-1 * var(--ligc-space-xl));
+  padding-top: var(--ligc-space-md);
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
 }
 
@@ -86,25 +93,35 @@
   text-underline-offset: 4px;
 }
 
-/* Section 3: outcomes as event cards. */
+/* Section 3: outcomes as event cards. The Layout Builder block prints its
+   label as a bare <h2> before the field; with the field label hidden, Drupal
+   puts field__items on the field element itself. */
 .node--type-project .field--name-field-outcomes {
   padding-block: 0 var(--ligc-space-xl);
 }
 
-.node--type-project .field--name-field-outcomes > .field__label {
-  margin-bottom: var(--ligc-space-md);
+.node--type-project .layout--onecol > .layout__region > div > h2 {
+  margin: 0 0 var(--ligc-space-md);
   font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem);
   font-weight: 700;
 }
 
+.node--type-project .field--name-field-outcomes.field__items,
 .node--type-project .field--name-field-outcomes > .field__items {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--ligc-space-md);
 }
 
-@media (min-width: 600px) { .node--type-project .field--name-field-outcomes > .field__items { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1200px) { .node--type-project .field--name-field-outcomes > .field__items { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 600px) {
+  .node--type-project .field--name-field-outcomes.field__items,
+  .node--type-project .field--name-field-outcomes > .field__items { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .node--type-project .field--name-field-outcomes.field__items,
+  .node--type-project .field--name-field-outcomes > .field__items { grid-template-columns: repeat(4, 1fr); }
+}
 
 /* Section 4 (page content paragraphs) is edge to edge like a landing page. */
 .node--type-project.node--view-mode-full .layout--onecol:last-child {

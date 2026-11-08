@@ -376,6 +376,10 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 ./drush php:script scripts/devops/collaboration_roles_2026.php  # issue #51: seeds the Collaboration roles vocabulary (performed with, supported, commissioned by, ...) for the new Collaborations field on Project
 # Check: /node/add/project has a "Collaborations" group (collaborator
 # autocomplete, role select, note); /liv still renders (no collaborations yet).
+./drush php:script scripts/devops/projects_batch_2026_11.php  # issue #50: 23 collaborator nodes and 23 project nodes (one per story, from docs/tasks/projects-shortlist-2026-11.md) with existing events as outcomes; LIV gets its Crypt concert as an outcome. Creates only what is missing by title.
+# Check: /projects shows 24 cards (3 active first); /projects/bbc-proms-2019
+# (title under the header, Collaborations in the side column, outcome card);
+# /projects/sinfonia-smith-square (seven outcome cards, four across on desktop).
 
 # ---------------------------------------------------------------------------
 # Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one

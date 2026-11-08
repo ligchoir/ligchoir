@@ -5,8 +5,10 @@
  * page only; the organiser link lives on the event page.
  */
 #}
+{# node.label, not the title field: inside a project page the field markup
+   would pick up the project title style (.node--type-project .field--name-title). #}
 {% embed 'clau3:event-card' with {
-  title: label,
+  title: node.label,
   url: url,
   venue: node.field_venue.entity ? node.field_venue.entity.label : '',
 } %}

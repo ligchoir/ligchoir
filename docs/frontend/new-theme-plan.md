@@ -776,10 +776,16 @@ is merged and released as one version.
    `review_round_3_2026.php` renames the page and hero, adds the alias,
    repoints the menu item, moves the Events intro to the wide column and
    clears the colour pickers on the listing's view paragraph (cards on black).
-   Open from this round: whether the Book us statement "A high-energy
-   musical performance for your event" stays as a paragraph or becomes the
-   hero's text on the red band (#41, Rob to decide); #50 more projects and
-   #51 content types are handled separately.
+   Rob kept the Book us statement as it is (#41 closed). #51 became the
+   `custom_field` collaborations model (section 8, decision 14). #50: the
+   research shortlist is `docs/tasks/projects-shortlist-2026-11.md`;
+   `projects_batch_2026_11.php` creates the first 23 projects, one per
+   story (Rob, 2026-11-08: no grouped pages; themes can be tags and views
+   later), with 23 collaborator nodes and the existing events as outcomes.
+   The team adds images, stories and links. Project pages without an image
+   keep the title under the header (`:has()` in `project.css`); card and
+   collaborator templates print `node.label` so the project title style
+   cannot leak into them.
 7. **Review site** and the team's feedback rounds.
 8. **Canvas spike** on a branch off `feat/new-theme`, after step 5, with
    a written verdict in this document.

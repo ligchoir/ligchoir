@@ -1,5 +1,11 @@
 # Projects shortlist for the new site (GitHub issue #50)
 
+**Status 2026-11-08:** Rob chose one Project per story (no grouped pages).
+`scripts/devops/projects_batch_2026_11.php` created the twelve flagship
+items below as 23 projects (groups 8 to 12 split into their separate
+stories) plus 23 Collaborator nodes, with the existing events linked as
+outcomes. Section 2 and 3 items are not created yet.
+
 Compiled 2026-11-08 from three sources: 156 choir newsletters 2018–2026, the
 members' WhatsApp notice board 2020–2026, and the 109 event nodes already on
 the site. The detailed research (with newsletter dates, chat dates, links and
