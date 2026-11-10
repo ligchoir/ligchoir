@@ -2,7 +2,7 @@
 /**
  * @file
  * The events "cards" display: a heading that links to the events page, the
- * grid of event cards, and "View all events" as the same kind of link. Both
+ * grid of event cards, and "View all events & news" as the same kind of link. Both
  * links use the display's "more" URL and text, so they stay in the view's
  * configuration.
  */
@@ -36,6 +36,6 @@
     <div class="events-cards__empty">{{ empty }}</div>
   {% endif %}
   {% if more_url %}
-    <p class="events-cards__more"><a class="ligc-more" href="{{ more_url }}">{{ more['#title']|default('View all events'|t) }}</a></p>
+    <p class="events-cards__more"><a class="ligc-more" href="{{ more_url }}">{{ more['#title']|default('View all events & news'|t) }}</a></p>
   {% endif %}
 </section>

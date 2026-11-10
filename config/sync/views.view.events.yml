@@ -639,10 +639,10 @@ display:
         filter_groups: false
         header: false
         footer: false
-      display_description: 'Upcoming events as cards, eight at most, with a View all events link. Embedded on the front page through a view paragraph.'
+      display_description: 'Upcoming events as cards, eight at most, with a "View all events & news" link. Embedded on the front page through a view paragraph.'
       use_more: true
       use_more_always: true
-      use_more_text: 'View all events'
+      use_more_text: 'View all events & news'
       link_display: custom_url
       link_url: /events-news
       header:

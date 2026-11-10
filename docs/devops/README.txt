@@ -464,10 +464,12 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 # ligchoir.com vhosts point at it, and the review environment is removed.
 #
 # BEFORE STARTING (Rob):
-#  - DNS: new.ligchoir.com currently resolves to 104.248.164.167 (server04),
-#    not server03 (157.245.32.67) where the site, toolkit and database live.
-#    Point the A record at 157.245.32.67 (or say if the new site is meant to
-#    live on server04, which is a bigger job: no site there yet).
+#  - SERVER: Rob's choice (2026-11-10) is server04 (104.248.164.167, where
+#    new.ligchoir.com already points), not server03. Claude's key does not
+#    open server04 yet, so the block below is still written for a third
+#    environment on server03 and will be rewritten once server04 can be
+#    inspected (toolkit, Apache/PHP/MariaDB, site structure, a copy of the
+#    live database and files from server03).
 #  - Push feat/new-theme (create_release clones it from GitHub).
 #  - HTTP auth: one shared login for the team, user "ligc" and the simple
 #    password Rob chose (2026-11-10); it only has to keep crawlers out.
