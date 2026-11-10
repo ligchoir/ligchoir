@@ -329,59 +329,6 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
-# New theme (feat/new-theme, Oct 2026, release when the team signs off the
-# review site). Content steps that go with the config, from the release code
-# dir after cim; both are idempotent:
-# ---------------------------------------------------------------------------
-./drush php:script scripts/devops/front_page_2026.php   # hero media import, front page paragraphs in the new order, orphan paragraph clean-up
-# Check: / plays the hero loop (poster for reduced-motion users), shows the
-# events cards, About text and the three cards; /about and the events pages
-# still render the old paragraph output in the new frame.
-./drush php:script scripts/devops/event_colour_schemes.php   # every event gets field_colour_scheme (paper) from its old colour terms
-./drush php:script scripts/devops/geocode_venues.php         # venue locations via Nominatim (1 req/s, ~75 s first time); re-run after adding an "Address for the map" to any venue it could not place
-./drush php:script scripts/devops/menu_2026.php              # Home, Events & News, Join us, Book us, About (+ Projects when /projects exists)
-# Check: /events (strip Upcoming · Past · Map, teasers without organiser link),
-# an event page (details box, organiser button only for future events),
-# /events/map (Show the map button, then markers; nothing from unpkg or
-# openstreetmap before the click).
-# The events map needs no CDN: Leaflet 1.9.3 is committed under
-# web/libraries/leaflet and the ligc_maps module points the Geolocation
-# Leaflet provider at it. When geolocation_leaflet is updated, compare the
-# version it names in src/Plugin/geolocation/MapProvider/Leaflet.php and
-# refresh web/libraries/leaflet to match.
-./drush php:script scripts/devops/projects_2026.php         # Projects landing page, L•I•V becomes a project at /liv, front page card -> /projects
-./drush php:script scripts/devops/menu_2026.php             # run AGAIN after projects_2026: swaps the L• I• V menu item for Projects
-# Check: /projects (intro + project cards), /liv (project page: image, title,
-# description, booking form), menu Home · Events & News · Join us · Book us ·
-# About · Projects.
-./drush php:script scripts/devops/landing_heroes_2026.php  # hero paragraph from each landing page's background image; editor <h1> in paragraph text -> <h2>
-# Check: /about, /join, /book, /events show the page image in the hero with the
-# title on the red band under it; view source has exactly one <h1> per page.
-./drush php:script scripts/devops/review_round_1_2026.php  # review round 1: removes the round buttons under the heroes and the About footnote, chevron on "More about us", footer policy links (+ placeholder Terms of use and Accessibility pages)
-# Check: footer on every page = main menu grid + social links / Contact us ·
-# Terms of use · Privacy policy · Accessibility / copyright; no round buttons
-# under the heroes on /, /events, /join, /book; /terms-of-use and
-# /accessibility exist (placeholder text until the team writes them).
-./drush php:script scripts/devops/review_round_2_2026.php  # review round 2: vertical-space paragraphs off the landing pages, Join us intro in the wide column, Book us photo credit into the hero, focal points near the top of the Events and Book us images (+ derivative flush), all events on the black scheme
-# Check: /events (strip under the red band, no black gap, heads in view at
-# wide widths), /book (credit bottom-left on the image), an event page (white
-# on black, pink date, red "How about booking us" band with Book us >).
-./drush php:script scripts/devops/review_round_3_2026.php  # review round 3 (issues #38-#49): Events page titled "Events & News" at /events-news (/events kept as an alias), menu item repointed, Events intro in the wide column, listing's view paragraph without colour pickers
-# Check: /events-news (title and hero "Events & News", upcoming events as cards,
-# "What's on?" text flush with the strip), /events still opens the same page,
-# front page heading "Events & News" linking to /events-news, footer menu in
-# one row on desktop and darker grey, footer at the bottom of /privacy,
-# search button opens a full-width row under the header, /about names at the
-# old size and "We are London..." flush with "About us".
-./drush php:script scripts/devops/collaboration_roles_2026.php  # issue #51: seeds the Collaboration roles vocabulary (performed with, supported, commissioned by, ...) for the new Collaborations field on Project
-# Check: /node/add/project has a "Collaborations" group (collaborator
-# autocomplete, role select, note); /liv still renders (no collaborations yet).
-./drush php:script scripts/devops/projects_batch_2026_11.php  # issue #50: 23 collaborator nodes and 23 project nodes (one per story, from docs/tasks/projects-shortlist-2026-11.md) with existing events as outcomes; LIV gets its Crypt concert as an outcome. Creates only what is missing by title.
-# Check: /projects shows 24 cards (3 active first); /projects/bbc-proms-2019
-# (title under the header, Collaborations in the side column, outcome card);
-# /projects/sinfonia-smith-square (seven outcome cards, four across on desktop).
-
-# ---------------------------------------------------------------------------
 # Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one
 # --update data file plus the structure_sync export (new "London" venue term).
 # No DB updates. On the server as rob.
@@ -447,3 +394,171 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 ./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.10
 # Check: https://$D front page, /about, /events, /book, log in, admin/reports/status.
 # Rollback if needed: ./update_symlink.sh $D live 2.0.10 && ./drush_run.sh $D live cr
+
+# ---------------------------------------------------------------------------
+# New theme (feat/new-theme): the content steps that go with the config, from
+# the release code dir after cim. ALL of them are idempotent and
+# scripts/devops/new_theme_content.sh <env> [hero media dir] runs the lot in
+# this order (use it; the list below is what it does and what to check).
+# ---------------------------------------------------------------------------
+./drush php:script scripts/devops/front_page_2026.php   # hero media import, front page paragraphs in the new order, orphan paragraph clean-up
+# Check: / plays the hero loop (poster for reduced-motion users), shows the
+# events cards, About text and the three cards; /about and the events pages
+# still render the old paragraph output in the new frame.
+./drush php:script scripts/devops/event_colour_schemes.php   # every event gets field_colour_scheme (paper) from its old colour terms
+./drush php:script scripts/devops/geocode_venues.php         # venue locations via Nominatim (1 req/s, ~75 s first time); re-run after adding an "Address for the map" to any venue it could not place
+./drush php:script scripts/devops/menu_2026.php              # Home, Events & News, Join us, Book us, About (+ Projects when /projects exists)
+# Check: /events (strip Upcoming · Past · Map, teasers without organiser link),
+# an event page (details box, organiser button only for future events),
+# /events/map (Show the map button, then markers; nothing from unpkg or
+# openstreetmap before the click).
+# The events map needs no CDN: Leaflet 1.9.3 is committed under
+# web/libraries/leaflet and the ligc_maps module points the Geolocation
+# Leaflet provider at it. When geolocation_leaflet is updated, compare the
+# version it names in src/Plugin/geolocation/MapProvider/Leaflet.php and
+# refresh web/libraries/leaflet to match.
+./drush php:script scripts/devops/projects_2026.php         # Projects landing page, L•I•V becomes a project at /liv, front page card -> /projects
+./drush php:script scripts/devops/menu_2026.php             # run AGAIN after projects_2026: swaps the L• I• V menu item for Projects
+# Check: /projects (intro + project cards), /liv (project page: image, title,
+# description, booking form), menu Home · Events & News · Join us · Book us ·
+# About · Projects.
+./drush php:script scripts/devops/landing_heroes_2026.php  # hero paragraph from each landing page's background image; editor <h1> in paragraph text -> <h2>
+# Check: /about, /join, /book, /events show the page image in the hero with the
+# title on the red band under it; view source has exactly one <h1> per page.
+./drush php:script scripts/devops/review_round_1_2026.php  # review round 1: removes the round buttons under the heroes and the About footnote, chevron on "More about us", footer policy links (+ placeholder Terms of use and Accessibility pages)
+# Check: footer on every page = main menu grid + social links / Contact us ·
+# Terms of use · Privacy policy · Accessibility / copyright; no round buttons
+# under the heroes on /, /events, /join, /book; /terms-of-use and
+# /accessibility exist (placeholder text until the team writes them).
+./drush php:script scripts/devops/review_round_2_2026.php  # review round 2: vertical-space paragraphs off the landing pages, Join us intro in the wide column, Book us photo credit into the hero, focal points near the top of the Events and Book us images (+ derivative flush), all events on the black scheme
+# Check: /events (strip under the red band, no black gap, heads in view at
+# wide widths), /book (credit bottom-left on the image), an event page (white
+# on black, pink date, red "How about booking us" band with Book us >).
+./drush php:script scripts/devops/review_round_3_2026.php  # review round 3 (issues #38-#49): Events page titled "Events & News" at /events-news (/events kept as an alias), menu item repointed, Events intro in the wide column, listing's view paragraph without colour pickers
+# Check: /events-news (title and hero "Events & News", upcoming events as cards,
+# "What's on?" text flush with the strip), /events still opens the same page,
+# front page heading "Events & News" linking to /events-news, footer menu in
+# one row on desktop and darker grey, footer at the bottom of /privacy,
+# search button opens a full-width row under the header, /about names at the
+# old size and "We are London..." flush with "About us".
+./drush php:script scripts/devops/collaboration_roles_2026.php  # issue #51: seeds the Collaboration roles vocabulary (performed with, supported, commissioned by, ...) for the new Collaborations field on Project
+# Check: /node/add/project has a "Collaborations" group (collaborator
+# autocomplete, role select, note); /liv still renders (no collaborations yet).
+./drush php:script scripts/devops/projects_batch_2026_11.php  # issue #50: 23 collaborator nodes and 23 project nodes (one per story, from docs/tasks/projects-shortlist-2026-11.md) with existing events as outcomes; LIV gets its Crypt concert as an outcome. Creates only what is missing by title.
+# Check: /projects shows 24 cards (3 active first); /projects/bbc-proms-2019
+# (title under the header, Collaborations in the side column, outcome card);
+# /projects/sinfonia-smith-square (seven outcome cards, four across on desktop).
+./drush php:script scripts/devops/projects_batch_2_2026_11.php  # issue #50 second batch: tier 2 one-offs and the recurring strands (7/7 memorial, Grenfell, City Hall, charity Christmas partners, own concert series...) with their events as outcomes. Creates only what is missing by title.
+# Check: /projects (45 cards, the two unconfirmed ones unpublished), /projects/our-concerts (sixteen outcome cards), /projects/charity-christmas-concerts (six collaborations).
+
+
+# ===========================================================================
+# REVIEW SITE new.ligchoir.com (feat/new-theme, Nov 2026). Section 13 of
+# docs/frontend/new-theme-plan.md. A THIRD ENVIRONMENT of the existing site
+# on server03: deployment_environments/review, database 3 (settings/3), its
+# own copy of the files, Apache vhost new.ligchoir.com behind HTTP basic
+# auth (same layout as the other preview sites: sites-passwords/<host>/).
+# At go-live the theme release goes to the normal live environment, the
+# ligchoir.com vhosts point at it, and the review environment is removed.
+#
+# BEFORE STARTING (Rob):
+#  - DNS: new.ligchoir.com currently resolves to 104.248.164.167 (server04),
+#    not server03 (157.245.32.67) where the site, toolkit and database live.
+#    Point the A record at 157.245.32.67 (or say if the new site is meant to
+#    live on server04, which is a bigger job: no site there yet).
+#  - Push feat/new-theme (create_release clones it from GitHub).
+#  - Decide the HTTP auth user names (one shared login for the team is
+#    enough; htpasswd prompts for the password, nothing is stored in git).
+# On the server as rob. sudo steps are marked.
+# ===========================================================================
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.1.0-review; R=/var/www/05/$D/releases; B=/var/www/05/$D
+
+# 1. Environment directories, database 3, settings/3
+mkdir -p $B/deployment_environments/review/assets/public/files $B/settings/3
+chmod 770 $B/deployment_environments/review/assets/public/files
+./create_database.sh $D 3 ligc                      # -> dligc_3 / uligc_3; needs the MySQL root password (sudo mysql works too)
+cp $B/settings/1/settings.local.php $B/settings/3/settings.local.php
+chmod 640 $B/settings/3/settings.local.php
+nano $B/settings/3/settings.local.php
+#    - database/username/password: the dligc_3 values create_database printed
+#    - the four webform to_mail lines: YOUR address only, so test submissions
+#      from the team never reach the choir's inboxes
+#    - leave the smtp lines as they are
+
+# 2. Live database and files into the review environment
+./backup_db.sh $D 1                                  # fresh dump of live -> $B/backups/database/dligc_<stamp>.sql.gz
+./restore_db.sh $D 3 $B/backups/database/dligc_<stamp>.sql.gz     # answers "yes"; makes a safety dump of the (empty) db 3 first
+rsync -a $B/deployment_environments/live/assets/public/files/ $B/deployment_environments/review/assets/public/files/
+sudo chown -R www-data:www-data $B/deployment_environments/review/assets/public/files
+
+# 3. Release from the branch, pointed at environment "review" and database 3
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git feat/new-theme
+cd $R/$V/code/web/sites/default
+ln -sfn ../../../../../../settings/3/settings.local.php settings.local.php
+ln -sfn ../../../../../../deployment_environments/review/assets/public/files files
+ls -l settings.local.php files                       # -> settings/3, deployment_environments/review
+cd ~/infrastructure/provision-site/toolkit
+./deploy.sh $D review $V                             # dumps db 3, composer install --no-dev, docroot symlink, php-fpm reload, updb, cr
+bash $R/$V/code/scripts/devops/post_deploy.sh review # private files dir (sudo), fix_definitions, cim (installs custom_field, clau3 default), cst
+
+# 4. Hero media (not in git; from Rob's private media folder) and the content steps
+mkdir -p /tmp/hero                                   # then from your Mac:
+#   scp site-dev/ligc-private/2026-10/media/hero-1280.mp4 site-dev/ligc-private/2026-10/media/hero-poster.webp server03:/tmp/hero/
+#   (or the sharper 1920 cut / the vertical cut from site-dev/ligc-private/2026-11/media/, renamed to those two names)
+bash $R/$V/code/scripts/devops/new_theme_content.sh review /tmp/hero
+rm -rf /tmp/hero
+
+# 5. Apache vhost with basic auth, then the certificate (sudo)
+sudo mkdir -p /etc/apache2/sites-passwords/new.ligchoir.com
+sudo htpasswd -c /etc/apache2/sites-passwords/new.ligchoir.com/.htpasswd ligc    # prompts for the password; -c only the first time
+sudo tee /etc/apache2/sites-available/new.ligchoir.com.conf > /dev/null <<'VHOST'
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName new.ligchoir.com
+    DocumentRoot /var/www/05/internationalgospelchoir.uk/deployment_environments/review/docroot
+    ErrorLog ${APACHE_LOG_DIR}/new.ligchoir.com_error.log
+    CustomLog ${APACHE_LOG_DIR}/new.ligchoir.com_access.log combined
+    Header set X-Robots-Tag "noindex, nofollow"
+
+    <Directory "/var/www/05/internationalgospelchoir.uk/deployment_environments/review/docroot">
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+
+        # Review copy of the new site: password protected until launch.
+        AuthType Basic
+        AuthName "LIGC new site review"
+        AuthUserFile /etc/apache2/sites-passwords/new.ligchoir.com/.htpasswd
+        Require valid-user
+    </Directory>
+</VirtualHost>
+VHOST
+sudo a2enmod headers >/dev/null; sudo a2ensite new.ligchoir.com.conf && sudo apache2ctl configtest && sudo systemctl reload apache2
+curl -sI http://new.ligchoir.com/ | head -3                         # 401 Unauthorized = auth is on
+sudo certbot --apache -d new.ligchoir.com                           # makes new.ligchoir.com-le-ssl.conf (keeps the auth block) + http->https redirect
+# Check: https://new.ligchoir.com asks for the login, then: / (hero loop,
+# Events & News cards), /events-news, /projects (and a project page),
+# /about, /join, /book (submit the form: the mail lands in YOUR inbox),
+# admin login, admin/reports/status. Robots: the 401 keeps crawlers out;
+# the header is belt and braces.
+#
+# Refreshing the review site with newer live content later (events the
+# coordinator adds): repeat step 2 (backup_db 1, restore_db 3), then
+#   bash $R/$V/code/scripts/devops/post_deploy.sh review && bash $R/$V/code/scripts/devops/new_theme_content.sh review /tmp/hero
+# Updating the review site to a newer feat/new-theme: new release name
+# (2.1.0-review2 ...), steps 3 and 4 again.
+#
+# GO-LIVE (after the team's approval; outline, to be written up as its own
+# block when the time comes): merge feat/new-theme into main, release 2.1.0
+# to the live environment the normal way (create_release, files symlink to
+# live, deploy, post_deploy live, new_theme_content.sh live /tmp/hero);
+# ligchoir.com and www.ligchoir.com vhosts on server03 pointing at the live
+# docroot with certbot certificates (DNS for both to 157.245.32.67 first;
+# they currently resolve to 178.62.78.220 = server02 and redirect to
+# internationalgospelchoir.uk); www -> ligchoir.com redirect;
+# internationalgospelchoir.uk and www. vhosts become 301 redirects to
+# ligchoir.com (keep their certificates renewing); system.site name/mail
+# unchanged; webform to_mail unchanged (settings/1); install_cron.sh
+# unchanged (per domain dir); disable the review vhost and drop database 3.
+# Trusted hosts for all three ligchoir.com names are already in settings.php.

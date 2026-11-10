@@ -1,7 +1,7 @@
 #!/bin/bash
 # Finish a deploy: repair, import config, migrate, verify. Idempotent.
 #
-#   scripts/devops/post_deploy.sh live|staging
+#   scripts/devops/post_deploy.sh live|staging|review
 #
 # Run from anywhere; it works on the release that contains it. Run it after
 # the code is in place (deploy.sh, or git pull + composer install) and the
@@ -25,8 +25,8 @@ set -euo pipefail
 
 ENVIRONMENT="${1:-}"
 case "${ENVIRONMENT}" in
-  live|staging|local) ;;
-  *) echo "Usage: $0 live|staging|local" >&2; exit 1 ;;
+  live|staging|review|local) ;;
+  *) echo "Usage: $0 live|staging|review|local" >&2; exit 1 ;;
 esac
 
 CODE="$(cd "$(dirname "$0")/../.." && pwd)"

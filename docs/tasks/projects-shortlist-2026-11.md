@@ -4,7 +4,12 @@
 `scripts/devops/projects_batch_2026_11.php` created the twelve flagship
 items below as 23 projects (groups 8 to 12 split into their separate
 stories) plus 23 Collaborator nodes, with the existing events linked as
-outcomes. Section 2 and 3 items are not created yet.
+outcomes. **2026-11-10:** `projects_batch_2_2026_11.php` created sections 2
+and 3 as well (23 more projects, 40 more collaborators, one page per one-off
+and per recurring strand); *Memorial* at the Barbican and the Holocaust
+Memorial Day recording are created unpublished until someone confirms them.
+Not created (recurring but not shortlisted): Worship Time Events, Sounds
+Sublime, Faiths in Tune, the Great Gospel Gathering.
 
 Compiled 2026-11-08 from three sources: 156 choir newsletters 2018–2026, the
 members' WhatsApp notice board 2020–2026, and the 109 event nodes already on

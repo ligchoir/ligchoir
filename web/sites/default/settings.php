@@ -850,6 +850,10 @@ if (empty($settings['trusted_host_patterns'])) {
     '^internationalgospelchoir\.uk$',
     '^www\.internationalgospelchoir\.uk$',
     '^staging\.internationalgospelchoir\.uk$',
+    // The new site: review at new.ligchoir.com, then ligchoir.com itself.
+    '^new\.ligchoir\.com$',
+    '^ligchoir\.com$',
+    '^www\.ligchoir\.com$',
   ];
 }
 

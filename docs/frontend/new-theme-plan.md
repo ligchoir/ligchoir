@@ -288,6 +288,21 @@ exists and accepts mp4) and the poster as an `image` media item, so the
 team can change the clip without a deploy. HandBrake is not needed;
 ffmpeg does the trimming and encoding and is already installed.
 
+Sharpness (Rob, 2026-11-10): the 1280-wide clip is upscaled on desktop
+screens and looks soft. Two candidates sit in Rob's private media folder
+(`ligc-private/2026-11/media/`, README there): the same clip re-cut at
+1920x1008 from the 1080p source (CRF 30, 5.8 MB, visibly sharper; CRF 28
+is 7.3 MB) and a second idea from Rob, the choir's vertical "little
+moments" rehearsal reel composed into a 1920x1008 loop by
+`vertical-hero.py` in the infrastructure repo: the 9:16 clip fades out at
+each of its sixteen scene changes, moves across the frame and fades back
+in over a blurred, darkened copy of itself (2.9 MB, all settings in an
+`edl.json` Rob can tune and re-render). The clip stays at 66% of the
+frame height so the hero box, which crops the frame to 70vh, shows it
+whole on a 1080p screen. Decision pending Rob's look at both; the vertical
+version is swapped into the local site for now. Whichever is chosen, the
+video still loads only on wide viewports and the poster is what phones get.
+
 ### 5.2 Events grid
 
 A new `cards` display on the `events` view: upcoming events, 8 per page
@@ -592,19 +607,33 @@ extension on front, events, one event, about and the forms.
 ## 13. Review site new.ligchoir.com
 
 A third environment on server03 alongside live and staging:
-`deployment_environments/review` (own database restored from a live
-backup, own files directory copied from live, own `settings/3`), a
-release cut from `feat/new-theme` with `create_release.sh` (4th argument
-is the branch), nginx server block for new.ligchoir.com with a Let's
-Encrypt certificate and HTTP basic auth (`auth_basic` with an htpasswd
-file outside the web root), `X-Robots-Tag: noindex` from nginx and
-`robots.txt` disallow all. Drupal's `trusted_host_patterns` in that
-environment's settings lists the new host. The toolkit changes (a third
-environment number, the nginx template with basic auth) belong in the
-infrastructure repo github.com/therobyouknow/infrastructure (confirmed
-by Rob, 2026-10-06, item 13). ligchoir.com is a different domain from the live
-internationalgospelchoir.uk; confirm its DNS is at the same provider
-before the session that sets this up.
+`deployment_environments/review` (own database 3 restored from a live
+backup, own files directory copied from live, own `settings/3` with the
+webform recipients pointed at Rob), a release cut from `feat/new-theme`
+with `create_release.sh` (4th argument is the branch), an Apache vhost for
+new.ligchoir.com (the server runs Apache, not nginx as first written here)
+with a Let's Encrypt certificate and HTTP basic auth in the same layout as
+the other preview sites on the server (`sites-passwords/<host>/.htpasswd`),
+and `X-Robots-Tag: noindex`. `trusted_host_patterns` in `settings.php`
+already lists new.ligchoir.com, ligchoir.com and www.ligchoir.com.
+`post_deploy.sh` accepts `review`, and `scripts/devops/new_theme_content.sh
+<env> [hero media dir]` runs every content script in order, so the review
+site can be rebuilt from a fresh live dump at any time and the same two
+commands do the content half of go-live.
+
+The runnable block is in `docs/devops/README.txt` ("REVIEW SITE"). Rob runs
+it: the server steps need sudo, and the branch has to be pushed first.
+Found 2026-11-10: new.ligchoir.com resolves to server04
+(104.248.164.167), not server03 (157.245.32.67); ligchoir.com and www
+resolve to server02 (178.62.78.220) and redirect to the old domain. The A
+records need to move to server03 before the vhosts and certificates can
+be made there.
+
+At go-live the theme release goes to the normal live environment,
+ligchoir.com and www.ligchoir.com get vhosts on server03 pointing at it,
+internationalgospelchoir.uk redirects to ligchoir.com, and the review
+environment and database 3 are removed (outline at the end of the README
+block).
 
 ## 14. What stays as it is
 
@@ -786,7 +815,11 @@ is merged and released as one version.
    keep the title under the header (`:has()` in `project.css`); card and
    collaborator templates print `node.label` so the project title style
    cannot leak into them.
-7. **Review site** and the team's feedback rounds.
+7. **Review site** and the team's feedback rounds. 2026-11-10: prepared
+   (README block, `new_theme_content.sh`, `post_deploy.sh review`, trusted
+   hosts); waiting on the DNS move to server03 and Rob's run of the block.
+   Rob set the evaluation URL on 2026-11-10; the team's approval may take
+   a week or more, then ligchoir.com goes to the new site (section 13).
 8. **Canvas spike** on a branch off `feat/new-theme`, after step 5, with
    a written verdict in this document.
 9. **Launch**: merge, release, uninstall clau2/classy/stable/
@@ -809,8 +842,9 @@ is merged and released as one version.
 7. Focal point: **yes** (section 11).
 8. OPEN: colour scheme list for events (red, green, black, cream) or a
    different set of vetted pairs. Needed at step 4.
-9. OPEN: ligchoir.com DNS access for the `new` record, and who gets the
-   HTTP auth login. Needed at step 7.
+9. ligchoir.com DNS: Rob has access (record for `new` made 2026-11-10,
+   pointing at server04; to be moved to server03). HTTP auth: one shared
+   login for the team, user name chosen when the block is run.
 10. Social icons keep their coloured discs (section 9).
 11. WebP now, AVIF when the server can encode it (section 11).
 12. Footer band is slate grey, not black (section 9); darker slate from

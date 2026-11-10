@@ -170,7 +170,7 @@ third_party_settings:
                 settings:
                   fields:
                     collaborator:
-                      weight: 0
+                      weight: 1
                       format_type: entity_reference_entity_view
                       wrappers:
                         field_wrapper_tag: div
@@ -185,7 +185,7 @@ third_party_settings:
                         view_mode: teaser
                         link: false
                     role:
-                      weight: 1
+                      weight: 0
                       format_type: entity_reference_label
                       wrappers:
                         field_wrapper_tag: div
