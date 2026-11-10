@@ -815,6 +815,11 @@ is merged and released as one version.
    keep the title under the header (`:has()` in `project.css`); card and
    collaborator templates print `node.label` so the project title style
    cannot leak into them.
+   Review round 4 (Rob, 2026-11-10): the Past events page is the same card
+   grid as Events & News (the archive display uses the event card view mode,
+   its view paragraph loses the colour pickers in
+   `review_round_4_2026.php`), each grid ends with a card pointing at the
+   other, the front page link reads "View all events & news".
 7. **Review site** and the team's feedback rounds. 2026-11-10: prepared
    (README block, `new_theme_content.sh`, `post_deploy.sh review`, trusted
    hosts); waiting on the DNS move to server03 and Rob's run of the block.

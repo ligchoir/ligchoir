@@ -50,6 +50,7 @@ run landing_heroes_2026.php        # hero paragraphs on the landing pages
 run review_round_1_2026.php
 run review_round_2_2026.php
 run review_round_3_2026.php
+run review_round_4_2026.php
 run collaboration_roles_2026.php   # collaboration roles vocabulary (#51)
 run projects_batch_2026_11.php     # 23 projects + 23 collaborators (#50)
 run projects_batch_2_2026_11.php   # tier 2 one-offs and recurring strands (#50)

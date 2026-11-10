@@ -437,6 +437,10 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 ./drush php:script scripts/devops/review_round_3_2026.php  # review round 3 (issues #38-#49): Events page titled "Events & News" at /events-news (/events kept as an alias), menu item repointed, Events intro in the wide column, listing's view paragraph without colour pickers
 # (2026-11-10, config only: the listing ends with a "Past events" card in
 # the grid instead of the footer link; cim does it.)
+./drush php:script scripts/devops/review_round_4_2026.php  # review round 4: the Past events page's view paragraph loses its colour pickers; with the config, the archive is the same card grid as Events & News, ending with an "Events & News" card
+# Check: /events/past-events (cards on black under the strip, four across on
+# desktop, last card "Events & News"); /events-news unchanged apart from the
+# "Past events" card at the end; front page link "View all events & news".
 # Check: /events-news (title and hero "Events & News", upcoming events as cards,
 # "What's on?" text flush with the strip), /events still opens the same page,
 # front page heading "Events & News" linking to /events-news, footer menu in

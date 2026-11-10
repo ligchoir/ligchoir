@@ -343,6 +343,18 @@ display:
             value: "<h2>Please check back here later on for  details of our past events.</h2>\r\n<h2>In the meantime, how about <a href=\"/book\">booking us</a> for your event?</h2>"
             format: full_html
           tokenize: false
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: event_card
       sorts:
         field_when_value:
           id: field_when_value
@@ -434,6 +446,8 @@ display:
         groups:
           1: AND
       defaults:
+        style: false
+        row: false
         empty: false
         title: true
         sorts: false
@@ -441,20 +455,7 @@ display:
         filter_groups: false
         footer: false
       display_description: ''
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: '<h2>See our <a href="/events">future events</a></h2>'
-            format: full_html
-          tokenize: false
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1

@@ -6,6 +6,10 @@
  * A29). No heading of its own (the hero and the strip above it do that
  * job). The grid ends with a "Past events" card in the same shape as the
  * event cards (Rob, 2026-11-10), which replaced the footer link.
+ *
+ * The past events page ("block_events_past" display) includes this
+ * template, so both lists are the same grid; the listing ends with a Past
+ * events card and the archive with an Events & News card.
  */
 #}
 {%
@@ -31,6 +35,7 @@
     {{ rows }}
     {# The archive as one more card: the brand mark on slate like events
        without a photo, with the link text where the date would be. #}
+    {% if display_id == 'events_listing' %}
     <article class="event-card event-card--past">
       <a class="event-card__link" href="/events/past-events">
         <div class="event-card__media event-card__media--empty"></div>
@@ -41,7 +46,20 @@
         </div>
       </a>
     </article>
+    {% elseif display_id == 'block_events_past' %}
+    <article class="event-card event-card--past">
+      <a class="event-card__link" href="/events-news">
+        <div class="event-card__media event-card__media--empty"></div>
+        <div class="event-card__body">
+          <div class="event-card__date">{{ 'Coming up'|t }}</div>
+          <h3 class="event-card__title">{{ 'Events & News'|t }}</h3>
+          <p class="event-card__venue">{{ 'Where to hear us next'|t }}</p>
+        </div>
+      </a>
+    </article>
+    {% endif %}
   </div>
+  {{ pager }}
   {% if footer %}
     <div class="events-cards__footer">{{ footer }}</div>
   {% endif %}
