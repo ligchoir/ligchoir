@@ -435,6 +435,8 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 # wide widths), /book (credit bottom-left on the image), an event page (white
 # on black, pink date, red "How about booking us" band with Book us >).
 ./drush php:script scripts/devops/review_round_3_2026.php  # review round 3 (issues #38-#49): Events page titled "Events & News" at /events-news (/events kept as an alias), menu item repointed, Events intro in the wide column, listing's view paragraph without colour pickers
+# (2026-11-10, config only: the listing ends with a "Past events" card in
+# the grid instead of the footer link; cim does it.)
 # Check: /events-news (title and hero "Events & News", upcoming events as cards,
 # "What's on?" text flush with the strip), /events still opens the same page,
 # front page heading "Events & News" linking to /events-news, footer menu in
@@ -467,8 +469,9 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 #    Point the A record at 157.245.32.67 (or say if the new site is meant to
 #    live on server04, which is a bigger job: no site there yet).
 #  - Push feat/new-theme (create_release clones it from GitHub).
-#  - Decide the HTTP auth user names (one shared login for the team is
-#    enough; htpasswd prompts for the password, nothing is stored in git).
+#  - HTTP auth: one shared login for the team, user "ligc" and the simple
+#    password Rob chose (2026-11-10); it only has to keep crawlers out.
+#    htpasswd prompts for it, so it is not written down here.
 # On the server as rob. sudo steps are marked.
 # ===========================================================================
 cd ~/infrastructure/provision-site/toolkit && git pull --ff-only

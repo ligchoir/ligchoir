@@ -833,20 +833,7 @@ display:
         filter_groups: false
         footer: false
       display_description: 'All upcoming events as cards (the same card as the front page). Embedded on the Events & News page through a view paragraph.'
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: '<p class="events-cards__more"><a class="ligc-more" href="/events/past-events">See our past events</a></p>'
-            format: full_html
-          tokenize: false
+      footer: {  }
       display_extenders: {  }
     cache_metadata:
       max-age: -1
