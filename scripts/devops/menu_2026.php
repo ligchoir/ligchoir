@@ -20,6 +20,11 @@ $by_uri = [];
 foreach ($links as $link) {
   $by_uri[$link->get('link')->uri] = $link;
 }
+// Review round 3 repoints the events item at /events-news; count that as
+// the same item, or a second run (a rebuilt review site) would add another.
+if (isset($by_uri['internal:/events-news']) && !isset($by_uri['internal:/events'])) {
+  $by_uri['internal:/events'] = $by_uri['internal:/events-news'];
+}
 
 // "Home" is the standard profile's own static link (standard.front_page);
 // give it the first slot through a static override instead of a second
