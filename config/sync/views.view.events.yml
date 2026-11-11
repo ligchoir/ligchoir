@@ -343,6 +343,28 @@ display:
             value: "<h2>Please check back here later on for  details of our past events.</h2>\r\n<h2>In the meantime, how about <a href=\"/book\">booking us</a> for your event?</h2>"
             format: full_html
           tokenize: false
+      pager:
+        type: full
+        options:
+          offset: 0
+          pagination_heading_level: h4
+          items_per_page: 24
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next'
+            previous: 'Previous'
+            first: 'First'
+            last: 'Last'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 5
       style:
         type: default
         options:
@@ -446,6 +468,7 @@ display:
         groups:
           1: AND
       defaults:
+        pager: false
         style: false
         row: false
         empty: false

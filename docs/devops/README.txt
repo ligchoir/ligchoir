@@ -459,115 +459,69 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 
 
 # ===========================================================================
-# REVIEW SITE new.ligchoir.com (feat/new-theme, Nov 2026). Section 13 of
-# docs/frontend/new-theme-plan.md. A THIRD ENVIRONMENT of the existing site
-# on server03: deployment_environments/review, database 3 (settings/3), its
-# own copy of the files, Apache vhost new.ligchoir.com behind HTTP basic
-# auth (same layout as the other preview sites: sites-passwords/<host>/).
-# At go-live the theme release goes to the normal live environment, the
-# ligchoir.com vhosts point at it, and the review environment is removed.
+# REVIEW SITE new.ligchoir.com on SERVER04 (feat/new-theme, Nov 2026).
+# Section 13 of docs/frontend/new-theme-plan.md. A NEW site directory on
+# server04 (104.248.164.167: Ubuntu 26.04, Apache 2.4.66, PHP 8.5, MariaDB
+# 11.8, the toolkit in ~/infrastructure/provision-site/toolkit, rob has
+# sudo): /var/www/05/ligchoir.com in the toolkit layout, environment "live",
+# database 1, so that at go-live only the vhosts change (ligchoir.com and
+# www.ligchoir.com pointing at the same docroot, auth block removed) and
+# internationalgospelchoir.uk on server03 becomes a redirect.
 #
-# BEFORE STARTING (Rob):
-#  - SERVER: Rob's choice (2026-11-10) is server04 (104.248.164.167, where
-#    new.ligchoir.com already points), not server03. Claude's key does not
-#    open server04 yet, so the block below is still written for a third
-#    environment on server03 and will be rewritten once server04 can be
-#    inspected (toolkit, Apache/PHP/MariaDB, site structure, a copy of the
-#    live database and files from server03).
-#  - Push feat/new-theme (create_release clones it from GitHub).
-#  - HTTP auth: one shared login for the team, user "ligc" and the simple
-#    password Rob chose (2026-11-10); it only has to keep crawlers out.
-#    htpasswd prompts for it, so it is not written down here.
-# On the server as rob. sudo steps are marked.
+# DONE 2026-11-11 (Claude, over ssh):
+#   create_site_structure.sh 05 ligchoir.com
+#   database dligchoir_1 / uligchoir_1 (password in ~/.ligchoir_db1_pw on
+#     server04, 600, and in settings/1/settings.local.php)
+#   settings/1/settings.local.php = the live one from server03 with the new
+#     database and the four webform to_mail lines pointed at Rob
+#   live database (server03 dump dligc_20261111_005327) imported into dligchoir_1
+#   live public files (1115 files, 157 MB) copied into
+#     deployment_environments/live/assets/public/files
+#   Apache vhost new.ligchoir.com.conf (basic auth, user ligc, the simple
+#     password Rob chose; X-Robots-Tag noindex) + Let's Encrypt certificate
+#     (certbot --apache, expires 2027-02-09, auto-renews) + http->https
+#
+# TO DO once feat/new-theme is pushed (create_release clones it from GitHub).
+# On server04 as rob:
 # ===========================================================================
 cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
-D=internationalgospelchoir.uk; V=2.1.0-review; R=/var/www/05/$D/releases; B=/var/www/05/$D
+D=ligchoir.com; V=2.1.0-review; R=/var/www/05/$D/releases
 
-# 1. Environment directories, database 3, settings/3
-mkdir -p $B/deployment_environments/review/assets/public/files $B/settings/3
-chmod 770 $B/deployment_environments/review/assets/public/files
-./create_database.sh $D 3 ligc                      # -> dligc_3 / uligc_3; needs the MySQL root password (sudo mysql works too)
-cp $B/settings/1/settings.local.php $B/settings/3/settings.local.php
-chmod 640 $B/settings/3/settings.local.php
-nano $B/settings/3/settings.local.php
-#    - database/username/password: the dligc_3 values create_database printed
-#    - the four webform to_mail lines: YOUR address only, so test submissions
-#      from the team never reach the choir's inboxes
-#    - leave the smtp lines as they are
-
-# 2. Live database and files into the review environment
-./backup_db.sh $D 1                                  # fresh dump of live -> $B/backups/database/dligc_<stamp>.sql.gz
-./restore_db.sh $D 3 $B/backups/database/dligc_<stamp>.sql.gz     # answers "yes"; makes a safety dump of the (empty) db 3 first
-rsync -a $B/deployment_environments/live/assets/public/files/ $B/deployment_environments/review/assets/public/files/
-sudo chown -R www-data:www-data $B/deployment_environments/review/assets/public/files
-
-# 3. Release from the branch, pointed at environment "review" and database 3
 ./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git feat/new-theme
 cd $R/$V/code/web/sites/default
-ln -sfn ../../../../../../settings/3/settings.local.php settings.local.php
-ln -sfn ../../../../../../deployment_environments/review/assets/public/files files
-ls -l settings.local.php files                       # -> settings/3, deployment_environments/review
+ln -sfn ../../../../../../settings/1/settings.local.php settings.local.php   # create_release defaults to settings/2
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files files
+ls -l settings.local.php files
 cd ~/infrastructure/provision-site/toolkit
-./deploy.sh $D review $V                             # dumps db 3, composer install --no-dev, docroot symlink, php-fpm reload, updb, cr
-bash $R/$V/code/scripts/devops/post_deploy.sh review # private files dir (sudo), fix_definitions, cim (installs custom_field, clau3 default), cst
-
-# 4. Hero media (not in git; from Rob's private media folder) and the content steps
-mkdir -p /tmp/hero                                   # then from your Mac:
-#   scp site-dev/ligc-private/2026-10/media/hero-1280.mp4 site-dev/ligc-private/2026-10/media/hero-poster.webp server03:/tmp/hero/
-#   (or the sharper 1920 cut / the vertical cut from site-dev/ligc-private/2026-11/media/, renamed to those two names)
-bash $R/$V/code/scripts/devops/new_theme_content.sh review /tmp/hero
-rm -rf /tmp/hero
-
-# 5. Apache vhost with basic auth, then the certificate (sudo)
-sudo mkdir -p /etc/apache2/sites-passwords/new.ligchoir.com
-sudo htpasswd -c /etc/apache2/sites-passwords/new.ligchoir.com/.htpasswd ligc    # prompts for the password; -c only the first time
-sudo tee /etc/apache2/sites-available/new.ligchoir.com.conf > /dev/null <<'VHOST'
-<VirtualHost *:80>
-    ServerAdmin webmaster@localhost
-    ServerName new.ligchoir.com
-    DocumentRoot /var/www/05/internationalgospelchoir.uk/deployment_environments/review/docroot
-    ErrorLog ${APACHE_LOG_DIR}/new.ligchoir.com_error.log
-    CustomLog ${APACHE_LOG_DIR}/new.ligchoir.com_access.log combined
-    Header set X-Robots-Tag "noindex, nofollow"
-
-    <Directory "/var/www/05/internationalgospelchoir.uk/deployment_environments/review/docroot">
-        Options FollowSymLinks
-        AllowOverride All
-        Require all granted
-
-        # Review copy of the new site: password protected until launch.
-        AuthType Basic
-        AuthName "LIGC new site review"
-        AuthUserFile /etc/apache2/sites-passwords/new.ligchoir.com/.htpasswd
-        Require valid-user
-    </Directory>
-</VirtualHost>
-VHOST
-sudo a2enmod headers >/dev/null; sudo a2ensite new.ligchoir.com.conf && sudo apache2ctl configtest && sudo systemctl reload apache2
-curl -sI http://new.ligchoir.com/ | head -3                         # 401 Unauthorized = auth is on
-sudo certbot --apache -d new.ligchoir.com                           # makes new.ligchoir.com-le-ssl.conf (keeps the auth block) + http->https redirect
-# Check: https://new.ligchoir.com asks for the login, then: / (hero loop,
-# Events & News cards), /events-news, /projects (and a project page),
-# /about, /join, /book (submit the form: the mail lands in YOUR inbox),
-# admin login, admin/reports/status. Robots: the 401 keeps crawlers out;
-# the header is belt and braces.
+./deploy.sh $D live $V                               # dumps db 1, composer install --no-dev (PHP 8.5), docroot symlink, php8.5-fpm reload, updb, cr
+bash $R/$V/code/scripts/devops/post_deploy.sh live   # private files dir (sudo), fix_definitions, cim (installs custom_field, clau3 default), cst
+# Hero media (not in git): from the Mac,
+#   scp site-dev/ligc-private/2026-11/media/hero-final/* server04:/tmp/hero/   (hero-1280.mp4 = the reel, hero-poster.webp, hero-phone.mp4)
+bash $R/$V/code/scripts/devops/new_theme_content.sh live /tmp/hero && rm -rf /tmp/hero
+# Check: https://new.ligchoir.com asks for the login (401 before, 403 while
+# the docroot is still the placeholder), then / (reel on black, Events & News
+# cards), /events-news, /events/past-events (cards + pager), /projects
+# (pager), /about, /join, /book (submit the form: mail lands in Rob's inbox),
+# admin login, admin/reports/status (PHP 8.5: watch for deprecation notices
+# from contrib in the log).
 #
-# Refreshing the review site with newer live content later (events the
-# coordinator adds): repeat step 2 (backup_db 1, restore_db 3), then
-#   bash $R/$V/code/scripts/devops/post_deploy.sh review && bash $R/$V/code/scripts/devops/new_theme_content.sh review /tmp/hero
-# Updating the review site to a newer feat/new-theme: new release name
-# (2.1.0-review2 ...), steps 3 and 4 again.
+# Refreshing with newer live content later: on server03
+#   backup_db.sh internationalgospelchoir.uk 1    -> scp the dump to server04:/tmp
+# on server04
+#   ./restore_db.sh ligchoir.com 1 /tmp/<dump>.sql.gz
+#   rsync the live files dir across (via the Mac, as on 2026-11-11)
+#   bash $R/$V/code/scripts/devops/post_deploy.sh live && bash $R/$V/code/scripts/devops/new_theme_content.sh live /tmp/hero
+# Updating to a newer feat/new-theme: new release name (2.1.0-review2 ...),
+# create_release + symlinks + deploy + post_deploy + new_theme_content again.
 #
-# GO-LIVE (after the team's approval; outline, to be written up as its own
-# block when the time comes): merge feat/new-theme into main, release 2.1.0
-# to the live environment the normal way (create_release, files symlink to
-# live, deploy, post_deploy live, new_theme_content.sh live /tmp/hero);
-# ligchoir.com and www.ligchoir.com vhosts on server03 pointing at the live
-# docroot with certbot certificates (DNS for both to 157.245.32.67 first;
-# they currently resolve to 178.62.78.220 = server02 and redirect to
-# internationalgospelchoir.uk); www -> ligchoir.com redirect;
-# internationalgospelchoir.uk and www. vhosts become 301 redirects to
-# ligchoir.com (keep their certificates renewing); system.site name/mail
-# unchanged; webform to_mail unchanged (settings/1); install_cron.sh
-# unchanged (per domain dir); disable the review vhost and drop database 3.
-# Trusted hosts for all three ligchoir.com names are already in settings.php.
+# GO-LIVE (after the team's approval; to be written up as its own block):
+# merge feat/new-theme into main and cut release 2.1.0 the same way; DNS
+# ligchoir.com + www.ligchoir.com -> 104.248.164.167 (they are on server02
+# now); vhosts for both on server04 pointing at the same docroot, certbot,
+# www -> ligchoir.com redirect, auth block removed from new.ligchoir.com
+# (or that vhost disabled); fresh live dump + files once more and the
+# content scripts; internationalgospelchoir.uk vhosts on server03 -> 301 to
+# ligchoir.com (keep their certificates renewing); install_cron.sh
+# ligchoir.com live on server04; to_mail lines back to the choir's
+# addresses in settings/1. Trusted hosts for the three ligchoir.com names
+# are already in settings.php.

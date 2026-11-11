@@ -7,9 +7,9 @@
  * docs/tasks/projects-shortlist-2026-11.md, one project each. Same rules as
  * projects_batch_2026_11.php: a node is only created when no node of that
  * type with the same title exists, existing events are linked as outcomes by
- * nid, bodies are short and factual for the team to build on. Two items the
- * sources do not fully confirm (Memorial at the Barbican 2018, Holocaust
- * Memorial Day 2024) are created UNPUBLISHED for the team to check.
+ * nid, bodies are short and factual for the team to build on. Items the
+ * sources did not confirm (Memorial at the Barbican 2018, Holocaust Memorial
+ * Day 2024) are left out (Rob, 2026-11-11: if in doubt, leave out).
  *
  *   ./drush php:script scripts/devops/projects_batch_2_2026_11.php
  *
@@ -165,20 +165,6 @@ $projects = [
     'body' => ['The abstract artist Kate Mayer, who sings with the choir, invited LIGC into her 2026 exhibitions. The choir sang at her solo show at 54 The Gallery in Mayfair on 21 January 2026.', 'On 8 September 2026, a first for LIGC, the choir sang <em>Count Your Blessings</em> at Holy Trinity Barnsbury while Kate painted live in response to the music; the session was filmed and streamed. Two days later the choir performed three songs at the private view of her exhibition <em>Afterglow</em>.'],
     'collaborations' => [['Kate Mayer', 'Performed with', 'Live painting to the choir\'s singing, 8 September 2026, and the Afterglow private view, 10 September 2026.']],
     'outcomes' => [120], 'links' => [],
-  ],
-  [
-    'title' => 'Holocaust Memorial Day: Rise Up', 'slug' => 'holocaust-memorial-day-2024', 'status' => 'completed', 'published' => FALSE,
-    'dates' => ['2023-12-05', '2024-01-01'],
-    'body' => ['In December 2023 LIGC recorded a harmony part for <em>Rise Up</em> that was edited together with recordings from other choirs and screened at the national Holocaust Memorial Day ceremony in January 2024.'],
-    'collaborations' => [],
-    'outcomes' => [], 'links' => [],
-  ],
-  [
-    'title' => 'Memorial at the Barbican', 'slug' => 'memorial-barbican-2018', 'status' => 'completed', 'published' => FALSE,
-    'dates' => ['2018-09-27', '2018-09-30'],
-    'body' => ['In September 2018 LIGC singers were invited into the 215-voice chorus for four performances of the theatre production <em>Memorial</em> at the Barbican, three evening shows and a Sunday matinee, after the production had toured Australia. The chorus rehearsed through September ahead of the run.'],
-    'collaborations' => [['Barbican Centre', 'Hosted by', 'Four performances, 27 to 30 September 2018.']],
-    'outcomes' => [], 'links' => [],
   ],
   [
     'title' => 'Common & Kind and Rainbow Against Borders', 'slug' => 'common-and-kind', 'status' => 'completed', 'published' => TRUE,

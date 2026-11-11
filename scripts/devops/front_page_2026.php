@@ -10,7 +10,7 @@
  * hero, card, card_row; the events view "cards" display). Then, on the Home
  * node (content type home):
  *
- *   1. Imports hero-1280.mp4 and hero-poster.webp (not in git: they show
+ *   1. Imports hero-1280.mp4, hero-poster.webp and, if present, hero-phone.mp4 (not in git: they show
  *      choir members) from $LIGC_HERO_MEDIA_DIR, default
  *      scripts/content/front-page/, into the public files directory as media items "Front page hero loop"
  *      (video) and "Front page hero poster" (image), unless they exist.
@@ -84,6 +84,18 @@ if (!$poster_media) {
 else {
   print "media poster exists: " . $poster_media->id() . "\n";
 }
+// Optional upright clip for phones (review round 4, 2026-11-11): imported
+// when hero-phone.mp4 sits next to the other two; set on the hero below.
+$phone_media = $find_media('Front page hero loop (phones)', 'video');
+if (!$phone_media && is_file("$source_dir/hero-phone.mp4")) {
+  $file = $file_repo->writeData(file_get_contents("$source_dir/hero-phone.mp4"), "$dest_dir/hero-phone.mp4", FileExists::Replace);
+  $phone_media = Media::create(['bundle' => 'video', 'name' => 'Front page hero loop (phones)', 'uid' => 1, 'status' => 1, 'field_media_video_file' => ['target_id' => $file->id()]]);
+  $phone_media->save();
+  print "media phone video created: " . $phone_media->id() . "\n";
+}
+elseif ($phone_media) {
+  print "media phone video exists: " . $phone_media->id() . "\n";
+}
 
 // --- 2. Paragraphs ----------------------------------------------------------
 $current = $home->get('field_content')->referencedEntities();
@@ -119,6 +131,11 @@ if (!$hero) {
   print "hero paragraph created: " . $hero->id() . "\n";
 }
 else { print "hero exists: " . $hero->id() . "\n"; }
+if ($phone_media && $hero->hasField('field_video_phone') && $hero->get('field_video_phone')->isEmpty()) {
+  $hero->set('field_video_phone', ['target_id' => $phone_media->id()]);
+  $hero->save();
+  print "hero: phone video set.\n";
+}
 
 // Events cards view.
 $events = NULL;

@@ -606,34 +606,22 @@ extension on front, events, one event, about and the forms.
 
 ## 13. Review site new.ligchoir.com
 
-A third environment on server03 alongside live and staging:
-`deployment_environments/review` (own database 3 restored from a live
-backup, own files directory copied from live, own `settings/3` with the
-webform recipients pointed at Rob), a release cut from `feat/new-theme`
-with `create_release.sh` (4th argument is the branch), an Apache vhost for
-new.ligchoir.com (the server runs Apache, not nginx as first written here)
-with a Let's Encrypt certificate and HTTP basic auth in the same layout as
-the other preview sites on the server (`sites-passwords/<host>/.htpasswd`),
-and `X-Robots-Tag: noindex`. `trusted_host_patterns` in `settings.php`
-already lists new.ligchoir.com, ligchoir.com and www.ligchoir.com.
-`post_deploy.sh` accepts `review`, and `scripts/devops/new_theme_content.sh
-<env> [hero media dir]` runs every content script in order, so the review
-site can be rebuilt from a fresh live dump at any time and the same two
-commands do the content half of go-live.
-
-The runnable block is in `docs/devops/README.txt` ("REVIEW SITE"). Rob runs
-it: the server steps need sudo, and the branch has to be pushed first.
-Found 2026-11-10: new.ligchoir.com resolves to server04
-(104.248.164.167), not server03 (157.245.32.67); ligchoir.com and www
-resolve to server02 (178.62.78.220) and redirect to the old domain. The A
-records need to move to server03 before the vhosts and certificates can
-be made there.
-
-At go-live the theme release goes to the normal live environment,
-ligchoir.com and www.ligchoir.com get vhosts on server03 pointing at it,
-internationalgospelchoir.uk redirects to ligchoir.com, and the review
-environment and database 3 are removed (outline at the end of the README
-block).
+Rob's choice (2026-11-10): the new site lives on server04 (Ubuntu 26.04,
+Apache, PHP 8.5, MariaDB 11.8), the newer server, in a new site directory
+`/var/www/05/ligchoir.com` in the toolkit layout, environment `live`,
+database 1. That way the review site simply becomes the live site at
+go-live: the ligchoir.com vhosts are added, the auth block removed, and the
+old domain on server03 redirects. Prepared 2026-11-11 (site structure,
+database with the live dump, files, settings with the webform recipients
+pointed at Rob, Apache vhost with basic auth and `X-Robots-Tag: noindex`,
+Let's Encrypt certificate). The release itself waits for the branch to be
+pushed; the commands are in `docs/devops/README.txt` ("REVIEW SITE").
+`scripts/devops/new_theme_content.sh <env> [hero media dir]` runs every
+content script in order, so the review site can be rebuilt from a fresh
+live dump at any time and the same commands do the content half of go-live.
+`trusted_host_patterns` in `settings.php` lists new.ligchoir.com,
+ligchoir.com and www.ligchoir.com. HTTP auth: one shared login for the team
+(user `ligc`, the simple password Rob chose, kept out of the repo).
 
 ## 14. What stays as it is
 
@@ -815,11 +803,17 @@ is merged and released as one version.
    keep the title under the header (`:has()` in `project.css`); card and
    collaborator templates print `node.label` so the project title style
    cannot leak into them.
-   Review round 4 (Rob, 2026-11-10): the Past events page is the same card
-   grid as Events & News (the archive display uses the event card view mode,
-   its view paragraph loses the colour pickers in
+   Review round 4 (Rob, 2026-11-10/11): the Past events page is the same
+   card grid as Events & News (the archive display uses the event card view
+   mode, its view paragraph loses the colour pickers in
    `review_round_4_2026.php`), each grid ends with a card pointing at the
-   other, the front page link reads "View all events & news".
+   other, the front page link reads "View all events & news"; pagers on
+   Past events and Projects (24 a page, bordered boxes after The Solent
+   Metropolitan, `css/pager.css`); the hero is the vertical reel (section
+   5.1) with an upright version for phones through the new
+   `field_video_phone` on the hero paragraph (hero-video.js picks it under
+   600px); landing-page hero images sit 10% higher in the box from 1100px up
+   so heads are not cropped; the two unconfirmed projects were removed.
 7. **Review site** and the team's feedback rounds. 2026-11-10: prepared
    (README block, `new_theme_content.sh`, `post_deploy.sh review`, trusted
    hosts); waiting on the DNS move to server03 and Rob's run of the block.

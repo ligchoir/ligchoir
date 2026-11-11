@@ -1,0 +1,28 @@
+uuid: 2c9d7e41-5b6a-4f83-a1d2-8e7f6c5b4a39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_phone
+    - media.type.video
+    - paragraphs.paragraphs_type.hero
+id: paragraph.hero.field_video_phone
+field_name: field_video_phone
+entity_type: paragraph
+bundle: hero
+label: 'Video for phones'
+description: 'Optional upright (9:16) version of the loop for screens under 600px wide; the main video is for wide screens. When this is set the video plays on phones even if the switch below is off. Leave empty to show only the poster on phones (or the main video, with the switch on).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

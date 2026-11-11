@@ -9,6 +9,7 @@ dependencies:
     - field.field.paragraph.hero.field_link
     - field.field.paragraph.hero.field_text
     - field.field.paragraph.hero.field_video
+    - field.field.paragraph.hero.field_video_phone
     - field.field.paragraph.hero.field_video_link
     - field.field.paragraph.hero.field_video_on_phones
     - paragraphs.paragraphs_type.hero
@@ -71,6 +72,13 @@ content:
   field_video:
     type: media_library_widget
     weight: 3
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+  field_video_phone:
+    type: media_library_widget
+    weight: 4
     region: content
     settings:
       media_types: {  }

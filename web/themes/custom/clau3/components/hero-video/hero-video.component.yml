@@ -30,6 +30,9 @@ props:
     credit:
       type: string
       title: 'Photo credit, shown small in the bottom left corner of the media'
+    video_phone_url:
+      type: string
+      title: 'mp4 URL of an upright (9:16) version for screens under 600px; plays on phones when set'
     video_on_phones:
       type: boolean
       title: 'Play the video below 600px too'

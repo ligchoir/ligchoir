@@ -195,6 +195,16 @@ function clau3_preprocess_paragraph__hero(array &$variables): void {
       }
     }
   }
+  $variables['hero_video_phone_url'] = NULL;
+  if ($paragraph->hasField('field_video_phone') && !$paragraph->get('field_video_phone')->isEmpty()) {
+    $media = $paragraph->get('field_video_phone')->entity;
+    if ($media && $media->hasField('field_media_video_file') && !$media->get('field_media_video_file')->isEmpty()) {
+      $file = $media->get('field_media_video_file')->entity;
+      if ($file) {
+        $variables['hero_video_phone_url'] = \Drupal::service('file_url_generator')->generateString($file->getFileUri());
+      }
+    }
+  }
   $variables['hero_text'] = $variables['content']['field_text'] ?? [];
   // Events landing pages: the Upcoming / Past / Map strip under the band.
   $variables['section_strip'] = NULL;

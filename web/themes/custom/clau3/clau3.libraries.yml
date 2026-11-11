@@ -13,6 +13,7 @@ global:
       css/content-grid.css: {}
       css/system-pages.css: {}
       css/search-page.css: {}
+      css/pager.css: {}
       css/events-cards.css: {}
       css/front-page.css: {}
       css/project.css: {}

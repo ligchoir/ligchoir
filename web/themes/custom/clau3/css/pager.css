@@ -1,0 +1,58 @@
+/* Views pager (Past events, Projects): bordered boxes in a row, the current
+   page filled, ellipsis hidden, after the pager on The Solent Metropolitan
+   (Rob, review round 4). The pages sit on the black ground. */
+.pager {
+  margin: var(--ligc-space-lg) 0 0;
+}
+
+.pager__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3em;
+}
+
+.pager__item {
+  display: inline-flex;
+  align-items: stretch;
+  margin: 0;
+  border: 1px solid var(--ligc-red-on-ink);
+  box-sizing: border-box;
+}
+
+.pager__item > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4em;
+  padding: 0.35em 0.7em;
+  color: var(--ligc-text-on-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pager__item > a:hover,
+.pager__item > a:focus-visible {
+  background: var(--ligc-red-on-ink);
+  color: var(--ligc-text-on-red);
+}
+
+.pager__item.is-active {
+  background: var(--ligc-red-on-ink);
+}
+
+.pager__item.is-active > a {
+  color: var(--ligc-text-on-red);
+}
+
+.pager__item--ellipsis {
+  display: none;
+}
+
+/* Pages inside a legacy paragraph wrapper (white panel) keep readable text. */
+.ligc-event-container .pager__item > a {
+  color: var(--ligc-text-on-paper);
+}
