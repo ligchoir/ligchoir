@@ -35,10 +35,12 @@
 }
 
 /* Wide, short windows crop the 16:9 landing image top and bottom; from
-   1100px up favour the top, where the heads are (Rob, review round 4). */
+   1100px up keep the top of the image, where the heads are, and lose the
+   bottom instead (Rob, review round 4). The focal points of the landing
+   images sit near the top too (review_round_4_2026.php). */
 @media (min-width: 1100px) {
   .hero:not(.hero--video) .hero__poster {
-    object-position: center 40%;
+    object-position: center top;
   }
 }
 

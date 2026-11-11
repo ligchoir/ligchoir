@@ -17,31 +17,48 @@
     attach(context) {
       once('clau3-hero', '[data-hero]', context).forEach((hero) => {
         const video = hero.querySelector('.hero__video');
-        const wideEnough = window.matchMedia('(min-width: 600px)').matches;
+        const wide = window.matchMedia('(min-width: 600px)');
         const phoneSrc = hero.dataset.videoSrcPhone || '';
-        const src = (!wideEnough && phoneSrc) ? phoneSrc : hero.dataset.videoSrc;
-        if (!video || !src) {
-          return;
-        }
-        const onPhones = hero.dataset.videoOnPhones === '1' || (!wideEnough && phoneSrc !== '');
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         const conn = navigator.connection || {};
         const slow = conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
-
-        if (reduce || slow || (!wideEnough && !onPhones)) {
+        if (!video || reduce || slow) {
           hero.classList.add('is-static');
           return;
         }
-        const source = document.createElement('source');
-        source.src = src;
-        source.type = 'video/mp4';
-        video.appendChild(source);
-        video.setAttribute('autoplay', '');
-        video.load();
-        const attempt = video.play();
-        if (attempt && attempt.catch) {
-          attempt.catch(() => hero.classList.add('is-static'));
-        }
+        let current = '';
+        const choose = () => {
+          const wideEnough = wide.matches;
+          const src = (!wideEnough && phoneSrc) ? phoneSrc : hero.dataset.videoSrc;
+          const onPhones = hero.dataset.videoOnPhones === '1' || (!wideEnough && phoneSrc !== '');
+          if (!src || (!wideEnough && !onPhones)) {
+            hero.classList.add('is-static');
+            video.removeAttribute('autoplay');
+            video.pause();
+            current = '';
+            return;
+          }
+          if (src === current) {
+            return;
+          }
+          current = src;
+          video.querySelectorAll('source').forEach((s) => s.remove());
+          const source = document.createElement('source');
+          source.src = src;
+          source.type = 'video/mp4';
+          video.appendChild(source);
+          video.setAttribute('autoplay', '');
+          hero.classList.remove('is-static');
+          video.load();
+          const attempt = video.play();
+          if (attempt && attempt.catch) {
+            attempt.catch(() => hero.classList.add('is-static'));
+          }
+        };
+        choose();
+        // A window dragged across 600px (or a phone turned sideways) gets the
+        // clip that fits the new width.
+        wide.addEventListener('change', choose);
       });
     },
   };

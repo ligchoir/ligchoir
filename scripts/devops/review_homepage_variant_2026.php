@@ -73,6 +73,7 @@ foreach ($home->get('field_content')->referencedEntities() as $paragraph) {
     $copy->set('field_image', ['target_id' => $poster_media->id()]);
     if ($copy->hasField('field_video_phone')) { $copy->set('field_video_phone', NULL); }
     if ($copy->hasField('field_video_on_phones')) { $copy->set('field_video_on_phones', 0); }
+    $copy->set('field_video_link', ['uri' => 'https://www.youtube.com/watch?v=RgNVtjKTOhI', 'title' => 'Watch the full video on YouTube']);
   }
   $copy->save();
   $paragraphs[] = ['target_id' => $copy->id(), 'target_revision_id' => $copy->getRevisionId()];

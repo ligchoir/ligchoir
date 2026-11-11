@@ -437,7 +437,7 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 ./drush php:script scripts/devops/review_round_3_2026.php  # review round 3 (issues #38-#49): Events page titled "Events & News" at /events-news (/events kept as an alias), menu item repointed, Events intro in the wide column, listing's view paragraph without colour pickers
 # (2026-11-10, config only: the listing ends with a "Past events" card in
 # the grid instead of the footer link; cim does it.)
-./drush php:script scripts/devops/review_round_4_2026.php  # review round 4: the Past events page's view paragraph loses its colour pickers; with the config, the archive is the same card grid as Events & News, ending with an "Events & News" card; LinkedIn (company/ligchoir) added to the footer social links
+./drush php:script scripts/devops/review_round_4_2026.php  # review round 4: the Past events page's view paragraph loses its colour pickers; with the config, the archive is the same card grid as Events & News, ending with an "Events & News" card; LinkedIn (company/ligchoir) added to the footer social links; Join us and About hero images get a focal point near the top (derivatives flushed); the front page hero loses its YouTube overlay (the reel has no YouTube equivalent)
 ./drush php:script scripts/devops/review_homepage_variant_2026.php  # REVIEW SITE ONLY (not at go-live): /home-concert-video = the front page with the previous concert clip, for the team to compare with the reel; needs hero-concert-1280.mp4 + hero-concert-poster.webp in the hero media dir
 # Check: /events/past-events (cards on black under the strip, four across on
 # desktop, last card "Events & News"); /events-news unchanged apart from the

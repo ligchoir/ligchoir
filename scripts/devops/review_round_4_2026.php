@@ -12,6 +12,12 @@
  *      card view mode; the theme template gives it the same grid.)
  *   2. Footer social links: a LinkedIn link (company/ligchoir) after Spotify,
  *      on the LinkedIn blue, in the editors' markup block (Rob, 2026-11-11).
+ *   3. Join us and About hero images: focal point near the top (50% / 12%),
+ *      as round 2 did for Events and Book us, so the 16:9 crop keeps the
+ *      heads; derivatives flushed (Rob, 2026-11-11).
+ *   4. Front page hero: the "Watch the full video on YouTube" overlay is
+ *      removed, since the reel has no YouTube equivalent (the comparison
+ *      page with the concert clip keeps its own link).
  *
  *   ./drush php:script scripts/devops/review_round_4_2026.php
  */
@@ -66,6 +72,41 @@ else {
     $block->save();
     print "Footer: LinkedIn link added after Spotify.\n";
   }
+}
+
+// --- 3. Focal points near the top of the Join us and About hero images -------
+$focal = \Drupal::service('focal_point.manager');
+$flush = FALSE;
+foreach (['/join', '/about'] as $alias) {
+  $node = $node_at($alias);
+  $hero = $node ? $node->get('field_content')->entity : NULL;
+  if (!$hero || $hero->bundle() !== 'hero' || $hero->get('field_image')->isEmpty()) { print "$alias: no hero image.\n"; continue; }
+  $file = $hero->get('field_image')->entity->get('field_media_image')->entity;
+  if (!$file) { continue; }
+  [$width, $height] = getimagesize($file->getFileUri()) ?: [0, 0];
+  if (!$width) { continue; }
+  $crop = $focal->getCropEntity($file, 'focal_point');
+  $before = $crop->isNew() ? NULL : $crop->anchor();
+  $focal->saveCropEntity(0.5, 0.12, $width, $height, $crop);
+  if ($crop->isNew() || !$before || $before['y'] !== $crop->anchor()['y']) { $flush = TRUE; }
+  print "$alias hero image: focal point at 50% / 12% (" . basename($file->getFileUri()) . ")\n";
+}
+if ($flush) {
+  foreach (\Drupal\image\Entity\ImageStyle::loadMultiple() as $style) { $style->flush(); }
+  print "Image style derivatives flushed.\n";
+}
+
+// --- 4. Front page hero: no YouTube overlay on the reel ----------------------
+$front = \Drupal::config('system.site')->get('page.front');
+$home = preg_match('~^/node/(\d+)$~', $front, $m) ? $node_storage->load($m[1]) : NULL;
+$hero = $home ? $home->get('field_content')->entity : NULL;
+if ($hero && $hero->bundle() === 'hero' && !$hero->get('field_video_link')->isEmpty()) {
+  $hero->set('field_video_link', NULL);
+  $hero->save();
+  print "Front page hero: YouTube overlay link removed.\n";
+}
+else {
+  print "Front page hero: no YouTube overlay link (already).\n";
 }
 
 drupal_flush_all_caches();
