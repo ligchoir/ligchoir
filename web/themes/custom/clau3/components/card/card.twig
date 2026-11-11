@@ -1,6 +1,7 @@
 <article class="card">
   <a class="card__link" href="{{ url }}">
-    <div class="card__media">{% block image %}{% endblock %}</div>
+    {% set image_html = block('image')|trim %}
+    <div class="card__media{{ image_html ? '' : ' card__media--empty' }}">{{ image_html|raw }}</div>
     <div class="card__body">
       <h3 class="card__heading">{{ heading }}</h3>
       <div class="card__text">{% block text %}{% endblock %}</div>

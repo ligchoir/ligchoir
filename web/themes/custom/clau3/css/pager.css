@@ -2,7 +2,12 @@
    page filled, ellipsis hidden, after the pager on The Solent Metropolitan
    (Rob, review round 4). The pages sit on the black ground. */
 .pager {
-  margin: var(--ligc-space-lg) 0 0;
+  margin: var(--ligc-space-lg) 0 var(--ligc-space-xl);
+}
+
+/* Inside the events card sections the section's own padding does the job. */
+.events-cards .pager {
+  margin-bottom: 0;
 }
 
 .pager__items {
@@ -37,15 +42,17 @@
 .pager__item > a:hover,
 .pager__item > a:focus-visible {
   background: var(--ligc-red-on-ink);
-  color: var(--ligc-text-on-red);
+  color: var(--ligc-ink);
 }
 
+/* The pink is a light tint (it is the red that passes on black), so text
+   on it is black, not white (Rob, review round 4). */
 .pager__item.is-active {
   background: var(--ligc-red-on-ink);
 }
 
 .pager__item.is-active > a {
-  color: var(--ligc-text-on-red);
+  color: var(--ligc-ink);
 }
 
 .pager__item--ellipsis {

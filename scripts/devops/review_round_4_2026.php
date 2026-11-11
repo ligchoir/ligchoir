@@ -10,6 +10,8 @@
  *      cards sit on the black page exactly as on the Events & News page.
  *      (The config makes the "block_events_past" display use the event
  *      card view mode; the theme template gives it the same grid.)
+ *   2. Footer social links: a LinkedIn link (company/ligchoir) after Spotify,
+ *      on the LinkedIn blue, in the editors' markup block (Rob, 2026-11-11).
  *
  *   ./drush php:script scripts/devops/review_round_4_2026.php
  */
@@ -44,6 +46,25 @@ else {
     else {
       print "Past events page: view paragraph already without colour pickers.\n";
     }
+  }
+}
+
+// --- 2. Footer: LinkedIn after Spotify ---------------------------------------
+$blocks = $etm->getStorage('block_content')->loadByProperties(['info' => 'Social and contact block for footer']);
+if (!$blocks) {
+  print "No 'Social and contact block for footer' block found.\n";
+}
+else {
+  $block = reset($blocks);
+  $html = $block->get('field_social_and_contact_markup')->value ?? '';
+  if (str_contains($html, 'linkedin.com')) {
+    print "Footer: LinkedIn link already there.\n";
+  }
+  else {
+    $html = rtrim($html) . "\n\n<a href=\"https://www.linkedin.com/company/ligchoir\">\n<div class=\"social-contact-circle-outer ligc-li\"><div class=\"social-contact-circle-inner\"><span class=\"fab fa-linkedin\"></span></div></div>\n</a>";
+    $block->set('field_social_and_contact_markup', ['value' => $html, 'format' => $block->get('field_social_and_contact_markup')->format]);
+    $block->save();
+    print "Footer: LinkedIn link added after Spotify.\n";
   }
 }
 

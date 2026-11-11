@@ -41,6 +41,7 @@ run() {
 }
 
 run front_page_2026.php            # hero media + front page paragraphs
+run review_homepage_variant_2026.php   # REVIEW ONLY: /home-concert-video, the front page with the previous clip; skip at go-live
 run event_colour_schemes.php       # field_colour_scheme on every event
 run geocode_venues.php             # venue locations (Nominatim, ~75 s first time)
 run menu_2026.php                  # main menu
