@@ -329,6 +329,42 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
+# Release 2.0.15 (2026-11-18): Drupal 11.4.13, SECURITY. SA-CORE-2026-017
+# (critical: remote code execution, the installer can be reached and used to
+# reinstall the site) and SA-CORE-2026-018 (moderately critical, gadget
+# chain), plus the Symfony security releases core now pins (composer audit
+# was listing 15 advisories; clean after). Code only: no config change, no
+# DB updates. Branch security/core-11.4.13 off main; merge to main first.
+# Live only (staging is not in use). On server03 as rob.
+#
+# ALSO, same day, whether or not the release is done yet: the advisory's
+# mitigation is to make sure nobody can reach core/install.php. The review
+# site's vhost on server04 already denies it; the live and staging vhosts
+# did not. deny_installer.sh (infrastructure repo, provision-site/toolkit,
+# added 2026-11-18) adds the LocationMatch deny block to every <VirtualHost>
+# in the files it is given, backs them up, runs configtest and reloads:
+#
+#   cd ~/infrastructure && git pull --ff-only
+#   sudo provision-site/toolkit/deny_installer.sh /etc/apache2/sites-available/*internationalgospelchoir.uk*.conf
+#   curl -s -o /dev/null -w "%{http_code}\n" https://internationalgospelchoir.uk/core/install.php   # -> 403
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.15; R=/var/www/05/$D/releases
+
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live
+./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.13
+# Check: https://$D front page, /events, an event, /book, log in,
+# admin/reports/status (no new errors), /core/install.php -> 403.
+# Rollback if needed: ./update_symlink.sh $D live 2.0.14 && ./drush_run.sh $D live cr
+#
+# Then merge main into feat/new-theme (Rob) and cut 2.1.0-review3 on server04
+# so the review site is on 11.4.13 too (its vhost already blocks install.php).
+
+# ---------------------------------------------------------------------------
 # Release 2.0.14 (2026-10-27): events coordinator's replies. Content only: one
 # --update data file plus the structure_sync export (new "London" venue term).
 # No DB updates. On the server as rob.
