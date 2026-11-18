@@ -518,14 +518,15 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 #     password Rob chose; X-Robots-Tag noindex) + Let's Encrypt certificate
 #     (certbot --apache, expires 2027-02-09, auto-renews) + http->https
 #
-# RELEASES SO FAR: 2.1.0-review (2026-11-11, d93967a9) and 2.1.0-review2
-# (2026-11-11, 8389838e), both cut as below. Clone over HTTPS: rob's ssh on
+# RELEASES SO FAR: 2.1.0-review (2026-11-11, d93967a9), 2.1.0-review2
+# (2026-11-11, 8389838e), 2.1.0-review3 (2026-11-18, 37cdd900: main merged
+# in, Drupal 11.4.13), all cut as below. Clone over HTTPS: rob's ssh on
 # server04 has no GitHub key or host key. post_deploy's cim left three items
 # the first time; a second "./drush cim -y" cleared it, so run cst after.
-# The next release is 2.1.0-review3 and so on. On server04 as rob:
+# The next release is 2.1.0-review4 and so on. On server04 as rob:
 # ===========================================================================
 cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
-D=ligchoir.com; V=2.1.0-review3; R=/var/www/05/$D/releases
+D=ligchoir.com; V=2.1.0-review4; R=/var/www/05/$D/releases
 
 ./create_release.sh $D $V https://github.com/ligchoir/ligchoir.git feat/new-theme
 cd $R/$V/code/web/sites/default
