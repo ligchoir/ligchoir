@@ -557,13 +557,20 @@ bash $R/$V/code/scripts/devops/post_deploy.sh live
 #
 # RELEASES SO FAR: 2.1.0-review (2026-11-11, d93967a9), 2.1.0-review2
 # (2026-11-11, 8389838e), 2.1.0-review3 (2026-11-18, 37cdd900: main merged
-# in, Drupal 11.4.13), all cut as below. Clone over HTTPS: rob's ssh on
-# server04 has no GitHub key or host key. post_deploy's cim left three items
-# the first time; a second "./drush cim -y" cleared it, so run cst after.
-# The next release is 2.1.0-review4 and so on. On server04 as rob:
+# in, Drupal 11.4.13), 2.1.0-review4 (2026-11-26, e846fe06: main merged in,
+# Drupal 11.4.14, code only so new_theme_content.sh was not re-run), all cut
+# as below. Clone over HTTPS: rob's ssh on server04 has no GitHub key or
+# host key. post_deploy's cim leaves three items (the two hero paragraph
+# displays and views.view.events) listed by cst although the values match:
+# only key order differs. A second "./drush cim -y" cleared it on review3;
+# on review4 it did not, and this cleared the two hero displays:
+#   ./drush php:script scripts/devops/resave_config.php -- core.entity_view_display.paragraph.hero.default core.entity_form_display.paragraph.hero.default
+# views.view.events stays listed until its sync file is re-exported in the
+# order Drupal saves it (cosmetic; the view is identical).
+# The next release is 2.1.0-review5 and so on. On server04 as rob:
 # ===========================================================================
 cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
-D=ligchoir.com; V=2.1.0-review4; R=/var/www/05/$D/releases
+D=ligchoir.com; V=2.1.0-review5; R=/var/www/05/$D/releases
 
 ./create_release.sh $D $V https://github.com/ligchoir/ligchoir.git feat/new-theme
 cd $R/$V/code/web/sites/default
