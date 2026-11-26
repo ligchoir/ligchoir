@@ -329,6 +329,43 @@ bash scripts/devops/post_deploy.sh staging   # or: live (bash, as create_release
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
+# Release 2.0.16 (2026-11-26): Drupal 11.4.14, SECURITY. SA-CORE-2026-019
+# (highly critical, exploited in the wild: sites left in an unusual or
+# incomplete install state can still be taken over through the installer
+# after the 11.4.13 fix). Plus patch releases of Symfony 7.4, Guzzle, Twig.
+# Code only, no config change, but ONE DB update that the advisory says
+# MUST run: system_post_update_mark_installation_finished (deploy.sh and
+# post_deploy.sh both run updb; the check below confirms it).
+# Branch security/core-11.4.14 off main; merge to main first. Live only.
+#
+# The install.php deny from 2.0.15 (deny_installer.sh) is already on the
+# server03 vhosts and the server04 review site; the check below confirms it.
+# Advisory also asks: look at the logs for changes to/by user 1, make sure
+# user 1's email is one we control, consider resetting its password.
+# ---------------------------------------------------------------------------
+cd ~/infrastructure/provision-site/toolkit && git pull --ff-only
+D=internationalgospelchoir.uk; V=2.0.16; R=/var/www/05/$D/releases
+
+./create_release.sh $D $V git@github.com:ligchoir/ligchoir.git
+ln -sfn ../../../../../../deployment_environments/live/assets/public/files $R/$V/code/web/sites/default/files
+ls -l $R/$V/code/web/sites/default/files              # -> .../deployment_environments/live/...
+./deploy.sh $D live $V
+bash $R/$V/code/scripts/devops/post_deploy.sh live
+./drush_run.sh $D live "status --field=drupal-version"   # -> 11.4.14
+./drush_run.sh $D live "updatedb:status"                 # -> No database updates required
+#   (if it lists system_post_update_mark_installation_finished, run: ./drush_run.sh $D live "updb -y")
+./drush_run.sh $D live "uinf --uid=1 --fields=name,mail,login,access"   # user 1: our email? last login expected?
+./drush_run.sh $D live "watchdog:show --type=user --count=30"           # any unexpected logins / password resets?
+curl -s -o /dev/null -w "%{http_code}\n" https://$D/core/install.php     # -> 403
+# Check: https://$D front page, /events, an event, /book, log in,
+# admin/reports/status (no new errors).
+# Rollback if needed: ./update_symlink.sh $D live 2.0.15 && ./drush_run.sh $D live cr
+#   (the post-update only marks the install finished; leaving it applied on
+#   rollback is harmless)
+#
+# Then merge main into feat/new-theme (Rob) and cut 2.1.0-review4 on server04.
+
+# ---------------------------------------------------------------------------
 # Release 2.0.15 (2026-11-18): Drupal 11.4.13, SECURITY. SA-CORE-2026-017
 # (critical: remote code execution, the installer can be reached and used to
 # reinstall the site) and SA-CORE-2026-018 (moderately critical, gadget
